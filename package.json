@@ -1,0 +1,41 @@
+{
+  "name": "pdd-node-sdk",
+  "version": "0.0.1",
+  "description": "pdd node sdk",
+  "main": "src/index.ts",
+  "scripts": {
+    "build": "tsc",
+    "lint": "eslint src --ext .ts --fix",
+    "format": "prettier --write \"apps/**/*.ts\" \"libs/**/*.ts\"",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lywzx/pdd-node-sdk.git"
+  },
+  "keywords": [
+    "pdd",
+    "pinduoduo",
+    "pinduoke"
+  ],
+  "author": "liuyang",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/lywzx/pdd-node-sdk/issues"
+  },
+  "homepage": "https://github.com/lywzx/pdd-node-sdk#readme",
+  "devDependencies": {
+    "@types/chai": "^4.2.9",
+    "@types/mocha": "^7.0.1",
+    "@typescript-eslint/eslint-plugin": "^2.20.0",
+    "@typescript-eslint/parser": "^2.20.0",
+    "chai": "^4.2.0",
+    "eslint": "^6.8.0",
+    "eslint-config-prettier": "^6.10.0",
+    "eslint-plugin-prettier": "^3.1.2",
+    "mocha": "^7.0.1",
+    "prettier": "^1.19.1",
+    "ts-node": "^8.6.2",
+    "typescript": "^3.8.2"
+  }
+}
