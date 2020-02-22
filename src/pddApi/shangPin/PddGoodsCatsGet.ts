@@ -5,7 +5,6 @@ export const PDD_GOODS_CATS_GET = 'PDD_GOODS_CATS_GET';
  * 接口标识：pdd.goods.cats.get
  * 接口使用场景：获取拼多多标准商品类目信息（请使用pdd.goods.authorization.cats接口获取商家可发布类目）
  **/
-
 export interface PddGoodsCatsGetRequestInterface {
   /**
    * @description: 值=0时为顶点cat_id,通过树顶级节点获取cat树
@@ -20,7 +19,6 @@ export interface PddGoodsCatsGetRequestInterface {
  * 接口标识：pdd.goods.cats.get
  * 接口使用场景：获取拼多多标准商品类目信息（请使用pdd.goods.authorization.cats接口获取商家可发布类目）
  **/
-
 export interface PddGoodsCatsGetResponseInterface {
   /**
    * @description: response
@@ -36,7 +34,6 @@ export interface PddGoodsCatsGetResponseInterface {
  * @default
  * @example
  **/
-
 export interface PddGoodsCatsGetGoodsCatsGetResponseResponseInterface {
   /**
    * @description: 类目树对象
@@ -52,7 +49,6 @@ export interface PddGoodsCatsGetGoodsCatsGetResponseResponseInterface {
  * @default
  * @example
  **/
-
 export interface PddGoodsCatsGetGoodsCatsGetResponseGoodsCatsListResponseInterface {
   /**
    * @description: 类目层级，1-一级类目，2-二级类目，3-三级类目，4-四级类目

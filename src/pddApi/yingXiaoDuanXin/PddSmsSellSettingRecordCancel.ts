@@ -5,7 +5,6 @@ export const PDD_SMS_SELL_SETTING_RECORD_CANCEL = 'PDD_SMS_SELL_SETTING_RECORD_C
  * 接口标识：pdd.sms.sell.setting.record.cancel
  * 接口使用场景：取消任务
  **/
-
 export interface PddSmsSellSettingRecordCancelRequestInterface {
   /**
    * @description: 任务id
@@ -20,7 +19,6 @@ export interface PddSmsSellSettingRecordCancelRequestInterface {
  * 接口标识：pdd.sms.sell.setting.record.cancel
  * 接口使用场景：取消任务
  **/
-
 export interface PddSmsSellSettingRecordCancelResponseInterface {
   /**
    * @description: response
@@ -36,7 +34,6 @@ export interface PddSmsSellSettingRecordCancelResponseInterface {
  * @default
  * @example
  **/
-
 export interface PddSmsSellSettingRecordCancelSmsSellSettingRecordCancelResponseResponseInterface {
   /**
    * @description: 是否成功

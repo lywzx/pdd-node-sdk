@@ -5,7 +5,6 @@ export const PDD_AD_CREATIVE_CREATE = 'PDD_AD_CREATIVE_CREATE';
  * 接口标识：pdd.ad.creative.create
  * 接口使用场景：推广单元增加创意（目前最多可添加4个创意）
  **/
-
 export interface PddAdCreativeCreateRequestInterface {
   /**
    * @description: 单元id
@@ -35,7 +34,6 @@ export interface PddAdCreativeCreateRequestInterface {
  * @default
  * @example
  **/
-
 export interface PddAdCreativeCreateCreativeRequestInterface {
   /**
    * @description:
@@ -57,7 +55,6 @@ export interface PddAdCreativeCreateCreativeRequestInterface {
  * 接口标识：pdd.ad.creative.create
  * 接口使用场景：推广单元增加创意（目前最多可添加4个创意）
  **/
-
 export interface PddAdCreativeCreateResponseInterface {
   /**
    * @description: response
@@ -73,7 +70,6 @@ export interface PddAdCreativeCreateResponseInterface {
  * @default
  * @example
  **/
-
 export interface PddAdCreativeCreateOpenApiResponseResponseInterface {
   /**
    * @description: 是否请求成功

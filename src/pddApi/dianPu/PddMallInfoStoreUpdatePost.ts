@@ -5,7 +5,6 @@ export const PDD_MALL_INFO_STORE_UPDATE_POST = 'PDD_MALL_INFO_STORE_UPDATE_POST'
  * 接口标识：pdd.mall.info.store.update.post
  * 接口使用场景：修改店铺门店
  **/
-
 export interface PddMallInfoStoreUpdatePostRequestInterface {
   /**
    * @description: 门店营业状态
@@ -118,7 +117,6 @@ export interface PddMallInfoStoreUpdatePostRequestInterface {
  * 接口标识：pdd.mall.info.store.update.post
  * 接口使用场景：修改店铺门店
  **/
-
 export interface PddMallInfoStoreUpdatePostResponseInterface {
   /**
    * @description:
@@ -134,7 +132,6 @@ export interface PddMallInfoStoreUpdatePostResponseInterface {
  * @default
  * @example
  **/
-
 export interface PddMallInfoStoreUpdatePostMallInfoStoreUpdatePostResponseResponseInterface {
   /**
    * @description:

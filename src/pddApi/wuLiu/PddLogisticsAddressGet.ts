@@ -13,7 +13,6 @@ export interface PddLogisticsAddressGetRequestInterface {}
  * 接口标识：pdd.logistics.address.get
  * 接口使用场景：获取拼多多标准国家地址库
  **/
-
 export interface PddLogisticsAddressGetResponseInterface {
   /**
    * @description: response
@@ -29,7 +28,6 @@ export interface PddLogisticsAddressGetResponseInterface {
  * @default
  * @example
  **/
-
 export interface PddLogisticsAddressGetLogisticsAddressGetResponseResponseInterface {
   /**
    * @description: 地址对象列表
@@ -45,7 +43,6 @@ export interface PddLogisticsAddressGetLogisticsAddressGetResponseResponseInterf
  * @default
  * @example
  **/
-
 export interface PddLogisticsAddressGetLogisticsAddressGetResponseLogisticsAddressListResponseInterface {
   /**
    * @description: 是否有效，0-无效，1-有效

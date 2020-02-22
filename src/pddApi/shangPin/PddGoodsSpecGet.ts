@@ -5,7 +5,6 @@ export const PDD_GOODS_SPEC_GET = 'PDD_GOODS_SPEC_GET';
  * 接口标识：pdd.goods.spec.get
  * 接口使用场景：获取商品规格信息
  **/
-
 export interface PddGoodsSpecGetRequestInterface {
   /**
    * @description: 叶子类目ID，必须入参level=3时的cat_id,否则无法返回正确的参数
@@ -20,7 +19,6 @@ export interface PddGoodsSpecGetRequestInterface {
  * 接口标识：pdd.goods.spec.get
  * 接口使用场景：获取商品规格信息
  **/
-
 export interface PddGoodsSpecGetResponseInterface {
   /**
    * @description: response
@@ -36,7 +34,6 @@ export interface PddGoodsSpecGetResponseInterface {
  * @default
  * @example
  **/
-
 export interface PddGoodsSpecGetGoodsSpecGetResponseResponseInterface {
   /**
    * @description: 规格列表对象
@@ -52,7 +49,6 @@ export interface PddGoodsSpecGetGoodsSpecGetResponseResponseInterface {
  * @default
  * @example
  **/
-
 export interface PddGoodsSpecGetGoodsSpecGetResponseGoodsSpecListResponseInterface {
   /**
    * @description: 规格所属的叶子类目ID

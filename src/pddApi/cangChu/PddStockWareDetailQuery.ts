@@ -5,7 +5,6 @@ export const PDD_STOCK_WARE_DETAIL_QUERY = 'PDD_STOCK_WARE_DETAIL_QUERY';
  * 接口标识：pdd.stock.ware.detail.query
  * 接口使用场景：家电分仓库存-查看货品详情
  **/
-
 export interface PddStockWareDetailQueryRequestInterface {
   /**
    * @description: 货品id
@@ -20,7 +19,6 @@ export interface PddStockWareDetailQueryRequestInterface {
  * 接口标识：pdd.stock.ware.detail.query
  * 接口使用场景：家电分仓库存-查看货品详情
  **/
-
 export interface PddStockWareDetailQueryResponseInterface {
   /**
    * @description: response
@@ -36,7 +34,6 @@ export interface PddStockWareDetailQueryResponseInterface {
  * @default
  * @example
  **/
-
 export interface PddStockWareDetailQueryOpenApiResponseResponseInterface {
   /**
    * @description: 货品id
@@ -200,7 +197,6 @@ export interface PddStockWareDetailQueryOpenApiResponseResponseInterface {
  * @default
  * @example
  **/
-
 export interface PddStockWareDetailQueryOpenApiResponseWareInfosResponseInterface {
   /**
    * @description: 子货品编码
@@ -236,7 +232,6 @@ export interface PddStockWareDetailQueryOpenApiResponseWareInfosResponseInterfac
  * @default
  * @example
  **/
-
 export interface PddStockWareDetailQueryOpenApiResponseWareSkusResponseInterface {
   /**
    * @description: 商品id
@@ -287,7 +282,6 @@ export interface PddStockWareDetailQueryOpenApiResponseWareSkusResponseInterface
  * @default
  * @example
  **/
-
 export interface PddStockWareDetailQueryOpenApiResponseWareSkusSpecsResponseInterface {
   /**
    * @description: 规格id

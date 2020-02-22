@@ -5,7 +5,6 @@ export const PDD_AD_KEYWORD_DAILY_REPORT = 'PDD_AD_KEYWORD_DAILY_REPORT';
  * 接口标识：pdd.ad.keyword.daily.report
  * 接口使用场景：关键词历史报表数据，支持一次性导出某单元下所有关键词的分天详情
  **/
-
 export interface PddAdKeywordDailyReportRequestInterface {
   /**
    * @description:
@@ -41,7 +40,6 @@ export interface PddAdKeywordDailyReportRequestInterface {
  * 接口标识：pdd.ad.keyword.daily.report
  * 接口使用场景：关键词历史报表数据，支持一次性导出某单元下所有关键词的分天详情
  **/
-
 export interface PddAdKeywordDailyReportResponseInterface {
   /**
    * @description: 结果excel表格链接

@@ -5,7 +5,6 @@ export const PDD_DDK_MALL_GOODS_LIST_GET = 'PDD_DDK_MALL_GOODS_LIST_GET';
  * 接口标识：pdd.ddk.mall.goods.list.get
  * 接口使用场景：查询店铺商品
  **/
-
 export interface PddDdkMallGoodsListGetRequestInterface {
   /**
    * @description: 店铺id
@@ -34,7 +33,6 @@ export interface PddDdkMallGoodsListGetRequestInterface {
  * 接口标识：pdd.ddk.mall.goods.list.get
  * 接口使用场景：查询店铺商品
  **/
-
 export interface PddDdkMallGoodsListGetResponseInterface {
   /**
    * @description: goods_info_list_response
@@ -50,7 +48,6 @@ export interface PddDdkMallGoodsListGetResponseInterface {
  * @default
  * @example
  **/
-
 export interface PddDdkMallGoodsListGetGoodsInfoListResponseResponseInterface {
   /**
    * @description: 返回商品总数
@@ -73,7 +70,6 @@ export interface PddDdkMallGoodsListGetGoodsInfoListResponseResponseInterface {
  * @default
  * @example
  **/
-
 export interface PddDdkMallGoodsListGetGoodsInfoListResponseGoodsListResponseInterface {
   /**
    * @description: 商品创建时间（UNIX时间戳）

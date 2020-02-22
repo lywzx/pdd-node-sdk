@@ -5,7 +5,6 @@ export const PDD_INVOICE_DETAIL_QUERY = 'PDD_INVOICE_DETAIL_QUERY';
  * 接口标识：pdd.invoice.detail.query
  * 接口使用场景：可以通过订单号查询已回传的发票信息
  **/
-
 export interface PddInvoiceDetailQueryRequestInterface {
   /**
    * @description: 订单号
@@ -27,7 +26,6 @@ export interface PddInvoiceDetailQueryRequestInterface {
  * 接口标识：pdd.invoice.detail.query
  * 接口使用场景：可以通过订单号查询已回传的发票信息
  **/
-
 export interface PddInvoiceDetailQueryResponseInterface {
   /**
    * @description: response
@@ -43,7 +41,6 @@ export interface PddInvoiceDetailQueryResponseInterface {
  * @default
  * @example
  **/
-
 export interface PddInvoiceDetailQueryInvoiceDetailQueryResponseResponseInterface {
   /**
    * @description: 拒绝原因

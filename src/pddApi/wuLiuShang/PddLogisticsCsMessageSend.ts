@@ -5,7 +5,6 @@ export const PDD_LOGISTICS_CS_MESSAGE_SEND = 'PDD_LOGISTICS_CS_MESSAGE_SEND';
  * 接口标识：pdd.logistics.cs.message.send
  * 接口使用场景：该接口用于客服给客户发消息，发消息的前提是有客服分配。
  **/
-
 export interface PddLogisticsCsMessageSendRequestInterface {
   /**
    * @description: pdd会话id
@@ -62,7 +61,6 @@ export interface PddLogisticsCsMessageSendRequestInterface {
  * 接口标识：pdd.logistics.cs.message.send
  * 接口使用场景：该接口用于客服给客户发消息，发消息的前提是有客服分配。
  **/
-
 export interface PddLogisticsCsMessageSendResponseInterface {
   /**
    * @description: response
@@ -78,7 +76,6 @@ export interface PddLogisticsCsMessageSendResponseInterface {
  * @default
  * @example
  **/
-
 export interface PddLogisticsCsMessageSendLogisticsCsMessageSendResponseResponseInterface {
   /**
    * @description: 是否成功

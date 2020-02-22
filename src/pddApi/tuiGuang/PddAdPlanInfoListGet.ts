@@ -5,7 +5,6 @@ export const PDD_AD_PLAN_INFO_LIST_GET = 'PDD_AD_PLAN_INFO_LIST_GET';
  * 接口标识：pdd.ad.plan.info.list.get
  * 接口使用场景：获取现有计划基础信息
  **/
-
 export interface PddAdPlanInfoListGetRequestInterface {
   /**
    * @description: 0--搜索广告,1--明星店铺,2--定向广告,3--首页Banner广告（目前只支持0，暂不支持1、2、3）
@@ -27,7 +26,6 @@ export interface PddAdPlanInfoListGetRequestInterface {
  * 接口标识：pdd.ad.plan.info.list.get
  * 接口使用场景：获取现有计划基础信息
  **/
-
 export interface PddAdPlanInfoListGetResponseInterface {
   /**
    * @description: 计划基础信息表
@@ -43,7 +41,6 @@ export interface PddAdPlanInfoListGetResponseInterface {
  * @default
  * @example
  **/
-
 export interface PddAdPlanInfoListGetAdPlanInfoListResponseResponseInterface {
   /**
    * @description: 计划基础信息对象
@@ -59,7 +56,6 @@ export interface PddAdPlanInfoListGetAdPlanInfoListResponseResponseInterface {
  * @default
  * @example
  **/
-
 export interface PddAdPlanInfoListGetAdPlanInfoListResponsePlanInfoListResponseInterface {
   /**
    * @description: 推广单元个数

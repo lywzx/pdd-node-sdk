@@ -5,7 +5,6 @@ export const PDD_AD_CREATIVE_QUERY = 'PDD_AD_CREATIVE_QUERY';
  * 接口标识：pdd.ad.creative.query
  * 接口使用场景：根据推广单元id获取现有创意列表（创意列表：创意id、创意信息、创意状态、创意实时报表数据）
  **/
-
 export interface PddAdCreativeQueryRequestInterface {
   /**
    * @description: 单元id
@@ -41,7 +40,6 @@ export interface PddAdCreativeQueryRequestInterface {
  * 接口标识：pdd.ad.creative.query
  * 接口使用场景：根据推广单元id获取现有创意列表（创意列表：创意id、创意信息、创意状态、创意实时报表数据）
  **/
-
 export interface PddAdCreativeQueryResponseInterface {
   /**
    * @description: List<Object>
@@ -57,7 +55,6 @@ export interface PddAdCreativeQueryResponseInterface {
  * @default
  * @example
  **/
-
 export interface PddAdCreativeQueryOpenApiResponseResponseInterface {
   /**
    * @description: 千次展现成本

@@ -5,7 +5,6 @@ export const PDD_GOODS_LOGISTICS_TEMPLATE_GET = 'PDD_GOODS_LOGISTICS_TEMPLATE_GE
  * 接口标识：pdd.goods.logistics.template.get
  * 接口使用场景：获取拼多多商家的物流运费模板信息
  **/
-
 export interface PddGoodsLogisticsTemplateGetRequestInterface {
   /**
    * @description: 默认返回运费模板的页数为1，最高为100页，注意：page与page_size必须传一个
@@ -27,7 +26,6 @@ export interface PddGoodsLogisticsTemplateGetRequestInterface {
  * 接口标识：pdd.goods.logistics.template.get
  * 接口使用场景：获取拼多多商家的物流运费模板信息
  **/
-
 export interface PddGoodsLogisticsTemplateGetResponseInterface {
   /**
    * @description: response
@@ -43,7 +41,6 @@ export interface PddGoodsLogisticsTemplateGetResponseInterface {
  * @default
  * @example
  **/
-
 export interface PddGoodsLogisticsTemplateGetGoodsLogisticsTemplateGetResponseResponseInterface {
   /**
    * @description: 返回的运费模板总数
@@ -66,7 +63,6 @@ export interface PddGoodsLogisticsTemplateGetGoodsLogisticsTemplateGetResponseRe
  * @default
  * @example
  **/
-
 export interface PddGoodsLogisticsTemplateGetGoodsLogisticsTemplateGetResponseLogisticsTemplateListResponseInterface {
   /**
    * @description: 发货地省份id
@@ -139,7 +135,6 @@ export interface PddGoodsLogisticsTemplateGetGoodsLogisticsTemplateGetResponseLo
  * @default
  * @example
  **/
-
 export interface PddGoodsLogisticsTemplateGetGoodsLogisticsTemplateGetResponseLogisticsTemplateListCostTemplateListResponseInterface {
   /**
    * @description: 不包邮的区域
@@ -211,7 +206,6 @@ export interface PddGoodsLogisticsTemplateGetGoodsLogisticsTemplateGetResponseLo
  * @default
  * @example
  **/
-
 export interface PddGoodsLogisticsTemplateGetGoodsLogisticsTemplateGetResponseLogisticsTemplateListCostTemplateListCostProvinceListResponseInterface {
   /**
    * @description: 省份
@@ -233,7 +227,6 @@ export interface PddGoodsLogisticsTemplateGetGoodsLogisticsTemplateGetResponseLo
  * @default
  * @example
  **/
-
 export interface PddGoodsLogisticsTemplateGetGoodsLogisticsTemplateGetResponseLogisticsTemplateListFreeProvinceListResponseInterface {
   /**
    * @description: 省份id

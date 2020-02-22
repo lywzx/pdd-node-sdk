@@ -5,7 +5,6 @@ export const PDD_AD_BID_QUERY_PROFILE = 'PDD_AD_BID_QUERY_PROFILE';
  * 接口标识：pdd.ad.bid.query.profile
  * 接口使用场景：用户数量预估，兴趣点查询等信息 （单元创建定向时，可先查询数量预估及兴趣点信息）
  **/
-
 export interface PddAdBidQueryProfileRequestInterface {
   /**
    * @description: 推广类型  2-展示推广
@@ -27,7 +26,6 @@ export interface PddAdBidQueryProfileRequestInterface {
  * 接口标识：pdd.ad.bid.query.profile
  * 接口使用场景：用户数量预估，兴趣点查询等信息 （单元创建定向时，可先查询数量预估及兴趣点信息）
  **/
-
 export interface PddAdBidQueryProfileResponseInterface {
   /**
    * @description: 开平返回
@@ -43,7 +41,6 @@ export interface PddAdBidQueryProfileResponseInterface {
  * @default
  * @example
  **/
-
 export interface PddAdBidQueryProfileOpenApiResponseResponseInterface {
   /**
    * @description: 兴趣点信息
@@ -66,7 +63,6 @@ export interface PddAdBidQueryProfileOpenApiResponseResponseInterface {
  * @default
  * @example
  **/
-
 export interface PddAdBidQueryProfileOpenApiResponseFeaturesResponseInterface {
   /**
    * @description: 兴趣点名称

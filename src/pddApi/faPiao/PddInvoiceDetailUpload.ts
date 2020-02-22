@@ -5,7 +5,6 @@ export const PDD_INVOICE_DETAIL_UPLOAD = 'PDD_INVOICE_DETAIL_UPLOAD';
  * 接口标识：pdd.invoice.detail.upload
  * 接口使用场景：第三方ERP在外部开票系统开完发票之后可以调用此接口回传开票结果
  **/
-
 export interface PddInvoiceDetailUploadRequestInterface {
   /**
    * @description: 发票抬头
@@ -146,7 +145,6 @@ export interface PddInvoiceDetailUploadRequestInterface {
  * 接口标识：pdd.invoice.detail.upload
  * 接口使用场景：第三方ERP在外部开票系统开完发票之后可以调用此接口回传开票结果
  **/
-
 export interface PddInvoiceDetailUploadResponseInterface {
   /**
    * @description: response
@@ -162,7 +160,6 @@ export interface PddInvoiceDetailUploadResponseInterface {
  * @default
  * @example
  **/
-
 export interface PddInvoiceDetailUploadInvoiceDetailUploadResponseResponseInterface {
   /**
    * @description: 发票流水号

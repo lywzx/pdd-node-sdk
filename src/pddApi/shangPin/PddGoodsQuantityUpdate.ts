@@ -5,7 +5,6 @@ export const PDD_GOODS_QUANTITY_UPDATE = 'PDD_GOODS_QUANTITY_UPDATE';
  * 接口标识：pdd.goods.quantity.update
  * 接口使用场景：修改商品sku库存，在资源位上的商品不能减少库存
  **/
-
 export interface PddGoodsQuantityUpdateRequestInterface {
   /**
    * @description: 商品id
@@ -48,7 +47,6 @@ export interface PddGoodsQuantityUpdateRequestInterface {
  * 接口标识：pdd.goods.quantity.update
  * 接口使用场景：修改商品sku库存，在资源位上的商品不能减少库存
  **/
-
 export interface PddGoodsQuantityUpdateResponseInterface {
   /**
    * @description: response
@@ -64,7 +62,6 @@ export interface PddGoodsQuantityUpdateResponseInterface {
  * @default
  * @example
  **/
-
 export interface PddGoodsQuantityUpdateGoodsQuantityUpdateResponseResponseInterface {
   /**
    * @description: true

@@ -5,7 +5,6 @@ export const PDD_MALL_TICKET_LIST = 'PDD_MALL_TICKET_LIST';
  * 接口标识：pdd.mall.ticket.list
  * 接口使用场景：商家工单列表查询接口
  **/
-
 export interface PddMallTicketListRequestInterface {
   /**
    * @description: 结束时间戳(格式:秒)
@@ -48,7 +47,6 @@ export interface PddMallTicketListRequestInterface {
  * 接口标识：pdd.mall.ticket.list
  * 接口使用场景：商家工单列表查询接口
  **/
-
 export interface PddMallTicketListResponseInterface {
   /**
    * @description: respone
@@ -64,7 +62,6 @@ export interface PddMallTicketListResponseInterface {
  * @default
  * @example
  **/
-
 export interface PddMallTicketListMallTicketListResponseResponseInterface {
   /**
    * @description: list
@@ -87,7 +84,6 @@ export interface PddMallTicketListMallTicketListResponseResponseInterface {
  * @default
  * @example
  **/
-
 export interface PddMallTicketListMallTicketListResponseListResponseInterface {
   /**
    * @description: 创建时间(秒)

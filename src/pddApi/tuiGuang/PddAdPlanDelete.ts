@@ -5,7 +5,6 @@ export const PDD_AD_PLAN_DELETE = 'PDD_AD_PLAN_DELETE';
  * 接口标识：pdd.ad.plan.delete
  * 接口使用场景：删除推广计划，删除计划前要将单元全部删除
  **/
-
 export interface PddAdPlanDeleteRequestInterface {
   /**
    * @description: 0--搜索广告,1--明星店铺,2--定向广告,3--首页Banner广告（目前只支持0，暂不支持1、2、3）
@@ -27,7 +26,6 @@ export interface PddAdPlanDeleteRequestInterface {
  * 接口标识：pdd.ad.plan.delete
  * 接口使用场景：删除推广计划，删除计划前要将单元全部删除
  **/
-
 export interface PddAdPlanDeleteResponseInterface {
   /**
    * @description: 返回response
@@ -43,7 +41,6 @@ export interface PddAdPlanDeleteResponseInterface {
  * @default
  * @example
  **/
-
 export interface PddAdPlanDeleteAdPlanDeleteResponseResponseInterface {
   /**
    * @description: 是否成功

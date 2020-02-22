@@ -5,7 +5,6 @@ export const PDD_AD_HISTORY_RT_UNIT_REPORT_GET = 'PDD_AD_HISTORY_RT_UNIT_REPORT_
  * 接口标识：pdd.ad.history.rt.unit.report.get
  * 接口使用场景：推广单元实时报表数据
  **/
-
 export interface PddAdHistoryRtUnitReportGetRequestInterface {
   /**
    * @description: 0--搜索广告,1--明星店铺,2--定向广告,3--首页Banner广告（目前只支持0，暂不支持1、2、3）
@@ -27,7 +26,6 @@ export interface PddAdHistoryRtUnitReportGetRequestInterface {
  * 接口标识：pdd.ad.history.rt.unit.report.get
  * 接口使用场景：推广单元实时报表数据
  **/
-
 export interface PddAdHistoryRtUnitReportGetResponseInterface {
   /**
    * @description: 返回response
@@ -43,7 +41,6 @@ export interface PddAdHistoryRtUnitReportGetResponseInterface {
  * @default
  * @example
  **/
-
 export interface PddAdHistoryRtUnitReportGetAdUnitRealTimeReportResponseResponseInterface {
   /**
    * @description: 报表对象列表
@@ -59,7 +56,6 @@ export interface PddAdHistoryRtUnitReportGetAdUnitRealTimeReportResponseResponse
  * @default
  * @example
  **/
-
 export interface PddAdHistoryRtUnitReportGetAdUnitRealTimeReportResponseUnitRealTimeReportListResponseInterface {
   /**
    * @description: 单元状态。1表示推广中，2表示手动暂停，3表示商品售罄，4表示商品下架，5表示限制推广，6表示已删除，7表示审核中，8表示无推广中创意，9表示审核驳回，10表示品牌词重审驳回

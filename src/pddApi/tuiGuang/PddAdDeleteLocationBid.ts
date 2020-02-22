@@ -5,7 +5,6 @@ export const PDD_AD_DELETE_LOCATION_BID = 'PDD_AD_DELETE_LOCATION_BID';
  * 接口标识：pdd.ad.delete.location.bid
  * 接口使用场景：推广单元取消资源位
  **/
-
 export interface PddAdDeleteLocationBidRequestInterface {
   /**
    * @description: 推广类型  2-展示推广
@@ -34,7 +33,6 @@ export interface PddAdDeleteLocationBidRequestInterface {
  * 接口标识：pdd.ad.delete.location.bid
  * 接口使用场景：推广单元取消资源位
  **/
-
 export interface PddAdDeleteLocationBidResponseInterface {
   /**
    * @description: 开平返回
@@ -50,7 +48,6 @@ export interface PddAdDeleteLocationBidResponseInterface {
  * @default
  * @example
  **/
-
 export interface PddAdDeleteLocationBidOpenApiResponseResponseInterface {
   /**
    * @description: 执行标识， true 成功

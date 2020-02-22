@@ -5,7 +5,6 @@ export const PDD_VIRTUAL_MOBILE_CHARGE_NOTIFY = 'PDD_VIRTUAL_MOBILE_CHARGE_NOTIF
  * 接口标识：pdd.virtual.mobile.charge.notify
  * 接口使用场景：虚拟类目发货的接口【仅供话费/流量直冲商家自研对接进行话费流量发货使用】
  **/
-
 export interface PddVirtualMobileChargeNotifyRequestInterface {
   /**
    * @description: 直充附加信息对象数组
@@ -42,7 +41,6 @@ export interface PddVirtualMobileChargeNotifyRequestInterface {
  * @default
  * @example
  **/
-
 export interface PddVirtualMobileChargeNotifyChargeCertiRequestInterface {
   /**
    * @description: 直充充值金额（单位：分）
@@ -99,7 +97,6 @@ export interface PddVirtualMobileChargeNotifyChargeCertiRequestInterface {
  * 接口标识：pdd.virtual.mobile.charge.notify
  * 接口使用场景：虚拟类目发货的接口【仅供话费/流量直冲商家自研对接进行话费流量发货使用】
  **/
-
 export interface PddVirtualMobileChargeNotifyResponseInterface {
   /**
    * @description: 虚拟充值回调通知响应对象
@@ -115,7 +112,6 @@ export interface PddVirtualMobileChargeNotifyResponseInterface {
  * @default
  * @example
  **/
-
 export interface PddVirtualMobileChargeNotifyMobileChargeNotifyResponseResponseInterface {
   /**
    * @description: 回调通知结果，true-成功，false-失败

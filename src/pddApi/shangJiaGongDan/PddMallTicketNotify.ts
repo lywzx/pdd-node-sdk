@@ -5,7 +5,6 @@ export const PDD_MALL_TICKET_NOTIFY = 'PDD_MALL_TICKET_NOTIFY';
  * 接口标识：pdd.mall.ticket.notify
  * 接口使用场景：商家工单处理结果回调接口
  **/
-
 export interface PddMallTicketNotifyRequestInterface {
   /**
    * @description: 回复内容
@@ -34,7 +33,6 @@ export interface PddMallTicketNotifyRequestInterface {
  * 接口标识：pdd.mall.ticket.notify
  * 接口使用场景：商家工单处理结果回调接口
  **/
-
 export interface PddMallTicketNotifyResponseInterface {
   /**
    * @description:
@@ -50,7 +48,6 @@ export interface PddMallTicketNotifyResponseInterface {
  * @default
  * @example
  **/
-
 export interface PddMallTicketNotifyMallTicketNotifyResponeResponseInterface {
   /**
    * @description:

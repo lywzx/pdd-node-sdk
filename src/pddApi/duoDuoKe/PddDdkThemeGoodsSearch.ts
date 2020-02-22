@@ -5,7 +5,6 @@ export const PDD_DDK_THEME_GOODS_SEARCH = 'PDD_DDK_THEME_GOODS_SEARCH';
  * 接口标识：pdd.ddk.theme.goods.search
  * 接口使用场景：多多进宝主题商品查询
  **/
-
 export interface PddDdkThemeGoodsSearchRequestInterface {
   /**
    * @description: 主题ID
@@ -20,7 +19,6 @@ export interface PddDdkThemeGoodsSearchRequestInterface {
  * 接口标识：pdd.ddk.theme.goods.search
  * 接口使用场景：多多进宝主题商品查询
  **/
-
 export interface PddDdkThemeGoodsSearchResponseInterface {
   /**
    * @description: 主题列表返回对象
@@ -36,7 +34,6 @@ export interface PddDdkThemeGoodsSearchResponseInterface {
  * @default
  * @example
  **/
-
 export interface PddDdkThemeGoodsSearchThemeListGetResponseResponseInterface {
   /**
    * @description: 返回商品总数
@@ -59,7 +56,6 @@ export interface PddDdkThemeGoodsSearchThemeListGetResponseResponseInterface {
  * @default
  * @example
  **/
-
 export interface PddDdkThemeGoodsSearchThemeListGetResponseGoodsListResponseInterface {
   /**
    * @description: 商品编码

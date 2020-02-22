@@ -5,7 +5,6 @@ export const PDD_MALL_INFO_STORE_GET = 'PDD_MALL_INFO_STORE_GET';
  * 接口标识：pdd.mall.info.store.get
  * 接口使用场景：开放平台根据条件查询门店信息
  **/
-
 export interface PddMallInfoStoreGetRequestInterface {
   /**
    * @description: 市
@@ -69,7 +68,6 @@ export interface PddMallInfoStoreGetRequestInterface {
  * 接口标识：pdd.mall.info.store.get
  * 接口使用场景：开放平台根据条件查询门店信息
  **/
-
 export interface PddMallInfoStoreGetResponseInterface {
   /**
    * @description: 返回结构体
@@ -85,7 +83,6 @@ export interface PddMallInfoStoreGetResponseInterface {
  * @default
  * @example
  **/
-
 export interface PddMallInfoStoreGetResResponseInterface {
   /**
    * @description: 返回结构体
@@ -101,7 +98,6 @@ export interface PddMallInfoStoreGetResResponseInterface {
  * @default
  * @example
  **/
-
 export interface PddMallInfoStoreGetResMallStoreVOListResponseInterface {
   /**
    * @description: 审核状态

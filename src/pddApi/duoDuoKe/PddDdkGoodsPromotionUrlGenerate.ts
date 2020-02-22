@@ -5,7 +5,6 @@ export const PDD_DDK_GOODS_PROMOTION_URL_GENERATE = 'PDD_DDK_GOODS_PROMOTION_URL
  * 接口标识：pdd.ddk.goods.promotion.url.generate
  * 接口使用场景：生成普通商品推广链接
  **/
-
 export interface PddDdkGoodsPromotionUrlGenerateRequestInterface {
   /**
    * @description: 推广位ID
@@ -104,7 +103,6 @@ export interface PddDdkGoodsPromotionUrlGenerateRequestInterface {
  * 接口标识：pdd.ddk.goods.promotion.url.generate
  * 接口使用场景：生成普通商品推广链接
  **/
-
 export interface PddDdkGoodsPromotionUrlGenerateResponseInterface {
   /**
    * @description: response
@@ -120,7 +118,6 @@ export interface PddDdkGoodsPromotionUrlGenerateResponseInterface {
  * @default
  * @example
  **/
-
 export interface PddDdkGoodsPromotionUrlGenerateGoodsPromotionUrlGenerateResponseResponseInterface {
   /**
    * @description: 多多进宝推广链接对象列表
@@ -136,7 +133,6 @@ export interface PddDdkGoodsPromotionUrlGenerateGoodsPromotionUrlGenerateRespons
  * @default
  * @example
  **/
-
 export interface PddDdkGoodsPromotionUrlGenerateGoodsPromotionUrlGenerateResponseGoodsPromotionUrlListResponseInterface {
   /**
    * @description: 唤起微信app推广短链接
@@ -223,7 +219,6 @@ export interface PddDdkGoodsPromotionUrlGenerateGoodsPromotionUrlGenerateRespons
  * @default
  * @example
  **/
-
 export interface PddDdkGoodsPromotionUrlGenerateGoodsPromotionUrlGenerateResponseGoodsPromotionUrlListWeAppInfoResponseInterface {
   /**
    * @description: 小程序图片
@@ -287,7 +282,6 @@ export interface PddDdkGoodsPromotionUrlGenerateGoodsPromotionUrlGenerateRespons
  * @default
  * @example
  **/
-
 export interface PddDdkGoodsPromotionUrlGenerateGoodsPromotionUrlGenerateResponseGoodsPromotionUrlListQqAppInfoResponseInterface {
   /**
    * @description: 拼多多小程序id

@@ -5,7 +5,6 @@ export const PDD_ONE_EXPRESS_COST_TEMPLATE = 'PDD_ONE_EXPRESS_COST_TEMPLATE';
  * 接口标识：pdd.one.express.cost.template
  * 接口使用场景：根据id获取拼多多商家的物流运费模板信息
  **/
-
 export interface PddOneExpressCostTemplateRequestInterface {
   /**
    * @description: 运费模板id
@@ -20,7 +19,6 @@ export interface PddOneExpressCostTemplateRequestInterface {
  * 接口标识：pdd.one.express.cost.template
  * 接口使用场景：根据id获取拼多多商家的物流运费模板信息
  **/
-
 export interface PddOneExpressCostTemplateResponseInterface {
   /**
    * @description: response
@@ -36,7 +34,6 @@ export interface PddOneExpressCostTemplateResponseInterface {
  * @default
  * @example
  **/
-
 export interface PddOneExpressCostTemplateOneExpressCostTemplateResponseResponseInterface {
   /**
    * @description: 发货地省份ID
@@ -131,7 +128,6 @@ export interface PddOneExpressCostTemplateOneExpressCostTemplateResponseResponse
  * @default
  * @example
  **/
-
 export interface PddOneExpressCostTemplateOneExpressCostTemplateResponseCostTemplateListResponseInterface {
   /**
    * @description: 不包邮的区域
@@ -203,7 +199,6 @@ export interface PddOneExpressCostTemplateOneExpressCostTemplateResponseCostTemp
  * @default
  * @example
  **/
-
 export interface PddOneExpressCostTemplateOneExpressCostTemplateResponseCostTemplateListCostProvinceListResponseInterface {
   /**
    * @description: 省份
@@ -225,7 +220,6 @@ export interface PddOneExpressCostTemplateOneExpressCostTemplateResponseCostTemp
  * @default
  * @example
  **/
-
 export interface PddOneExpressCostTemplateOneExpressCostTemplateResponseFreeDeliverHouseAreaListResponseInterface {
   /**
    * @description: 包邮送货上门的城区ID
@@ -275,7 +269,6 @@ export interface PddOneExpressCostTemplateOneExpressCostTemplateResponseFreeDeli
  * @default
  * @example
  **/
-
 export interface PddOneExpressCostTemplateOneExpressCostTemplateResponseFreeProvinceListResponseInterface {
   /**
    * @description: 省份ID

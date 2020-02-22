@@ -5,7 +5,6 @@ export const PDD_VOUCHER_OTA_CARD_VERIFICATION = 'PDD_VOUCHER_OTA_CARD_VERIFICAT
  * 接口标识：pdd.voucher.ota.card.verification
  * 接口使用场景：平台生成卡密类卡券核销
  **/
-
 export interface PddVoucherOtaCardVerificationRequestInterface {
   /**
    * @description: 待核销的券码
@@ -34,7 +33,6 @@ export interface PddVoucherOtaCardVerificationRequestInterface {
  * 接口标识：pdd.voucher.ota.card.verification
  * 接口使用场景：平台生成卡密类卡券核销
  **/
-
 export interface PddVoucherOtaCardVerificationResponseInterface {
   /**
    * @description:
@@ -50,7 +48,6 @@ export interface PddVoucherOtaCardVerificationResponseInterface {
  * @default
  * @example
  **/
-
 export interface PddVoucherOtaCardVerificationVoucherOtaCardVerificationResponseResponseInterface {
   /**
    * @description:
@@ -87,7 +84,6 @@ export interface PddVoucherOtaCardVerificationVoucherOtaCardVerificationResponse
  * @default
  * @example
  **/
-
 export interface PddVoucherOtaCardVerificationVoucherOtaCardVerificationResponseResultResponseInterface {
   /**
    * @description: 券码

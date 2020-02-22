@@ -5,7 +5,6 @@ export const PDD_LOGISTICS_TICKET_GET = 'PDD_LOGISTICS_TICKET_GET';
  * 接口标识：pdd.logistics.ticket.get
  * 接口使用场景：快递公司工单查询
  **/
-
 export interface PddLogisticsTicketGetRequestInterface {
   /**
    * @description: 必填，最后更新时间开始时间的时间戳，指格林威治时间 1970 年 01 月 01 日 00 时 00 分 00 秒(北京时间 1970 年 01 月 01 日 08 时 00 分 00 秒)起至现在的总秒数。示例：1523762012。
@@ -41,7 +40,6 @@ export interface PddLogisticsTicketGetRequestInterface {
  * 接口标识：pdd.logistics.ticket.get
  * 接口使用场景：快递公司工单查询
  **/
-
 export interface PddLogisticsTicketGetResponseInterface {
   /**
    * @description: response
@@ -57,7 +55,6 @@ export interface PddLogisticsTicketGetResponseInterface {
  * @default
  * @example
  **/
-
 export interface PddLogisticsTicketGetLogisticsTicketGetResponseResponseInterface {
   /**
    * @description: 工单列表
@@ -80,7 +77,6 @@ export interface PddLogisticsTicketGetLogisticsTicketGetResponseResponseInterfac
  * @default
  * @example
  **/
-
 export interface PddLogisticsTicketGetLogisticsTicketGetResponseLogisticsTicketListResponseInterface {
   /**
    * @description: 附件列表

@@ -5,7 +5,6 @@ export const PDD_SMS_SELL_DELETING = 'PDD_SMS_SELL_DELETING';
  * 接口标识：pdd.sms.sell.deleting
  * 接口使用场景：删除任务
  **/
-
 export interface PddSmsSellDeletingRequestInterface {
   /**
    * @description: 任务id
@@ -20,7 +19,6 @@ export interface PddSmsSellDeletingRequestInterface {
  * 接口标识：pdd.sms.sell.deleting
  * 接口使用场景：删除任务
  **/
-
 export interface PddSmsSellDeletingResponseInterface {
   /**
    * @description: response
@@ -36,7 +34,6 @@ export interface PddSmsSellDeletingResponseInterface {
  * @default
  * @example
  **/
-
 export interface PddSmsSellDeletingSmsSellDeletingResponseResponseInterface {
   /**
    * @description: 是否成功

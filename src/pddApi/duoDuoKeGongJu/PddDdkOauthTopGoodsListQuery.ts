@@ -5,7 +5,6 @@ export const PDD_DDK_OAUTH_TOP_GOODS_LIST_QUERY = 'PDD_DDK_OAUTH_TOP_GOODS_LIST_
  * 接口标识：pdd.ddk.oauth.top.goods.list.query
  * 接口使用场景：获取热销商品列表
  **/
-
 export interface PddDdkOauthTopGoodsListQueryRequestInterface {
   /**
    * @description: 推广位id
@@ -41,7 +40,6 @@ export interface PddDdkOauthTopGoodsListQueryRequestInterface {
  * 接口标识：pdd.ddk.oauth.top.goods.list.query
  * 接口使用场景：获取热销商品列表
  **/
-
 export interface PddDdkOauthTopGoodsListQueryResponseInterface {
   /**
    * @description: response
@@ -57,7 +55,6 @@ export interface PddDdkOauthTopGoodsListQueryResponseInterface {
  * @default
  * @example
  **/
-
 export interface PddDdkOauthTopGoodsListQueryTopGoodsListGetResponseResponseInterface {
   /**
    * @description: 商品列表
@@ -87,7 +84,6 @@ export interface PddDdkOauthTopGoodsListQueryTopGoodsListGetResponseResponseInte
  * @default
  * @example
  **/
-
 export interface PddDdkOauthTopGoodsListQueryTopGoodsListGetResponseListResponseInterface {
   /**
    * @description: 商品id

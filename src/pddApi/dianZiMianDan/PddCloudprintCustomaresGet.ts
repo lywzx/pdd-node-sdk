@@ -5,7 +5,6 @@ export const PDD_CLOUDPRINT_CUSTOMARES_GET = 'PDD_CLOUDPRINT_CUSTOMARES_GET';
  * 接口标识：pdd.cloudprint.customares.get
  * 接口使用场景：供isv使用，获取商家的自定义区的模板信息
  **/
-
 export interface PddCloudprintCustomaresGetRequestInterface {
   /**
    * @description: 用户使用的模板id，即pdd.cloudprint.stdtemplates.get接口中的standard_template_id
@@ -20,7 +19,6 @@ export interface PddCloudprintCustomaresGetRequestInterface {
  * 接口标识：pdd.cloudprint.customares.get
  * 接口使用场景：供isv使用，获取商家的自定义区的模板信息
  **/
-
 export interface PddCloudprintCustomaresGetResponseInterface {
   /**
    * @description: response
@@ -36,7 +34,6 @@ export interface PddCloudprintCustomaresGetResponseInterface {
  * @default
  * @example
  **/
-
 export interface PddCloudprintCustomaresGetPddCloudprintCustomaresGetResponseResponseInterface {
   /**
    * @description: result
@@ -52,7 +49,6 @@ export interface PddCloudprintCustomaresGetPddCloudprintCustomaresGetResponseRes
  * @default
  * @example
  **/
-
 export interface PddCloudprintCustomaresGetPddCloudprintCustomaresGetResponseResultResponseInterface {
   /**
    * @description:
@@ -68,7 +64,6 @@ export interface PddCloudprintCustomaresGetPddCloudprintCustomaresGetResponseRes
  * @default
  * @example
  **/
-
 export interface PddCloudprintCustomaresGetPddCloudprintCustomaresGetResponseResultDatasResponseInterface {
   /**
    * @description:
@@ -105,7 +100,6 @@ export interface PddCloudprintCustomaresGetPddCloudprintCustomaresGetResponseRes
  * @default
  * @example
  **/
-
 export interface PddCloudprintCustomaresGetPddCloudprintCustomaresGetResponseResultDatasKeysResponseInterface {
   /**
    * @description:

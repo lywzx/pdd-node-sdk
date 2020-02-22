@@ -5,7 +5,6 @@ export const PDD_LOGISTICS_ONLINE_CREATE = 'PDD_LOGISTICS_ONLINE_CREATE';
  * 接口标识：pdd.logistics.online.create
  * 接口使用场景：在线下单订单下发
  **/
-
 export interface PddLogisticsOnlineCreateRequestInterface {
   /**
    * @description: 快递单号
@@ -69,7 +68,6 @@ export interface PddLogisticsOnlineCreateRequestInterface {
  * 接口标识：pdd.logistics.online.create
  * 接口使用场景：在线下单订单下发
  **/
-
 export interface PddLogisticsOnlineCreateResponseInterface {
   /**
    * @description: response
@@ -85,7 +83,6 @@ export interface PddLogisticsOnlineCreateResponseInterface {
  * @default
  * @example
  **/
-
 export interface PddLogisticsOnlineCreateLogisticsOnlineCreateResponseResponseInterface {
   /**
    * @description: 是否成功

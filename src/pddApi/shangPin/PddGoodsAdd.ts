@@ -5,7 +5,6 @@ export const PDD_GOODS_ADD = 'PDD_GOODS_ADD';
  * 接口标识：pdd.goods.add
  * 接口使用场景：单个商品发布，需要配合pdd.goods.image.upload上传主图及商品详情图片，每个店铺一天可调用1200次，3次/秒。
  **/
-
 export interface PddGoodsAddRequestInterface {
   /**
    * @description: 坏果包赔
@@ -350,7 +349,6 @@ export interface PddGoodsAddRequestInterface {
  * @default
  * @example
  **/
-
 export interface PddGoodsAddCarouselVideoRequestInterface {
   /**
    * @description: 商品视频id
@@ -372,7 +370,6 @@ export interface PddGoodsAddCarouselVideoRequestInterface {
  * @default
  * @example
  **/
-
 export interface PddGoodsAddElecGoodsAttributesRequestInterface {
   /**
    * @description: 开始时间（timeType=1时必填表示核销的开始时间）（精确到毫秒）
@@ -408,7 +405,6 @@ export interface PddGoodsAddElecGoodsAttributesRequestInterface {
  * @default
  * @example
  **/
-
 export interface PddGoodsAddGoodsPropertiesRequestInterface {
   /**
    * @description: 组id，非销售属性不用传
@@ -485,7 +481,6 @@ export interface PddGoodsAddGoodsPropertiesRequestInterface {
  * @default
  * @example
  **/
-
 export interface PddGoodsAddOverseaGoodsRequestInterface {
   /**
    * @description: 保税仓唯一标识
@@ -543,7 +538,6 @@ export interface PddGoodsAddOverseaGoodsRequestInterface {
  * @default
  * @example
  **/
-
 export interface PddGoodsAddSkuListRequestInterface {
   /**
    * @description: sku上架状态，0-已下架，1-上架中
@@ -629,7 +623,6 @@ export interface PddGoodsAddSkuListRequestInterface {
  * @default
  * @example
  **/
-
 export interface PddGoodsAddSkuListOverseaSkuRequestInterface {
   /**
    * @description: 计量单位编码，从接口pdd.gooods.sku.measurement.list获取code
@@ -658,7 +651,6 @@ export interface PddGoodsAddSkuListOverseaSkuRequestInterface {
  * 接口标识：pdd.goods.add
  * 接口使用场景：单个商品发布，需要配合pdd.goods.image.upload上传主图及商品详情图片，每个店铺一天可调用1200次，3次/秒。
  **/
-
 export interface PddGoodsAddResponseInterface {
   /**
    * @description: response
@@ -674,7 +666,6 @@ export interface PddGoodsAddResponseInterface {
  * @default
  * @example
  **/
-
 export interface PddGoodsAddGoodsAddResponseResponseInterface {
   /**
    * @description: 上传商品的上传序列ID

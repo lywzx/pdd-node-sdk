@@ -5,7 +5,6 @@ export const PDD_INVOICE_APPLICATION_QUERY = 'PDD_INVOICE_APPLICATION_QUERY';
  * 接口标识：pdd.invoice.application.query
  * 接口使用场景：当消费者在拼多多平台申请开票之后，第三方ERP通过此接口获取开票申请信息
  **/
-
 export interface PddInvoiceApplicationQueryRequestInterface {
   /**
    * @description: 申请流水号
@@ -62,7 +61,6 @@ export interface PddInvoiceApplicationQueryRequestInterface {
  * 接口标识：pdd.invoice.application.query
  * 接口使用场景：当消费者在拼多多平台申请开票之后，第三方ERP通过此接口获取开票申请信息
  **/
-
 export interface PddInvoiceApplicationQueryResponseInterface {
   /**
    * @description: response
@@ -78,7 +76,6 @@ export interface PddInvoiceApplicationQueryResponseInterface {
  * @default
  * @example
  **/
-
 export interface PddInvoiceApplicationQueryInvoiceApplicationQueryResponseResponseInterface {
   /**
    * @description: 发票申请列表
@@ -94,7 +91,6 @@ export interface PddInvoiceApplicationQueryInvoiceApplicationQueryResponseRespon
  * @default
  * @example
  **/
-
 export interface PddInvoiceApplicationQueryInvoiceApplicationQueryResponseInvoiceApplicationListResponseInterface {
   /**
    * @description: 修改时间

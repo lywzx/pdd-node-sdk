@@ -5,7 +5,6 @@ export const PDD_SMS_VENDOR_COMPLAINT_CREATE = 'PDD_SMS_VENDOR_COMPLAINT_CREATE'
  * 接口标识：pdd.sms.vendor.complaint.create
  * 接口使用场景：短信供应商投诉号码上传
  **/
-
 export interface PddSmsVendorComplaintCreateRequestInterface {
   /**
    * @description: cmpp账号名
@@ -69,7 +68,6 @@ export interface PddSmsVendorComplaintCreateRequestInterface {
  * 接口标识：pdd.sms.vendor.complaint.create
  * 接口使用场景：短信供应商投诉号码上传
  **/
-
 export interface PddSmsVendorComplaintCreateResponseInterface {
   /**
    * @description:
@@ -85,7 +83,6 @@ export interface PddSmsVendorComplaintCreateResponseInterface {
  * @default
  * @example
  **/
-
 export interface PddSmsVendorComplaintCreateResponseResponseInterface {
   /**
    * @description:

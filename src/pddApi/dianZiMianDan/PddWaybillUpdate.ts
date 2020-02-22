@@ -5,7 +5,6 @@ export const PDD_WAYBILL_UPDATE = 'PDD_WAYBILL_UPDATE';
  * 接口标识：pdd.waybill.update
  * 接口使用场景：电子面单云打印更新接口
  **/
-
 export interface PddWaybillUpdateRequestInterface {
   /**
    * @description: param_waybill_cloud_print_update_request
@@ -21,7 +20,6 @@ export interface PddWaybillUpdateRequestInterface {
  * @default
  * @example
  **/
-
 export interface PddWaybillUpdateParamWaybillCloudPrintUpdateRequestRequestInterface {
   /**
    * @description: 请求表示id
@@ -81,7 +79,6 @@ export interface PddWaybillUpdateParamWaybillCloudPrintUpdateRequestRequestInter
  * @default
  * @example
  **/
-
 export interface PddWaybillUpdateParamWaybillCloudPrintUpdateRequestPackageInfoRequestInterface {
   /**
    * @description: 商品
@@ -111,7 +108,6 @@ export interface PddWaybillUpdateParamWaybillCloudPrintUpdateRequestPackageInfoR
  * @default
  * @example
  **/
-
 export interface PddWaybillUpdateParamWaybillCloudPrintUpdateRequestPackageInfoItemsRequestInterface {
   /**
    * @description: 数量
@@ -133,7 +129,6 @@ export interface PddWaybillUpdateParamWaybillCloudPrintUpdateRequestPackageInfoI
  * @default
  * @example
  **/
-
 export interface PddWaybillUpdateParamWaybillCloudPrintUpdateRequestRecipientRequestInterface {
   /**
    * @description: 地址
@@ -170,7 +165,6 @@ export interface PddWaybillUpdateParamWaybillCloudPrintUpdateRequestRecipientReq
  * @default
  * @example
  **/
-
 export interface PddWaybillUpdateParamWaybillCloudPrintUpdateRequestRecipientAddressRequestInterface {
   /**
    * @description: 城市
@@ -220,7 +214,6 @@ export interface PddWaybillUpdateParamWaybillCloudPrintUpdateRequestRecipientAdd
  * @default
  * @example
  **/
-
 export interface PddWaybillUpdateParamWaybillCloudPrintUpdateRequestSenderRequestInterface {
   /**
    * @description: 手机号码
@@ -249,7 +242,6 @@ export interface PddWaybillUpdateParamWaybillCloudPrintUpdateRequestSenderReques
  * 接口标识：pdd.waybill.update
  * 接口使用场景：电子面单云打印更新接口
  **/
-
 export interface PddWaybillUpdateResponseInterface {
   /**
    * @description: response
@@ -265,7 +257,6 @@ export interface PddWaybillUpdateResponseInterface {
  * @default
  * @example
  **/
-
 export interface PddWaybillUpdatePddWaybillUpdateResponseResponseInterface {
   /**
    * @description: 模板内容

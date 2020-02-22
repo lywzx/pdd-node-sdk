@@ -5,7 +5,6 @@ export const PDD_VOUCHER_APPOINTMENT_INFO_SEND = 'PDD_VOUCHER_APPOINTMENT_INFO_S
  * 接口标识：pdd.voucher.appointment.info.send
  * 接口使用场景：第三方ISV将消费者的预约提货信息同步给平台
  **/
-
 export interface PddVoucherAppointmentInfoSendRequestInterface {
   /**
    * @description: 订单号
@@ -49,7 +48,6 @@ export interface PddVoucherAppointmentInfoSendRequestInterface {
  * @default
  * @example
  **/
-
 export interface PddVoucherAppointmentInfoSendVoucherListRequestInterface {
   /**
    * @description: 卡券ID
@@ -71,7 +69,6 @@ export interface PddVoucherAppointmentInfoSendVoucherListRequestInterface {
  * 接口标识：pdd.voucher.appointment.info.send
  * 接口使用场景：第三方ISV将消费者的预约提货信息同步给平台
  **/
-
 export interface PddVoucherAppointmentInfoSendResponseInterface {
   /**
    * @description: voucher_appointment_info_send_response
@@ -87,7 +84,6 @@ export interface PddVoucherAppointmentInfoSendResponseInterface {
  * @default
  * @example
  **/
-
 export interface PddVoucherAppointmentInfoSendVoucherAppointmentInfoSendResponseResponseInterface {
   /**
    * @description: is_success

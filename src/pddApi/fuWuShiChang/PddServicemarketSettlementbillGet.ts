@@ -5,7 +5,6 @@ export const PDD_SERVICEMARKET_SETTLEMENTBILL_GET = 'PDD_SERVICEMARKET_SETTLEMEN
  * 接口标识：pdd.servicemarket.settlementbill.get
  * 接口使用场景：用于ISV查询自己名下的服务的月度结算明细
  **/
-
 export interface PddServicemarketSettlementbillGetRequestInterface {
   /**
    * @description: 分页页码，最大不能超过1000
@@ -41,7 +40,6 @@ export interface PddServicemarketSettlementbillGetRequestInterface {
  * 接口标识：pdd.servicemarket.settlementbill.get
  * 接口使用场景：用于ISV查询自己名下的服务的月度结算明细
  **/
-
 export interface PddServicemarketSettlementbillGetResponseInterface {
   /**
    * @description: response
@@ -57,7 +55,6 @@ export interface PddServicemarketSettlementbillGetResponseInterface {
  * @default
  * @example
  **/
-
 export interface PddServicemarketSettlementbillGetSettlementBillSearchResponseResponseInterface {
   /**
    * @description: 结算明细列表
@@ -80,7 +77,6 @@ export interface PddServicemarketSettlementbillGetSettlementBillSearchResponseRe
  * @default
  * @example
  **/
-
 export interface PddServicemarketSettlementbillGetSettlementBillSearchResponseDataResponseInterface {
   /**
    * @description: 服务订单号

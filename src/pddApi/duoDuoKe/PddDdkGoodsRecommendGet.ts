@@ -5,7 +5,6 @@ export const PDD_DDK_GOODS_RECOMMEND_GET = 'PDD_DDK_GOODS_RECOMMEND_GET';
  * 接口标识：pdd.ddk.goods.recommend.get
  * 接口使用场景：运营频道商品查询
  **/
-
 export interface PddDdkGoodsRecommendGetRequestInterface {
   /**
    * @description: 从多少位置开始请求；默认值 ： 0，offset需是limit的整数倍，仅支持整页翻页
@@ -48,7 +47,6 @@ export interface PddDdkGoodsRecommendGetRequestInterface {
  * 接口标识：pdd.ddk.goods.recommend.get
  * 接口使用场景：运营频道商品查询
  **/
-
 export interface PddDdkGoodsRecommendGetResponseInterface {
   /**
    * @description: goods_basic_detail_response
@@ -64,7 +62,6 @@ export interface PddDdkGoodsRecommendGetResponseInterface {
  * @default
  * @example
  **/
-
 export interface PddDdkGoodsRecommendGetGoodsBasicDetailResponseResponseInterface {
   /**
    * @description: total
@@ -94,7 +91,6 @@ export interface PddDdkGoodsRecommendGetGoodsBasicDetailResponseResponseInterfac
  * @default
  * @example
  **/
-
 export interface PddDdkGoodsRecommendGetGoodsBasicDetailResponseListResponseInterface {
   /**
    * @description: 二维码主图

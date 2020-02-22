@@ -5,7 +5,6 @@ export const PDD_MALL_INFO_GROUP_LIST_STORE_GET = 'PDD_MALL_INFO_GROUP_LIST_STOR
  * 接口标识：pdd.mall.info.group.list.store.get
  * 接口使用场景：查询门店组下门店
  **/
-
 export interface PddMallInfoGroupListStoreGetRequestInterface {
   /**
    * @description: 门店组ID
@@ -34,7 +33,6 @@ export interface PddMallInfoGroupListStoreGetRequestInterface {
  * 接口标识：pdd.mall.info.group.list.store.get
  * 接口使用场景：查询门店组下门店
  **/
-
 export interface PddMallInfoGroupListStoreGetResponseInterface {
   /**
    * @description:
@@ -50,7 +48,6 @@ export interface PddMallInfoGroupListStoreGetResponseInterface {
  * @default
  * @example
  **/
-
 export interface PddMallInfoGroupListStoreGetMallInfoGroupListStoreGetResponseResponseInterface {
   /**
    * @description: 门店列表
@@ -73,7 +70,6 @@ export interface PddMallInfoGroupListStoreGetMallInfoGroupListStoreGetResponseRe
  * @default
  * @example
  **/
-
 export interface PddMallInfoGroupListStoreGetMallInfoGroupListStoreGetResponseMallStoreFinalVoListResponseInterface {
   /**
    * @description: 门店经营状态

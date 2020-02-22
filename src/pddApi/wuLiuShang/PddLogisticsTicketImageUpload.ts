@@ -5,7 +5,6 @@ export const PDD_LOGISTICS_TICKET_IMAGE_UPLOAD = 'PDD_LOGISTICS_TICKET_IMAGE_UPL
  * 接口标识：pdd.logistics.ticket.image.upload
  * 接口使用场景：快递公司处理结果回调接口 附件图片url生成
  **/
-
 export interface PddLogisticsTicketImageUploadRequestInterface {
   /**
    * @description: 支持格式有：jpg/jpeg、png等图片格式，入参为图片的base64编码，最大支持1M
@@ -20,7 +19,6 @@ export interface PddLogisticsTicketImageUploadRequestInterface {
  * 接口标识：pdd.logistics.ticket.image.upload
  * 接口使用场景：快递公司处理结果回调接口 附件图片url生成
  **/
-
 export interface PddLogisticsTicketImageUploadResponseInterface {
   /**
    * @description: 返回response
@@ -36,7 +34,6 @@ export interface PddLogisticsTicketImageUploadResponseInterface {
  * @default
  * @example
  **/
-
 export interface PddLogisticsTicketImageUploadLogisticsTicketImageUploadResponseResponseInterface {
   /**
    * @description: 图片url

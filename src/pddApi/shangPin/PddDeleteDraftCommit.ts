@@ -5,7 +5,6 @@ export const PDD_DELETE_DRAFT_COMMIT = 'PDD_DELETE_DRAFT_COMMIT';
  * 接口标识：pdd.delete.draft.commit
  * 接口使用场景：删除草稿接口
  **/
-
 export interface PddDeleteDraftCommitRequestInterface {
   /**
    * @description: 草稿id
@@ -20,7 +19,6 @@ export interface PddDeleteDraftCommitRequestInterface {
  * 接口标识：pdd.delete.draft.commit
  * 接口使用场景：删除草稿接口
  **/
-
 export interface PddDeleteDraftCommitResponseInterface {
   /**
    * @description: 操作状态，true

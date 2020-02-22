@@ -5,7 +5,6 @@ export const PDD_STOCK_DEPOT_PRIORITY_LIST = 'PDD_STOCK_DEPOT_PRIORITY_LIST';
  * 接口标识：pdd.stock.depot.priority.list
  * 接口使用场景：获取仓库优先级列表
  **/
-
 export interface PddStockDepotPriorityListRequestInterface {
   /**
    * @description: 省id
@@ -55,7 +54,6 @@ export interface PddStockDepotPriorityListRequestInterface {
  * 接口标识：pdd.stock.depot.priority.list
  * 接口使用场景：获取仓库优先级列表
  **/
-
 export interface PddStockDepotPriorityListResponseInterface {
   /**
    * @description: 响应内容
@@ -71,7 +69,6 @@ export interface PddStockDepotPriorityListResponseInterface {
  * @default
  * @example
  **/
-
 export interface PddStockDepotPriorityListOpenApiResponseResponseInterface {
   /**
    * @description: 总数
@@ -94,7 +91,6 @@ export interface PddStockDepotPriorityListOpenApiResponseResponseInterface {
  * @default
  * @example
  **/
-
 export interface PddStockDepotPriorityListOpenApiResponseDepotListResponseInterface {
   /**
    * @description: 仓库id

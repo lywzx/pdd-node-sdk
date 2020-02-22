@@ -5,7 +5,6 @@ export const PDD_DDK_MERCHANT_LIST_GET = 'PDD_DDK_MERCHANT_LIST_GET';
  * 接口标识：pdd.ddk.merchant.list.get
  * 接口使用场景：多多客查店铺列表接口
  **/
-
 export interface PddDdkMerchantListGetRequestInterface {
   /**
    * @description: 商品类目ID，使用pdd.goods.cats.get接口获取
@@ -76,7 +75,6 @@ export interface PddDdkMerchantListGetRequestInterface {
  * 接口标识：pdd.ddk.merchant.list.get
  * 接口使用场景：多多客查店铺列表接口
  **/
-
 export interface PddDdkMerchantListGetResponseInterface {
   /**
    * @description: result
@@ -92,7 +90,6 @@ export interface PddDdkMerchantListGetResponseInterface {
  * @default
  * @example
  **/
-
 export interface PddDdkMerchantListGetMerchantListResponseResponseInterface {
   /**
    * @description: 店铺列表
@@ -115,7 +112,6 @@ export interface PddDdkMerchantListGetMerchantListResponseResponseInterface {
  * @default
  * @example
  **/
-
 export interface PddDdkMerchantListGetMerchantListResponseMallSearchInfoVoListResponseInterface {
   /**
    * @description: 商品类目列表
@@ -265,7 +261,6 @@ export interface PddDdkMerchantListGetMerchantListResponseMallSearchInfoVoListRe
  * @default
  * @example
  **/
-
 export interface PddDdkMerchantListGetMerchantListResponseMallSearchInfoVoListGoodsDetailVoListResponseInterface {
   /**
    * @description: 活动类型
@@ -651,7 +646,6 @@ export interface PddDdkMerchantListGetMerchantListResponseMallSearchInfoVoListGo
  * @default
  * @example
  **/
-
 export interface PddDdkMerchantListGetMerchantListResponseMallSearchInfoVoListMallCouponInfoListResponseInterface {
   /**
    * @description: 店铺券失效时间

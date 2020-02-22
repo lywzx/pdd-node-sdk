@@ -5,7 +5,6 @@ export const PDD_EXPRESS_DEPOT_INFO_GET = 'PDD_EXPRESS_DEPOT_INFO_GET';
  * 接口标识：pdd.express.depot.info.get
  * 接口使用场景：仓库详细信息
  **/
-
 export interface PddExpressDepotInfoGetRequestInterface {
   /**
    * @description: 仓库id
@@ -20,7 +19,6 @@ export interface PddExpressDepotInfoGetRequestInterface {
  * 接口标识：pdd.express.depot.info.get
  * 接口使用场景：仓库详细信息
  **/
-
 export interface PddExpressDepotInfoGetResponseInterface {
   /**
    * @description: 详细地址
@@ -94,11 +92,11 @@ export interface PddExpressDepotInfoGetResponseInterface {
 
   /**
    * @description: 其他仓库覆盖区域列表（外层key为省id；cover为该省份覆盖情况：1 半覆盖，2全覆盖；district为省中覆盖的地址：市id->区id列表）
-   * @type: MAP
+   * @type: PddExpressDepotInfoGetOtherRegionResponseInterface
    * @default:
    *
    **/
-  other_region: MAP;
+  other_region: PddExpressDepotInfoGetOtherRegionResponseInterface;
 
   /**
    * @description: 仓库地址（省编号）
@@ -109,11 +107,11 @@ export interface PddExpressDepotInfoGetResponseInterface {
 
   /**
    * @description: 该仓库覆盖区域列表（其他仓库覆盖区域列表(外层key为省id；cover为该省份覆盖情况：1 半覆盖，2全覆盖；district为省中覆盖的地址：市id->区id列表)）
-   * @type: MAP
+   * @type: PddExpressDepotInfoGetRegionResponseInterface
    * @default:
    *
    **/
-  region: MAP;
+  region: PddExpressDepotInfoGetRegionResponseInterface;
 
   /**
    * @description: 仓库类型，暂时只有1
@@ -135,7 +133,6 @@ export interface PddExpressDepotInfoGetResponseInterface {
  * @default
  * @example
  **/
-
 export interface PddExpressDepotInfoGetOtherRegionResponseInterface {
   /**
    * @description: 省份id
@@ -158,7 +155,6 @@ export interface PddExpressDepotInfoGetOtherRegionResponseInterface {
  * @default
  * @example
  **/
-
 export interface PddExpressDepotInfoGetOtherRegionValueResponseInterface {
   /**
    * @description: 1 半覆盖，2 全覆盖
@@ -169,11 +165,11 @@ export interface PddExpressDepotInfoGetOtherRegionValueResponseInterface {
 
   /**
    * @description: 城市id -> 区id列表
-   * @type: MAP
+   * @type: PddExpressDepotInfoGetOtherRegionValueDistrictResponseInterface
    * @default:
    *
    **/
-  district: MAP;
+  district: PddExpressDepotInfoGetOtherRegionValueDistrictResponseInterface;
 }
 
 /**
@@ -181,7 +177,6 @@ export interface PddExpressDepotInfoGetOtherRegionValueResponseInterface {
  * @default
  * @example
  **/
-
 export interface PddExpressDepotInfoGetOtherRegionValueDistrictResponseInterface {
   /**
    * @description: 城市id
@@ -203,7 +198,6 @@ export interface PddExpressDepotInfoGetOtherRegionValueDistrictResponseInterface
  * @default
  * @example
  **/
-
 export interface PddExpressDepotInfoGetRegionResponseInterface {
   /**
    * @description: 省份id
@@ -226,7 +220,6 @@ export interface PddExpressDepotInfoGetRegionResponseInterface {
  * @default
  * @example
  **/
-
 export interface PddExpressDepotInfoGetRegionValueResponseInterface {
   /**
    * @description: 1 半覆盖，2 全覆盖
@@ -237,11 +230,11 @@ export interface PddExpressDepotInfoGetRegionValueResponseInterface {
 
   /**
    * @description: 城市id -> 区id列表
-   * @type: MAP
+   * @type: PddExpressDepotInfoGetRegionValueDistrictResponseInterface
    * @default:
    *
    **/
-  district: MAP;
+  district: PddExpressDepotInfoGetRegionValueDistrictResponseInterface;
 }
 
 /**
@@ -249,7 +242,6 @@ export interface PddExpressDepotInfoGetRegionValueResponseInterface {
  * @default
  * @example
  **/
-
 export interface PddExpressDepotInfoGetRegionValueDistrictResponseInterface {
   /**
    * @description: 城市id

@@ -5,7 +5,6 @@ export const PDD_REFUND_STATUS_CHECK = 'PDD_REFUND_STATUS_CHECK';
  * 接口标识：pdd.refund.status.check
  * 接口使用场景：校验售后单
  **/
-
 export interface PddRefundStatusCheckRequestInterface {
   /**
    * @description: 20150909-452750051,20150909-452750134 用逗号分开
@@ -20,7 +19,6 @@ export interface PddRefundStatusCheckRequestInterface {
  * 接口标识：pdd.refund.status.check
  * 接口使用场景：校验售后单
  **/
-
 export interface PddRefundStatusCheckResponseInterface {
   /**
    * @description: response
@@ -36,7 +34,6 @@ export interface PddRefundStatusCheckResponseInterface {
  * @default
  * @example
  **/
-
 export interface PddRefundStatusCheckRefundStatusCheckResponseResponseInterface {
   /**
    * @description: 存在售后的订单
@@ -52,7 +49,6 @@ export interface PddRefundStatusCheckRefundStatusCheckResponseResponseInterface 
  * @default
  * @example
  **/
-
 export interface PddRefundStatusCheckRefundStatusCheckResponseOrderSnsExistsRefundResponseInterface {
   /**
    * @description: 订单编号

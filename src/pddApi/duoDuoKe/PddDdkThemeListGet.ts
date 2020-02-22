@@ -5,7 +5,6 @@ export const PDD_DDK_THEME_LIST_GET = 'PDD_DDK_THEME_LIST_GET';
  * 接口标识：pdd.ddk.theme.list.get
  * 接口使用场景：查询多多进宝主题列表
  **/
-
 export interface PddDdkThemeListGetRequestInterface {
   /**
    * @description: 返回的一页数据数量
@@ -27,7 +26,6 @@ export interface PddDdkThemeListGetRequestInterface {
  * 接口标识：pdd.ddk.theme.list.get
  * 接口使用场景：查询多多进宝主题列表
  **/
-
 export interface PddDdkThemeListGetResponseInterface {
   /**
    * @description: 主题列表返回对象
@@ -43,7 +41,6 @@ export interface PddDdkThemeListGetResponseInterface {
  * @default
  * @example
  **/
-
 export interface PddDdkThemeListGetThemeListGetResponseResponseInterface {
   /**
    * @description: 返回的元素数量
@@ -66,7 +63,6 @@ export interface PddDdkThemeListGetThemeListGetResponseResponseInterface {
  * @default
  * @example
  **/
-
 export interface PddDdkThemeListGetThemeListGetResponseThemeListResponseInterface {
   /**
    * @description: 主题ID

@@ -5,7 +5,6 @@ export const PDD_REFUND_INFORMATION_GET = 'PDD_REFUND_INFORMATION_GET';
  * 接口标识：pdd.refund.information.get
  * 接口使用场景：查询单个售后单详情
  **/
-
 export interface PddRefundInformationGetRequestInterface {
   /**
    * @description: 售后单id
@@ -27,7 +26,6 @@ export interface PddRefundInformationGetRequestInterface {
  * 接口标识：pdd.refund.information.get
  * 接口使用场景：查询单个售后单详情
  **/
-
 export interface PddRefundInformationGetResponseInterface {
   /**
    * @description: 售后原因

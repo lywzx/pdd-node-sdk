@@ -5,7 +5,6 @@ export const PDD_AD_CREATE_UNIT_BID = 'PDD_AD_CREATE_UNIT_BID';
  * 接口标识：pdd.ad.create.unit.bid
  * 接口使用场景：新建定向，bids列表中必须有通投（全体人群）出价信息
  **/
-
 export interface PddAdCreateUnitBidRequestInterface {
   /**
    * @description: 推广类型  2-展示推广
@@ -35,7 +34,6 @@ export interface PddAdCreateUnitBidRequestInterface {
  * @default
  * @example
  **/
-
 export interface PddAdCreateUnitBidBidsRequestInterface {
   /**
    * @description: 非通投时填
@@ -74,7 +72,6 @@ export interface PddAdCreateUnitBidBidsRequestInterface {
  * 接口标识：pdd.ad.create.unit.bid
  * 接口使用场景：新建定向，bids列表中必须有通投（全体人群）出价信息
  **/
-
 export interface PddAdCreateUnitBidResponseInterface {
   /**
    * @description: 开平返回
@@ -90,7 +87,6 @@ export interface PddAdCreateUnitBidResponseInterface {
  * @default
  * @example
  **/
-
 export interface PddAdCreateUnitBidOpenApiResponseResponseInterface {
   /**
    * @description: 执行标识 true为成功

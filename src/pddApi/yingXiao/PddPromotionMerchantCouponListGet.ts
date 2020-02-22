@@ -5,7 +5,6 @@ export const PDD_PROMOTION_MERCHANT_COUPON_LIST_GET = 'PDD_PROMOTION_MERCHANT_CO
  * 接口标识：pdd.promotion.merchant.coupon.list.get
  * 接口使用场景：店铺优惠券批次列表接口
  **/
-
 export interface PddPromotionMerchantCouponListGetRequestInterface {
   /**
    * @description: 页码，默认1
@@ -55,7 +54,6 @@ export interface PddPromotionMerchantCouponListGetRequestInterface {
  * 接口标识：pdd.promotion.merchant.coupon.list.get
  * 接口使用场景：店铺优惠券批次列表接口
  **/
-
 export interface PddPromotionMerchantCouponListGetResponseInterface {
   /**
    * @description: 返回店铺优惠券批次列表
@@ -71,7 +69,6 @@ export interface PddPromotionMerchantCouponListGetResponseInterface {
  * @default
  * @example
  **/
-
 export interface PddPromotionMerchantCouponListGetMerchantCouponBatchListResponseResponseInterface {
   /**
    * @description: 返回店铺优惠券批次数量
@@ -94,7 +91,6 @@ export interface PddPromotionMerchantCouponListGetMerchantCouponBatchListRespons
  * @default
  * @example
  **/
-
 export interface PddPromotionMerchantCouponListGetMerchantCouponBatchListResponseCouponBatchListResponseInterface {
   /**
    * @description: 批次ID

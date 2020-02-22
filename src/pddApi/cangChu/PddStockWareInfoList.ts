@@ -5,7 +5,6 @@ export const PDD_STOCK_WARE_INFO_LIST = 'PDD_STOCK_WARE_INFO_LIST';
  * 接口标识：pdd.stock.ware.info.list
  * 接口使用场景：获取货品列表
  **/
-
 export interface PddStockWareInfoListRequestInterface {
   /**
    * @description: 货品编码集合
@@ -20,7 +19,6 @@ export interface PddStockWareInfoListRequestInterface {
  * 接口标识：pdd.stock.ware.info.list
  * 接口使用场景：获取货品列表
  **/
-
 export interface PddStockWareInfoListResponseInterface {
   /**
    * @description: response
@@ -36,7 +34,6 @@ export interface PddStockWareInfoListResponseInterface {
  * @default
  * @example
  **/
-
 export interface PddStockWareInfoListStockWareInfoListResponseResponseInterface {
   /**
    * @description: 货品信息列表
@@ -52,7 +49,6 @@ export interface PddStockWareInfoListStockWareInfoListResponseResponseInterface 
  * @default
  * @example
  **/
-
 export interface PddStockWareInfoListStockWareInfoListResponseWareListResponseInterface {
   /**
    * @description: 货品编码

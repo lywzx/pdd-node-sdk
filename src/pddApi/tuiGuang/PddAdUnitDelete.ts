@@ -5,7 +5,6 @@ export const PDD_AD_UNIT_DELETE = 'PDD_AD_UNIT_DELETE';
  * 接口标识：pdd.ad.unit.delete
  * 接口使用场景：删除推广单元-批量，可输入多个单元id，进行批量删除
  **/
-
 export interface PddAdUnitDeleteRequestInterface {
   /**
    * @description: 0--搜索广告,1--明星店铺,2--定向广告,3--首页Banner广告（目前只支持0，暂不支持1、2、3）
@@ -27,7 +26,6 @@ export interface PddAdUnitDeleteRequestInterface {
  * 接口标识：pdd.ad.unit.delete
  * 接口使用场景：删除推广单元-批量，可输入多个单元id，进行批量删除
  **/
-
 export interface PddAdUnitDeleteResponseInterface {
   /**
    * @description: 返回response
@@ -43,7 +41,6 @@ export interface PddAdUnitDeleteResponseInterface {
  * @default
  * @example
  **/
-
 export interface PddAdUnitDeleteAdUnitDeleteResponseResponseInterface {
   /**
    * @description: 是否成功

@@ -5,7 +5,6 @@ export const PDD_STOCK_GOODS_ID_TO_SKU_QUERY = 'PDD_STOCK_GOODS_ID_TO_SKU_QUERY'
  * 接口标识：pdd.stock.goods.id.to.sku.query
  * 接口使用场景：家电分仓库存-根据商品id查询sku信息
  **/
-
 export interface PddStockGoodsIdToSkuQueryRequestInterface {
   /**
    * @description: 商品id
@@ -27,7 +26,6 @@ export interface PddStockGoodsIdToSkuQueryRequestInterface {
  * 接口标识：pdd.stock.goods.id.to.sku.query
  * 接口使用场景：家电分仓库存-根据商品id查询sku信息
  **/
-
 export interface PddStockGoodsIdToSkuQueryResponseInterface {
   /**
    * @description: response
@@ -43,7 +41,6 @@ export interface PddStockGoodsIdToSkuQueryResponseInterface {
  * @default
  * @example
  **/
-
 export interface PddStockGoodsIdToSkuQueryOpenApiResponseResponseInterface {
   /**
    * @description: 总数
@@ -66,7 +63,6 @@ export interface PddStockGoodsIdToSkuQueryOpenApiResponseResponseInterface {
  * @default
  * @example
  **/
-
 export interface PddStockGoodsIdToSkuQueryOpenApiResponseSkusResponseInterface {
   /**
    * @description: 商品id
@@ -117,7 +113,6 @@ export interface PddStockGoodsIdToSkuQueryOpenApiResponseSkusResponseInterface {
  * @default
  * @example
  **/
-
 export interface PddStockGoodsIdToSkuQueryOpenApiResponseSkusSpecsResponseInterface {
   /**
    * @description: 规格id

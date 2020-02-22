@@ -5,7 +5,6 @@ export const PDD_GOODS_CAT_TEMPLATE_GET = 'PDD_GOODS_CAT_TEMPLATE_GET';
  * 接口标识：pdd.goods.cat.template.get
  * 接口使用场景：商品发布前，需要查询该类目的商品发布需要的属性，获取商品发布需要的模板-属性-属性值
  **/
-
 export interface PddGoodsCatTemplateGetRequestInterface {
   /**
    * @description: 类目id
@@ -20,7 +19,6 @@ export interface PddGoodsCatTemplateGetRequestInterface {
  * 接口标识：pdd.goods.cat.template.get
  * 接口使用场景：商品发布前，需要查询该类目的商品发布需要的属性，获取商品发布需要的模板-属性-属性值
  **/
-
 export interface PddGoodsCatTemplateGetResponseInterface {
   /**
    * @description: 属性信息
@@ -36,7 +34,6 @@ export interface PddGoodsCatTemplateGetResponseInterface {
  * @default
  * @example
  **/
-
 export interface PddGoodsCatTemplateGetOpenApiResponseResponseInterface {
   /**
    * @description: 模板允许的最大的自定义规格数量
@@ -80,7 +77,6 @@ export interface PddGoodsCatTemplateGetOpenApiResponseResponseInterface {
  * @default
  * @example
  **/
-
 export interface PddGoodsCatTemplateGetOpenApiResponsePropertiesResponseInterface {
   /**
    * @description: 模板属性id
@@ -243,7 +239,6 @@ export interface PddGoodsCatTemplateGetOpenApiResponsePropertiesResponseInterfac
  * @default
  * @example
  **/
-
 export interface PddGoodsCatTemplateGetOpenApiResponsePropertiesValuesResponseInterface {
   /**
    * @description: 基础属性值id
@@ -301,7 +296,6 @@ export interface PddGoodsCatTemplateGetOpenApiResponsePropertiesValuesResponseIn
  * @default
  * @example
  **/
-
 export interface PddGoodsCatTemplateGetOpenApiResponsePropertiesValuesGroupResponseInterface {
   /**
    * @description: 组id

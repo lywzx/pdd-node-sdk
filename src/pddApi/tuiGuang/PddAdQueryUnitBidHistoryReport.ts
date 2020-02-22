@@ -5,7 +5,6 @@ export const PDD_AD_QUERY_UNIT_BID_HISTORY_REPORT = 'PDD_AD_QUERY_UNIT_BID_HISTO
  * 接口标识：pdd.ad.query.unit.bid.history.report
  * 接口使用场景：定向历史报表数据
  **/
-
 export interface PddAdQueryUnitBidHistoryReportRequestInterface {
   /**
    * @description: 推广类型  2-展示推广
@@ -100,7 +99,6 @@ export interface PddAdQueryUnitBidHistoryReportRequestInterface {
  * @default
  * @example
  **/
-
 export interface PddAdQueryUnitBidHistoryReportPageRequestRequestInterface {
   /**
    * @description: 页码 默认 1
@@ -122,7 +120,6 @@ export interface PddAdQueryUnitBidHistoryReportPageRequestRequestInterface {
  * 接口标识：pdd.ad.query.unit.bid.history.report
  * 接口使用场景：定向历史报表数据
  **/
-
 export interface PddAdQueryUnitBidHistoryReportResponseInterface {
   /**
    * @description: 开平返回
@@ -138,7 +135,6 @@ export interface PddAdQueryUnitBidHistoryReportResponseInterface {
  * @default
  * @example
  **/
-
 export interface PddAdQueryUnitBidHistoryReportOpenApiResponseResponseInterface {
   /**
    * @description: 列表信息
@@ -161,7 +157,6 @@ export interface PddAdQueryUnitBidHistoryReportOpenApiResponseResponseInterface 
  * @default
  * @example
  **/
-
 export interface PddAdQueryUnitBidHistoryReportOpenApiResponseResultResponseInterface {
   /**
    * @description: 店铺关注数

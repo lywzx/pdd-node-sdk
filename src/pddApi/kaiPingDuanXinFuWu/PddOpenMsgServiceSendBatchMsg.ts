@@ -5,7 +5,6 @@ export const PDD_OPEN_MSG_SERVICE_SEND_BATCH_MSG = 'PDD_OPEN_MSG_SERVICE_SEND_BA
  * 接口标识：pdd.open.msg.service.send.batch.msg
  * 接口使用场景：短信批量发送接口
  **/
-
 export interface PddOpenMsgServiceSendBatchMsgRequestInterface {
   /**
    * @description: 接收短信的手机号码集合, ["15900000000", "17600000000"]
@@ -30,11 +29,11 @@ export interface PddOpenMsgServiceSendBatchMsgRequestInterface {
 
   /**
    * @description: 短信模板变量JSON集合(与手机号对应)
-   * @type: MAP[]
+   * @type: PddOpenMsgServiceSendBatchMsgTemplateParamJsonRequestInterface[]
    * @default:
    *
    **/
-  template_param_json: MAP[];
+  template_param_json: PddOpenMsgServiceSendBatchMsgTemplateParamJsonRequestInterface[];
 
   /**
    * @description: 业务请求唯一标识
@@ -49,7 +48,6 @@ export interface PddOpenMsgServiceSendBatchMsgRequestInterface {
  * @default
  * @example [{"name":"TemplateParamJson"},{"name":"TemplateParamJson"}]
  **/
-
 export interface PddOpenMsgServiceSendBatchMsgTemplateParamJsonRequestInterface {
   /**
    * @description: 模板变量名
@@ -71,7 +69,6 @@ export interface PddOpenMsgServiceSendBatchMsgTemplateParamJsonRequestInterface 
  * 接口标识：pdd.open.msg.service.send.batch.msg
  * 接口使用场景：短信批量发送接口
  **/
-
 export interface PddOpenMsgServiceSendBatchMsgResponseInterface {
   /**
    * @description: 状态码

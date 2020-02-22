@@ -5,7 +5,6 @@ export const PDD_DDK_RESOURCE_URL_GEN = 'PDD_DDK_RESOURCE_URL_GEN';
  * 接口标识：pdd.ddk.resource.url.gen
  * 接口使用场景：生成拼多多主站频道推广
  **/
-
 export interface PddDdkResourceUrlGenRequestInterface {
   /**
    * @description: 自定义参数，为链接打上自定义标签。自定义参数最长限制64个字节
@@ -62,7 +61,6 @@ export interface PddDdkResourceUrlGenRequestInterface {
  * 接口标识：pdd.ddk.resource.url.gen
  * 接口使用场景：生成拼多多主站频道推广
  **/
-
 export interface PddDdkResourceUrlGenResponseInterface {
   /**
    * @description: resource_url_response
@@ -78,7 +76,6 @@ export interface PddDdkResourceUrlGenResponseInterface {
  * @default
  * @example
  **/
-
 export interface PddDdkResourceUrlGenResourceUrlResponseResponseInterface {
   /**
    * @description: 多人团链接
@@ -125,7 +122,6 @@ export interface PddDdkResourceUrlGenResourceUrlResponseResponseInterface {
  * @default
  * @example
  **/
-
 export interface PddDdkResourceUrlGenResourceUrlResponseMultiUrlListResponseInterface {
   /**
    * @description: 频道推广唤醒拼多多APP短链接
@@ -189,7 +185,6 @@ export interface PddDdkResourceUrlGenResourceUrlResponseMultiUrlListResponseInte
  * @default
  * @example
  **/
-
 export interface PddDdkResourceUrlGenResourceUrlResponseQqAppInfoResponseInterface {
   /**
    * @description: 拼多多小程序id
@@ -253,7 +248,6 @@ export interface PddDdkResourceUrlGenResourceUrlResponseQqAppInfoResponseInterfa
  * @default
  * @example
  **/
-
 export interface PddDdkResourceUrlGenResourceUrlResponseSingleUrlListResponseInterface {
   /**
    * @description: 频道推广唤醒拼多多APP短链接
@@ -317,7 +311,6 @@ export interface PddDdkResourceUrlGenResourceUrlResponseSingleUrlListResponseInt
  * @default
  * @example
  **/
-
 export interface PddDdkResourceUrlGenResourceUrlResponseWeAppInfoResponseInterface {
   /**
    * @description: 拼多多小程序id

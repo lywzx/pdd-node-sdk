@@ -5,7 +5,6 @@ export const PDD_STOCK_WARE_UPDATE = 'PDD_STOCK_WARE_UPDATE';
  * 接口标识：pdd.stock.ware.update
  * 接口使用场景：家电分仓库存-编辑货品
  **/
-
 export interface PddStockWareUpdateRequestInterface {
   /**
    * @description: 货品id
@@ -140,7 +139,6 @@ export interface PddStockWareUpdateRequestInterface {
  * @default
  * @example
  **/
-
 export interface PddStockWareUpdateWareInfosRequestInterface {
   /**
    * @description: 子货品id
@@ -162,7 +160,6 @@ export interface PddStockWareUpdateWareInfosRequestInterface {
  * 接口标识：pdd.stock.ware.update
  * 接口使用场景：家电分仓库存-编辑货品
  **/
-
 export interface PddStockWareUpdateResponseInterface {
   /**
    * @description: 货品id

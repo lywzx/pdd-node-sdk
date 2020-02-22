@@ -5,7 +5,6 @@ export const PDD_DDK_RP_PROM_URL_GENERATE = 'PDD_DDK_RP_PROM_URL_GENERATE';
  * 接口标识：pdd.ddk.rp.prom.url.generate
  * 接口使用场景：生成营销工具推广链接
  **/
-
 export interface PddDdkRpPromUrlGenerateRequestInterface {
   /**
    * @description: 0-默认红包，2–新人红包，3-刮刮卡，4-转盘 ，5-员工内购
@@ -99,7 +98,6 @@ export interface PddDdkRpPromUrlGenerateRequestInterface {
  * @default
  * @example
  **/
-
 export interface PddDdkRpPromUrlGenerateDiyLotteryParamRequestInterface {
   /**
    * @description: 优先展示类目
@@ -122,7 +120,6 @@ export interface PddDdkRpPromUrlGenerateDiyLotteryParamRequestInterface {
  * @default
  * @example
  **/
-
 export interface PddDdkRpPromUrlGenerateDiyLotteryParamRangeItemsRequestInterface {
   /**
    * @description: 区间的开始值
@@ -151,7 +148,6 @@ export interface PddDdkRpPromUrlGenerateDiyLotteryParamRangeItemsRequestInterfac
  * @default
  * @example
  **/
-
 export interface PddDdkRpPromUrlGenerateDiyRedPacketParamRequestInterface {
   /**
    * @description: 红包金额列表，200、300、500、1000、2000，单位分。红包金额和红包抵后价设置只能二选一，默认设置了红包金额会忽略红包抵后价设置
@@ -195,7 +191,6 @@ export interface PddDdkRpPromUrlGenerateDiyRedPacketParamRequestInterface {
  * @default
  * @example
  **/
-
 export interface PddDdkRpPromUrlGenerateDiyRedPacketParamRangeItemsRequestInterface {
   /**
    * @description: 区间的开始值
@@ -224,7 +219,6 @@ export interface PddDdkRpPromUrlGenerateDiyRedPacketParamRangeItemsRequestInterf
  * 接口标识：pdd.ddk.rp.prom.url.generate
  * 接口使用场景：生成营销工具推广链接
  **/
-
 export interface PddDdkRpPromUrlGenerateResponseInterface {
   /**
    * @description: 推广链接返回对象
@@ -240,7 +234,6 @@ export interface PddDdkRpPromUrlGenerateResponseInterface {
  * @default
  * @example
  **/
-
 export interface PddDdkRpPromUrlGenerateRpPromotionUrlGenerateResponseResponseInterface {
   /**
    * @description: url_list
@@ -256,7 +249,6 @@ export interface PddDdkRpPromUrlGenerateRpPromotionUrlGenerateResponseResponseIn
  * @default
  * @example
  **/
-
 export interface PddDdkRpPromUrlGenerateRpPromotionUrlGenerateResponseUrlListResponseInterface {
   /**
    * @description: 推广移动短链接
@@ -343,7 +335,6 @@ export interface PddDdkRpPromUrlGenerateRpPromotionUrlGenerateResponseUrlListRes
  * @default
  * @example
  **/
-
 export interface PddDdkRpPromUrlGenerateRpPromotionUrlGenerateResponseUrlListQqAppInfoResponseInterface {
   /**
    * @description: 拼多多小程序id
@@ -407,7 +398,6 @@ export interface PddDdkRpPromUrlGenerateRpPromotionUrlGenerateResponseUrlListQqA
  * @default
  * @example
  **/
-
 export interface PddDdkRpPromUrlGenerateRpPromotionUrlGenerateResponseUrlListWeAppInfoResponseInterface {
   /**
    * @description: 拼多多小程序id

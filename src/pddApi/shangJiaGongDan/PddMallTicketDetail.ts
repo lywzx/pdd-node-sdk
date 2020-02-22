@@ -5,7 +5,6 @@ export const PDD_MALL_TICKET_DETAIL = 'PDD_MALL_TICKET_DETAIL';
  * 接口标识：pdd.mall.ticket.detail
  * 接口使用场景：商家工单详情查询接口
  **/
-
 export interface PddMallTicketDetailRequestInterface {
   /**
    * @description: 工单编号
@@ -20,7 +19,6 @@ export interface PddMallTicketDetailRequestInterface {
  * 接口标识：pdd.mall.ticket.detail
  * 接口使用场景：商家工单详情查询接口
  **/
-
 export interface PddMallTicketDetailResponseInterface {
   /**
    * @description: response
@@ -36,7 +34,6 @@ export interface PddMallTicketDetailResponseInterface {
  * @default
  * @example
  **/
-
 export interface PddMallTicketDetailMallTicketDetailResponseResponseInterface {
   /**
    * @description: 附件(图片)
@@ -130,7 +127,6 @@ export interface PddMallTicketDetailMallTicketDetailResponseResponseInterface {
  * @default
  * @example
  **/
-
 export interface PddMallTicketDetailMallTicketDetailResponseAttachUrlResponseInterface {
   /**
    * @description: url
@@ -145,7 +141,6 @@ export interface PddMallTicketDetailMallTicketDetailResponseAttachUrlResponseInt
  * @default
  * @example
  **/
-
 export interface PddMallTicketDetailMallTicketDetailResponseHistoryRecordResponseInterface {
   /**
    * @description: 附件(图片)
@@ -189,7 +184,6 @@ export interface PddMallTicketDetailMallTicketDetailResponseHistoryRecordRespons
  * @default
  * @example
  **/
-
 export interface PddMallTicketDetailMallTicketDetailResponseHistoryRecordAttachUrlResponseInterface {
   /**
    * @description: url

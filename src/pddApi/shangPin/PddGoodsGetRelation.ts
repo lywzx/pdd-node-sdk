@@ -5,7 +5,6 @@ export const PDD_GOODS_GET_RELATION = 'PDD_GOODS_GET_RELATION';
  * 接口标识：pdd.goods.get.relation
  * 接口使用场景：商品映射查询接口
  **/
-
 export interface PddGoodsGetRelationRequestInterface {
   /**
    * @description: 拼多多商品id
@@ -20,7 +19,6 @@ export interface PddGoodsGetRelationRequestInterface {
  * 接口标识：pdd.goods.get.relation
  * 接口使用场景：商品映射查询接口
  **/
-
 export interface PddGoodsGetRelationResponseInterface {
   /**
    * @description: 映射关系查询返回对象列表
@@ -36,7 +34,6 @@ export interface PddGoodsGetRelationResponseInterface {
  * @default
  * @example
  **/
-
 export interface PddGoodsGetRelationQueryGoodsRelationResponseResponseInterface {
   /**
    * @description: 拼多多商品id

@@ -5,7 +5,6 @@ export const PDD_INVOICE_DETAIL_INVALID = 'PDD_INVOICE_DETAIL_INVALID';
  * 接口标识：pdd.invoice.detail.invalid
  * 接口使用场景：根据订单号冲红发票
  **/
-
 export interface PddInvoiceDetailInvalidRequestInterface {
   /**
    * @description: 订单号
@@ -20,7 +19,6 @@ export interface PddInvoiceDetailInvalidRequestInterface {
  * 接口标识：pdd.invoice.detail.invalid
  * 接口使用场景：根据订单号冲红发票
  **/
-
 export interface PddInvoiceDetailInvalidResponseInterface {
   /**
    * @description: response
@@ -36,7 +34,6 @@ export interface PddInvoiceDetailInvalidResponseInterface {
  * @default
  * @example
  **/
-
 export interface PddInvoiceDetailInvalidInvoiceDetailInvalidResponseResponseInterface {
   /**
    * @description: errorCode
@@ -73,7 +70,6 @@ export interface PddInvoiceDetailInvalidInvoiceDetailInvalidResponseResponseInte
  * @default
  * @example
  **/
-
 export interface PddInvoiceDetailInvalidInvoiceDetailInvalidResponseResultResponseInterface {
   /**
    * @description: 红冲是否成功

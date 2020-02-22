@@ -5,7 +5,6 @@ export const PDD_DDK_GOODS_ZS_UNIT_URL_GEN = 'PDD_DDK_GOODS_ZS_UNIT_URL_GEN';
  * 接口标识：pdd.ddk.goods.zs.unit.url.gen
  * 接口使用场景：本功能适用于采集群等场景。将其他推广者的推广链接转换成自己的；通过此api，可以将他人的招商推广链接，转换成自己的招商推广链接。
  **/
-
 export interface PddDdkGoodsZsUnitUrlGenRequestInterface {
   /**
    * @description: 需转链的链接
@@ -27,7 +26,6 @@ export interface PddDdkGoodsZsUnitUrlGenRequestInterface {
  * 接口标识：pdd.ddk.goods.zs.unit.url.gen
  * 接口使用场景：本功能适用于采集群等场景。将其他推广者的推广链接转换成自己的；通过此api，可以将他人的招商推广链接，转换成自己的招商推广链接。
  **/
-
 export interface PddDdkGoodsZsUnitUrlGenResponseInterface {
   /**
    * @description: goods_zs_unit_generate_response
@@ -43,7 +41,6 @@ export interface PddDdkGoodsZsUnitUrlGenResponseInterface {
  * @default
  * @example
  **/
-
 export interface PddDdkGoodsZsUnitUrlGenGoodsZsUnitGenerateResponseResponseInterface {
   /**
    * @description: 单人团推广长链接

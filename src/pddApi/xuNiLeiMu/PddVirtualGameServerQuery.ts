@@ -5,7 +5,6 @@ export const PDD_VIRTUAL_GAME_SERVER_QUERY = 'PDD_VIRTUAL_GAME_SERVER_QUERY';
  * 接口标识：pdd.virtual.game.server.query
  * 接口使用场景：虚拟游戏类区服列表
  **/
-
 export interface PddVirtualGameServerQueryRequestInterface {
   /**
    * @description: 游戏CODE
@@ -20,7 +19,6 @@ export interface PddVirtualGameServerQueryRequestInterface {
  * 接口标识：pdd.virtual.game.server.query
  * 接口使用场景：虚拟游戏类区服列表
  **/
-
 export interface PddVirtualGameServerQueryResponseInterface {
   /**
    * @description: response
@@ -36,7 +34,6 @@ export interface PddVirtualGameServerQueryResponseInterface {
  * @default
  * @example
  **/
-
 export interface PddVirtualGameServerQueryGameServerQueryResponseResponseInterface {
   /**
    * @description: 区服信息
@@ -73,7 +70,6 @@ export interface PddVirtualGameServerQueryGameServerQueryResponseResponseInterfa
  * @default
  * @example
  **/
-
 export interface PddVirtualGameServerQueryGameServerQueryResponseItemListResponseInterface {
   /**
    * @description: 下级区服信息
@@ -110,7 +106,6 @@ export interface PddVirtualGameServerQueryGameServerQueryResponseItemListRespons
  * @default
  * @example
  **/
-
 export interface PddVirtualGameServerQueryGameServerQueryResponseItemListChildrenResponseInterface {
   /**
    * @description: 区服ID

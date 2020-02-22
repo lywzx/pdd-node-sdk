@@ -5,7 +5,6 @@ export const PDD_AD_UPDATE_BID = 'PDD_AD_UPDATE_BID';
  * 接口标识：pdd.ad.update.bid
  * 接口使用场景：【定向】推广单元修改通投出价、定向溢价
  **/
-
 export interface PddAdUpdateBidRequestInterface {
   /**
    * @description: 推广类型  2-展示推广
@@ -35,7 +34,6 @@ export interface PddAdUpdateBidRequestInterface {
  * @default
  * @example
  **/
-
 export interface PddAdUpdateBidBidListRequestInterface {
   /**
    * @description: 非通投必填
@@ -67,7 +65,6 @@ export interface PddAdUpdateBidBidListRequestInterface {
  * 接口标识：pdd.ad.update.bid
  * 接口使用场景：【定向】推广单元修改通投出价、定向溢价
  **/
-
 export interface PddAdUpdateBidResponseInterface {
   /**
    * @description: 返回结果
@@ -83,7 +80,6 @@ export interface PddAdUpdateBidResponseInterface {
  * @default
  * @example
  **/
-
 export interface PddAdUpdateBidOpenApiResponseResponseInterface {
   /**
    * @description: 是否成功

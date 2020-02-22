@@ -5,7 +5,6 @@ export const PDD_AD_CREATIVE_REPORT_GET = 'PDD_AD_CREATIVE_REPORT_GET';
  * 接口标识：pdd.ad.creative.report.get
  * 接口使用场景：创意日报报表：1、可以获取某个创意的分天历史数据；2、可获取最近30天的数据。
  **/
-
 export interface PddAdCreativeReportGetRequestInterface {
   /**
    * @description: 开始时间 2018-01-01
@@ -41,7 +40,6 @@ export interface PddAdCreativeReportGetRequestInterface {
  * 接口标识：pdd.ad.creative.report.get
  * 接口使用场景：创意日报报表：1、可以获取某个创意的分天历史数据；2、可获取最近30天的数据。
  **/
-
 export interface PddAdCreativeReportGetResponseInterface {
   /**
    * @description: response
@@ -57,7 +55,6 @@ export interface PddAdCreativeReportGetResponseInterface {
  * @default
  * @example
  **/
-
 export interface PddAdCreativeReportGetAdCreativeReportGetResponseResponseInterface {
   /**
    * @description: 数量
@@ -80,7 +77,6 @@ export interface PddAdCreativeReportGetAdCreativeReportGetResponseResponseInterf
  * @default
  * @example
  **/
-
 export interface PddAdCreativeReportGetAdCreativeReportGetResponseResultResponseInterface {
   /**
    * @description: 日期

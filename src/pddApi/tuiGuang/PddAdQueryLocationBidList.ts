@@ -5,7 +5,6 @@ export const PDD_AD_QUERY_LOCATION_BID_LIST = 'PDD_AD_QUERY_LOCATION_BID_LIST';
  * 接口标识：pdd.ad.query.location.bid.list
  * 接口使用场景：根据推广单元id获取现有资源位列表
  **/
-
 export interface PddAdQueryLocationBidListRequestInterface {
   /**
    * @description: 推广类型  2-展示推广
@@ -27,7 +26,6 @@ export interface PddAdQueryLocationBidListRequestInterface {
  * 接口标识：pdd.ad.query.location.bid.list
  * 接口使用场景：根据推广单元id获取现有资源位列表
  **/
-
 export interface PddAdQueryLocationBidListResponseInterface {
   /**
    * @description: 开平返回
@@ -43,7 +41,6 @@ export interface PddAdQueryLocationBidListResponseInterface {
  * @default
  * @example
  **/
-
 export interface PddAdQueryLocationBidListOpenApiResponseResponseInterface {
   /**
    * @description: 店铺收藏数

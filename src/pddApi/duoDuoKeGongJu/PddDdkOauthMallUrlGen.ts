@@ -5,7 +5,6 @@ export const PDD_DDK_OAUTH_MALL_URL_GEN = 'PDD_DDK_OAUTH_MALL_URL_GEN';
  * 接口标识：pdd.ddk.oauth.mall.url.gen
  * 接口使用场景：多多客工具生成店铺推广链接API
  **/
-
 export interface PddDdkOauthMallUrlGenRequestInterface {
   /**
    * @description: 店铺id
@@ -76,7 +75,6 @@ export interface PddDdkOauthMallUrlGenRequestInterface {
  * 接口标识：pdd.ddk.oauth.mall.url.gen
  * 接口使用场景：多多客工具生成店铺推广链接API
  **/
-
 export interface PddDdkOauthMallUrlGenResponseInterface {
   /**
    * @description: mall_coupon_generate_url_response
@@ -92,7 +90,6 @@ export interface PddDdkOauthMallUrlGenResponseInterface {
  * @default
  * @example
  **/
-
 export interface PddDdkOauthMallUrlGenMallCouponGenerateUrlResponseResponseInterface {
   /**
    * @description: 推广链接
@@ -108,7 +105,6 @@ export interface PddDdkOauthMallUrlGenMallCouponGenerateUrlResponseResponseInter
  * @default
  * @example
  **/
-
 export interface PddDdkOauthMallUrlGenMallCouponGenerateUrlResponseListResponseInterface {
   /**
    * @description: 推广长链接
@@ -173,7 +169,6 @@ export interface PddDdkOauthMallUrlGenMallCouponGenerateUrlResponseListResponseI
  * @default
  * @example
  **/
-
 export interface PddDdkOauthMallUrlGenMallCouponGenerateUrlResponseListQqAppInfoResponseInterface {
   /**
    * @description: 拼多多小程序id

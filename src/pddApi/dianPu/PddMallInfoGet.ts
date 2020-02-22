@@ -13,7 +13,6 @@ export interface PddMallInfoGetRequestInterface {}
  * 接口标识：pdd.mall.info.get
  * 接口使用场景：通过此接口获取店铺信息
  **/
-
 export interface PddMallInfoGetResponseInterface {
   /**
    * @description: response
@@ -29,7 +28,6 @@ export interface PddMallInfoGetResponseInterface {
  * @default
  * @example
  **/
-
 export interface PddMallInfoGetMallInfoGetResponseResponseInterface {
   /**
    * @description: 店铺logo

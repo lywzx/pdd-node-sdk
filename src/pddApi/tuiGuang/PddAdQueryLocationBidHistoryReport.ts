@@ -5,7 +5,6 @@ export const PDD_AD_QUERY_LOCATION_BID_HISTORY_REPORT = 'PDD_AD_QUERY_LOCATION_B
  * 接口标识：pdd.ad.query.location.bid.history.report
  * 接口使用场景：资源位历史报表数据
  **/
-
 export interface PddAdQueryLocationBidHistoryReportRequestInterface {
   /**
    * @description: 推广类型  2-展示推广
@@ -93,7 +92,6 @@ export interface PddAdQueryLocationBidHistoryReportRequestInterface {
  * @default
  * @example
  **/
-
 export interface PddAdQueryLocationBidHistoryReportPageRequestRequestInterface {
   /**
    * @description: 页码 默认 1
@@ -115,7 +113,6 @@ export interface PddAdQueryLocationBidHistoryReportPageRequestRequestInterface {
  * 接口标识：pdd.ad.query.location.bid.history.report
  * 接口使用场景：资源位历史报表数据
  **/
-
 export interface PddAdQueryLocationBidHistoryReportResponseInterface {
   /**
    * @description: 开平返回
@@ -131,7 +128,6 @@ export interface PddAdQueryLocationBidHistoryReportResponseInterface {
  * @default
  * @example
  **/
-
 export interface PddAdQueryLocationBidHistoryReportOpenApiResponseResponseInterface {
   /**
    * @description: 列表信息
@@ -154,7 +150,6 @@ export interface PddAdQueryLocationBidHistoryReportOpenApiResponseResponseInterf
  * @default
  * @example
  **/
-
 export interface PddAdQueryLocationBidHistoryReportOpenApiResponseResultResponseInterface {
   /**
    * @description: 店铺关注数

@@ -5,7 +5,6 @@ export const PDD_GOODS_IMAGE_UPLOAD = 'PDD_GOODS_IMAGE_UPLOAD';
  * 接口标识：pdd.goods.image.upload
  * 接口使用场景：商品图片上传服务（参数拼接成json串）
  **/
-
 export interface PddGoodsImageUploadRequestInterface {
   /**
    * @description: 支持格式有：jpg/jpeg、png等图片格式，注意入参图片必须转码为base64编码
@@ -20,7 +19,6 @@ export interface PddGoodsImageUploadRequestInterface {
  * 接口标识：pdd.goods.image.upload
  * 接口使用场景：商品图片上传服务（参数拼接成json串）
  **/
-
 export interface PddGoodsImageUploadResponseInterface {
   /**
    * @description: 商品图片上传响应对象
@@ -36,7 +34,6 @@ export interface PddGoodsImageUploadResponseInterface {
  * @default
  * @example
  **/
-
 export interface PddGoodsImageUploadGoodsImageUploadResponseResponseInterface {
   /**
    * @description: 返回图片url

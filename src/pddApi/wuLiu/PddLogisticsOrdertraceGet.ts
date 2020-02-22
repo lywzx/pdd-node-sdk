@@ -5,7 +5,6 @@ export const PDD_LOGISTICS_ORDERTRACE_GET = 'PDD_LOGISTICS_ORDERTRACE_GET';
  * 接口标识：pdd.logistics.ordertrace.get
  * 接口使用场景：查询单个运单详情
  **/
-
 export interface PddLogisticsOrdertraceGetRequestInterface {
   /**
    * @description: 物流公式编码
@@ -34,7 +33,6 @@ export interface PddLogisticsOrdertraceGetRequestInterface {
  * 接口标识：pdd.logistics.ordertrace.get
  * 接口使用场景：查询单个运单详情
  **/
-
 export interface PddLogisticsOrdertraceGetResponseInterface {
   /**
    * @description: response
@@ -50,7 +48,6 @@ export interface PddLogisticsOrdertraceGetResponseInterface {
  * @default
  * @example
  **/
-
 export interface PddLogisticsOrdertraceGetLogisticsOrdertraceGetResposneResponseInterface {
   /**
    * @description: 返回列表
@@ -66,7 +63,6 @@ export interface PddLogisticsOrdertraceGetLogisticsOrdertraceGetResposneResponse
  * @default
  * @example
  **/
-
 export interface PddLogisticsOrdertraceGetLogisticsOrdertraceGetResposneTraceListResponseInterface {
   /**
    * @description: 状态发生的时间

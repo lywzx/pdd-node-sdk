@@ -5,7 +5,6 @@ export const PDD_GOODS_OUTER_CAT_MAPPING_GET = 'PDD_GOODS_OUTER_CAT_MAPPING_GET'
  * 接口标识：pdd.goods.outer.cat.mapping.get
  * 接口使用场景：类目预测
  **/
-
 export interface PddGoodsOuterCatMappingGetRequestInterface {
   /**
    * @description: 外部叶子类目id
@@ -34,7 +33,6 @@ export interface PddGoodsOuterCatMappingGetRequestInterface {
  * 接口标识：pdd.goods.outer.cat.mapping.get
  * 接口使用场景：类目预测
  **/
-
 export interface PddGoodsOuterCatMappingGetResponseInterface {
   /**
    * @description: response
@@ -50,7 +48,6 @@ export interface PddGoodsOuterCatMappingGetResponseInterface {
  * @default
  * @example
  **/
-
 export interface PddGoodsOuterCatMappingGetOuterCatMappingGetResponseResponseInterface {
   /**
    * @description: 一级类目

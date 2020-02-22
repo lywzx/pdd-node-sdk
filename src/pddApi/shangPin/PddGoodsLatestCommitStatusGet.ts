@@ -5,7 +5,6 @@ export const PDD_GOODS_LATEST_COMMIT_STATUS_GET = 'PDD_GOODS_LATEST_COMMIT_STATU
  * 接口标识：pdd.goods.latest.commit.status.get
  * 接口使用场景：批量goodsId查询最新的审核状态
  **/
-
 export interface PddGoodsLatestCommitStatusGetRequestInterface {
   /**
    * @description: 商品id(不超过100个)
@@ -20,7 +19,6 @@ export interface PddGoodsLatestCommitStatusGetRequestInterface {
  * 接口标识：pdd.goods.latest.commit.status.get
  * 接口使用场景：批量goodsId查询最新的审核状态
  **/
-
 export interface PddGoodsLatestCommitStatusGetResponseInterface {
   /**
    * @description: response
@@ -36,7 +34,6 @@ export interface PddGoodsLatestCommitStatusGetResponseInterface {
  * @default
  * @example
  **/
-
 export interface PddGoodsLatestCommitStatusGetGoodsLatestCommitStatusGetResponseResponseInterface {
   /**
    * @description: list
@@ -52,7 +49,6 @@ export interface PddGoodsLatestCommitStatusGetGoodsLatestCommitStatusGetResponse
  * @default
  * @example
  **/
-
 export interface PddGoodsLatestCommitStatusGetGoodsLatestCommitStatusGetResponseListResponseInterface {
   /**
    * @description: 草稿状态

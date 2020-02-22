@@ -5,7 +5,6 @@ export const PDD_AD_DELETE_BID = 'PDD_AD_DELETE_BID';
  * 接口标识：pdd.ad.delete.bid
  * 接口使用场景：推广类型，0-搜索推广，2-展示推广
  **/
-
 export interface PddAdDeleteBidRequestInterface {
   /**
    * @description: 推广类型  2-展示推广
@@ -34,7 +33,6 @@ export interface PddAdDeleteBidRequestInterface {
  * 接口标识：pdd.ad.delete.bid
  * 接口使用场景：推广类型，0-搜索推广，2-展示推广
  **/
-
 export interface PddAdDeleteBidResponseInterface {
   /**
    * @description: 开平返回结果
@@ -50,7 +48,6 @@ export interface PddAdDeleteBidResponseInterface {
  * @default
  * @example
  **/
-
 export interface PddAdDeleteBidOpenApiResponseResponseInterface {
   /**
    * @description: api是否成功

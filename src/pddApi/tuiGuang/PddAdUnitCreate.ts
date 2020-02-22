@@ -5,7 +5,6 @@ export const PDD_AD_UNIT_CREATE = 'PDD_AD_UNIT_CREATE';
  * 接口标识：pdd.ad.unit.create
  * 接口使用场景：添加推广单元，计划内单元上限20
  **/
-
 export interface PddAdUnitCreateRequestInterface {
   /**
    * @description: 推广类型，0-搜索推广，2-展示推广
@@ -58,7 +57,6 @@ export interface PddAdUnitCreateRequestInterface {
  * @default
  * @example
  **/
-
 export interface PddAdUnitCreateKeywordsRequestInterface {
   /**
    * @description: 关键字出价（厘）范围需在0.10~99.0元区间内
@@ -80,7 +78,6 @@ export interface PddAdUnitCreateKeywordsRequestInterface {
  * @default
  * @example
  **/
-
 export interface PddAdUnitCreateCreativeListRequestInterface {
   /**
    * @description: 图片地址
@@ -102,7 +99,6 @@ export interface PddAdUnitCreateCreativeListRequestInterface {
  * 接口标识：pdd.ad.unit.create
  * 接口使用场景：添加推广单元，计划内单元上限20
  **/
-
 export interface PddAdUnitCreateResponseInterface {
   /**
    * @description: 返回response
@@ -118,7 +114,6 @@ export interface PddAdUnitCreateResponseInterface {
  * @default
  * @example
  **/
-
 export interface PddAdUnitCreateAdUnitCreateResponseResponseInterface {
   /**
    * @description: 单元id

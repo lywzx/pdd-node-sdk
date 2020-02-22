@@ -13,7 +13,6 @@ export interface PddLogisticsTicketProblemTypeGetRequestInterface {}
  * 接口标识：pdd.logistics.ticket.problem.type.get
  * 接口使用场景：快递公司通过此接口同步多多所有物流工单问题类型
  **/
-
 export interface PddLogisticsTicketProblemTypeGetResponseInterface {
   /**
    * @description: 返回response
@@ -29,7 +28,6 @@ export interface PddLogisticsTicketProblemTypeGetResponseInterface {
  * @default
  * @example
  **/
-
 export interface PddLogisticsTicketProblemTypeGetLogisticsProblemTypeGetResponseResponseInterface {
   /**
    * @description: 问题类型list
@@ -45,7 +43,6 @@ export interface PddLogisticsTicketProblemTypeGetLogisticsProblemTypeGetResponse
  * @default
  * @example
  **/
-
 export interface PddLogisticsTicketProblemTypeGetLogisticsProblemTypeGetResponseLogisticsProblemTypeListResponseInterface {
   /**
    * @description: 问题类型描述

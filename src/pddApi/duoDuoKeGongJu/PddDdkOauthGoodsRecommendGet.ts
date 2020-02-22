@@ -5,7 +5,6 @@ export const PDD_DDK_OAUTH_GOODS_RECOMMEND_GET = 'PDD_DDK_OAUTH_GOODS_RECOMMEND_
  * 接口标识：pdd.ddk.oauth.goods.recommend.get
  * 接口使用场景：运营频道商品查询
  **/
-
 export interface PddDdkOauthGoodsRecommendGetRequestInterface {
   /**
    * @description: 从多少位置开始请求；默认值 ： 0
@@ -48,7 +47,6 @@ export interface PddDdkOauthGoodsRecommendGetRequestInterface {
  * 接口标识：pdd.ddk.oauth.goods.recommend.get
  * 接口使用场景：运营频道商品查询
  **/
-
 export interface PddDdkOauthGoodsRecommendGetResponseInterface {
   /**
    * @description: goods_basic_detail_response
@@ -64,7 +62,6 @@ export interface PddDdkOauthGoodsRecommendGetResponseInterface {
  * @default
  * @example
  **/
-
 export interface PddDdkOauthGoodsRecommendGetGoodsBasicDetailResponseResponseInterface {
   /**
    * @description: total
@@ -94,7 +91,6 @@ export interface PddDdkOauthGoodsRecommendGetGoodsBasicDetailResponseResponseInt
  * @default
  * @example
  **/
-
 export interface PddDdkOauthGoodsRecommendGetGoodsBasicDetailResponseListResponseInterface {
   /**
    * @description: 分享描述

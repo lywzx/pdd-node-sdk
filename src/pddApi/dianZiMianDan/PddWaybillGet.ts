@@ -5,7 +5,6 @@ export const PDD_WAYBILL_GET = 'PDD_WAYBILL_GET';
  * 接口标识：pdd.waybill.get
  * 接口使用场景：电子面单云打印接口
  **/
-
 export interface PddWaybillGetRequestInterface {
   /**
    * @description: 入参信息
@@ -21,7 +20,6 @@ export interface PddWaybillGetRequestInterface {
  * @default
  * @example
  **/
-
 export interface PddWaybillGetParamWaybillCloudPrintApplyNewRequestRequestInterface {
   /**
    * @description: 设定取号返回的云打印报文是否加密
@@ -59,7 +57,6 @@ export interface PddWaybillGetParamWaybillCloudPrintApplyNewRequestRequestInterf
  * @default
  * @example
  **/
-
 export interface PddWaybillGetParamWaybillCloudPrintApplyNewRequestSenderRequestInterface {
   /**
    * @description: 地址
@@ -96,7 +93,6 @@ export interface PddWaybillGetParamWaybillCloudPrintApplyNewRequestSenderRequest
  * @default
  * @example
  **/
-
 export interface PddWaybillGetParamWaybillCloudPrintApplyNewRequestSenderAddressRequestInterface {
   /**
    * @description: 城市
@@ -146,7 +142,6 @@ export interface PddWaybillGetParamWaybillCloudPrintApplyNewRequestSenderAddress
  * @default
  * @example
  **/
-
 export interface PddWaybillGetParamWaybillCloudPrintApplyNewRequestTradeOrderInfoDtosRequestInterface {
   /**
    * @description: 物流服务内容链接
@@ -206,7 +201,6 @@ export interface PddWaybillGetParamWaybillCloudPrintApplyNewRequestTradeOrderInf
  * @default
  * @example
  **/
-
 export interface PddWaybillGetParamWaybillCloudPrintApplyNewRequestTradeOrderInfoDtosOrderInfoRequestInterface {
   /**
    * @description: 订单渠道平台编码
@@ -228,7 +222,6 @@ export interface PddWaybillGetParamWaybillCloudPrintApplyNewRequestTradeOrderInf
  * @default
  * @example
  **/
-
 export interface PddWaybillGetParamWaybillCloudPrintApplyNewRequestTradeOrderInfoDtosPackageInfoRequestInterface {
   /**
    * @description: 快运货品描述
@@ -286,7 +279,6 @@ export interface PddWaybillGetParamWaybillCloudPrintApplyNewRequestTradeOrderInf
  * @default
  * @example
  **/
-
 export interface PddWaybillGetParamWaybillCloudPrintApplyNewRequestTradeOrderInfoDtosPackageInfoItemsRequestInterface {
   /**
    * @description: 数量
@@ -308,7 +300,6 @@ export interface PddWaybillGetParamWaybillCloudPrintApplyNewRequestTradeOrderInf
  * @default
  * @example
  **/
-
 export interface PddWaybillGetParamWaybillCloudPrintApplyNewRequestTradeOrderInfoDtosRecipientRequestInterface {
   /**
    * @description: 地址
@@ -345,7 +336,6 @@ export interface PddWaybillGetParamWaybillCloudPrintApplyNewRequestTradeOrderInf
  * @default
  * @example
  **/
-
 export interface PddWaybillGetParamWaybillCloudPrintApplyNewRequestTradeOrderInfoDtosRecipientAddressRequestInterface {
   /**
    * @description: 城市
@@ -395,7 +385,6 @@ export interface PddWaybillGetParamWaybillCloudPrintApplyNewRequestTradeOrderInf
  * 接口标识：pdd.waybill.get
  * 接口使用场景：电子面单云打印接口
  **/
-
 export interface PddWaybillGetResponseInterface {
   /**
    * @description: response
@@ -411,7 +400,6 @@ export interface PddWaybillGetResponseInterface {
  * @default
  * @example
  **/
-
 export interface PddWaybillGetPddWaybillGetResponseResponseInterface {
   /**
    * @description: 系统自动生成
@@ -427,7 +415,6 @@ export interface PddWaybillGetPddWaybillGetResponseResponseInterface {
  * @default
  * @example
  **/
-
 export interface PddWaybillGetPddWaybillGetResponseModulesResponseInterface {
   /**
    * @description: 请求id

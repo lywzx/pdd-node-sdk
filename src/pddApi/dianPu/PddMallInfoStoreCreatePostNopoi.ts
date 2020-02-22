@@ -5,7 +5,6 @@ export const PDD_MALL_INFO_STORE_CREATE_POST_NOPOI = 'PDD_MALL_INFO_STORE_CREATE
  * 接口标识：pdd.mall.info.store.create.post.nopoi
  * 接口使用场景：开放平台无PoiId创建门店
  **/
-
 export interface PddMallInfoStoreCreatePostNopoiRequestInterface {
   /**
    * @description: 门店营业状态
@@ -104,7 +103,6 @@ export interface PddMallInfoStoreCreatePostNopoiRequestInterface {
  * 接口标识：pdd.mall.info.store.create.post.nopoi
  * 接口使用场景：开放平台无PoiId创建门店
  **/
-
 export interface PddMallInfoStoreCreatePostNopoiResponseInterface {
   /**
    * @description:

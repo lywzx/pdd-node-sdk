@@ -5,7 +5,6 @@ export const PDD_DDK_GOODS_UNIT_QUERY = 'PDD_DDK_GOODS_UNIT_QUERY';
  * 接口标识：pdd.ddk.goods.unit.query
  * 接口使用场景：查询商品的推广计划
  **/
-
 export interface PddDdkGoodsUnitQueryRequestInterface {
   /**
    * @description: 商品id
@@ -27,7 +26,6 @@ export interface PddDdkGoodsUnitQueryRequestInterface {
  * 接口标识：pdd.ddk.goods.unit.query
  * 接口使用场景：查询商品的推广计划
  **/
-
 export interface PddDdkGoodsUnitQueryResponseInterface {
   /**
    * @description: ddk_goods_unit_query_response
@@ -43,7 +41,6 @@ export interface PddDdkGoodsUnitQueryResponseInterface {
  * @default
  * @example
  **/
-
 export interface PddDdkGoodsUnitQueryDdkGoodsUnitQueryResponseResponseInterface {
   /**
    * @description: 优惠券结束时间，单位：秒

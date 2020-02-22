@@ -5,7 +5,6 @@ export const PDD_GOODS_LIST_GET = 'PDD_GOODS_LIST_GET';
  * 接口标识：pdd.goods.list.get
  * 接口使用场景：商品列表查询
  **/
-
 export interface PddGoodsListGetRequestInterface {
   /**
    * @description: 商品外部编码（sku），同其他接口中的outer_id 、out_id、out_sku_sn、outer_sku_sn、out_sku_id、outer_sku_id 都为商家编码（sku维度）。outer_id,is_onsale,goods_name三选一，优先级is_onsale>outer_id>goods_name
@@ -62,7 +61,6 @@ export interface PddGoodsListGetRequestInterface {
  * 接口标识：pdd.goods.list.get
  * 接口使用场景：商品列表查询
  **/
-
 export interface PddGoodsListGetResponseInterface {
   /**
    * @description: 商品列表响应对象
@@ -78,7 +76,6 @@ export interface PddGoodsListGetResponseInterface {
  * @default
  * @example
  **/
-
 export interface PddGoodsListGetGoodsListGetResponseResponseInterface {
   /**
    * @description: 返回商品总数
@@ -101,7 +98,6 @@ export interface PddGoodsListGetGoodsListGetResponseResponseInterface {
  * @default
  * @example
  **/
-
 export interface PddGoodsListGetGoodsListGetResponseGoodsListResponseInterface {
   /**
    * @description: 商品缩略图
@@ -166,7 +162,6 @@ export interface PddGoodsListGetGoodsListGetResponseGoodsListResponseInterface {
  * @default
  * @example
  **/
-
 export interface PddGoodsListGetGoodsListGetResponseGoodsListSkuListResponseInterface {
   /**
    * @description: 规格名称

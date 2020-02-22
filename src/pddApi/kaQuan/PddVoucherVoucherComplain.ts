@@ -5,7 +5,6 @@ export const PDD_VOUCHER_VOUCHER_COMPLAIN = 'PDD_VOUCHER_VOUCHER_COMPLAIN';
  * 接口标识：pdd.voucher.voucher.complain
  * 接口使用场景：卡券投诉接口
  **/
-
 export interface PddVoucherVoucherComplainRequestInterface {
   /**
    * @description: 订单号
@@ -71,7 +70,6 @@ export interface PddVoucherVoucherComplainRequestInterface {
  * @default
  * @example
  **/
-
 export interface PddVoucherVoucherComplainVoucherListRequestInterface {
   /**
    * @description: 卡券ID
@@ -93,7 +91,6 @@ export interface PddVoucherVoucherComplainVoucherListRequestInterface {
  * 接口标识：pdd.voucher.voucher.complain
  * 接口使用场景：卡券投诉接口
  **/
-
 export interface PddVoucherVoucherComplainResponseInterface {
   /**
    * @description: response
@@ -109,7 +106,6 @@ export interface PddVoucherVoucherComplainResponseInterface {
  * @default
  * @example
  **/
-
 export interface PddVoucherVoucherComplainVoucherVoucherComplainResponseResponseInterface {
   /**
    * @description: 是否请求成功

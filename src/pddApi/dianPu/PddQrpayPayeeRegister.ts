@@ -5,7 +5,6 @@ export const PDD_QRPAY_PAYEE_REGISTER = 'PDD_QRPAY_PAYEE_REGISTER';
  * 接口标识：pdd.qrpay.payee.register
  * 接口使用场景：交易二维码订单同店铺下需要记录订单来源的业务场景，可以将参数定义为门店、柜员、店员等
  **/
-
 export interface PddQrpayPayeeRegisterRequestInterface {
   /**
    * @description: 参数列表
@@ -21,7 +20,6 @@ export interface PddQrpayPayeeRegisterRequestInterface {
  * @default
  * @example
  **/
-
 export interface PddQrpayPayeeRegisterPayeeListRequestInterface {
   /**
    * @description: 参数名，用于注册到名单，并生成对应URL
@@ -36,7 +34,6 @@ export interface PddQrpayPayeeRegisterPayeeListRequestInterface {
  * 接口标识：pdd.qrpay.payee.register
  * 接口使用场景：交易二维码订单同店铺下需要记录订单来源的业务场景，可以将参数定义为门店、柜员、店员等
  **/
-
 export interface PddQrpayPayeeRegisterResponseInterface {
   /**
    * @description: response
@@ -52,7 +49,6 @@ export interface PddQrpayPayeeRegisterResponseInterface {
  * @default
  * @example
  **/
-
 export interface PddQrpayPayeeRegisterQrpayPayeeRegisterResponseResponseInterface {
   /**
    * @description: 参数注册结果
@@ -68,7 +64,6 @@ export interface PddQrpayPayeeRegisterQrpayPayeeRegisterResponseResponseInterfac
  * @default
  * @example
  **/
-
 export interface PddQrpayPayeeRegisterQrpayPayeeRegisterResponsePayeeResultListResponseInterface {
   /**
    * @description: 参数名

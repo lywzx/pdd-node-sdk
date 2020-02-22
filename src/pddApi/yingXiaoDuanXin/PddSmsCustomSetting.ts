@@ -5,7 +5,6 @@ export const PDD_SMS_CUSTOM_SETTING = 'PDD_SMS_CUSTOM_SETTING';
  * 接口标识：pdd.sms.custom.setting
  * 接口使用场景：指定号码短信发送设置（自定义）
  **/
-
 export interface PddSmsCustomSettingRequestInterface {
   /**
    * @description: 模板id
@@ -41,7 +40,6 @@ export interface PddSmsCustomSettingRequestInterface {
  * 接口标识：pdd.sms.custom.setting
  * 接口使用场景：指定号码短信发送设置（自定义）
  **/
-
 export interface PddSmsCustomSettingResponseInterface {
   /**
    * @description: response
@@ -57,7 +55,6 @@ export interface PddSmsCustomSettingResponseInterface {
  * @default
  * @example
  **/
-
 export interface PddSmsCustomSettingSmsCustomSettingResponseResponseInterface {
   /**
    * @description: 结果

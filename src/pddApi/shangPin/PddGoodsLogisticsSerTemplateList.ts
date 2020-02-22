@@ -5,7 +5,6 @@ export const PDD_GOODS_LOGISTICS_SER_TEMPLATE_LIST = 'PDD_GOODS_LOGISTICS_SER_TE
  * 接口标识：pdd.goods.logistics.ser.template.list
  * 接口使用场景：商品送装服务模版列表
  **/
-
 export interface PddGoodsLogisticsSerTemplateListRequestInterface {
   /**
    * @description: 模板类型
@@ -41,7 +40,6 @@ export interface PddGoodsLogisticsSerTemplateListRequestInterface {
  * 接口标识：pdd.goods.logistics.ser.template.list
  * 接口使用场景：商品送装服务模版列表
  **/
-
 export interface PddGoodsLogisticsSerTemplateListResponseInterface {
   /**
    * @description: response
@@ -57,7 +55,6 @@ export interface PddGoodsLogisticsSerTemplateListResponseInterface {
  * @default
  * @example
  **/
-
 export interface PddGoodsLogisticsSerTemplateListGoodsLogisticsSerTemplateListResponseResponseInterface {
   /**
    * @description: 总数
@@ -80,7 +77,6 @@ export interface PddGoodsLogisticsSerTemplateListGoodsLogisticsSerTemplateListRe
  * @default
  * @example
  **/
-
 export interface PddGoodsLogisticsSerTemplateListGoodsLogisticsSerTemplateListResponseListResponseInterface {
   /**
    * @description: 使用情况

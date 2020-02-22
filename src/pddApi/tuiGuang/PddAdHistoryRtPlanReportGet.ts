@@ -5,7 +5,6 @@ export const PDD_AD_HISTORY_RT_PLAN_REPORT_GET = 'PDD_AD_HISTORY_RT_PLAN_REPORT_
  * 接口标识：pdd.ad.history.rt.plan.report.get
  * 接口使用场景：推广计划实时报表数据，可获得推广计划的实时数据
  **/
-
 export interface PddAdHistoryRtPlanReportGetRequestInterface {
   /**
    * @description: 0--搜索广告,1--明星店铺,2--定向广告,3--首页Banner广告（目前只支持0，暂不支持1、2、3）
@@ -20,7 +19,6 @@ export interface PddAdHistoryRtPlanReportGetRequestInterface {
  * 接口标识：pdd.ad.history.rt.plan.report.get
  * 接口使用场景：推广计划实时报表数据，可获得推广计划的实时数据
  **/
-
 export interface PddAdHistoryRtPlanReportGetResponseInterface {
   /**
    * @description: 返回response
@@ -36,7 +34,6 @@ export interface PddAdHistoryRtPlanReportGetResponseInterface {
  * @default
  * @example
  **/
-
 export interface PddAdHistoryRtPlanReportGetAdPlanRealTimeReportResponseResponseInterface {
   /**
    * @description: 报表对象列表
@@ -52,7 +49,6 @@ export interface PddAdHistoryRtPlanReportGetAdPlanRealTimeReportResponseResponse
  * @default
  * @example
  **/
-
 export interface PddAdHistoryRtPlanReportGetAdPlanRealTimeReportResponsePlanRealTimeReportListResponseInterface {
   /**
    * @description: 计划id

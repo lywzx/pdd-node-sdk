@@ -5,7 +5,6 @@ export const PDD_LOGISTICS_ONLINE_STATUS_QUERY = 'PDD_LOGISTICS_ONLINE_STATUS_QU
  * 接口标识：pdd.logistics.online.status.query
  * 接口使用场景：根据订单号查询在线下单状态
  **/
-
 export interface PddLogisticsOnlineStatusQueryRequestInterface {
   /**
    * @description: 订单号
@@ -20,7 +19,6 @@ export interface PddLogisticsOnlineStatusQueryRequestInterface {
  * 接口标识：pdd.logistics.online.status.query
  * 接口使用场景：根据订单号查询在线下单状态
  **/
-
 export interface PddLogisticsOnlineStatusQueryResponseInterface {
   /**
    * @description: response
@@ -36,7 +34,6 @@ export interface PddLogisticsOnlineStatusQueryResponseInterface {
  * @default
  * @example
  **/
-
 export interface PddLogisticsOnlineStatusQueryLogisticsOnlineStatusQueryResponseResponseInterface {
   /**
    * @description: 订单状态值对应：1,已下单;2,已接单;3,商家已取消;4,快递公司已拒接;5.揽收成功;6.揽收失败;

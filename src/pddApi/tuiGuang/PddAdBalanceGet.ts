@@ -13,7 +13,6 @@ export interface PddAdBalanceGetRequestInterface {}
  * 接口标识：pdd.ad.balance.get
  * 接口使用场景：获取拼多多推广账户余额，可获得现金余额和红包余额数据
  **/
-
 export interface PddAdBalanceGetResponseInterface {
   /**
    * @description: response
@@ -29,7 +28,6 @@ export interface PddAdBalanceGetResponseInterface {
  * @default
  * @example
  **/
-
 export interface PddAdBalanceGetAdBalanceGetResponseResponseInterface {
   /**
    * @description: 账户列表
@@ -59,7 +57,6 @@ export interface PddAdBalanceGetAdBalanceGetResponseResponseInterface {
  * @default
  * @example
  **/
-
 export interface PddAdBalanceGetAdBalanceGetResponseAccountsBalanceResponseInterface {
   /**
    * @description: 1 - 现金 2 - 红包

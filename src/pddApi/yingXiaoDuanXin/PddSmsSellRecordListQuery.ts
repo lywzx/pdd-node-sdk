@@ -5,7 +5,6 @@ export const PDD_SMS_SELL_RECORD_LIST_QUERY = 'PDD_SMS_SELL_RECORD_LIST_QUERY';
  * 接口标识：pdd.sms.sell.record.list.query
  * 接口使用场景：查询短信发送任务列表
  **/
-
 export interface PddSmsSellRecordListQueryRequestInterface {
   /**
    * @description: 全部不传status
@@ -44,7 +43,6 @@ export interface PddSmsSellRecordListQueryRequestInterface {
  * 接口标识：pdd.sms.sell.record.list.query
  * 接口使用场景：查询短信发送任务列表
  **/
-
 export interface PddSmsSellRecordListQueryResponseInterface {
   /**
    * @description: response
@@ -60,7 +58,6 @@ export interface PddSmsSellRecordListQueryResponseInterface {
  * @default
  * @example
  **/
-
 export interface PddSmsSellRecordListQuerySmsSellRecordListQueryResponseResponseInterface {
   /**
    * @description: 总量
@@ -83,7 +80,6 @@ export interface PddSmsSellRecordListQuerySmsSellRecordListQueryResponseResponse
  * @default
  * @example
  **/
-
 export interface PddSmsSellRecordListQuerySmsSellRecordListQueryResponseResultResponseInterface {
   /**
    * @description: 删除用的id

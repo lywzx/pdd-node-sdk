@@ -13,7 +13,6 @@ export interface PddMallInfoBondedWarehouseGetRequestInterface {}
  * 接口标识：pdd.mall.info.bonded.warehouse.get
  * 接口使用场景：查询商家的所有保税仓信息
  **/
-
 export interface PddMallInfoBondedWarehouseGetResponseInterface {
   /**
    * @description: reponse
@@ -29,7 +28,6 @@ export interface PddMallInfoBondedWarehouseGetResponseInterface {
  * @default
  * @example
  **/
-
 export interface PddMallInfoBondedWarehouseGetMallInfoBondedWarehouseGetResponseResponseInterface {
   /**
    * @description: list
@@ -45,7 +43,6 @@ export interface PddMallInfoBondedWarehouseGetMallInfoBondedWarehouseGetResponse
  * @default
  * @example
  **/
-
 export interface PddMallInfoBondedWarehouseGetMallInfoBondedWarehouseGetResponseInfoListResponseInterface {
   /**
    * @description: 保税仓标识

@@ -5,7 +5,6 @@ export const PDD_OPEN_MSG_SERVICE_QUERY_MSG_RECORD = 'PDD_OPEN_MSG_SERVICE_QUERY
  * 接口标识：pdd.open.msg.service.query.msg.record
  * 接口使用场景：查询短信发送记录
  **/
-
 export interface PddOpenMsgServiceQueryMsgRecordRequestInterface {
   /**
    * @description: 短信发送流水
@@ -48,7 +47,6 @@ export interface PddOpenMsgServiceQueryMsgRecordRequestInterface {
  * 接口标识：pdd.open.msg.service.query.msg.record
  * 接口使用场景：查询短信发送记录
  **/
-
 export interface PddOpenMsgServiceQueryMsgRecordResponseInterface {
   /**
    * @description: 请求ID
@@ -92,7 +90,6 @@ export interface PddOpenMsgServiceQueryMsgRecordResponseInterface {
  * @default
  * @example
  **/
-
 export interface PddOpenMsgServiceQueryMsgRecordSmsSendDetailsResponseInterface {
   /**
    * @description: 模板内容

@@ -5,7 +5,6 @@ export const PDD_AD_PLAN_CREATE = 'PDD_AD_PLAN_CREATE';
  * 接口标识：pdd.ad.plan.create
  * 接口使用场景：新建推广计划，新建计划时需要满足两个条件：同意拼多多店铺推广软件服务协议&计划数没达到上限50个
  **/
-
 export interface PddAdPlanCreateRequestInterface {
   /**
    * @description: 0--搜索广告,1--明星店铺,2--定向广告,3--首页Banner广告（目前只支持0，暂不支持1、2、3）
@@ -42,7 +41,6 @@ export interface PddAdPlanCreateRequestInterface {
  * @default
  * @example
  **/
-
 export interface PddAdPlanCreateDiscountsRequestInterface {
   /**
    * @description: 折扣率，1000 表示 100.0%，0 表示不投放，自定义范围 500 ~ 3000（10的倍数）
@@ -64,7 +62,6 @@ export interface PddAdPlanCreateDiscountsRequestInterface {
  * 接口标识：pdd.ad.plan.create
  * 接口使用场景：新建推广计划，新建计划时需要满足两个条件：同意拼多多店铺推广软件服务协议&计划数没达到上限50个
  **/
-
 export interface PddAdPlanCreateResponseInterface {
   /**
    * @description: 返回response
@@ -80,7 +77,6 @@ export interface PddAdPlanCreateResponseInterface {
  * @default
  * @example
  **/
-
 export interface PddAdPlanCreateAdPlanCreateResponseResponseInterface {
   /**
    * @description: 广告计划id

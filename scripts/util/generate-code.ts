@@ -97,9 +97,9 @@ export function buildInterfaceColumn(
         };
         ret.push(...buildInterfaceColumn(innerIt, current.children, t));
       }
-      if (current.paramType === 'OBJECT') {
+      if (current.paramType === 'OBJECT' || current.paramType === 'MAP') {
         type = itCls;
-      } else if (current.paramType === 'OBJECT[]') {
+      } else if (current.paramType === 'OBJECT[]' || current.paramType === 'MAP[]') {
         type = `${itCls}[]`;
       } else {
         type = current.paramType;
@@ -173,6 +173,7 @@ const typeMap = {
   INTEGER: 'number',
   'OBJECT[]': 'any[]',
   BOOLEAN: 'boolean',
+  MAP: 'object',
 };
 function pddTypeToTypescriptType(type: string) {
   return (typeMap as any)[type] || 'string';

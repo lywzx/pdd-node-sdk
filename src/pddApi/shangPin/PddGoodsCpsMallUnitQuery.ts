@@ -13,7 +13,6 @@ export interface PddGoodsCpsMallUnitQueryRequestInterface {}
  * 接口标识：pdd.goods.cps.mall.unit.query
  * 接口使用场景：查询全店推广计划
  **/
-
 export interface PddGoodsCpsMallUnitQueryResponseInterface {
   /**
    * @description: response
@@ -29,7 +28,6 @@ export interface PddGoodsCpsMallUnitQueryResponseInterface {
  * @default
  * @example
  **/
-
 export interface PddGoodsCpsMallUnitQueryGoodsCpsMallUnitQueryResponseResponseInterface {
   /**
    * @description: 全店推广计划佣金比（千分比）

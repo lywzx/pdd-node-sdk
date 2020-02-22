@@ -5,7 +5,6 @@ export const PDD_EXPRESS_DEPOT_LIST_GET = 'PDD_EXPRESS_DEPOT_LIST_GET';
  * 接口标识：pdd.express.depot.list.get
  * 接口使用场景：仓库列表
  **/
-
 export interface PddExpressDepotListGetRequestInterface {
   /**
    * @description: 分页数据size
@@ -27,7 +26,6 @@ export interface PddExpressDepotListGetRequestInterface {
  * 接口标识：pdd.express.depot.list.get
  * 接口使用场景：仓库列表
  **/
-
 export interface PddExpressDepotListGetResponseInterface {
   /**
    * @description: 返回结果
@@ -43,7 +41,6 @@ export interface PddExpressDepotListGetResponseInterface {
  * @default
  * @example
  **/
-
 export interface PddExpressDepotListGetOpenApiResponseResponseInterface {
   /**
    * @description: 仓库数量
@@ -66,7 +63,6 @@ export interface PddExpressDepotListGetOpenApiResponseResponseInterface {
  * @default
  * @example
  **/
-
 export interface PddExpressDepotListGetOpenApiResponseDepotListResponseInterface {
   /**
    * @description: 仓库详细地址
@@ -147,11 +143,11 @@ export interface PddExpressDepotListGetOpenApiResponseDepotListResponseInterface
 
   /**
    * @description: 覆盖信息,key是覆盖的省id;value中1表示局部，2表示全部覆盖
-   * @type: MAP
+   * @type: PddExpressDepotListGetOpenApiResponseDepotListProvinceMapResponseInterface
    * @default:
    *
    **/
-  province_map: MAP;
+  province_map: PddExpressDepotListGetOpenApiResponseDepotListProvinceMapResponseInterface;
 
   /**
    * @description: 仓库类型
@@ -173,7 +169,6 @@ export interface PddExpressDepotListGetOpenApiResponseDepotListResponseInterface
  * @default
  * @example
  **/
-
 export interface PddExpressDepotListGetOpenApiResponseDepotListProvinceMapResponseInterface {
   /**
    * @description: 省份id

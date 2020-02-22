@@ -5,7 +5,6 @@ export const PDD_AD_QUERY_LOCATION_BID_PV_LIST = 'PDD_AD_QUERY_LOCATION_BID_PV_L
  * 接口标识：pdd.ad.query.location.bid.pv.list
  * 接口使用场景：获取可选资源位信息（日均可竞流量）
  **/
-
 export interface PddAdQueryLocationBidPvListRequestInterface {
   /**
    * @description: 推广类型  2-展示推广
@@ -20,7 +19,6 @@ export interface PddAdQueryLocationBidPvListRequestInterface {
  * 接口标识：pdd.ad.query.location.bid.pv.list
  * 接口使用场景：获取可选资源位信息（日均可竞流量）
  **/
-
 export interface PddAdQueryLocationBidPvListResponseInterface {
   /**
    * @description: 开平出参
@@ -36,7 +34,6 @@ export interface PddAdQueryLocationBidPvListResponseInterface {
  * @default
  * @example
  **/
-
 export interface PddAdQueryLocationBidPvListOpenApiResponseResponseInterface {
   /**
    * @description: 日均可竞流量

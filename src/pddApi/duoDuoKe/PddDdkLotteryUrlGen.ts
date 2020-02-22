@@ -5,7 +5,6 @@ export const PDD_DDK_LOTTERY_URL_GEN = 'PDD_DDK_LOTTERY_URL_GEN';
  * 接口标识：pdd.ddk.lottery.url.gen
  * 接口使用场景：多多客工具生成转盘抽免单url
  **/
-
 export interface PddDdkLotteryUrlGenRequestInterface {
   /**
    * @description: 推广位
@@ -69,7 +68,6 @@ export interface PddDdkLotteryUrlGenRequestInterface {
  * 接口标识：pdd.ddk.lottery.url.gen
  * 接口使用场景：多多客工具生成转盘抽免单url
  **/
-
 export interface PddDdkLotteryUrlGenResponseInterface {
   /**
    * @description: lottery_url_response
@@ -85,7 +83,6 @@ export interface PddDdkLotteryUrlGenResponseInterface {
  * @default
  * @example
  **/
-
 export interface PddDdkLotteryUrlGenLotteryUrlResponseResponseInterface {
   /**
    * @description: 返回总数
@@ -108,7 +105,6 @@ export interface PddDdkLotteryUrlGenLotteryUrlResponseResponseInterface {
  * @default
  * @example
  **/
-
 export interface PddDdkLotteryUrlGenLotteryUrlResponseUrlListResponseInterface {
   /**
    * @description: 转盘抽免单单人团链接
@@ -155,7 +151,6 @@ export interface PddDdkLotteryUrlGenLotteryUrlResponseUrlListResponseInterface {
  * @default
  * @example
  **/
-
 export interface PddDdkLotteryUrlGenLotteryUrlResponseUrlListSingleUrlListResponseInterface {
   /**
    * @description: 转盘抽免单长链接
@@ -219,7 +214,6 @@ export interface PddDdkLotteryUrlGenLotteryUrlResponseUrlListSingleUrlListRespon
  * @default
  * @example
  **/
-
 export interface PddDdkLotteryUrlGenLotteryUrlResponseUrlListMultiUrlListResponseInterface {
   /**
    * @description: 转盘抽免单长链接
@@ -283,7 +277,6 @@ export interface PddDdkLotteryUrlGenLotteryUrlResponseUrlListMultiUrlListRespons
  * @default
  * @example
  **/
-
 export interface PddDdkLotteryUrlGenLotteryUrlResponseUrlListQqAppInfoResponseInterface {
   /**
    * @description: 拼多多小程序id
@@ -347,7 +340,6 @@ export interface PddDdkLotteryUrlGenLotteryUrlResponseUrlListQqAppInfoResponseIn
  * @default
  * @example
  **/
-
 export interface PddDdkLotteryUrlGenLotteryUrlResponseUrlListWeAppInfoResponseInterface {
   /**
    * @description: 小程序ID

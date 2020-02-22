@@ -5,7 +5,6 @@ export const PDD_EXPRESS_ADD_DEPOT = 'PDD_EXPRESS_ADD_DEPOT';
  * 接口标识：pdd.express.add.depot
  * 接口使用场景：增加仓库
  **/
-
 export interface PddExpressAddDepotRequestInterface {
   /**
    * @description: 联系人姓名
@@ -70,11 +69,11 @@ export interface PddExpressAddDepotRequestInterface {
    *   2:[3,4]
    *   }
    * }
-   * @type: MAP
+   * @type: PddExpressAddDepotDepotRegionRequestInterface
    * @default:
    *
    **/
-  depot_region?: MAP;
+  depot_region?: PddExpressAddDepotDepotRegionRequestInterface;
 
   /**
    * @description: 联系人电话
@@ -101,7 +100,6 @@ export interface PddExpressAddDepotRequestInterface {
  * @default
  * @example
  **/
-
 export interface PddExpressAddDepotDepotRegionRequestInterface {
   /**
    * @description: 省份id
@@ -112,11 +110,11 @@ export interface PddExpressAddDepotDepotRegionRequestInterface {
 
   /**
    * @description: 市 -> 区id列表
-   * @type: MAP
+   * @type: PddExpressAddDepotDepotRegionValueRequestInterface
    * @default:
    *
    **/
-  value?: MAP;
+  value?: PddExpressAddDepotDepotRegionValueRequestInterface;
 }
 
 /**
@@ -124,7 +122,6 @@ export interface PddExpressAddDepotDepotRegionRequestInterface {
  * @default
  * @example
  **/
-
 export interface PddExpressAddDepotDepotRegionValueRequestInterface {
   /**
    * @description: 城市id
@@ -146,7 +143,6 @@ export interface PddExpressAddDepotDepotRegionValueRequestInterface {
  * 接口标识：pdd.express.add.depot
  * 接口使用场景：增加仓库
  **/
-
 export interface PddExpressAddDepotResponseInterface {
   /**
    * @description: 操作成功

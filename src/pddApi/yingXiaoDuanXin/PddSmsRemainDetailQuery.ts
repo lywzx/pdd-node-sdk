@@ -13,7 +13,6 @@ export interface PddSmsRemainDetailQueryRequestInterface {}
  * 接口标识：pdd.sms.remain.detail.query
  * 接口使用场景：查询余量
  **/
-
 export interface PddSmsRemainDetailQueryResponseInterface {
   /**
    * @description: response
@@ -29,7 +28,6 @@ export interface PddSmsRemainDetailQueryResponseInterface {
  * @default
  * @example
  **/
-
 export interface PddSmsRemainDetailQuerySmsRemainDetailQueryResponseResponseInterface {
   /**
    * @description: 剩余金额

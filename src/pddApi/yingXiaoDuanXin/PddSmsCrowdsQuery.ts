@@ -5,7 +5,6 @@ export const PDD_SMS_CROWDS_QUERY = 'PDD_SMS_CROWDS_QUERY';
  * 接口标识：pdd.sms.crowds.query
  * 接口使用场景：查询人群列表
  **/
-
 export interface PddSmsCrowdsQueryRequestInterface {
   /**
    * @description: //人群类型选择  1-推荐人群（官方）  2-自定义人群  不传-全部
@@ -34,7 +33,6 @@ export interface PddSmsCrowdsQueryRequestInterface {
  * 接口标识：pdd.sms.crowds.query
  * 接口使用场景：查询人群列表
  **/
-
 export interface PddSmsCrowdsQueryResponseInterface {
   /**
    * @description: response
@@ -50,7 +48,6 @@ export interface PddSmsCrowdsQueryResponseInterface {
  * @default
  * @example
  **/
-
 export interface PddSmsCrowdsQuerySmsCrowsQueryResponseResponseInterface {
   /**
    * @description: 数量
@@ -73,7 +70,6 @@ export interface PddSmsCrowdsQuerySmsCrowsQueryResponseResponseInterface {
  * @default
  * @example
  **/
-
 export interface PddSmsCrowdsQuerySmsCrowsQueryResponseResultResponseInterface {
   /**
    * @description: 人群id
@@ -131,7 +127,6 @@ export interface PddSmsCrowdsQuerySmsCrowsQueryResponseResultResponseInterface {
  * @default
  * @example
  **/
-
 export interface PddSmsCrowdsQuerySmsCrowsQueryResponseResultCrowdResponseInterface {
   /**
    * @description: 对象类型

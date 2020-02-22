@@ -5,7 +5,6 @@ export const PDD_SMS_CREATE_CUSTOM_TEMPLATE = 'PDD_SMS_CREATE_CUSTOM_TEMPLATE';
  * 接口标识：pdd.sms.create.custom.template
  * 接口使用场景：创建自定义短信模板
  **/
-
 export interface PddSmsCreateCustomTemplateRequestInterface {
   /**
    * @description: 短信模板名称
@@ -28,7 +27,6 @@ export interface PddSmsCreateCustomTemplateRequestInterface {
  * @default
  * @example
  **/
-
 export interface PddSmsCreateCustomTemplateContentRequestInterface {
   /**
    * @description: 短信内容
@@ -50,7 +48,6 @@ export interface PddSmsCreateCustomTemplateContentRequestInterface {
  * 接口标识：pdd.sms.create.custom.template
  * 接口使用场景：创建自定义短信模板
  **/
-
 export interface PddSmsCreateCustomTemplateResponseInterface {
   /**
    * @description: 创建结果
@@ -66,7 +63,6 @@ export interface PddSmsCreateCustomTemplateResponseInterface {
  * @default
  * @example
  **/
-
 export interface PddSmsCreateCustomTemplateSmsCreateCustomTemplateResponseResponseInterface {
   /**
    * @description: 请求结果

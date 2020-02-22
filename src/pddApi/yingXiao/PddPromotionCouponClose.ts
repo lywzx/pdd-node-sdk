@@ -5,7 +5,6 @@ export const PDD_PROMOTION_COUPON_CLOSE = 'PDD_PROMOTION_COUPON_CLOSE';
  * 接口标识：pdd.promotion.coupon.close
  * 接口使用场景：关闭批次接口
  **/
-
 export interface PddPromotionCouponCloseRequestInterface {
   /**
    * @description: 券批次ID
@@ -20,7 +19,6 @@ export interface PddPromotionCouponCloseRequestInterface {
  * 接口标识：pdd.promotion.coupon.close
  * 接口使用场景：关闭批次接口
  **/
-
 export interface PddPromotionCouponCloseResponseInterface {
   /**
    * @description: 关闭批次接口响应对象
@@ -36,7 +34,6 @@ export interface PddPromotionCouponCloseResponseInterface {
  * @default
  * @example
  **/
-
 export interface PddPromotionCouponClosePromotionCouponBatchCloseResponseResponseInterface {
   /**
    * @description: 是否关闭成功，true-成功，false-失败

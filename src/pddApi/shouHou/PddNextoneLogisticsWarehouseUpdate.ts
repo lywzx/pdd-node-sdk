@@ -20,7 +20,6 @@ export interface PddNextoneLogisticsWarehouseUpdateRequestInterface {
  * @default
  * @example
  **/
-
 export interface PddNextoneLogisticsWarehouseUpdateRequestRequestInterface {
   /**
    * @description: 售后id
@@ -70,7 +69,6 @@ export interface PddNextoneLogisticsWarehouseUpdateRequestRequestInterface {
  * 接口标识：pdd.nextone.logistics.warehouse.update
  * 接口使用场景：退货入库通知拼多多确认入库成功
  **/
-
 export interface PddNextoneLogisticsWarehouseUpdateResponseInterface {
   /**
    * @description: response
@@ -86,7 +84,6 @@ export interface PddNextoneLogisticsWarehouseUpdateResponseInterface {
  * @default
  * @example
  **/
-
 export interface PddNextoneLogisticsWarehouseUpdateResponseResponseInterface {
   /**
    * @description: result
@@ -102,7 +99,6 @@ export interface PddNextoneLogisticsWarehouseUpdateResponseResponseInterface {
  * @default
  * @example
  **/
-
 export interface PddNextoneLogisticsWarehouseUpdateResponseResultResponseInterface {
   /**
    * @description: after_sales_id

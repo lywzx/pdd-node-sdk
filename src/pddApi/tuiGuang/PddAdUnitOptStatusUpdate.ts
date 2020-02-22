@@ -5,7 +5,6 @@ export const PDD_AD_UNIT_OPT_STATUS_UPDATE = 'PDD_AD_UNIT_OPT_STATUS_UPDATE';
  * 接口标识：pdd.ad.unit.opt.status.update
  * 接口使用场景：暂停、开启推广单元，可输入多个单元id，进行批量设置
  **/
-
 export interface PddAdUnitOptStatusUpdateRequestInterface {
   /**
    * @description: 0--搜索广告,1--明星店铺,2--定向广告,3--首页Banner广告（目前只支持0，暂不支持1、2、3）
@@ -34,7 +33,6 @@ export interface PddAdUnitOptStatusUpdateRequestInterface {
  * 接口标识：pdd.ad.unit.opt.status.update
  * 接口使用场景：暂停、开启推广单元，可输入多个单元id，进行批量设置
  **/
-
 export interface PddAdUnitOptStatusUpdateResponseInterface {
   /**
    * @description: 返回response
@@ -50,7 +48,6 @@ export interface PddAdUnitOptStatusUpdateResponseInterface {
  * @default
  * @example
  **/
-
 export interface PddAdUnitOptStatusUpdateAdUnitOptStatusUpdateResponseResponseInterface {
   /**
    * @description: 是否成功

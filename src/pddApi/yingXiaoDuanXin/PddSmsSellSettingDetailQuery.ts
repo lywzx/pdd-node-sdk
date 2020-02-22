@@ -5,7 +5,6 @@ export const PDD_SMS_SELL_SETTING_DETAIL_QUERY = 'PDD_SMS_SELL_SETTING_DETAIL_QU
  * 接口标识：pdd.sms.sell.setting.detail.query
  * 接口使用场景：营销短信设置详情
  **/
-
 export interface PddSmsSellSettingDetailQueryRequestInterface {
   /**
    * @description: 任务id
@@ -20,7 +19,6 @@ export interface PddSmsSellSettingDetailQueryRequestInterface {
  * 接口标识：pdd.sms.sell.setting.detail.query
  * 接口使用场景：营销短信设置详情
  **/
-
 export interface PddSmsSellSettingDetailQueryResponseInterface {
   /**
    * @description: response
@@ -36,7 +34,6 @@ export interface PddSmsSellSettingDetailQueryResponseInterface {
  * @default
  * @example
  **/
-
 export interface PddSmsSellSettingDetailQuerySmsSellSettingDetailQueryResponseResponseInterface {
   /**
    * @description: 模板id
@@ -130,7 +127,6 @@ export interface PddSmsSellSettingDetailQuerySmsSellSettingDetailQueryResponseRe
  * @default
  * @example
  **/
-
 export interface PddSmsSellSettingDetailQuerySmsSellSettingDetailQueryResponseCrowdResponseInterface {
   /**
    * @description: 人群名称
@@ -160,7 +156,6 @@ export interface PddSmsSellSettingDetailQuerySmsSellSettingDetailQueryResponseCr
  * @default
  * @example
  **/
-
 export interface PddSmsSellSettingDetailQuerySmsSellSettingDetailQueryResponseCrowdCrowdResponseInterface {
   /**
    * @description: 定位类型
@@ -259,7 +254,6 @@ export interface PddSmsSellSettingDetailQuerySmsSellSettingDetailQueryResponseCr
  * @default
  * @example
  **/
-
 export interface PddSmsSellSettingDetailQuerySmsSellSettingDetailQueryResponseTargetResponseInterface {
   /**
    * @description: 实付金额最低价

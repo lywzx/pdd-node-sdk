@@ -5,7 +5,6 @@ export const PDD_AD_CHART_BYKEYWORD_GET = 'PDD_AD_CHART_BYKEYWORD_GET';
  * 接口标识：pdd.ad.chart.bykeyword.get
  * 接口使用场景：获取关键词推广报表信息
  **/
-
 export interface PddAdChartBykeywordGetRequestInterface {
   /**
    * @description: 报表日期，仅能查询近30天的报表数据，格式为：YYYY-MM-DD
@@ -34,7 +33,6 @@ export interface PddAdChartBykeywordGetRequestInterface {
  * 接口标识：pdd.ad.chart.bykeyword.get
  * 接口使用场景：获取关键词推广报表信息
  **/
-
 export interface PddAdChartBykeywordGetResponseInterface {
   /**
    * @description: response
@@ -50,7 +48,6 @@ export interface PddAdChartBykeywordGetResponseInterface {
  * @default
  * @example
  **/
-
 export interface PddAdChartBykeywordGetAdKeywordDailyReportResponseResponseInterface {
   /**
    * @description: 返回的关键词报表总条数
@@ -73,7 +70,6 @@ export interface PddAdChartBykeywordGetAdKeywordDailyReportResponseResponseInter
  * @default
  * @example
  **/
-
 export interface PddAdChartBykeywordGetAdKeywordDailyReportResponseKeywordDailyReportListResponseInterface {
   /**
    * @description: 订单数据
@@ -125,7 +121,6 @@ export interface PddAdChartBykeywordGetAdKeywordDailyReportResponseKeywordDailyR
  * @default
  * @example
  **/
-
 export interface PddAdChartBykeywordGetAdKeywordDailyReportResponseKeywordDailyReportListConversionResponseInterface {
   /**
    * @description: 总推广订单数
@@ -161,7 +156,6 @@ export interface PddAdChartBykeywordGetAdKeywordDailyReportResponseKeywordDailyR
  * @default
  * @example
  **/
-
 export interface PddAdChartBykeywordGetAdKeywordDailyReportResponseKeywordDailyReportListAdInfoResponseInterface {
   /**
    * @description: 推广计划名称

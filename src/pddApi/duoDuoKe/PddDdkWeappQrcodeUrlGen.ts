@@ -5,7 +5,6 @@ export const PDD_DDK_WEAPP_QRCODE_URL_GEN = 'PDD_DDK_WEAPP_QRCODE_URL_GEN';
  * 接口标识：pdd.ddk.weapp.qrcode.url.gen
  * 接口使用场景：多多客生成单品推广小程序二维码url
  **/
-
 export interface PddDdkWeappQrcodeUrlGenRequestInterface {
   /**
    * @description: 推广位ID
@@ -48,7 +47,6 @@ export interface PddDdkWeappQrcodeUrlGenRequestInterface {
  * 接口标识：pdd.ddk.weapp.qrcode.url.gen
  * 接口使用场景：多多客生成单品推广小程序二维码url
  **/
-
 export interface PddDdkWeappQrcodeUrlGenResponseInterface {
   /**
    * @description: response
@@ -64,7 +62,6 @@ export interface PddDdkWeappQrcodeUrlGenResponseInterface {
  * @default
  * @example
  **/
-
 export interface PddDdkWeappQrcodeUrlGenWeappQrcodeGenerateResponseResponseInterface {
   /**
    * @description: 单品推广小程序二维码url

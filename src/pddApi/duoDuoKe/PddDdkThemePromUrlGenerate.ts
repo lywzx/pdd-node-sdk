@@ -5,7 +5,6 @@ export const PDD_DDK_THEME_PROM_URL_GENERATE = 'PDD_DDK_THEME_PROM_URL_GENERATE'
  * 接口标识：pdd.ddk.theme.prom.url.generate
  * 接口使用场景：多多进宝主题活动推广链接生成
  **/
-
 export interface PddDdkThemePromUrlGenerateRequestInterface {
   /**
    * @description: 推广位ID
@@ -90,7 +89,6 @@ export interface PddDdkThemePromUrlGenerateRequestInterface {
  * 接口标识：pdd.ddk.theme.prom.url.generate
  * 接口使用场景：多多进宝主题活动推广链接生成
  **/
-
 export interface PddDdkThemePromUrlGenerateResponseInterface {
   /**
    * @description: 主题活动推广返回对象
@@ -106,7 +104,6 @@ export interface PddDdkThemePromUrlGenerateResponseInterface {
  * @default
  * @example
  **/
-
 export interface PddDdkThemePromUrlGenerateThemePromotionUrlGenerateResponseResponseInterface {
   /**
    * @description: 主题活动推广url列表
@@ -122,7 +119,6 @@ export interface PddDdkThemePromUrlGenerateThemePromotionUrlGenerateResponseResp
  * @default
  * @example
  **/
-
 export interface PddDdkThemePromUrlGenerateThemePromotionUrlGenerateResponseUrlListResponseInterface {
   /**
    * @description: 主题活动推广链接
@@ -209,7 +205,6 @@ export interface PddDdkThemePromUrlGenerateThemePromotionUrlGenerateResponseUrlL
  * @default
  * @example
  **/
-
 export interface PddDdkThemePromUrlGenerateThemePromotionUrlGenerateResponseUrlListWeAppInfoResponseInterface {
   /**
    * @description: 小程序图片
@@ -273,7 +268,6 @@ export interface PddDdkThemePromUrlGenerateThemePromotionUrlGenerateResponseUrlL
  * @default
  * @example
  **/
-
 export interface PddDdkThemePromUrlGenerateThemePromotionUrlGenerateResponseUrlListQqAppInfoResponseInterface {
   /**
    * @description: 拼多多小程序id

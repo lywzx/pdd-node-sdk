@@ -5,7 +5,6 @@ export const PDD_GOODS_SPEC_ID_GET = 'PDD_GOODS_SPEC_ID_GET';
  * 接口标识：pdd.goods.spec.id.get
  * 接口使用场景：生成商家自定义的规格
  **/
-
 export interface PddGoodsSpecIdGetRequestInterface {
   /**
    * @description: 拼多多标准规格ID，可以通过pdd.goods.spec.get接口获取
@@ -27,7 +26,6 @@ export interface PddGoodsSpecIdGetRequestInterface {
  * 接口标识：pdd.goods.spec.id.get
  * 接口使用场景：生成商家自定义的规格
  **/
-
 export interface PddGoodsSpecIdGetResponseInterface {
   /**
    * @description: 生成规格响应对象
@@ -43,7 +41,6 @@ export interface PddGoodsSpecIdGetResponseInterface {
  * @default
  * @example
  **/
-
 export interface PddGoodsSpecIdGetGoodsSpecIdGetResponseResponseInterface {
   /**
    * @description: 自定义规格所属的规格ID

@@ -5,7 +5,6 @@ export const PDD_CLOUDPRINT_CMDPRINT_RENDER = 'PDD_CLOUDPRINT_CMDPRINT_RENDER';
  * 接口标识：pdd.cloudprint.cmdprint.render
  * 接口使用场景：isv 进行无线打印，需要将渲染数据传给打印机，通过生成打印机命令的方式能够最大限度的减少移动设备和打印机之间通信数据量。
  **/
-
 export interface PddCloudprintCmdprintRenderRequestInterface {
   /**
    * @description: request
@@ -21,7 +20,6 @@ export interface PddCloudprintCmdprintRenderRequestInterface {
  * @default
  * @example
  **/
-
 export interface PddCloudprintCmdprintRenderRequestRequestInterface {
   /**
    * @description: 客户端id
@@ -73,7 +71,6 @@ export interface PddCloudprintCmdprintRenderRequestRequestInterface {
  * @default
  * @example
  **/
-
 export interface PddCloudprintCmdprintRenderRequestConfigRequestInterface {
   /**
    * @description: 水平偏移
@@ -123,7 +120,6 @@ export interface PddCloudprintCmdprintRenderRequestConfigRequestInterface {
  * @default
  * @example
  **/
-
 export interface PddCloudprintCmdprintRenderRequestDocumentRequestInterface {
   /**
    * @description: 包含的区域列表。对于有自定义区的文档，content会包含两条，即第一条是标准模板区域内容、第二条是自定义区域内容
@@ -139,7 +135,6 @@ export interface PddCloudprintCmdprintRenderRequestDocumentRequestInterface {
  * @default
  * @example
  **/
-
 export interface PddCloudprintCmdprintRenderRequestDocumentContentsRequestInterface {
   /**
    * @description: 附加数据（用于修改数据）例如：{ sender:{ address:{ detail:蒋村街道西溪诚园小区2-1-101 } } }
@@ -189,7 +184,6 @@ export interface PddCloudprintCmdprintRenderRequestDocumentContentsRequestInterf
  * 接口标识：pdd.cloudprint.cmdprint.render
  * 接口使用场景：isv 进行无线打印，需要将渲染数据传给打印机，通过生成打印机命令的方式能够最大限度的减少移动设备和打印机之间通信数据量。
  **/
-
 export interface PddCloudprintCmdprintRenderResponseInterface {
   /**
    * @description: response
@@ -205,7 +199,6 @@ export interface PddCloudprintCmdprintRenderResponseInterface {
  * @default
  * @example
  **/
-
 export interface PddCloudprintCmdprintRenderCloudprintCmdprintRenderResponseResponseInterface {
   /**
    * @description: 指令集内容串

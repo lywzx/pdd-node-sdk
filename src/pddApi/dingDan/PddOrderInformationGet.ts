@@ -5,7 +5,6 @@ export const PDD_ORDER_INFORMATION_GET = 'PDD_ORDER_INFORMATION_GET';
  * 接口标识：pdd.order.information.get
  * 接口使用场景：查询单个订单详情，注：虚拟订单充值手机号信息无法通过此接口获取，请联系虚拟类目运营人员。
  **/
-
 export interface PddOrderInformationGetRequestInterface {
   /**
    * @description: 订单号
@@ -20,7 +19,6 @@ export interface PddOrderInformationGetRequestInterface {
  * 接口标识：pdd.order.information.get
  * 接口使用场景：查询单个订单详情，注：虚拟订单充值手机号信息无法通过此接口获取，请联系虚拟类目运营人员。
  **/
-
 export interface PddOrderInformationGetResponseInterface {
   /**
    * @description: response
@@ -36,7 +34,6 @@ export interface PddOrderInformationGetResponseInterface {
  * @default
  * @example 1
  **/
-
 export interface PddOrderInformationGetOrderInfoGetResponseResponseInterface {
   /**
    * @description: 订单详情对象
@@ -52,7 +49,6 @@ export interface PddOrderInformationGetOrderInfoGetResponseResponseInterface {
  * @default
  * @example 1
  **/
-
 export interface PddOrderInformationGetOrderInfoGetResponseOrderInfoResponseInterface {
   /**
    * @description: 送货入户并安装 单位：元
@@ -520,7 +516,6 @@ export interface PddOrderInformationGetOrderInfoGetResponseOrderInfoResponseInte
  * @default
  * @example 1
  **/
-
 export interface PddOrderInformationGetOrderInfoGetResponseOrderInfoStepOrderInfoResponseInterface {
   /**
    * @description: 已付定金 单位：元
@@ -556,7 +551,6 @@ export interface PddOrderInformationGetOrderInfoGetResponseOrderInfoStepOrderInf
  * @default
  * @example 1
  **/
-
 export interface PddOrderInformationGetOrderInfoGetResponseOrderInfoOrderDepotInfoResponseInterface {
   /**
    * @description: 子货品列表（组合货品才会有子货品信息）
@@ -628,7 +622,6 @@ export interface PddOrderInformationGetOrderInfoGetResponseOrderInfoOrderDepotIn
  * @default
  * @example 1
  **/
-
 export interface PddOrderInformationGetOrderInfoGetResponseOrderInfoOrderDepotInfoWareSubInfoListResponseInterface {
   /**
    * @description: 子货品id
@@ -664,7 +657,6 @@ export interface PddOrderInformationGetOrderInfoGetResponseOrderInfoOrderDepotIn
  * @default
  * @example 1
  **/
-
 export interface PddOrderInformationGetOrderInfoGetResponseOrderInfoCardInfoListResponseInterface {
   /**
    * @description: 卡密
@@ -686,7 +678,6 @@ export interface PddOrderInformationGetOrderInfoGetResponseOrderInfoCardInfoList
  * @default
  * @example 1
  **/
-
 export interface PddOrderInformationGetOrderInfoGetResponseOrderInfoItemListResponseInterface {
   /**
    * @description: 商品编号
@@ -757,7 +748,6 @@ export interface PddOrderInformationGetOrderInfoGetResponseOrderInfoItemListResp
  * @default
  * @example
  **/
-
 export interface PddOrderInformationGetOrderInfoGetResponseOrderInfoStoreInfoResponseInterface {
   /**
    * @description: 门店id

@@ -5,7 +5,6 @@ export const PDD_GOODS_CPS_MALL_UNIT_CHANGE = 'PDD_GOODS_CPS_MALL_UNIT_CHANGE';
  * 接口标识：pdd.goods.cps.mall.unit.change
  * 接口使用场景：修改全店推广计划
  **/
-
 export interface PddGoodsCpsMallUnitChangeRequestInterface {
   /**
    * @description: 全店推广计划佣金比（千分比）
@@ -20,7 +19,6 @@ export interface PddGoodsCpsMallUnitChangeRequestInterface {
  * 接口标识：pdd.goods.cps.mall.unit.change
  * 接口使用场景：修改全店推广计划
  **/
-
 export interface PddGoodsCpsMallUnitChangeResponseInterface {
   /**
    * @description: response
@@ -36,7 +34,6 @@ export interface PddGoodsCpsMallUnitChangeResponseInterface {
  * @default
  * @example
  **/
-
 export interface PddGoodsCpsMallUnitChangeGoodsCpsMallUnitChangeResponseResponseInterface {
   /**
    * @description: 是否成功

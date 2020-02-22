@@ -5,7 +5,6 @@ export const PDD_AD_UNIT_GET_BY_PLAN_ID = 'PDD_AD_UNIT_GET_BY_PLAN_ID';
  * 接口标识：pdd.ad.unit.get.by.plan.id
  * 接口使用场景：根据计划id获取推广单元基本信息（推广单元列表：推广单元id、商品id、推广单元状态、关键词个数），提供计划id可获取该计划下单元的基本信息
  **/
-
 export interface PddAdUnitGetByPlanIdRequestInterface {
   /**
    * @description: 0--搜索广告,1--明星店铺,2--定向广告,3--首页Banner广告（目前只支持0，暂不支持1、2、3）
@@ -27,7 +26,6 @@ export interface PddAdUnitGetByPlanIdRequestInterface {
  * 接口标识：pdd.ad.unit.get.by.plan.id
  * 接口使用场景：根据计划id获取推广单元基本信息（推广单元列表：推广单元id、商品id、推广单元状态、关键词个数），提供计划id可获取该计划下单元的基本信息
  **/
-
 export interface PddAdUnitGetByPlanIdResponseInterface {
   /**
    * @description: 返回response
@@ -43,7 +41,6 @@ export interface PddAdUnitGetByPlanIdResponseInterface {
  * @default
  * @example
  **/
-
 export interface PddAdUnitGetByPlanIdAdUnitBaseInfoListResponseResponseInterface {
   /**
    * @description: 推广单元基本信息
@@ -59,7 +56,6 @@ export interface PddAdUnitGetByPlanIdAdUnitBaseInfoListResponseResponseInterface
  * @default
  * @example
  **/
-
 export interface PddAdUnitGetByPlanIdAdUnitBaseInfoListResponseUnitBaseInfoListResponseInterface {
   /**
    * @description: 关键词个数

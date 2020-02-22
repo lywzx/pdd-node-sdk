@@ -5,7 +5,6 @@ export const PDD_AD_HISTORY_RT_REPORT_GET = 'PDD_AD_HISTORY_RT_REPORT_GET';
  * 接口标识：pdd.ad.history.rt.report.get
  * 接口使用场景：账户推广实时报表数据，可获得实时总览报表数据
  **/
-
 export interface PddAdHistoryRtReportGetRequestInterface {
   /**
    * @description: 0--搜索广告,1--明星店铺,2--定向广告,3--首页Banner广告（目前只支持0，暂不支持1、2、3）
@@ -20,7 +19,6 @@ export interface PddAdHistoryRtReportGetRequestInterface {
  * 接口标识：pdd.ad.history.rt.report.get
  * 接口使用场景：账户推广实时报表数据，可获得实时总览报表数据
  **/
-
 export interface PddAdHistoryRtReportGetResponseInterface {
   /**
    * @description: response
@@ -36,7 +34,6 @@ export interface PddAdHistoryRtReportGetResponseInterface {
  * @default
  * @example
  **/
-
 export interface PddAdHistoryRtReportGetAdMallRealTimeReportResponseResponseInterface {
   /**
    * @description: 广告曝光数

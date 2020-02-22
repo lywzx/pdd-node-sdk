@@ -5,7 +5,6 @@ export const PDD_GOODS_INFORMATION_GET = 'PDD_GOODS_INFORMATION_GET';
  * 接口标识：pdd.goods.information.get
  * 接口使用场景：商品详情（此接口后续不再维护，请使用pdd.goods.detail.get接口）
  **/
-
 export interface PddGoodsInformationGetRequestInterface {
   /**
    * @description: 商品编码
@@ -20,7 +19,6 @@ export interface PddGoodsInformationGetRequestInterface {
  * 接口标识：pdd.goods.information.get
  * 接口使用场景：商品详情（此接口后续不再维护，请使用pdd.goods.detail.get接口）
  **/
-
 export interface PddGoodsInformationGetResponseInterface {
   /**
    * @description: 商品详情响应对象
@@ -36,7 +34,6 @@ export interface PddGoodsInformationGetResponseInterface {
  * @default
  * @example
  **/
-
 export interface PddGoodsInformationGetGoodsInfoGetResponseResponseInterface {
   /**
    * @description: 商品详情对象
@@ -52,7 +49,6 @@ export interface PddGoodsInformationGetGoodsInfoGetResponseResponseInterface {
  * @default
  * @example
  **/
-
 export interface PddGoodsInformationGetGoodsInfoGetResponseGoodsInfoResponseInterface {
   /**
    * @description: 商品编码
@@ -159,7 +155,6 @@ export interface PddGoodsInformationGetGoodsInfoGetResponseGoodsInfoResponseInte
  * @default
  * @example
  **/
-
 export interface PddGoodsInformationGetGoodsInfoGetResponseGoodsInfoSkuListResponseInterface {
   /**
    * @description: 商品规格名称

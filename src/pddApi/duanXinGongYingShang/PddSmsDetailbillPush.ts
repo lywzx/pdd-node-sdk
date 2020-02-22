@@ -5,7 +5,6 @@ export const PDD_SMS_DETAILBILL_PUSH = 'PDD_SMS_DETAILBILL_PUSH';
  * 接口标识：pdd.sms.detailbill.push
  * 接口使用场景：短信供应商明细回传
  **/
-
 export interface PddSmsDetailbillPushRequestInterface {
   /**
    * @description: cmpp账号名
@@ -42,7 +41,6 @@ export interface PddSmsDetailbillPushRequestInterface {
  * @default
  * @example
  **/
-
 export interface PddSmsDetailbillPushDetailsRequestInterface {
   /**
    * @description: 短信下发时间(yyyy-MM-dd HH:mm:ss)
@@ -78,7 +76,6 @@ export interface PddSmsDetailbillPushDetailsRequestInterface {
  * 接口标识：pdd.sms.detailbill.push
  * 接口使用场景：短信供应商明细回传
  **/
-
 export interface PddSmsDetailbillPushResponseInterface {
   /**
    * @description: response
@@ -94,7 +91,6 @@ export interface PddSmsDetailbillPushResponseInterface {
  * @default
  * @example
  **/
-
 export interface PddSmsDetailbillPushSmsDetailbillPushResposneResponseInterface {
   /**
    * @description: 是否成功

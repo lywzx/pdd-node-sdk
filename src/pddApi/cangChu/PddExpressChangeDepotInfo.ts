@@ -5,7 +5,6 @@ export const PDD_EXPRESS_CHANGE_DEPOT_INFO = 'PDD_EXPRESS_CHANGE_DEPOT_INFO';
  * 接口标识：pdd.express.change.depot.info
  * 接口使用场景：修改仓库信息
  **/
-
 export interface PddExpressChangeDepotInfoRequestInterface {
   /**
    * @description: 仓库id
@@ -90,7 +89,6 @@ export interface PddExpressChangeDepotInfoRequestInterface {
  * 接口标识：pdd.express.change.depot.info
  * 接口使用场景：修改仓库信息
  **/
-
 export interface PddExpressChangeDepotInfoResponseInterface {
   /**
    * @description: 响应结果

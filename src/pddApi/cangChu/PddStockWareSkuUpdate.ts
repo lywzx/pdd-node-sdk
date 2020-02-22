@@ -5,7 +5,6 @@ export const PDD_STOCK_WARE_SKU_UPDATE = 'PDD_STOCK_WARE_SKU_UPDATE';
  * 接口标识：pdd.stock.ware.sku.update
  * 接口使用场景：家电分仓库存-货品关联sku
  **/
-
 export interface PddStockWareSkuUpdateRequestInterface {
   /**
    * @description: 货品id
@@ -28,7 +27,6 @@ export interface PddStockWareSkuUpdateRequestInterface {
  * @default
  * @example
  **/
-
 export interface PddStockWareSkuUpdateWareSkusRequestInterface {
   /**
    * @description: sku id
@@ -50,7 +48,6 @@ export interface PddStockWareSkuUpdateWareSkusRequestInterface {
  * 接口标识：pdd.stock.ware.sku.update
  * 接口使用场景：家电分仓库存-货品关联sku
  **/
-
 export interface PddStockWareSkuUpdateResponseInterface {
   /**
    * @description: 操作成功：true

@@ -5,7 +5,6 @@ export const PDD_DDK_FINANCE_CPA_QUERY = 'PDD_DDK_FINANCE_CPA_QUERY';
  * 接口标识：pdd.ddk.finance.cpa.query
  * 接口使用场景：CPA效果数据查询
  **/
-
 export interface PddDdkFinanceCpaQueryRequestInterface {
   /**
    * @description: 查询日期，格式：yyyy-MM-dd
@@ -27,7 +26,6 @@ export interface PddDdkFinanceCpaQueryRequestInterface {
  * 接口标识：pdd.ddk.finance.cpa.query
  * 接口使用场景：CPA效果数据查询
  **/
-
 export interface PddDdkFinanceCpaQueryResponseInterface {
   /**
    * @description: response
@@ -43,7 +41,6 @@ export interface PddDdkFinanceCpaQueryResponseInterface {
  * @default
  * @example
  **/
-
 export interface PddDdkFinanceCpaQueryFinanceCpaQueryResponseResponseInterface {
   /**
    * @description: CPA补贴并锁佣数量，支持T+1查询

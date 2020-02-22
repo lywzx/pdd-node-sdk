@@ -5,7 +5,6 @@ export const PDD_PMC_USER_CANCEL = 'PDD_PMC_USER_CANCEL';
  * 接口标识：pdd.pmc.user.cancel
  * 接口使用场景：取消用户的消息服务
  **/
-
 export interface PddPmcUserCancelRequestInterface {
   /**
    * @description: 用户唯一id
@@ -20,7 +19,6 @@ export interface PddPmcUserCancelRequestInterface {
  * 接口标识：pdd.pmc.user.cancel
  * 接口使用场景：取消用户的消息服务
  **/
-
 export interface PddPmcUserCancelResponseInterface {
   /**
    * @description: response
@@ -36,7 +34,6 @@ export interface PddPmcUserCancelResponseInterface {
  * @default
  * @example
  **/
-
 export interface PddPmcUserCancelPmcUserCancelResponseResponseInterface {
   /**
    * @description: 是否成功

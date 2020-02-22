@@ -5,7 +5,6 @@ export const PDD_GOODS_CPS_UNIT_QUERY = 'PDD_GOODS_CPS_UNIT_QUERY';
  * 接口标识：pdd.goods.cps.unit.query
  * 接口使用场景：查询商品推广API
  **/
-
 export interface PddGoodsCpsUnitQueryRequestInterface {
   /**
    * @description: 商品id
@@ -20,7 +19,6 @@ export interface PddGoodsCpsUnitQueryRequestInterface {
  * 接口标识：pdd.goods.cps.unit.query
  * 接口使用场景：查询商品推广API
  **/
-
 export interface PddGoodsCpsUnitQueryResponseInterface {
   /**
    * @description: 商品id
@@ -85,7 +83,6 @@ export interface PddGoodsCpsUnitQueryResponseInterface {
  * @default
  * @example
  **/
-
 export interface PddGoodsCpsUnitQueryCouponVoResponseInterface {
   /**
    * @description: coupon_start_time

@@ -5,7 +5,6 @@ export const PDD_LOGISTICS_CS_SESSION_START = 'PDD_LOGISTICS_CS_SESSION_START';
  * 接口标识：pdd.logistics.cs.session.start
  * 接口使用场景：该接口用于物流客服系统创建以及同步会话状态。
  **/
-
 export interface PddLogisticsCsSessionStartRequestInterface {
   /**
    * @description: pdd会话id
@@ -90,7 +89,6 @@ export interface PddLogisticsCsSessionStartRequestInterface {
  * 接口标识：pdd.logistics.cs.session.start
  * 接口使用场景：该接口用于物流客服系统创建以及同步会话状态。
  **/
-
 export interface PddLogisticsCsSessionStartResponseInterface {
   /**
    * @description: response
@@ -106,7 +104,6 @@ export interface PddLogisticsCsSessionStartResponseInterface {
  * @default
  * @example
  **/
-
 export interface PddLogisticsCsSessionStartLogisticsCsSessionStartResponseResponseInterface {
   /**
    * @description: 是否成功

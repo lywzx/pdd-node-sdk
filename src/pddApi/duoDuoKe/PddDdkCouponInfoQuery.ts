@@ -5,7 +5,6 @@ export const PDD_DDK_COUPON_INFO_QUERY = 'PDD_DDK_COUPON_INFO_QUERY';
  * 接口标识：pdd.ddk.coupon.info.query
  * 接口使用场景：查询优惠券信息
  **/
-
 export interface PddDdkCouponInfoQueryRequestInterface {
   /**
    * @description: 优惠券id
@@ -20,7 +19,6 @@ export interface PddDdkCouponInfoQueryRequestInterface {
  * 接口标识：pdd.ddk.coupon.info.query
  * 接口使用场景：查询优惠券信息
  **/
-
 export interface PddDdkCouponInfoQueryResponseInterface {
   /**
    * @description: ddk_coupon_info_query
@@ -36,7 +34,6 @@ export interface PddDdkCouponInfoQueryResponseInterface {
  * @default
  * @example
  **/
-
 export interface PddDdkCouponInfoQueryDdkCouponInfoQueryResponseResponseInterface {
   /**
    * @description: list
@@ -52,7 +49,6 @@ export interface PddDdkCouponInfoQueryDdkCouponInfoQueryResponseResponseInterfac
  * @default
  * @example
  **/
-
 export interface PddDdkCouponInfoQueryDdkCouponInfoQueryResponseListResponseInterface {
   /**
    * @description: 优惠券结束时间

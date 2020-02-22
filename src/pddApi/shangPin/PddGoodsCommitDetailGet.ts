@@ -5,7 +5,6 @@ export const PDD_GOODS_COMMIT_DETAIL_GET = 'PDD_GOODS_COMMIT_DETAIL_GET';
  * 接口标识：pdd.goods.commit.detail.get
  * 接口使用场景：商品编辑或者提交之后，可以通过此接口查询提交后的编辑信息
  **/
-
 export interface PddGoodsCommitDetailGetRequestInterface {
   /**
    * @description: 提交申请的序列id
@@ -27,7 +26,6 @@ export interface PddGoodsCommitDetailGetRequestInterface {
  * 接口标识：pdd.goods.commit.detail.get
  * 接口使用场景：商品编辑或者提交之后，可以通过此接口查询提交后的编辑信息
  **/
-
 export interface PddGoodsCommitDetailGetResponseInterface {
   /**
    * @description: 返回response
@@ -43,7 +41,6 @@ export interface PddGoodsCommitDetailGetResponseInterface {
  * @default
  * @example
  **/
-
 export interface PddGoodsCommitDetailGetGoodsCommitDetailResponseResponseInterface {
   /**
    * @description: 坏果包赔
@@ -392,7 +389,6 @@ export interface PddGoodsCommitDetailGetGoodsCommitDetailResponseResponseInterfa
  * @default
  * @example
  **/
-
 export interface PddGoodsCommitDetailGetGoodsCommitDetailResponseCarouselVideoResponseInterface {
   /**
    * @description: 商品视频id
@@ -414,7 +410,6 @@ export interface PddGoodsCommitDetailGetGoodsCommitDetailResponseCarouselVideoRe
  * @default
  * @example
  **/
-
 export interface PddGoodsCommitDetailGetGoodsCommitDetailResponseElecGoodsAttributesResponseInterface {
   /**
    * @description: 开始时间（timeType=1时必填表示核销的开始时间）（精确到毫秒）
@@ -450,7 +445,6 @@ export interface PddGoodsCommitDetailGetGoodsCommitDetailResponseElecGoodsAttrib
  * @default
  * @example
  **/
-
 export interface PddGoodsCommitDetailGetGoodsCommitDetailResponseGoodsPropertyListResponseInterface {
   /**
    * @description: 属性单位
@@ -493,7 +487,6 @@ export interface PddGoodsCommitDetailGetGoodsCommitDetailResponseGoodsPropertyLi
  * @default
  * @example
  **/
-
 export interface PddGoodsCommitDetailGetGoodsCommitDetailResponseOverseaGoodsResponseInterface {
   /**
    * @description: 保税仓唯一标识
@@ -536,7 +529,6 @@ export interface PddGoodsCommitDetailGetGoodsCommitDetailResponseOverseaGoodsRes
  * @default
  * @example
  **/
-
 export interface PddGoodsCommitDetailGetGoodsCommitDetailResponseSkuListResponseInterface {
   /**
    * @description: 上下架状态 1：上架 0 ：下架
@@ -630,7 +622,6 @@ export interface PddGoodsCommitDetailGetGoodsCommitDetailResponseSkuListResponse
  * @default
  * @example
  **/
-
 export interface PddGoodsCommitDetailGetGoodsCommitDetailResponseSkuListOverseaSkuResponseInterface {
   /**
    * @description: 计量单位编码，从接口pdd.gooods.sku.measurement.list获取desc
@@ -659,7 +650,6 @@ export interface PddGoodsCommitDetailGetGoodsCommitDetailResponseSkuListOverseaS
  * @default
  * @example
  **/
-
 export interface PddGoodsCommitDetailGetGoodsCommitDetailResponseSkuListSpecResponseInterface {
   /**
    * @description: 商品规格对应的ID

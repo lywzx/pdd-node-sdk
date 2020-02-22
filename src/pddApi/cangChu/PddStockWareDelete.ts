@@ -5,7 +5,6 @@ export const PDD_STOCK_WARE_DELETE = 'PDD_STOCK_WARE_DELETE';
  * 接口标识：pdd.stock.ware.delete
  * 接口使用场景：家电分仓库存-删除货品
  **/
-
 export interface PddStockWareDeleteRequestInterface {
   /**
    * @description: 货品id
@@ -20,7 +19,6 @@ export interface PddStockWareDeleteRequestInterface {
  * 接口标识：pdd.stock.ware.delete
  * 接口使用场景：家电分仓库存-删除货品
  **/
-
 export interface PddStockWareDeleteResponseInterface {
   /**
    * @description: 操作成功：true

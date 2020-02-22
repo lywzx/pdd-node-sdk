@@ -5,7 +5,6 @@ export const PDD_SMS_SELL_SETTING = 'PDD_SMS_SELL_SETTING';
  * 接口标识：pdd.sms.sell.setting
  * 接口使用场景：营销类短信设置
  **/
-
 export interface PddSmsSellSettingRequestInterface {
   /**
    * @description: 4-新客转化 5-老客转回 6-流失唤醒 8-个性化营销
@@ -48,7 +47,6 @@ export interface PddSmsSellSettingRequestInterface {
  * 接口标识：pdd.sms.sell.setting
  * 接口使用场景：营销类短信设置
  **/
-
 export interface PddSmsSellSettingResponseInterface {
   /**
    * @description: 返回结果
@@ -64,7 +62,6 @@ export interface PddSmsSellSettingResponseInterface {
  * @default
  * @example
  **/
-
 export interface PddSmsSellSettingSmsSellSettingResponseResponseInterface {
   /**
    * @description: 请求结果

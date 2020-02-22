@@ -5,7 +5,6 @@ export const PDD_AD_PLAN_DISCOUNT_UPDATE = 'PDD_AD_PLAN_DISCOUNT_UPDATE';
  * 接口标识：pdd.ad.plan.discount.update
  * 接口使用场景：修改推广计划分时折扣
  **/
-
 export interface PddAdPlanDiscountUpdateRequestInterface {
   /**
    * @description: 推广计划id
@@ -35,7 +34,6 @@ export interface PddAdPlanDiscountUpdateRequestInterface {
  * @default
  * @example
  **/
-
 export interface PddAdPlanDiscountUpdateDiscountsRequestInterface {
   /**
    * @description: 折扣率，1000 表示 100.0%，0 表示不投放，自定义范围 500 ~ 3000（10的倍数）
@@ -57,7 +55,6 @@ export interface PddAdPlanDiscountUpdateDiscountsRequestInterface {
  * 接口标识：pdd.ad.plan.discount.update
  * 接口使用场景：修改推广计划分时折扣
  **/
-
 export interface PddAdPlanDiscountUpdateResponseInterface {
   /**
    * @description: true or false

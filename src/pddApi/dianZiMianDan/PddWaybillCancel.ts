@@ -5,7 +5,6 @@ export const PDD_WAYBILL_CANCEL = 'PDD_WAYBILL_CANCEL';
  * 接口标识：pdd.waybill.cancel
  * 接口使用场景：商家取消获取的电子面单号
  **/
-
 export interface PddWaybillCancelRequestInterface {
   /**
    * @description: 电子面单号
@@ -27,7 +26,6 @@ export interface PddWaybillCancelRequestInterface {
  * 接口标识：pdd.waybill.cancel
  * 接口使用场景：商家取消获取的电子面单号
  **/
-
 export interface PddWaybillCancelResponseInterface {
   /**
    * @description: Response
@@ -43,7 +41,6 @@ export interface PddWaybillCancelResponseInterface {
  * @default
  * @example
  **/
-
 export interface PddWaybillCancelPddWaybillCancelResponseResponseInterface {
   /**
    * @description: 调用取消是否成功

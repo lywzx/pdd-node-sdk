@@ -5,7 +5,6 @@ export const PDD_MALL_INFO_STORE_DELETE_POST = 'PDD_MALL_INFO_STORE_DELETE_POST'
  * 接口标识：pdd.mall.info.store.delete.post
  * 接口使用场景：删除店铺门店
  **/
-
 export interface PddMallInfoStoreDeletePostRequestInterface {
   /**
    * @description: 门店ID列表
@@ -20,7 +19,6 @@ export interface PddMallInfoStoreDeletePostRequestInterface {
  * 接口标识：pdd.mall.info.store.delete.post
  * 接口使用场景：删除店铺门店
  **/
-
 export interface PddMallInfoStoreDeletePostResponseInterface {
   /**
    * @description:
@@ -36,7 +34,6 @@ export interface PddMallInfoStoreDeletePostResponseInterface {
  * @default
  * @example
  **/
-
 export interface PddMallInfoStoreDeletePostMallInfoStoreDeletePostResponseResponseInterface {
   /**
    * @description:

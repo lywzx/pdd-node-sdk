@@ -5,7 +5,6 @@ export const PDD_AD_CREATE_LOCATION_BID = 'PDD_AD_CREATE_LOCATION_BID';
  * 接口标识：pdd.ad.create.location.bid
  * 接口使用场景：推广单元新增资源位信息（批量）
  **/
-
 export interface PddAdCreateLocationBidRequestInterface {
   /**
    * @description: 推广类型  2-展示推广
@@ -35,7 +34,6 @@ export interface PddAdCreateLocationBidRequestInterface {
  * @default
  * @example
  **/
-
 export interface PddAdCreateLocationBidLocationBidsRequestInterface {
   /**
    * @description: 溢价比例，存储的是整数，100 表示 1%，支持设置 1%-300%
@@ -57,7 +55,6 @@ export interface PddAdCreateLocationBidLocationBidsRequestInterface {
  * 接口标识：pdd.ad.create.location.bid
  * 接口使用场景：推广单元新增资源位信息（批量）
  **/
-
 export interface PddAdCreateLocationBidResponseInterface {
   /**
    * @description: 开平返回
@@ -73,7 +70,6 @@ export interface PddAdCreateLocationBidResponseInterface {
  * @default
  * @example
  **/
-
 export interface PddAdCreateLocationBidOpenApiResponseResponseInterface {
   /**
    * @description: 执行标识 true为成功

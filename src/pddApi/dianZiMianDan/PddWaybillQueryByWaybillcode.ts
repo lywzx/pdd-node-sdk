@@ -5,7 +5,6 @@ export const PDD_WAYBILL_QUERY_BY_WAYBILLCODE = 'PDD_WAYBILL_QUERY_BY_WAYBILLCOD
  * 接口标识：pdd.waybill.query.by.waybillcode
  * 接口使用场景：通过面单号查询面单信息
  **/
-
 export interface PddWaybillQueryByWaybillcodeRequestInterface {
   /**
    * @description: 系统自动生成
@@ -21,7 +20,6 @@ export interface PddWaybillQueryByWaybillcodeRequestInterface {
  * @default
  * @example
  **/
-
 export interface PddWaybillQueryByWaybillcodeParamListRequestInterface {
   /**
    * @description: 请求id
@@ -50,7 +48,6 @@ export interface PddWaybillQueryByWaybillcodeParamListRequestInterface {
  * 接口标识：pdd.waybill.query.by.waybillcode
  * 接口使用场景：通过面单号查询面单信息
  **/
-
 export interface PddWaybillQueryByWaybillcodeResponseInterface {
   /**
    * @description: response
@@ -66,7 +63,6 @@ export interface PddWaybillQueryByWaybillcodeResponseInterface {
  * @default
  * @example
  **/
-
 export interface PddWaybillQueryByWaybillcodePddWaybillQueryByWaybillcodeResponseResponseInterface {
   /**
    * @description: 查询返回值
@@ -82,7 +78,6 @@ export interface PddWaybillQueryByWaybillcodePddWaybillQueryByWaybillcodeRespons
  * @default
  * @example
  **/
-
 export interface PddWaybillQueryByWaybillcodePddWaybillQueryByWaybillcodeResponseModulesResponseInterface {
   /**
    * @description: 面单查询结构体
@@ -98,7 +93,6 @@ export interface PddWaybillQueryByWaybillcodePddWaybillQueryByWaybillcodeRespons
  * @default
  * @example
  **/
-
 export interface PddWaybillQueryByWaybillcodePddWaybillQueryByWaybillcodeResponseModulesWaybillCloudPrintResponseResponseInterface {
   /**
    * @description: 请求id

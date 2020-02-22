@@ -5,7 +5,6 @@ export const PDD_GOODS_EDIT_GOODS_COMMIT = 'PDD_GOODS_EDIT_GOODS_COMMIT';
  * 接口标识：pdd.goods.edit.goods.commit
  * 接口使用场景：新增或编辑草稿
  **/
-
 export interface PddGoodsEditGoodsCommitRequestInterface {
   /**
    * @description: 坏果包赔
@@ -352,7 +351,6 @@ export interface PddGoodsEditGoodsCommitRequestInterface {
  * @default
  * @example
  **/
-
 export interface PddGoodsEditGoodsCommitCarouselVideoRequestInterface {
   /**
    * @description: 商品视频id
@@ -374,7 +372,6 @@ export interface PddGoodsEditGoodsCommitCarouselVideoRequestInterface {
  * @default
  * @example
  **/
-
 export interface PddGoodsEditGoodsCommitElecGoodsAttributesRequestInterface {
   /**
    * @description: 开始时间（timeType=1时必填表示核销的开始时间）（精确到毫秒）
@@ -410,7 +407,6 @@ export interface PddGoodsEditGoodsCommitElecGoodsAttributesRequestInterface {
  * @default
  * @example
  **/
-
 export interface PddGoodsEditGoodsCommitGoodsPropertiesRequestInterface {
   /**
    * @description: 组id，非销售属性不用传
@@ -489,7 +485,6 @@ export interface PddGoodsEditGoodsCommitGoodsPropertiesRequestInterface {
  * @default
  * @example
  **/
-
 export interface PddGoodsEditGoodsCommitOverseaGoodsRequestInterface {
   /**
    * @description: 保税仓唯一标识
@@ -547,7 +542,6 @@ export interface PddGoodsEditGoodsCommitOverseaGoodsRequestInterface {
  * @default
  * @example
  **/
-
 export interface PddGoodsEditGoodsCommitSkuListRequestInterface {
   /**
    * @description: sku上架状态，0-已下架，1-上架中
@@ -633,7 +627,6 @@ export interface PddGoodsEditGoodsCommitSkuListRequestInterface {
  * @default
  * @example
  **/
-
 export interface PddGoodsEditGoodsCommitSkuListOverseaSkuRequestInterface {
   /**
    * @description: 计量单位编码，从接口pdd.gooods.sku.measurement.list获取code
@@ -662,7 +655,6 @@ export interface PddGoodsEditGoodsCommitSkuListOverseaSkuRequestInterface {
  * 接口标识：pdd.goods.edit.goods.commit
  * 接口使用场景：新增或编辑草稿
  **/
-
 export interface PddGoodsEditGoodsCommitResponseInterface {
   /**
    * @description: response
@@ -678,7 +670,6 @@ export interface PddGoodsEditGoodsCommitResponseInterface {
  * @default
  * @example
  **/
-
 export interface PddGoodsEditGoodsCommitGoodsUpdateResponseResponseInterface {
   /**
    * @description: 草稿id

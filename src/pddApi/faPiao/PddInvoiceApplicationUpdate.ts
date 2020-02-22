@@ -5,7 +5,6 @@ export const PDD_INVOICE_APPLICATION_UPDATE = 'PDD_INVOICE_APPLICATION_UPDATE';
  * 接口标识：pdd.invoice.application.update
  * 接口使用场景：第三方ERP可以调用此接口审核该开票申请是否允许开票
  **/
-
 export interface PddInvoiceApplicationUpdateRequestInterface {
   /**
    * @description: 申请流水号
@@ -41,7 +40,6 @@ export interface PddInvoiceApplicationUpdateRequestInterface {
  * 接口标识：pdd.invoice.application.update
  * 接口使用场景：第三方ERP可以调用此接口审核该开票申请是否允许开票
  **/
-
 export interface PddInvoiceApplicationUpdateResponseInterface {
   /**
    * @description: response
@@ -57,7 +55,6 @@ export interface PddInvoiceApplicationUpdateResponseInterface {
  * @default
  * @example
  **/
-
 export interface PddInvoiceApplicationUpdateInvoiceApplicationUpdateResponseResponseInterface {
   /**
    * @description: true

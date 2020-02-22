@@ -13,7 +13,6 @@ export interface PddGoodsCpsMallUnitResumeRequestInterface {}
  * 接口标识：pdd.goods.cps.mall.unit.resume
  * 接口使用场景：恢复全店推广计划
  **/
-
 export interface PddGoodsCpsMallUnitResumeResponseInterface {
   /**
    * @description: response
@@ -29,7 +28,6 @@ export interface PddGoodsCpsMallUnitResumeResponseInterface {
  * @default
  * @example
  **/
-
 export interface PddGoodsCpsMallUnitResumeGoodsCpsMallUnitResumeResponseResponseInterface {
   /**
    * @description: 是否成功

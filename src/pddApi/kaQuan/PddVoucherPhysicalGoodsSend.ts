@@ -5,7 +5,6 @@ export const PDD_VOUCHER_PHYSICAL_GOODS_SEND = 'PDD_VOUCHER_PHYSICAL_GOODS_SEND'
  * 接口标识：pdd.voucher.physical.goods.send
  * 接口使用场景：第三方ISV将商家发货（实物）信息同步给平台
  **/
-
 export interface PddVoucherPhysicalGoodsSendRequestInterface {
   /**
    * @description: 订单号
@@ -84,7 +83,6 @@ export interface PddVoucherPhysicalGoodsSendRequestInterface {
  * @default
  * @example
  **/
-
 export interface PddVoucherPhysicalGoodsSendVoucherListRequestInterface {
   /**
    * @description: 卡券ID
@@ -106,7 +104,6 @@ export interface PddVoucherPhysicalGoodsSendVoucherListRequestInterface {
  * 接口标识：pdd.voucher.physical.goods.send
  * 接口使用场景：第三方ISV将商家发货（实物）信息同步给平台
  **/
-
 export interface PddVoucherPhysicalGoodsSendResponseInterface {
   /**
    * @description: response
@@ -122,7 +119,6 @@ export interface PddVoucherPhysicalGoodsSendResponseInterface {
  * @default
  * @example
  **/
-
 export interface PddVoucherPhysicalGoodsSendVoucherPhysicalVoucherSendResponseResponseInterface {
   /**
    * @description: 请求成功

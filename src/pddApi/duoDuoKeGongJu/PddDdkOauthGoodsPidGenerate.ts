@@ -5,7 +5,6 @@ export const PDD_DDK_OAUTH_GOODS_PID_GENERATE = 'PDD_DDK_OAUTH_GOODS_PID_GENERAT
  * 接口标识：pdd.ddk.oauth.goods.pid.generate
  * 接口使用场景：创建多多进宝推广位
  **/
-
 export interface PddDdkOauthGoodsPidGenerateRequestInterface {
   /**
    * @description: 要生成的推广位数量，默认为10，范围为：1~100
@@ -27,7 +26,6 @@ export interface PddDdkOauthGoodsPidGenerateRequestInterface {
  * 接口标识：pdd.ddk.oauth.goods.pid.generate
  * 接口使用场景：创建多多进宝推广位
  **/
-
 export interface PddDdkOauthGoodsPidGenerateResponseInterface {
   /**
    * @description: response
@@ -43,7 +41,6 @@ export interface PddDdkOauthGoodsPidGenerateResponseInterface {
  * @default
  * @example
  **/
-
 export interface PddDdkOauthGoodsPidGeneratePIdGenerateResponseResponseInterface {
   /**
    * @description: 多多进宝推广位对象列表
@@ -66,7 +63,6 @@ export interface PddDdkOauthGoodsPidGeneratePIdGenerateResponseResponseInterface
  * @default
  * @example
  **/
-
 export interface PddDdkOauthGoodsPidGeneratePIdGenerateResponsePIdListResponseInterface {
   /**
    * @description: 推广位创建时间

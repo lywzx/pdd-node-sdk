@@ -5,7 +5,6 @@ export const PDD_AD_CREATIVE_DELETE = 'PDD_AD_CREATIVE_DELETE';
  * 接口标识：pdd.ad.creative.delete
  * 接口使用场景：推广单元删除创意（至少需保留一个创意）
  **/
-
 export interface PddAdCreativeDeleteRequestInterface {
   /**
    * @description:
@@ -27,7 +26,6 @@ export interface PddAdCreativeDeleteRequestInterface {
  * 接口标识：pdd.ad.creative.delete
  * 接口使用场景：推广单元删除创意（至少需保留一个创意）
  **/
-
 export interface PddAdCreativeDeleteResponseInterface {
   /**
    * @description: true or false

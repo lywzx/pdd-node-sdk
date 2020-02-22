@@ -5,7 +5,6 @@ export const PDD_GOODS_CPS_UNIT_CHANGE = 'PDD_GOODS_CPS_UNIT_CHANGE';
  * 接口标识：pdd.goods.cps.unit.change
  * 接口使用场景：修改推广商品API
  **/
-
 export interface PddGoodsCpsUnitChangeRequestInterface {
   /**
    * @description: 商品id
@@ -69,7 +68,6 @@ export interface PddGoodsCpsUnitChangeRequestInterface {
  * 接口标识：pdd.goods.cps.unit.change
  * 接口使用场景：修改推广商品API
  **/
-
 export interface PddGoodsCpsUnitChangeResponseInterface {
   /**
    * @description: 是否修改成功

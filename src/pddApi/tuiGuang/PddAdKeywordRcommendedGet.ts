@@ -5,7 +5,6 @@ export const PDD_AD_KEYWORD_RCOMMENDED_GET = 'PDD_AD_KEYWORD_RCOMMENDED_GET';
  * 接口标识：pdd.ad.keyword.rcommended.get
  * 接口使用场景：系统推荐关键词，提供商品id可获取系统在“添加关键词”功能中所推荐的关键词
  **/
-
 export interface PddAdKeywordRcommendedGetRequestInterface {
   /**
    * @description: 0--搜索广告,1--明星店铺,2--定向广告,3--首页Banner广告（目前只支持0，暂不支持1、2、3）
@@ -27,7 +26,6 @@ export interface PddAdKeywordRcommendedGetRequestInterface {
  * 接口标识：pdd.ad.keyword.rcommended.get
  * 接口使用场景：系统推荐关键词，提供商品id可获取系统在“添加关键词”功能中所推荐的关键词
  **/
-
 export interface PddAdKeywordRcommendedGetResponseInterface {
   /**
    * @description: 返回response
@@ -43,7 +41,6 @@ export interface PddAdKeywordRcommendedGetResponseInterface {
  * @default
  * @example
  **/
-
 export interface PddAdKeywordRcommendedGetAdRecommendedKeywordListResponseResponseInterface {
   /**
    * @description: 推荐关键字列表
@@ -59,7 +56,6 @@ export interface PddAdKeywordRcommendedGetAdRecommendedKeywordListResponseRespon
  * @default
  * @example
  **/
-
 export interface PddAdKeywordRcommendedGetAdRecommendedKeywordListResponseRecommendedKeywordListResponseInterface {
   /**
    * @description: 分数

@@ -5,7 +5,6 @@ export const PDD_STOCK_WARE_MOVE = 'PDD_STOCK_WARE_MOVE';
  * 接口标识：pdd.stock.ware.move
  * 接口使用场景：家电分仓库存-库存信息调整
  **/
-
 export interface PddStockWareMoveRequestInterface {
   /**
    * @description:
@@ -29,7 +28,6 @@ export interface PddStockWareMoveRequestInterface {
  * @default
  * @example
  **/
-
 export interface PddStockWareMoveStockMoveOrderActionDtoRequestInterface {
   /**
    * @description: 调整方向。1, "入库"；2, "出库"；3, "库存同步"
@@ -79,7 +77,6 @@ export interface PddStockWareMoveStockMoveOrderActionDtoRequestInterface {
  * @default
  * @example
  **/
-
 export interface PddStockWareMoveStockMoveRecordActionDtoListRequestInterface {
   /**
    * @description: 备注
@@ -108,7 +105,6 @@ export interface PddStockWareMoveStockMoveRecordActionDtoListRequestInterface {
  * 接口标识：pdd.stock.ware.move
  * 接口使用场景：家电分仓库存-库存信息调整
  **/
-
 export interface PddStockWareMoveResponseInterface {
   /**
    * @description: 调整单ID

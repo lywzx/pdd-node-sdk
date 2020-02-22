@@ -5,7 +5,6 @@ export const PDD_PROMOTION_GOODS_COUPON_CREATE = 'PDD_PROMOTION_GOODS_COUPON_CRE
  * 接口标识：pdd.promotion.goods.coupon.create
  * 接口使用场景：创建无门槛商品劵批次接口
  **/
-
 export interface PddPromotionGoodsCouponCreateRequestInterface {
   /**
    * @description: 描述
@@ -62,7 +61,6 @@ export interface PddPromotionGoodsCouponCreateRequestInterface {
  * 接口标识：pdd.promotion.goods.coupon.create
  * 接口使用场景：创建无门槛商品劵批次接口
  **/
-
 export interface PddPromotionGoodsCouponCreateResponseInterface {
   /**
    * @description: 创建无门槛商品劵批次对象
@@ -78,7 +76,6 @@ export interface PddPromotionGoodsCouponCreateResponseInterface {
  * @default
  * @example
  **/
-
 export interface PddPromotionGoodsCouponCreateGoodsCouponBatchCreateResponseResponseInterface {
   /**
    * @description: 创建的无门槛商品劵批次id

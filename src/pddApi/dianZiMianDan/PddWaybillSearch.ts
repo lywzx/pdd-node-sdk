@@ -5,7 +5,6 @@ export const PDD_WAYBILL_SEARCH = 'PDD_WAYBILL_SEARCH';
  * 接口标识：pdd.waybill.search
  * 接口使用场景：查询面单服务订购及面单使用情况
  **/
-
 export interface PddWaybillSearchRequestInterface {
   /**
    * @description: 物流公司code
@@ -20,7 +19,6 @@ export interface PddWaybillSearchRequestInterface {
  * 接口标识：pdd.waybill.search
  * 接口使用场景：查询面单服务订购及面单使用情况
  **/
-
 export interface PddWaybillSearchResponseInterface {
   /**
    * @description: response
@@ -36,7 +34,6 @@ export interface PddWaybillSearchResponseInterface {
  * @default
  * @example
  **/
-
 export interface PddWaybillSearchPddWaybillSearchResponseResponseInterface {
   /**
    * @description: WP网点信息及对应的商家的发货信息
@@ -52,7 +49,6 @@ export interface PddWaybillSearchPddWaybillSearchResponseResponseInterface {
  * @default
  * @example
  **/
-
 export interface PddWaybillSearchPddWaybillSearchResponseWaybillApplySubscriptionColsResponseInterface {
   /**
    * @description: wp网点信息及对应的商家的发货信息
@@ -82,7 +78,6 @@ export interface PddWaybillSearchPddWaybillSearchResponseWaybillApplySubscriptio
  * @default
  * @example
  **/
-
 export interface PddWaybillSearchPddWaybillSearchResponseWaybillApplySubscriptionColsBranchAccountColsResponseInterface {
   /**
    * @description: 已用面单数量
@@ -148,7 +143,6 @@ export interface PddWaybillSearchPddWaybillSearchResponseWaybillApplySubscriptio
  * @default
  * @example
  **/
-
 export interface PddWaybillSearchPddWaybillSearchResponseWaybillApplySubscriptionColsBranchAccountColsServiceInfoColsResponseInterface {
   /**
    * @description: 是否必须
@@ -192,7 +186,6 @@ export interface PddWaybillSearchPddWaybillSearchResponseWaybillApplySubscriptio
  * @default
  * @example
  **/
-
 export interface PddWaybillSearchPddWaybillSearchResponseWaybillApplySubscriptionColsBranchAccountColsServiceInfoColsServiceAttributesResponseInterface {
   /**
    * @description: 属性code
@@ -228,7 +221,6 @@ export interface PddWaybillSearchPddWaybillSearchResponseWaybillApplySubscriptio
  * @default
  * @example
  **/
-
 export interface PddWaybillSearchPddWaybillSearchResponseWaybillApplySubscriptionColsBranchAccountColsShippAddressColsResponseInterface {
   /**
    * @description: 市名称（二级地址）

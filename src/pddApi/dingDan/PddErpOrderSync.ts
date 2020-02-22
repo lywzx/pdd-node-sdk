@@ -5,7 +5,6 @@ export const PDD_ERP_ORDER_SYNC = 'PDD_ERP_ORDER_SYNC';
  * 接口标识：pdd.erp.order.sync
  * 接口使用场景：erp打单信息同步
  **/
-
 export interface PddErpOrderSyncRequestInterface {
   /**
    * @description: 订单号
@@ -41,7 +40,6 @@ export interface PddErpOrderSyncRequestInterface {
  * 接口标识：pdd.erp.order.sync
  * 接口使用场景：erp打单信息同步
  **/
-
 export interface PddErpOrderSyncResponseInterface {
   /**
    * @description: 是否成功

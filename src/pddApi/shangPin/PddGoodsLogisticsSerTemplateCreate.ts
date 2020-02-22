@@ -5,7 +5,6 @@ export const PDD_GOODS_LOGISTICS_SER_TEMPLATE_CREATE = 'PDD_GOODS_LOGISTICS_SER_
  * 接口标识：pdd.goods.logistics.ser.template.create
  * 接口使用场景：商品送装服务模版新增
  **/
-
 export interface PddGoodsLogisticsSerTemplateCreateRequestInterface {
   /**
    * @description: 服务模板类型：2：送货上门 3：送货上门并安装 4：上门安装 5： 买家自提
@@ -50,7 +49,6 @@ export interface PddGoodsLogisticsSerTemplateCreateRequestInterface {
  * @default
  * @example
  **/
-
 export interface PddGoodsLogisticsSerTemplateCreateServiceAreaListRequestInterface {
   /**
    * @description: 溢价值：按分溢价时，输入价格分的数字，表示value分；按百分比溢价时，输入0-500之间的数字，表示0%——500%备注：买家自提服务类型时，不用传该字段
@@ -86,7 +84,6 @@ export interface PddGoodsLogisticsSerTemplateCreateServiceAreaListRequestInterfa
  * @default
  * @example
  **/
-
 export interface PddGoodsLogisticsSerTemplateCreateCatListRequestInterface {
   /**
    * @description: 类目规则配置
@@ -116,7 +113,6 @@ export interface PddGoodsLogisticsSerTemplateCreateCatListRequestInterface {
  * @default
  * @example
  **/
-
 export interface PddGoodsLogisticsSerTemplateCreateCatListListRequestInterface {
   /**
    * @description: 按属性收取费用时配置的内容：按属性限价时设置；按件限价时不用传，value和content必须设置一个
@@ -146,7 +142,6 @@ export interface PddGoodsLogisticsSerTemplateCreateCatListListRequestInterface {
  * @default
  * @example
  **/
-
 export interface PddGoodsLogisticsSerTemplateCreateCatListListContentRequestInterface {
   /**
    * @description: 价格。单位：分
@@ -175,7 +170,6 @@ export interface PddGoodsLogisticsSerTemplateCreateCatListListContentRequestInte
  * 接口标识：pdd.goods.logistics.ser.template.create
  * 接口使用场景：商品送装服务模版新增
  **/
-
 export interface PddGoodsLogisticsSerTemplateCreateResponseInterface {
   /**
    * @description: response
@@ -191,7 +185,6 @@ export interface PddGoodsLogisticsSerTemplateCreateResponseInterface {
  * @default
  * @example
  **/
-
 export interface PddGoodsLogisticsSerTemplateCreateGoodsLogisticsSerTemplateCreateResponseResponseInterface {
   /**
    * @description: 模版id

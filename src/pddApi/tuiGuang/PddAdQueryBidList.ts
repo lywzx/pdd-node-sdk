@@ -6,7 +6,6 @@ export const PDD_AD_QUERY_BID_LIST = 'PDD_AD_QUERY_BID_LIST';
  * 接口使用场景：根据推广单元id获取现有定向
  * 定向列表：定向id、定向信息、出价/溢价
  **/
-
 export interface PddAdQueryBidListRequestInterface {
   /**
    * @description: 推广类型  2-展示推广
@@ -29,7 +28,6 @@ export interface PddAdQueryBidListRequestInterface {
  * 接口使用场景：根据推广单元id获取现有定向
  * 定向列表：定向id、定向信息、出价/溢价
  **/
-
 export interface PddAdQueryBidListResponseInterface {
   /**
    * @description: 开平返回
@@ -45,7 +43,6 @@ export interface PddAdQueryBidListResponseInterface {
  * @default
  * @example
  **/
-
 export interface PddAdQueryBidListOpenApiResponseResponseInterface {
   /**
    * @description: 店铺收藏数

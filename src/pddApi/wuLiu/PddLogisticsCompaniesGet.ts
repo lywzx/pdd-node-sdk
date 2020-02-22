@@ -13,7 +13,6 @@ export interface PddLogisticsCompaniesGetRequestInterface {}
  * 接口标识：pdd.logistics.companies.get
  * 接口使用场景：获取快递公司名称
  **/
-
 export interface PddLogisticsCompaniesGetResponseInterface {
   /**
    * @description: 返回的快递公司列表对象
@@ -29,7 +28,6 @@ export interface PddLogisticsCompaniesGetResponseInterface {
  * @default
  * @example
  **/
-
 export interface PddLogisticsCompaniesGetLogisticsCompaniesGetResponseResponseInterface {
   /**
    * @description: 快递公司列表对象
@@ -45,7 +43,6 @@ export interface PddLogisticsCompaniesGetLogisticsCompaniesGetResponseResponseIn
  * @default
  * @example
  **/
-
 export interface PddLogisticsCompaniesGetLogisticsCompaniesGetResponseLogisticsCompaniesResponseInterface {
   /**
    * @description: 是否有效，0-当前不支持的快递公司，1-支持的快递公司，注意：发货时必须入参支持的快递公司id，否则会报错

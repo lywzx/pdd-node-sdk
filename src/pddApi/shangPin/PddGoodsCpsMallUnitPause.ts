@@ -13,7 +13,6 @@ export interface PddGoodsCpsMallUnitPauseRequestInterface {}
  * 接口标识：pdd.goods.cps.mall.unit.pause
  * 接口使用场景：暂停全店推广计划
  **/
-
 export interface PddGoodsCpsMallUnitPauseResponseInterface {
   /**
    * @description: response
@@ -29,7 +28,6 @@ export interface PddGoodsCpsMallUnitPauseResponseInterface {
  * @default
  * @example
  **/
-
 export interface PddGoodsCpsMallUnitPauseGoodsCpsMallUnitQueryResponseResponseInterface {
   /**
    * @description: 是否成功

@@ -5,7 +5,6 @@ export const PDD_LOGISTICS_CS_HISTORY_MESSAGE_GET = 'PDD_LOGISTICS_CS_HISTORY_ME
  * 接口标识：pdd.logistics.cs.history.message.get
  * 接口使用场景：该接口用于获取客户与机器人的聊天记录。
  **/
-
 export interface PddLogisticsCsHistoryMessageGetRequestInterface {
   /**
    * @description: pdd会话id
@@ -20,7 +19,6 @@ export interface PddLogisticsCsHistoryMessageGetRequestInterface {
  * 接口标识：pdd.logistics.cs.history.message.get
  * 接口使用场景：该接口用于获取客户与机器人的聊天记录。
  **/
-
 export interface PddLogisticsCsHistoryMessageGetResponseInterface {
   /**
    * @description: response
@@ -36,7 +34,6 @@ export interface PddLogisticsCsHistoryMessageGetResponseInterface {
  * @default
  * @example
  **/
-
 export interface PddLogisticsCsHistoryMessageGetLogisticsCsHistoryMessageGetResponseResponseInterface {
   /**
    * @description: 消息列表
@@ -52,7 +49,6 @@ export interface PddLogisticsCsHistoryMessageGetLogisticsCsHistoryMessageGetResp
  * @default
  * @example
  **/
-
 export interface PddLogisticsCsHistoryMessageGetLogisticsCsHistoryMessageGetResponseMessageInfosResponseInterface {
   /**
    * @description: 消息id

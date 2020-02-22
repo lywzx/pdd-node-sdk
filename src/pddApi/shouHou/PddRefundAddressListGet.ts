@@ -13,7 +13,6 @@ export interface PddRefundAddressListGetRequestInterface {}
  * 接口标识：pdd.refund.address.list.get
  * 接口使用场景：获取商家退货地址库
  **/
-
 export interface PddRefundAddressListGetResponseInterface {
   /**
    * @description: response
@@ -29,7 +28,6 @@ export interface PddRefundAddressListGetResponseInterface {
  * @default
  * @example
  **/
-
 export interface PddRefundAddressListGetRefundAddressListGetResponseResponseInterface {
   /**
    * @description: 退货地址列表
@@ -45,7 +43,6 @@ export interface PddRefundAddressListGetRefundAddressListGetResponseResponseInte
  * @default
  * @example
  **/
-
 export interface PddRefundAddressListGetRefundAddressListGetResponseRefundAddressListResponseInterface {
   /**
    * @description: refund_address_id

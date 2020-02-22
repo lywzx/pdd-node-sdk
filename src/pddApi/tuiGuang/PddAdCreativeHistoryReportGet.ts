@@ -5,7 +5,6 @@ export const PDD_AD_CREATIVE_HISTORY_REPORT_GET = 'PDD_AD_CREATIVE_HISTORY_REPOR
  * 接口标识：pdd.ad.creative.history.report.get
  * 接口使用场景：创意历史报表数据
  **/
-
 export interface PddAdCreativeHistoryReportGetRequestInterface {
   /**
    * @description: 创意ID, 分天数据必填，汇总表数据无需填
@@ -86,7 +85,6 @@ export interface PddAdCreativeHistoryReportGetRequestInterface {
  * @default
  * @example
  **/
-
 export interface PddAdCreativeHistoryReportGetPageRequestRequestInterface {
   /**
    * @description: 页码，默认 1
@@ -108,7 +106,6 @@ export interface PddAdCreativeHistoryReportGetPageRequestRequestInterface {
  * 接口标识：pdd.ad.creative.history.report.get
  * 接口使用场景：创意历史报表数据
  **/
-
 export interface PddAdCreativeHistoryReportGetResponseInterface {
   /**
    * @description: 开平返回
@@ -124,7 +121,6 @@ export interface PddAdCreativeHistoryReportGetResponseInterface {
  * @default
  * @example
  **/
-
 export interface PddAdCreativeHistoryReportGetOpenApiResponseResponseInterface {
   /**
    * @description: 信息列表
@@ -147,7 +143,6 @@ export interface PddAdCreativeHistoryReportGetOpenApiResponseResponseInterface {
  * @default
  * @example
  **/
-
 export interface PddAdCreativeHistoryReportGetOpenApiResponseResultResponseInterface {
   /**
    * @description: 店铺关注数

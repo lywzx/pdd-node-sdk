@@ -5,7 +5,6 @@ export const PDD_GOODS_SALE_STATUS_SET = 'PDD_GOODS_SALE_STATUS_SET';
  * 接口标识：pdd.goods.sale.status.set
  * 接口使用场景：修改商品上下架状态
  **/
-
 export interface PddGoodsSaleStatusSetRequestInterface {
   /**
    * @description: 拼多多商品id
@@ -27,7 +26,6 @@ export interface PddGoodsSaleStatusSetRequestInterface {
  * 接口标识：pdd.goods.sale.status.set
  * 接口使用场景：修改商品上下架状态
  **/
-
 export interface PddGoodsSaleStatusSetResponseInterface {
   /**
    * @description: 返回response
@@ -43,7 +41,6 @@ export interface PddGoodsSaleStatusSetResponseInterface {
  * @default
  * @example
  **/
-
 export interface PddGoodsSaleStatusSetGoodsSaleStatusSetResponseResponseInterface {
   /**
    * @description: 是否修改成功

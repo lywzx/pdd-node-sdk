@@ -5,7 +5,6 @@ export const PDD_REFUND_LIST_INCREMENT_GET = 'PDD_REFUND_LIST_INCREMENT_GET';
  * 接口标识：pdd.refund.list.increment.get
  * 接口使用场景：售后列表增量查询
  **/
-
 export interface PddRefundListIncrementGetRequestInterface {
   /**
    * @description: 必填，售后状态 1：全部 2：买家申请退款，待商家处理 3：退货退款，待商家处理 4：商家同意退款，退款中 5：平台同意退款，退款中 6：驳回退款， 待买家处理 7：已同意退货退款,待用户发货 8：平台处理中 9：平台拒 绝退款，退款关闭 10：退款成功 11：买家撤销 12：买家逾期未处 理，退款失败 13：买家逾期，超过有效期 14 : 换货补寄待商家处理 15:换货补寄待用户处理 16:换货补寄成功 17:换货补寄失败 18:换货补寄待用户确认完成  31：商家同意拒收退款，待用户拒收;32: 待商家补寄发货
@@ -55,7 +54,6 @@ export interface PddRefundListIncrementGetRequestInterface {
  * 接口标识：pdd.refund.list.increment.get
  * 接口使用场景：售后列表增量查询
  **/
-
 export interface PddRefundListIncrementGetResponseInterface {
   /**
    * @description: 售后增量订单列表对象
@@ -71,7 +69,6 @@ export interface PddRefundListIncrementGetResponseInterface {
  * @default
  * @example
  **/
-
 export interface PddRefundListIncrementGetRefundIncrementGetResponseResponseInterface {
   /**
    * @description: 售后列表对象
@@ -94,7 +91,6 @@ export interface PddRefundListIncrementGetRefundIncrementGetResponseResponseInte
  * @default
  * @example
  **/
-
 export interface PddRefundListIncrementGetRefundIncrementGetResponseRefundListResponseInterface {
   /**
    * @description: 极速退款状态，"1"：有极速退款资格，"2"：极速退款失败, "3" 表示极速退款成功，其他表示非极速退款

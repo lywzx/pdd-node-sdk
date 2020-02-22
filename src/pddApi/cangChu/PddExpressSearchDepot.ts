@@ -5,7 +5,6 @@ export const PDD_EXPRESS_SEARCH_DEPOT = 'PDD_EXPRESS_SEARCH_DEPOT';
  * 接口标识：pdd.express.search.depot
  * 接口使用场景：根据仓库名称和仓库编码查询仓库
  **/
-
 export interface PddExpressSearchDepotRequestInterface {
   /**
    * @description: 仓库编码
@@ -41,7 +40,6 @@ export interface PddExpressSearchDepotRequestInterface {
  * 接口标识：pdd.express.search.depot
  * 接口使用场景：根据仓库名称和仓库编码查询仓库
  **/
-
 export interface PddExpressSearchDepotResponseInterface {
   /**
    * @description: response
@@ -57,7 +55,6 @@ export interface PddExpressSearchDepotResponseInterface {
  * @default
  * @example
  **/
-
 export interface PddExpressSearchDepotOpenApiResponseResponseInterface {
   /**
    * @description: 数量
@@ -80,7 +77,6 @@ export interface PddExpressSearchDepotOpenApiResponseResponseInterface {
  * @default
  * @example
  **/
-
 export interface PddExpressSearchDepotOpenApiResponseDepotListResponseInterface {
   /**
    * @description: 详细地址
@@ -161,11 +157,11 @@ export interface PddExpressSearchDepotOpenApiResponseDepotListResponseInterface 
 
   /**
    * @description: 覆盖信息，省：全覆盖
-   * @type: MAP
+   * @type: PddExpressSearchDepotOpenApiResponseDepotListProvinceMapResponseInterface
    * @default:
    *
    **/
-  province_map: MAP;
+  province_map: PddExpressSearchDepotOpenApiResponseDepotListProvinceMapResponseInterface;
 
   /**
    * @description: 仓库类型，暂时只有1
@@ -187,7 +183,6 @@ export interface PddExpressSearchDepotOpenApiResponseDepotListResponseInterface 
  * @default
  * @example
  **/
-
 export interface PddExpressSearchDepotOpenApiResponseDepotListProvinceMapResponseInterface {
   /**
    * @description: 省份id

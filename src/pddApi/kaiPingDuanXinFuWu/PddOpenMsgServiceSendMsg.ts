@@ -5,7 +5,6 @@ export const PDD_OPEN_MSG_SERVICE_SEND_MSG = 'PDD_OPEN_MSG_SERVICE_SEND_MSG';
  * 接口标识：pdd.open.msg.service.send.msg
  * 接口使用场景：开平短信服务发送短信接口
  **/
-
 export interface PddOpenMsgServiceSendMsgRequestInterface {
   /**
    * @description: 接收短信的手机号码列表,["15900000000", "17600000000"]
@@ -30,11 +29,11 @@ export interface PddOpenMsgServiceSendMsgRequestInterface {
 
   /**
    * @description: 短信模板变量对应的实际值，JSON格式
-   * @type: MAP
+   * @type: PddOpenMsgServiceSendMsgTemplateParamRequestInterface
    * @default:
    *
    **/
-  template_param: MAP;
+  template_param: PddOpenMsgServiceSendMsgTemplateParamRequestInterface;
 
   /**
    * @description: 业务请求唯一标识
@@ -49,7 +48,6 @@ export interface PddOpenMsgServiceSendMsgRequestInterface {
  * @default
  * @example
  **/
-
 export interface PddOpenMsgServiceSendMsgTemplateParamRequestInterface {
   /**
    * @description: 模板变量名
@@ -71,7 +69,6 @@ export interface PddOpenMsgServiceSendMsgTemplateParamRequestInterface {
  * 接口标识：pdd.open.msg.service.send.msg
  * 接口使用场景：开平短信服务发送短信接口
  **/
-
 export interface PddOpenMsgServiceSendMsgResponseInterface {
   /**
    * @description: 状态码

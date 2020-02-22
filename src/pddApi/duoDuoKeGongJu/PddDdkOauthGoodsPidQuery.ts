@@ -5,7 +5,6 @@ export const PDD_DDK_OAUTH_GOODS_PID_QUERY = 'PDD_DDK_OAUTH_GOODS_PID_QUERY';
  * 接口标识：pdd.ddk.oauth.goods.pid.query
  * 接口使用场景：查询已经生成的推广位信息
  **/
-
 export interface PddDdkOauthGoodsPidQueryRequestInterface {
   /**
    * @description: 返回的页数
@@ -34,7 +33,6 @@ export interface PddDdkOauthGoodsPidQueryRequestInterface {
  * 接口标识：pdd.ddk.oauth.goods.pid.query
  * 接口使用场景：查询已经生成的推广位信息
  **/
-
 export interface PddDdkOauthGoodsPidQueryResponseInterface {
   /**
    * @description: response
@@ -50,7 +48,6 @@ export interface PddDdkOauthGoodsPidQueryResponseInterface {
  * @default
  * @example
  **/
-
 export interface PddDdkOauthGoodsPidQueryPIdQueryResponseResponseInterface {
   /**
    * @description: 多多进宝推广位对象列表
@@ -73,7 +70,6 @@ export interface PddDdkOauthGoodsPidQueryPIdQueryResponseResponseInterface {
  * @default
  * @example
  **/
-
 export interface PddDdkOauthGoodsPidQueryPIdQueryResponsePIdListResponseInterface {
   /**
    * @description: 推广位生成时间

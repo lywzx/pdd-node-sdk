@@ -5,7 +5,6 @@ export const PDD_LOGISTICS_CS_SESSION_CLOSE = 'PDD_LOGISTICS_CS_SESSION_CLOSE';
  * 接口标识：pdd.logistics.cs.session.close
  * 接口使用场景：该接口用于客服关闭会话
  **/
-
 export interface PddLogisticsCsSessionCloseRequestInterface {
   /**
    * @description: pdd会话id
@@ -34,7 +33,6 @@ export interface PddLogisticsCsSessionCloseRequestInterface {
  * 接口标识：pdd.logistics.cs.session.close
  * 接口使用场景：该接口用于客服关闭会话
  **/
-
 export interface PddLogisticsCsSessionCloseResponseInterface {
   /**
    * @description: response
@@ -50,7 +48,6 @@ export interface PddLogisticsCsSessionCloseResponseInterface {
  * @default
  * @example
  **/
-
 export interface PddLogisticsCsSessionCloseLogisticsCsSessionCloseResponseResponseInterface {
   /**
    * @description: 是否成功

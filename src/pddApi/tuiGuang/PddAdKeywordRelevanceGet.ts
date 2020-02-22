@@ -5,7 +5,6 @@ export const PDD_AD_KEYWORD_RELEVANCE_GET = 'PDD_AD_KEYWORD_RELEVANCE_GET';
  * 接口标识：pdd.ad.keyword.relevance.get
  * 接口使用场景：关键词商品相关性，给出商品下的关键词，即可返回该关键词与该商品的相关性值
  **/
-
 export interface PddAdKeywordRelevanceGetRequestInterface {
   /**
    * @description: 0--搜索广告,1--明星店铺,2--定向广告,3--首页Banner广告（目前只支持0，暂不支持1、2、3）
@@ -34,7 +33,6 @@ export interface PddAdKeywordRelevanceGetRequestInterface {
  * 接口标识：pdd.ad.keyword.relevance.get
  * 接口使用场景：关键词商品相关性，给出商品下的关键词，即可返回该关键词与该商品的相关性值
  **/
-
 export interface PddAdKeywordRelevanceGetResponseInterface {
   /**
    * @description: 返回response
@@ -50,7 +48,6 @@ export interface PddAdKeywordRelevanceGetResponseInterface {
  * @default
  * @example
  **/
-
 export interface PddAdKeywordRelevanceGetAdKeywordRelevanceListResponseResponseInterface {
   /**
    * @description: 关键词相关新列表
@@ -66,7 +63,6 @@ export interface PddAdKeywordRelevanceGetAdKeywordRelevanceListResponseResponseI
  * @default
  * @example
  **/
-
 export interface PddAdKeywordRelevanceGetAdKeywordRelevanceListResponseKeywordRelevanceListResponseInterface {
   /**
    * @description: 相关性

@@ -5,7 +5,6 @@ export const PDD_RDC_PDDGENIUS_SENDGOODS_CANCEL = 'PDD_RDC_PDDGENIUS_SENDGOODS_C
  * 接口标识：pdd.rdc.pddgenius.sendgoods.cancel
  * 接口使用场景：用于未发货仅退款服务商通知拼多多PG取消成功
  **/
-
 export interface PddRdcPddgeniusSendgoodsCancelRequestInterface {
   /**
    * @description: param
@@ -21,7 +20,6 @@ export interface PddRdcPddgeniusSendgoodsCancelRequestInterface {
  * @default
  * @example
  **/
-
 export interface PddRdcPddgeniusSendgoodsCancelParamRequestInterface {
   /**
    * @description: 操作时间戳（毫秒）
@@ -78,7 +76,6 @@ export interface PddRdcPddgeniusSendgoodsCancelParamRequestInterface {
  * 接口标识：pdd.rdc.pddgenius.sendgoods.cancel
  * 接口使用场景：用于未发货仅退款服务商通知拼多多PG取消成功
  **/
-
 export interface PddRdcPddgeniusSendgoodsCancelResponseInterface {
   /**
    * @description: response
@@ -94,7 +91,6 @@ export interface PddRdcPddgeniusSendgoodsCancelResponseInterface {
  * @default
  * @example
  **/
-
 export interface PddRdcPddgeniusSendgoodsCancelRdcPddgeniusSendgoodsCancelResponseResponseInterface {
   /**
    * @description: result
@@ -110,7 +106,6 @@ export interface PddRdcPddgeniusSendgoodsCancelRdcPddgeniusSendgoodsCancelRespon
  * @default
  * @example
  **/
-
 export interface PddRdcPddgeniusSendgoodsCancelRdcPddgeniusSendgoodsCancelResponseResultResponseInterface {
   /**
    * @description: result_data
@@ -126,7 +121,6 @@ export interface PddRdcPddgeniusSendgoodsCancelRdcPddgeniusSendgoodsCancelRespon
  * @default
  * @example
  **/
-
 export interface PddRdcPddgeniusSendgoodsCancelRdcPddgeniusSendgoodsCancelResponseResultResultDataResponseInterface {
   /**
    * @description: 退款单ID

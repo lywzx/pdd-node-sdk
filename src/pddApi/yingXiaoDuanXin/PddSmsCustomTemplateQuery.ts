@@ -5,7 +5,6 @@ export const PDD_SMS_CUSTOM_TEMPLATE_QUERY = 'PDD_SMS_CUSTOM_TEMPLATE_QUERY';
  * 接口标识：pdd.sms.custom.template.query
  * 接口使用场景：自定义模板查询
  **/
-
 export interface PddSmsCustomTemplateQueryRequestInterface {
   /**
    * @description: //1-审核中  2-审核驳回  3-审核通过
@@ -50,7 +49,6 @@ export interface PddSmsCustomTemplateQueryRequestInterface {
  * 接口标识：pdd.sms.custom.template.query
  * 接口使用场景：自定义模板查询
  **/
-
 export interface PddSmsCustomTemplateQueryResponseInterface {
   /**
    * @description: response
@@ -66,7 +64,6 @@ export interface PddSmsCustomTemplateQueryResponseInterface {
  * @default
  * @example
  **/
-
 export interface PddSmsCustomTemplateQuerySmsCustomTemplateListQueryResponseResponseInterface {
   /**
    * @description: 总数量
@@ -89,7 +86,6 @@ export interface PddSmsCustomTemplateQuerySmsCustomTemplateListQueryResponseResp
  * @default
  * @example
  **/
-
 export interface PddSmsCustomTemplateQuerySmsCustomTemplateListQueryResponseResultResponseInterface {
   /**
    * @description: 模板id
@@ -147,7 +143,6 @@ export interface PddSmsCustomTemplateQuerySmsCustomTemplateListQueryResponseResu
  * @default
  * @example
  **/
-
 export interface PddSmsCustomTemplateQuerySmsCustomTemplateListQueryResponseResultContentResponseInterface {
   /**
    * @description: 类型

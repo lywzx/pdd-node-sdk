@@ -5,7 +5,6 @@ export const PDD_DDK_OAUTH_LOTTERY_URL_GEN = 'PDD_DDK_OAUTH_LOTTERY_URL_GEN';
  * 接口标识：pdd.ddk.oauth.lottery.url.gen
  * 接口使用场景：多多客工具生成转盘抽免单url
  **/
-
 export interface PddDdkOauthLotteryUrlGenRequestInterface {
   /**
    * @description: 推广位
@@ -69,7 +68,6 @@ export interface PddDdkOauthLotteryUrlGenRequestInterface {
  * 接口标识：pdd.ddk.oauth.lottery.url.gen
  * 接口使用场景：多多客工具生成转盘抽免单url
  **/
-
 export interface PddDdkOauthLotteryUrlGenResponseInterface {
   /**
    * @description: lottery_url_response
@@ -85,7 +83,6 @@ export interface PddDdkOauthLotteryUrlGenResponseInterface {
  * @default
  * @example
  **/
-
 export interface PddDdkOauthLotteryUrlGenLotteryUrlResponseResponseInterface {
   /**
    * @description: 返回总数
@@ -108,7 +105,6 @@ export interface PddDdkOauthLotteryUrlGenLotteryUrlResponseResponseInterface {
  * @default
  * @example
  **/
-
 export interface PddDdkOauthLotteryUrlGenLotteryUrlResponseUrlListResponseInterface {
   /**
    * @description: 转盘抽免单单人团链接
@@ -155,7 +151,6 @@ export interface PddDdkOauthLotteryUrlGenLotteryUrlResponseUrlListResponseInterf
  * @default
  * @example
  **/
-
 export interface PddDdkOauthLotteryUrlGenLotteryUrlResponseUrlListSingleUrlListResponseInterface {
   /**
    * @description: 转盘抽免单长链接
@@ -219,7 +214,6 @@ export interface PddDdkOauthLotteryUrlGenLotteryUrlResponseUrlListSingleUrlListR
  * @default
  * @example
  **/
-
 export interface PddDdkOauthLotteryUrlGenLotteryUrlResponseUrlListMultiUrlListResponseInterface {
   /**
    * @description: 转盘抽免单长链接
@@ -283,7 +277,6 @@ export interface PddDdkOauthLotteryUrlGenLotteryUrlResponseUrlListMultiUrlListRe
  * @default
  * @example
  **/
-
 export interface PddDdkOauthLotteryUrlGenLotteryUrlResponseUrlListQqAppInfoResponseInterface {
   /**
    * @description: 拼多多小程序id
@@ -347,7 +340,6 @@ export interface PddDdkOauthLotteryUrlGenLotteryUrlResponseUrlListQqAppInfoRespo
  * @default
  * @example
  **/
-
 export interface PddDdkOauthLotteryUrlGenLotteryUrlResponseUrlListWeAppInfoResponseInterface {
   /**
    * @description: 小程序ID

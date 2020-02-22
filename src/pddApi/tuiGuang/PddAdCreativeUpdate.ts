@@ -5,7 +5,6 @@ export const PDD_AD_CREATIVE_UPDATE = 'PDD_AD_CREATIVE_UPDATE';
  * 接口标识：pdd.ad.creative.update
  * 接口使用场景：推广单元修改创意图片、创意标题
  **/
-
 export interface PddAdCreativeUpdateRequestInterface {
   /**
    * @description:
@@ -35,7 +34,6 @@ export interface PddAdCreativeUpdateRequestInterface {
  * @default
  * @example
  **/
-
 export interface PddAdCreativeUpdateCreativeRequestInterface {
   /**
    * @description: 图片地址
@@ -57,7 +55,6 @@ export interface PddAdCreativeUpdateCreativeRequestInterface {
  * 接口标识：pdd.ad.creative.update
  * 接口使用场景：推广单元修改创意图片、创意标题
  **/
-
 export interface PddAdCreativeUpdateResponseInterface {
   /**
    * @description: true or false

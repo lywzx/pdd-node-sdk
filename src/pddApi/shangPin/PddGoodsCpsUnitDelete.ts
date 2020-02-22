@@ -5,7 +5,6 @@ export const PDD_GOODS_CPS_UNIT_DELETE = 'PDD_GOODS_CPS_UNIT_DELETE';
  * 接口标识：pdd.goods.cps.unit.delete
  * 接口使用场景：删除单品计划功能
  **/
-
 export interface PddGoodsCpsUnitDeleteRequestInterface {
   /**
    * @description: 商品id
@@ -20,7 +19,6 @@ export interface PddGoodsCpsUnitDeleteRequestInterface {
  * 接口标识：pdd.goods.cps.unit.delete
  * 接口使用场景：删除单品计划功能
  **/
-
 export interface PddGoodsCpsUnitDeleteResponseInterface {
   /**
    * @description: response
@@ -36,7 +34,6 @@ export interface PddGoodsCpsUnitDeleteResponseInterface {
  * @default
  * @example
  **/
-
 export interface PddGoodsCpsUnitDeleteGoodsCpsUnitDeleteResponseResponseInterface {
   /**
    * @description: 是否成功

@@ -5,7 +5,6 @@ export const PDD_GOODS_COMMIT_LIST_GET = 'PDD_GOODS_COMMIT_LIST_GET';
  * 接口标识：pdd.goods.commit.list.get
  * 接口使用场景：查询店铺的商品草稿列表
  **/
-
 export interface PddGoodsCommitListGetRequestInterface {
   /**
    * @description: 草稿状态（0:编辑中,1:审核中,2:审核通过,3:审核驳回）
@@ -41,7 +40,6 @@ export interface PddGoodsCommitListGetRequestInterface {
  * 接口标识：pdd.goods.commit.list.get
  * 接口使用场景：查询店铺的商品草稿列表
  **/
-
 export interface PddGoodsCommitListGetResponseInterface {
   /**
    * @description: res
@@ -57,7 +55,6 @@ export interface PddGoodsCommitListGetResponseInterface {
  * @default
  * @example
  **/
-
 export interface PddGoodsCommitListGetGoodsCommitListGetResponseResponseInterface {
   /**
    * @description: list
@@ -80,7 +77,6 @@ export interface PddGoodsCommitListGetGoodsCommitListGetResponseResponseInterfac
  * @default
  * @example
  **/
-
 export interface PddGoodsCommitListGetGoodsCommitListGetResponseListResponseInterface {
   /**
    * @description: 草稿id

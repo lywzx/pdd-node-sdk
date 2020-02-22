@@ -5,7 +5,6 @@ export const PDD_GOODS_CPS_MALL_UNIT_CREATE = 'PDD_GOODS_CPS_MALL_UNIT_CREATE';
  * 接口标识：pdd.goods.cps.mall.unit.create
  * 接口使用场景：设置全店推广API
  **/
-
 export interface PddGoodsCpsMallUnitCreateRequestInterface {
   /**
    * @description: 佣金比（千分比）
@@ -27,7 +26,6 @@ export interface PddGoodsCpsMallUnitCreateRequestInterface {
  * 接口标识：pdd.goods.cps.mall.unit.create
  * 接口使用场景：设置全店推广API
  **/
-
 export interface PddGoodsCpsMallUnitCreateResponseInterface {
   /**
    * @description: 是否设置成功

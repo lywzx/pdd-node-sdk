@@ -5,7 +5,6 @@ export const PDD_VAS_ORDER_SEARCH = 'PDD_VAS_ORDER_SEARCH';
  * 接口标识：pdd.vas.order.search
  * 接口使用场景：用于拉取回流完成的订单以及线上增量的订购订单
  **/
-
 export interface PddVasOrderSearchRequestInterface {
   /**
    * @description: 订单创建时间结束，UNIX时间戳（ms 级别）
@@ -83,7 +82,6 @@ export interface PddVasOrderSearchRequestInterface {
  * 接口标识：pdd.vas.order.search
  * 接口使用场景：用于拉取回流完成的订单以及线上增量的订购订单
  **/
-
 export interface PddVasOrderSearchResponseInterface {
   /**
    * @description: response
@@ -99,7 +97,6 @@ export interface PddVasOrderSearchResponseInterface {
  * @default
  * @example
  **/
-
 export interface PddVasOrderSearchVasOrderSearchResponseResponseInterface {
   /**
    * @description: 订单列表
@@ -122,7 +119,6 @@ export interface PddVasOrderSearchVasOrderSearchResponseResponseInterface {
  * @default
  * @example
  **/
-
 export interface PddVasOrderSearchVasOrderSearchResponseOrdersResponseInterface {
   /**
    * @description: 实付价格

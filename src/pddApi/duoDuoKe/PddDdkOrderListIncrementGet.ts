@@ -5,7 +5,6 @@ export const PDD_DDK_ORDER_LIST_INCREMENT_GET = 'PDD_DDK_ORDER_LIST_INCREMENT_GE
  * 接口标识：pdd.ddk.order.list.increment.get
  * 接口使用场景：按照时间段获取授权多多客下面所有多多客的推广订单信息
  **/
-
 export interface PddDdkOrderListIncrementGetRequestInterface {
   /**
    * @description: 最近90天内多多进宝商品订单更新时间--查询时间开始。note：此时间为时间戳，指格林威治时间 1970 年01 月 01 日 00 时 00 分 00 秒(北京时间 1970 年 01 月 01 日 08 时 00 分 00 秒)起至现在的总秒数
@@ -48,7 +47,6 @@ export interface PddDdkOrderListIncrementGetRequestInterface {
  * 接口标识：pdd.ddk.order.list.increment.get
  * 接口使用场景：按照时间段获取授权多多客下面所有多多客的推广订单信息
  **/
-
 export interface PddDdkOrderListIncrementGetResponseInterface {
   /**
    * @description: order_list_get_response
@@ -64,7 +62,6 @@ export interface PddDdkOrderListIncrementGetResponseInterface {
  * @default
  * @example
  **/
-
 export interface PddDdkOrderListIncrementGetOrderListGetResponseResponseInterface {
   /**
    * @description: 多多进宝推广位对象列表
@@ -87,7 +84,6 @@ export interface PddDdkOrderListIncrementGetOrderListGetResponseResponseInterfac
  * @default
  * @example
  **/
-
 export interface PddDdkOrderListIncrementGetOrderListGetResponseOrderListResponseInterface {
   /**
    * @description: 推广订单编号

@@ -5,7 +5,6 @@ export const PDD_SMS_SEND_RECORD_LIST_QUERY = 'PDD_SMS_SEND_RECORD_LIST_QUERY';
  * 接口标识：pdd.sms.send.record.list.query
  * 接口使用场景：短信发送记录列表
  **/
-
 export interface PddSmsSendRecordListQueryRequestInterface {
   /**
    * @description: 场景id,见前面枚举值用户关怀传[1,3]  ,智能营销[4, 5, 6, 8，9] 不传的话全部
@@ -55,7 +54,6 @@ export interface PddSmsSendRecordListQueryRequestInterface {
  * 接口标识：pdd.sms.send.record.list.query
  * 接口使用场景：短信发送记录列表
  **/
-
 export interface PddSmsSendRecordListQueryResponseInterface {
   /**
    * @description: response
@@ -71,7 +69,6 @@ export interface PddSmsSendRecordListQueryResponseInterface {
  * @default
  * @example
  **/
-
 export interface PddSmsSendRecordListQuerySmsSendRecordListQueryResponseResponseInterface {
   /**
    * @description: 总量
@@ -94,7 +91,6 @@ export interface PddSmsSendRecordListQuerySmsSendRecordListQueryResponseResponse
  * @default
  * @example
  **/
-
 export interface PddSmsSendRecordListQuerySmsSendRecordListQueryResponseResultResponseInterface {
   /**
    * @description: 收件人

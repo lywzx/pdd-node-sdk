@@ -5,7 +5,6 @@ export const PDD_SMS_REMAIN_SETTING_DETAIL_QUERY = 'PDD_SMS_REMAIN_SETTING_DETAI
  * 接口标识：pdd.sms.remain.setting.detail.query
  * 接口使用场景：提醒类短信设置详情
  **/
-
 export interface PddSmsRemainSettingDetailQueryRequestInterface {
   /**
    * @description: //1：提醒付款 ；  3：召唤买家成团
@@ -20,7 +19,6 @@ export interface PddSmsRemainSettingDetailQueryRequestInterface {
  * 接口标识：pdd.sms.remain.setting.detail.query
  * 接口使用场景：提醒类短信设置详情
  **/
-
 export interface PddSmsRemainSettingDetailQueryResponseInterface {
   /**
    * @description: response
@@ -36,7 +34,6 @@ export interface PddSmsRemainSettingDetailQueryResponseInterface {
  * @default
  * @example
  **/
-
 export interface PddSmsRemainSettingDetailQuerySmsRemainSettingDetailQueryResponseResponseInterface {
   /**
    * @description: 是否成功
@@ -73,7 +70,6 @@ export interface PddSmsRemainSettingDetailQuerySmsRemainSettingDetailQueryRespon
  * @default
  * @example
  **/
-
 export interface PddSmsRemainSettingDetailQuerySmsRemainSettingDetailQueryResponseResultResponseInterface {
   /**
    * @description: 店铺id
@@ -139,7 +135,6 @@ export interface PddSmsRemainSettingDetailQuerySmsRemainSettingDetailQueryRespon
  * @default
  * @example
  **/
-
 export interface PddSmsRemainSettingDetailQuerySmsRemainSettingDetailQueryResponseResultTriggerConditionResponseInterface {
   /**
    * @description: 距离系统自动取消订单，单位分钟
@@ -154,7 +149,6 @@ export interface PddSmsRemainSettingDetailQuerySmsRemainSettingDetailQueryRespon
  * @default
  * @example
  **/
-
 export interface PddSmsRemainSettingDetailQuerySmsRemainSettingDetailQueryResponseResultTargetResponseInterface {
   /**
    * @description: 商家实收金额，最低价

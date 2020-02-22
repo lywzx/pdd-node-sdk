@@ -13,7 +13,6 @@ export interface PddGooodsSkuMeasurementListRequestInterface {}
  * 接口标识：pdd.gooods.sku.measurement.list
  * 接口使用场景：商品sku计量单位枚举
  **/
-
 export interface PddGooodsSkuMeasurementListResponseInterface {
   /**
    * @description: response
@@ -29,7 +28,6 @@ export interface PddGooodsSkuMeasurementListResponseInterface {
  * @default
  * @example
  **/
-
 export interface PddGooodsSkuMeasurementListGooodsSkuMeasurementListResponseResponseInterface {
   /**
    * @description: 列表
@@ -45,7 +43,6 @@ export interface PddGooodsSkuMeasurementListGooodsSkuMeasurementListResponseResp
  * @default
  * @example
  **/
-
 export interface PddGooodsSkuMeasurementListGooodsSkuMeasurementListResponseMeasurementListResponseInterface {
   /**
    * @description: 描述

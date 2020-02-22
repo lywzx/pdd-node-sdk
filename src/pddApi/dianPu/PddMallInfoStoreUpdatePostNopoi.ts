@@ -5,7 +5,6 @@ export const PDD_MALL_INFO_STORE_UPDATE_POST_NOPOI = 'PDD_MALL_INFO_STORE_UPDATE
  * 接口标识：pdd.mall.info.store.update.post.nopoi
  * 接口使用场景：开放平台途虎等头部商家使用无PoiId的方式编辑门店
  **/
-
 export interface PddMallInfoStoreUpdatePostNopoiRequestInterface {
   /**
    * @description: 门店营业状态
@@ -111,7 +110,6 @@ export interface PddMallInfoStoreUpdatePostNopoiRequestInterface {
  * 接口标识：pdd.mall.info.store.update.post.nopoi
  * 接口使用场景：开放平台途虎等头部商家使用无PoiId的方式编辑门店
  **/
-
 export interface PddMallInfoStoreUpdatePostNopoiResponseInterface {
   /**
    * @description:

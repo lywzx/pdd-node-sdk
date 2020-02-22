@@ -5,7 +5,6 @@ export const PDD_SMS_TEMPLATE_QUERY = 'PDD_SMS_TEMPLATE_QUERY';
  * 接口标识：pdd.sms.template.query
  * 接口使用场景：查询官方模板
  **/
-
 export interface PddSmsTemplateQueryRequestInterface {
   /**
    * @description: 0, "优惠券",
@@ -29,7 +28,6 @@ export interface PddSmsTemplateQueryRequestInterface {
  * 接口标识：pdd.sms.template.query
  * 接口使用场景：查询官方模板
  **/
-
 export interface PddSmsTemplateQueryResponseInterface {
   /**
    * @description: response
@@ -45,7 +43,6 @@ export interface PddSmsTemplateQueryResponseInterface {
  * @default
  * @example
  **/
-
 export interface PddSmsTemplateQuerySmsTemplateQueryResponseResponseInterface {
   /**
    * @description: 列表
@@ -61,7 +58,6 @@ export interface PddSmsTemplateQuerySmsTemplateQueryResponseResponseInterface {
  * @default
  * @example
  **/
-
 export interface PddSmsTemplateQuerySmsTemplateQueryResponseResultResponseInterface {
   /**
    * @description: 编号

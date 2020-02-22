@@ -13,7 +13,6 @@ export interface PddExpressMallDepotSimpleGetRequestInterface {}
  * 接口标识：pdd.express.mall.depot.simple.get
  * 接口使用场景：商家全部仓库的简要信息列表(无业务入参)
  **/
-
 export interface PddExpressMallDepotSimpleGetResponseInterface {
   /**
    * @description: response
@@ -29,7 +28,6 @@ export interface PddExpressMallDepotSimpleGetResponseInterface {
  * @default
  * @example
  **/
-
 export interface PddExpressMallDepotSimpleGetOpenApiResponseResponseInterface {
   /**
    * @description: 仓库Id

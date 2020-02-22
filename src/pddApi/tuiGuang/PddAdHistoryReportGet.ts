@@ -5,7 +5,6 @@ export const PDD_AD_HISTORY_REPORT_GET = 'PDD_AD_HISTORY_REPORT_GET';
  * 接口标识：pdd.ad.history.report.get
  * 接口使用场景：账户推广历史报表数据，可获取最近30天的数据
  **/
-
 export interface PddAdHistoryReportGetRequestInterface {
   /**
    * @description: 开始时间：2018-05-01（周期不超过一个月，记录保存最近30天）
@@ -48,7 +47,6 @@ export interface PddAdHistoryReportGetRequestInterface {
  * 接口标识：pdd.ad.history.report.get
  * 接口使用场景：账户推广历史报表数据，可获取最近30天的数据
  **/
-
 export interface PddAdHistoryReportGetResponseInterface {
   /**
    * @description: 返回response
@@ -64,7 +62,6 @@ export interface PddAdHistoryReportGetResponseInterface {
  * @default
  * @example
  **/
-
 export interface PddAdHistoryReportGetAdMallHistoryReportResponseResponseInterface {
   /**
    * @description: 历史report列表
@@ -80,7 +77,6 @@ export interface PddAdHistoryReportGetAdMallHistoryReportResponseResponseInterfa
  * @default
  * @example
  **/
-
 export interface PddAdHistoryReportGetAdMallHistoryReportResponseMallHistoryReportListResponseInterface {
   /**
    * @description: 千次展现成本

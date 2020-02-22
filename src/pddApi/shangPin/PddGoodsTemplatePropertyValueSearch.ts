@@ -5,7 +5,6 @@ export const PDD_GOODS_TEMPLATE_PROPERTY_VALUE_SEARCH = 'PDD_GOODS_TEMPLATE_PROP
  * 接口标识：pdd.goods.template.property.value.search
  * 接口使用场景：商品发布过程中，填写商品属性时，用于模糊搜索属性模板上可填属性值
  **/
-
 export interface PddGoodsTemplatePropertyValueSearchRequestInterface {
   /**
    * @description: 类目id
@@ -55,7 +54,6 @@ export interface PddGoodsTemplatePropertyValueSearchRequestInterface {
  * 接口标识：pdd.goods.template.property.value.search
  * 接口使用场景：商品发布过程中，填写商品属性时，用于模糊搜索属性模板上可填属性值
  **/
-
 export interface PddGoodsTemplatePropertyValueSearchResponseInterface {
   /**
    * @description: resposne
@@ -71,7 +69,6 @@ export interface PddGoodsTemplatePropertyValueSearchResponseInterface {
  * @default
  * @example
  **/
-
 export interface PddGoodsTemplatePropertyValueSearchGoodsTemplatePropValSearchResponseResponseInterface {
   /**
    * @description: list
@@ -87,7 +84,6 @@ export interface PddGoodsTemplatePropertyValueSearchGoodsTemplatePropValSearchRe
  * @default
  * @example
  **/
-
 export interface PddGoodsTemplatePropertyValueSearchGoodsTemplatePropValSearchResponseListResponseInterface {
   /**
    * @description: 属性值

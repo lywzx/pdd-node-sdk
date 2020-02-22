@@ -8,7 +8,6 @@ export const PDD_ORDER_NUMBER_LIST_INCREMENT_GET = 'PDD_ORDER_NUMBER_LIST_INCREM
  * ①. 一次请求只能查询时间跨度为30分钟的增量交易记录，即end_updated_at - start_updated_at<= 30min。
  * ②. 通过从后往前翻页的方式以及结束时间不小于拼多多系统时间前3min可以避免漏单问题。
  **/
-
 export interface PddOrderNumberListIncrementGetRequestInterface {
   /**
    * @description: 订单类型（是否抽奖订单），0-全部，1-非抽奖订单，2-抽奖订单
@@ -84,7 +83,6 @@ export interface PddOrderNumberListIncrementGetRequestInterface {
  * ①. 一次请求只能查询时间跨度为30分钟的增量交易记录，即end_updated_at - start_updated_at<= 30min。
  * ②. 通过从后往前翻页的方式以及结束时间不小于拼多多系统时间前3min可以避免漏单问题。
  **/
-
 export interface PddOrderNumberListIncrementGetResponseInterface {
   /**
    * @description: response
@@ -100,7 +98,6 @@ export interface PddOrderNumberListIncrementGetResponseInterface {
  * @default
  * @example
  **/
-
 export interface PddOrderNumberListIncrementGetOrderSnIncrementGetResponseResponseInterface {
   /**
    * @description: 返回订单的总数
@@ -130,7 +127,6 @@ export interface PddOrderNumberListIncrementGetOrderSnIncrementGetResponseRespon
  * @default
  * @example
  **/
-
 export interface PddOrderNumberListIncrementGetOrderSnIncrementGetResponseOrderSnListResponseInterface {
   /**
    * @description: 送货入户并安装费用 单位：元
@@ -590,7 +586,6 @@ export interface PddOrderNumberListIncrementGetOrderSnIncrementGetResponseOrderS
  * @default
  * @example
  **/
-
 export interface PddOrderNumberListIncrementGetOrderSnIncrementGetResponseOrderSnListCardInfoListResponseInterface {
   /**
    * @description: 卡号
@@ -612,7 +607,6 @@ export interface PddOrderNumberListIncrementGetOrderSnIncrementGetResponseOrderS
  * @default
  * @example
  **/
-
 export interface PddOrderNumberListIncrementGetOrderSnIncrementGetResponseOrderSnListStepOrderInfoResponseInterface {
   /**
    * @description: 分阶段已付定金 单位：元
@@ -648,7 +642,6 @@ export interface PddOrderNumberListIncrementGetOrderSnIncrementGetResponseOrderS
  * @default
  * @example
  **/
-
 export interface PddOrderNumberListIncrementGetOrderSnIncrementGetResponseOrderSnListOrderDepotInfoResponseInterface {
   /**
    * @description: 子货品列表（组合货品才会有子货品信息）
@@ -720,7 +713,6 @@ export interface PddOrderNumberListIncrementGetOrderSnIncrementGetResponseOrderS
  * @default
  * @example
  **/
-
 export interface PddOrderNumberListIncrementGetOrderSnIncrementGetResponseOrderSnListOrderDepotInfoWareSubInfoListResponseInterface {
   /**
    * @description: 子货品编码
@@ -756,7 +748,6 @@ export interface PddOrderNumberListIncrementGetOrderSnIncrementGetResponseOrderS
  * @default
  * @example
  **/
-
 export interface PddOrderNumberListIncrementGetOrderSnIncrementGetResponseOrderSnListItemListResponseInterface {
   /**
    * @description: 商品编号

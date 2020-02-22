@@ -5,7 +5,6 @@ export const PDD_AD_HISTORY_PLAN_REPORT_GET = 'PDD_AD_HISTORY_PLAN_REPORT_GET';
  * 接口标识：pdd.ad.history.plan.report.get
  * 接口使用场景：推广计划历史报表数据：1、可以获取某个计划的分天历史数据；2、可以获得所有计划在指定时间段内的汇总统计数据；3、可获取最近30天的数据。
  **/
-
 export interface PddAdHistoryPlanReportGetRequestInterface {
   /**
    * @description: 开始时间：2018-05-01（周期不超过一个月，记录保存最近30天）
@@ -76,7 +75,6 @@ export interface PddAdHistoryPlanReportGetRequestInterface {
  * 接口标识：pdd.ad.history.plan.report.get
  * 接口使用场景：推广计划历史报表数据：1、可以获取某个计划的分天历史数据；2、可以获得所有计划在指定时间段内的汇总统计数据；3、可获取最近30天的数据。
  **/
-
 export interface PddAdHistoryPlanReportGetResponseInterface {
   /**
    * @description: 返回response
@@ -92,7 +90,6 @@ export interface PddAdHistoryPlanReportGetResponseInterface {
  * @default
  * @example
  **/
-
 export interface PddAdHistoryPlanReportGetAdPlanHistoryReportGetResponseResponseInterface {
   /**
    * @description: 总数
@@ -115,7 +112,6 @@ export interface PddAdHistoryPlanReportGetAdPlanHistoryReportGetResponseResponse
  * @default
  * @example
  **/
-
 export interface PddAdHistoryPlanReportGetAdPlanHistoryReportGetResponseResultResponseInterface {
   /**
    * @description: 千次展现成本
@@ -126,11 +122,11 @@ export interface PddAdHistoryPlanReportGetAdPlanHistoryReportGetResponseResultRe
 
   /**
    * @description: 扩展字段
-   * @type: MAP
+   * @type: PddAdHistoryPlanReportGetAdPlanHistoryReportGetResponseResultExternalFieldsResponseInterface
    * @default:
    *
    **/
-  external_fields: MAP;
+  external_fields: PddAdHistoryPlanReportGetAdPlanHistoryReportGetResponseResultExternalFieldsResponseInterface;
 
   /**
    * @description: 广告投资回报率
@@ -201,7 +197,6 @@ export interface PddAdHistoryPlanReportGetAdPlanHistoryReportGetResponseResultRe
  * @default
  * @example
  **/
-
 export interface PddAdHistoryPlanReportGetAdPlanHistoryReportGetResponseResultExternalFieldsResponseInterface {
   /**
    * @description: key

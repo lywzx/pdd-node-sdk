@@ -5,7 +5,6 @@ export const PDD_ORDER_LIST_GET = 'PDD_ORDER_LIST_GET';
  * 接口标识：pdd.order.list.get
  * 接口使用场景：根据成团时间查询订单列表，注：虚拟订单充值手机号信息无法通过此接口获取，请联系虚拟类目运营人员。
  **/
-
 export interface PddOrderListGetRequestInterface {
   /**
    * @description: 发货状态，1：待发货，2：已发货待签收，3：已签收 5：全部
@@ -69,7 +68,6 @@ export interface PddOrderListGetRequestInterface {
  * 接口标识：pdd.order.list.get
  * 接口使用场景：根据成团时间查询订单列表，注：虚拟订单充值手机号信息无法通过此接口获取，请联系虚拟类目运营人员。
  **/
-
 export interface PddOrderListGetResponseInterface {
   /**
    * @description: 请求response
@@ -85,7 +83,6 @@ export interface PddOrderListGetResponseInterface {
  * @default
  * @example 1
  **/
-
 export interface PddOrderListGetOrderListGetResponseResponseInterface {
   /**
    * @description: 订单信息列表
@@ -115,7 +112,6 @@ export interface PddOrderListGetOrderListGetResponseResponseInterface {
  * @default
  * @example 1
  **/
-
 export interface PddOrderListGetOrderListGetResponseOrderListResponseInterface {
   /**
    * @description: 送货入户并安装费用 单位：元
@@ -575,7 +571,6 @@ export interface PddOrderListGetOrderListGetResponseOrderListResponseInterface {
  * @default
  * @example 1
  **/
-
 export interface PddOrderListGetOrderListGetResponseOrderListCardInfoListResponseInterface {
   /**
    * @description: 卡号
@@ -597,7 +592,6 @@ export interface PddOrderListGetOrderListGetResponseOrderListCardInfoListRespons
  * @default
  * @example 1
  **/
-
 export interface PddOrderListGetOrderListGetResponseOrderListStepOrderInfoResponseInterface {
   /**
    * @description: 定金订单状态：step_trade_status 枚举：0-定金未付尾款未付、1-定金已付尾款未付、2-定金已付尾款已付
@@ -633,7 +627,6 @@ export interface PddOrderListGetOrderListGetResponseOrderListStepOrderInfoRespon
  * @default
  * @example 1
  **/
-
 export interface PddOrderListGetOrderListGetResponseOrderListItemListResponseInterface {
   /**
    * @description: 商品单件 单价：元
@@ -704,7 +697,6 @@ export interface PddOrderListGetOrderListGetResponseOrderListItemListResponseInt
  * @default
  * @example 1
  **/
-
 export interface PddOrderListGetOrderListGetResponseOrderListOrderDepotInfoResponseInterface {
   /**
    * @description: 仓库id
@@ -776,7 +768,6 @@ export interface PddOrderListGetOrderListGetResponseOrderListOrderDepotInfoRespo
  * @default
  * @example 1
  **/
-
 export interface PddOrderListGetOrderListGetResponseOrderListOrderDepotInfoWareSubInfoListResponseInterface {
   /**
    * @description: 子货品编码

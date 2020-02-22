@@ -5,7 +5,6 @@ export const PDD_MALL_INFO_GROUP_REMOVE_STORE_GET = 'PDD_MALL_INFO_GROUP_REMOVE_
  * 接口标识：pdd.mall.info.group.remove.store.get
  * 接口使用场景：门店组删除门店
  **/
-
 export interface PddMallInfoGroupRemoveStoreGetRequestInterface {
   /**
    * @description: 店铺ID
@@ -27,7 +26,6 @@ export interface PddMallInfoGroupRemoveStoreGetRequestInterface {
  * 接口标识：pdd.mall.info.group.remove.store.get
  * 接口使用场景：门店组删除门店
  **/
-
 export interface PddMallInfoGroupRemoveStoreGetResponseInterface {
   /**
    * @description:
@@ -43,7 +41,6 @@ export interface PddMallInfoGroupRemoveStoreGetResponseInterface {
  * @default
  * @example
  **/
-
 export interface PddMallInfoGroupRemoveStoreGetMallInfoGroupRemoveStoreGetResponseResponseInterface {
   /**
    * @description:

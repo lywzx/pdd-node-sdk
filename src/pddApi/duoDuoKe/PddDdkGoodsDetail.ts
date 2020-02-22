@@ -5,7 +5,6 @@ export const PDD_DDK_GOODS_DETAIL = 'PDD_DDK_GOODS_DETAIL';
  * 接口标识：pdd.ddk.goods.detail
  * 接口使用场景：查询多多进宝商品详情
  **/
-
 export interface PddDdkGoodsDetailRequestInterface {
   /**
    * @description: 商品ID，仅支持单个查询。例如：[123456]
@@ -55,7 +54,6 @@ export interface PddDdkGoodsDetailRequestInterface {
  * 接口标识：pdd.ddk.goods.detail
  * 接口使用场景：查询多多进宝商品详情
  **/
-
 export interface PddDdkGoodsDetailResponseInterface {
   /**
    * @description: response
@@ -71,7 +69,6 @@ export interface PddDdkGoodsDetailResponseInterface {
  * @default
  * @example
  **/
-
 export interface PddDdkGoodsDetailGoodsDetailResponseResponseInterface {
   /**
    * @description: 多多进宝商品对象列表
@@ -87,7 +84,6 @@ export interface PddDdkGoodsDetailGoodsDetailResponseResponseInterface {
  * @default
  * @example
  **/
-
 export interface PddDdkGoodsDetailGoodsDetailResponseGoodsDetailsResponseInterface {
   /**
    * @description: 店铺优惠券id

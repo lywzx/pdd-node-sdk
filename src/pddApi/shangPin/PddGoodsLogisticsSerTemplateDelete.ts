@@ -5,7 +5,6 @@ export const PDD_GOODS_LOGISTICS_SER_TEMPLATE_DELETE = 'PDD_GOODS_LOGISTICS_SER_
  * 接口标识：pdd.goods.logistics.ser.template.delete
  * 接口使用场景：商品送装服务模版删除
  **/
-
 export interface PddGoodsLogisticsSerTemplateDeleteRequestInterface {
   /**
    * @description: 模版id
@@ -20,7 +19,6 @@ export interface PddGoodsLogisticsSerTemplateDeleteRequestInterface {
  * 接口标识：pdd.goods.logistics.ser.template.delete
  * 接口使用场景：商品送装服务模版删除
  **/
-
 export interface PddGoodsLogisticsSerTemplateDeleteResponseInterface {
   /**
    * @description: response
@@ -36,7 +34,6 @@ export interface PddGoodsLogisticsSerTemplateDeleteResponseInterface {
  * @default
  * @example
  **/
-
 export interface PddGoodsLogisticsSerTemplateDeleteGoodsLogisticsSerTemplateDeleteResponseResponseInterface {
   /**
    * @description: 是否成功

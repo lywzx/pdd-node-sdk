@@ -5,7 +5,6 @@ export const PDD_AD_CAN_CREATE_PLAN = 'PDD_AD_CAN_CREATE_PLAN';
  * 接口标识：pdd.ad.can.create.plan
  * 接口使用场景：验证是否可以创建计划，新建计划时需要满足两个条件：同意拼多多店铺推广软件服务协议&计划数没达到上限50个
  **/
-
 export interface PddAdCanCreatePlanRequestInterface {
   /**
    * @description: 计划名
@@ -27,7 +26,6 @@ export interface PddAdCanCreatePlanRequestInterface {
  * 接口标识：pdd.ad.can.create.plan
  * 接口使用场景：验证是否可以创建计划，新建计划时需要满足两个条件：同意拼多多店铺推广软件服务协议&计划数没达到上限50个
  **/
-
 export interface PddAdCanCreatePlanResponseInterface {
   /**
    * @description: response
@@ -43,7 +41,6 @@ export interface PddAdCanCreatePlanResponseInterface {
  * @default
  * @example
  **/
-
 export interface PddAdCanCreatePlanAdPlanCreateResponseResponseInterface {
   /**
    * @description: 是否可以创建

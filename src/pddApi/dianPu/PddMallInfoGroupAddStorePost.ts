@@ -5,7 +5,6 @@ export const PDD_MALL_INFO_GROUP_ADD_STORE_POST = 'PDD_MALL_INFO_GROUP_ADD_STORE
  * 接口标识：pdd.mall.info.group.add.store.post
  * 接口使用场景：门店组添加门店
  **/
-
 export interface PddMallInfoGroupAddStorePostRequestInterface {
   /**
    * @description: 店铺ID
@@ -27,7 +26,6 @@ export interface PddMallInfoGroupAddStorePostRequestInterface {
  * 接口标识：pdd.mall.info.group.add.store.post
  * 接口使用场景：门店组添加门店
  **/
-
 export interface PddMallInfoGroupAddStorePostResponseInterface {
   /**
    * @description:
@@ -43,7 +41,6 @@ export interface PddMallInfoGroupAddStorePostResponseInterface {
  * @default
  * @example
  **/
-
 export interface PddMallInfoGroupAddStorePostMallInfoGroupAddStorePostResponseResponseInterface {
   /**
    * @description:

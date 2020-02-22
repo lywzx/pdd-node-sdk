@@ -5,7 +5,6 @@ export const PDD_GOODS_SKU_PRICE_UPDATE = 'PDD_GOODS_SKU_PRICE_UPDATE';
  * 接口标识：pdd.goods.sku.price.update
  * 接口使用场景：修改商品sku价格
  **/
-
 export interface PddGoodsSkuPriceUpdateRequestInterface {
   /**
    * @description: 商品id
@@ -49,7 +48,6 @@ export interface PddGoodsSkuPriceUpdateRequestInterface {
  * @default
  * @example
  **/
-
 export interface PddGoodsSkuPriceUpdateSkuPriceListRequestInterface {
   /**
    * @description: sku上架状态，0-已下架，1-上架中
@@ -85,7 +83,6 @@ export interface PddGoodsSkuPriceUpdateSkuPriceListRequestInterface {
  * 接口标识：pdd.goods.sku.price.update
  * 接口使用场景：修改商品sku价格
  **/
-
 export interface PddGoodsSkuPriceUpdateResponseInterface {
   /**
    * @description: response
@@ -101,7 +98,6 @@ export interface PddGoodsSkuPriceUpdateResponseInterface {
  * @default
  * @example
  **/
-
 export interface PddGoodsSkuPriceUpdateGoodsUpdateSkuPriceResponseResponseInterface {
   /**
    * @description: 是否成功

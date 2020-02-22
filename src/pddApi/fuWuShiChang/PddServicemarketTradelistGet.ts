@@ -5,7 +5,6 @@ export const PDD_SERVICEMARKET_TRADELIST_GET = 'PDD_SERVICEMARKET_TRADELIST_GET'
  * 接口标识：pdd.servicemarket.tradelist.get
  * 接口使用场景：用于ISV查询自己名下的服务的交易明细单
  **/
-
 export interface PddServicemarketTradelistGetRequestInterface {
   /**
    * @description: 查询起始时间，精确到秒，起止时间间隔最大31天
@@ -55,7 +54,6 @@ export interface PddServicemarketTradelistGetRequestInterface {
  * 接口标识：pdd.servicemarket.tradelist.get
  * 接口使用场景：用于ISV查询自己名下的服务的交易明细单
  **/
-
 export interface PddServicemarketTradelistGetResponseInterface {
   /**
    * @description: response
@@ -71,7 +69,6 @@ export interface PddServicemarketTradelistGetResponseInterface {
  * @default
  * @example
  **/
-
 export interface PddServicemarketTradelistGetMallBalanceFlowSearchResponseResponseInterface {
   /**
    * @description: 交易流水列表
@@ -94,7 +91,6 @@ export interface PddServicemarketTradelistGetMallBalanceFlowSearchResponseRespon
  * @default
  * @example
  **/
-
 export interface PddServicemarketTradelistGetMallBalanceFlowSearchResponseDataResponseInterface {
   /**
    * @description: 交易金额，单位分

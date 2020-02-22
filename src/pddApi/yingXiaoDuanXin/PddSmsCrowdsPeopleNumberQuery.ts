@@ -5,7 +5,6 @@ export const PDD_SMS_CROWDS_PEOPLE_NUMBER_QUERY = 'PDD_SMS_CROWDS_PEOPLE_NUMBER_
  * 接口标识：pdd.sms.crowds.people.number.query
  * 接口使用场景：查询人群数量
  **/
-
 export interface PddSmsCrowdsPeopleNumberQueryRequestInterface {
   /**
    * @description: 人群id
@@ -104,7 +103,6 @@ export interface PddSmsCrowdsPeopleNumberQueryRequestInterface {
  * 接口标识：pdd.sms.crowds.people.number.query
  * 接口使用场景：查询人群数量
  **/
-
 export interface PddSmsCrowdsPeopleNumberQueryResponseInterface {
   /**
    * @description: response
@@ -120,7 +118,6 @@ export interface PddSmsCrowdsPeopleNumberQueryResponseInterface {
  * @default
  * @example
  **/
-
 export interface PddSmsCrowdsPeopleNumberQuerySmsCrowsPeopleNumberQueryResponseResponseInterface {
   /**
    * @description: 筛选人数

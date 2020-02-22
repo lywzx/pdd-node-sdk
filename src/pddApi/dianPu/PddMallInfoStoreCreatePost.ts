@@ -5,7 +5,6 @@ export const PDD_MALL_INFO_STORE_CREATE_POST = 'PDD_MALL_INFO_STORE_CREATE_POST'
  * 接口标识：pdd.mall.info.store.create.post
  * 接口使用场景：创建店铺门店
  **/
-
 export interface PddMallInfoStoreCreatePostRequestInterface {
   /**
    * @description: 门店营业状态
@@ -104,7 +103,6 @@ export interface PddMallInfoStoreCreatePostRequestInterface {
  * 接口标识：pdd.mall.info.store.create.post
  * 接口使用场景：创建店铺门店
  **/
-
 export interface PddMallInfoStoreCreatePostResponseInterface {
   /**
    * @description:
@@ -120,7 +118,6 @@ export interface PddMallInfoStoreCreatePostResponseInterface {
  * @default
  * @example
  **/
-
 export interface PddMallInfoStoreCreatePostMallInfoStoreCreatePostResponseResponseInterface {
   /**
    * @description:

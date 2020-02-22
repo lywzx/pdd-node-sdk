@@ -5,7 +5,6 @@ export const PDD_GOODS_LOGISTICS_SER_TEMPLATE_DETAIL = 'PDD_GOODS_LOGISTICS_SER_
  * 接口标识：pdd.goods.logistics.ser.template.detail
  * 接口使用场景：商品送装服务模版详情
  **/
-
 export interface PddGoodsLogisticsSerTemplateDetailRequestInterface {
   /**
    * @description: 模版id
@@ -20,7 +19,6 @@ export interface PddGoodsLogisticsSerTemplateDetailRequestInterface {
  * 接口标识：pdd.goods.logistics.ser.template.detail
  * 接口使用场景：商品送装服务模版详情
  **/
-
 export interface PddGoodsLogisticsSerTemplateDetailResponseInterface {
   /**
    * @description: response
@@ -36,7 +34,6 @@ export interface PddGoodsLogisticsSerTemplateDetailResponseInterface {
  * @default
  * @example
  **/
-
 export interface PddGoodsLogisticsSerTemplateDetailGoodsLogisticsSerTemplateDetailResponseResponseInterface {
   /**
    * @description: 服务地区范围配置
@@ -95,7 +92,6 @@ export interface PddGoodsLogisticsSerTemplateDetailGoodsLogisticsSerTemplateDeta
  * @default
  * @example
  **/
-
 export interface PddGoodsLogisticsSerTemplateDetailGoodsLogisticsSerTemplateDetailResponseServiceAreaListResponseInterface {
   /**
    * @description: 溢价值：按分溢价时，输入价格分的数字，表示value分；按百分比溢价时，输入0-500之间的数字，表示0%——500%备注：买家自提服务类型时，不用传该字段
@@ -131,7 +127,6 @@ export interface PddGoodsLogisticsSerTemplateDetailGoodsLogisticsSerTemplateDeta
  * @default
  * @example
  **/
-
 export interface PddGoodsLogisticsSerTemplateDetailGoodsLogisticsSerTemplateDetailResponseCatListResponseInterface {
   /**
    * @description: 类目规则配置
@@ -175,7 +170,6 @@ export interface PddGoodsLogisticsSerTemplateDetailGoodsLogisticsSerTemplateDeta
  * @default
  * @example
  **/
-
 export interface PddGoodsLogisticsSerTemplateDetailGoodsLogisticsSerTemplateDetailResponseCatListListResponseInterface {
   /**
    * @description: 按属性收取费用时配置的内容：按属性限价时设置；按件限价时不用传，value和content必须设置一个
@@ -212,7 +206,6 @@ export interface PddGoodsLogisticsSerTemplateDetailGoodsLogisticsSerTemplateDeta
  * @default
  * @example
  **/
-
 export interface PddGoodsLogisticsSerTemplateDetailGoodsLogisticsSerTemplateDetailResponseCatListListContentResponseInterface {
   /**
    * @description: 价格。单位：分

@@ -5,7 +5,6 @@ export const PDD_DDK_ORDER_LIST_RANGE_GET = 'PDD_DDK_ORDER_LIST_RANGE_GET';
  * 接口标识：pdd.ddk.order.list.range.get
  * 接口使用场景：用时间段查询推广订单接口
  **/
-
 export interface PddDdkOrderListRangeGetRequestInterface {
   /**
    * @description: 支付结束时间
@@ -41,7 +40,6 @@ export interface PddDdkOrderListRangeGetRequestInterface {
  * 接口标识：pdd.ddk.order.list.range.get
  * 接口使用场景：用时间段查询推广订单接口
  **/
-
 export interface PddDdkOrderListRangeGetResponseInterface {
   /**
    * @description: order_list_get_response
@@ -57,7 +55,6 @@ export interface PddDdkOrderListRangeGetResponseInterface {
  * @default
  * @example
  **/
-
 export interface PddDdkOrderListRangeGetOrderListGetResponseResponseInterface {
   /**
    * @description: last_order_id
@@ -80,7 +77,6 @@ export interface PddDdkOrderListRangeGetOrderListGetResponseResponseInterface {
  * @default
  * @example
  **/
-
 export interface PddDdkOrderListRangeGetOrderListGetResponseOrderListResponseInterface {
   /**
    * @description: 是否是 cpa 新用户，1表示是，0表示否

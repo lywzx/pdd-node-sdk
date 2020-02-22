@@ -5,7 +5,6 @@ export const PDD_GOODS_SUBMIT_GOODS_COMMIT = 'PDD_GOODS_SUBMIT_GOODS_COMMIT';
  * 接口标识：pdd.goods.submit.goods.commit
  * 接口使用场景：被驳回的商品从草稿提交
  **/
-
 export interface PddGoodsSubmitGoodsCommitRequestInterface {
   /**
    * @description: 坏果包赔
@@ -380,7 +379,6 @@ export interface PddGoodsSubmitGoodsCommitRequestInterface {
  * @default
  * @example
  **/
-
 export interface PddGoodsSubmitGoodsCommitCarouselVideoRequestInterface {
   /**
    * @description: 商品视频id
@@ -402,7 +400,6 @@ export interface PddGoodsSubmitGoodsCommitCarouselVideoRequestInterface {
  * @default
  * @example
  **/
-
 export interface PddGoodsSubmitGoodsCommitElecGoodsAttributesRequestInterface {
   /**
    * @description: 开始时间（timeType=1时必填表示核销的开始时间）（精确到毫秒）
@@ -438,7 +435,6 @@ export interface PddGoodsSubmitGoodsCommitElecGoodsAttributesRequestInterface {
  * @default
  * @example
  **/
-
 export interface PddGoodsSubmitGoodsCommitGoodsPropertiesRequestInterface {
   /**
    * @description: 组id，非销售属性不用传
@@ -517,7 +513,6 @@ export interface PddGoodsSubmitGoodsCommitGoodsPropertiesRequestInterface {
  * @default
  * @example
  **/
-
 export interface PddGoodsSubmitGoodsCommitOverseaGoodsRequestInterface {
   /**
    * @description: 保税仓唯一标识
@@ -575,7 +570,6 @@ export interface PddGoodsSubmitGoodsCommitOverseaGoodsRequestInterface {
  * @default
  * @example
  **/
-
 export interface PddGoodsSubmitGoodsCommitSkuListRequestInterface {
   /**
    * @description: sku上架状态，0-已下架，1-上架中
@@ -661,7 +655,6 @@ export interface PddGoodsSubmitGoodsCommitSkuListRequestInterface {
  * @default
  * @example
  **/
-
 export interface PddGoodsSubmitGoodsCommitSkuListOverseaSkuRequestInterface {
   /**
    * @description: 计量单位编码，从接口pdd.gooods.sku.measurement.list获取code
@@ -690,7 +683,6 @@ export interface PddGoodsSubmitGoodsCommitSkuListOverseaSkuRequestInterface {
  * 接口标识：pdd.goods.submit.goods.commit
  * 接口使用场景：被驳回的商品从草稿提交
  **/
-
 export interface PddGoodsSubmitGoodsCommitResponseInterface {
   /**
    * @description: 返回response
@@ -706,7 +698,6 @@ export interface PddGoodsSubmitGoodsCommitResponseInterface {
  * @default
  * @example
  **/
-
 export interface PddGoodsSubmitGoodsCommitGoodsUpdateResponseResponseInterface {
   /**
    * @description: 提交申请的序列id

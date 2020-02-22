@@ -5,7 +5,6 @@ export const PDD_AD_KEYWORD_DELETE = 'PDD_AD_KEYWORD_DELETE';
  * 接口标识：pdd.ad.keyword.delete
  * 接口使用场景：推广单元删除关键词（传入关键词id列表，统一删除)，可输入多个关键词，进行批量删除
  **/
-
 export interface PddAdKeywordDeleteRequestInterface {
   /**
    * @description: 0--搜索广告,1--明星店铺,2--定向广告,3--首页Banner广告（目前只支持0，暂不支持1、2、3）
@@ -27,7 +26,6 @@ export interface PddAdKeywordDeleteRequestInterface {
  * 接口标识：pdd.ad.keyword.delete
  * 接口使用场景：推广单元删除关键词（传入关键词id列表，统一删除)，可输入多个关键词，进行批量删除
  **/
-
 export interface PddAdKeywordDeleteResponseInterface {
   /**
    * @description: 返回response
@@ -43,7 +41,6 @@ export interface PddAdKeywordDeleteResponseInterface {
  * @default
  * @example
  **/
-
 export interface PddAdKeywordDeleteAdKeywordDeleteResponseResponseInterface {
   /**
    * @description: 是否成功

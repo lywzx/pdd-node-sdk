@@ -5,7 +5,6 @@ export const PDD_SMS_SHORT_STATISTIC_QUERY = 'PDD_SMS_SHORT_STATISTIC_QUERY';
  * 接口标识：pdd.sms.short.statistic.query
  * 接口使用场景：查看任务数据
  **/
-
 export interface PddSmsShortStatisticQueryRequestInterface {
   /**
    * @description: 任务id
@@ -20,7 +19,6 @@ export interface PddSmsShortStatisticQueryRequestInterface {
  * 接口标识：pdd.sms.short.statistic.query
  * 接口使用场景：查看任务数据
  **/
-
 export interface PddSmsShortStatisticQueryResponseInterface {
   /**
    * @description: response
@@ -36,7 +34,6 @@ export interface PddSmsShortStatisticQueryResponseInterface {
  * @default
  * @example
  **/
-
 export interface PddSmsShortStatisticQuerySmsShortMsgStatisticQueryResponseResponseInterface {
   /**
    * @description: return
@@ -60,7 +57,6 @@ export interface PddSmsShortStatisticQuerySmsShortMsgStatisticQueryResponseRespo
  * @default
  * @example
  **/
-
 export interface PddSmsShortStatisticQuerySmsShortMsgStatisticQueryResponseSettingAndCrowdReturnVoResponseInterface {
   /**
    * @description: 人群id
@@ -96,7 +92,6 @@ export interface PddSmsShortStatisticQuerySmsShortMsgStatisticQueryResponseSetti
  * @default
  * @example
  **/
-
 export interface PddSmsShortStatisticQuerySmsShortMsgStatisticQueryResponseStatisticVoResponseInterface {
   /**
    * @description: 商家店铺id

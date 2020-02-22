@@ -13,7 +13,6 @@ export interface PddTimeGetRequestInterface {}
  * 接口标识：pdd.time.get
  * 接口使用场景：获取拼多多系统时间
  **/
-
 export interface PddTimeGetResponseInterface {
   /**
    * @description: response
@@ -29,7 +28,6 @@ export interface PddTimeGetResponseInterface {
  * @default
  * @example
  **/
-
 export interface PddTimeGetTimeGetResponseResponseInterface {
   /**
    * @description: 拼多多系统时间

@@ -5,7 +5,6 @@ export const PDD_AD_HISTORY_KEYWORD_REPORT_GET = 'PDD_AD_HISTORY_KEYWORD_REPORT_
  * 接口标识：pdd.ad.history.keyword.report.get
  * 接口使用场景：关键词历史报表数据：1、可以获取某个关键词的分天历史数据；2、可以获得所有关键词在指定时间段内的汇总统计数据；3、可以获得指定计划下的所有关键词在指定时间段内的汇总统计数据；4、可获取最近30天的数据。
  **/
-
 export interface PddAdHistoryKeywordReportGetRequestInterface {
   /**
    * @description: 开始时间：2018-05-01（周期不超过一个月，记录保存最近30天）
@@ -90,7 +89,6 @@ export interface PddAdHistoryKeywordReportGetRequestInterface {
  * 接口标识：pdd.ad.history.keyword.report.get
  * 接口使用场景：关键词历史报表数据：1、可以获取某个关键词的分天历史数据；2、可以获得所有关键词在指定时间段内的汇总统计数据；3、可以获得指定计划下的所有关键词在指定时间段内的汇总统计数据；4、可获取最近30天的数据。
  **/
-
 export interface PddAdHistoryKeywordReportGetResponseInterface {
   /**
    * @description: 返回response
@@ -106,7 +104,6 @@ export interface PddAdHistoryKeywordReportGetResponseInterface {
  * @default
  * @example
  **/
-
 export interface PddAdHistoryKeywordReportGetAdKeywordHistoryReportGetResponseResponseInterface {
   /**
    * @description: 总数
@@ -129,7 +126,6 @@ export interface PddAdHistoryKeywordReportGetAdKeywordHistoryReportGetResponseRe
  * @default
  * @example
  **/
-
 export interface PddAdHistoryKeywordReportGetAdKeywordHistoryReportGetResponseResultResponseInterface {
   /**
    * @description: 千次展现成本
@@ -140,11 +136,11 @@ export interface PddAdHistoryKeywordReportGetAdKeywordHistoryReportGetResponseRe
 
   /**
    * @description: 扩展字段
-   * @type: MAP
+   * @type: PddAdHistoryKeywordReportGetAdKeywordHistoryReportGetResponseResultExternalFieldsResponseInterface
    * @default:
    *
    **/
-  external_fields: MAP;
+  external_fields: PddAdHistoryKeywordReportGetAdKeywordHistoryReportGetResponseResultExternalFieldsResponseInterface;
 
   /**
    * @description: 广告投资回报率
@@ -215,7 +211,6 @@ export interface PddAdHistoryKeywordReportGetAdKeywordHistoryReportGetResponseRe
  * @default
  * @example
  **/
-
 export interface PddAdHistoryKeywordReportGetAdKeywordHistoryReportGetResponseResultExternalFieldsResponseInterface {
   /**
    * @description: key

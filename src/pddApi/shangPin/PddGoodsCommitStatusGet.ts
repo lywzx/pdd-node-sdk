@@ -5,7 +5,6 @@ export const PDD_GOODS_COMMIT_STATUS_GET = 'PDD_GOODS_COMMIT_STATUS_GET';
  * 接口标识：pdd.goods.commit.status.get
  * 接口使用场景：查询店铺的商品草稿状态
  **/
-
 export interface PddGoodsCommitStatusGetRequestInterface {
   /**
    * @description: goods_commit_id列表
@@ -20,7 +19,6 @@ export interface PddGoodsCommitStatusGetRequestInterface {
  * 接口标识：pdd.goods.commit.status.get
  * 接口使用场景：查询店铺的商品草稿状态
  **/
-
 export interface PddGoodsCommitStatusGetResponseInterface {
   /**
    * @description: response
@@ -36,7 +34,6 @@ export interface PddGoodsCommitStatusGetResponseInterface {
  * @default
  * @example
  **/
-
 export interface PddGoodsCommitStatusGetGoodsCommitStatusGetResponseResponseInterface {
   /**
    * @description: list
@@ -52,7 +49,6 @@ export interface PddGoodsCommitStatusGetGoodsCommitStatusGetResponseResponseInte
  * @default
  * @example
  **/
-
 export interface PddGoodsCommitStatusGetGoodsCommitStatusGetResponseListResponseInterface {
   /**
    * @description: 状态

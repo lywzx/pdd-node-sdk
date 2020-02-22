@@ -5,7 +5,6 @@ export const PDD_GOODS_RELATION_SET = 'PDD_GOODS_RELATION_SET';
  * 接口标识：pdd.goods.relation.set
  * 接口使用场景：商品关联信息设置
  **/
-
 export interface PddGoodsRelationSetRequestInterface {
   /**
    * @description: 拼多多商品id
@@ -69,7 +68,6 @@ export interface PddGoodsRelationSetRequestInterface {
  * 接口标识：pdd.goods.relation.set
  * 接口使用场景：商品关联信息设置
  **/
-
 export interface PddGoodsRelationSetResponseInterface {
   /**
    * @description: response
@@ -85,7 +83,6 @@ export interface PddGoodsRelationSetResponseInterface {
  * @default
  * @example
  **/
-
 export interface PddGoodsRelationSetGoodsRelationSetResponseResponseInterface {
   /**
    * @description: 是否成功

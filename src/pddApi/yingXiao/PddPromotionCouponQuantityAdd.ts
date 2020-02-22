@@ -5,7 +5,6 @@ export const PDD_PROMOTION_COUPON_QUANTITY_ADD = 'PDD_PROMOTION_COUPON_QUANTITY_
  * 接口标识：pdd.promotion.coupon.quantity.add
  * 接口使用场景：增加优惠券发行数量接口
  **/
-
 export interface PddPromotionCouponQuantityAddRequestInterface {
   /**
    * @description: 券批次ID
@@ -27,7 +26,6 @@ export interface PddPromotionCouponQuantityAddRequestInterface {
  * 接口标识：pdd.promotion.coupon.quantity.add
  * 接口使用场景：增加优惠券发行数量接口
  **/
-
 export interface PddPromotionCouponQuantityAddResponseInterface {
   /**
    * @description: 增加优惠券发行数量响应对象
@@ -43,7 +41,6 @@ export interface PddPromotionCouponQuantityAddResponseInterface {
  * @default
  * @example
  **/
-
 export interface PddPromotionCouponQuantityAddCouponQuantityAddResponseResponseInterface {
   /**
    * @description: 是否增加成功，true-成功，false-失败

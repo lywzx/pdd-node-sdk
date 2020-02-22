@@ -5,7 +5,6 @@ export const PDD_VOUCHER_VIRTUAL_CARD_VERIFICATION = 'PDD_VOUCHER_VIRTUAL_CARD_V
  * 接口标识：pdd.voucher.virtual.card.verification
  * 接口使用场景：卡券（电子）核销接口
  **/
-
 export interface PddVoucherVirtualCardVerificationRequestInterface {
   /**
    * @description: 拼多多订单号
@@ -28,7 +27,6 @@ export interface PddVoucherVirtualCardVerificationRequestInterface {
  * @default
  * @example
  **/
-
 export interface PddVoucherVirtualCardVerificationVoucherDataListRequestInterface {
   /**
    * @description: 流水号
@@ -64,7 +62,6 @@ export interface PddVoucherVirtualCardVerificationVoucherDataListRequestInterfac
  * 接口标识：pdd.voucher.virtual.card.verification
  * 接口使用场景：卡券（电子）核销接口
  **/
-
 export interface PddVoucherVirtualCardVerificationResponseInterface {
   /**
    * @description: response
@@ -80,7 +77,6 @@ export interface PddVoucherVirtualCardVerificationResponseInterface {
  * @default
  * @example
  **/
-
 export interface PddVoucherVirtualCardVerificationVoucherVoucherInfoVerifyResponseResponseInterface {
   /**
    * @description: 拼多多订单号
@@ -124,7 +120,6 @@ export interface PddVoucherVirtualCardVerificationVoucherVoucherInfoVerifyRespon
  * @default
  * @example
  **/
-
 export interface PddVoucherVirtualCardVerificationVoucherVoucherInfoVerifyResponseVoucherListResponseInterface {
   /**
    * @description: 卡号

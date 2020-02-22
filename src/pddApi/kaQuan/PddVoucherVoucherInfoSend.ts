@@ -5,7 +5,6 @@ export const PDD_VOUCHER_VOUCHER_INFO_SEND = 'PDD_VOUCHER_VOUCHER_INFO_SEND';
  * 接口标识：pdd.voucher.voucher.info.send
  * 接口使用场景：第三方ISV将消费者购买的卡券信息同步给平台
  **/
-
 export interface PddVoucherVoucherInfoSendRequestInterface {
   /**
    * @description: 订单号
@@ -35,7 +34,6 @@ export interface PddVoucherVoucherInfoSendRequestInterface {
  * @default
  * @example
  **/
-
 export interface PddVoucherVoucherInfoSendVoucherListRequestInterface {
   /**
    * @description: 卡券ID
@@ -57,7 +55,6 @@ export interface PddVoucherVoucherInfoSendVoucherListRequestInterface {
  * 接口标识：pdd.voucher.voucher.info.send
  * 接口使用场景：第三方ISV将消费者购买的卡券信息同步给平台
  **/
-
 export interface PddVoucherVoucherInfoSendResponseInterface {
   /**
    * @description: response
@@ -73,7 +70,6 @@ export interface PddVoucherVoucherInfoSendResponseInterface {
  * @default
  * @example
  **/
-
 export interface PddVoucherVoucherInfoSendVoucherVoucherInfoSendResponseResponseInterface {
   /**
    * @description: 是否请求成功

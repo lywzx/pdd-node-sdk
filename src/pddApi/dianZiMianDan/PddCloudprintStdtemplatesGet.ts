@@ -5,7 +5,6 @@ export const PDD_CLOUDPRINT_STDTEMPLATES_GET = 'PDD_CLOUDPRINT_STDTEMPLATES_GET'
  * 接口标识：pdd.cloudprint.stdtemplates.get
  * 接口使用场景：获取所有标准电子面单模板
  **/
-
 export interface PddCloudprintStdtemplatesGetRequestInterface {
   /**
    * @description: 快递公司code
@@ -20,7 +19,6 @@ export interface PddCloudprintStdtemplatesGetRequestInterface {
  * 接口标识：pdd.cloudprint.stdtemplates.get
  * 接口使用场景：获取所有标准电子面单模板
  **/
-
 export interface PddCloudprintStdtemplatesGetResponseInterface {
   /**
    * @description: Response
@@ -36,7 +34,6 @@ export interface PddCloudprintStdtemplatesGetResponseInterface {
  * @default
  * @example
  **/
-
 export interface PddCloudprintStdtemplatesGetPddCloudprintStdtemplatesGetResponseResponseInterface {
   /**
    * @description: 结果集
@@ -52,7 +49,6 @@ export interface PddCloudprintStdtemplatesGetPddCloudprintStdtemplatesGetRespons
  * @default
  * @example
  **/
-
 export interface PddCloudprintStdtemplatesGetPddCloudprintStdtemplatesGetResponseResultResponseInterface {
   /**
    * @description: 所有wp的标准模板
@@ -68,7 +64,6 @@ export interface PddCloudprintStdtemplatesGetPddCloudprintStdtemplatesGetRespons
  * @default
  * @example
  **/
-
 export interface PddCloudprintStdtemplatesGetPddCloudprintStdtemplatesGetResponseResultDatasResponseInterface {
   /**
    * @description: 该wp的所有标准模板
@@ -91,7 +86,6 @@ export interface PddCloudprintStdtemplatesGetPddCloudprintStdtemplatesGetRespons
  * @default
  * @example
  **/
-
 export interface PddCloudprintStdtemplatesGetPddCloudprintStdtemplatesGetResponseResultDatasStandardTemplatesResponseInterface {
   /**
    * @description: 模板名称

@@ -5,7 +5,6 @@ export const PDD_SMS_ADD_CROWD = 'PDD_SMS_ADD_CROWD';
  * 接口标识：pdd.sms.add.crowd
  * 接口使用场景：新增人群
  **/
-
 export interface PddSmsAddCrowdRequestInterface {
   /**
    * @description: 选自定义的时候列表存省代表的id [10]
@@ -104,7 +103,6 @@ export interface PddSmsAddCrowdRequestInterface {
  * 接口标识：pdd.sms.add.crowd
  * 接口使用场景：新增人群
  **/
-
 export interface PddSmsAddCrowdResponseInterface {
   /**
    * @description: 创建结果，为空成功
@@ -120,7 +118,6 @@ export interface PddSmsAddCrowdResponseInterface {
  * @default
  * @example
  **/
-
 export interface PddSmsAddCrowdSmsAddCrowdResponseResponseInterface {
   /**
    * @description: 请求结果

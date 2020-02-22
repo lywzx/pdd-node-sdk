@@ -5,7 +5,6 @@ export const PDD_DDK_ORDER_DETAIL_GET = 'PDD_DDK_ORDER_DETAIL_GET';
  * 接口标识：pdd.ddk.order.detail.get
  * 接口使用场景：查询订单详情
  **/
-
 export interface PddDdkOrderDetailGetRequestInterface {
   /**
    * @description: 订单号
@@ -20,7 +19,6 @@ export interface PddDdkOrderDetailGetRequestInterface {
  * 接口标识：pdd.ddk.order.detail.get
  * 接口使用场景：查询订单详情
  **/
-
 export interface PddDdkOrderDetailGetResponseInterface {
   /**
    * @description: order_detail_response
@@ -36,7 +34,6 @@ export interface PddDdkOrderDetailGetResponseInterface {
  * @default
  * @example
  **/
-
 export interface PddDdkOrderDetailGetOrderDetailResponseResponseInterface {
   /**
    * @description: 订单编号

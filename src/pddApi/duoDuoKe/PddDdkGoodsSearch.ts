@@ -5,7 +5,6 @@ export const PDD_DDK_GOODS_SEARCH = 'PDD_DDK_GOODS_SEARCH';
  * 接口标识：pdd.ddk.goods.search
  * 接口使用场景：多多进宝商品查询
  **/
-
 export interface PddDdkGoodsSearchRequestInterface {
   /**
    * @description: 商品关键词，与opt_id字段选填一个或全部填写
@@ -118,7 +117,6 @@ export interface PddDdkGoodsSearchRequestInterface {
  * 接口标识：pdd.ddk.goods.search
  * 接口使用场景：多多进宝商品查询
  **/
-
 export interface PddDdkGoodsSearchResponseInterface {
   /**
    * @description: response
@@ -134,7 +132,6 @@ export interface PddDdkGoodsSearchResponseInterface {
  * @default
  * @example
  **/
-
 export interface PddDdkGoodsSearchGoodsSearchResponseResponseInterface {
   /**
    * @description: 商品列表
@@ -164,7 +161,6 @@ export interface PddDdkGoodsSearchGoodsSearchResponseResponseInterface {
  * @default
  * @example
  **/
-
 export interface PddDdkGoodsSearchGoodsSearchResponseGoodsListResponseInterface {
   /**
    * @description: 是否有店铺券

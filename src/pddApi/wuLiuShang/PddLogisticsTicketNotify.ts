@@ -5,7 +5,6 @@ export const PDD_LOGISTICS_TICKET_NOTIFY = 'PDD_LOGISTICS_TICKET_NOTIFY';
  * 接口标识：pdd.logistics.ticket.notify
  * 接口使用场景：快递公司处理结果回调
  **/
-
 export interface PddLogisticsTicketNotifyRequestInterface {
   /**
    * @description: 附件url,示例：["http://testimg.yangkeduo.com/pdd_oms/2018-01-16/411068e948835ae053a86c13f8ebb5ee.jpg"]
@@ -83,7 +82,6 @@ export interface PddLogisticsTicketNotifyRequestInterface {
  * 接口标识：pdd.logistics.ticket.notify
  * 接口使用场景：快递公司处理结果回调
  **/
-
 export interface PddLogisticsTicketNotifyResponseInterface {
   /**
    * @description: response
@@ -99,7 +97,6 @@ export interface PddLogisticsTicketNotifyResponseInterface {
  * @default
  * @example
  **/
-
 export interface PddLogisticsTicketNotifyLogisticsTicketNotifyResponseResponseInterface {
   /**
    * @description: 是否修改成功

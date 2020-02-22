@@ -5,7 +5,6 @@ export const PDD_PMC_USER_GET = 'PDD_PMC_USER_GET';
  * 接口标识：pdd.pmc.user.get
  * 接口使用场景：获取用户已开通消息
  **/
-
 export interface PddPmcUserGetRequestInterface {
   /**
    * @description: 用户唯一id
@@ -20,7 +19,6 @@ export interface PddPmcUserGetRequestInterface {
  * 接口标识：pdd.pmc.user.get
  * 接口使用场景：获取用户已开通消息
  **/
-
 export interface PddPmcUserGetResponseInterface {
   /**
    * @description: response
@@ -36,7 +34,6 @@ export interface PddPmcUserGetResponseInterface {
  * @default
  * @example
  **/
-
 export interface PddPmcUserGetPmcUserGetResponseResponseInterface {
   /**
    * @description: 开通的用户数据
@@ -52,7 +49,6 @@ export interface PddPmcUserGetPmcUserGetResponseResponseInterface {
  * @default
  * @example
  **/
-
 export interface PddPmcUserGetPmcUserGetResponsePmcUserResponseInterface {
   /**
    * @description: 用户最后开通时间

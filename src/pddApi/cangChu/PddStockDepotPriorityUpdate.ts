@@ -5,7 +5,6 @@ export const PDD_STOCK_DEPOT_PRIORITY_UPDATE = 'PDD_STOCK_DEPOT_PRIORITY_UPDATE'
  * 接口标识：pdd.stock.depot.priority.update
  * 接口使用场景：批量更新仓库优先级
  **/
-
 export interface PddStockDepotPriorityUpdateRequestInterface {
   /**
    * @description: 示例：[{"depot_id":1,"province_id":12,"city_id":34,"district_id":56,"priority":5}]
@@ -21,7 +20,6 @@ export interface PddStockDepotPriorityUpdateRequestInterface {
  * @default
  * @example
  **/
-
 export interface PddStockDepotPriorityUpdatePriorityListRequestInterface {
   /**
    * @description: 优先级 范围是1 - 999
@@ -64,7 +62,6 @@ export interface PddStockDepotPriorityUpdatePriorityListRequestInterface {
  * 接口标识：pdd.stock.depot.priority.update
  * 接口使用场景：批量更新仓库优先级
  **/
-
 export interface PddStockDepotPriorityUpdateResponseInterface {
   /**
    * @description: 请求结果

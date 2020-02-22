@@ -5,7 +5,6 @@ export const PDD_AD_PLAN_NAME_UPDATE = 'PDD_AD_PLAN_NAME_UPDATE';
  * 接口标识：pdd.ad.plan.name.update
  * 接口使用场景：修改推广计划名称
  **/
-
 export interface PddAdPlanNameUpdateRequestInterface {
   /**
    * @description: 0--搜索广告,1--明星店铺,2--定向广告,3--首页Banner广告（目前只支持0，暂不支持1、2、3）
@@ -34,7 +33,6 @@ export interface PddAdPlanNameUpdateRequestInterface {
  * 接口标识：pdd.ad.plan.name.update
  * 接口使用场景：修改推广计划名称
  **/
-
 export interface PddAdPlanNameUpdateResponseInterface {
   /**
    * @description: 返回response
@@ -50,7 +48,6 @@ export interface PddAdPlanNameUpdateResponseInterface {
  * @default
  * @example
  **/
-
 export interface PddAdPlanNameUpdateAdPlanNameUpdateResponseResponseInterface {
   /**
    * @description: 是否成功

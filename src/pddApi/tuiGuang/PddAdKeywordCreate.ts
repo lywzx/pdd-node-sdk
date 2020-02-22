@@ -5,7 +5,6 @@ export const PDD_AD_KEYWORD_CREATE = 'PDD_AD_KEYWORD_CREATE';
  * 接口标识：pdd.ad.keyword.create
  * 接口使用场景：推广单元添加关键词，单元内关键词上限200
  **/
-
 export interface PddAdKeywordCreateRequestInterface {
   /**
    * @description: 0--搜索广告,1--明星店铺,2--定向广告,3--首页Banner广告（目前只支持0，暂不支持1、2、3）
@@ -35,7 +34,6 @@ export interface PddAdKeywordCreateRequestInterface {
  * @default
  * @example
  **/
-
 export interface PddAdKeywordCreateKeywordsRequestInterface {
   /**
    * @description: 关键字出价（厘）范围需在0.10~99.0元区间内
@@ -57,7 +55,6 @@ export interface PddAdKeywordCreateKeywordsRequestInterface {
  * 接口标识：pdd.ad.keyword.create
  * 接口使用场景：推广单元添加关键词，单元内关键词上限200
  **/
-
 export interface PddAdKeywordCreateResponseInterface {
   /**
    * @description: 返回response
@@ -73,7 +70,6 @@ export interface PddAdKeywordCreateResponseInterface {
  * @default
  * @example
  **/
-
 export interface PddAdKeywordCreateAdKeywordCreateResponseResponseInterface {
   /**
    * @description: 是否成功

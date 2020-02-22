@@ -5,7 +5,6 @@ export const PDD_GOODS_LOGISTICS_TEMPLATE_CREATE = 'PDD_GOODS_LOGISTICS_TEMPLATE
  * 接口标识：pdd.goods.logistics.template.create
  * 接口使用场景：创建物流模版
  **/
-
 export interface PddGoodsLogisticsTemplateCreateRequestInterface {
   /**
    * @description: 非包邮模版列表
@@ -64,7 +63,6 @@ export interface PddGoodsLogisticsTemplateCreateRequestInterface {
  * @default
  * @example
  **/
-
 export interface PddGoodsLogisticsTemplateCreateCostTemplateListRequestInterface {
   /**
    * @description: 首件
@@ -136,7 +134,6 @@ export interface PddGoodsLogisticsTemplateCreateCostTemplateListRequestInterface
  * @default
  * @example
  **/
-
 export interface PddGoodsLogisticsTemplateCreateCostTemplateListCostProvinceListRequestInterface {
   /**
    * @description: 省份ID
@@ -151,7 +148,6 @@ export interface PddGoodsLogisticsTemplateCreateCostTemplateListCostProvinceList
  * @default
  * @example
  **/
-
 export interface PddGoodsLogisticsTemplateCreateFreeProvinceListRequestInterface {
   /**
    * @description: 省份ID
@@ -166,7 +162,6 @@ export interface PddGoodsLogisticsTemplateCreateFreeProvinceListRequestInterface
  * 接口标识：pdd.goods.logistics.template.create
  * 接口使用场景：创建物流模版
  **/
-
 export interface PddGoodsLogisticsTemplateCreateResponseInterface {
   /**
    * @description: 返回resposne
@@ -182,7 +177,6 @@ export interface PddGoodsLogisticsTemplateCreateResponseInterface {
  * @default
  * @example
  **/
-
 export interface PddGoodsLogisticsTemplateCreateGoodsLogisticsTemplateCreateResponseResponseInterface {
   /**
    * @description: 模版id

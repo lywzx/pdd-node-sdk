@@ -5,7 +5,6 @@ export const PDD_LOGISTICS_ONLINE_SEND = 'PDD_LOGISTICS_ONLINE_SEND';
  * 接口标识：pdd.logistics.online.send
  * 接口使用场景：订单发货通知
  **/
-
 export interface PddLogisticsOnlineSendRequestInterface {
   /**
    * @description: 发货个性内容，支持imei（手机串号），deviceSn（设备序列号）内容。形如：imei=11,22,3333; 以 “imei=” 开头，以英文分号“;”结尾，中间为手机IMEI串号信息，多个串号以英文逗号 “,”拼接释义：该订单包含三个手机IMEI串号，分别为11、22和3333；其他内容的格式同理。
@@ -48,7 +47,6 @@ export interface PddLogisticsOnlineSendRequestInterface {
  * 接口标识：pdd.logistics.online.send
  * 接口使用场景：订单发货通知
  **/
-
 export interface PddLogisticsOnlineSendResponseInterface {
   /**
    * @description: 发货通知响应对象
@@ -64,7 +62,6 @@ export interface PddLogisticsOnlineSendResponseInterface {
  * @default
  * @example
  **/
-
 export interface PddLogisticsOnlineSendLogisticsOnlineSendResponseResponseInterface {
   /**
    * @description: 是否成功，false-失败，true-成功

@@ -1,3 +1,1 @@
-export class PddClient {
-
-}
+export class PddClient {}

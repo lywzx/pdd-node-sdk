@@ -5,7 +5,6 @@ export const PDD_AD_PLAN_MAX_COST_UPDATE = 'PDD_AD_PLAN_MAX_COST_UPDATE';
  * 接口标识：pdd.ad.plan.max.cost.update
  * 接口使用场景：修改推广计划日限额，推广计划日限额最低100
  **/
-
 export interface PddAdPlanMaxCostUpdateRequestInterface {
   /**
    * @description: 0--搜索广告,1--明星店铺,2--定向广告,3--首页Banner广告（目前只支持0，暂不支持1、2、3）
@@ -34,7 +33,6 @@ export interface PddAdPlanMaxCostUpdateRequestInterface {
  * 接口标识：pdd.ad.plan.max.cost.update
  * 接口使用场景：修改推广计划日限额，推广计划日限额最低100
  **/
-
 export interface PddAdPlanMaxCostUpdateResponseInterface {
   /**
    * @description: 返回response
@@ -50,7 +48,6 @@ export interface PddAdPlanMaxCostUpdateResponseInterface {
  * @default
  * @example
  **/
-
 export interface PddAdPlanMaxCostUpdateAdPlanMaxCostUpdateResponseResponseInterface {
   /**
    * @description: 是否成功

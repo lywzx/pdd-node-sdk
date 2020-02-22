@@ -5,7 +5,6 @@ export const PDD_DDK_CMS_PROM_URL_GENERATE = 'PDD_DDK_CMS_PROM_URL_GENERATE';
  * 接口标识：pdd.ddk.cms.prom.url.generate
  * 接口使用场景：生成商城推广链接接口
  **/
-
 export interface PddDdkCmsPromUrlGenerateRequestInterface {
   /**
    * @description: 是否生成短链接，true-是，false-否
@@ -83,7 +82,6 @@ export interface PddDdkCmsPromUrlGenerateRequestInterface {
  * 接口标识：pdd.ddk.cms.prom.url.generate
  * 接口使用场景：生成商城推广链接接口
  **/
-
 export interface PddDdkCmsPromUrlGenerateResponseInterface {
   /**
    * @description: 商城推广链接返回对象
@@ -99,7 +97,6 @@ export interface PddDdkCmsPromUrlGenerateResponseInterface {
  * @default
  * @example
  **/
-
 export interface PddDdkCmsPromUrlGenerateCmsPromotionUrlGenerateResponseResponseInterface {
   /**
    * @description: total
@@ -122,7 +119,6 @@ export interface PddDdkCmsPromUrlGenerateCmsPromotionUrlGenerateResponseResponse
  * @default
  * @example
  **/
-
 export interface PddDdkCmsPromUrlGenerateCmsPromotionUrlGenerateResponseUrlListResponseInterface {
   /**
    * @description: 多人团唤醒微信推广长链接
@@ -237,7 +233,6 @@ export interface PddDdkCmsPromUrlGenerateCmsPromotionUrlGenerateResponseUrlListR
  * @default
  * @example
  **/
-
 export interface PddDdkCmsPromUrlGenerateCmsPromotionUrlGenerateResponseUrlListMultiUrlListResponseInterface {
   /**
    * @description: 双人团唤醒拼多多app长链接
@@ -294,7 +289,6 @@ export interface PddDdkCmsPromUrlGenerateCmsPromotionUrlGenerateResponseUrlListM
  * @default
  * @example
  **/
-
 export interface PddDdkCmsPromUrlGenerateCmsPromotionUrlGenerateResponseUrlListSingleUrlListResponseInterface {
   /**
    * @description: 唤醒拼多多app长链接

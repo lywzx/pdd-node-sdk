@@ -5,7 +5,6 @@ export const PDD_DDK_OAUTH_CMS_PROM_URL_GENERATE = 'PDD_DDK_OAUTH_CMS_PROM_URL_G
  * 接口标识：pdd.ddk.oauth.cms.prom.url.generate
  * 接口使用场景：生成商城推广链接接口
  **/
-
 export interface PddDdkOauthCmsPromUrlGenerateRequestInterface {
   /**
    * @description: 是否生成短链接。true-是，false-否，默认false
@@ -83,7 +82,6 @@ export interface PddDdkOauthCmsPromUrlGenerateRequestInterface {
  * 接口标识：pdd.ddk.oauth.cms.prom.url.generate
  * 接口使用场景：生成商城推广链接接口
  **/
-
 export interface PddDdkOauthCmsPromUrlGenerateResponseInterface {
   /**
    * @description: 商城推广链接返回对象
@@ -99,7 +97,6 @@ export interface PddDdkOauthCmsPromUrlGenerateResponseInterface {
  * @default
  * @example
  **/
-
 export interface PddDdkOauthCmsPromUrlGenerateCmsPromotionUrlGenerateResponseResponseInterface {
   /**
    * @description: total
@@ -122,7 +119,6 @@ export interface PddDdkOauthCmsPromUrlGenerateCmsPromotionUrlGenerateResponseRes
  * @default
  * @example
  **/
-
 export interface PddDdkOauthCmsPromUrlGenerateCmsPromotionUrlGenerateResponseUrlListResponseInterface {
   /**
    * @description: 商城推广链接

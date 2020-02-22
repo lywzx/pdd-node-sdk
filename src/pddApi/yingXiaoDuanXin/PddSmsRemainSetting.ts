@@ -5,7 +5,6 @@ export const PDD_SMS_REMAIN_SETTING = 'PDD_SMS_REMAIN_SETTING';
  * 接口标识：pdd.sms.remain.setting
  * 接口使用场景：提醒买家付款的任务设置
  **/
-
 export interface PddSmsRemainSettingRequestInterface {
   /**
    * @description: 买家未付款时间，单位为分钟。例，unpaid_duration=3，买家下单后3分钟未付款，即发送短信提醒买家付款
@@ -48,7 +47,6 @@ export interface PddSmsRemainSettingRequestInterface {
  * 接口标识：pdd.sms.remain.setting
  * 接口使用场景：提醒买家付款的任务设置
  **/
-
 export interface PddSmsRemainSettingResponseInterface {
   /**
    * @description: response
@@ -64,7 +62,6 @@ export interface PddSmsRemainSettingResponseInterface {
  * @default
  * @example
  **/
-
 export interface PddSmsRemainSettingSmsRemainSettingResponseResponseInterface {
   /**
    * @description: 结果

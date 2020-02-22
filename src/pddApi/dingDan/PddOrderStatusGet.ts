@@ -5,7 +5,6 @@ export const PDD_ORDER_STATUS_GET = 'PDD_ORDER_STATUS_GET';
  * 接口标识：pdd.order.status.get
  * 接口使用场景：获取订单的状态（单次最多查50个订单）
  **/
-
 export interface PddOrderStatusGetRequestInterface {
   /**
    * @description: 20150909-452750051,20150909-452750134 用逗号分开
@@ -20,7 +19,6 @@ export interface PddOrderStatusGetRequestInterface {
  * 接口标识：pdd.order.status.get
  * 接口使用场景：获取订单的状态（单次最多查50个订单）
  **/
-
 export interface PddOrderStatusGetResponseInterface {
   /**
    * @description: response
@@ -36,7 +34,6 @@ export interface PddOrderStatusGetResponseInterface {
  * @default
  * @example
  **/
-
 export interface PddOrderStatusGetOrderStatusGetResponseResponseInterface {
   /**
    * @description: 订单状态列表对象
@@ -52,7 +49,6 @@ export interface PddOrderStatusGetOrderStatusGetResponseResponseInterface {
  * @default
  * @example
  **/
-
 export interface PddOrderStatusGetOrderStatusGetResponseOrderStatusListResponseInterface {
   /**
    * @description: 订单编号

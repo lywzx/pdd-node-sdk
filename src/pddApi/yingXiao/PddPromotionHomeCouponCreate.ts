@@ -5,7 +5,6 @@ export const PDD_PROMOTION_HOME_COUPON_CREATE = 'PDD_PROMOTION_HOME_COUPON_CREAT
  * 接口标识：pdd.promotion.home.coupon.create
  * 接口使用场景：创建店铺首页优惠券批次接口
  **/
-
 export interface PddPromotionHomeCouponCreateRequestInterface {
   /**
    * @description: 描述
@@ -62,7 +61,6 @@ export interface PddPromotionHomeCouponCreateRequestInterface {
  * 接口标识：pdd.promotion.home.coupon.create
  * 接口使用场景：创建店铺首页优惠券批次接口
  **/
-
 export interface PddPromotionHomeCouponCreateResponseInterface {
   /**
    * @description: 创建店铺首页优惠券批次对象
@@ -78,7 +76,6 @@ export interface PddPromotionHomeCouponCreateResponseInterface {
  * @default
  * @example
  **/
-
 export interface PddPromotionHomeCouponCreateHomeCouponBatchCreateResponseResponseInterface {
   /**
    * @description: 批次id

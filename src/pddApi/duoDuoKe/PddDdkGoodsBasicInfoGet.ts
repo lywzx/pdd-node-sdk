@@ -5,7 +5,6 @@ export const PDD_DDK_GOODS_BASIC_INFO_GET = 'PDD_DDK_GOODS_BASIC_INFO_GET';
  * 接口标识：pdd.ddk.goods.basic.info.get
  * 接口使用场景：获取商品基本信息
  **/
-
 export interface PddDdkGoodsBasicInfoGetRequestInterface {
   /**
    * @description: 商品id
@@ -20,7 +19,6 @@ export interface PddDdkGoodsBasicInfoGetRequestInterface {
  * 接口标识：pdd.ddk.goods.basic.info.get
  * 接口使用场景：获取商品基本信息
  **/
-
 export interface PddDdkGoodsBasicInfoGetResponseInterface {
   /**
    * @description: response
@@ -36,7 +34,6 @@ export interface PddDdkGoodsBasicInfoGetResponseInterface {
  * @default
  * @example
  **/
-
 export interface PddDdkGoodsBasicInfoGetGoodsBasicDetailResponseResponseInterface {
   /**
    * @description: list
@@ -52,7 +49,6 @@ export interface PddDdkGoodsBasicInfoGetGoodsBasicDetailResponseResponseInterfac
  * @default
  * @example
  **/
-
 export interface PddDdkGoodsBasicInfoGetGoodsBasicDetailResponseGoodsListResponseInterface {
   /**
    * @description: 商品id

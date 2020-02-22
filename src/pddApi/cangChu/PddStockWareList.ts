@@ -5,7 +5,6 @@ export const PDD_STOCK_WARE_LIST = 'PDD_STOCK_WARE_LIST';
  * 接口标识：pdd.stock.ware.list
  * 接口使用场景：家电分仓库存-列表查询货品
  **/
-
 export interface PddStockWareListRequestInterface {
   /**
    * @description: 货品id
@@ -55,7 +54,6 @@ export interface PddStockWareListRequestInterface {
  * 接口标识：pdd.stock.ware.list
  * 接口使用场景：家电分仓库存-列表查询货品
  **/
-
 export interface PddStockWareListResponseInterface {
   /**
    * @description: response
@@ -71,7 +69,6 @@ export interface PddStockWareListResponseInterface {
  * @default
  * @example
  **/
-
 export interface PddStockWareListOpenApiResponseResponseInterface {
   /**
    * @description: 总数
@@ -94,7 +91,6 @@ export interface PddStockWareListOpenApiResponseResponseInterface {
  * @default
  * @example
  **/
-
 export interface PddStockWareListOpenApiResponseWareDetailsResponseInterface {
   /**
    * @description: 货品id
@@ -258,7 +254,6 @@ export interface PddStockWareListOpenApiResponseWareDetailsResponseInterface {
  * @default
  * @example
  **/
-
 export interface PddStockWareListOpenApiResponseWareDetailsWareInfosResponseInterface {
   /**
    * @description: 子货品编码
@@ -294,7 +289,6 @@ export interface PddStockWareListOpenApiResponseWareDetailsWareInfosResponseInte
  * @default
  * @example
  **/
-
 export interface PddStockWareListOpenApiResponseWareDetailsWareSkusResponseInterface {
   /**
    * @description: 商品id
@@ -345,7 +339,6 @@ export interface PddStockWareListOpenApiResponseWareDetailsWareSkusResponseInter
  * @default
  * @example
  **/
-
 export interface PddStockWareListOpenApiResponseWareDetailsWareSkusSpecsResponseInterface {
   /**
    * @description: 规格名称

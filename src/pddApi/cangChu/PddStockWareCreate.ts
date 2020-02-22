@@ -5,7 +5,6 @@ export const PDD_STOCK_WARE_CREATE = 'PDD_STOCK_WARE_CREATE';
  * 接口标识：pdd.stock.ware.create
  * 接口使用场景：家电分仓库存-创建货品
  **/
-
 export interface PddStockWareCreateRequestInterface {
   /**
    * @description: 类型 0:单独货品。1:组合货品
@@ -133,7 +132,6 @@ export interface PddStockWareCreateRequestInterface {
  * @default
  * @example
  **/
-
 export interface PddStockWareCreateWareInfosRequestInterface {
   /**
    * @description:
@@ -155,7 +153,6 @@ export interface PddStockWareCreateWareInfosRequestInterface {
  * 接口标识：pdd.stock.ware.create
  * 接口使用场景：家电分仓库存-创建货品
  **/
-
 export interface PddStockWareCreateResponseInterface {
   /**
    * @description: 货品id

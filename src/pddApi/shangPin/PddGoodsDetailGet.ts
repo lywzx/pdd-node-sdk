@@ -5,7 +5,6 @@ export const PDD_GOODS_DETAIL_GET = 'PDD_GOODS_DETAIL_GET';
  * 接口标识：pdd.goods.detail.get
  * 接口使用场景：新增商品或者修改商品的时候
  **/
-
 export interface PddGoodsDetailGetRequestInterface {
   /**
    * @description: 1213414
@@ -20,7 +19,6 @@ export interface PddGoodsDetailGetRequestInterface {
  * 接口标识：pdd.goods.detail.get
  * 接口使用场景：新增商品或者修改商品的时候
  **/
-
 export interface PddGoodsDetailGetResponseInterface {
   /**
    * @description: 商品详情response
@@ -36,7 +34,6 @@ export interface PddGoodsDetailGetResponseInterface {
  * @default
  * @example
  **/
-
 export interface PddGoodsDetailGetGoodsDetailGetResponseResponseInterface {
   /**
    * @description: 送货入户模版id
@@ -335,7 +332,6 @@ export interface PddGoodsDetailGetGoodsDetailGetResponseResponseInterface {
  * @default
  * @example
  **/
-
 export interface PddGoodsDetailGetGoodsDetailGetResponseGoodsPropertyListResponseInterface {
   /**
    * @description: 引用属性id
@@ -378,7 +374,6 @@ export interface PddGoodsDetailGetGoodsDetailGetResponseGoodsPropertyListRespons
  * @default
  * @example
  **/
-
 export interface PddGoodsDetailGetGoodsDetailGetResponseSkuListResponseInterface {
   /**
    * @description: sku送装参数：长度
@@ -472,7 +467,6 @@ export interface PddGoodsDetailGetGoodsDetailGetResponseSkuListResponseInterface
  * @default
  * @example
  **/
-
 export interface PddGoodsDetailGetGoodsDetailGetResponseSkuListSpecResponseInterface {
   /**
    * @description: 自定义规格所属的规格ID
@@ -508,7 +502,6 @@ export interface PddGoodsDetailGetGoodsDetailGetResponseSkuListSpecResponseInter
  * @default
  * @example
  **/
-
 export interface PddGoodsDetailGetGoodsDetailGetResponseSkuListOverseaSkuResponseInterface {
   /**
    * @description: 计量单位编码，从接口pdd.gooods.sku.measurement.list获取desc
@@ -537,7 +530,6 @@ export interface PddGoodsDetailGetGoodsDetailGetResponseSkuListOverseaSkuRespons
  * @default
  * @example
  **/
-
 export interface PddGoodsDetailGetGoodsDetailGetResponseOverseaGoodsResponseInterface {
   /**
    * @description: 消费税率
@@ -580,7 +572,6 @@ export interface PddGoodsDetailGetGoodsDetailGetResponseOverseaGoodsResponseInte
  * @default
  * @example
  **/
-
 export interface PddGoodsDetailGetGoodsDetailGetResponseVideoGalleryResponseInterface {
   /**
    * @description: 商品视频id
