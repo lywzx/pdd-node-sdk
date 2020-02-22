@@ -1,3 +1,4 @@
-.idea/*
+/.idea
 dist/
 apidocs/
+/scripts/.tmp
