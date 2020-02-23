@@ -3,7 +3,7 @@
     "target": "es5",
     "module": "commonjs",
     "declaration": true,
-    "declarationDir": "./dist/typings",
+    "declarationDir": "./dist/@types",
     "outDir": "./dist",
     "strict": true,
     "allowSyntheticDefaultImports": true,

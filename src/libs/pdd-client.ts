@@ -1,8 +1,8 @@
-import { PddClientOptionsInterface } from './interfaces/pdd-client-options.interface';
-import { PddCollectRequestInterface, PddCollectResponseInterface } from './pddApi';
-import { checkRequired, md5 } from './util';
-import { AsyncResultCallbackInterface } from './interfaces/async-result-callback.interface';
-import { NetworkAdapter, NetworkAdapterInterface } from './lib/network-adapter';
+import { PddClientOptionsInterface } from '../interfaces/pdd-client-options.interface';
+import { PddCollectRequestInterface, PddCollectResponseInterface } from '../pddApi';
+import { checkRequired, md5 } from '../util';
+import { AsyncResultCallbackInterface } from '../interfaces/async-result-callback.interface';
+import { NetworkAdapter, NetworkAdapterInterface } from './network-adapter';
 
 type AppTypes = PddCollectRequestInterface;
 

@@ -2,7 +2,8 @@
   "name": "pdd-node-sdk",
   "version": "0.0.1",
   "description": "pdd node sdk",
-  "main": "src/index.ts",
+  "main": "dist/index.js",
+  "types": "dist/@types/index.d.ts",
   "scripts": {
     "build": "tsc",
     "lint": "eslint src --ext .ts --fix",
