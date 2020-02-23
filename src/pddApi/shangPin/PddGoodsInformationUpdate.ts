@@ -1,4 +1,4 @@
-export const PDD_GOODS_INFORMATION_UPDATE = 'PDD_GOODS_INFORMATION_UPDATE';
+export const PDD_GOODS_INFORMATION_UPDATE = 'pdd.goods.information.update';
 
 /**
  * 接口名称：商品编辑
@@ -705,12 +705,4 @@ export interface PddGoodsInformationUpdateGoodsUpdateResponseResponseInterface {
    * @default:
    **/
   is_success: boolean;
-}
-
-// 导出默认分类
-export default interface InterfaceDefaultInterface {
-  [PDD_GOODS_INFORMATION_UPDATE]: {
-    requestInterface: PddGoodsInformationUpdateRequestInterface;
-    responseInterface: PddGoodsInformationUpdateResponseInterface;
-  };
 }

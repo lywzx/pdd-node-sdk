@@ -1,4 +1,4 @@
-export const PDD_CLOUDPRINT_STDTEMPLATES_GET = 'PDD_CLOUDPRINT_STDTEMPLATES_GET';
+export const PDD_CLOUDPRINT_STDTEMPLATES_GET = 'pdd.cloudprint.stdtemplates.get';
 
 /**
  * 接口名称：获取所有标准电子面单模板
@@ -114,12 +114,4 @@ export interface PddCloudprintStdtemplatesGetPddCloudprintStdtemplatesGetRespons
    * @default:
    **/
   standard_template_id: string;
-}
-
-// 导出默认分类
-export default interface InterfaceDefaultInterface {
-  [PDD_CLOUDPRINT_STDTEMPLATES_GET]: {
-    requestInterface: PddCloudprintStdtemplatesGetRequestInterface;
-    responseInterface: PddCloudprintStdtemplatesGetResponseInterface;
-  };
 }

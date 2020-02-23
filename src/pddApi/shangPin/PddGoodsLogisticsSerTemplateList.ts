@@ -1,4 +1,4 @@
-export const PDD_GOODS_LOGISTICS_SER_TEMPLATE_LIST = 'PDD_GOODS_LOGISTICS_SER_TEMPLATE_LIST';
+export const PDD_GOODS_LOGISTICS_SER_TEMPLATE_LIST = 'pdd.goods.logistics.ser.template.list';
 
 /**
  * 接口名称：商品送装服务模版列表
@@ -105,12 +105,4 @@ export interface PddGoodsLogisticsSerTemplateListGoodsLogisticsSerTemplateListRe
    * @default:
    **/
   template_id: string;
-}
-
-// 导出默认分类
-export default interface InterfaceDefaultInterface {
-  [PDD_GOODS_LOGISTICS_SER_TEMPLATE_LIST]: {
-    requestInterface: PddGoodsLogisticsSerTemplateListRequestInterface;
-    responseInterface: PddGoodsLogisticsSerTemplateListResponseInterface;
-  };
 }

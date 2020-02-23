@@ -1,4 +1,4 @@
-export const PDD_EXPRESS_MALL_DEPOT_SIMPLE_GET = 'PDD_EXPRESS_MALL_DEPOT_SIMPLE_GET';
+export const PDD_EXPRESS_MALL_DEPOT_SIMPLE_GET = 'pdd.express.mall.depot.simple.get';
 
 /**
  * 接口名称：商家全部仓库的简要信息列表
@@ -56,12 +56,4 @@ export interface PddExpressMallDepotSimpleGetOpenApiResponseResponseInterface {
    * @default:
    **/
   depot_type: number;
-}
-
-// 导出默认分类
-export default interface InterfaceDefaultInterface {
-  [PDD_EXPRESS_MALL_DEPOT_SIMPLE_GET]: {
-    requestInterface: PddExpressMallDepotSimpleGetRequestInterface;
-    responseInterface: PddExpressMallDepotSimpleGetResponseInterface;
-  };
 }

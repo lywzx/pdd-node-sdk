@@ -1,4 +1,4 @@
-export const PDD_PROMOTION_GOODS_COUPON_LIST_GET = 'PDD_PROMOTION_GOODS_COUPON_LIST_GET';
+export const PDD_PROMOTION_GOODS_COUPON_LIST_GET = 'pdd.promotion.goods.coupon.list.get';
 
 /**
  * 接口名称：商品优惠券批次列表查询
@@ -203,12 +203,4 @@ export interface PddPromotionGoodsCouponListGetGoodsCouponBatchListResponseCoupo
    * @default:
    **/
   created_at: string;
-}
-
-// 导出默认分类
-export default interface InterfaceDefaultInterface {
-  [PDD_PROMOTION_GOODS_COUPON_LIST_GET]: {
-    requestInterface: PddPromotionGoodsCouponListGetRequestInterface;
-    responseInterface: PddPromotionGoodsCouponListGetResponseInterface;
-  };
 }

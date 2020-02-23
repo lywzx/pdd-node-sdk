@@ -1,4 +1,4 @@
-export const PDD_AD_HISTORY_PLAN_REPORT_GET = 'PDD_AD_HISTORY_PLAN_REPORT_GET';
+export const PDD_AD_HISTORY_PLAN_REPORT_GET = 'pdd.ad.history.plan.report.get';
 
 /**
  * 接口名称：推广计划历史报表数据
@@ -211,12 +211,4 @@ export interface PddAdHistoryPlanReportGetAdPlanHistoryReportGetResponseResultEx
    * @default:
    **/
   value: string;
-}
-
-// 导出默认分类
-export default interface InterfaceDefaultInterface {
-  [PDD_AD_HISTORY_PLAN_REPORT_GET]: {
-    requestInterface: PddAdHistoryPlanReportGetRequestInterface;
-    responseInterface: PddAdHistoryPlanReportGetResponseInterface;
-  };
 }

@@ -1,4 +1,4 @@
-export const PDD_ONE_EXPRESS_COST_TEMPLATE = 'PDD_ONE_EXPRESS_COST_TEMPLATE';
+export const PDD_ONE_EXPRESS_COST_TEMPLATE = 'pdd.one.express.cost.template';
 
 /**
  * 接口名称：按id获取商品运费模版接口
@@ -283,12 +283,4 @@ export interface PddOneExpressCostTemplateOneExpressCostTemplateResponseFreeProv
    * @default:
    **/
   province: string;
-}
-
-// 导出默认分类
-export default interface InterfaceDefaultInterface {
-  [PDD_ONE_EXPRESS_COST_TEMPLATE]: {
-    requestInterface: PddOneExpressCostTemplateRequestInterface;
-    responseInterface: PddOneExpressCostTemplateResponseInterface;
-  };
 }

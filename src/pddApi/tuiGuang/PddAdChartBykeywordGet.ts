@@ -1,4 +1,4 @@
-export const PDD_AD_CHART_BYKEYWORD_GET = 'PDD_AD_CHART_BYKEYWORD_GET';
+export const PDD_AD_CHART_BYKEYWORD_GET = 'pdd.ad.chart.bykeyword.get';
 
 /**
  * 接口名称：获取关键词推广报表信息
@@ -170,12 +170,4 @@ export interface PddAdChartBykeywordGetAdKeywordDailyReportResponseKeywordDailyR
    * @default:
    **/
   keyword: string;
-}
-
-// 导出默认分类
-export default interface InterfaceDefaultInterface {
-  [PDD_AD_CHART_BYKEYWORD_GET]: {
-    requestInterface: PddAdChartBykeywordGetRequestInterface;
-    responseInterface: PddAdChartBykeywordGetResponseInterface;
-  };
 }

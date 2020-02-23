@@ -1,4 +1,4 @@
-export const PDD_AD_KEYWORD_RELEVANCE_GET = 'PDD_AD_KEYWORD_RELEVANCE_GET';
+export const PDD_AD_KEYWORD_RELEVANCE_GET = 'pdd.ad.keyword.relevance.get';
 
 /**
  * 接口名称：关键词商品相关性
@@ -77,12 +77,4 @@ export interface PddAdKeywordRelevanceGetAdKeywordRelevanceListResponseKeywordRe
    * @default:
    **/
   word: string;
-}
-
-// 导出默认分类
-export default interface InterfaceDefaultInterface {
-  [PDD_AD_KEYWORD_RELEVANCE_GET]: {
-    requestInterface: PddAdKeywordRelevanceGetRequestInterface;
-    responseInterface: PddAdKeywordRelevanceGetResponseInterface;
-  };
 }

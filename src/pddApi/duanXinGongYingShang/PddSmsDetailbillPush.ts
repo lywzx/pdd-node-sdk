@@ -1,4 +1,4 @@
-export const PDD_SMS_DETAILBILL_PUSH = 'PDD_SMS_DETAILBILL_PUSH';
+export const PDD_SMS_DETAILBILL_PUSH = 'pdd.sms.detailbill.push';
 
 /**
  * 接口名称：短信明细回执
@@ -98,12 +98,4 @@ export interface PddSmsDetailbillPushSmsDetailbillPushResposneResponseInterface 
    * @default:
    **/
   success: boolean;
-}
-
-// 导出默认分类
-export default interface InterfaceDefaultInterface {
-  [PDD_SMS_DETAILBILL_PUSH]: {
-    requestInterface: PddSmsDetailbillPushRequestInterface;
-    responseInterface: PddSmsDetailbillPushResponseInterface;
-  };
 }

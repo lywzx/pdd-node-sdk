@@ -1,4 +1,4 @@
-export const PDD_VIRTUAL_MOBILE_CHARGE_NOTIFY = 'PDD_VIRTUAL_MOBILE_CHARGE_NOTIFY';
+export const PDD_VIRTUAL_MOBILE_CHARGE_NOTIFY = 'pdd.virtual.mobile.charge.notify';
 
 /**
  * 接口名称：虚拟类目发货通知接口
@@ -119,12 +119,4 @@ export interface PddVirtualMobileChargeNotifyMobileChargeNotifyResponseResponseI
    * @default:
    **/
   success: boolean;
-}
-
-// 导出默认分类
-export default interface InterfaceDefaultInterface {
-  [PDD_VIRTUAL_MOBILE_CHARGE_NOTIFY]: {
-    requestInterface: PddVirtualMobileChargeNotifyRequestInterface;
-    responseInterface: PddVirtualMobileChargeNotifyResponseInterface;
-  };
 }

@@ -1,4 +1,4 @@
-export const PDD_DDK_OAUTH_GOODS_PROM_URL_GENERATE = 'PDD_DDK_OAUTH_GOODS_PROM_URL_GENERATE';
+export const PDD_DDK_OAUTH_GOODS_PROM_URL_GENERATE = 'pdd.ddk.oauth.goods.prom.url.generate';
 
 /**
  * 接口名称：生成多多进宝推广链接
@@ -338,12 +338,4 @@ export interface PddDdkOauthGoodsPromUrlGenerateGoodsPromotionUrlGenerateRespons
    * @default:
    **/
   user_name: string;
-}
-
-// 导出默认分类
-export default interface InterfaceDefaultInterface {
-  [PDD_DDK_OAUTH_GOODS_PROM_URL_GENERATE]: {
-    requestInterface: PddDdkOauthGoodsPromUrlGenerateRequestInterface;
-    responseInterface: PddDdkOauthGoodsPromUrlGenerateResponseInterface;
-  };
 }

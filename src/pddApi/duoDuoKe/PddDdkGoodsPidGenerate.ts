@@ -1,4 +1,4 @@
-export const PDD_DDK_GOODS_PID_GENERATE = 'PDD_DDK_GOODS_PID_GENERATE';
+export const PDD_DDK_GOODS_PID_GENERATE = 'pdd.ddk.goods.pid.generate';
 
 /**
  * 接口名称：创建多多进宝推广位
@@ -84,12 +84,4 @@ export interface PddDdkGoodsPidGeneratePIdGenerateResponsePIdListResponseInterfa
    * @default:
    **/
   p_id: string;
-}
-
-// 导出默认分类
-export default interface InterfaceDefaultInterface {
-  [PDD_DDK_GOODS_PID_GENERATE]: {
-    requestInterface: PddDdkGoodsPidGenerateRequestInterface;
-    responseInterface: PddDdkGoodsPidGenerateResponseInterface;
-  };
 }

@@ -1,4 +1,4 @@
-export const PDD_DDK_OAUTH_ORDER_DETAIL_GET = 'PDD_DDK_OAUTH_ORDER_DETAIL_GET';
+export const PDD_DDK_OAUTH_ORDER_DETAIL_GET = 'pdd.ddk.oauth.order.detail.get';
 
 /**
  * 接口名称：获取订单详情
@@ -244,12 +244,4 @@ export interface PddDdkOauthOrderDetailGetOrderDetailResponseResponseInterface {
    * @default:
    **/
   cpa_new: number;
-}
-
-// 导出默认分类
-export default interface InterfaceDefaultInterface {
-  [PDD_DDK_OAUTH_ORDER_DETAIL_GET]: {
-    requestInterface: PddDdkOauthOrderDetailGetRequestInterface;
-    responseInterface: PddDdkOauthOrderDetailGetResponseInterface;
-  };
 }

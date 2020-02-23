@@ -1,4 +1,4 @@
-export const PDD_AD_KEYWORD_CREATE = 'PDD_AD_KEYWORD_CREATE';
+export const PDD_AD_KEYWORD_CREATE = 'pdd.ad.keyword.create';
 
 /**
  * 接口名称：推广单元添加关键词
@@ -77,12 +77,4 @@ export interface PddAdKeywordCreateAdKeywordCreateResponseResponseInterface {
    * @default:
    **/
   is_success: boolean;
-}
-
-// 导出默认分类
-export default interface InterfaceDefaultInterface {
-  [PDD_AD_KEYWORD_CREATE]: {
-    requestInterface: PddAdKeywordCreateRequestInterface;
-    responseInterface: PddAdKeywordCreateResponseInterface;
-  };
 }

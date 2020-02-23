@@ -1,4 +1,4 @@
-export const PDD_MALL_INFO_STORE_UPDATE_POST = 'PDD_MALL_INFO_STORE_UPDATE_POST';
+export const PDD_MALL_INFO_STORE_UPDATE_POST = 'pdd.mall.info.store.update.post';
 
 /**
  * 接口名称：修改店铺门店
@@ -139,12 +139,4 @@ export interface PddMallInfoStoreUpdatePostMallInfoStoreUpdatePostResponseRespon
    * @default:
    **/
   is_success: boolean;
-}
-
-// 导出默认分类
-export default interface InterfaceDefaultInterface {
-  [PDD_MALL_INFO_STORE_UPDATE_POST]: {
-    requestInterface: PddMallInfoStoreUpdatePostRequestInterface;
-    responseInterface: PddMallInfoStoreUpdatePostResponseInterface;
-  };
 }

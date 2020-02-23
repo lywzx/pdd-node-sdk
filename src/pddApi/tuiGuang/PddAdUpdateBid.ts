@@ -1,4 +1,4 @@
-export const PDD_AD_UPDATE_BID = 'PDD_AD_UPDATE_BID';
+export const PDD_AD_UPDATE_BID = 'pdd.ad.update.bid';
 
 /**
  * 接口名称：【定向】推广单元修改通投出价、定向溢价
@@ -87,12 +87,4 @@ export interface PddAdUpdateBidOpenApiResponseResponseInterface {
    * @default:
    **/
   is_success: boolean;
-}
-
-// 导出默认分类
-export default interface InterfaceDefaultInterface {
-  [PDD_AD_UPDATE_BID]: {
-    requestInterface: PddAdUpdateBidRequestInterface;
-    responseInterface: PddAdUpdateBidResponseInterface;
-  };
 }

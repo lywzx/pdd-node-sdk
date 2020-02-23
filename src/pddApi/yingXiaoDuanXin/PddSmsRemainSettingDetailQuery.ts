@@ -1,4 +1,4 @@
-export const PDD_SMS_REMAIN_SETTING_DETAIL_QUERY = 'PDD_SMS_REMAIN_SETTING_DETAIL_QUERY';
+export const PDD_SMS_REMAIN_SETTING_DETAIL_QUERY = 'pdd.sms.remain.setting.detail.query';
 
 /**
  * 接口名称：提醒类短信设置详情
@@ -198,12 +198,4 @@ export interface PddSmsRemainSettingDetailQuerySmsRemainSettingDetailQueryRespon
    * @default:
    **/
   goods_invert: number;
-}
-
-// 导出默认分类
-export default interface InterfaceDefaultInterface {
-  [PDD_SMS_REMAIN_SETTING_DETAIL_QUERY]: {
-    requestInterface: PddSmsRemainSettingDetailQueryRequestInterface;
-    responseInterface: PddSmsRemainSettingDetailQueryResponseInterface;
-  };
 }

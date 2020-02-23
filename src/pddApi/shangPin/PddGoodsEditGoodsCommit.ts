@@ -1,4 +1,4 @@
-export const PDD_GOODS_EDIT_GOODS_COMMIT = 'PDD_GOODS_EDIT_GOODS_COMMIT';
+export const PDD_GOODS_EDIT_GOODS_COMMIT = 'pdd.goods.edit.goods.commit';
 
 /**
  * 接口名称：新增或编辑草稿接口
@@ -684,12 +684,4 @@ export interface PddGoodsEditGoodsCommitGoodsUpdateResponseResponseInterface {
    * @default:
    **/
   goods_id: string;
-}
-
-// 导出默认分类
-export default interface InterfaceDefaultInterface {
-  [PDD_GOODS_EDIT_GOODS_COMMIT]: {
-    requestInterface: PddGoodsEditGoodsCommitRequestInterface;
-    responseInterface: PddGoodsEditGoodsCommitResponseInterface;
-  };
 }

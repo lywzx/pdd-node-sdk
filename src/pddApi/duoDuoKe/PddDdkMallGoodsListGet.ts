@@ -1,4 +1,4 @@
-export const PDD_DDK_MALL_GOODS_LIST_GET = 'PDD_DDK_MALL_GOODS_LIST_GET';
+export const PDD_DDK_MALL_GOODS_LIST_GET = 'pdd.ddk.mall.goods.list.get';
 
 /**
  * 接口名称：查询店铺商品
@@ -371,12 +371,4 @@ export interface PddDdkMallGoodsListGetGoodsInfoListResponseGoodsListResponseInt
    * @default:
    **/
   lgst_txt: string;
-}
-
-// 导出默认分类
-export default interface InterfaceDefaultInterface {
-  [PDD_DDK_MALL_GOODS_LIST_GET]: {
-    requestInterface: PddDdkMallGoodsListGetRequestInterface;
-    responseInterface: PddDdkMallGoodsListGetResponseInterface;
-  };
 }

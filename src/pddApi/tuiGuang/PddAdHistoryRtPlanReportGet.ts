@@ -1,4 +1,4 @@
-export const PDD_AD_HISTORY_RT_PLAN_REPORT_GET = 'PDD_AD_HISTORY_RT_PLAN_REPORT_GET';
+export const PDD_AD_HISTORY_RT_PLAN_REPORT_GET = 'pdd.ad.history.rt.plan.report.get';
 
 /**
  * 接口名称：推广计划实时报表数据
@@ -175,12 +175,4 @@ export interface PddAdHistoryRtPlanReportGetAdPlanRealTimeReportResponsePlanReal
    * @default:
    **/
   product_type: number;
-}
-
-// 导出默认分类
-export default interface InterfaceDefaultInterface {
-  [PDD_AD_HISTORY_RT_PLAN_REPORT_GET]: {
-    requestInterface: PddAdHistoryRtPlanReportGetRequestInterface;
-    responseInterface: PddAdHistoryRtPlanReportGetResponseInterface;
-  };
 }

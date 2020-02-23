@@ -1,4 +1,4 @@
-export const PDD_STOCK_DEPOT_PRIORITY_UPDATE = 'PDD_STOCK_DEPOT_PRIORITY_UPDATE';
+export const PDD_STOCK_DEPOT_PRIORITY_UPDATE = 'pdd.stock.depot.priority.update';
 
 /**
  * 接口名称：批量更新仓库优先级
@@ -69,12 +69,4 @@ export interface PddStockDepotPriorityUpdateResponseInterface {
    * @default:
    **/
   open_api_response: string;
-}
-
-// 导出默认分类
-export default interface InterfaceDefaultInterface {
-  [PDD_STOCK_DEPOT_PRIORITY_UPDATE]: {
-    requestInterface: PddStockDepotPriorityUpdateRequestInterface;
-    responseInterface: PddStockDepotPriorityUpdateResponseInterface;
-  };
 }

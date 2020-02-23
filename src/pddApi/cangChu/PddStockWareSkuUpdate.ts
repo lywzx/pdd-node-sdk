@@ -1,4 +1,4 @@
-export const PDD_STOCK_WARE_SKU_UPDATE = 'PDD_STOCK_WARE_SKU_UPDATE';
+export const PDD_STOCK_WARE_SKU_UPDATE = 'pdd.stock.ware.sku.update';
 
 /**
  * 接口名称：货品关联sku
@@ -55,12 +55,4 @@ export interface PddStockWareSkuUpdateResponseInterface {
    * @default:
    **/
   open_api_response: boolean;
-}
-
-// 导出默认分类
-export default interface InterfaceDefaultInterface {
-  [PDD_STOCK_WARE_SKU_UPDATE]: {
-    requestInterface: PddStockWareSkuUpdateRequestInterface;
-    responseInterface: PddStockWareSkuUpdateResponseInterface;
-  };
 }

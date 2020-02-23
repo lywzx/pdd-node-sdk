@@ -1,4 +1,4 @@
-export const PDD_GOODS_LIST_GET = 'PDD_GOODS_LIST_GET';
+export const PDD_GOODS_LIST_GET = 'pdd.goods.list.get';
 
 /**
  * 接口名称：商品列表接口
@@ -204,12 +204,4 @@ export interface PddGoodsListGetGoodsListGetResponseGoodsListSkuListResponseInte
    * @default:
    **/
   is_sku_onsale: number;
-}
-
-// 导出默认分类
-export default interface InterfaceDefaultInterface {
-  [PDD_GOODS_LIST_GET]: {
-    requestInterface: PddGoodsListGetRequestInterface;
-    responseInterface: PddGoodsListGetResponseInterface;
-  };
 }

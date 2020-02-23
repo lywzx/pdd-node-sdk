@@ -1,4 +1,4 @@
-export const PDD_AD_UNIT_OPT_STATUS_UPDATE = 'PDD_AD_UNIT_OPT_STATUS_UPDATE';
+export const PDD_AD_UNIT_OPT_STATUS_UPDATE = 'pdd.ad.unit.opt.status.update';
 
 /**
  * 接口名称：暂停、开启推广单元
@@ -55,12 +55,4 @@ export interface PddAdUnitOptStatusUpdateAdUnitOptStatusUpdateResponseResponseIn
    * @default:
    **/
   is_success: boolean;
-}
-
-// 导出默认分类
-export default interface InterfaceDefaultInterface {
-  [PDD_AD_UNIT_OPT_STATUS_UPDATE]: {
-    requestInterface: PddAdUnitOptStatusUpdateRequestInterface;
-    responseInterface: PddAdUnitOptStatusUpdateResponseInterface;
-  };
 }

@@ -1,4 +1,4 @@
-export const PDD_WAYBILL_GET = 'PDD_WAYBILL_GET';
+export const PDD_WAYBILL_GET = 'pdd.waybill.get';
 
 /**
  * 接口名称：电子面单云打印接口
@@ -443,12 +443,4 @@ export interface PddWaybillGetPddWaybillGetResponseModulesResponseInterface {
    * @default:
    **/
   waybill_code: string;
-}
-
-// 导出默认分类
-export default interface InterfaceDefaultInterface {
-  [PDD_WAYBILL_GET]: {
-    requestInterface: PddWaybillGetRequestInterface;
-    responseInterface: PddWaybillGetResponseInterface;
-  };
 }

@@ -1,4 +1,4 @@
-export const PDD_GOODS_CPS_UNIT_CREATE = 'PDD_GOODS_CPS_UNIT_CREATE';
+export const PDD_GOODS_CPS_UNIT_CREATE = 'pdd.goods.cps.unit.create';
 
 /**
  * 接口名称：设置单品推广API
@@ -112,12 +112,4 @@ export interface PddGoodsCpsUnitCreateFailedVosResponseInterface {
    * @default:
    **/
   reason: string;
-}
-
-// 导出默认分类
-export default interface InterfaceDefaultInterface {
-  [PDD_GOODS_CPS_UNIT_CREATE]: {
-    requestInterface: PddGoodsCpsUnitCreateRequestInterface;
-    responseInterface: PddGoodsCpsUnitCreateResponseInterface;
-  };
 }

@@ -1,4 +1,4 @@
-export const PDD_WAYBILL_CANCEL = 'PDD_WAYBILL_CANCEL';
+export const PDD_WAYBILL_CANCEL = 'pdd.waybill.cancel';
 
 /**
  * 接口名称：商家取消获取的电子面单号
@@ -48,12 +48,4 @@ export interface PddWaybillCancelPddWaybillCancelResponseResponseInterface {
    * @default:
    **/
   cancel_result: boolean;
-}
-
-// 导出默认分类
-export default interface InterfaceDefaultInterface {
-  [PDD_WAYBILL_CANCEL]: {
-    requestInterface: PddWaybillCancelRequestInterface;
-    responseInterface: PddWaybillCancelResponseInterface;
-  };
 }

@@ -1,4 +1,4 @@
-export const PDD_INVOICE_DETAIL_UPLOAD = 'PDD_INVOICE_DETAIL_UPLOAD';
+export const PDD_INVOICE_DETAIL_UPLOAD = 'pdd.invoice.detail.upload';
 
 /**
  * 接口名称：开票结果回传
@@ -167,12 +167,4 @@ export interface PddInvoiceDetailUploadInvoiceDetailUploadResponseResponseInterf
    * @default:
    **/
   serial_no: string;
-}
-
-// 导出默认分类
-export default interface InterfaceDefaultInterface {
-  [PDD_INVOICE_DETAIL_UPLOAD]: {
-    requestInterface: PddInvoiceDetailUploadRequestInterface;
-    responseInterface: PddInvoiceDetailUploadResponseInterface;
-  };
 }

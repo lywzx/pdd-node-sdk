@@ -1,4 +1,4 @@
-export const PDD_WAYBILL_UPDATE = 'PDD_WAYBILL_UPDATE';
+export const PDD_WAYBILL_UPDATE = 'pdd.waybill.update';
 
 /**
  * 接口名称：电子面单云打印更新接口
@@ -271,12 +271,4 @@ export interface PddWaybillUpdatePddWaybillUpdateResponseResponseInterface {
    * @default:
    **/
   waybill_code: string;
-}
-
-// 导出默认分类
-export default interface InterfaceDefaultInterface {
-  [PDD_WAYBILL_UPDATE]: {
-    requestInterface: PddWaybillUpdateRequestInterface;
-    responseInterface: PddWaybillUpdateResponseInterface;
-  };
 }

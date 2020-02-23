@@ -1,4 +1,4 @@
-export const PDD_VAS_ORDER_SEARCH = 'PDD_VAS_ORDER_SEARCH';
+export const PDD_VAS_ORDER_SEARCH = 'pdd.vas.order.search';
 
 /**
  * 接口名称：线上服务市场订单查询接口
@@ -210,12 +210,4 @@ export interface PddVasOrderSearchVasOrderSearchResponseOrdersResponseInterface 
    * @default:
    **/
   refund_finish_time: string;
-}
-
-// 导出默认分类
-export default interface InterfaceDefaultInterface {
-  [PDD_VAS_ORDER_SEARCH]: {
-    requestInterface: PddVasOrderSearchRequestInterface;
-    responseInterface: PddVasOrderSearchResponseInterface;
-  };
 }

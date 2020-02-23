@@ -1,4 +1,4 @@
-export const PDD_PROMOTION_COUPON_CLOSE = 'PDD_PROMOTION_COUPON_CLOSE';
+export const PDD_PROMOTION_COUPON_CLOSE = 'pdd.promotion.coupon.close';
 
 /**
  * 接口名称：关闭批次接口
@@ -41,12 +41,4 @@ export interface PddPromotionCouponClosePromotionCouponBatchCloseResponseRespons
    * @default:
    **/
   is_success: boolean;
-}
-
-// 导出默认分类
-export default interface InterfaceDefaultInterface {
-  [PDD_PROMOTION_COUPON_CLOSE]: {
-    requestInterface: PddPromotionCouponCloseRequestInterface;
-    responseInterface: PddPromotionCouponCloseResponseInterface;
-  };
 }

@@ -1,4 +1,4 @@
-export const PDD_AD_PLAN_OPT_STATUS_UPDATE = 'PDD_AD_PLAN_OPT_STATUS_UPDATE';
+export const PDD_AD_PLAN_OPT_STATUS_UPDATE = 'pdd.ad.plan.opt.status.update';
 
 /**
  * 接口名称：修改推广计划状态（暂停、开启）
@@ -55,12 +55,4 @@ export interface PddAdPlanOptStatusUpdateAdPlanOptStatusUpdateResponseResponseIn
    * @default:
    **/
   is_success: boolean;
-}
-
-// 导出默认分类
-export default interface InterfaceDefaultInterface {
-  [PDD_AD_PLAN_OPT_STATUS_UPDATE]: {
-    requestInterface: PddAdPlanOptStatusUpdateRequestInterface;
-    responseInterface: PddAdPlanOptStatusUpdateResponseInterface;
-  };
 }

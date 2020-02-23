@@ -1,4 +1,4 @@
-export const PDD_LOGISTICS_COMPANIES_GET = 'PDD_LOGISTICS_COMPANIES_GET';
+export const PDD_LOGISTICS_COMPANIES_GET = 'pdd.logistics.companies.get';
 
 /**
  * 接口名称：快递公司查看接口
@@ -71,12 +71,4 @@ export interface PddLogisticsCompaniesGetLogisticsCompaniesGetResponseLogisticsC
    * @default:
    **/
   code: string;
-}
-
-// 导出默认分类
-export default interface InterfaceDefaultInterface {
-  [PDD_LOGISTICS_COMPANIES_GET]: {
-    requestInterface: PddLogisticsCompaniesGetRequestInterface;
-    responseInterface: PddLogisticsCompaniesGetResponseInterface;
-  };
 }

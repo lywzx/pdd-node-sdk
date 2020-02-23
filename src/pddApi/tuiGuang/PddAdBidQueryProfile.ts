@@ -1,4 +1,4 @@
-export const PDD_AD_BID_QUERY_PROFILE = 'PDD_AD_BID_QUERY_PROFILE';
+export const PDD_AD_BID_QUERY_PROFILE = 'pdd.ad.bid.query.profile';
 
 /**
  * 接口名称：【定向】用户数量预估，兴趣点查询等信息
@@ -77,12 +77,4 @@ export interface PddAdBidQueryProfileOpenApiResponseFeaturesResponseInterface {
    * @default:
    **/
   sub_level_target_id: string;
-}
-
-// 导出默认分类
-export default interface InterfaceDefaultInterface {
-  [PDD_AD_BID_QUERY_PROFILE]: {
-    requestInterface: PddAdBidQueryProfileRequestInterface;
-    responseInterface: PddAdBidQueryProfileResponseInterface;
-  };
 }

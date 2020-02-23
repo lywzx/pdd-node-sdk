@@ -1,4 +1,4 @@
-export const PDD_GOODS_DETAIL_GET = 'PDD_GOODS_DETAIL_GET';
+export const PDD_GOODS_DETAIL_GET = 'pdd.goods.detail.get';
 
 /**
  * 接口名称：商品明细
@@ -586,12 +586,4 @@ export interface PddGoodsDetailGetGoodsDetailGetResponseVideoGalleryResponseInte
    * @default:
    **/
   video_url: string;
-}
-
-// 导出默认分类
-export default interface InterfaceDefaultInterface {
-  [PDD_GOODS_DETAIL_GET]: {
-    requestInterface: PddGoodsDetailGetRequestInterface;
-    responseInterface: PddGoodsDetailGetResponseInterface;
-  };
 }

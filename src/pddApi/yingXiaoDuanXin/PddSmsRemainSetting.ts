@@ -1,4 +1,4 @@
-export const PDD_SMS_REMAIN_SETTING = 'PDD_SMS_REMAIN_SETTING';
+export const PDD_SMS_REMAIN_SETTING = 'pdd.sms.remain.setting';
 
 /**
  * 接口名称：提醒买家付款的任务设置
@@ -69,12 +69,4 @@ export interface PddSmsRemainSettingSmsRemainSettingResponseResponseInterface {
    * @default:
    **/
   result: string;
-}
-
-// 导出默认分类
-export default interface InterfaceDefaultInterface {
-  [PDD_SMS_REMAIN_SETTING]: {
-    requestInterface: PddSmsRemainSettingRequestInterface;
-    responseInterface: PddSmsRemainSettingResponseInterface;
-  };
 }

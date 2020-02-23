@@ -1,4 +1,4 @@
-export const PDD_SMS_CREATE_CUSTOM_TEMPLATE = 'PDD_SMS_CREATE_CUSTOM_TEMPLATE';
+export const PDD_SMS_CREATE_CUSTOM_TEMPLATE = 'pdd.sms.create.custom.template';
 
 /**
  * 接口名称：创建自定义模板
@@ -70,12 +70,4 @@ export interface PddSmsCreateCustomTemplateSmsCreateCustomTemplateResponseRespon
    * @default:
    **/
   result: string;
-}
-
-// 导出默认分类
-export default interface InterfaceDefaultInterface {
-  [PDD_SMS_CREATE_CUSTOM_TEMPLATE]: {
-    requestInterface: PddSmsCreateCustomTemplateRequestInterface;
-    responseInterface: PddSmsCreateCustomTemplateResponseInterface;
-  };
 }

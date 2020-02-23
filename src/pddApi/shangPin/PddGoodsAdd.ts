@@ -1,4 +1,4 @@
-export const PDD_GOODS_ADD = 'PDD_GOODS_ADD';
+export const PDD_GOODS_ADD = 'pdd.goods.add';
 
 /**
  * 接口名称：商品新增接口
@@ -680,12 +680,4 @@ export interface PddGoodsAddGoodsAddResponseResponseInterface {
    * @default:
    **/
   goods_id: string;
-}
-
-// 导出默认分类
-export default interface InterfaceDefaultInterface {
-  [PDD_GOODS_ADD]: {
-    requestInterface: PddGoodsAddRequestInterface;
-    responseInterface: PddGoodsAddResponseInterface;
-  };
 }

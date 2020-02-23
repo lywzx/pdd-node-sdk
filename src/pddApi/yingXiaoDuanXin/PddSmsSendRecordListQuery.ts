@@ -1,4 +1,4 @@
-export const PDD_SMS_SEND_RECORD_LIST_QUERY = 'PDD_SMS_SEND_RECORD_LIST_QUERY';
+export const PDD_SMS_SEND_RECORD_LIST_QUERY = 'pdd.sms.send.record.list.query';
 
 /**
  * 接口名称：短信发送记录列表
@@ -140,12 +140,4 @@ export interface PddSmsSendRecordListQuerySmsSendRecordListQueryResponseResultRe
    * @default:
    **/
   status: number;
-}
-
-// 导出默认分类
-export default interface InterfaceDefaultInterface {
-  [PDD_SMS_SEND_RECORD_LIST_QUERY]: {
-    requestInterface: PddSmsSendRecordListQueryRequestInterface;
-    responseInterface: PddSmsSendRecordListQueryResponseInterface;
-  };
 }

@@ -1,4 +1,4 @@
-export const PDD_AD_PLAN_DISCOUNT_UPDATE = 'PDD_AD_PLAN_DISCOUNT_UPDATE';
+export const PDD_AD_PLAN_DISCOUNT_UPDATE = 'pdd.ad.plan.discount.update';
 
 /**
  * 接口名称：修改推广计划分时折扣
@@ -62,12 +62,4 @@ export interface PddAdPlanDiscountUpdateResponseInterface {
    * @default:
    **/
   open_api_response: boolean;
-}
-
-// 导出默认分类
-export default interface InterfaceDefaultInterface {
-  [PDD_AD_PLAN_DISCOUNT_UPDATE]: {
-    requestInterface: PddAdPlanDiscountUpdateRequestInterface;
-    responseInterface: PddAdPlanDiscountUpdateResponseInterface;
-  };
 }

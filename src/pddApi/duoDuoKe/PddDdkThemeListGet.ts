@@ -1,4 +1,4 @@
-export const PDD_DDK_THEME_LIST_GET = 'PDD_DDK_THEME_LIST_GET';
+export const PDD_DDK_THEME_LIST_GET = 'pdd.ddk.theme.list.get';
 
 /**
  * 接口名称：多多进宝主题列表查询
@@ -91,12 +91,4 @@ export interface PddDdkThemeListGetThemeListGetResponseThemeListResponseInterfac
    * @default:
    **/
   goods_num: string;
-}
-
-// 导出默认分类
-export default interface InterfaceDefaultInterface {
-  [PDD_DDK_THEME_LIST_GET]: {
-    requestInterface: PddDdkThemeListGetRequestInterface;
-    responseInterface: PddDdkThemeListGetResponseInterface;
-  };
 }

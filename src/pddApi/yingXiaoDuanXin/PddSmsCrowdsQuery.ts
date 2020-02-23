@@ -1,4 +1,4 @@
-export const PDD_SMS_CROWDS_QUERY = 'PDD_SMS_CROWDS_QUERY';
+export const PDD_SMS_CROWDS_QUERY = 'pdd.sms.crowds.query';
 
 /**
  * 接口名称：查询人群列表
@@ -218,12 +218,4 @@ export interface PddSmsCrowdsQuerySmsCrowsQueryResponseResultCrowdResponseInterf
    * @default:
    **/
   mall_none_visit_days: string;
-}
-
-// 导出默认分类
-export default interface InterfaceDefaultInterface {
-  [PDD_SMS_CROWDS_QUERY]: {
-    requestInterface: PddSmsCrowdsQueryRequestInterface;
-    responseInterface: PddSmsCrowdsQueryResponseInterface;
-  };
 }

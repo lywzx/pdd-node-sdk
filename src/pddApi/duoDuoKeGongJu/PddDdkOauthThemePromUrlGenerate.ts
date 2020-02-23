@@ -1,4 +1,4 @@
-export const PDD_DDK_OAUTH_THEME_PROM_URL_GENERATE = 'PDD_DDK_OAUTH_THEME_PROM_URL_GENERATE';
+export const PDD_DDK_OAUTH_THEME_PROM_URL_GENERATE = 'pdd.ddk.oauth.theme.prom.url.generate';
 
 /**
  * 接口名称：多多进宝主题推广链接生成接口
@@ -317,12 +317,4 @@ export interface PddDdkOauthThemePromUrlGenerateThemePromotionUrlGenerateRespons
    * @default:
    **/
   user_name: string;
-}
-
-// 导出默认分类
-export default interface InterfaceDefaultInterface {
-  [PDD_DDK_OAUTH_THEME_PROM_URL_GENERATE]: {
-    requestInterface: PddDdkOauthThemePromUrlGenerateRequestInterface;
-    responseInterface: PddDdkOauthThemePromUrlGenerateResponseInterface;
-  };
 }

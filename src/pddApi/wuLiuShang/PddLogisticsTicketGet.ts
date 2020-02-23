@@ -1,4 +1,4 @@
-export const PDD_LOGISTICS_TICKET_GET = 'PDD_LOGISTICS_TICKET_GET';
+export const PDD_LOGISTICS_TICKET_GET = 'pdd.logistics.ticket.get';
 
 /**
  * 接口名称：快递公司工单查询接口
@@ -273,12 +273,4 @@ export interface PddLogisticsTicketGetLogisticsTicketGetResponseLogisticsTicketL
    * @default:
    **/
   waybill_no: string;
-}
-
-// 导出默认分类
-export default interface InterfaceDefaultInterface {
-  [PDD_LOGISTICS_TICKET_GET]: {
-    requestInterface: PddLogisticsTicketGetRequestInterface;
-    responseInterface: PddLogisticsTicketGetResponseInterface;
-  };
 }

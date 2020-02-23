@@ -1,4 +1,4 @@
-export const PDD_DDK_OAUTH_CMS_PROM_URL_GENERATE = 'PDD_DDK_OAUTH_CMS_PROM_URL_GENERATE';
+export const PDD_DDK_OAUTH_CMS_PROM_URL_GENERATE = 'pdd.ddk.oauth.cms.prom.url.generate';
 
 /**
  * 接口名称：生成商城推广链接接口
@@ -182,12 +182,4 @@ export interface PddDdkOauthCmsPromUrlGenerateCmsPromotionUrlGenerateResponseUrl
    * @default:
    **/
   schema_url: string;
-}
-
-// 导出默认分类
-export default interface InterfaceDefaultInterface {
-  [PDD_DDK_OAUTH_CMS_PROM_URL_GENERATE]: {
-    requestInterface: PddDdkOauthCmsPromUrlGenerateRequestInterface;
-    responseInterface: PddDdkOauthCmsPromUrlGenerateResponseInterface;
-  };
 }

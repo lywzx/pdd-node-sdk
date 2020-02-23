@@ -1,4 +1,4 @@
-export const PDD_VOUCHER_VOUCHER_COMPLAIN = 'PDD_VOUCHER_VOUCHER_COMPLAIN';
+export const PDD_VOUCHER_VOUCHER_COMPLAIN = 'pdd.voucher.voucher.complain';
 
 /**
  * 接口名称：卡券投诉接口
@@ -113,12 +113,4 @@ export interface PddVoucherVoucherComplainVoucherVoucherComplainResponseResponse
    * @default:
    **/
   is_success: boolean;
-}
-
-// 导出默认分类
-export default interface InterfaceDefaultInterface {
-  [PDD_VOUCHER_VOUCHER_COMPLAIN]: {
-    requestInterface: PddVoucherVoucherComplainRequestInterface;
-    responseInterface: PddVoucherVoucherComplainResponseInterface;
-  };
 }

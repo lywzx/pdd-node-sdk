@@ -1,4 +1,4 @@
-export const PDD_GOODS_LATEST_COMMIT_STATUS_GET = 'PDD_GOODS_LATEST_COMMIT_STATUS_GET';
+export const PDD_GOODS_LATEST_COMMIT_STATUS_GET = 'pdd.goods.latest.commit.status.get';
 
 /**
  * 接口名称：批量goodsId查询最新的审核状态
@@ -70,12 +70,4 @@ export interface PddGoodsLatestCommitStatusGetGoodsLatestCommitStatusGetResponse
    * @default:
    **/
   reject_comment: string;
-}
-
-// 导出默认分类
-export default interface InterfaceDefaultInterface {
-  [PDD_GOODS_LATEST_COMMIT_STATUS_GET]: {
-    requestInterface: PddGoodsLatestCommitStatusGetRequestInterface;
-    responseInterface: PddGoodsLatestCommitStatusGetResponseInterface;
-  };
 }

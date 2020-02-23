@@ -1,4 +1,4 @@
-export const PDD_EXPRESS_CHANGE_DEPOT_INFO = 'PDD_EXPRESS_CHANGE_DEPOT_INFO';
+export const PDD_EXPRESS_CHANGE_DEPOT_INFO = 'pdd.express.change.depot.info';
 
 /**
  * 接口名称：修改仓库信息
@@ -96,12 +96,4 @@ export interface PddExpressChangeDepotInfoResponseInterface {
    * @default:
    **/
   open_api_response: string;
-}
-
-// 导出默认分类
-export default interface InterfaceDefaultInterface {
-  [PDD_EXPRESS_CHANGE_DEPOT_INFO]: {
-    requestInterface: PddExpressChangeDepotInfoRequestInterface;
-    responseInterface: PddExpressChangeDepotInfoResponseInterface;
-  };
 }

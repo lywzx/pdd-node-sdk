@@ -1,4 +1,4 @@
-export const PDD_LOGISTICS_TICKET_IMAGE_UPLOAD = 'PDD_LOGISTICS_TICKET_IMAGE_UPLOAD';
+export const PDD_LOGISTICS_TICKET_IMAGE_UPLOAD = 'pdd.logistics.ticket.image.upload';
 
 /**
  * 接口名称：工单图片上传接口
@@ -41,12 +41,4 @@ export interface PddLogisticsTicketImageUploadLogisticsTicketImageUploadResponse
    * @default:
    **/
   image_url: string;
-}
-
-// 导出默认分类
-export default interface InterfaceDefaultInterface {
-  [PDD_LOGISTICS_TICKET_IMAGE_UPLOAD]: {
-    requestInterface: PddLogisticsTicketImageUploadRequestInterface;
-    responseInterface: PddLogisticsTicketImageUploadResponseInterface;
-  };
 }

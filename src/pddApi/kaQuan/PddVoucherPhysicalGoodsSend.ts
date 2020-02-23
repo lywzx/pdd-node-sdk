@@ -1,4 +1,4 @@
-export const PDD_VOUCHER_PHYSICAL_GOODS_SEND = 'PDD_VOUCHER_PHYSICAL_GOODS_SEND';
+export const PDD_VOUCHER_PHYSICAL_GOODS_SEND = 'pdd.voucher.physical.goods.send';
 
 /**
  * 接口名称：卡券发货（实物）接口
@@ -126,12 +126,4 @@ export interface PddVoucherPhysicalGoodsSendVoucherPhysicalVoucherSendResponseRe
    * @default:
    **/
   is_success: boolean;
-}
-
-// 导出默认分类
-export default interface InterfaceDefaultInterface {
-  [PDD_VOUCHER_PHYSICAL_GOODS_SEND]: {
-    requestInterface: PddVoucherPhysicalGoodsSendRequestInterface;
-    responseInterface: PddVoucherPhysicalGoodsSendResponseInterface;
-  };
 }

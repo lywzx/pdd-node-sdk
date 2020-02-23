@@ -1,4 +1,4 @@
-export const PDD_DDK_ORDER_LIST_INCREMENT_GET = 'PDD_DDK_ORDER_LIST_INCREMENT_GET';
+export const PDD_DDK_ORDER_LIST_INCREMENT_GET = 'pdd.ddk.order.list.increment.get';
 
 /**
  * 接口名称：最后更新时间段增量同步推广订单信息
@@ -280,12 +280,4 @@ export interface PddDdkOrderListIncrementGetOrderListGetResponseOrderListRespons
    * @default:
    **/
   zs_duo_id: string;
-}
-
-// 导出默认分类
-export default interface InterfaceDefaultInterface {
-  [PDD_DDK_ORDER_LIST_INCREMENT_GET]: {
-    requestInterface: PddDdkOrderListIncrementGetRequestInterface;
-    responseInterface: PddDdkOrderListIncrementGetResponseInterface;
-  };
 }

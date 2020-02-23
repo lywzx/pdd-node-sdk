@@ -1,4 +1,4 @@
-export const PDD_FINANCE_BALANCE_DAILY_BILL_URL_GET = 'PDD_FINANCE_BALANCE_DAILY_BILL_URL_GET';
+export const PDD_FINANCE_BALANCE_DAILY_BILL_URL_GET = 'pdd.finance.balance.daily.bill.url.get';
 
 /**
  * 接口名称：商家货款日账单下载链接查询接口
@@ -41,12 +41,4 @@ export interface PddFinanceBalanceDailyBillUrlGetFinanceBalanceDailyBillUrlGetRe
    * @default:
    **/
   download_url: string;
-}
-
-// 导出默认分类
-export default interface InterfaceDefaultInterface {
-  [PDD_FINANCE_BALANCE_DAILY_BILL_URL_GET]: {
-    requestInterface: PddFinanceBalanceDailyBillUrlGetRequestInterface;
-    responseInterface: PddFinanceBalanceDailyBillUrlGetResponseInterface;
-  };
 }

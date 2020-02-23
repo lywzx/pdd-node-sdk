@@ -1,4 +1,4 @@
-export const PDD_ORDER_STATUS_GET = 'PDD_ORDER_STATUS_GET';
+export const PDD_ORDER_STATUS_GET = 'pdd.order.status.get';
 
 /**
  * 接口名称：订单状态
@@ -70,12 +70,4 @@ export interface PddOrderStatusGetOrderStatusGetResponseOrderStatusListResponseI
    * @default:
    **/
   refund_status: number;
-}
-
-// 导出默认分类
-export default interface InterfaceDefaultInterface {
-  [PDD_ORDER_STATUS_GET]: {
-    requestInterface: PddOrderStatusGetRequestInterface;
-    responseInterface: PddOrderStatusGetResponseInterface;
-  };
 }

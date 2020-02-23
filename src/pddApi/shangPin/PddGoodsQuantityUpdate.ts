@@ -1,4 +1,4 @@
-export const PDD_GOODS_QUANTITY_UPDATE = 'PDD_GOODS_QUANTITY_UPDATE';
+export const PDD_GOODS_QUANTITY_UPDATE = 'pdd.goods.quantity.update';
 
 /**
  * 接口名称：商品库存更新接口
@@ -69,12 +69,4 @@ export interface PddGoodsQuantityUpdateGoodsQuantityUpdateResponseResponseInterf
    * @default:
    **/
   is_success: boolean;
-}
-
-// 导出默认分类
-export default interface InterfaceDefaultInterface {
-  [PDD_GOODS_QUANTITY_UPDATE]: {
-    requestInterface: PddGoodsQuantityUpdateRequestInterface;
-    responseInterface: PddGoodsQuantityUpdateResponseInterface;
-  };
 }

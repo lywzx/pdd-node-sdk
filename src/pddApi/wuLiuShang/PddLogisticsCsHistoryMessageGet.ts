@@ -1,4 +1,4 @@
-export const PDD_LOGISTICS_CS_HISTORY_MESSAGE_GET = 'PDD_LOGISTICS_CS_HISTORY_MESSAGE_GET';
+export const PDD_LOGISTICS_CS_HISTORY_MESSAGE_GET = 'pdd.logistics.cs.history.message.get';
 
 /**
  * 接口名称：客户与机器人的聊天记录获取接口
@@ -77,12 +77,4 @@ export interface PddLogisticsCsHistoryMessageGetLogisticsCsHistoryMessageGetResp
    * @default:
    **/
   text: string;
-}
-
-// 导出默认分类
-export default interface InterfaceDefaultInterface {
-  [PDD_LOGISTICS_CS_HISTORY_MESSAGE_GET]: {
-    requestInterface: PddLogisticsCsHistoryMessageGetRequestInterface;
-    responseInterface: PddLogisticsCsHistoryMessageGetResponseInterface;
-  };
 }

@@ -1,4 +1,4 @@
-export const PDD_AD_PLAN_NAME_UPDATE = 'PDD_AD_PLAN_NAME_UPDATE';
+export const PDD_AD_PLAN_NAME_UPDATE = 'pdd.ad.plan.name.update';
 
 /**
  * 接口名称：修改推广计划名称
@@ -55,12 +55,4 @@ export interface PddAdPlanNameUpdateAdPlanNameUpdateResponseResponseInterface {
    * @default:
    **/
   is_success: boolean;
-}
-
-// 导出默认分类
-export default interface InterfaceDefaultInterface {
-  [PDD_AD_PLAN_NAME_UPDATE]: {
-    requestInterface: PddAdPlanNameUpdateRequestInterface;
-    responseInterface: PddAdPlanNameUpdateResponseInterface;
-  };
 }

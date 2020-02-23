@@ -1,4 +1,4 @@
-export const PDD_INVOICE_DETAIL_QUERY = 'PDD_INVOICE_DETAIL_QUERY';
+export const PDD_INVOICE_DETAIL_QUERY = 'pdd.invoice.detail.query';
 
 /**
  * 接口名称：查询已回传发票
@@ -202,12 +202,4 @@ export interface PddInvoiceDetailQueryInvoiceDetailQueryResponseResponseInterfac
    * @default:
    **/
   application_status: number;
-}
-
-// 导出默认分类
-export default interface InterfaceDefaultInterface {
-  [PDD_INVOICE_DETAIL_QUERY]: {
-    requestInterface: PddInvoiceDetailQueryRequestInterface;
-    responseInterface: PddInvoiceDetailQueryResponseInterface;
-  };
 }

@@ -1,4 +1,4 @@
-export const PDD_MALL_INFO_STORE_DELETE_POST = 'PDD_MALL_INFO_STORE_DELETE_POST';
+export const PDD_MALL_INFO_STORE_DELETE_POST = 'pdd.mall.info.store.delete.post';
 
 /**
  * 接口名称：删除店铺门店
@@ -41,12 +41,4 @@ export interface PddMallInfoStoreDeletePostMallInfoStoreDeletePostResponseRespon
    * @default:
    **/
   is_success: boolean;
-}
-
-// 导出默认分类
-export default interface InterfaceDefaultInterface {
-  [PDD_MALL_INFO_STORE_DELETE_POST]: {
-    requestInterface: PddMallInfoStoreDeletePostRequestInterface;
-    responseInterface: PddMallInfoStoreDeletePostResponseInterface;
-  };
 }

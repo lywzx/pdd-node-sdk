@@ -1,4 +1,4 @@
-export const PDD_DDK_GOODS_ZS_UNIT_URL_GEN = 'PDD_DDK_GOODS_ZS_UNIT_URL_GEN';
+export const PDD_DDK_GOODS_ZS_UNIT_URL_GEN = 'pdd.ddk.goods.zs.unit.url.gen';
 
 /**
  * 接口名称：多多进宝转链接口
@@ -97,12 +97,4 @@ export interface PddDdkGoodsZsUnitUrlGenGoodsZsUnitGenerateResponseResponseInter
    * @default:
    **/
   multi_group_mobile_short_url: string;
-}
-
-// 导出默认分类
-export default interface InterfaceDefaultInterface {
-  [PDD_DDK_GOODS_ZS_UNIT_URL_GEN]: {
-    requestInterface: PddDdkGoodsZsUnitUrlGenRequestInterface;
-    responseInterface: PddDdkGoodsZsUnitUrlGenResponseInterface;
-  };
 }

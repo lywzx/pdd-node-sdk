@@ -1,4 +1,4 @@
-export const PDD_DDK_WEAPP_QRCODE_URL_GEN = 'PDD_DDK_WEAPP_QRCODE_URL_GEN';
+export const PDD_DDK_WEAPP_QRCODE_URL_GEN = 'pdd.ddk.weapp.qrcode.url.gen';
 
 /**
  * 接口名称：多多客生成单品推广小程序二维码url
@@ -69,12 +69,4 @@ export interface PddDdkWeappQrcodeUrlGenWeappQrcodeGenerateResponseResponseInter
    * @default:
    **/
   url: string;
-}
-
-// 导出默认分类
-export default interface InterfaceDefaultInterface {
-  [PDD_DDK_WEAPP_QRCODE_URL_GEN]: {
-    requestInterface: PddDdkWeappQrcodeUrlGenRequestInterface;
-    responseInterface: PddDdkWeappQrcodeUrlGenResponseInterface;
-  };
 }

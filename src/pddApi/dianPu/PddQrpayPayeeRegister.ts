@@ -1,4 +1,4 @@
-export const PDD_QRPAY_PAYEE_REGISTER = 'PDD_QRPAY_PAYEE_REGISTER';
+export const PDD_QRPAY_PAYEE_REGISTER = 'pdd.qrpay.payee.register';
 
 /**
  * 接口名称：交易二维码-参数注册接口
@@ -92,12 +92,4 @@ export interface PddQrpayPayeeRegisterQrpayPayeeRegisterResponsePayeeResultListR
    * @default:
    **/
   qr_pay_page_url: string;
-}
-
-// 导出默认分类
-export default interface InterfaceDefaultInterface {
-  [PDD_QRPAY_PAYEE_REGISTER]: {
-    requestInterface: PddQrpayPayeeRegisterRequestInterface;
-    responseInterface: PddQrpayPayeeRegisterResponseInterface;
-  };
 }

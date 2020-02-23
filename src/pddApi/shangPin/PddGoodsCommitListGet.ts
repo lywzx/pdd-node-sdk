@@ -1,4 +1,4 @@
-export const PDD_GOODS_COMMIT_LIST_GET = 'PDD_GOODS_COMMIT_LIST_GET';
+export const PDD_GOODS_COMMIT_LIST_GET = 'pdd.goods.commit.list.get';
 
 /**
  * 接口名称：草稿列表接口
@@ -140,12 +140,4 @@ export interface PddGoodsCommitListGetGoodsCommitListGetResponseListResponseInte
    * @default:
    **/
   reject_comment: string;
-}
-
-// 导出默认分类
-export default interface InterfaceDefaultInterface {
-  [PDD_GOODS_COMMIT_LIST_GET]: {
-    requestInterface: PddGoodsCommitListGetRequestInterface;
-    responseInterface: PddGoodsCommitListGetResponseInterface;
-  };
 }

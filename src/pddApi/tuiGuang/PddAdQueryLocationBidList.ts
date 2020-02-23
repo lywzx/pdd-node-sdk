@@ -1,4 +1,4 @@
-export const PDD_AD_QUERY_LOCATION_BID_LIST = 'PDD_AD_QUERY_LOCATION_BID_LIST';
+export const PDD_AD_QUERY_LOCATION_BID_LIST = 'pdd.ad.query.location.bid.list';
 
 /**
  * 接口名称：根据推广单元id获取现有资源位列表
@@ -132,12 +132,4 @@ export interface PddAdQueryLocationBidListOpenApiResponseResponseInterface {
    * @default:
    **/
   location_bid_id: string;
-}
-
-// 导出默认分类
-export default interface InterfaceDefaultInterface {
-  [PDD_AD_QUERY_LOCATION_BID_LIST]: {
-    requestInterface: PddAdQueryLocationBidListRequestInterface;
-    responseInterface: PddAdQueryLocationBidListResponseInterface;
-  };
 }

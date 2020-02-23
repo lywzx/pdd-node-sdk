@@ -1,4 +1,4 @@
-export const PDD_STOCK_WARE_DELETE = 'PDD_STOCK_WARE_DELETE';
+export const PDD_STOCK_WARE_DELETE = 'pdd.stock.ware.delete';
 
 /**
  * 接口名称：删除货品
@@ -26,12 +26,4 @@ export interface PddStockWareDeleteResponseInterface {
    * @default:
    **/
   open_api_response: boolean;
-}
-
-// 导出默认分类
-export default interface InterfaceDefaultInterface {
-  [PDD_STOCK_WARE_DELETE]: {
-    requestInterface: PddStockWareDeleteRequestInterface;
-    responseInterface: PddStockWareDeleteResponseInterface;
-  };
 }

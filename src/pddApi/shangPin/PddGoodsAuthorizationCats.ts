@@ -1,4 +1,4 @@
-export const PDD_GOODS_AUTHORIZATION_CATS = 'PDD_GOODS_AUTHORIZATION_CATS';
+export const PDD_GOODS_AUTHORIZATION_CATS = 'pdd.goods.authorization.cats';
 
 /**
  * 接口名称：获取当前授权商家可发布的商品类目信息
@@ -63,12 +63,4 @@ export interface PddGoodsAuthorizationCatsGoodsAuthCatsGetResponseGoodsCatsListR
    * @default:
    **/
   cat_id: string;
-}
-
-// 导出默认分类
-export default interface InterfaceDefaultInterface {
-  [PDD_GOODS_AUTHORIZATION_CATS]: {
-    requestInterface: PddGoodsAuthorizationCatsRequestInterface;
-    responseInterface: PddGoodsAuthorizationCatsResponseInterface;
-  };
 }

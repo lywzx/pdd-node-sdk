@@ -1,4 +1,4 @@
-export const PDD_LOGISTICS_ONLINE_CREATE = 'PDD_LOGISTICS_ONLINE_CREATE';
+export const PDD_LOGISTICS_ONLINE_CREATE = 'pdd.logistics.online.create';
 
 /**
  * 接口名称：在线下单订单下发接口
@@ -90,12 +90,4 @@ export interface PddLogisticsOnlineCreateLogisticsOnlineCreateResponseResponseIn
    * @default:
    **/
   is_success: boolean;
-}
-
-// 导出默认分类
-export default interface InterfaceDefaultInterface {
-  [PDD_LOGISTICS_ONLINE_CREATE]: {
-    requestInterface: PddLogisticsOnlineCreateRequestInterface;
-    responseInterface: PddLogisticsOnlineCreateResponseInterface;
-  };
 }

@@ -1,4 +1,4 @@
-export const PDD_MALL_TICKET_DETAIL = 'PDD_MALL_TICKET_DETAIL';
+export const PDD_MALL_TICKET_DETAIL = 'pdd.mall.ticket.detail';
 
 /**
  * 接口名称：商家工单详情查询接口
@@ -191,12 +191,4 @@ export interface PddMallTicketDetailMallTicketDetailResponseHistoryRecordAttachU
    * @default:
    **/
   url: string;
-}
-
-// 导出默认分类
-export default interface InterfaceDefaultInterface {
-  [PDD_MALL_TICKET_DETAIL]: {
-    requestInterface: PddMallTicketDetailRequestInterface;
-    responseInterface: PddMallTicketDetailResponseInterface;
-  };
 }

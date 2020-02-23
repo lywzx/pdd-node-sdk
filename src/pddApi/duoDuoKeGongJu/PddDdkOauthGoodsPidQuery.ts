@@ -1,4 +1,4 @@
-export const PDD_DDK_OAUTH_GOODS_PID_QUERY = 'PDD_DDK_OAUTH_GOODS_PID_QUERY';
+export const PDD_DDK_OAUTH_GOODS_PID_QUERY = 'pdd.ddk.oauth.goods.pid.query';
 
 /**
  * 接口名称：多多客已生成推广位信息查询
@@ -91,12 +91,4 @@ export interface PddDdkOauthGoodsPidQueryPIdQueryResponsePIdListResponseInterfac
    * @default:
    **/
   p_id: string;
-}
-
-// 导出默认分类
-export default interface InterfaceDefaultInterface {
-  [PDD_DDK_OAUTH_GOODS_PID_QUERY]: {
-    requestInterface: PddDdkOauthGoodsPidQueryRequestInterface;
-    responseInterface: PddDdkOauthGoodsPidQueryResponseInterface;
-  };
 }

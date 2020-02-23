@@ -1,4 +1,4 @@
-export const PDD_TIME_GET = 'PDD_TIME_GET';
+export const PDD_TIME_GET = 'pdd.time.get';
 
 /**
  * 接口名称：获取拼多多系统时间
@@ -35,12 +35,4 @@ export interface PddTimeGetTimeGetResponseResponseInterface {
    * @default:
    **/
   time: string;
-}
-
-// 导出默认分类
-export default interface InterfaceDefaultInterface {
-  [PDD_TIME_GET]: {
-    requestInterface: PddTimeGetRequestInterface;
-    responseInterface: PddTimeGetResponseInterface;
-  };
 }

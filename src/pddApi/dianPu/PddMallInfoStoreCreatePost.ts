@@ -1,4 +1,4 @@
-export const PDD_MALL_INFO_STORE_CREATE_POST = 'PDD_MALL_INFO_STORE_CREATE_POST';
+export const PDD_MALL_INFO_STORE_CREATE_POST = 'pdd.mall.info.store.create.post';
 
 /**
  * 接口名称：创建店铺门店
@@ -125,12 +125,4 @@ export interface PddMallInfoStoreCreatePostMallInfoStoreCreatePostResponseRespon
    * @default:
    **/
   is_success: boolean;
-}
-
-// 导出默认分类
-export default interface InterfaceDefaultInterface {
-  [PDD_MALL_INFO_STORE_CREATE_POST]: {
-    requestInterface: PddMallInfoStoreCreatePostRequestInterface;
-    responseInterface: PddMallInfoStoreCreatePostResponseInterface;
-  };
 }

@@ -1,4 +1,4 @@
-export const PDD_AD_UPDATE_LOCATION_BID = 'PDD_AD_UPDATE_LOCATION_BID';
+export const PDD_AD_UPDATE_LOCATION_BID = 'pdd.ad.update.location.bid';
 
 /**
  * 接口名称：推广单元修改资源位溢价（批量）
@@ -77,12 +77,4 @@ export interface PddAdUpdateLocationBidOpenApiResponseResponseInterface {
    * @default:
    **/
   is_success: boolean;
-}
-
-// 导出默认分类
-export default interface InterfaceDefaultInterface {
-  [PDD_AD_UPDATE_LOCATION_BID]: {
-    requestInterface: PddAdUpdateLocationBidRequestInterface;
-    responseInterface: PddAdUpdateLocationBidResponseInterface;
-  };
 }

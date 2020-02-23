@@ -1,4 +1,4 @@
-export const PDD_MALL_INFO_STORE_UPDATE_POST_NOPOI = 'PDD_MALL_INFO_STORE_UPDATE_POST_NOPOI';
+export const PDD_MALL_INFO_STORE_UPDATE_POST_NOPOI = 'pdd.mall.info.store.update.post.nopoi';
 
 /**
  * 接口名称：开放平台无PoiId编辑门店
@@ -117,12 +117,4 @@ export interface PddMallInfoStoreUpdatePostNopoiResponseInterface {
    * @default:
    **/
   res: string;
-}
-
-// 导出默认分类
-export default interface InterfaceDefaultInterface {
-  [PDD_MALL_INFO_STORE_UPDATE_POST_NOPOI]: {
-    requestInterface: PddMallInfoStoreUpdatePostNopoiRequestInterface;
-    responseInterface: PddMallInfoStoreUpdatePostNopoiResponseInterface;
-  };
 }

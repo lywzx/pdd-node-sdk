@@ -1,4 +1,4 @@
-export const PDD_REFUND_ADDRESS_LIST_GET = 'PDD_REFUND_ADDRESS_LIST_GET';
+export const PDD_REFUND_ADDRESS_LIST_GET = 'pdd.refund.address.list.get';
 
 /**
  * 接口名称：获取商家退货地址库
@@ -162,12 +162,4 @@ export interface PddRefundAddressListGetRefundAddressListGetResponseRefundAddres
    * @default:
    **/
   is_validated: boolean;
-}
-
-// 导出默认分类
-export default interface InterfaceDefaultInterface {
-  [PDD_REFUND_ADDRESS_LIST_GET]: {
-    requestInterface: PddRefundAddressListGetRequestInterface;
-    responseInterface: PddRefundAddressListGetResponseInterface;
-  };
 }

@@ -1,4 +1,4 @@
-export const PDD_GOODS_GET_RELATION = 'PDD_GOODS_GET_RELATION';
+export const PDD_GOODS_GET_RELATION = 'pdd.goods.get.relation';
 
 /**
  * 接口名称：商品映射查询接口
@@ -55,12 +55,4 @@ export interface PddGoodsGetRelationQueryGoodsRelationResponseResponseInterface 
    * @default:
    **/
   out_goods_id: string;
-}
-
-// 导出默认分类
-export default interface InterfaceDefaultInterface {
-  [PDD_GOODS_GET_RELATION]: {
-    requestInterface: PddGoodsGetRelationRequestInterface;
-    responseInterface: PddGoodsGetRelationResponseInterface;
-  };
 }

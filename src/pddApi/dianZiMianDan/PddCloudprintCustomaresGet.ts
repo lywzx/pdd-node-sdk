@@ -1,4 +1,4 @@
-export const PDD_CLOUDPRINT_CUSTOMARES_GET = 'PDD_CLOUDPRINT_CUSTOMARES_GET';
+export const PDD_CLOUDPRINT_CUSTOMARES_GET = 'pdd.cloudprint.customares.get';
 
 /**
  * 接口名称：获取商家的自定义区模板信息
@@ -107,12 +107,4 @@ export interface PddCloudprintCustomaresGetPddCloudprintCustomaresGetResponseRes
    * @default:
    **/
   key_name: string;
-}
-
-// 导出默认分类
-export default interface InterfaceDefaultInterface {
-  [PDD_CLOUDPRINT_CUSTOMARES_GET]: {
-    requestInterface: PddCloudprintCustomaresGetRequestInterface;
-    responseInterface: PddCloudprintCustomaresGetResponseInterface;
-  };
 }

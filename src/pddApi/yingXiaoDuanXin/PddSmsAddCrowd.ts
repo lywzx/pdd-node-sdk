@@ -1,4 +1,4 @@
-export const PDD_SMS_ADD_CROWD = 'PDD_SMS_ADD_CROWD';
+export const PDD_SMS_ADD_CROWD = 'pdd.sms.add.crowd';
 
 /**
  * 接口名称：新增人群
@@ -125,12 +125,4 @@ export interface PddSmsAddCrowdSmsAddCrowdResponseResponseInterface {
    * @default:
    **/
   result: string;
-}
-
-// 导出默认分类
-export default interface InterfaceDefaultInterface {
-  [PDD_SMS_ADD_CROWD]: {
-    requestInterface: PddSmsAddCrowdRequestInterface;
-    responseInterface: PddSmsAddCrowdResponseInterface;
-  };
 }

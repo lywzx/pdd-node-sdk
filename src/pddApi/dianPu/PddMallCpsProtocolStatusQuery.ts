@@ -1,4 +1,4 @@
-export const PDD_MALL_CPS_PROTOCOL_STATUS_QUERY = 'PDD_MALL_CPS_PROTOCOL_STATUS_QUERY';
+export const PDD_MALL_CPS_PROTOCOL_STATUS_QUERY = 'pdd.mall.cps.protocol.status.query';
 
 /**
  * 接口名称：查询店铺是否签署多多进宝协议接口
@@ -35,12 +35,4 @@ export interface PddMallCpsProtocolStatusQueryMallCpsProtocolStatusQueryResponse
    * @default:
    **/
   status: boolean;
-}
-
-// 导出默认分类
-export default interface InterfaceDefaultInterface {
-  [PDD_MALL_CPS_PROTOCOL_STATUS_QUERY]: {
-    requestInterface: PddMallCpsProtocolStatusQueryRequestInterface;
-    responseInterface: PddMallCpsProtocolStatusQueryResponseInterface;
-  };
 }

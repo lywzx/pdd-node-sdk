@@ -1,4 +1,4 @@
-export const PDD_DDK_OAUTH_GOODS_RECOMMEND_GET = 'PDD_DDK_OAUTH_GOODS_RECOMMEND_GET';
+export const PDD_DDK_OAUTH_GOODS_RECOMMEND_GET = 'pdd.ddk.oauth.goods.recommend.get';
 
 /**
  * 接口名称：运营频道商品查询API
@@ -378,12 +378,4 @@ export interface PddDdkOauthGoodsRecommendGetGoodsBasicDetailResponseListRespons
    * @default:
    **/
   search_id: string;
-}
-
-// 导出默认分类
-export default interface InterfaceDefaultInterface {
-  [PDD_DDK_OAUTH_GOODS_RECOMMEND_GET]: {
-    requestInterface: PddDdkOauthGoodsRecommendGetRequestInterface;
-    responseInterface: PddDdkOauthGoodsRecommendGetResponseInterface;
-  };
 }

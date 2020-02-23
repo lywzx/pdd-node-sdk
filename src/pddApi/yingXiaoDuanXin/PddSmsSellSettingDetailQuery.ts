@@ -1,4 +1,4 @@
-export const PDD_SMS_SELL_SETTING_DETAIL_QUERY = 'PDD_SMS_SELL_SETTING_DETAIL_QUERY';
+export const PDD_SMS_SELL_SETTING_DETAIL_QUERY = 'pdd.sms.sell.setting.detail.query';
 
 /**
  * 接口名称：营销短信设置详情
@@ -324,12 +324,4 @@ export interface PddSmsSellSettingDetailQuerySmsSellSettingDetailQueryResponseTa
    * @default:
    **/
   people_num: number;
-}
-
-// 导出默认分类
-export default interface InterfaceDefaultInterface {
-  [PDD_SMS_SELL_SETTING_DETAIL_QUERY]: {
-    requestInterface: PddSmsSellSettingDetailQueryRequestInterface;
-    responseInterface: PddSmsSellSettingDetailQueryResponseInterface;
-  };
 }

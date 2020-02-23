@@ -1,4 +1,4 @@
-export const PDD_MALL_INFO_GROUP_ADD_STORE_POST = 'PDD_MALL_INFO_GROUP_ADD_STORE_POST';
+export const PDD_MALL_INFO_GROUP_ADD_STORE_POST = 'pdd.mall.info.group.add.store.post';
 
 /**
  * 接口名称：门店组添加门店
@@ -48,12 +48,4 @@ export interface PddMallInfoGroupAddStorePostMallInfoGroupAddStorePostResponseRe
    * @default:
    **/
   is_success: boolean;
-}
-
-// 导出默认分类
-export default interface InterfaceDefaultInterface {
-  [PDD_MALL_INFO_GROUP_ADD_STORE_POST]: {
-    requestInterface: PddMallInfoGroupAddStorePostRequestInterface;
-    responseInterface: PddMallInfoGroupAddStorePostResponseInterface;
-  };
 }

@@ -1,4 +1,4 @@
-export const PDD_STOCK_WARE_INFO_LIST = 'PDD_STOCK_WARE_INFO_LIST';
+export const PDD_STOCK_WARE_INFO_LIST = 'pdd.stock.ware.info.list';
 
 /**
  * 接口名称：货品列表的查询接口
@@ -70,12 +70,4 @@ export interface PddStockWareInfoListStockWareInfoListResponseWareListResponseIn
    * @default:
    **/
   is_deleted: boolean;
-}
-
-// 导出默认分类
-export default interface InterfaceDefaultInterface {
-  [PDD_STOCK_WARE_INFO_LIST]: {
-    requestInterface: PddStockWareInfoListRequestInterface;
-    responseInterface: PddStockWareInfoListResponseInterface;
-  };
 }

@@ -1,4 +1,4 @@
-export const PDD_AD_CAN_CREATE_PLAN = 'PDD_AD_CAN_CREATE_PLAN';
+export const PDD_AD_CAN_CREATE_PLAN = 'pdd.ad.can.create.plan';
 
 /**
  * 接口名称：是否可以创建计划验证接口
@@ -48,12 +48,4 @@ export interface PddAdCanCreatePlanAdPlanCreateResponseResponseInterface {
    * @default:
    **/
   creatable: boolean;
-}
-
-// 导出默认分类
-export default interface InterfaceDefaultInterface {
-  [PDD_AD_CAN_CREATE_PLAN]: {
-    requestInterface: PddAdCanCreatePlanRequestInterface;
-    responseInterface: PddAdCanCreatePlanResponseInterface;
-  };
 }

@@ -1,4 +1,4 @@
-export const PDD_OPEN_MSG_SERVICE_SEND_BATCH_MSG = 'PDD_OPEN_MSG_SERVICE_SEND_BATCH_MSG';
+export const PDD_OPEN_MSG_SERVICE_SEND_BATCH_MSG = 'pdd.open.msg.service.send.batch.msg';
 
 /**
  * 接口名称：短信批量发送接口
@@ -90,12 +90,4 @@ export interface PddOpenMsgServiceSendBatchMsgResponseInterface {
    * @default:
    **/
   biz_id: string;
-}
-
-// 导出默认分类
-export default interface InterfaceDefaultInterface {
-  [PDD_OPEN_MSG_SERVICE_SEND_BATCH_MSG]: {
-    requestInterface: PddOpenMsgServiceSendBatchMsgRequestInterface;
-    responseInterface: PddOpenMsgServiceSendBatchMsgResponseInterface;
-  };
 }

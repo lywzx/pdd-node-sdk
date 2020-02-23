@@ -1,4 +1,4 @@
-export const PDD_UTIL_DIVIDE_BASE64_IMAGE = 'PDD_UTIL_DIVIDE_BASE64_IMAGE';
+export const PDD_UTIL_DIVIDE_BASE64_IMAGE = 'pdd.util.divide.base64.image';
 
 /**
  * 接口名称：图片切割接口
@@ -26,12 +26,4 @@ export interface PddUtilDivideBase64ImageResponseInterface {
    * @default:
    **/
   open_api_response: string;
-}
-
-// 导出默认分类
-export default interface InterfaceDefaultInterface {
-  [PDD_UTIL_DIVIDE_BASE64_IMAGE]: {
-    requestInterface: PddUtilDivideBase64ImageRequestInterface;
-    responseInterface: PddUtilDivideBase64ImageResponseInterface;
-  };
 }

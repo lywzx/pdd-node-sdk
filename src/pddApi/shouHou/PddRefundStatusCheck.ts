@@ -1,4 +1,4 @@
-export const PDD_REFUND_STATUS_CHECK = 'PDD_REFUND_STATUS_CHECK';
+export const PDD_REFUND_STATUS_CHECK = 'pdd.refund.status.check';
 
 /**
  * 接口名称：售后校验接口
@@ -56,12 +56,4 @@ export interface PddRefundStatusCheckRefundStatusCheckResponseOrderSnsExistsRefu
    * @default:
    **/
   order_sn: string;
-}
-
-// 导出默认分类
-export default interface InterfaceDefaultInterface {
-  [PDD_REFUND_STATUS_CHECK]: {
-    requestInterface: PddRefundStatusCheckRequestInterface;
-    responseInterface: PddRefundStatusCheckResponseInterface;
-  };
 }

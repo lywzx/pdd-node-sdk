@@ -1,4 +1,4 @@
-export const PDD_AD_CREATIVE_QUERY = 'PDD_AD_CREATIVE_QUERY';
+export const PDD_AD_CREATIVE_QUERY = 'pdd.ad.creative.query';
 
 /**
  * 接口名称：根据推广单元id获取现有创意列表
@@ -188,12 +188,4 @@ export interface PddAdCreativeQueryOpenApiResponseResponseInterface {
    * @default:
    **/
   creative_id: string;
-}
-
-// 导出默认分类
-export default interface InterfaceDefaultInterface {
-  [PDD_AD_CREATIVE_QUERY]: {
-    requestInterface: PddAdCreativeQueryRequestInterface;
-    responseInterface: PddAdCreativeQueryResponseInterface;
-  };
 }

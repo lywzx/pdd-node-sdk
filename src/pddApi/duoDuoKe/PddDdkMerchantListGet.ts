@@ -1,4 +1,4 @@
-export const PDD_DDK_MERCHANT_LIST_GET = 'PDD_DDK_MERCHANT_LIST_GET';
+export const PDD_DDK_MERCHANT_LIST_GET = 'pdd.ddk.merchant.list.get';
 
 /**
  * 接口名称：多多客查店铺列表接口
@@ -716,12 +716,4 @@ export interface PddDdkMerchantListGetMerchantListResponseMallSearchInfoVoListMa
    * @default:
    **/
   min_order_amount: number;
-}
-
-// 导出默认分类
-export default interface InterfaceDefaultInterface {
-  [PDD_DDK_MERCHANT_LIST_GET]: {
-    requestInterface: PddDdkMerchantListGetRequestInterface;
-    responseInterface: PddDdkMerchantListGetResponseInterface;
-  };
 }

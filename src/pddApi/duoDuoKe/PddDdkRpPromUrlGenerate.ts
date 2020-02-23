@@ -1,4 +1,4 @@
-export const PDD_DDK_RP_PROM_URL_GENERATE = 'PDD_DDK_RP_PROM_URL_GENERATE';
+export const PDD_DDK_RP_PROM_URL_GENERATE = 'pdd.ddk.rp.prom.url.generate';
 
 /**
  * 接口名称：生成营销工具推广链接
@@ -454,12 +454,4 @@ export interface PddDdkRpPromUrlGenerateRpPromotionUrlGenerateResponseUrlListWeA
    * @default:
    **/
   we_app_icon_url: string;
-}
-
-// 导出默认分类
-export default interface InterfaceDefaultInterface {
-  [PDD_DDK_RP_PROM_URL_GENERATE]: {
-    requestInterface: PddDdkRpPromUrlGenerateRequestInterface;
-    responseInterface: PddDdkRpPromUrlGenerateResponseInterface;
-  };
 }

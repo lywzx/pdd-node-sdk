@@ -1,4 +1,4 @@
-export const PDD_AD_PLAN_DELETE = 'PDD_AD_PLAN_DELETE';
+export const PDD_AD_PLAN_DELETE = 'pdd.ad.plan.delete';
 
 /**
  * 接口名称：删除推广计划
@@ -48,12 +48,4 @@ export interface PddAdPlanDeleteAdPlanDeleteResponseResponseInterface {
    * @default:
    **/
   is_success: boolean;
-}
-
-// 导出默认分类
-export default interface InterfaceDefaultInterface {
-  [PDD_AD_PLAN_DELETE]: {
-    requestInterface: PddAdPlanDeleteRequestInterface;
-    responseInterface: PddAdPlanDeleteResponseInterface;
-  };
 }

@@ -1,4 +1,4 @@
-export const PDD_SMS_SELL_RECORD_LIST_QUERY = 'PDD_SMS_SELL_RECORD_LIST_QUERY';
+export const PDD_SMS_SELL_RECORD_LIST_QUERY = 'pdd.sms.sell.record.list.query';
 
 /**
  * 接口名称：查询短信发送任务列表
@@ -136,12 +136,4 @@ export interface PddSmsSellRecordListQuerySmsSellRecordListQueryResponseResultRe
    * @default:
    **/
   open: number;
-}
-
-// 导出默认分类
-export default interface InterfaceDefaultInterface {
-  [PDD_SMS_SELL_RECORD_LIST_QUERY]: {
-    requestInterface: PddSmsSellRecordListQueryRequestInterface;
-    responseInterface: PddSmsSellRecordListQueryResponseInterface;
-  };
 }

@@ -1,4 +1,4 @@
-export const PDD_STOCK_WARE_DETAIL_QUERY = 'PDD_STOCK_WARE_DETAIL_QUERY';
+export const PDD_STOCK_WARE_DETAIL_QUERY = 'pdd.stock.ware.detail.query';
 
 /**
  * 接口名称：查询货品详情
@@ -303,12 +303,4 @@ export interface PddStockWareDetailQueryOpenApiResponseWareSkusSpecsResponseInte
    * @default:
    **/
   spec_value: string;
-}
-
-// 导出默认分类
-export default interface InterfaceDefaultInterface {
-  [PDD_STOCK_WARE_DETAIL_QUERY]: {
-    requestInterface: PddStockWareDetailQueryRequestInterface;
-    responseInterface: PddStockWareDetailQueryResponseInterface;
-  };
 }

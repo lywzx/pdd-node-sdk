@@ -1,4 +1,4 @@
-export const PDD_ORDER_INFORMATION_GET = 'PDD_ORDER_INFORMATION_GET';
+export const PDD_ORDER_INFORMATION_GET = 'pdd.order.information.get';
 
 /**
  * 接口名称：订单详情
@@ -769,12 +769,4 @@ export interface PddOrderInformationGetOrderInfoGetResponseOrderInfoStoreInfoRes
    * @default:
    **/
   store_number: string;
-}
-
-// 导出默认分类
-export default interface InterfaceDefaultInterface {
-  [PDD_ORDER_INFORMATION_GET]: {
-    requestInterface: PddOrderInformationGetRequestInterface;
-    responseInterface: PddOrderInformationGetResponseInterface;
-  };
 }

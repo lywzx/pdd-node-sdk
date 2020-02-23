@@ -1,4 +1,4 @@
-export const PDD_EXPRESS_DEPOT_INFO_GET = 'PDD_EXPRESS_DEPOT_INFO_GET';
+export const PDD_EXPRESS_DEPOT_INFO_GET = 'pdd.express.depot.info.get';
 
 /**
  * 接口名称：仓库详细信息
@@ -256,12 +256,4 @@ export interface PddExpressDepotInfoGetRegionValueDistrictResponseInterface {
    * @default:
    **/
   value: string;
-}
-
-// 导出默认分类
-export default interface InterfaceDefaultInterface {
-  [PDD_EXPRESS_DEPOT_INFO_GET]: {
-    requestInterface: PddExpressDepotInfoGetRequestInterface;
-    responseInterface: PddExpressDepotInfoGetResponseInterface;
-  };
 }

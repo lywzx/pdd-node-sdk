@@ -1,4 +1,4 @@
-export const PDD_GOODS_RELATION_SET = 'PDD_GOODS_RELATION_SET';
+export const PDD_GOODS_RELATION_SET = 'pdd.goods.relation.set';
 
 /**
  * 接口名称：商品关联信息设置接口
@@ -90,12 +90,4 @@ export interface PddGoodsRelationSetGoodsRelationSetResponseResponseInterface {
    * @default:
    **/
   is_success: boolean;
-}
-
-// 导出默认分类
-export default interface InterfaceDefaultInterface {
-  [PDD_GOODS_RELATION_SET]: {
-    requestInterface: PddGoodsRelationSetRequestInterface;
-    responseInterface: PddGoodsRelationSetResponseInterface;
-  };
 }

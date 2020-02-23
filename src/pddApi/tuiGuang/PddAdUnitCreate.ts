@@ -1,4 +1,4 @@
-export const PDD_AD_UNIT_CREATE = 'PDD_AD_UNIT_CREATE';
+export const PDD_AD_UNIT_CREATE = 'pdd.ad.unit.create';
 
 /**
  * 接口名称：添加推广单元
@@ -128,12 +128,4 @@ export interface PddAdUnitCreateAdUnitCreateResponseResponseInterface {
    * @default:
    **/
   is_success: boolean;
-}
-
-// 导出默认分类
-export default interface InterfaceDefaultInterface {
-  [PDD_AD_UNIT_CREATE]: {
-    requestInterface: PddAdUnitCreateRequestInterface;
-    responseInterface: PddAdUnitCreateResponseInterface;
-  };
 }

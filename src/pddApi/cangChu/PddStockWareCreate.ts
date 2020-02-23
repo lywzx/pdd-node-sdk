@@ -1,4 +1,4 @@
-export const PDD_STOCK_WARE_CREATE = 'PDD_STOCK_WARE_CREATE';
+export const PDD_STOCK_WARE_CREATE = 'pdd.stock.ware.create';
 
 /**
  * 接口名称：创建货品
@@ -160,12 +160,4 @@ export interface PddStockWareCreateResponseInterface {
    * @default:
    **/
   open_api_response: number;
-}
-
-// 导出默认分类
-export default interface InterfaceDefaultInterface {
-  [PDD_STOCK_WARE_CREATE]: {
-    requestInterface: PddStockWareCreateRequestInterface;
-    responseInterface: PddStockWareCreateResponseInterface;
-  };
 }

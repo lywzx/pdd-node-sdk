@@ -1,4 +1,4 @@
-export const PDD_AD_CREATIVE_UPDATE = 'PDD_AD_CREATIVE_UPDATE';
+export const PDD_AD_CREATIVE_UPDATE = 'pdd.ad.creative.update';
 
 /**
  * 接口名称：推广单元修改创意图片、创意标题
@@ -62,12 +62,4 @@ export interface PddAdCreativeUpdateResponseInterface {
    * @default:
    **/
   open_api_response: boolean;
-}
-
-// 导出默认分类
-export default interface InterfaceDefaultInterface {
-  [PDD_AD_CREATIVE_UPDATE]: {
-    requestInterface: PddAdCreativeUpdateRequestInterface;
-    responseInterface: PddAdCreativeUpdateResponseInterface;
-  };
 }

@@ -1,4 +1,4 @@
-export const PDD_STOCK_DEPOT_PRIORITY_LIST = 'PDD_STOCK_DEPOT_PRIORITY_LIST';
+export const PDD_STOCK_DEPOT_PRIORITY_LIST = 'pdd.stock.depot.priority.list';
 
 /**
  * 接口名称：仓库优先级列表
@@ -140,12 +140,4 @@ export interface PddStockDepotPriorityListOpenApiResponseDepotListResponseInterf
    * @default:
    **/
   priority: number;
-}
-
-// 导出默认分类
-export default interface InterfaceDefaultInterface {
-  [PDD_STOCK_DEPOT_PRIORITY_LIST]: {
-    requestInterface: PddStockDepotPriorityListRequestInterface;
-    responseInterface: PddStockDepotPriorityListResponseInterface;
-  };
 }

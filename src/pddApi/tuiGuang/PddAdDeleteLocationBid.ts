@@ -1,4 +1,4 @@
-export const PDD_AD_DELETE_LOCATION_BID = 'PDD_AD_DELETE_LOCATION_BID';
+export const PDD_AD_DELETE_LOCATION_BID = 'pdd.ad.delete.location.bid';
 
 /**
  * 接口名称：推广单元取消资源位
@@ -55,12 +55,4 @@ export interface PddAdDeleteLocationBidOpenApiResponseResponseInterface {
    * @default:
    **/
   is_success: boolean;
-}
-
-// 导出默认分类
-export default interface InterfaceDefaultInterface {
-  [PDD_AD_DELETE_LOCATION_BID]: {
-    requestInterface: PddAdDeleteLocationBidRequestInterface;
-    responseInterface: PddAdDeleteLocationBidResponseInterface;
-  };
 }

@@ -1,4 +1,4 @@
-export const PDD_DDK_OAUTH_LOTTERY_URL_GEN = 'PDD_DDK_OAUTH_LOTTERY_URL_GEN';
+export const PDD_DDK_OAUTH_LOTTERY_URL_GEN = 'pdd.ddk.oauth.lottery.url.gen';
 
 /**
  * 接口名称：多多客工具生成转盘抽免单url
@@ -396,12 +396,4 @@ export interface PddDdkOauthLotteryUrlGenLotteryUrlResponseUrlListWeAppInfoRespo
    * @default:
    **/
   title: string;
-}
-
-// 导出默认分类
-export default interface InterfaceDefaultInterface {
-  [PDD_DDK_OAUTH_LOTTERY_URL_GEN]: {
-    requestInterface: PddDdkOauthLotteryUrlGenRequestInterface;
-    responseInterface: PddDdkOauthLotteryUrlGenResponseInterface;
-  };
 }

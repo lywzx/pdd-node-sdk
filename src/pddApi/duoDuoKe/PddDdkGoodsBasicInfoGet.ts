@@ -1,4 +1,4 @@
-export const PDD_DDK_GOODS_BASIC_INFO_GET = 'PDD_DDK_GOODS_BASIC_INFO_GET';
+export const PDD_DDK_GOODS_BASIC_INFO_GET = 'pdd.ddk.goods.basic.info.get';
 
 /**
  * 接口名称：获取商品基本信息接口
@@ -84,12 +84,4 @@ export interface PddDdkGoodsBasicInfoGetGoodsBasicDetailResponseGoodsListRespons
    * @default:
    **/
   goods_name: string;
-}
-
-// 导出默认分类
-export default interface InterfaceDefaultInterface {
-  [PDD_DDK_GOODS_BASIC_INFO_GET]: {
-    requestInterface: PddDdkGoodsBasicInfoGetRequestInterface;
-    responseInterface: PddDdkGoodsBasicInfoGetResponseInterface;
-  };
 }

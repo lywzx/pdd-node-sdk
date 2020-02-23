@@ -1,4 +1,4 @@
-export const PDD_GOODS_LOGISTICS_SER_TEMPLATE_CREATE = 'PDD_GOODS_LOGISTICS_SER_TEMPLATE_CREATE';
+export const PDD_GOODS_LOGISTICS_SER_TEMPLATE_CREATE = 'pdd.goods.logistics.ser.template.create';
 
 /**
  * 接口名称：商品送装服务模版新增
@@ -192,12 +192,4 @@ export interface PddGoodsLogisticsSerTemplateCreateGoodsLogisticsSerTemplateCrea
    * @default:
    **/
   template_id: string;
-}
-
-// 导出默认分类
-export default interface InterfaceDefaultInterface {
-  [PDD_GOODS_LOGISTICS_SER_TEMPLATE_CREATE]: {
-    requestInterface: PddGoodsLogisticsSerTemplateCreateRequestInterface;
-    responseInterface: PddGoodsLogisticsSerTemplateCreateResponseInterface;
-  };
 }

@@ -1,4 +1,4 @@
-export const PDD_SMS_SELL_SETTING = 'PDD_SMS_SELL_SETTING';
+export const PDD_SMS_SELL_SETTING = 'pdd.sms.sell.setting';
 
 /**
  * 接口名称：营销类短信设置
@@ -69,12 +69,4 @@ export interface PddSmsSellSettingSmsSellSettingResponseResponseInterface {
    * @default:
    **/
   result: string;
-}
-
-// 导出默认分类
-export default interface InterfaceDefaultInterface {
-  [PDD_SMS_SELL_SETTING]: {
-    requestInterface: PddSmsSellSettingRequestInterface;
-    responseInterface: PddSmsSellSettingResponseInterface;
-  };
 }

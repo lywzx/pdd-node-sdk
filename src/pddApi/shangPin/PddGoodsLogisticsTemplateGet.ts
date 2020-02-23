@@ -1,4 +1,4 @@
-export const PDD_GOODS_LOGISTICS_TEMPLATE_GET = 'PDD_GOODS_LOGISTICS_TEMPLATE_GET';
+export const PDD_GOODS_LOGISTICS_TEMPLATE_GET = 'pdd.goods.logistics.template.get';
 
 /**
  * 接口名称：商品运费模版接口
@@ -241,12 +241,4 @@ export interface PddGoodsLogisticsTemplateGetGoodsLogisticsTemplateGetResponseLo
    * @default:
    **/
   province: string;
-}
-
-// 导出默认分类
-export default interface InterfaceDefaultInterface {
-  [PDD_GOODS_LOGISTICS_TEMPLATE_GET]: {
-    requestInterface: PddGoodsLogisticsTemplateGetRequestInterface;
-    responseInterface: PddGoodsLogisticsTemplateGetResponseInterface;
-  };
 }

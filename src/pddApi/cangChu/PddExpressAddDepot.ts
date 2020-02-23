@@ -1,4 +1,4 @@
-export const PDD_EXPRESS_ADD_DEPOT = 'PDD_EXPRESS_ADD_DEPOT';
+export const PDD_EXPRESS_ADD_DEPOT = 'pdd.express.add.depot';
 
 /**
  * 接口名称：增加仓库
@@ -150,12 +150,4 @@ export interface PddExpressAddDepotResponseInterface {
    * @default:
    **/
   open_api_response: string;
-}
-
-// 导出默认分类
-export default interface InterfaceDefaultInterface {
-  [PDD_EXPRESS_ADD_DEPOT]: {
-    requestInterface: PddExpressAddDepotRequestInterface;
-    responseInterface: PddExpressAddDepotResponseInterface;
-  };
 }

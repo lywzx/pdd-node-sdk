@@ -1,4 +1,4 @@
-export const PDD_AD_PLAN_INFO_LIST_GET = 'PDD_AD_PLAN_INFO_LIST_GET';
+export const PDD_AD_PLAN_INFO_LIST_GET = 'pdd.ad.plan.info.list.get';
 
 /**
  * 接口名称：获取现有计划基础信息
@@ -105,12 +105,4 @@ export interface PddAdPlanInfoListGetAdPlanInfoListResponsePlanInfoListResponseI
    * @default:
    **/
   plan_id: string;
-}
-
-// 导出默认分类
-export default interface InterfaceDefaultInterface {
-  [PDD_AD_PLAN_INFO_LIST_GET]: {
-    requestInterface: PddAdPlanInfoListGetRequestInterface;
-    responseInterface: PddAdPlanInfoListGetResponseInterface;
-  };
 }

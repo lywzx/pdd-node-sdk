@@ -1,4 +1,4 @@
-export const PDD_DDK_MALL_URL_GEN = 'PDD_DDK_MALL_URL_GEN';
+export const PDD_DDK_MALL_URL_GEN = 'pdd.ddk.mall.url.gen';
 
 /**
  * 接口名称：多多客生成店铺推广链接API
@@ -225,12 +225,4 @@ export interface PddDdkMallUrlGenMallCouponGenerateUrlResponseListQqAppInfoRespo
    * @default:
    **/
   user_name: string;
-}
-
-// 导出默认分类
-export default interface InterfaceDefaultInterface {
-  [PDD_DDK_MALL_URL_GEN]: {
-    requestInterface: PddDdkMallUrlGenRequestInterface;
-    responseInterface: PddDdkMallUrlGenResponseInterface;
-  };
 }

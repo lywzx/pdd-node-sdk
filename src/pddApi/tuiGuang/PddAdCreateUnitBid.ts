@@ -1,4 +1,4 @@
-export const PDD_AD_CREATE_UNIT_BID = 'PDD_AD_CREATE_UNIT_BID';
+export const PDD_AD_CREATE_UNIT_BID = 'pdd.ad.create.unit.bid';
 
 /**
  * 接口名称：推广单元增加定向（“定向”包括兴趣点）
@@ -94,12 +94,4 @@ export interface PddAdCreateUnitBidOpenApiResponseResponseInterface {
    * @default:
    **/
   is_success: boolean;
-}
-
-// 导出默认分类
-export default interface InterfaceDefaultInterface {
-  [PDD_AD_CREATE_UNIT_BID]: {
-    requestInterface: PddAdCreateUnitBidRequestInterface;
-    responseInterface: PddAdCreateUnitBidResponseInterface;
-  };
 }

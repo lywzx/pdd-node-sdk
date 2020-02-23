@@ -1,4 +1,4 @@
-export const PDD_GOODS_LOGISTICS_SER_TEMPLATE_DELETE = 'PDD_GOODS_LOGISTICS_SER_TEMPLATE_DELETE';
+export const PDD_GOODS_LOGISTICS_SER_TEMPLATE_DELETE = 'pdd.goods.logistics.ser.template.delete';
 
 /**
  * 接口名称：商品送装服务模版删除
@@ -41,12 +41,4 @@ export interface PddGoodsLogisticsSerTemplateDeleteGoodsLogisticsSerTemplateDele
    * @default:
    **/
   is_success: boolean;
-}
-
-// 导出默认分类
-export default interface InterfaceDefaultInterface {
-  [PDD_GOODS_LOGISTICS_SER_TEMPLATE_DELETE]: {
-    requestInterface: PddGoodsLogisticsSerTemplateDeleteRequestInterface;
-    responseInterface: PddGoodsLogisticsSerTemplateDeleteResponseInterface;
-  };
 }

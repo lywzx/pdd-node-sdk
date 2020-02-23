@@ -1,4 +1,4 @@
-export const PDD_GOODS_CPS_UNIT_DELETE = 'PDD_GOODS_CPS_UNIT_DELETE';
+export const PDD_GOODS_CPS_UNIT_DELETE = 'pdd.goods.cps.unit.delete';
 
 /**
  * 接口名称：删除单品计划接口
@@ -41,12 +41,4 @@ export interface PddGoodsCpsUnitDeleteGoodsCpsUnitDeleteResponseResponseInterfac
    * @default:
    **/
   success: boolean;
-}
-
-// 导出默认分类
-export default interface InterfaceDefaultInterface {
-  [PDD_GOODS_CPS_UNIT_DELETE]: {
-    requestInterface: PddGoodsCpsUnitDeleteRequestInterface;
-    responseInterface: PddGoodsCpsUnitDeleteResponseInterface;
-  };
 }

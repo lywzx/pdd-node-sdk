@@ -1,4 +1,4 @@
-export const PDD_VOUCHER_APPOINTMENT_INFO_SEND = 'PDD_VOUCHER_APPOINTMENT_INFO_SEND';
+export const PDD_VOUCHER_APPOINTMENT_INFO_SEND = 'pdd.voucher.appointment.info.send';
 
 /**
  * 接口名称：卡券预约提货接口
@@ -91,12 +91,4 @@ export interface PddVoucherAppointmentInfoSendVoucherAppointmentInfoSendResponse
    * @default:
    **/
   is_success: boolean;
-}
-
-// 导出默认分类
-export default interface InterfaceDefaultInterface {
-  [PDD_VOUCHER_APPOINTMENT_INFO_SEND]: {
-    requestInterface: PddVoucherAppointmentInfoSendRequestInterface;
-    responseInterface: PddVoucherAppointmentInfoSendResponseInterface;
-  };
 }

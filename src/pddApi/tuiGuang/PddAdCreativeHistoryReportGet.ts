@@ -1,4 +1,4 @@
-export const PDD_AD_CREATIVE_HISTORY_REPORT_GET = 'PDD_AD_CREATIVE_HISTORY_REPORT_GET';
+export const PDD_AD_CREATIVE_HISTORY_REPORT_GET = 'pdd.ad.creative.history.report.get';
 
 /**
  * 接口名称：创意历史报表数据
@@ -269,12 +269,4 @@ export interface PddAdCreativeHistoryReportGetOpenApiResponseResultResponseInter
    * @default:
    **/
   title: string;
-}
-
-// 导出默认分类
-export default interface InterfaceDefaultInterface {
-  [PDD_AD_CREATIVE_HISTORY_REPORT_GET]: {
-    requestInterface: PddAdCreativeHistoryReportGetRequestInterface;
-    responseInterface: PddAdCreativeHistoryReportGetResponseInterface;
-  };
 }

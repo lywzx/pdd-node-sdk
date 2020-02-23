@@ -1,4 +1,4 @@
-export const PDD_DDK_CMS_PROM_URL_GENERATE = 'PDD_DDK_CMS_PROM_URL_GENERATE';
+export const PDD_DDK_CMS_PROM_URL_GENERATE = 'pdd.ddk.cms.prom.url.generate';
 
 /**
  * 接口名称：生成商城-频道推广链接
@@ -338,12 +338,4 @@ export interface PddDdkCmsPromUrlGenerateCmsPromotionUrlGenerateResponseUrlListS
    * @default:
    **/
   schema_url: string;
-}
-
-// 导出默认分类
-export default interface InterfaceDefaultInterface {
-  [PDD_DDK_CMS_PROM_URL_GENERATE]: {
-    requestInterface: PddDdkCmsPromUrlGenerateRequestInterface;
-    responseInterface: PddDdkCmsPromUrlGenerateResponseInterface;
-  };
 }

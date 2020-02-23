@@ -1,4 +1,4 @@
-export const PDD_AD_QUERY_UNIT_BID_HISTORY_REPORT = 'PDD_AD_QUERY_UNIT_BID_HISTORY_REPORT';
+export const PDD_AD_QUERY_UNIT_BID_HISTORY_REPORT = 'pdd.ad.query.unit.bid.history.report';
 
 /**
  * 接口名称：定向历史报表数据
@@ -290,12 +290,4 @@ export interface PddAdQueryUnitBidHistoryReportOpenApiResponseResultResponseInte
    * @default:
    **/
   mall_id: string;
-}
-
-// 导出默认分类
-export default interface InterfaceDefaultInterface {
-  [PDD_AD_QUERY_UNIT_BID_HISTORY_REPORT]: {
-    requestInterface: PddAdQueryUnitBidHistoryReportRequestInterface;
-    responseInterface: PddAdQueryUnitBidHistoryReportResponseInterface;
-  };
 }

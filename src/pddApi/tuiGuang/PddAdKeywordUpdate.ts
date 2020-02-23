@@ -1,4 +1,4 @@
-export const PDD_AD_KEYWORD_UPDATE = 'PDD_AD_KEYWORD_UPDATE';
+export const PDD_AD_KEYWORD_UPDATE = 'pdd.ad.keyword.update';
 
 /**
  * 接口名称：推广单元修改关键词出价
@@ -70,12 +70,4 @@ export interface PddAdKeywordUpdateAdKeywordUpdateResponseResponseInterface {
    * @default:
    **/
   is_success: boolean;
-}
-
-// 导出默认分类
-export default interface InterfaceDefaultInterface {
-  [PDD_AD_KEYWORD_UPDATE]: {
-    requestInterface: PddAdKeywordUpdateRequestInterface;
-    responseInterface: PddAdKeywordUpdateResponseInterface;
-  };
 }

@@ -1,4 +1,4 @@
-export const PDD_SMS_TEMPLATE_QUERY = 'PDD_SMS_TEMPLATE_QUERY';
+export const PDD_SMS_TEMPLATE_QUERY = 'pdd.sms.template.query';
 
 /**
  * 接口名称：查询官方模板
@@ -72,12 +72,4 @@ export interface PddSmsTemplateQuerySmsTemplateQueryResponseResultResponseInterf
    * @default:
    **/
   desc: string;
-}
-
-// 导出默认分类
-export default interface InterfaceDefaultInterface {
-  [PDD_SMS_TEMPLATE_QUERY]: {
-    requestInterface: PddSmsTemplateQueryRequestInterface;
-    responseInterface: PddSmsTemplateQueryResponseInterface;
-  };
 }

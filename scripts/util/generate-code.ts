@@ -8,7 +8,7 @@ import { tree } from './index';
 import { CodeColumnInterface, CodeInterface } from '../interface/code.interface';
 import { TreeType } from '../interface/tree.interface';
 import { RunStateFileInterface, RunStateInterface } from '../interface/run-state.interface';
-import { map, zip, flatten } from 'lodash';
+import { map, flattenDeep } from 'lodash';
 
 // 创建代码
 export function generateCode(apiId: string, detail: ApiDetailInterface) {
@@ -18,19 +18,12 @@ export function generateCode(apiId: string, detail: ApiDetailInterface) {
 
   const responseClassCode = buildParamsToCodeArr(detail.responseParamList, detail, 'response');
 
-  return `export const ${apiIdConstant} = '${apiIdConstant}';
+  return `export const ${apiIdConstant} = '${apiId}';
 
 ${codeToString(requestClassCode)}
 
 ${codeToString(responseClassCode)}
-
-// 导出默认分类
-export default interface InterfaceDefaultInterface {
-  [${apiIdConstant}]: {
-    requestInterface: ${createRequestClassName(apiId)};
-    responseInterface: ${createResponseClassName(apiId)};
-  }
-}`;
+`;
 }
 
 export function buildParamsToCodeArr(
@@ -184,25 +177,94 @@ function pddTypeToTypescriptType(type: string) {
  * @param state
  */
 export async function generatorIndexCode(state: RunStateInterface) {
-  const exportAnyCode = map(state.resolvedFiles, (resolved, directory: string) => {
+  const importCodes = map(state.resolvedFiles, resolved => {
     return [
       `// ${resolved.name}`,
       ...map(resolved.files, (file: RunStateFileInterface) => {
-        return `export * from '${file.name}';`;
+        return `import {
+  ${file.constVariable},
+  ${file.requestInterface},
+  ${file.responseInterface},
+} from '${file.name}';`;
       }),
     ].join('\n');
   });
 
-  const [importDefault, variables] = zip(
-    ...map(state.resolvedFiles, resolved => {
-      return [
-        map(resolved.files, (file: RunStateFileInterface) => `import ${file.constVariable} from '${file.name}';`),
-        map(resolved.files, 'constVariable'),
-      ];
-    })
-  );
-  const importDefaultCodeArr = flatten(importDefault);
-  const exportDefaultType = [`type defaultType = ${flatten(variables).join(' & ')};`, 'export default defaultType;'];
+  const flattenResolvedFiles = flattenDeep(map(state.resolvedFiles, 'files'));
+  const exportVariables = map(flattenResolvedFiles, (fl: RunStateFileInterface) => {
+    return [fl.constVariable, fl.requestInterface, fl.responseInterface].join(',\n  ');
+  }).join(',\n  ');
 
-  return saveCode('src/pddApi/index.ts', [...exportAnyCode, ...importDefaultCodeArr, ...exportDefaultType].join('\n'));
+  const exportVariablesCode = `export {
+  ${exportVariables},
+};`;
+
+  const pddCollectRequestInterfaceInnerCode = map(flattenResolvedFiles, (fl: RunStateFileInterface) => {
+    return `[${fl.constVariable}]: ${fl.requestInterface};`;
+  }).join('\n  ');
+  const exportPddRequestInterfaceCode = `export interface PddCollectRequestInterface {
+  ${pddCollectRequestInterfaceInnerCode}
+}`;
+
+  const pddCollectResponseInterfaceInnerCode = map(flattenResolvedFiles, (fl: RunStateFileInterface) => {
+    return `[${fl.constVariable}]: ${fl.responseInterface};`;
+  }).join('\n  ');
+  const exportPddResponseInterfaceCode = `export interface PddCollectResponseInterface {
+  ${pddCollectResponseInterfaceInnerCode}
+}`;
+
+  /*const apiTypesString = map(flattenResolvedFiles, (fl: RunStateFileInterface) => {
+    return fl.constVariable;
+  }).join(' | ');*/
+  return saveCode(
+    'src/pddApi/index.ts',
+    [
+      ...importCodes,
+      exportVariablesCode,
+      exportPddRequestInterfaceCode,
+      exportPddResponseInterfaceCode,
+      generateCommonRequestInterfaceCode('string'),
+    ].join('\n')
+  );
+}
+
+function generateCommonRequestInterfaceCode(type: string) {
+  return `export interface PddCommonRequestInterface {
+  /**
+   * API接口名称
+   */
+  type: ${type};
+
+  /**
+   * POP分配给应用的client_id
+   */
+  client_id: string;
+
+  /**
+   * 通过code获取的access_token(无需授权的接口，该字段不参与sign签名运算)
+   */
+  access_token?: string;
+
+  /**
+   * UNIX时间戳，单位秒，需要与拼多多服务器时间差值在10分钟内
+   */
+  timestamp: number;
+
+  /**
+   * 响应格式，即返回数据的格式，JSON或者XML（二选一），默认JSON，注意是大写
+   * @default JSON
+   */
+  data_type?: 'JSON' | 'XML';
+
+  /**
+   * API协议版本号，默认为V1，可不填
+   * @default V1
+   */
+  version?: string;
+
+  /**
+   * API输入参数签名结果，签名算法参考开放平台接入指南第三部分底部。
+   */
+  sign: string;
+}`;
 }

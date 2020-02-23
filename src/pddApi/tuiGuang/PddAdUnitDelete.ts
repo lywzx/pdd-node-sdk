@@ -1,4 +1,4 @@
-export const PDD_AD_UNIT_DELETE = 'PDD_AD_UNIT_DELETE';
+export const PDD_AD_UNIT_DELETE = 'pdd.ad.unit.delete';
 
 /**
  * 接口名称：删除推广单元-批量
@@ -48,12 +48,4 @@ export interface PddAdUnitDeleteAdUnitDeleteResponseResponseInterface {
    * @default:
    **/
   is_success: boolean;
-}
-
-// 导出默认分类
-export default interface InterfaceDefaultInterface {
-  [PDD_AD_UNIT_DELETE]: {
-    requestInterface: PddAdUnitDeleteRequestInterface;
-    responseInterface: PddAdUnitDeleteResponseInterface;
-  };
 }

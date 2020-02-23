@@ -1,4 +1,4 @@
-export const PDD_OPEN_MSG_SERVICE_SEND_EXPRESS_MSG = 'PDD_OPEN_MSG_SERVICE_SEND_EXPRESS_MSG';
+export const PDD_OPEN_MSG_SERVICE_SEND_EXPRESS_MSG = 'pdd.open.msg.service.send.express.msg';
 
 /**
  * 接口名称：根据运单号发短信
@@ -97,12 +97,4 @@ export interface PddOpenMsgServiceSendExpressMsgResponseInterface {
    * @default:
    **/
   biz_id: string;
-}
-
-// 导出默认分类
-export default interface InterfaceDefaultInterface {
-  [PDD_OPEN_MSG_SERVICE_SEND_EXPRESS_MSG]: {
-    requestInterface: PddOpenMsgServiceSendExpressMsgRequestInterface;
-    responseInterface: PddOpenMsgServiceSendExpressMsgResponseInterface;
-  };
 }

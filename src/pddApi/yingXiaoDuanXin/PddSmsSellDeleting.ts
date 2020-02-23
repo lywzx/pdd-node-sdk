@@ -1,4 +1,4 @@
-export const PDD_SMS_SELL_DELETING = 'PDD_SMS_SELL_DELETING';
+export const PDD_SMS_SELL_DELETING = 'pdd.sms.sell.deleting';
 
 /**
  * 接口名称：删除任务
@@ -41,12 +41,4 @@ export interface PddSmsSellDeletingSmsSellDeletingResponseResponseInterface {
    * @default:
    **/
   is_success: boolean;
-}
-
-// 导出默认分类
-export default interface InterfaceDefaultInterface {
-  [PDD_SMS_SELL_DELETING]: {
-    requestInterface: PddSmsSellDeletingRequestInterface;
-    responseInterface: PddSmsSellDeletingResponseInterface;
-  };
 }

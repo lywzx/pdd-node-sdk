@@ -1,4 +1,4 @@
-export const PDD_AD_DELETE_BID = 'PDD_AD_DELETE_BID';
+export const PDD_AD_DELETE_BID = 'pdd.ad.delete.bid';
 
 /**
  * 接口名称：推广单元取消定向（不可取消通投）
@@ -55,12 +55,4 @@ export interface PddAdDeleteBidOpenApiResponseResponseInterface {
    * @default:
    **/
   is_success: boolean;
-}
-
-// 导出默认分类
-export default interface InterfaceDefaultInterface {
-  [PDD_AD_DELETE_BID]: {
-    requestInterface: PddAdDeleteBidRequestInterface;
-    responseInterface: PddAdDeleteBidResponseInterface;
-  };
 }

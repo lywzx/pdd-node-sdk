@@ -1,4 +1,4 @@
-export const PDD_AD_KEYWORD_DAILY_REPORT = 'PDD_AD_KEYWORD_DAILY_REPORT';
+export const PDD_AD_KEYWORD_DAILY_REPORT = 'pdd.ad.keyword.daily.report';
 
 /**
  * 接口名称：关键词历史报表数据， 一次性导出分天详情
@@ -47,12 +47,4 @@ export interface PddAdKeywordDailyReportResponseInterface {
    * @default:
    **/
   open_api_response: string;
-}
-
-// 导出默认分类
-export default interface InterfaceDefaultInterface {
-  [PDD_AD_KEYWORD_DAILY_REPORT]: {
-    requestInterface: PddAdKeywordDailyReportRequestInterface;
-    responseInterface: PddAdKeywordDailyReportResponseInterface;
-  };
 }

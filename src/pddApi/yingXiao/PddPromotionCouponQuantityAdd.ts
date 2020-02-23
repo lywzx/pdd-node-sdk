@@ -1,4 +1,4 @@
-export const PDD_PROMOTION_COUPON_QUANTITY_ADD = 'PDD_PROMOTION_COUPON_QUANTITY_ADD';
+export const PDD_PROMOTION_COUPON_QUANTITY_ADD = 'pdd.promotion.coupon.quantity.add';
 
 /**
  * 接口名称：增加优惠券发行数量接口
@@ -48,12 +48,4 @@ export interface PddPromotionCouponQuantityAddCouponQuantityAddResponseResponseI
    * @default:
    **/
   is_success: boolean;
-}
-
-// 导出默认分类
-export default interface InterfaceDefaultInterface {
-  [PDD_PROMOTION_COUPON_QUANTITY_ADD]: {
-    requestInterface: PddPromotionCouponQuantityAddRequestInterface;
-    responseInterface: PddPromotionCouponQuantityAddResponseInterface;
-  };
 }

@@ -1,4 +1,4 @@
-export const PDD_VOUCHER_OTA_CARD_VERIFICATION = 'PDD_VOUCHER_OTA_CARD_VERIFICATION';
+export const PDD_VOUCHER_OTA_CARD_VERIFICATION = 'pdd.voucher.ota.card.verification';
 
 /**
  * 接口名称：卡券（电子）核销接口（平台生成卡密）
@@ -133,12 +133,4 @@ export interface PddVoucherOtaCardVerificationVoucherOtaCardVerificationResponse
    * @default:
    **/
   verification_time: string;
-}
-
-// 导出默认分类
-export default interface InterfaceDefaultInterface {
-  [PDD_VOUCHER_OTA_CARD_VERIFICATION]: {
-    requestInterface: PddVoucherOtaCardVerificationRequestInterface;
-    responseInterface: PddVoucherOtaCardVerificationResponseInterface;
-  };
 }

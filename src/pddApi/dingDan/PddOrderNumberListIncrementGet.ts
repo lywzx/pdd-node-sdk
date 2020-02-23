@@ -1,4 +1,4 @@
-export const PDD_ORDER_NUMBER_LIST_INCREMENT_GET = 'PDD_ORDER_NUMBER_LIST_INCREMENT_GET';
+export const PDD_ORDER_NUMBER_LIST_INCREMENT_GET = 'pdd.order.number.list.increment.get';
 
 /**
  * 接口名称：订单增量接口
@@ -811,12 +811,4 @@ export interface PddOrderNumberListIncrementGetOrderSnIncrementGetResponseOrderS
    * @default:
    **/
   goods_img: string;
-}
-
-// 导出默认分类
-export default interface InterfaceDefaultInterface {
-  [PDD_ORDER_NUMBER_LIST_INCREMENT_GET]: {
-    requestInterface: PddOrderNumberListIncrementGetRequestInterface;
-    responseInterface: PddOrderNumberListIncrementGetResponseInterface;
-  };
 }

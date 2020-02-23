@@ -1,4 +1,4 @@
-export const PDD_STOCK_GOODS_ID_TO_SKU_QUERY = 'PDD_STOCK_GOODS_ID_TO_SKU_QUERY';
+export const PDD_STOCK_GOODS_ID_TO_SKU_QUERY = 'pdd.stock.goods.id.to.sku.query';
 
 /**
  * 接口名称：根据商品id查询sku信息
@@ -134,12 +134,4 @@ export interface PddStockGoodsIdToSkuQueryOpenApiResponseSkusSpecsResponseInterf
    * @default:
    **/
   spec_value: string;
-}
-
-// 导出默认分类
-export default interface InterfaceDefaultInterface {
-  [PDD_STOCK_GOODS_ID_TO_SKU_QUERY]: {
-    requestInterface: PddStockGoodsIdToSkuQueryRequestInterface;
-    responseInterface: PddStockGoodsIdToSkuQueryResponseInterface;
-  };
 }

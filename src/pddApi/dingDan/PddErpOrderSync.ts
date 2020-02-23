@@ -1,4 +1,4 @@
-export const PDD_ERP_ORDER_SYNC = 'PDD_ERP_ORDER_SYNC';
+export const PDD_ERP_ORDER_SYNC = 'pdd.erp.order.sync';
 
 /**
  * 接口名称：erp打单信息同步
@@ -68,12 +68,4 @@ export interface PddErpOrderSyncResponseInterface {
    * @default:
    **/
   result: boolean;
-}
-
-// 导出默认分类
-export default interface InterfaceDefaultInterface {
-  [PDD_ERP_ORDER_SYNC]: {
-    requestInterface: PddErpOrderSyncRequestInterface;
-    responseInterface: PddErpOrderSyncResponseInterface;
-  };
 }

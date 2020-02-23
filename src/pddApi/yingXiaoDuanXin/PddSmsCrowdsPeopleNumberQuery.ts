@@ -1,4 +1,4 @@
-export const PDD_SMS_CROWDS_PEOPLE_NUMBER_QUERY = 'PDD_SMS_CROWDS_PEOPLE_NUMBER_QUERY';
+export const PDD_SMS_CROWDS_PEOPLE_NUMBER_QUERY = 'pdd.sms.crowds.people.number.query';
 
 /**
  * 接口名称：查询人群数量
@@ -132,12 +132,4 @@ export interface PddSmsCrowdsPeopleNumberQuerySmsCrowsPeopleNumberQueryResponseR
    * @default:
    **/
   remain: string;
-}
-
-// 导出默认分类
-export default interface InterfaceDefaultInterface {
-  [PDD_SMS_CROWDS_PEOPLE_NUMBER_QUERY]: {
-    requestInterface: PddSmsCrowdsPeopleNumberQueryRequestInterface;
-    responseInterface: PddSmsCrowdsPeopleNumberQueryResponseInterface;
-  };
 }

@@ -1,4 +1,4 @@
-export const PDD_SMS_REMAIN_DETAIL_QUERY = 'PDD_SMS_REMAIN_DETAIL_QUERY';
+export const PDD_SMS_REMAIN_DETAIL_QUERY = 'pdd.sms.remain.detail.query';
 
 /**
  * 接口名称：查询余量
@@ -42,12 +42,4 @@ export interface PddSmsRemainDetailQuerySmsRemainDetailQueryResponseResponseInte
    * @default:
    **/
   remain_number: string;
-}
-
-// 导出默认分类
-export default interface InterfaceDefaultInterface {
-  [PDD_SMS_REMAIN_DETAIL_QUERY]: {
-    requestInterface: PddSmsRemainDetailQueryRequestInterface;
-    responseInterface: PddSmsRemainDetailQueryResponseInterface;
-  };
 }

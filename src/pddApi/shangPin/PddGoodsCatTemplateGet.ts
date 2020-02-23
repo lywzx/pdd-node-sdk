@@ -1,4 +1,4 @@
-export const PDD_GOODS_CAT_TEMPLATE_GET = 'PDD_GOODS_CAT_TEMPLATE_GET';
+export const PDD_GOODS_CAT_TEMPLATE_GET = 'pdd.goods.cat.template.get';
 
 /**
  * 接口名称：获取商品类目属性
@@ -310,12 +310,4 @@ export interface PddGoodsCatTemplateGetOpenApiResponsePropertiesValuesGroupRespo
    * @default:
    **/
   name: string;
-}
-
-// 导出默认分类
-export default interface InterfaceDefaultInterface {
-  [PDD_GOODS_CAT_TEMPLATE_GET]: {
-    requestInterface: PddGoodsCatTemplateGetRequestInterface;
-    responseInterface: PddGoodsCatTemplateGetResponseInterface;
-  };
 }

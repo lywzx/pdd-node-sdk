@@ -1,4 +1,4 @@
-export const PDD_INVOICE_APPLICATION_QUERY = 'PDD_INVOICE_APPLICATION_QUERY';
+export const PDD_INVOICE_APPLICATION_QUERY = 'pdd.invoice.application.query';
 
 /**
  * 接口名称：开票申请单查询
@@ -217,12 +217,4 @@ export interface PddInvoiceApplicationQueryInvoiceApplicationQueryResponseInvoic
    * @default:
    **/
   application_id: string;
-}
-
-// 导出默认分类
-export default interface InterfaceDefaultInterface {
-  [PDD_INVOICE_APPLICATION_QUERY]: {
-    requestInterface: PddInvoiceApplicationQueryRequestInterface;
-    responseInterface: PddInvoiceApplicationQueryResponseInterface;
-  };
 }

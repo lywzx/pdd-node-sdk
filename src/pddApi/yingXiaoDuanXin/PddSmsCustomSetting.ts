@@ -1,4 +1,4 @@
-export const PDD_SMS_CUSTOM_SETTING = 'PDD_SMS_CUSTOM_SETTING';
+export const PDD_SMS_CUSTOM_SETTING = 'pdd.sms.custom.setting';
 
 /**
  * 接口名称：指定号码短信发送设置（自定义）
@@ -62,12 +62,4 @@ export interface PddSmsCustomSettingSmsCustomSettingResponseResponseInterface {
    * @default:
    **/
   result: string;
-}
-
-// 导出默认分类
-export default interface InterfaceDefaultInterface {
-  [PDD_SMS_CUSTOM_SETTING]: {
-    requestInterface: PddSmsCustomSettingRequestInterface;
-    responseInterface: PddSmsCustomSettingResponseInterface;
-  };
 }

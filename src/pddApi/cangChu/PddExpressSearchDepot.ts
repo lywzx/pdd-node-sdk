@@ -1,4 +1,4 @@
-export const PDD_EXPRESS_SEARCH_DEPOT = 'PDD_EXPRESS_SEARCH_DEPOT';
+export const PDD_EXPRESS_SEARCH_DEPOT = 'pdd.express.search.depot';
 
 /**
  * 接口名称：根据仓库名称和仓库编码查询仓库
@@ -197,12 +197,4 @@ export interface PddExpressSearchDepotOpenApiResponseDepotListProvinceMapRespons
    * @default:
    **/
   value: string;
-}
-
-// 导出默认分类
-export default interface InterfaceDefaultInterface {
-  [PDD_EXPRESS_SEARCH_DEPOT]: {
-    requestInterface: PddExpressSearchDepotRequestInterface;
-    responseInterface: PddExpressSearchDepotResponseInterface;
-  };
 }

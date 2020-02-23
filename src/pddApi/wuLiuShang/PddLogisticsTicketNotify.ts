@@ -1,4 +1,4 @@
-export const PDD_LOGISTICS_TICKET_NOTIFY = 'PDD_LOGISTICS_TICKET_NOTIFY';
+export const PDD_LOGISTICS_TICKET_NOTIFY = 'pdd.logistics.ticket.notify';
 
 /**
  * 接口名称：快递公司处理结果回调接口
@@ -104,12 +104,4 @@ export interface PddLogisticsTicketNotifyLogisticsTicketNotifyResponseResponseIn
    * @default:
    **/
   is_success: boolean;
-}
-
-// 导出默认分类
-export default interface InterfaceDefaultInterface {
-  [PDD_LOGISTICS_TICKET_NOTIFY]: {
-    requestInterface: PddLogisticsTicketNotifyRequestInterface;
-    responseInterface: PddLogisticsTicketNotifyResponseInterface;
-  };
 }

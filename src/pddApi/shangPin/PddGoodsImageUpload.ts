@@ -1,4 +1,4 @@
-export const PDD_GOODS_IMAGE_UPLOAD = 'PDD_GOODS_IMAGE_UPLOAD';
+export const PDD_GOODS_IMAGE_UPLOAD = 'pdd.goods.image.upload';
 
 /**
  * 接口名称：商品图片上传接口
@@ -41,12 +41,4 @@ export interface PddGoodsImageUploadGoodsImageUploadResponseResponseInterface {
    * @default:
    **/
   image_url: string;
-}
-
-// 导出默认分类
-export default interface InterfaceDefaultInterface {
-  [PDD_GOODS_IMAGE_UPLOAD]: {
-    requestInterface: PddGoodsImageUploadRequestInterface;
-    responseInterface: PddGoodsImageUploadResponseInterface;
-  };
 }

@@ -1,4 +1,4 @@
-export const PDD_GOOODS_SKU_MEASUREMENT_LIST = 'PDD_GOOODS_SKU_MEASUREMENT_LIST';
+export const PDD_GOOODS_SKU_MEASUREMENT_LIST = 'pdd.gooods.sku.measurement.list';
 
 /**
  * 接口名称：商品sku计量单位枚举
@@ -57,12 +57,4 @@ export interface PddGooodsSkuMeasurementListGooodsSkuMeasurementListResponseMeas
    * @default:
    **/
   code: string;
-}
-
-// 导出默认分类
-export default interface InterfaceDefaultInterface {
-  [PDD_GOOODS_SKU_MEASUREMENT_LIST]: {
-    requestInterface: PddGooodsSkuMeasurementListRequestInterface;
-    responseInterface: PddGooodsSkuMeasurementListResponseInterface;
-  };
 }

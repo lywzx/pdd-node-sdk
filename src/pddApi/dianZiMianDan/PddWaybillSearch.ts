@@ -1,4 +1,4 @@
-export const PDD_WAYBILL_SEARCH = 'PDD_WAYBILL_SEARCH';
+export const PDD_WAYBILL_SEARCH = 'pdd.waybill.search';
 
 /**
  * 接口名称：查询面单服务订购及面单使用情况
@@ -249,12 +249,4 @@ export interface PddWaybillSearchPddWaybillSearchResponseWaybillApplySubscriptio
    * @default:
    **/
   province: string;
-}
-
-// 导出默认分类
-export default interface InterfaceDefaultInterface {
-  [PDD_WAYBILL_SEARCH]: {
-    requestInterface: PddWaybillSearchRequestInterface;
-    responseInterface: PddWaybillSearchResponseInterface;
-  };
 }

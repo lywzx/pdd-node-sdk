@@ -1,4 +1,4 @@
-export const PDD_GOODS_SALE_STATUS_SET = 'PDD_GOODS_SALE_STATUS_SET';
+export const PDD_GOODS_SALE_STATUS_SET = 'pdd.goods.sale.status.set';
 
 /**
  * 接口名称：商品上架状态设置
@@ -48,12 +48,4 @@ export interface PddGoodsSaleStatusSetGoodsSaleStatusSetResponseResponseInterfac
    * @default:
    **/
   is_success: boolean;
-}
-
-// 导出默认分类
-export default interface InterfaceDefaultInterface {
-  [PDD_GOODS_SALE_STATUS_SET]: {
-    requestInterface: PddGoodsSaleStatusSetRequestInterface;
-    responseInterface: PddGoodsSaleStatusSetResponseInterface;
-  };
 }

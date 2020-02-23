@@ -1,4 +1,4 @@
-export const PDD_DDK_ORDER_LIST_RANGE_GET = 'PDD_DDK_ORDER_LIST_RANGE_GET';
+export const PDD_DDK_ORDER_LIST_RANGE_GET = 'pdd.ddk.order.list.range.get';
 
 /**
  * 接口名称：用时间段查询推广订单接口
@@ -224,12 +224,4 @@ export interface PddDdkOrderListRangeGetOrderListGetResponseOrderListResponseInt
    * @default:
    **/
   type: number;
-}
-
-// 导出默认分类
-export default interface InterfaceDefaultInterface {
-  [PDD_DDK_ORDER_LIST_RANGE_GET]: {
-    requestInterface: PddDdkOrderListRangeGetRequestInterface;
-    responseInterface: PddDdkOrderListRangeGetResponseInterface;
-  };
 }

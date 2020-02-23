@@ -1,4 +1,4 @@
-export const PDD_DDK_TOP_GOODS_LIST_QUERY = 'PDD_DDK_TOP_GOODS_LIST_QUERY';
+export const PDD_DDK_TOP_GOODS_LIST_QUERY = 'pdd.ddk.top.goods.list.query';
 
 /**
  * 接口名称：多多客获取爆款排行商品接口
@@ -301,12 +301,4 @@ export interface PddDdkTopGoodsListQueryTopGoodsListGetResponseListResponseInter
    * @default:
    **/
   search_id: string;
-}
-
-// 导出默认分类
-export default interface InterfaceDefaultInterface {
-  [PDD_DDK_TOP_GOODS_LIST_QUERY]: {
-    requestInterface: PddDdkTopGoodsListQueryRequestInterface;
-    responseInterface: PddDdkTopGoodsListQueryResponseInterface;
-  };
 }

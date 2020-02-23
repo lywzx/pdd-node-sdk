@@ -1,4 +1,4 @@
-export const PDD_AD_QUERY_BID_LIST = 'PDD_AD_QUERY_BID_LIST';
+export const PDD_AD_QUERY_BID_LIST = 'pdd.ad.query.bid.list';
 
 /**
  * 接口名称：根据推广单元id获取现有定向
@@ -155,12 +155,4 @@ export interface PddAdQueryBidListOpenApiResponseResponseInterface {
    * @default:
    **/
   bid_id: string;
-}
-
-// 导出默认分类
-export default interface InterfaceDefaultInterface {
-  [PDD_AD_QUERY_BID_LIST]: {
-    requestInterface: PddAdQueryBidListRequestInterface;
-    responseInterface: PddAdQueryBidListResponseInterface;
-  };
 }

@@ -1,4 +1,4 @@
-export const PDD_AD_QUERY_LOCATION_BID_HISTORY_REPORT = 'PDD_AD_QUERY_LOCATION_BID_HISTORY_REPORT';
+export const PDD_AD_QUERY_LOCATION_BID_HISTORY_REPORT = 'pdd.ad.query.location.bid.history.report';
 
 /**
  * 接口名称：资源位历史报表数据
@@ -269,12 +269,4 @@ export interface PddAdQueryLocationBidHistoryReportOpenApiResponseResultResponse
    * @default:
    **/
   mall_id: string;
-}
-
-// 导出默认分类
-export default interface InterfaceDefaultInterface {
-  [PDD_AD_QUERY_LOCATION_BID_HISTORY_REPORT]: {
-    requestInterface: PddAdQueryLocationBidHistoryReportRequestInterface;
-    responseInterface: PddAdQueryLocationBidHistoryReportResponseInterface;
-  };
 }

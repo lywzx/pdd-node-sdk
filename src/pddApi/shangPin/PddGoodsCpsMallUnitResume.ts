@@ -1,4 +1,4 @@
-export const PDD_GOODS_CPS_MALL_UNIT_RESUME = 'PDD_GOODS_CPS_MALL_UNIT_RESUME';
+export const PDD_GOODS_CPS_MALL_UNIT_RESUME = 'pdd.goods.cps.mall.unit.resume';
 
 /**
  * 接口名称：恢复全店推广API
@@ -35,12 +35,4 @@ export interface PddGoodsCpsMallUnitResumeGoodsCpsMallUnitResumeResponseResponse
    * @default:
    **/
   result: boolean;
-}
-
-// 导出默认分类
-export default interface InterfaceDefaultInterface {
-  [PDD_GOODS_CPS_MALL_UNIT_RESUME]: {
-    requestInterface: PddGoodsCpsMallUnitResumeRequestInterface;
-    responseInterface: PddGoodsCpsMallUnitResumeResponseInterface;
-  };
 }

@@ -1,4 +1,4 @@
-export const PDD_GOODS_COMMIT_DETAIL_GET = 'PDD_GOODS_COMMIT_DETAIL_GET';
+export const PDD_GOODS_COMMIT_DETAIL_GET = 'pdd.goods.commit.detail.get';
 
 /**
  * 接口名称：获取商品提交的商品详情
@@ -678,12 +678,4 @@ export interface PddGoodsCommitDetailGetGoodsCommitDetailResponseSkuListSpecResp
    * @default:
    **/
   spec_name: string;
-}
-
-// 导出默认分类
-export default interface InterfaceDefaultInterface {
-  [PDD_GOODS_COMMIT_DETAIL_GET]: {
-    requestInterface: PddGoodsCommitDetailGetRequestInterface;
-    responseInterface: PddGoodsCommitDetailGetResponseInterface;
-  };
 }

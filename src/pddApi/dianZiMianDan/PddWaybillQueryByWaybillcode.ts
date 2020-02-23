@@ -1,4 +1,4 @@
-export const PDD_WAYBILL_QUERY_BY_WAYBILLCODE = 'PDD_WAYBILL_QUERY_BY_WAYBILLCODE';
+export const PDD_WAYBILL_QUERY_BY_WAYBILLCODE = 'pdd.waybill.query.by.waybillcode';
 
 /**
  * 接口名称：通过面单号查询面单信息
@@ -114,12 +114,4 @@ export interface PddWaybillQueryByWaybillcodePddWaybillQueryByWaybillcodeRespons
    * @default:
    **/
   waybill_code: string;
-}
-
-// 导出默认分类
-export default interface InterfaceDefaultInterface {
-  [PDD_WAYBILL_QUERY_BY_WAYBILLCODE]: {
-    requestInterface: PddWaybillQueryByWaybillcodeRequestInterface;
-    responseInterface: PddWaybillQueryByWaybillcodeResponseInterface;
-  };
 }

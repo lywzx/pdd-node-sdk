@@ -1,4 +1,4 @@
-export const PDD_VOUCHER_VIRTUAL_CARD_VERIFICATION = 'PDD_VOUCHER_VIRTUAL_CARD_VERIFICATION';
+export const PDD_VOUCHER_VIRTUAL_CARD_VERIFICATION = 'pdd.voucher.virtual.card.verification';
 
 /**
  * 接口名称：卡券（电子）核销接口
@@ -162,12 +162,4 @@ export interface PddVoucherVirtualCardVerificationVoucherVoucherInfoVerifyRespon
    * @default:
    **/
   verification_at: string;
-}
-
-// 导出默认分类
-export default interface InterfaceDefaultInterface {
-  [PDD_VOUCHER_VIRTUAL_CARD_VERIFICATION]: {
-    requestInterface: PddVoucherVirtualCardVerificationRequestInterface;
-    responseInterface: PddVoucherVirtualCardVerificationResponseInterface;
-  };
 }

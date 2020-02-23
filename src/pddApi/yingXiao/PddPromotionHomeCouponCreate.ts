@@ -1,4 +1,4 @@
-export const PDD_PROMOTION_HOME_COUPON_CREATE = 'PDD_PROMOTION_HOME_COUPON_CREATE';
+export const PDD_PROMOTION_HOME_COUPON_CREATE = 'pdd.promotion.home.coupon.create';
 
 /**
  * 接口名称：创建店铺首页优惠券批次接口
@@ -83,12 +83,4 @@ export interface PddPromotionHomeCouponCreateHomeCouponBatchCreateResponseRespon
    * @default:
    **/
   batch_id: string;
-}
-
-// 导出默认分类
-export default interface InterfaceDefaultInterface {
-  [PDD_PROMOTION_HOME_COUPON_CREATE]: {
-    requestInterface: PddPromotionHomeCouponCreateRequestInterface;
-    responseInterface: PddPromotionHomeCouponCreateResponseInterface;
-  };
 }

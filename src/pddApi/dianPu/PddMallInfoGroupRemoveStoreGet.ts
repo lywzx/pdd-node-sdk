@@ -1,4 +1,4 @@
-export const PDD_MALL_INFO_GROUP_REMOVE_STORE_GET = 'PDD_MALL_INFO_GROUP_REMOVE_STORE_GET';
+export const PDD_MALL_INFO_GROUP_REMOVE_STORE_GET = 'pdd.mall.info.group.remove.store.get';
 
 /**
  * 接口名称：门店组删除门店
@@ -48,12 +48,4 @@ export interface PddMallInfoGroupRemoveStoreGetMallInfoGroupRemoveStoreGetRespon
    * @default:
    **/
   is_success: boolean;
-}
-
-// 导出默认分类
-export default interface InterfaceDefaultInterface {
-  [PDD_MALL_INFO_GROUP_REMOVE_STORE_GET]: {
-    requestInterface: PddMallInfoGroupRemoveStoreGetRequestInterface;
-    responseInterface: PddMallInfoGroupRemoveStoreGetResponseInterface;
-  };
 }

@@ -1,4 +1,4 @@
-export const PDD_AD_PLAN_MAX_COST_UPDATE = 'PDD_AD_PLAN_MAX_COST_UPDATE';
+export const PDD_AD_PLAN_MAX_COST_UPDATE = 'pdd.ad.plan.max.cost.update';
 
 /**
  * 接口名称：修改推广计划日限额
@@ -55,12 +55,4 @@ export interface PddAdPlanMaxCostUpdateAdPlanMaxCostUpdateResponseResponseInterf
    * @default:
    **/
   is_success: boolean;
-}
-
-// 导出默认分类
-export default interface InterfaceDefaultInterface {
-  [PDD_AD_PLAN_MAX_COST_UPDATE]: {
-    requestInterface: PddAdPlanMaxCostUpdateRequestInterface;
-    responseInterface: PddAdPlanMaxCostUpdateResponseInterface;
-  };
 }

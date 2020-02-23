@@ -1,4 +1,4 @@
-export const PDD_LOGISTICS_CS_SESSION_START = 'PDD_LOGISTICS_CS_SESSION_START';
+export const PDD_LOGISTICS_CS_SESSION_START = 'pdd.logistics.cs.session.start';
 
 /**
  * 接口名称：物流客服系统创建同步会话状态接口
@@ -111,12 +111,4 @@ export interface PddLogisticsCsSessionStartLogisticsCsSessionStartResponseRespon
    * @default:
    **/
   is_success: boolean;
-}
-
-// 导出默认分类
-export default interface InterfaceDefaultInterface {
-  [PDD_LOGISTICS_CS_SESSION_START]: {
-    requestInterface: PddLogisticsCsSessionStartRequestInterface;
-    responseInterface: PddLogisticsCsSessionStartResponseInterface;
-  };
 }

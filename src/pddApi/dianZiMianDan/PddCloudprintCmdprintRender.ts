@@ -1,4 +1,4 @@
-export const PDD_CLOUDPRINT_CMDPRINT_RENDER = 'PDD_CLOUDPRINT_CMDPRINT_RENDER';
+export const PDD_CLOUDPRINT_CMDPRINT_RENDER = 'pdd.cloudprint.cmdprint.render';
 
 /**
  * 接口名称：生成打印机渲染命令（通过打印机命令打印）
@@ -220,12 +220,4 @@ export interface PddCloudprintCmdprintRenderCloudprintCmdprintRenderResponseResp
    * @default:
    **/
   success: boolean;
-}
-
-// 导出默认分类
-export default interface InterfaceDefaultInterface {
-  [PDD_CLOUDPRINT_CMDPRINT_RENDER]: {
-    requestInterface: PddCloudprintCmdprintRenderRequestInterface;
-    responseInterface: PddCloudprintCmdprintRenderResponseInterface;
-  };
 }

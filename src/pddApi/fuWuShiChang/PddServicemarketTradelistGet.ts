@@ -1,4 +1,4 @@
-export const PDD_SERVICEMARKET_TRADELIST_GET = 'PDD_SERVICEMARKET_TRADELIST_GET';
+export const PDD_SERVICEMARKET_TRADELIST_GET = 'pdd.servicemarket.tradelist.get';
 
 /**
  * 接口名称：交易明细单导出
@@ -140,12 +140,4 @@ export interface PddServicemarketTradelistGetMallBalanceFlowSearchResponseDataRe
    * @default:
    **/
   trade_note: string;
-}
-
-// 导出默认分类
-export default interface InterfaceDefaultInterface {
-  [PDD_SERVICEMARKET_TRADELIST_GET]: {
-    requestInterface: PddServicemarketTradelistGetRequestInterface;
-    responseInterface: PddServicemarketTradelistGetResponseInterface;
-  };
 }

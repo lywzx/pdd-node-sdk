@@ -1,4 +1,4 @@
-export const PDD_INVOICE_DETAIL_INVALID = 'PDD_INVOICE_DETAIL_INVALID';
+export const PDD_INVOICE_DETAIL_INVALID = 'pdd.invoice.detail.invalid';
 
 /**
  * 接口名称：订单发票冲红
@@ -77,12 +77,4 @@ export interface PddInvoiceDetailInvalidInvoiceDetailInvalidResponseResultRespon
    * @default:
    **/
   result: boolean;
-}
-
-// 导出默认分类
-export default interface InterfaceDefaultInterface {
-  [PDD_INVOICE_DETAIL_INVALID]: {
-    requestInterface: PddInvoiceDetailInvalidRequestInterface;
-    responseInterface: PddInvoiceDetailInvalidResponseInterface;
-  };
 }

@@ -1,4 +1,4 @@
-export const PDD_LOGISTICS_ONLINE_STATUS_QUERY = 'PDD_LOGISTICS_ONLINE_STATUS_QUERY';
+export const PDD_LOGISTICS_ONLINE_STATUS_QUERY = 'pdd.logistics.online.status.query';
 
 /**
  * 接口名称：根据订单号查询在线下单状态
@@ -48,12 +48,4 @@ export interface PddLogisticsOnlineStatusQueryLogisticsOnlineStatusQueryResponse
    * @default:
    **/
   update_time: string;
-}
-
-// 导出默认分类
-export default interface InterfaceDefaultInterface {
-  [PDD_LOGISTICS_ONLINE_STATUS_QUERY]: {
-    requestInterface: PddLogisticsOnlineStatusQueryRequestInterface;
-    responseInterface: PddLogisticsOnlineStatusQueryResponseInterface;
-  };
 }

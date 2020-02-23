@@ -1,4 +1,4 @@
-export const PDD_AD_CREATIVE_DELETE = 'PDD_AD_CREATIVE_DELETE';
+export const PDD_AD_CREATIVE_DELETE = 'pdd.ad.creative.delete';
 
 /**
  * 接口名称：推广单元删除创意（至少需保留一个创意）
@@ -33,12 +33,4 @@ export interface PddAdCreativeDeleteResponseInterface {
    * @default:
    **/
   open_api_response: boolean;
-}
-
-// 导出默认分类
-export default interface InterfaceDefaultInterface {
-  [PDD_AD_CREATIVE_DELETE]: {
-    requestInterface: PddAdCreativeDeleteRequestInterface;
-    responseInterface: PddAdCreativeDeleteResponseInterface;
-  };
 }

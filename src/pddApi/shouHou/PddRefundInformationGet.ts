@@ -1,4 +1,4 @@
-export const PDD_REFUND_INFORMATION_GET = 'PDD_REFUND_INFORMATION_GET';
+export const PDD_REFUND_INFORMATION_GET = 'pdd.refund.information.get';
 
 /**
  * 接口名称：售后单详情接口
@@ -138,12 +138,4 @@ export interface PddRefundInformationGetResponseInterface {
    * @default:
    **/
   expire_time: string;
-}
-
-// 导出默认分类
-export default interface InterfaceDefaultInterface {
-  [PDD_REFUND_INFORMATION_GET]: {
-    requestInterface: PddRefundInformationGetRequestInterface;
-    responseInterface: PddRefundInformationGetResponseInterface;
-  };
 }

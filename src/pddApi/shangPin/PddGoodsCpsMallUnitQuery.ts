@@ -1,4 +1,4 @@
-export const PDD_GOODS_CPS_MALL_UNIT_QUERY = 'PDD_GOODS_CPS_MALL_UNIT_QUERY';
+export const PDD_GOODS_CPS_MALL_UNIT_QUERY = 'pdd.goods.cps.mall.unit.query';
 
 /**
  * 接口名称：查询全店推广API
@@ -70,12 +70,4 @@ export interface PddGoodsCpsMallUnitQueryGoodsCpsMallUnitQueryResponseResponseIn
    * @default:
    **/
   status_to_be_day: string;
-}
-
-// 导出默认分类
-export default interface InterfaceDefaultInterface {
-  [PDD_GOODS_CPS_MALL_UNIT_QUERY]: {
-    requestInterface: PddGoodsCpsMallUnitQueryRequestInterface;
-    responseInterface: PddGoodsCpsMallUnitQueryResponseInterface;
-  };
 }

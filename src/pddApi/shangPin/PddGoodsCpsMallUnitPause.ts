@@ -1,4 +1,4 @@
-export const PDD_GOODS_CPS_MALL_UNIT_PAUSE = 'PDD_GOODS_CPS_MALL_UNIT_PAUSE';
+export const PDD_GOODS_CPS_MALL_UNIT_PAUSE = 'pdd.goods.cps.mall.unit.pause';
 
 /**
  * 接口名称：暂停全店推广API
@@ -35,12 +35,4 @@ export interface PddGoodsCpsMallUnitPauseGoodsCpsMallUnitQueryResponseResponseIn
    * @default:
    **/
   result: boolean;
-}
-
-// 导出默认分类
-export default interface InterfaceDefaultInterface {
-  [PDD_GOODS_CPS_MALL_UNIT_PAUSE]: {
-    requestInterface: PddGoodsCpsMallUnitPauseRequestInterface;
-    responseInterface: PddGoodsCpsMallUnitPauseResponseInterface;
-  };
 }

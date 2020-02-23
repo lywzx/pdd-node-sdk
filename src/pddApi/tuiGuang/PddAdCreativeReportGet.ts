@@ -1,4 +1,4 @@
-export const PDD_AD_CREATIVE_REPORT_GET = 'PDD_AD_CREATIVE_REPORT_GET';
+export const PDD_AD_CREATIVE_REPORT_GET = 'pdd.ad.creative.report.get';
 
 /**
  * 接口名称：创意日报报表
@@ -196,12 +196,4 @@ export interface PddAdCreativeReportGetAdCreativeReportGetResponseResultResponse
    * @default:
    **/
   image_url: string;
-}
-
-// 导出默认分类
-export default interface InterfaceDefaultInterface {
-  [PDD_AD_CREATIVE_REPORT_GET]: {
-    requestInterface: PddAdCreativeReportGetRequestInterface;
-    responseInterface: PddAdCreativeReportGetResponseInterface;
-  };
 }

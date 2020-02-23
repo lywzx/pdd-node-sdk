@@ -1,4 +1,4 @@
-export const PDD_SMS_SELL_SETTING_RECORD_CANCEL = 'PDD_SMS_SELL_SETTING_RECORD_CANCEL';
+export const PDD_SMS_SELL_SETTING_RECORD_CANCEL = 'pdd.sms.sell.setting.record.cancel';
 
 /**
  * 接口名称：取消任务
@@ -41,12 +41,4 @@ export interface PddSmsSellSettingRecordCancelSmsSellSettingRecordCancelResponse
    * @default:
    **/
   is_success: boolean;
-}
-
-// 导出默认分类
-export default interface InterfaceDefaultInterface {
-  [PDD_SMS_SELL_SETTING_RECORD_CANCEL]: {
-    requestInterface: PddSmsSellSettingRecordCancelRequestInterface;
-    responseInterface: PddSmsSellSettingRecordCancelResponseInterface;
-  };
 }

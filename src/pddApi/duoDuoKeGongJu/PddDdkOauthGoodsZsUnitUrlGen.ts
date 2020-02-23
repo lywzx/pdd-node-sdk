@@ -1,4 +1,4 @@
-export const PDD_DDK_OAUTH_GOODS_ZS_UNIT_URL_GEN = 'PDD_DDK_OAUTH_GOODS_ZS_UNIT_URL_GEN';
+export const PDD_DDK_OAUTH_GOODS_ZS_UNIT_URL_GEN = 'pdd.ddk.oauth.goods.zs.unit.url.gen';
 
 /**
  * 接口名称：生成招商推广链接
@@ -111,12 +111,4 @@ export interface PddDdkOauthGoodsZsUnitUrlGenGoodsZsUnitGenerateResponseResponse
    * @default:
    **/
   schema_url: string;
-}
-
-// 导出默认分类
-export default interface InterfaceDefaultInterface {
-  [PDD_DDK_OAUTH_GOODS_ZS_UNIT_URL_GEN]: {
-    requestInterface: PddDdkOauthGoodsZsUnitUrlGenRequestInterface;
-    responseInterface: PddDdkOauthGoodsZsUnitUrlGenResponseInterface;
-  };
 }

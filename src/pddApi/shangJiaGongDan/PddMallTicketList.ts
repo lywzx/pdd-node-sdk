@@ -1,4 +1,4 @@
-export const PDD_MALL_TICKET_LIST = 'PDD_MALL_TICKET_LIST';
+export const PDD_MALL_TICKET_LIST = 'pdd.mall.ticket.list';
 
 /**
  * 接口名称：商家工单列表查询接口
@@ -154,12 +154,4 @@ export interface PddMallTicketListMallTicketListResponseListResponseInterface {
    * @default:
    **/
   type_id: number;
-}
-
-// 导出默认分类
-export default interface InterfaceDefaultInterface {
-  [PDD_MALL_TICKET_LIST]: {
-    requestInterface: PddMallTicketListRequestInterface;
-    responseInterface: PddMallTicketListResponseInterface;
-  };
 }

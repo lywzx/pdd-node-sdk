@@ -1,4 +1,4 @@
-export const PDD_AD_BALANCE_GET = 'PDD_AD_BALANCE_GET';
+export const PDD_AD_BALANCE_GET = 'pdd.ad.balance.get';
 
 /**
  * 接口名称：获取拼多多推广账户余额
@@ -85,12 +85,4 @@ export interface PddAdBalanceGetAdBalanceGetResponseAccountsBalanceResponseInter
    * @default:
    **/
   spendable_balance: string;
-}
-
-// 导出默认分类
-export default interface InterfaceDefaultInterface {
-  [PDD_AD_BALANCE_GET]: {
-    requestInterface: PddAdBalanceGetRequestInterface;
-    responseInterface: PddAdBalanceGetResponseInterface;
-  };
 }

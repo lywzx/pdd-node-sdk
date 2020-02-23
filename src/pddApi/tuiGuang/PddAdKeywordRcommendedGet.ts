@@ -1,4 +1,4 @@
-export const PDD_AD_KEYWORD_RCOMMENDED_GET = 'PDD_AD_KEYWORD_RCOMMENDED_GET';
+export const PDD_AD_KEYWORD_RCOMMENDED_GET = 'pdd.ad.keyword.rcommended.get';
 
 /**
  * 接口名称：系统推荐关键词
@@ -105,12 +105,4 @@ export interface PddAdKeywordRcommendedGetAdRecommendedKeywordListResponseRecomm
    * @default:
    **/
   word: string;
-}
-
-// 导出默认分类
-export default interface InterfaceDefaultInterface {
-  [PDD_AD_KEYWORD_RCOMMENDED_GET]: {
-    requestInterface: PddAdKeywordRcommendedGetRequestInterface;
-    responseInterface: PddAdKeywordRcommendedGetResponseInterface;
-  };
 }

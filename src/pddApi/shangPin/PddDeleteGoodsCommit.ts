@@ -1,4 +1,4 @@
-export const PDD_DELETE_GOODS_COMMIT = 'PDD_DELETE_GOODS_COMMIT';
+export const PDD_DELETE_GOODS_COMMIT = 'pdd.delete.goods.commit';
 
 /**
  * 接口名称：删除商品接口
@@ -26,12 +26,4 @@ export interface PddDeleteGoodsCommitResponseInterface {
    * @default:
    **/
   open_api_response: boolean;
-}
-
-// 导出默认分类
-export default interface InterfaceDefaultInterface {
-  [PDD_DELETE_GOODS_COMMIT]: {
-    requestInterface: PddDeleteGoodsCommitRequestInterface;
-    responseInterface: PddDeleteGoodsCommitResponseInterface;
-  };
 }

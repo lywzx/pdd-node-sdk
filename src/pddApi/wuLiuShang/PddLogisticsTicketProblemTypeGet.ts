@@ -1,4 +1,4 @@
-export const PDD_LOGISTICS_TICKET_PROBLEM_TYPE_GET = 'PDD_LOGISTICS_TICKET_PROBLEM_TYPE_GET';
+export const PDD_LOGISTICS_TICKET_PROBLEM_TYPE_GET = 'pdd.logistics.ticket.problem.type.get';
 
 /**
  * 接口名称：快递公司工单问题类型列表接口
@@ -57,12 +57,4 @@ export interface PddLogisticsTicketProblemTypeGetLogisticsProblemTypeGetResponse
    * @default:
    **/
   id: string;
-}
-
-// 导出默认分类
-export default interface InterfaceDefaultInterface {
-  [PDD_LOGISTICS_TICKET_PROBLEM_TYPE_GET]: {
-    requestInterface: PddLogisticsTicketProblemTypeGetRequestInterface;
-    responseInterface: PddLogisticsTicketProblemTypeGetResponseInterface;
-  };
 }

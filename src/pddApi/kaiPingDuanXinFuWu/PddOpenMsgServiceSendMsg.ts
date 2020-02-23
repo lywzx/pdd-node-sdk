@@ -1,4 +1,4 @@
-export const PDD_OPEN_MSG_SERVICE_SEND_MSG = 'PDD_OPEN_MSG_SERVICE_SEND_MSG';
+export const PDD_OPEN_MSG_SERVICE_SEND_MSG = 'pdd.open.msg.service.send.msg';
 
 /**
  * 接口名称：短信发送接口
@@ -83,12 +83,4 @@ export interface PddOpenMsgServiceSendMsgResponseInterface {
    * @default:
    **/
   message: string;
-}
-
-// 导出默认分类
-export default interface InterfaceDefaultInterface {
-  [PDD_OPEN_MSG_SERVICE_SEND_MSG]: {
-    requestInterface: PddOpenMsgServiceSendMsgRequestInterface;
-    responseInterface: PddOpenMsgServiceSendMsgResponseInterface;
-  };
 }

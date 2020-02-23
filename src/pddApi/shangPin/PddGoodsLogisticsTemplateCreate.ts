@@ -1,4 +1,4 @@
-export const PDD_GOODS_LOGISTICS_TEMPLATE_CREATE = 'PDD_GOODS_LOGISTICS_TEMPLATE_CREATE';
+export const PDD_GOODS_LOGISTICS_TEMPLATE_CREATE = 'pdd.goods.logistics.template.create';
 
 /**
  * 接口名称：创建商品物流模版
@@ -184,12 +184,4 @@ export interface PddGoodsLogisticsTemplateCreateGoodsLogisticsTemplateCreateResp
    * @default:
    **/
   template_id: string;
-}
-
-// 导出默认分类
-export default interface InterfaceDefaultInterface {
-  [PDD_GOODS_LOGISTICS_TEMPLATE_CREATE]: {
-    requestInterface: PddGoodsLogisticsTemplateCreateRequestInterface;
-    responseInterface: PddGoodsLogisticsTemplateCreateResponseInterface;
-  };
 }

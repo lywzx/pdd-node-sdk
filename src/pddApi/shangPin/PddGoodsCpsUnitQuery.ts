@@ -1,4 +1,4 @@
-export const PDD_GOODS_CPS_UNIT_QUERY = 'PDD_GOODS_CPS_UNIT_QUERY';
+export const PDD_GOODS_CPS_UNIT_QUERY = 'pdd.goods.cps.unit.query';
 
 /**
  * 接口名称：查询商品推广API
@@ -118,12 +118,4 @@ export interface PddGoodsCpsUnitQueryCouponVoResponseInterface {
    * @default:
    **/
   remain_quantity: string;
-}
-
-// 导出默认分类
-export default interface InterfaceDefaultInterface {
-  [PDD_GOODS_CPS_UNIT_QUERY]: {
-    requestInterface: PddGoodsCpsUnitQueryRequestInterface;
-    responseInterface: PddGoodsCpsUnitQueryResponseInterface;
-  };
 }

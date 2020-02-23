@@ -1,4 +1,4 @@
-export const PDD_GOODS_OPT_GET = 'PDD_GOODS_OPT_GET';
+export const PDD_GOODS_OPT_GET = 'pdd.goods.opt.get';
 
 /**
  * 接口名称：查询商品标签列表
@@ -77,12 +77,4 @@ export interface PddGoodsOptGetGoodsOptGetResponseGoodsOptListResponseInterface 
    * @default:
    **/
   opt_id: string;
-}
-
-// 导出默认分类
-export default interface InterfaceDefaultInterface {
-  [PDD_GOODS_OPT_GET]: {
-    requestInterface: PddGoodsOptGetRequestInterface;
-    responseInterface: PddGoodsOptGetResponseInterface;
-  };
 }

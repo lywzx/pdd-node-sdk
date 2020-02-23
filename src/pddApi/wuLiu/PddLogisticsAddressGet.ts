@@ -1,4 +1,4 @@
-export const PDD_LOGISTICS_ADDRESS_GET = 'PDD_LOGISTICS_ADDRESS_GET';
+export const PDD_LOGISTICS_ADDRESS_GET = 'pdd.logistics.address.get';
 
 /**
  * 接口名称：获取拼多多标准国家地址库
@@ -85,12 +85,4 @@ export interface PddLogisticsAddressGetLogisticsAddressGetResponseLogisticsAddre
    * @default:
    **/
   id: string;
-}
-
-// 导出默认分类
-export default interface InterfaceDefaultInterface {
-  [PDD_LOGISTICS_ADDRESS_GET]: {
-    requestInterface: PddLogisticsAddressGetRequestInterface;
-    responseInterface: PddLogisticsAddressGetResponseInterface;
-  };
 }

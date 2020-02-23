@@ -1,4 +1,4 @@
-export const PDD_AD_HISTORY_RT_REPORT_GET = 'PDD_AD_HISTORY_RT_REPORT_GET';
+export const PDD_AD_HISTORY_RT_REPORT_GET = 'pdd.ad.history.rt.report.get';
 
 /**
  * 接口名称：账户推广实时报表数据
@@ -83,12 +83,4 @@ export interface PddAdHistoryRtReportGetAdMallRealTimeReportResponseResponseInte
    * @default:
    **/
   click_rate: string;
-}
-
-// 导出默认分类
-export default interface InterfaceDefaultInterface {
-  [PDD_AD_HISTORY_RT_REPORT_GET]: {
-    requestInterface: PddAdHistoryRtReportGetRequestInterface;
-    responseInterface: PddAdHistoryRtReportGetResponseInterface;
-  };
 }

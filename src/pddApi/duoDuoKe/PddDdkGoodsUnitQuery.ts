@@ -1,4 +1,4 @@
-export const PDD_DDK_GOODS_UNIT_QUERY = 'PDD_DDK_GOODS_UNIT_QUERY';
+export const PDD_DDK_GOODS_UNIT_QUERY = 'pdd.ddk.goods.unit.query';
 
 /**
  * 接口名称：查询商品的推广计划
@@ -97,12 +97,4 @@ export interface PddDdkGoodsUnitQueryDdkGoodsUnitQueryResponseResponseInterface 
    * @default:
    **/
   unit_type: number;
-}
-
-// 导出默认分类
-export default interface InterfaceDefaultInterface {
-  [PDD_DDK_GOODS_UNIT_QUERY]: {
-    requestInterface: PddDdkGoodsUnitQueryRequestInterface;
-    responseInterface: PddDdkGoodsUnitQueryResponseInterface;
-  };
 }

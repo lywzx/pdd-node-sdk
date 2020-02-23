@@ -1,4 +1,4 @@
-export const PDD_GOODS_CPS_MALL_UNIT_CREATE = 'PDD_GOODS_CPS_MALL_UNIT_CREATE';
+export const PDD_GOODS_CPS_MALL_UNIT_CREATE = 'pdd.goods.cps.mall.unit.create';
 
 /**
  * 接口名称：设置全店推广API
@@ -33,12 +33,4 @@ export interface PddGoodsCpsMallUnitCreateResponseInterface {
    * @default:
    **/
   is_create_success: boolean;
-}
-
-// 导出默认分类
-export default interface InterfaceDefaultInterface {
-  [PDD_GOODS_CPS_MALL_UNIT_CREATE]: {
-    requestInterface: PddGoodsCpsMallUnitCreateRequestInterface;
-    responseInterface: PddGoodsCpsMallUnitCreateResponseInterface;
-  };
 }

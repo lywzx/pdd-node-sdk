@@ -1,4 +1,4 @@
-export const PDD_NEXTONE_LOGISTICS_WAREHOUSE_UPDATE = 'PDD_NEXTONE_LOGISTICS_WAREHOUSE_UPDATE';
+export const PDD_NEXTONE_LOGISTICS_WAREHOUSE_UPDATE = 'pdd.nextone.logistics.warehouse.update';
 
 /**
  * 接口名称：退货入库
@@ -113,12 +113,4 @@ export interface PddNextoneLogisticsWarehouseUpdateResponseResultResponseInterfa
    * @default:
    **/
   order_sn: string;
-}
-
-// 导出默认分类
-export default interface InterfaceDefaultInterface {
-  [PDD_NEXTONE_LOGISTICS_WAREHOUSE_UPDATE]: {
-    requestInterface: PddNextoneLogisticsWarehouseUpdateRequestInterface;
-    responseInterface: PddNextoneLogisticsWarehouseUpdateResponseInterface;
-  };
 }

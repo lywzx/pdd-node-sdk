@@ -1,4 +1,4 @@
-export const PDD_SERVICEMARKET_SETTLEMENTBILL_GET = 'PDD_SERVICEMARKET_SETTLEMENTBILL_GET';
+export const PDD_SERVICEMARKET_SETTLEMENTBILL_GET = 'pdd.servicemarket.settlementbill.get';
 
 /**
  * 接口名称：月结算账单导出
@@ -112,12 +112,4 @@ export interface PddServicemarketSettlementbillGetSettlementBillSearchResponseDa
    * @default:
    **/
   unsettle_amount: string;
-}
-
-// 导出默认分类
-export default interface InterfaceDefaultInterface {
-  [PDD_SERVICEMARKET_SETTLEMENTBILL_GET]: {
-    requestInterface: PddServicemarketSettlementbillGetRequestInterface;
-    responseInterface: PddServicemarketSettlementbillGetResponseInterface;
-  };
 }

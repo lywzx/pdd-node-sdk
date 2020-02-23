@@ -1,4 +1,4 @@
-export const PDD_DDK_COUPON_INFO_QUERY = 'PDD_DDK_COUPON_INFO_QUERY';
+export const PDD_DDK_COUPON_INFO_QUERY = 'pdd.ddk.coupon.info.query';
 
 /**
  * 接口名称：查询优惠券信息
@@ -98,12 +98,4 @@ export interface PddDdkCouponInfoQueryDdkCouponInfoQueryResponseListResponseInte
    * @default:
    **/
   remain_quantity: string;
-}
-
-// 导出默认分类
-export default interface InterfaceDefaultInterface {
-  [PDD_DDK_COUPON_INFO_QUERY]: {
-    requestInterface: PddDdkCouponInfoQueryRequestInterface;
-    responseInterface: PddDdkCouponInfoQueryResponseInterface;
-  };
 }

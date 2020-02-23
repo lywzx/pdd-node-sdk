@@ -1,4 +1,4 @@
-export const PDD_PMC_USER_GET = 'PDD_PMC_USER_GET';
+export const PDD_PMC_USER_GET = 'pdd.pmc.user.get';
 
 /**
  * 接口名称：获取用户已开通消息
@@ -84,12 +84,4 @@ export interface PddPmcUserGetPmcUserGetResponsePmcUserResponseInterface {
    * @default:
    **/
   topics: string;
-}
-
-// 导出默认分类
-export default interface InterfaceDefaultInterface {
-  [PDD_PMC_USER_GET]: {
-    requestInterface: PddPmcUserGetRequestInterface;
-    responseInterface: PddPmcUserGetResponseInterface;
-  };
 }

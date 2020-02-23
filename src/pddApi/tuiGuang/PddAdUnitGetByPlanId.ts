@@ -1,4 +1,4 @@
-export const PDD_AD_UNIT_GET_BY_PLAN_ID = 'PDD_AD_UNIT_GET_BY_PLAN_ID';
+export const PDD_AD_UNIT_GET_BY_PLAN_ID = 'pdd.ad.unit.get.by.plan.id';
 
 /**
  * 接口名称：根据计划id获取推广单元基本信息
@@ -84,12 +84,4 @@ export interface PddAdUnitGetByPlanIdAdUnitBaseInfoListResponseUnitBaseInfoListR
    * @default:
    **/
   unit_id: string;
-}
-
-// 导出默认分类
-export default interface InterfaceDefaultInterface {
-  [PDD_AD_UNIT_GET_BY_PLAN_ID]: {
-    requestInterface: PddAdUnitGetByPlanIdRequestInterface;
-    responseInterface: PddAdUnitGetByPlanIdResponseInterface;
-  };
 }

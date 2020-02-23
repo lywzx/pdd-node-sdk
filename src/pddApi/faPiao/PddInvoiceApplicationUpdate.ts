@@ -1,4 +1,4 @@
-export const PDD_INVOICE_APPLICATION_UPDATE = 'PDD_INVOICE_APPLICATION_UPDATE';
+export const PDD_INVOICE_APPLICATION_UPDATE = 'pdd.invoice.application.update';
 
 /**
  * 接口名称：开票申请单审核
@@ -62,12 +62,4 @@ export interface PddInvoiceApplicationUpdateInvoiceApplicationUpdateResponseResp
    * @default:
    **/
   is_success: boolean;
-}
-
-// 导出默认分类
-export default interface InterfaceDefaultInterface {
-  [PDD_INVOICE_APPLICATION_UPDATE]: {
-    requestInterface: PddInvoiceApplicationUpdateRequestInterface;
-    responseInterface: PddInvoiceApplicationUpdateResponseInterface;
-  };
 }

@@ -1,4 +1,4 @@
-export const PDD_MALL_INFO_GROUP_LIST_STORE_GET = 'PDD_MALL_INFO_GROUP_LIST_STORE_GET';
+export const PDD_MALL_INFO_GROUP_LIST_STORE_GET = 'pdd.mall.info.group.list.store.get';
 
 /**
  * 接口名称：查询门店组下门店
@@ -133,12 +133,4 @@ export interface PddMallInfoGroupListStoreGetMallInfoGroupListStoreGetResponseMa
    * @default:
    **/
   storeNumber: string;
-}
-
-// 导出默认分类
-export default interface InterfaceDefaultInterface {
-  [PDD_MALL_INFO_GROUP_LIST_STORE_GET]: {
-    requestInterface: PddMallInfoGroupListStoreGetRequestInterface;
-    responseInterface: PddMallInfoGroupListStoreGetResponseInterface;
-  };
 }

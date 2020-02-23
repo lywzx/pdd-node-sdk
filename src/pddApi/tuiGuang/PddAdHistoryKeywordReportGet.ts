@@ -1,4 +1,4 @@
-export const PDD_AD_HISTORY_KEYWORD_REPORT_GET = 'PDD_AD_HISTORY_KEYWORD_REPORT_GET';
+export const PDD_AD_HISTORY_KEYWORD_REPORT_GET = 'pdd.ad.history.keyword.report.get';
 
 /**
  * 接口名称：关键词历史报表数据
@@ -225,12 +225,4 @@ export interface PddAdHistoryKeywordReportGetAdKeywordHistoryReportGetResponseRe
    * @default:
    **/
   value: string;
-}
-
-// 导出默认分类
-export default interface InterfaceDefaultInterface {
-  [PDD_AD_HISTORY_KEYWORD_REPORT_GET]: {
-    requestInterface: PddAdHistoryKeywordReportGetRequestInterface;
-    responseInterface: PddAdHistoryKeywordReportGetResponseInterface;
-  };
 }

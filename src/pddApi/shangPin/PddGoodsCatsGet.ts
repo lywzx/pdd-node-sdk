@@ -1,4 +1,4 @@
-export const PDD_GOODS_CATS_GET = 'PDD_GOODS_CATS_GET';
+export const PDD_GOODS_CATS_GET = 'pdd.goods.cats.get';
 
 /**
  * 接口名称：商品标准类目接口
@@ -77,12 +77,4 @@ export interface PddGoodsCatsGetGoodsCatsGetResponseGoodsCatsListResponseInterfa
    * @default:
    **/
   cat_id: string;
-}
-
-// 导出默认分类
-export default interface InterfaceDefaultInterface {
-  [PDD_GOODS_CATS_GET]: {
-    requestInterface: PddGoodsCatsGetRequestInterface;
-    responseInterface: PddGoodsCatsGetResponseInterface;
-  };
 }

@@ -1,4 +1,4 @@
-export const PDD_MALL_INFO_STORE_GET = 'PDD_MALL_INFO_STORE_GET';
+export const PDD_MALL_INFO_STORE_GET = 'pdd.mall.info.store.get';
 
 /**
  * 接口名称：开放平台查询门店信息
@@ -175,12 +175,4 @@ export interface PddMallInfoStoreGetResMallStoreVOListResponseInterface {
    * @default:
    **/
   store_number: string;
-}
-
-// 导出默认分类
-export default interface InterfaceDefaultInterface {
-  [PDD_MALL_INFO_STORE_GET]: {
-    requestInterface: PddMallInfoStoreGetRequestInterface;
-    responseInterface: PddMallInfoStoreGetResponseInterface;
-  };
 }

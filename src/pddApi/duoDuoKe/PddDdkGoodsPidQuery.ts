@@ -1,4 +1,4 @@
-export const PDD_DDK_GOODS_PID_QUERY = 'PDD_DDK_GOODS_PID_QUERY';
+export const PDD_DDK_GOODS_PID_QUERY = 'pdd.ddk.goods.pid.query';
 
 /**
  * 接口名称：查询已经生成的推广位信息
@@ -91,12 +91,4 @@ export interface PddDdkGoodsPidQueryPIdQueryResponsePIdListResponseInterface {
    * @default:
    **/
   p_id: string;
-}
-
-// 导出默认分类
-export default interface InterfaceDefaultInterface {
-  [PDD_DDK_GOODS_PID_QUERY]: {
-    requestInterface: PddDdkGoodsPidQueryRequestInterface;
-    responseInterface: PddDdkGoodsPidQueryResponseInterface;
-  };
 }

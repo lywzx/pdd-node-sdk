@@ -1,4 +1,4 @@
-export const PDD_MALL_TICKET_NOTIFY = 'PDD_MALL_TICKET_NOTIFY';
+export const PDD_MALL_TICKET_NOTIFY = 'pdd.mall.ticket.notify';
 
 /**
  * 接口名称：商家工单处理结果回调接口
@@ -55,12 +55,4 @@ export interface PddMallTicketNotifyMallTicketNotifyResponeResponseInterface {
    * @default:
    **/
   is_success: boolean;
-}
-
-// 导出默认分类
-export default interface InterfaceDefaultInterface {
-  [PDD_MALL_TICKET_NOTIFY]: {
-    requestInterface: PddMallTicketNotifyRequestInterface;
-    responseInterface: PddMallTicketNotifyResponseInterface;
-  };
 }

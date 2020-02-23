@@ -1,4 +1,4 @@
-export const PDD_GOODS_TEMPLATE_PROPERTY_VALUE_SEARCH = 'PDD_GOODS_TEMPLATE_PROPERTY_VALUE_SEARCH';
+export const PDD_GOODS_TEMPLATE_PROPERTY_VALUE_SEARCH = 'pdd.goods.template.property.value.search';
 
 /**
  * 接口名称：模板属性值搜索接口
@@ -98,12 +98,4 @@ export interface PddGoodsTemplatePropertyValueSearchGoodsTemplatePropValSearchRe
    * @default:
    **/
   vid: string;
-}
-
-// 导出默认分类
-export default interface InterfaceDefaultInterface {
-  [PDD_GOODS_TEMPLATE_PROPERTY_VALUE_SEARCH]: {
-    requestInterface: PddGoodsTemplatePropertyValueSearchRequestInterface;
-    responseInterface: PddGoodsTemplatePropertyValueSearchResponseInterface;
-  };
 }

@@ -1,4 +1,4 @@
-export const PDD_DDK_THEME_GOODS_SEARCH = 'PDD_DDK_THEME_GOODS_SEARCH';
+export const PDD_DDK_THEME_GOODS_SEARCH = 'pdd.ddk.theme.goods.search';
 
 /**
  * 接口名称：多多进宝主题商品查询
@@ -231,12 +231,4 @@ export interface PddDdkThemeGoodsSearchThemeListGetResponseGoodsListResponseInte
    * @default:
    **/
   lgst_txt: string;
-}
-
-// 导出默认分类
-export default interface InterfaceDefaultInterface {
-  [PDD_DDK_THEME_GOODS_SEARCH]: {
-    requestInterface: PddDdkThemeGoodsSearchRequestInterface;
-    responseInterface: PddDdkThemeGoodsSearchResponseInterface;
-  };
 }

@@ -1,4 +1,4 @@
-export const PDD_MALL_INFO_STORE_CREATE_POST_NOPOI = 'PDD_MALL_INFO_STORE_CREATE_POST_NOPOI';
+export const PDD_MALL_INFO_STORE_CREATE_POST_NOPOI = 'pdd.mall.info.store.create.post.nopoi';
 
 /**
  * 接口名称：开放平台无PoiId创建门店
@@ -110,12 +110,4 @@ export interface PddMallInfoStoreCreatePostNopoiResponseInterface {
    * @default:
    **/
   res: string;
-}
-
-// 导出默认分类
-export default interface InterfaceDefaultInterface {
-  [PDD_MALL_INFO_STORE_CREATE_POST_NOPOI]: {
-    requestInterface: PddMallInfoStoreCreatePostNopoiRequestInterface;
-    responseInterface: PddMallInfoStoreCreatePostNopoiResponseInterface;
-  };
 }

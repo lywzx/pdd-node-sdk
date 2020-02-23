@@ -1,4 +1,4 @@
-export const PDD_LOGISTICS_ONLINE_SEND = 'PDD_LOGISTICS_ONLINE_SEND';
+export const PDD_LOGISTICS_ONLINE_SEND = 'pdd.logistics.online.send';
 
 /**
  * 接口名称：订单发货通知接口
@@ -69,12 +69,4 @@ export interface PddLogisticsOnlineSendLogisticsOnlineSendResponseResponseInterf
    * @default:
    **/
   is_success: boolean;
-}
-
-// 导出默认分类
-export default interface InterfaceDefaultInterface {
-  [PDD_LOGISTICS_ONLINE_SEND]: {
-    requestInterface: PddLogisticsOnlineSendRequestInterface;
-    responseInterface: PddLogisticsOnlineSendResponseInterface;
-  };
 }

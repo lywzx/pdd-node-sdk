@@ -1,4 +1,4 @@
-export const PDD_DDK_OAUTH_RESOURCE_URL_GEN = 'PDD_DDK_OAUTH_RESOURCE_URL_GEN';
+export const PDD_DDK_OAUTH_RESOURCE_URL_GEN = 'pdd.ddk.oauth.resource.url.gen';
 
 /**
  * 接口名称：拼多多主站频道推广接口
@@ -367,12 +367,4 @@ export interface PddDdkOauthResourceUrlGenResourceUrlResponseWeAppInfoResponseIn
    * @default:
    **/
   we_app_icon_url: string;
-}
-
-// 导出默认分类
-export default interface InterfaceDefaultInterface {
-  [PDD_DDK_OAUTH_RESOURCE_URL_GEN]: {
-    requestInterface: PddDdkOauthResourceUrlGenRequestInterface;
-    responseInterface: PddDdkOauthResourceUrlGenResponseInterface;
-  };
 }

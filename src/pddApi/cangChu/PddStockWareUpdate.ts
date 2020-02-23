@@ -1,4 +1,4 @@
-export const PDD_STOCK_WARE_UPDATE = 'PDD_STOCK_WARE_UPDATE';
+export const PDD_STOCK_WARE_UPDATE = 'pdd.stock.ware.update';
 
 /**
  * 接口名称：编辑货品
@@ -167,12 +167,4 @@ export interface PddStockWareUpdateResponseInterface {
    * @default:
    **/
   open_api_response: string;
-}
-
-// 导出默认分类
-export default interface InterfaceDefaultInterface {
-  [PDD_STOCK_WARE_UPDATE]: {
-    requestInterface: PddStockWareUpdateRequestInterface;
-    responseInterface: PddStockWareUpdateResponseInterface;
-  };
 }

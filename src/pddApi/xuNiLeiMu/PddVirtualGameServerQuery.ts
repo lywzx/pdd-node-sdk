@@ -1,4 +1,4 @@
-export const PDD_VIRTUAL_GAME_SERVER_QUERY = 'PDD_VIRTUAL_GAME_SERVER_QUERY';
+export const PDD_VIRTUAL_GAME_SERVER_QUERY = 'pdd.virtual.game.server.query';
 
 /**
  * 接口名称：虚拟游戏类区服列表接口
@@ -127,12 +127,4 @@ export interface PddVirtualGameServerQueryGameServerQueryResponseItemListChildre
    * @default:
    **/
   type: number;
-}
-
-// 导出默认分类
-export default interface InterfaceDefaultInterface {
-  [PDD_VIRTUAL_GAME_SERVER_QUERY]: {
-    requestInterface: PddVirtualGameServerQueryRequestInterface;
-    responseInterface: PddVirtualGameServerQueryResponseInterface;
-  };
 }

@@ -1,4 +1,4 @@
-export const PDD_AD_PLAN_CREATE = 'PDD_AD_PLAN_CREATE';
+export const PDD_AD_PLAN_CREATE = 'pdd.ad.plan.create';
 
 /**
  * 接口名称：新建推广计划
@@ -84,12 +84,4 @@ export interface PddAdPlanCreateAdPlanCreateResponseResponseInterface {
    * @default:
    **/
   ad_plan_id: string;
-}
-
-// 导出默认分类
-export default interface InterfaceDefaultInterface {
-  [PDD_AD_PLAN_CREATE]: {
-    requestInterface: PddAdPlanCreateRequestInterface;
-    responseInterface: PddAdPlanCreateResponseInterface;
-  };
 }

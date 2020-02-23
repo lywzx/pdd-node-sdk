@@ -1,4 +1,4 @@
-export const PDD_AD_CREATIVE_CREATE = 'PDD_AD_CREATIVE_CREATE';
+export const PDD_AD_CREATIVE_CREATE = 'pdd.ad.creative.create';
 
 /**
  * 接口名称：推广单元增加创意
@@ -77,12 +77,4 @@ export interface PddAdCreativeCreateOpenApiResponseResponseInterface {
    * @default:
    **/
   is_success: boolean;
-}
-
-// 导出默认分类
-export default interface InterfaceDefaultInterface {
-  [PDD_AD_CREATIVE_CREATE]: {
-    requestInterface: PddAdCreativeCreateRequestInterface;
-    responseInterface: PddAdCreativeCreateResponseInterface;
-  };
 }

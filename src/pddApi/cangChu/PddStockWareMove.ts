@@ -1,4 +1,4 @@
-export const PDD_STOCK_WARE_MOVE = 'PDD_STOCK_WARE_MOVE';
+export const PDD_STOCK_WARE_MOVE = 'pdd.stock.ware.move';
 
 /**
  * 接口名称：家电分仓库存-库存信息调整
@@ -112,12 +112,4 @@ export interface PddStockWareMoveResponseInterface {
    * @default:
    **/
   open_api_response: string;
-}
-
-// 导出默认分类
-export default interface InterfaceDefaultInterface {
-  [PDD_STOCK_WARE_MOVE]: {
-    requestInterface: PddStockWareMoveRequestInterface;
-    responseInterface: PddStockWareMoveResponseInterface;
-  };
 }

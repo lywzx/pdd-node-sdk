@@ -1,4 +1,4 @@
-export const PDD_GOODS_SPEC_GET = 'PDD_GOODS_SPEC_GET';
+export const PDD_GOODS_SPEC_GET = 'pdd.goods.spec.get';
 
 /**
  * 接口名称：商品属性类目接口
@@ -70,12 +70,4 @@ export interface PddGoodsSpecGetGoodsSpecGetResponseGoodsSpecListResponseInterfa
    * @default:
    **/
   parent_spec_name: string;
-}
-
-// 导出默认分类
-export default interface InterfaceDefaultInterface {
-  [PDD_GOODS_SPEC_GET]: {
-    requestInterface: PddGoodsSpecGetRequestInterface;
-    responseInterface: PddGoodsSpecGetResponseInterface;
-  };
 }

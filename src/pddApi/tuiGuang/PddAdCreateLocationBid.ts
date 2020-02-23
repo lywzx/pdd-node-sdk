@@ -1,4 +1,4 @@
-export const PDD_AD_CREATE_LOCATION_BID = 'PDD_AD_CREATE_LOCATION_BID';
+export const PDD_AD_CREATE_LOCATION_BID = 'pdd.ad.create.location.bid';
 
 /**
  * 接口名称：推广单元新增资源位信息（批量）
@@ -77,12 +77,4 @@ export interface PddAdCreateLocationBidOpenApiResponseResponseInterface {
    * @default:
    **/
   is_success: boolean;
-}
-
-// 导出默认分类
-export default interface InterfaceDefaultInterface {
-  [PDD_AD_CREATE_LOCATION_BID]: {
-    requestInterface: PddAdCreateLocationBidRequestInterface;
-    responseInterface: PddAdCreateLocationBidResponseInterface;
-  };
 }

@@ -1,4 +1,4 @@
-export const PDD_MALL_INFO_GET = 'PDD_MALL_INFO_GET';
+export const PDD_MALL_INFO_GET = 'pdd.mall.info.get';
 
 /**
  * 接口名称：店铺信息接口
@@ -56,12 +56,4 @@ export interface PddMallInfoGetMallInfoGetResponseResponseInterface {
    * @default:
    **/
   merchant_type: number;
-}
-
-// 导出默认分类
-export default interface InterfaceDefaultInterface {
-  [PDD_MALL_INFO_GET]: {
-    requestInterface: PddMallInfoGetRequestInterface;
-    responseInterface: PddMallInfoGetResponseInterface;
-  };
 }

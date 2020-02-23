@@ -1,4 +1,4 @@
-export const PDD_LOGISTICS_CS_MESSAGE_SEND = 'PDD_LOGISTICS_CS_MESSAGE_SEND';
+export const PDD_LOGISTICS_CS_MESSAGE_SEND = 'pdd.logistics.cs.message.send';
 
 /**
  * 接口名称：客服给发消息接口
@@ -83,12 +83,4 @@ export interface PddLogisticsCsMessageSendLogisticsCsMessageSendResponseResponse
    * @default:
    **/
   is_success: boolean;
-}
-
-// 导出默认分类
-export default interface InterfaceDefaultInterface {
-  [PDD_LOGISTICS_CS_MESSAGE_SEND]: {
-    requestInterface: PddLogisticsCsMessageSendRequestInterface;
-    responseInterface: PddLogisticsCsMessageSendResponseInterface;
-  };
 }

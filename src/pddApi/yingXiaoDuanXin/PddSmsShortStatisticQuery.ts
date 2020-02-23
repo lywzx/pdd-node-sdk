@@ -1,4 +1,4 @@
-export const PDD_SMS_SHORT_STATISTIC_QUERY = 'PDD_SMS_SHORT_STATISTIC_QUERY';
+export const PDD_SMS_SHORT_STATISTIC_QUERY = 'pdd.sms.short.statistic.query';
 
 /**
  * 接口名称：查看任务数据
@@ -155,12 +155,4 @@ export interface PddSmsShortStatisticQuerySmsShortMsgStatisticQueryResponseStati
    * @default:
    **/
   pay_mall_rto: string;
-}
-
-// 导出默认分类
-export default interface InterfaceDefaultInterface {
-  [PDD_SMS_SHORT_STATISTIC_QUERY]: {
-    requestInterface: PddSmsShortStatisticQueryRequestInterface;
-    responseInterface: PddSmsShortStatisticQueryResponseInterface;
-  };
 }

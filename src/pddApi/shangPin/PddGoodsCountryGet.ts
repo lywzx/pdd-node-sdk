@@ -1,4 +1,4 @@
-export const PDD_GOODS_COUNTRY_GET = 'PDD_GOODS_COUNTRY_GET';
+export const PDD_GOODS_COUNTRY_GET = 'pdd.goods.country.get';
 
 /**
  * 接口名称：商品国家接口
@@ -57,12 +57,4 @@ export interface PddGoodsCountryGetGoodsCountryGetResponseCountryListResponseInt
    * @default:
    **/
   country_name: string;
-}
-
-// 导出默认分类
-export default interface InterfaceDefaultInterface {
-  [PDD_GOODS_COUNTRY_GET]: {
-    requestInterface: PddGoodsCountryGetRequestInterface;
-    responseInterface: PddGoodsCountryGetResponseInterface;
-  };
 }

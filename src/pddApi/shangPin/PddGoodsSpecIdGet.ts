@@ -1,4 +1,4 @@
-export const PDD_GOODS_SPEC_ID_GET = 'PDD_GOODS_SPEC_ID_GET';
+export const PDD_GOODS_SPEC_ID_GET = 'pdd.goods.spec.id.get';
 
 /**
  * 接口名称：生成商家自定义的规格
@@ -62,12 +62,4 @@ export interface PddGoodsSpecIdGetGoodsSpecIdGetResponseResponseInterface {
    * @default:
    **/
   spec_id: string;
-}
-
-// 导出默认分类
-export default interface InterfaceDefaultInterface {
-  [PDD_GOODS_SPEC_ID_GET]: {
-    requestInterface: PddGoodsSpecIdGetRequestInterface;
-    responseInterface: PddGoodsSpecIdGetResponseInterface;
-  };
 }

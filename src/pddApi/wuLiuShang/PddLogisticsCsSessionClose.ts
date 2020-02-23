@@ -1,4 +1,4 @@
-export const PDD_LOGISTICS_CS_SESSION_CLOSE = 'PDD_LOGISTICS_CS_SESSION_CLOSE';
+export const PDD_LOGISTICS_CS_SESSION_CLOSE = 'pdd.logistics.cs.session.close';
 
 /**
  * 接口名称：客服关闭会话接口
@@ -55,12 +55,4 @@ export interface PddLogisticsCsSessionCloseLogisticsCsSessionCloseResponseRespon
    * @default:
    **/
   is_success: boolean;
-}
-
-// 导出默认分类
-export default interface InterfaceDefaultInterface {
-  [PDD_LOGISTICS_CS_SESSION_CLOSE]: {
-    requestInterface: PddLogisticsCsSessionCloseRequestInterface;
-    responseInterface: PddLogisticsCsSessionCloseResponseInterface;
-  };
 }

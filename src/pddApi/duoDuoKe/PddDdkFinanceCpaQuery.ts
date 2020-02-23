@@ -1,4 +1,4 @@
-export const PDD_DDK_FINANCE_CPA_QUERY = 'PDD_DDK_FINANCE_CPA_QUERY';
+export const PDD_DDK_FINANCE_CPA_QUERY = 'pdd.ddk.finance.cpa.query';
 
 /**
  * 接口名称：查询CPA数据
@@ -62,12 +62,4 @@ export interface PddDdkFinanceCpaQueryFinanceCpaQueryResponseResponseInterface {
    * @default:
    **/
   subsidy_fee: number;
-}
-
-// 导出默认分类
-export default interface InterfaceDefaultInterface {
-  [PDD_DDK_FINANCE_CPA_QUERY]: {
-    requestInterface: PddDdkFinanceCpaQueryRequestInterface;
-    responseInterface: PddDdkFinanceCpaQueryResponseInterface;
-  };
 }

@@ -1,4 +1,4 @@
-export const PDD_PMC_USER_PERMIT = 'PDD_PMC_USER_PERMIT';
+export const PDD_PMC_USER_PERMIT = 'pdd.pmc.user.permit';
 
 /**
  * 接口名称：为已授权的用户开通消息服务
@@ -41,12 +41,4 @@ export interface PddPmcUserPermitPmcUserPermitResponseResponseInterface {
    * @default:
    **/
   is_success: boolean;
-}
-
-// 导出默认分类
-export default interface InterfaceDefaultInterface {
-  [PDD_PMC_USER_PERMIT]: {
-    requestInterface: PddPmcUserPermitRequestInterface;
-    responseInterface: PddPmcUserPermitResponseInterface;
-  };
 }

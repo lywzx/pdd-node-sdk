@@ -1,4 +1,4 @@
-export const PDD_ORDER_LIST_GET = 'PDD_ORDER_LIST_GET';
+export const PDD_ORDER_LIST_GET = 'pdd.order.list.get';
 
 /**
  * 接口名称：订单列表查询接口（根据成交时间）
@@ -796,12 +796,4 @@ export interface PddOrderListGetOrderListGetResponseOrderListOrderDepotInfoWareS
    * @default:
    **/
   ware_id: string;
-}
-
-// 导出默认分类
-export default interface InterfaceDefaultInterface {
-  [PDD_ORDER_LIST_GET]: {
-    requestInterface: PddOrderListGetRequestInterface;
-    responseInterface: PddOrderListGetResponseInterface;
-  };
 }

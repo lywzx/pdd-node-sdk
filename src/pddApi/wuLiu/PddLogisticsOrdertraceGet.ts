@@ -1,4 +1,4 @@
-export const PDD_LOGISTICS_ORDERTRACE_GET = 'PDD_LOGISTICS_ORDERTRACE_GET';
+export const PDD_LOGISTICS_ORDERTRACE_GET = 'pdd.logistics.ordertrace.get';
 
 /**
  * 接口名称：轨迹查询接口
@@ -105,12 +105,4 @@ export interface PddLogisticsOrdertraceGetLogisticsOrdertraceGetResposneTraceLis
    * @default:
    **/
   desc: string;
-}
-
-// 导出默认分类
-export default interface InterfaceDefaultInterface {
-  [PDD_LOGISTICS_ORDERTRACE_GET]: {
-    requestInterface: PddLogisticsOrdertraceGetRequestInterface;
-    responseInterface: PddLogisticsOrdertraceGetResponseInterface;
-  };
 }

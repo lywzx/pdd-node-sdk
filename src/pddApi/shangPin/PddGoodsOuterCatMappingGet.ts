@@ -1,4 +1,4 @@
-export const PDD_GOODS_OUTER_CAT_MAPPING_GET = 'PDD_GOODS_OUTER_CAT_MAPPING_GET';
+export const PDD_GOODS_OUTER_CAT_MAPPING_GET = 'pdd.goods.outer.cat.mapping.get';
 
 /**
  * 接口名称：类目预测接口
@@ -76,12 +76,4 @@ export interface PddGoodsOuterCatMappingGetOuterCatMappingGetResponseResponseInt
    * @default:
    **/
   cat_id4: string;
-}
-
-// 导出默认分类
-export default interface InterfaceDefaultInterface {
-  [PDD_GOODS_OUTER_CAT_MAPPING_GET]: {
-    requestInterface: PddGoodsOuterCatMappingGetRequestInterface;
-    responseInterface: PddGoodsOuterCatMappingGetResponseInterface;
-  };
 }

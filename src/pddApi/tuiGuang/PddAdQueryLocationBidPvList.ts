@@ -1,4 +1,4 @@
-export const PDD_AD_QUERY_LOCATION_BID_PV_LIST = 'PDD_AD_QUERY_LOCATION_BID_PV_LIST';
+export const PDD_AD_QUERY_LOCATION_BID_PV_LIST = 'pdd.ad.query.location.bid.pv.list';
 
 /**
  * 接口名称：获取可选资源位信息（日均可竞流量）
@@ -55,12 +55,4 @@ export interface PddAdQueryLocationBidPvListOpenApiResponseResponseInterface {
    * @default:
    **/
   location_type: number;
-}
-
-// 导出默认分类
-export default interface InterfaceDefaultInterface {
-  [PDD_AD_QUERY_LOCATION_BID_PV_LIST]: {
-    requestInterface: PddAdQueryLocationBidPvListRequestInterface;
-    responseInterface: PddAdQueryLocationBidPvListResponseInterface;
-  };
 }

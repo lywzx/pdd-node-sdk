@@ -1,4 +1,4 @@
-export const PDD_AD_KEYWORD_DELETE = 'PDD_AD_KEYWORD_DELETE';
+export const PDD_AD_KEYWORD_DELETE = 'pdd.ad.keyword.delete';
 
 /**
  * 接口名称：推广单元删除关键词
@@ -48,12 +48,4 @@ export interface PddAdKeywordDeleteAdKeywordDeleteResponseResponseInterface {
    * @default:
    **/
   is_success: boolean;
-}
-
-// 导出默认分类
-export default interface InterfaceDefaultInterface {
-  [PDD_AD_KEYWORD_DELETE]: {
-    requestInterface: PddAdKeywordDeleteRequestInterface;
-    responseInterface: PddAdKeywordDeleteResponseInterface;
-  };
 }

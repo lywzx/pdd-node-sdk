@@ -1,4 +1,4 @@
-export const PDD_GOODS_SUBMIT_GOODS_COMMIT = 'PDD_GOODS_SUBMIT_GOODS_COMMIT';
+export const PDD_GOODS_SUBMIT_GOODS_COMMIT = 'pdd.goods.submit.goods.commit';
 
 /**
  * 接口名称：编辑并提交草稿接口
@@ -712,12 +712,4 @@ export interface PddGoodsSubmitGoodsCommitGoodsUpdateResponseResponseInterface {
    * @default:
    **/
   goods_id: string;
-}
-
-// 导出默认分类
-export default interface InterfaceDefaultInterface {
-  [PDD_GOODS_SUBMIT_GOODS_COMMIT]: {
-    requestInterface: PddGoodsSubmitGoodsCommitRequestInterface;
-    responseInterface: PddGoodsSubmitGoodsCommitResponseInterface;
-  };
 }

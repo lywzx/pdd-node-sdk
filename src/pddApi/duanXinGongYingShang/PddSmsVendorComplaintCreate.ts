@@ -1,4 +1,4 @@
-export const PDD_SMS_VENDOR_COMPLAINT_CREATE = 'PDD_SMS_VENDOR_COMPLAINT_CREATE';
+export const PDD_SMS_VENDOR_COMPLAINT_CREATE = 'pdd.sms.vendor.complaint.create';
 
 /**
  * 接口名称：投诉号码上传
@@ -104,12 +104,4 @@ export interface PddSmsVendorComplaintCreateResponseResponseInterface {
    * @default:
    **/
   success: boolean;
-}
-
-// 导出默认分类
-export default interface InterfaceDefaultInterface {
-  [PDD_SMS_VENDOR_COMPLAINT_CREATE]: {
-    requestInterface: PddSmsVendorComplaintCreateRequestInterface;
-    responseInterface: PddSmsVendorComplaintCreateResponseInterface;
-  };
 }

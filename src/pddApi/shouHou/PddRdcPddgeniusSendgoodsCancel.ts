@@ -1,4 +1,4 @@
-export const PDD_RDC_PDDGENIUS_SENDGOODS_CANCEL = 'PDD_RDC_PDDGENIUS_SENDGOODS_CANCEL';
+export const PDD_RDC_PDDGENIUS_SENDGOODS_CANCEL = 'pdd.rdc.pddgenius.sendgoods.cancel';
 
 /**
  * 接口名称：取消发货
@@ -128,12 +128,4 @@ export interface PddRdcPddgeniusSendgoodsCancelRdcPddgeniusSendgoodsCancelRespon
    * @default:
    **/
   refund_id: string;
-}
-
-// 导出默认分类
-export default interface InterfaceDefaultInterface {
-  [PDD_RDC_PDDGENIUS_SENDGOODS_CANCEL]: {
-    requestInterface: PddRdcPddgeniusSendgoodsCancelRequestInterface;
-    responseInterface: PddRdcPddgeniusSendgoodsCancelResponseInterface;
-  };
 }

@@ -1,4 +1,4 @@
-export const PDD_GOODS_CPS_MALL_UNIT_CHANGE = 'PDD_GOODS_CPS_MALL_UNIT_CHANGE';
+export const PDD_GOODS_CPS_MALL_UNIT_CHANGE = 'pdd.goods.cps.mall.unit.change';
 
 /**
  * 接口名称：修改全店推广API
@@ -41,12 +41,4 @@ export interface PddGoodsCpsMallUnitChangeGoodsCpsMallUnitChangeResponseResponse
    * @default:
    **/
   result: boolean;
-}
-
-// 导出默认分类
-export default interface InterfaceDefaultInterface {
-  [PDD_GOODS_CPS_MALL_UNIT_CHANGE]: {
-    requestInterface: PddGoodsCpsMallUnitChangeRequestInterface;
-    responseInterface: PddGoodsCpsMallUnitChangeResponseInterface;
-  };
 }

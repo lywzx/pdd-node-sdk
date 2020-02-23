@@ -1,4 +1,4 @@
-export const PDD_PMC_USER_CANCEL = 'PDD_PMC_USER_CANCEL';
+export const PDD_PMC_USER_CANCEL = 'pdd.pmc.user.cancel';
 
 /**
  * 接口名称：取消用户的消息服务
@@ -41,12 +41,4 @@ export interface PddPmcUserCancelPmcUserCancelResponseResponseInterface {
    * @default:
    **/
   is_success: boolean;
-}
-
-// 导出默认分类
-export default interface InterfaceDefaultInterface {
-  [PDD_PMC_USER_CANCEL]: {
-    requestInterface: PddPmcUserCancelRequestInterface;
-    responseInterface: PddPmcUserCancelResponseInterface;
-  };
 }

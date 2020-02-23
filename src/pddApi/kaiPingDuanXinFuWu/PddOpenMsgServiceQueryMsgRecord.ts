@@ -1,4 +1,4 @@
-export const PDD_OPEN_MSG_SERVICE_QUERY_MSG_RECORD = 'PDD_OPEN_MSG_SERVICE_QUERY_MSG_RECORD';
+export const PDD_OPEN_MSG_SERVICE_QUERY_MSG_RECORD = 'pdd.open.msg.service.query.msg.record';
 
 /**
  * 接口名称：查询短信发送记录
@@ -146,12 +146,4 @@ export interface PddOpenMsgServiceQueryMsgRecordSmsSendDetailsResponseInterface 
    * @default:
    **/
   template_code: string;
-}
-
-// 导出默认分类
-export default interface InterfaceDefaultInterface {
-  [PDD_OPEN_MSG_SERVICE_QUERY_MSG_RECORD]: {
-    requestInterface: PddOpenMsgServiceQueryMsgRecordRequestInterface;
-    responseInterface: PddOpenMsgServiceQueryMsgRecordResponseInterface;
-  };
 }
