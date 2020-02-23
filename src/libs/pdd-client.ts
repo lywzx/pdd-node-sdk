@@ -1,15 +1,30 @@
 import { PddClientOptionsInterface } from '../interfaces/pdd-client-options.interface';
-import { PddCollectRequestInterface, PddCollectResponseInterface } from '../pddApi';
-import { checkRequired, md5 } from '../util';
+import { PddCollectRequestInterface, PddCollectResponseInterface, PddCommonRequestInterface } from '../pddApi';
+import { checkRequired, md5, timestamp } from '../util';
 import { AsyncResultCallbackInterface } from '../interfaces/async-result-callback.interface';
 import { NetworkAdapter, NetworkAdapterInterface } from './network-adapter';
+import { PDD_END_POINTS } from '../constant';
+import { extend } from 'lodash';
+import { RequestParamsType, RequestParamsFullType } from '../interfaces';
+
+const defaultRequestParam = {
+  // eslint-disable-next-line @typescript-eslint/camelcase
+  data_type: 'JSON',
+  version: 'V1',
+};
 
 type AppTypes = PddCollectRequestInterface;
 
 export class PddClient {
-  constructor(private options: PddClientOptionsInterface, public adapter: NetworkAdapterInterface = NetworkAdapter) {
+  constructor(public options: PddClientOptionsInterface, public adapter: NetworkAdapterInterface = NetworkAdapter) {
+    if (!options.clientId || !options.clientSecret) {
+      throw new Error('clientId and clientSecret are necessary!');
+    }
     if (this.adapter.set) {
       this.adapter.set(this.options);
+    }
+    if (!this.options.endpoint) {
+      this.options.endpoint = PDD_END_POINTS;
     }
   }
 
@@ -19,22 +34,37 @@ export class PddClient {
    * @param params
    * @param callback
    */
-  public requestPlain<K extends keyof PddCollectResponseInterface>(
-    type: K,
-    params: PddCollectRequestInterface[K]
-  ): Promise<PddCollectRequestInterface[K]>;
-  public requestPlain<K extends keyof PddCollectRequestInterface>(
-    type: K,
-    params: PddCollectRequestInterface[K],
-    callback: AsyncResultCallbackInterface<PddCollectRequestInterface[K], never>
-  ): void;
-  public requestPlain<K extends keyof PddCollectRequestInterface>(
-    type: K,
-    params: PddCollectRequestInterface[K],
-    callback?: AsyncResultCallbackInterface<any, never>
-  ): Promise<PddCollectRequestInterface[K]> | void {
-    const err = checkRequired(params, 'type');
-    //this.axiosClient.post();
+  public request<R>(params: RequestParamsType): Promise<R>;
+  public request<R>(params: RequestParamsType, callback: AsyncResultCallbackInterface<R, never>): void;
+  public request<R>(params: RequestParamsType, callback?: AsyncResultCallbackInterface<R, never>): Promise<R> | void {
+    const defaultArgs: Partial<RequestParamsFullType> = extend({}, defaultRequestParam, {
+      // eslint-disable-next-line @typescript-eslint/camelcase
+      client_id: this.options.clientId,
+      timestamp: timestamp(),
+    });
+
+    const newParams: object = extend({}, params);
+
+    for (const k in newParams) {
+      if (newParams.hasOwnProperty(k)) {
+        const value: any = (newParams as any)[k];
+        if (typeof value === 'object') {
+          (defaultArgs as any)[k] = JSON.stringify(value);
+        } else {
+          (defaultArgs as any)[k] = value;
+        }
+      }
+    }
+
+    (defaultArgs as any).sign = this.sign((defaultArgs as any) as { [s: string]: string | number });
+
+    const requestPromise = this.adapter.post(this.options.endpoint, defaultArgs);
+
+    if (callback && typeof callback === 'function') {
+      requestPromise.then(response => callback(null, response)).catch(error => callback(error));
+    } else {
+      return requestPromise;
+    }
   }
 
   /**

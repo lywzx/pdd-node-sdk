@@ -1,5 +1,6 @@
 import axios, { AxiosInstance } from 'axios';
 import { PddClientOptionsInterface } from '../interfaces/pdd-client-options.interface';
+import { stringify } from 'querystring';
 
 const axiosInstance: AxiosInstance = axios.create({});
 
@@ -15,7 +16,7 @@ function createMethods(method: methodTypes) {
     if (method === 'get') {
       requestData.params = data;
     } else {
-      requestData.data = JSON.stringify(data);
+      requestData.data = stringify(data);
     }
     return axiosInstance({
       url,
@@ -32,9 +33,8 @@ export class NetworkAdapter {
   static delete = createMethods('delete');
   static put = createMethods('put');
   static set(options: PddClientOptionsInterface): void {
-    axiosInstance.defaults.baseURL = options.endpoint;
-    axiosInstance.defaults.url = '';
-
+    // axiosInstance.defaults.baseURL = options.endpoint;
+    // axiosInstance.defaults.url = '';
     /*axiosInstance.interceptors.request.use(() => {
 
     });
