@@ -1,4 +1,5 @@
 export const PDD_AD_PLAN_NAME_UPDATE = 'pdd.ad.plan.name.update';
+export const PDD_AD_PLAN_NAME_UPDATE_RESPONSE_KEY = 'ad_plan_name_update_response';
 
 /**
  * 接口名称：修改推广计划名称

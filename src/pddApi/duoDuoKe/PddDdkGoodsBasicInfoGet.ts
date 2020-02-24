@@ -1,4 +1,5 @@
 export const PDD_DDK_GOODS_BASIC_INFO_GET = 'pdd.ddk.goods.basic.info.get';
+export const PDD_DDK_GOODS_BASIC_INFO_GET_RESPONSE_KEY = 'goods_basic_detail_response';
 
 /**
  * 接口名称：获取商品基本信息接口

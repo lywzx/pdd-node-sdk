@@ -1,4 +1,5 @@
 export const PDD_DDK_MALL_URL_GEN = 'pdd.ddk.mall.url.gen';
+export const PDD_DDK_MALL_URL_GEN_RESPONSE_KEY = 'mall_coupon_generate_url_response';
 
 /**
  * 接口名称：多多客生成店铺推广链接API

@@ -1,4 +1,5 @@
 export const PDD_SMS_REMAIN_SETTING_DETAIL_QUERY = 'pdd.sms.remain.setting.detail.query';
+export const PDD_SMS_REMAIN_SETTING_DETAIL_QUERY_RESPONSE_KEY = 'sms_remain_setting_detail_query_response';
 
 /**
  * 接口名称：提醒类短信设置详情

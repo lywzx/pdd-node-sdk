@@ -1,4 +1,5 @@
 export const PDD_MALL_INFO_STORE_CREATE_POST = 'pdd.mall.info.store.create.post';
+export const PDD_MALL_INFO_STORE_CREATE_POST_RESPONSE_KEY = 'mall_info_store_create_post_response';
 
 /**
  * 接口名称：创建店铺门店

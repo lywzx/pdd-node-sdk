@@ -1,4 +1,5 @@
 export const PDD_INVOICE_DETAIL_UPLOAD = 'pdd.invoice.detail.upload';
+export const PDD_INVOICE_DETAIL_UPLOAD_RESPONSE_KEY = 'invoice_detail_upload_response';
 
 /**
  * 接口名称：开票结果回传

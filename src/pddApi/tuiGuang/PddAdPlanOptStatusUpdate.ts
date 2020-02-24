@@ -1,4 +1,5 @@
 export const PDD_AD_PLAN_OPT_STATUS_UPDATE = 'pdd.ad.plan.opt.status.update';
+export const PDD_AD_PLAN_OPT_STATUS_UPDATE_RESPONSE_KEY = 'ad_plan_opt_status_update_response';
 
 /**
  * 接口名称：修改推广计划状态（暂停、开启）

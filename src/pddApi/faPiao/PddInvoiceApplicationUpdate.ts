@@ -1,4 +1,5 @@
 export const PDD_INVOICE_APPLICATION_UPDATE = 'pdd.invoice.application.update';
+export const PDD_INVOICE_APPLICATION_UPDATE_RESPONSE_KEY = 'invoice_application_update_response';
 
 /**
  * 接口名称：开票申请单审核

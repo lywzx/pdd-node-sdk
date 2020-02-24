@@ -1,4 +1,5 @@
 export const PDD_SMS_CROWDS_PEOPLE_NUMBER_QUERY = 'pdd.sms.crowds.people.number.query';
+export const PDD_SMS_CROWDS_PEOPLE_NUMBER_QUERY_RESPONSE_KEY = 'sms_crows_people_number_query_response';
 
 /**
  * 接口名称：查询人群数量

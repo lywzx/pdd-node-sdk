@@ -1,4 +1,5 @@
 export const PDD_SMS_REMAIN_DETAIL_QUERY = 'pdd.sms.remain.detail.query';
+export const PDD_SMS_REMAIN_DETAIL_QUERY_RESPONSE_KEY = 'sms_remain_detail_query_response';
 
 /**
  * 接口名称：查询余量

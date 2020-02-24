@@ -1,4 +1,5 @@
 export const PDD_MALL_INFO_STORE_UPDATE_POST = 'pdd.mall.info.store.update.post';
+export const PDD_MALL_INFO_STORE_UPDATE_POST_RESPONSE_KEY = 'mall_info_store_update_post_response';
 
 /**
  * 接口名称：修改店铺门店

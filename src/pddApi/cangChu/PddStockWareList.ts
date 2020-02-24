@@ -1,4 +1,5 @@
 export const PDD_STOCK_WARE_LIST = 'pdd.stock.ware.list';
+export const PDD_STOCK_WARE_LIST_RESPONSE_KEY = 'open_api_response';
 
 /**
  * 接口名称：查询货品列表

@@ -1,4 +1,5 @@
 export const PDD_GOODS_QUANTITY_UPDATE = 'pdd.goods.quantity.update';
+export const PDD_GOODS_QUANTITY_UPDATE_RESPONSE_KEY = 'goods_quantity_update_response';
 
 /**
  * 接口名称：商品库存更新接口

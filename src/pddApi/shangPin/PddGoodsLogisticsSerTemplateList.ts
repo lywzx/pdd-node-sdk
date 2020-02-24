@@ -1,4 +1,5 @@
 export const PDD_GOODS_LOGISTICS_SER_TEMPLATE_LIST = 'pdd.goods.logistics.ser.template.list';
+export const PDD_GOODS_LOGISTICS_SER_TEMPLATE_LIST_RESPONSE_KEY = 'goods_logistics_ser_template_list_response';
 
 /**
  * 接口名称：商品送装服务模版列表

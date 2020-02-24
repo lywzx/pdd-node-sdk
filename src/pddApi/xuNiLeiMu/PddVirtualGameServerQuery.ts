@@ -1,4 +1,5 @@
 export const PDD_VIRTUAL_GAME_SERVER_QUERY = 'pdd.virtual.game.server.query';
+export const PDD_VIRTUAL_GAME_SERVER_QUERY_RESPONSE_KEY = 'game_server_query_response';
 
 /**
  * 接口名称：虚拟游戏类区服列表接口

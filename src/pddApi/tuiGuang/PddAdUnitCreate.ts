@@ -1,4 +1,5 @@
 export const PDD_AD_UNIT_CREATE = 'pdd.ad.unit.create';
+export const PDD_AD_UNIT_CREATE_RESPONSE_KEY = 'ad_unit_create_response';
 
 /**
  * 接口名称：添加推广单元

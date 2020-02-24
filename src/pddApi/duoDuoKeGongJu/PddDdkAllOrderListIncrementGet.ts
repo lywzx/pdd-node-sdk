@@ -1,4 +1,5 @@
 export const PDD_DDK_ALL_ORDER_LIST_INCREMENT_GET = 'pdd.ddk.all.order.list.increment.get';
+export const PDD_DDK_ALL_ORDER_LIST_INCREMENT_GET_RESPONSE_KEY = 'order_list_get_response';
 
 /**
  * 接口名称：查询所有授权的多多客订单

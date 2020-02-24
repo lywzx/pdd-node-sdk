@@ -1,4 +1,5 @@
 export const PDD_GOODS_LOGISTICS_SER_TEMPLATE_DELETE = 'pdd.goods.logistics.ser.template.delete';
+export const PDD_GOODS_LOGISTICS_SER_TEMPLATE_DELETE_RESPONSE_KEY = 'goods_logistics_ser_template_delete_response';
 
 /**
  * 接口名称：商品送装服务模版删除

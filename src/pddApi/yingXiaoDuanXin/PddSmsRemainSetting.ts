@@ -1,4 +1,5 @@
 export const PDD_SMS_REMAIN_SETTING = 'pdd.sms.remain.setting';
+export const PDD_SMS_REMAIN_SETTING_RESPONSE_KEY = 'sms_remain_setting_response';
 
 /**
  * 接口名称：提醒买家付款的任务设置

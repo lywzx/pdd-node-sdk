@@ -1,4 +1,5 @@
 export const PDD_GOODS_COUNTRY_GET = 'pdd.goods.country.get';
+export const PDD_GOODS_COUNTRY_GET_RESPONSE_KEY = 'goods_country_get_response';
 
 /**
  * 接口名称：商品国家接口

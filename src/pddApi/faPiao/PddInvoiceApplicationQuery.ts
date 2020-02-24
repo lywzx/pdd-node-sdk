@@ -1,4 +1,5 @@
 export const PDD_INVOICE_APPLICATION_QUERY = 'pdd.invoice.application.query';
+export const PDD_INVOICE_APPLICATION_QUERY_RESPONSE_KEY = 'invoice_application_query_response';
 
 /**
  * 接口名称：开票申请单查询

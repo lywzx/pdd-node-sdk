@@ -1,4 +1,5 @@
 export const PDD_AD_QUERY_LOCATION_BID_LIST = 'pdd.ad.query.location.bid.list';
+export const PDD_AD_QUERY_LOCATION_BID_LIST_RESPONSE_KEY = 'open_api_response';
 
 /**
  * 接口名称：根据推广单元id获取现有资源位列表

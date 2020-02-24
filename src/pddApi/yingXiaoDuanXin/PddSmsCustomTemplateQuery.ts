@@ -1,4 +1,5 @@
 export const PDD_SMS_CUSTOM_TEMPLATE_QUERY = 'pdd.sms.custom.template.query';
+export const PDD_SMS_CUSTOM_TEMPLATE_QUERY_RESPONSE_KEY = 'sms_custom_template_list_query_response';
 
 /**
  * 接口名称：自定义模板查询

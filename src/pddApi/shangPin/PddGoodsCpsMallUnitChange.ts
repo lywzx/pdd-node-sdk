@@ -1,4 +1,5 @@
 export const PDD_GOODS_CPS_MALL_UNIT_CHANGE = 'pdd.goods.cps.mall.unit.change';
+export const PDD_GOODS_CPS_MALL_UNIT_CHANGE_RESPONSE_KEY = 'goods_cps_mall_unit_change_response';
 
 /**
  * 接口名称：修改全店推广API

@@ -1,4 +1,5 @@
 export const PDD_AD_PLAN_MAX_COST_UPDATE = 'pdd.ad.plan.max.cost.update';
+export const PDD_AD_PLAN_MAX_COST_UPDATE_RESPONSE_KEY = 'ad_plan_max_cost_update_response';
 
 /**
  * 接口名称：修改推广计划日限额

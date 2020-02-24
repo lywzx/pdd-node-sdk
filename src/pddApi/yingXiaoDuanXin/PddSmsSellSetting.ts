@@ -1,4 +1,5 @@
 export const PDD_SMS_SELL_SETTING = 'pdd.sms.sell.setting';
+export const PDD_SMS_SELL_SETTING_RESPONSE_KEY = 'sms_sell_setting_response';
 
 /**
  * 接口名称：营销类短信设置

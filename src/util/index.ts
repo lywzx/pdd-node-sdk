@@ -1,5 +1,6 @@
 import CryptoJS from 'crypto-js';
 import { PddRequestParamsMissingException } from '../exceptions/pdd-request-params-missing-exception';
+import { AsyncResultCallbackInterface } from '../interfaces';
 
 /**
  * MD5加密字符
@@ -118,4 +119,29 @@ export function checkRequired(params: object, keys: string | string[]) {
  */
 export function timestamp(dt = new Date()) {
   return parseInt((dt.getTime() / 1000).toString(), 10);
+}
+
+/**
+ * 将promise转成callback形式
+ * @param promise
+ * @param callback
+ */
+export function promseToCallback<R, E = never>(promise: Promise<R>): Promise<R>;
+export function promseToCallback<R, E = never>(promise: Promise<R>, callback: AsyncResultCallbackInterface<R, E>): void;
+export function promseToCallback<R, E = never>(
+  promise: Promise<R>,
+  callback?: AsyncResultCallbackInterface<R, E>
+): Promise<R> | void {
+  if (typeof callback === 'function') {
+    promise.then(
+      response => {
+        callback(null, response);
+      },
+      err => {
+        callback(err);
+      }
+    );
+  } else {
+    return promise;
+  }
 }

@@ -1,4 +1,5 @@
 export const PDD_GOODS_COMMIT_STATUS_GET = 'pdd.goods.commit.status.get';
+export const PDD_GOODS_COMMIT_STATUS_GET_RESPONSE_KEY = 'goods_commit_status_get_response';
 
 /**
  * 接口名称：草稿状态查询接口

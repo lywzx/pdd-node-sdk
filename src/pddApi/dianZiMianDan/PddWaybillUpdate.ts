@@ -1,4 +1,5 @@
 export const PDD_WAYBILL_UPDATE = 'pdd.waybill.update';
+export const PDD_WAYBILL_UPDATE_RESPONSE_KEY = 'pdd_waybill_update_response';
 
 /**
  * 接口名称：电子面单云打印更新接口

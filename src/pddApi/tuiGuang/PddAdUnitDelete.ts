@@ -1,4 +1,5 @@
 export const PDD_AD_UNIT_DELETE = 'pdd.ad.unit.delete';
+export const PDD_AD_UNIT_DELETE_RESPONSE_KEY = 'ad_unit_delete_response';
 
 /**
  * 接口名称：删除推广单元-批量

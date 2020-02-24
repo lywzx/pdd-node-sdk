@@ -1,4 +1,5 @@
 export const PDD_AD_DELETE_BID = 'pdd.ad.delete.bid';
+export const PDD_AD_DELETE_BID_RESPONSE_KEY = 'open_api_response';
 
 /**
  * 接口名称：推广单元取消定向（不可取消通投）

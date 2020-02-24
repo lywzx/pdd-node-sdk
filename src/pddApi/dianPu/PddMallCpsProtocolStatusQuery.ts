@@ -1,4 +1,5 @@
 export const PDD_MALL_CPS_PROTOCOL_STATUS_QUERY = 'pdd.mall.cps.protocol.status.query';
+export const PDD_MALL_CPS_PROTOCOL_STATUS_QUERY_RESPONSE_KEY = 'mall_cps_protocol_status_query_response';
 
 /**
  * 接口名称：查询店铺是否签署多多进宝协议接口

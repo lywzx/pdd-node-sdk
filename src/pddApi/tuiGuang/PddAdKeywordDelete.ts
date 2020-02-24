@@ -1,4 +1,5 @@
 export const PDD_AD_KEYWORD_DELETE = 'pdd.ad.keyword.delete';
+export const PDD_AD_KEYWORD_DELETE_RESPONSE_KEY = 'ad_keyword_delete_response';
 
 /**
  * 接口名称：推广单元删除关键词

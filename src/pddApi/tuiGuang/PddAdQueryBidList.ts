@@ -1,4 +1,5 @@
 export const PDD_AD_QUERY_BID_LIST = 'pdd.ad.query.bid.list';
+export const PDD_AD_QUERY_BID_LIST_RESPONSE_KEY = 'open_api_response';
 
 /**
  * 接口名称：根据推广单元id获取现有定向

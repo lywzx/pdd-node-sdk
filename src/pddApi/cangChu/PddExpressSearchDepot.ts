@@ -1,4 +1,5 @@
 export const PDD_EXPRESS_SEARCH_DEPOT = 'pdd.express.search.depot';
+export const PDD_EXPRESS_SEARCH_DEPOT_RESPONSE_KEY = 'open_api_response';
 
 /**
  * 接口名称：根据仓库名称和仓库编码查询仓库

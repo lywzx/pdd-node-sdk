@@ -1,4 +1,5 @@
 export const PDD_DDK_OAUTH_GOODS_PID_QUERY = 'pdd.ddk.oauth.goods.pid.query';
+export const PDD_DDK_OAUTH_GOODS_PID_QUERY_RESPONSE_KEY = 'p_id_query_response';
 
 /**
  * 接口名称：多多客已生成推广位信息查询

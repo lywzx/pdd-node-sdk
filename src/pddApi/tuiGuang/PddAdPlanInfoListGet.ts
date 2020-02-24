@@ -1,4 +1,5 @@
 export const PDD_AD_PLAN_INFO_LIST_GET = 'pdd.ad.plan.info.list.get';
+export const PDD_AD_PLAN_INFO_LIST_GET_RESPONSE_KEY = 'ad_plan_info_list_response';
 
 /**
  * 接口名称：获取现有计划基础信息

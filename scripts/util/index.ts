@@ -1,9 +1,10 @@
 import tinyPinYin from 'tiny-pinyin';
-import { extend, camelCase, startCase } from 'lodash';
+import { camelCase, startCase, keys } from 'lodash';
 import * as fs from 'fs';
 import { normalize, sep } from 'path';
 import { promisify } from 'util';
 import { TreeType } from '../interface/tree.interface';
+import { ApiDetailInterface, ApiDetailResponseParamInterface } from '../interface/api-detail.interface';
 
 export function nameToDirectoryName(name: string): string {
   if (tinyPinYin.isSupported()) {
@@ -118,4 +119,21 @@ export function tree<T extends {}, K extends keyof T>(
  */
 export function generateConstant(apiName: string): string {
   return apiName.replace(/\./g, '_').toUpperCase();
+}
+
+/**
+ * 获取拼多多当中，向应的key
+ * @param apiInfo
+ */
+export function getPddResponseRootKey(apiInfo: ApiDetailInterface): string | void {
+  const treed = tree(apiInfo.responseParamList, { parentKey: 'parentId', currentKey: 'id', pid: 0 } as any);
+  const first: ApiDetailResponseParamInterface = treed[0];
+  const limitType = ['OBJECT', 'OBJECT[]', 'MAP'];
+  if (
+    treed.length === 1 &&
+    ((first && first.paramName) || '').match(/_response$/) &&
+    limitType.includes(first.paramType)
+  ) {
+    return first.paramName;
+  }
 }

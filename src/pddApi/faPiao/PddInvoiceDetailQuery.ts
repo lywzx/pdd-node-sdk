@@ -1,4 +1,5 @@
 export const PDD_INVOICE_DETAIL_QUERY = 'pdd.invoice.detail.query';
+export const PDD_INVOICE_DETAIL_QUERY_RESPONSE_KEY = 'invoice_detail_query_response';
 
 /**
  * 接口名称：查询已回传发票

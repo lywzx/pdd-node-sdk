@@ -1,4 +1,5 @@
 export const PDD_GOODS_OUTER_CAT_MAPPING_GET = 'pdd.goods.outer.cat.mapping.get';
+export const PDD_GOODS_OUTER_CAT_MAPPING_GET_RESPONSE_KEY = 'outer_cat_mapping_get_response';
 
 /**
  * 接口名称：类目预测接口

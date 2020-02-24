@@ -1,4 +1,10 @@
-import { createRequestClassName, createResponseClassName, generateConstant, saveCode } from './index';
+import {
+  createRequestClassName,
+  createResponseClassName,
+  generateConstant,
+  saveCode,
+  getPddResponseRootKey,
+} from './index';
 import {
   ApiDetailInterface,
   ApiDetailRequestParamInterface,
@@ -14,11 +20,18 @@ import { map, flattenDeep } from 'lodash';
 export function generateCode(apiId: string, detail: ApiDetailInterface) {
   const apiIdConstant = generateConstant(apiId);
 
+  const apiResponseValue = getPddResponseRootKey(detail);
+  let exportResponseShortKey = '';
+  if (apiResponseValue) {
+    exportResponseShortKey = `export const ${apiIdConstant}_RESPONSE_KEY = '${apiResponseValue}';`;
+  }
+
   const requestClassCode = buildParamsToCodeArr(detail.requestParamList, detail, 'request');
 
   const responseClassCode = buildParamsToCodeArr(detail.responseParamList, detail, 'response');
 
   return `export const ${apiIdConstant} = '${apiId}';
+${exportResponseShortKey}
 
 ${codeToString(requestClassCode)}
 
@@ -143,12 +156,11 @@ function codeToString(arr: CodeInterface[]): string {
   };
 
   return arr
-    .map(function(it: CodeInterface) {
+    .map((it: CodeInterface) => {
       return `
-${buildComment(
-  it.comment,
-  0
-)}${it.columns.length === 0 ? '\n// eslint-disable-next-line @typescript-eslint/no-empty-interface' : ''}
+${buildComment(it.comment, 0)}${
+        it.columns.length === 0 ? '\n// eslint-disable-next-line @typescript-eslint/no-empty-interface' : ''
+      }
 export interface ${it.name} {
 ${buildColumns(it.columns, 2)}
 }`;
@@ -180,20 +192,45 @@ export async function generatorIndexCode(state: RunStateInterface) {
   const importCodes = map(state.resolvedFiles, resolved => {
     return [
       `// ${resolved.name}`,
-      ...map(resolved.files, (file: RunStateFileInterface) => {
+      ...map(resolved.files, (fl: RunStateFileInterface) => {
+        const variables = [
+          fl.constVariable,
+          fl.responseKey,
+          fl.requestInterface,
+          fl.responseInterface,
+          fl.secoundResponseInterface,
+        ]
+          .filter(it => !!it)
+          .join(',\n  ');
         return `import {
-  ${file.constVariable},
-  ${file.requestInterface},
-  ${file.responseInterface},
-} from '${file.name}';`;
+  ${variables}
+} from '${fl.name}';`;
       }),
     ].join('\n');
   });
 
   const flattenResolvedFiles = flattenDeep(map(state.resolvedFiles, 'files'));
+
+  const PddResponseTypeAndRequestTypeMapping = 'PddResponseTypeAndRequestTypeMapping';
+  const typeAndResponseKeyMappingInnerCode = map(flattenResolvedFiles, (it: RunStateFileInterface) => {
+    if (it.responseKey) {
+      return `[${it.constVariable}]: ${it.responseKey}`;
+    }
+    return undefined;
+  })
+    .filter(it => !!it)
+    .join(',\n  ');
+  const typeAndResponseKeyMappingCode = `const ${PddResponseTypeAndRequestTypeMapping} = {
+  ${typeAndResponseKeyMappingInnerCode}
+};`;
+
   const exportVariables = map(flattenResolvedFiles, (fl: RunStateFileInterface) => {
-    return [fl.constVariable, fl.requestInterface, fl.responseInterface].join(',\n  ');
-  }).join(',\n  ');
+    return [fl.constVariable, fl.responseKey, fl.requestInterface, fl.responseInterface, fl.secoundResponseInterface]
+      .filter(it => !!it)
+      .join(',\n  ');
+  })
+    .concat(PddResponseTypeAndRequestTypeMapping)
+    .join(',\n  ');
 
   const exportVariablesCode = `export {
   ${exportVariables},
@@ -209,8 +246,17 @@ export async function generatorIndexCode(state: RunStateInterface) {
   const pddCollectResponseInterfaceInnerCode = map(flattenResolvedFiles, (fl: RunStateFileInterface) => {
     return `[${fl.constVariable}]: ${fl.responseInterface};`;
   }).join('\n  ');
-  const exportPddResponseInterfaceCode = `export interface PddCollectResponseInterface {
+  const exportPddResponseInterfaceCode = `export interface PddCollectRootResponseInterface {
   ${pddCollectResponseInterfaceInnerCode}
+}`;
+
+  const pddCollectResponseSecondInterfaceInnerCode = map(flattenResolvedFiles, (fl: RunStateFileInterface) => {
+    return `[${fl.constVariable}]: ${
+      !!fl.secoundResponseInterface ? fl.secoundResponseInterface : fl.responseInterface
+    };`;
+  }).join('\n  ');
+  const pddCollectResponseSecondInterfaceCode = `export interface PddCollectShortResponseInterface {
+  ${pddCollectResponseSecondInterfaceInnerCode}
 }`;
 
   /*const apiTypesString = map(flattenResolvedFiles, (fl: RunStateFileInterface) => {
@@ -220,9 +266,11 @@ export async function generatorIndexCode(state: RunStateInterface) {
     'src/pddApi/index.ts',
     [
       ...importCodes,
+      typeAndResponseKeyMappingCode,
       exportVariablesCode,
       exportPddRequestInterfaceCode,
       exportPddResponseInterfaceCode,
+      pddCollectResponseSecondInterfaceCode,
       generateCommonRequestInterfaceCode('string'),
     ].join('\n')
   );

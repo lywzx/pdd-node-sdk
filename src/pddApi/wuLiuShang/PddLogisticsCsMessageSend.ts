@@ -1,4 +1,5 @@
 export const PDD_LOGISTICS_CS_MESSAGE_SEND = 'pdd.logistics.cs.message.send';
+export const PDD_LOGISTICS_CS_MESSAGE_SEND_RESPONSE_KEY = 'logistics_cs_message_send_response';
 
 /**
  * 接口名称：客服给发消息接口

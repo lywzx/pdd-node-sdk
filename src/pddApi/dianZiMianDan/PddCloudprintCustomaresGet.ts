@@ -1,4 +1,5 @@
 export const PDD_CLOUDPRINT_CUSTOMARES_GET = 'pdd.cloudprint.customares.get';
+export const PDD_CLOUDPRINT_CUSTOMARES_GET_RESPONSE_KEY = 'pdd_cloudprint_customares_get_response';
 
 /**
  * 接口名称：获取商家的自定义区模板信息

@@ -1,4 +1,5 @@
 export const PDD_WAYBILL_CANCEL = 'pdd.waybill.cancel';
+export const PDD_WAYBILL_CANCEL_RESPONSE_KEY = 'pdd_waybill_cancel_response';
 
 /**
  * 接口名称：商家取消获取的电子面单号

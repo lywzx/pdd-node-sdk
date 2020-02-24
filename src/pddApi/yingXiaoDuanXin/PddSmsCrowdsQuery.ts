@@ -1,4 +1,5 @@
 export const PDD_SMS_CROWDS_QUERY = 'pdd.sms.crowds.query';
+export const PDD_SMS_CROWDS_QUERY_RESPONSE_KEY = 'sms_crows_query_response';
 
 /**
  * 接口名称：查询人群列表

@@ -1,4 +1,5 @@
 export const PDD_STOCK_WARE_INFO_LIST = 'pdd.stock.ware.info.list';
+export const PDD_STOCK_WARE_INFO_LIST_RESPONSE_KEY = 'stock_ware_info_list_response';
 
 /**
  * 接口名称：货品列表的查询接口

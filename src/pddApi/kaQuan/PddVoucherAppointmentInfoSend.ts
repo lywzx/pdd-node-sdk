@@ -1,4 +1,5 @@
 export const PDD_VOUCHER_APPOINTMENT_INFO_SEND = 'pdd.voucher.appointment.info.send';
+export const PDD_VOUCHER_APPOINTMENT_INFO_SEND_RESPONSE_KEY = 'voucher_appointment_info_send_response';
 
 /**
  * 接口名称：卡券预约提货接口

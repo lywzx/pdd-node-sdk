@@ -1,4 +1,5 @@
 export const PDD_DDK_GOODS_RECOMMEND_GET = 'pdd.ddk.goods.recommend.get';
+export const PDD_DDK_GOODS_RECOMMEND_GET_RESPONSE_KEY = 'goods_basic_detail_response';
 
 /**
  * 接口名称：运营频道商品查询API

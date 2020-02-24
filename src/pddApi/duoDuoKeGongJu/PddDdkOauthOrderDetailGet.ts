@@ -1,4 +1,5 @@
 export const PDD_DDK_OAUTH_ORDER_DETAIL_GET = 'pdd.ddk.oauth.order.detail.get';
+export const PDD_DDK_OAUTH_ORDER_DETAIL_GET_RESPONSE_KEY = 'order_detail_response';
 
 /**
  * 接口名称：获取订单详情

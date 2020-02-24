@@ -1,4 +1,5 @@
 export const PDD_LOGISTICS_CS_SESSION_START = 'pdd.logistics.cs.session.start';
+export const PDD_LOGISTICS_CS_SESSION_START_RESPONSE_KEY = 'logistics_cs_session_start_response';
 
 /**
  * 接口名称：物流客服系统创建同步会话状态接口

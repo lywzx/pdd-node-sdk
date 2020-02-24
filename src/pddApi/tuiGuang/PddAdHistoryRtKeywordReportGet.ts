@@ -1,4 +1,5 @@
 export const PDD_AD_HISTORY_RT_KEYWORD_REPORT_GET = 'pdd.ad.history.rt.keyword.report.get';
+export const PDD_AD_HISTORY_RT_KEYWORD_REPORT_GET_RESPONSE_KEY = 'ad_keyword_real_time_report_response';
 
 /**
  * 接口名称：关键词实时报表数据

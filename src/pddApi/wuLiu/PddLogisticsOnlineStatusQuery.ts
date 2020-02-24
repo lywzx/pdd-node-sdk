@@ -1,4 +1,5 @@
 export const PDD_LOGISTICS_ONLINE_STATUS_QUERY = 'pdd.logistics.online.status.query';
+export const PDD_LOGISTICS_ONLINE_STATUS_QUERY_RESPONSE_KEY = 'logistics_online_status_query_response';
 
 /**
  * 接口名称：根据订单号查询在线下单状态

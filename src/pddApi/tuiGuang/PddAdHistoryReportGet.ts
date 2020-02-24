@@ -1,4 +1,5 @@
 export const PDD_AD_HISTORY_REPORT_GET = 'pdd.ad.history.report.get';
+export const PDD_AD_HISTORY_REPORT_GET_RESPONSE_KEY = 'ad_mall_history_report_response';
 
 /**
  * 接口名称：账户推广历史报表数据

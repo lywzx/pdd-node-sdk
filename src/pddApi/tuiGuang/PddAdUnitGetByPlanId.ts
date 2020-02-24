@@ -1,4 +1,5 @@
 export const PDD_AD_UNIT_GET_BY_PLAN_ID = 'pdd.ad.unit.get.by.plan.id';
+export const PDD_AD_UNIT_GET_BY_PLAN_ID_RESPONSE_KEY = 'ad_unit_base_info_List_response';
 
 /**
  * 接口名称：根据计划id获取推广单元基本信息

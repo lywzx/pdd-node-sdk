@@ -1,7 +1,7 @@
 import * as fs from 'fs';
 import { join } from 'path';
 import { RunStateFileInterface, RunStateInterface } from '../interface/run-state.interface';
-import { findIndex, omit } from 'lodash';
+import { findIndex } from 'lodash';
 
 const runState: RunStateInterface = {
   resolved: [],
@@ -24,7 +24,9 @@ export const getLastRunState = () => {
           const result = data.toString();
           try {
             Object.assign(runState, JSON.parse(result));
-          } catch (e) {}
+          } catch (e) {
+            // ignore error
+          }
           resolve(runState);
         }
       });

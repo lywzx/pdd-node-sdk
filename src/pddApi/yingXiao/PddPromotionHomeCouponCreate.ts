@@ -1,4 +1,5 @@
 export const PDD_PROMOTION_HOME_COUPON_CREATE = 'pdd.promotion.home.coupon.create';
+export const PDD_PROMOTION_HOME_COUPON_CREATE_RESPONSE_KEY = 'home_coupon_batch_create_response';
 
 /**
  * 接口名称：创建店铺首页优惠券批次接口

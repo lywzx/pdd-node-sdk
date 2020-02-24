@@ -1,4 +1,5 @@
 export const PDD_AD_UPDATE_BID = 'pdd.ad.update.bid';
+export const PDD_AD_UPDATE_BID_RESPONSE_KEY = 'open_api_response';
 
 /**
  * 接口名称：【定向】推广单元修改通投出价、定向溢价

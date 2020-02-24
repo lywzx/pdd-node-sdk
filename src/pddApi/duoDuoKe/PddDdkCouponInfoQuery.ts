@@ -1,4 +1,5 @@
 export const PDD_DDK_COUPON_INFO_QUERY = 'pdd.ddk.coupon.info.query';
+export const PDD_DDK_COUPON_INFO_QUERY_RESPONSE_KEY = 'ddk_coupon_info_query_response';
 
 /**
  * 接口名称：查询优惠券信息

@@ -1,4 +1,5 @@
 export const PDD_AD_KEYWORD_RCOMMENDED_GET = 'pdd.ad.keyword.rcommended.get';
+export const PDD_AD_KEYWORD_RCOMMENDED_GET_RESPONSE_KEY = 'ad_recommended_keyword_list_response';
 
 /**
  * 接口名称：系统推荐关键词

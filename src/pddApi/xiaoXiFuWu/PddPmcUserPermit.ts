@@ -1,4 +1,5 @@
 export const PDD_PMC_USER_PERMIT = 'pdd.pmc.user.permit';
+export const PDD_PMC_USER_PERMIT_RESPONSE_KEY = 'pmc_user_permit_response';
 
 /**
  * 接口名称：为已授权的用户开通消息服务

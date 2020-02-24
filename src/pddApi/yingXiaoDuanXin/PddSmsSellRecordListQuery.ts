@@ -1,4 +1,5 @@
 export const PDD_SMS_SELL_RECORD_LIST_QUERY = 'pdd.sms.sell.record.list.query';
+export const PDD_SMS_SELL_RECORD_LIST_QUERY_RESPONSE_KEY = 'sms_sell_record_list_query_response';
 
 /**
  * 接口名称：查询短信发送任务列表

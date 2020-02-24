@@ -1,4 +1,5 @@
 export const PDD_AD_CREATIVE_REPORT_GET = 'pdd.ad.creative.report.get';
+export const PDD_AD_CREATIVE_REPORT_GET_RESPONSE_KEY = 'ad_creative_report_get_response';
 
 /**
  * 接口名称：创意日报报表

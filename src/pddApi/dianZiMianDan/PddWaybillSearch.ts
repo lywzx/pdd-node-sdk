@@ -1,4 +1,5 @@
 export const PDD_WAYBILL_SEARCH = 'pdd.waybill.search';
+export const PDD_WAYBILL_SEARCH_RESPONSE_KEY = 'pdd_waybill_search_response';
 
 /**
  * 接口名称：查询面单服务订购及面单使用情况

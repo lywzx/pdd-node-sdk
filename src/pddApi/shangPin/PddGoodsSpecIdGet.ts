@@ -1,4 +1,5 @@
 export const PDD_GOODS_SPEC_ID_GET = 'pdd.goods.spec.id.get';
+export const PDD_GOODS_SPEC_ID_GET_RESPONSE_KEY = 'goods_spec_id_get_response';
 
 /**
  * 接口名称：生成商家自定义的规格

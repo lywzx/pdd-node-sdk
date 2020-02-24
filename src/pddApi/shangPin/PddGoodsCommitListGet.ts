@@ -1,4 +1,5 @@
 export const PDD_GOODS_COMMIT_LIST_GET = 'pdd.goods.commit.list.get';
+export const PDD_GOODS_COMMIT_LIST_GET_RESPONSE_KEY = 'goods_commit_list_get_response';
 
 /**
  * 接口名称：草稿列表接口

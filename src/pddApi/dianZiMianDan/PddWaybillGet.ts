@@ -1,4 +1,5 @@
 export const PDD_WAYBILL_GET = 'pdd.waybill.get';
+export const PDD_WAYBILL_GET_RESPONSE_KEY = 'pdd_waybill_get_response';
 
 /**
  * 接口名称：电子面单云打印接口

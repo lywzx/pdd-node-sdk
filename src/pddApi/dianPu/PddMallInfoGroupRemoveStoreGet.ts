@@ -1,4 +1,5 @@
 export const PDD_MALL_INFO_GROUP_REMOVE_STORE_GET = 'pdd.mall.info.group.remove.store.get';
+export const PDD_MALL_INFO_GROUP_REMOVE_STORE_GET_RESPONSE_KEY = 'mall_info_group_remove_store_get_response';
 
 /**
  * 接口名称：门店组删除门店

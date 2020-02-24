@@ -1,4 +1,5 @@
 export const PDD_DDK_OAUTH_RP_PROM_URL_GENERATE = 'pdd.ddk.oauth.rp.prom.url.generate';
+export const PDD_DDK_OAUTH_RP_PROM_URL_GENERATE_RESPONSE_KEY = 'rp_promotion_url_generate_response';
 
 /**
  * 接口名称：生成营销工具推广链接

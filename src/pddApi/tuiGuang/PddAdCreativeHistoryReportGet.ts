@@ -1,4 +1,5 @@
 export const PDD_AD_CREATIVE_HISTORY_REPORT_GET = 'pdd.ad.creative.history.report.get';
+export const PDD_AD_CREATIVE_HISTORY_REPORT_GET_RESPONSE_KEY = 'open_api_response';
 
 /**
  * 接口名称：创意历史报表数据

@@ -1,4 +1,5 @@
 export const PDD_DDK_OAUTH_TOP_GOODS_LIST_QUERY = 'pdd.ddk.oauth.top.goods.list.query';
+export const PDD_DDK_OAUTH_TOP_GOODS_LIST_QUERY_RESPONSE_KEY = 'top_goods_list_get_response';
 
 /**
  * 接口名称：多多客工具获取爆款排行商品接口

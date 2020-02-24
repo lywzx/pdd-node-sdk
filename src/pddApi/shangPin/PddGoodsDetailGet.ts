@@ -1,4 +1,5 @@
 export const PDD_GOODS_DETAIL_GET = 'pdd.goods.detail.get';
+export const PDD_GOODS_DETAIL_GET_RESPONSE_KEY = 'goods_detail_get_response';
 
 /**
  * 接口名称：商品明细

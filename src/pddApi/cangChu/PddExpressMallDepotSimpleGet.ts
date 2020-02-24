@@ -1,4 +1,5 @@
 export const PDD_EXPRESS_MALL_DEPOT_SIMPLE_GET = 'pdd.express.mall.depot.simple.get';
+export const PDD_EXPRESS_MALL_DEPOT_SIMPLE_GET_RESPONSE_KEY = 'open_api_response';
 
 /**
  * 接口名称：商家全部仓库的简要信息列表

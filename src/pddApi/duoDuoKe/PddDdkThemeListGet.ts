@@ -1,4 +1,5 @@
 export const PDD_DDK_THEME_LIST_GET = 'pdd.ddk.theme.list.get';
+export const PDD_DDK_THEME_LIST_GET_RESPONSE_KEY = 'theme_list_get_response';
 
 /**
  * 接口名称：多多进宝主题列表查询

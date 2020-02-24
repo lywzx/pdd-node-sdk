@@ -1,4 +1,5 @@
 export const PDD_PROMOTION_COUPON_CLOSE = 'pdd.promotion.coupon.close';
+export const PDD_PROMOTION_COUPON_CLOSE_RESPONSE_KEY = 'promotion_coupon_batch_close_response';
 
 /**
  * 接口名称：关闭批次接口

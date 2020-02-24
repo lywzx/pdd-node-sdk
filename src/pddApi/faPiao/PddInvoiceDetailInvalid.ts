@@ -1,4 +1,5 @@
 export const PDD_INVOICE_DETAIL_INVALID = 'pdd.invoice.detail.invalid';
+export const PDD_INVOICE_DETAIL_INVALID_RESPONSE_KEY = 'invoice_detail_invalid_response';
 
 /**
  * 接口名称：订单发票冲红

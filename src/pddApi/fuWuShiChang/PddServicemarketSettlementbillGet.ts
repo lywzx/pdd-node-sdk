@@ -1,4 +1,5 @@
 export const PDD_SERVICEMARKET_SETTLEMENTBILL_GET = 'pdd.servicemarket.settlementbill.get';
+export const PDD_SERVICEMARKET_SETTLEMENTBILL_GET_RESPONSE_KEY = 'settlement_bill_search_response';
 
 /**
  * 接口名称：月结算账单导出

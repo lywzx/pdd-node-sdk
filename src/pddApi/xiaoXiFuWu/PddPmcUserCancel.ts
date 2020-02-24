@@ -1,4 +1,5 @@
 export const PDD_PMC_USER_CANCEL = 'pdd.pmc.user.cancel';
+export const PDD_PMC_USER_CANCEL_RESPONSE_KEY = 'pmc_user_cancel_response';
 
 /**
  * 接口名称：取消用户的消息服务

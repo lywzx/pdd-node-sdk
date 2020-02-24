@@ -1,4 +1,5 @@
 export const PDD_GOODS_EDIT_GOODS_COMMIT = 'pdd.goods.edit.goods.commit';
+export const PDD_GOODS_EDIT_GOODS_COMMIT_RESPONSE_KEY = 'goods_update_response';
 
 /**
  * 接口名称：新增或编辑草稿接口

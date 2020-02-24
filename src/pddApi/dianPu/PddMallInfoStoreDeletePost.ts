@@ -1,4 +1,5 @@
 export const PDD_MALL_INFO_STORE_DELETE_POST = 'pdd.mall.info.store.delete.post';
+export const PDD_MALL_INFO_STORE_DELETE_POST_RESPONSE_KEY = 'mall_info_store_delete_post_response';
 
 /**
  * 接口名称：删除店铺门店

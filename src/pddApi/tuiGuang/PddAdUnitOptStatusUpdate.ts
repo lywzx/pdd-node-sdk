@@ -1,4 +1,5 @@
 export const PDD_AD_UNIT_OPT_STATUS_UPDATE = 'pdd.ad.unit.opt.status.update';
+export const PDD_AD_UNIT_OPT_STATUS_UPDATE_RESPONSE_KEY = 'ad_unit_opt_status_update_response';
 
 /**
  * 接口名称：暂停、开启推广单元

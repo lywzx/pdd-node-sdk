@@ -1,4 +1,5 @@
 export const PDD_VIRTUAL_MOBILE_CHARGE_NOTIFY = 'pdd.virtual.mobile.charge.notify';
+export const PDD_VIRTUAL_MOBILE_CHARGE_NOTIFY_RESPONSE_KEY = 'mobile_charge_notify_response';
 
 /**
  * 接口名称：虚拟类目发货通知接口

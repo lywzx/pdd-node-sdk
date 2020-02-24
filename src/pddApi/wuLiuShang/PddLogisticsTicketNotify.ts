@@ -1,4 +1,5 @@
 export const PDD_LOGISTICS_TICKET_NOTIFY = 'pdd.logistics.ticket.notify';
+export const PDD_LOGISTICS_TICKET_NOTIFY_RESPONSE_KEY = 'logistics_ticket_notify_response';
 
 /**
  * 接口名称：快递公司处理结果回调接口

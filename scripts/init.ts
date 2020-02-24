@@ -8,6 +8,7 @@ import {
   generateConstant,
   nameToDirectoryName,
   saveCode,
+  getPddResponseRootKey,
 } from './util';
 import { join } from 'path';
 import { ApiListItemInterface } from './interface/api-list.interface';
@@ -20,13 +21,14 @@ import {
   resolvedDirectory,
   resolvedFile,
 } from './util/running-status';
+import { ApiDetailInterface } from './interface/api-detail.interface';
 
 export async function init() {
   const lastRunState = await getLastRunState();
 
   const categories = await getAllApiCategory();
 
-  await eachLimit(categories, 1, async function(item, callback) {
+  await eachLimit(categories, 1, async (item, callback) => {
     const directory = nameToDirectoryName(item.name);
     if (directoryIsResolved(directory)) {
       return callback();
@@ -49,13 +51,22 @@ async function resolveCategory(category: CategoryListItemInterface) {
   const apiList = await getAllApiListByCategoryId(category.id);
   const directory = nameToDirectoryName(category.name);
 
-  await eachLimit(apiList.docList, 1, async function(api, callback) {
+  await eachLimit(apiList.docList, 1, async (api, callback) => {
     if (apiIsResolved(api.scopeName)) {
       return callback(null);
     }
     try {
-      await generatorApiFile(api, apiList.catName);
+      const apiInfo = await generatorApiFile(api, apiList.catName);
       resolvedApi(api.scopeName);
+
+      const constVariable = generateConstant(api.scopeName);
+      const responseInterface = createResponseClassName(api.scopeName);
+      const originResponseKey = getPddResponseRootKey(apiInfo);
+      const responseKey = originResponseKey ? `${constVariable}_RESPONSE_KEY` : undefined;
+      const secoundResponseInterface = originResponseKey
+        ? createResponseClassName(`${responseInterface.replace('ResponseInterface', '')}_${originResponseKey}`)
+        : undefined;
+
       resolvedFile(
         {
           directoryName: apiList.catName,
@@ -64,9 +75,11 @@ async function resolveCategory(category: CategoryListItemInterface) {
         {
           apiName: api.scopeName,
           name: `./${directory}/${createClassName(api.scopeName)}`,
-          constVariable: generateConstant(api.scopeName),
+          constVariable,
           requestInterface: createRequestClassName(api.scopeName),
-          responseInterface: createResponseClassName(api.scopeName),
+          responseInterface,
+          secoundResponseInterface,
+          responseKey,
         }
       );
       callback();
@@ -78,11 +91,13 @@ async function resolveCategory(category: CategoryListItemInterface) {
 }
 
 // 读取API详细信息
-async function generatorApiFile(api: ApiListItemInterface, catName: string) {
+async function generatorApiFile(api: ApiListItemInterface, catName: string): Promise<ApiDetailInterface> {
   const apiInfo = await getApiDetailByApiId(api.scopeName);
 
   const code = generateCode(api.scopeName, apiInfo);
 
   const fileName = join(`src/pddApi/${nameToDirectoryName(catName)}/${createClassName(api.scopeName)}.ts`);
   await saveCode(fileName, code);
+
+  return apiInfo;
 }

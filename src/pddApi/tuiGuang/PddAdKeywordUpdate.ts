@@ -1,4 +1,5 @@
 export const PDD_AD_KEYWORD_UPDATE = 'pdd.ad.keyword.update';
+export const PDD_AD_KEYWORD_UPDATE_RESPONSE_KEY = 'ad_keyword_update_response';
 
 /**
  * 接口名称：推广单元修改关键词出价

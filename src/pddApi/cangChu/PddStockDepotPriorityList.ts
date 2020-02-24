@@ -1,4 +1,5 @@
 export const PDD_STOCK_DEPOT_PRIORITY_LIST = 'pdd.stock.depot.priority.list';
+export const PDD_STOCK_DEPOT_PRIORITY_LIST_RESPONSE_KEY = 'open_api_response';
 
 /**
  * 接口名称：仓库优先级列表

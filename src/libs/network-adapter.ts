@@ -1,10 +1,10 @@
 import axios, { AxiosInstance } from 'axios';
 import { PddClientOptionsInterface } from '../interfaces/pdd-client-options.interface';
 import { stringify } from 'querystring';
+import { PddException } from '../exceptions';
 
 const axiosInstance: AxiosInstance = axios.create({});
 
-// axios.interceptors.response.use();
 axiosInstance.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded;charset=utf-8';
 axiosInstance.defaults.headers.post.Accept = 'application/json';
 
@@ -23,7 +23,7 @@ function createMethods(method: methodTypes) {
       method,
       ...requestData,
       ...options,
-    }).then(response => response.data);
+    });
   };
 }
 
@@ -33,15 +33,18 @@ export class NetworkAdapter {
   static delete = createMethods('delete');
   static put = createMethods('put');
   static set(options: PddClientOptionsInterface): void {
-    // axiosInstance.defaults.baseURL = options.endpoint;
-    // axiosInstance.defaults.url = '';
-    /*axiosInstance.interceptors.request.use(() => {
+    axiosInstance.defaults.baseURL = options.endpoint;
+    axiosInstance.defaults.url = '';
 
+    axiosInstance.interceptors.response.use(response => {
+      const data = response.data;
+
+      if ('error_response' in data) {
+        throw new PddException(data.error_response as any);
+      }
+
+      return data;
     });
-
-    axiosInstance.interceptors.response.use(() => {
-
-    });*/
   }
 }
 

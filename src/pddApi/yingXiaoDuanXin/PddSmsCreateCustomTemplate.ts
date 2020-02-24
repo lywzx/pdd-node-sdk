@@ -1,4 +1,5 @@
 export const PDD_SMS_CREATE_CUSTOM_TEMPLATE = 'pdd.sms.create.custom.template';
+export const PDD_SMS_CREATE_CUSTOM_TEMPLATE_RESPONSE_KEY = 'sms_create_custom_template_response';
 
 /**
  * 接口名称：创建自定义模板

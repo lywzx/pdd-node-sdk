@@ -1,4 +1,5 @@
 export const PDD_STOCK_WARE_DETAIL_QUERY = 'pdd.stock.ware.detail.query';
+export const PDD_STOCK_WARE_DETAIL_QUERY_RESPONSE_KEY = 'open_api_response';
 
 /**
  * 接口名称：查询货品详情

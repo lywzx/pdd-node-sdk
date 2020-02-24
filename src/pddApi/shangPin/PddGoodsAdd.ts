@@ -1,4 +1,5 @@
 export const PDD_GOODS_ADD = 'pdd.goods.add';
+export const PDD_GOODS_ADD_RESPONSE_KEY = 'goods_add_response';
 
 /**
  * 接口名称：商品新增接口

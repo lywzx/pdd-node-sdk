@@ -1,4 +1,5 @@
 export const PDD_VOUCHER_VOUCHER_COMPLAIN = 'pdd.voucher.voucher.complain';
+export const PDD_VOUCHER_VOUCHER_COMPLAIN_RESPONSE_KEY = 'voucher_voucher_complain_response';
 
 /**
  * 接口名称：卡券投诉接口

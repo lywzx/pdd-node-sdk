@@ -1,4 +1,5 @@
 export const PDD_AD_DELETE_LOCATION_BID = 'pdd.ad.delete.location.bid';
+export const PDD_AD_DELETE_LOCATION_BID_RESPONSE_KEY = 'open_api_response';
 
 /**
  * 接口名称：推广单元取消资源位

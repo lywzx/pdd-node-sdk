@@ -1,4 +1,5 @@
 export const PDD_REFUND_LIST_INCREMENT_GET = 'pdd.refund.list.increment.get';
+export const PDD_REFUND_LIST_INCREMENT_GET_RESPONSE_KEY = 'refund_increment_get_response';
 
 /**
  * 接口名称：售后列表接口

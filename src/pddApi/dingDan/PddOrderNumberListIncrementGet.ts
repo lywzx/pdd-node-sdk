@@ -1,4 +1,5 @@
 export const PDD_ORDER_NUMBER_LIST_INCREMENT_GET = 'pdd.order.number.list.increment.get';
+export const PDD_ORDER_NUMBER_LIST_INCREMENT_GET_RESPONSE_KEY = 'order_sn_increment_get_response';
 
 /**
  * 接口名称：订单增量接口

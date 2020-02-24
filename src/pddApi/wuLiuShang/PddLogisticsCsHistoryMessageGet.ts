@@ -1,4 +1,5 @@
 export const PDD_LOGISTICS_CS_HISTORY_MESSAGE_GET = 'pdd.logistics.cs.history.message.get';
+export const PDD_LOGISTICS_CS_HISTORY_MESSAGE_GET_RESPONSE_KEY = 'logistics_cs_history_message_get_response';
 
 /**
  * 接口名称：客户与机器人的聊天记录获取接口

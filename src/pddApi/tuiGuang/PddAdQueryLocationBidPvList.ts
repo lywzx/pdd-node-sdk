@@ -1,4 +1,5 @@
 export const PDD_AD_QUERY_LOCATION_BID_PV_LIST = 'pdd.ad.query.location.bid.pv.list';
+export const PDD_AD_QUERY_LOCATION_BID_PV_LIST_RESPONSE_KEY = 'open_api_response';
 
 /**
  * 接口名称：获取可选资源位信息（日均可竞流量）

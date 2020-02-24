@@ -1,4 +1,5 @@
 export const PDD_GOODS_CAT_TEMPLATE_GET = 'pdd.goods.cat.template.get';
+export const PDD_GOODS_CAT_TEMPLATE_GET_RESPONSE_KEY = 'open_api_response';
 
 /**
  * 接口名称：获取商品类目属性

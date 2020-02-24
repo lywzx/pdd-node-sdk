@@ -1,4 +1,5 @@
 export const PDD_FINANCE_BALANCE_DAILY_BILL_URL_GET = 'pdd.finance.balance.daily.bill.url.get';
+export const PDD_FINANCE_BALANCE_DAILY_BILL_URL_GET_RESPONSE_KEY = 'finance_balance_daily_bill_url_get_response';
 
 /**
  * 接口名称：商家货款日账单下载链接查询接口

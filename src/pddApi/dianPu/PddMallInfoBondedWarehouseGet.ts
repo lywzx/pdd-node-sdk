@@ -1,4 +1,5 @@
 export const PDD_MALL_INFO_BONDED_WAREHOUSE_GET = 'pdd.mall.info.bonded.warehouse.get';
+export const PDD_MALL_INFO_BONDED_WAREHOUSE_GET_RESPONSE_KEY = 'mall_info_bonded_warehouse_get_response';
 
 /**
  * 接口名称：保税仓信息查询接口

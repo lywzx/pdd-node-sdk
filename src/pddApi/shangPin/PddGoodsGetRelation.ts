@@ -1,4 +1,5 @@
 export const PDD_GOODS_GET_RELATION = 'pdd.goods.get.relation';
+export const PDD_GOODS_GET_RELATION_RESPONSE_KEY = 'query_goods_relation_response';
 
 /**
  * 接口名称：商品映射查询接口

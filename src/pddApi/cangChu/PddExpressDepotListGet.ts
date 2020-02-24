@@ -1,4 +1,5 @@
 export const PDD_EXPRESS_DEPOT_LIST_GET = 'pdd.express.depot.list.get';
+export const PDD_EXPRESS_DEPOT_LIST_GET_RESPONSE_KEY = 'open_api_response';
 
 /**
  * 接口名称：仓库列表

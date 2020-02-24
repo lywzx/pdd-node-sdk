@@ -1,4 +1,5 @@
 export const PDD_AD_QUERY_UNIT_BID_HISTORY_REPORT = 'pdd.ad.query.unit.bid.history.report';
+export const PDD_AD_QUERY_UNIT_BID_HISTORY_REPORT_RESPONSE_KEY = 'open_api_response';
 
 /**
  * 接口名称：定向历史报表数据

@@ -1,4 +1,5 @@
 export const PDD_VOUCHER_PHYSICAL_GOODS_SEND = 'pdd.voucher.physical.goods.send';
+export const PDD_VOUCHER_PHYSICAL_GOODS_SEND_RESPONSE_KEY = 'voucher_physical_voucher_send_response';
 
 /**
  * 接口名称：卡券发货（实物）接口

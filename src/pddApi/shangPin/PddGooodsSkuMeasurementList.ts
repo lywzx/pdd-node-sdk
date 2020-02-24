@@ -1,4 +1,5 @@
 export const PDD_GOOODS_SKU_MEASUREMENT_LIST = 'pdd.gooods.sku.measurement.list';
+export const PDD_GOOODS_SKU_MEASUREMENT_LIST_RESPONSE_KEY = 'gooods_sku_measurement_list_response';
 
 /**
  * 接口名称：商品sku计量单位枚举

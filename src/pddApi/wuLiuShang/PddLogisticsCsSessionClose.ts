@@ -1,4 +1,5 @@
 export const PDD_LOGISTICS_CS_SESSION_CLOSE = 'pdd.logistics.cs.session.close';
+export const PDD_LOGISTICS_CS_SESSION_CLOSE_RESPONSE_KEY = 'logistics_cs_session_close_response';
 
 /**
  * 接口名称：客服关闭会话接口

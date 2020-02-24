@@ -1,4 +1,5 @@
 export const PDD_ORDER_STATUS_GET = 'pdd.order.status.get';
+export const PDD_ORDER_STATUS_GET_RESPONSE_KEY = 'order_status_get_response';
 
 /**
  * 接口名称：订单状态

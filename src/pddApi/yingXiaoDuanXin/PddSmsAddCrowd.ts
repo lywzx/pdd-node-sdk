@@ -1,4 +1,5 @@
 export const PDD_SMS_ADD_CROWD = 'pdd.sms.add.crowd';
+export const PDD_SMS_ADD_CROWD_RESPONSE_KEY = 'sms_add_crowd_response';
 
 /**
  * 接口名称：新增人群

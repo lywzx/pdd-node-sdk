@@ -1,4 +1,5 @@
 export const PDD_DDK_FINANCE_CPA_QUERY = 'pdd.ddk.finance.cpa.query';
+export const PDD_DDK_FINANCE_CPA_QUERY_RESPONSE_KEY = 'finance_cpa_query_response';
 
 /**
  * 接口名称：查询CPA数据

@@ -1,4 +1,5 @@
 export const PDD_LOGISTICS_TICKET_IMAGE_UPLOAD = 'pdd.logistics.ticket.image.upload';
+export const PDD_LOGISTICS_TICKET_IMAGE_UPLOAD_RESPONSE_KEY = 'logistics_ticket_image_upload_response';
 
 /**
  * 接口名称：工单图片上传接口

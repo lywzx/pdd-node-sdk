@@ -1,4 +1,5 @@
 export const PDD_SMS_SELL_DELETING = 'pdd.sms.sell.deleting';
+export const PDD_SMS_SELL_DELETING_RESPONSE_KEY = 'sms_sell_deleting_response';
 
 /**
  * 接口名称：删除任务

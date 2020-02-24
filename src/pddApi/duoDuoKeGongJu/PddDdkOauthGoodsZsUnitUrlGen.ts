@@ -1,4 +1,5 @@
 export const PDD_DDK_OAUTH_GOODS_ZS_UNIT_URL_GEN = 'pdd.ddk.oauth.goods.zs.unit.url.gen';
+export const PDD_DDK_OAUTH_GOODS_ZS_UNIT_URL_GEN_RESPONSE_KEY = 'goods_zs_unit_generate_response';
 
 /**
  * 接口名称：生成招商推广链接

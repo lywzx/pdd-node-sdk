@@ -1,4 +1,5 @@
 export const PDD_MALL_INFO_GROUP_ADD_STORE_POST = 'pdd.mall.info.group.add.store.post';
+export const PDD_MALL_INFO_GROUP_ADD_STORE_POST_RESPONSE_KEY = 'mall_info_group_add_store_post_response';
 
 /**
  * 接口名称：门店组添加门店

@@ -1,4 +1,5 @@
 export const PDD_GOODS_AUTHORIZATION_CATS = 'pdd.goods.authorization.cats';
+export const PDD_GOODS_AUTHORIZATION_CATS_RESPONSE_KEY = 'goods_auth_cats_get_response';
 
 /**
  * 接口名称：获取当前授权商家可发布的商品类目信息

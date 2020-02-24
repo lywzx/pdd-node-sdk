@@ -1,4 +1,5 @@
 export const PDD_GOODS_SPEC_GET = 'pdd.goods.spec.get';
+export const PDD_GOODS_SPEC_GET_RESPONSE_KEY = 'goods_spec_get_response';
 
 /**
  * 接口名称：商品属性类目接口

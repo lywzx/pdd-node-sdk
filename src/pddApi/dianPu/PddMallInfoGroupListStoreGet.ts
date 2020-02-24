@@ -1,4 +1,5 @@
 export const PDD_MALL_INFO_GROUP_LIST_STORE_GET = 'pdd.mall.info.group.list.store.get';
+export const PDD_MALL_INFO_GROUP_LIST_STORE_GET_RESPONSE_KEY = 'mall_info_group_list_store_get_response';
 
 /**
  * 接口名称：查询门店组下门店

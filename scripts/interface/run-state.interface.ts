@@ -27,4 +27,10 @@ export interface RunStateFileInterface {
 
   // 响应的Interface
   responseInterface: string;
+
+  // 次级响应的responseInterface
+  secoundResponseInterface?: string;
+
+  // 简化response时，需要用到的参数
+  responseKey?: string;
 }

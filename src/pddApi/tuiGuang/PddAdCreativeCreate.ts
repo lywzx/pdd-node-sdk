@@ -1,4 +1,5 @@
 export const PDD_AD_CREATIVE_CREATE = 'pdd.ad.creative.create';
+export const PDD_AD_CREATIVE_CREATE_RESPONSE_KEY = 'open_api_response';
 
 /**
  * 接口名称：推广单元增加创意

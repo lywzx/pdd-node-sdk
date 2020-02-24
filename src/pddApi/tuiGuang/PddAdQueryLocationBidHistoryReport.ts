@@ -1,4 +1,5 @@
 export const PDD_AD_QUERY_LOCATION_BID_HISTORY_REPORT = 'pdd.ad.query.location.bid.history.report';
+export const PDD_AD_QUERY_LOCATION_BID_HISTORY_REPORT_RESPONSE_KEY = 'open_api_response';
 
 /**
  * 接口名称：资源位历史报表数据

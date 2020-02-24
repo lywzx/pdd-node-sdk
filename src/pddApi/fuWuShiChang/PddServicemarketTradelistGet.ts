@@ -1,4 +1,5 @@
 export const PDD_SERVICEMARKET_TRADELIST_GET = 'pdd.servicemarket.tradelist.get';
+export const PDD_SERVICEMARKET_TRADELIST_GET_RESPONSE_KEY = 'mall_balance_flow_search_response';
 
 /**
  * 接口名称：交易明细单导出

@@ -1,4 +1,5 @@
 export const PDD_DDK_GOODS_SEARCH = 'pdd.ddk.goods.search';
+export const PDD_DDK_GOODS_SEARCH_RESPONSE_KEY = 'goods_search_response';
 
 /**
  * 接口名称：多多进宝商品查询

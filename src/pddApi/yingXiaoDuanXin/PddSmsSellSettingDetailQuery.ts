@@ -1,4 +1,5 @@
 export const PDD_SMS_SELL_SETTING_DETAIL_QUERY = 'pdd.sms.sell.setting.detail.query';
+export const PDD_SMS_SELL_SETTING_DETAIL_QUERY_RESPONSE_KEY = 'sms_sell_setting_detail_query_response';
 
 /**
  * 接口名称：营销短信设置详情

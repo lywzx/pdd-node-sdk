@@ -1,4 +1,5 @@
 export const PDD_AD_BID_QUERY_PROFILE = 'pdd.ad.bid.query.profile';
+export const PDD_AD_BID_QUERY_PROFILE_RESPONSE_KEY = 'open_api_response';
 
 /**
  * 接口名称：【定向】用户数量预估，兴趣点查询等信息

@@ -1,4 +1,5 @@
 export const PDD_MALL_TICKET_DETAIL = 'pdd.mall.ticket.detail';
+export const PDD_MALL_TICKET_DETAIL_RESPONSE_KEY = 'mall_ticket_detail_response';
 
 /**
  * 接口名称：商家工单详情查询接口

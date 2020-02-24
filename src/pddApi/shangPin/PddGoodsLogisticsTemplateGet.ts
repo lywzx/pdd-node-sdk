@@ -1,4 +1,5 @@
 export const PDD_GOODS_LOGISTICS_TEMPLATE_GET = 'pdd.goods.logistics.template.get';
+export const PDD_GOODS_LOGISTICS_TEMPLATE_GET_RESPONSE_KEY = 'goods_logistics_template_get_response';
 
 /**
  * 接口名称：商品运费模版接口

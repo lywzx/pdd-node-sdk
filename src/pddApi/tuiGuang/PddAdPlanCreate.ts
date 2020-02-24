@@ -1,4 +1,5 @@
 export const PDD_AD_PLAN_CREATE = 'pdd.ad.plan.create';
+export const PDD_AD_PLAN_CREATE_RESPONSE_KEY = 'ad_plan_create_response';
 
 /**
  * 接口名称：新建推广计划

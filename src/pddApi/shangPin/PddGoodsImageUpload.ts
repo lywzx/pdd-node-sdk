@@ -1,4 +1,5 @@
 export const PDD_GOODS_IMAGE_UPLOAD = 'pdd.goods.image.upload';
+export const PDD_GOODS_IMAGE_UPLOAD_RESPONSE_KEY = 'goods_image_upload_response';
 
 /**
  * 接口名称：商品图片上传接口

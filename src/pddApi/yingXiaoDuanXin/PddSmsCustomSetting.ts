@@ -1,4 +1,5 @@
 export const PDD_SMS_CUSTOM_SETTING = 'pdd.sms.custom.setting';
+export const PDD_SMS_CUSTOM_SETTING_RESPONSE_KEY = 'sms_custom_setting_response';
 
 /**
  * 接口名称：指定号码短信发送设置（自定义）

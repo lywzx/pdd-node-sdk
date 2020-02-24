@@ -1,4 +1,5 @@
 export const PDD_GOODS_SALE_STATUS_SET = 'pdd.goods.sale.status.set';
+export const PDD_GOODS_SALE_STATUS_SET_RESPONSE_KEY = 'goods_sale_status_set_response';
 
 /**
  * 接口名称：商品上架状态设置

@@ -1,4 +1,5 @@
 export const PDD_CLOUDPRINT_CMDPRINT_RENDER = 'pdd.cloudprint.cmdprint.render';
+export const PDD_CLOUDPRINT_CMDPRINT_RENDER_RESPONSE_KEY = 'cloudprint_cmdprint_render_response';
 
 /**
  * 接口名称：生成打印机渲染命令（通过打印机命令打印）

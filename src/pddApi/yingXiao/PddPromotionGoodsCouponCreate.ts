@@ -1,4 +1,5 @@
 export const PDD_PROMOTION_GOODS_COUPON_CREATE = 'pdd.promotion.goods.coupon.create';
+export const PDD_PROMOTION_GOODS_COUPON_CREATE_RESPONSE_KEY = 'goods_coupon_batch_create_response';
 
 /**
  * 接口名称：创建无门槛商品劵批次接口

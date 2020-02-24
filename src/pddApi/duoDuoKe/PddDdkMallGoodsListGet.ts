@@ -1,4 +1,5 @@
 export const PDD_DDK_MALL_GOODS_LIST_GET = 'pdd.ddk.mall.goods.list.get';
+export const PDD_DDK_MALL_GOODS_LIST_GET_RESPONSE_KEY = 'goods_info_list_response';
 
 /**
  * 接口名称：查询店铺商品

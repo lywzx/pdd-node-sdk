@@ -1,4 +1,5 @@
 export const PDD_PMC_USER_GET = 'pdd.pmc.user.get';
+export const PDD_PMC_USER_GET_RESPONSE_KEY = 'pmc_user_get_response';
 
 /**
  * 接口名称：获取用户已开通消息

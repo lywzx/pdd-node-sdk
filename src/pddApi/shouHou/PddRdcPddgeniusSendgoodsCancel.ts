@@ -1,4 +1,5 @@
 export const PDD_RDC_PDDGENIUS_SENDGOODS_CANCEL = 'pdd.rdc.pddgenius.sendgoods.cancel';
+export const PDD_RDC_PDDGENIUS_SENDGOODS_CANCEL_RESPONSE_KEY = 'rdc_pddgenius_sendgoods_cancel_response';
 
 /**
  * 接口名称：取消发货

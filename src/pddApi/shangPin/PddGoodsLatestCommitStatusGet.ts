@@ -1,4 +1,5 @@
 export const PDD_GOODS_LATEST_COMMIT_STATUS_GET = 'pdd.goods.latest.commit.status.get';
+export const PDD_GOODS_LATEST_COMMIT_STATUS_GET_RESPONSE_KEY = 'goods_latest_commit_status_get_response';
 
 /**
  * 接口名称：批量goodsId查询最新的审核状态

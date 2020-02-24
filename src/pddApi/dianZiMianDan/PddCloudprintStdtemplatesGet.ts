@@ -1,4 +1,5 @@
 export const PDD_CLOUDPRINT_STDTEMPLATES_GET = 'pdd.cloudprint.stdtemplates.get';
+export const PDD_CLOUDPRINT_STDTEMPLATES_GET_RESPONSE_KEY = 'pdd_cloudprint_stdtemplates_get_response';
 
 /**
  * 接口名称：获取所有标准电子面单模板

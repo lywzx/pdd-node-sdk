@@ -1,4 +1,5 @@
 export const PDD_AD_BALANCE_GET = 'pdd.ad.balance.get';
+export const PDD_AD_BALANCE_GET_RESPONSE_KEY = 'ad_balance_get_response';
 
 /**
  * 接口名称：获取拼多多推广账户余额

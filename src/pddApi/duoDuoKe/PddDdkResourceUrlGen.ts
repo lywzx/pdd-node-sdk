@@ -1,4 +1,5 @@
 export const PDD_DDK_RESOURCE_URL_GEN = 'pdd.ddk.resource.url.gen';
+export const PDD_DDK_RESOURCE_URL_GEN_RESPONSE_KEY = 'resource_url_response';
 
 /**
  * 接口名称：生成多多进宝频道推广

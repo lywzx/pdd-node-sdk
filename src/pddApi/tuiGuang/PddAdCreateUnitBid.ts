@@ -1,4 +1,5 @@
 export const PDD_AD_CREATE_UNIT_BID = 'pdd.ad.create.unit.bid';
+export const PDD_AD_CREATE_UNIT_BID_RESPONSE_KEY = 'open_api_response';
 
 /**
  * 接口名称：推广单元增加定向（“定向”包括兴趣点）

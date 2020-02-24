@@ -1,4 +1,5 @@
 export const PDD_TIME_GET = 'pdd.time.get';
+export const PDD_TIME_GET_RESPONSE_KEY = 'time_get_response';
 
 /**
  * 接口名称：获取拼多多系统时间

@@ -1,4 +1,5 @@
 export const PDD_GOODS_INFORMATION_UPDATE = 'pdd.goods.information.update';
+export const PDD_GOODS_INFORMATION_UPDATE_RESPONSE_KEY = 'goods_update_response';
 
 /**
  * 接口名称：商品编辑

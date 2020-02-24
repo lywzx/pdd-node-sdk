@@ -1,4 +1,5 @@
 export const PDD_GOODS_CPS_MALL_UNIT_QUERY = 'pdd.goods.cps.mall.unit.query';
+export const PDD_GOODS_CPS_MALL_UNIT_QUERY_RESPONSE_KEY = 'goods_cps_mall_unit_query_response';
 
 /**
  * 接口名称：查询全店推广API

@@ -1,4 +1,5 @@
 export const PDD_DDK_GOODS_PID_QUERY = 'pdd.ddk.goods.pid.query';
+export const PDD_DDK_GOODS_PID_QUERY_RESPONSE_KEY = 'p_id_query_response';
 
 /**
  * 接口名称：查询已经生成的推广位信息

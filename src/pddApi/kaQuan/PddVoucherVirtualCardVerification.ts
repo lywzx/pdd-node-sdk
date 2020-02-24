@@ -1,4 +1,5 @@
 export const PDD_VOUCHER_VIRTUAL_CARD_VERIFICATION = 'pdd.voucher.virtual.card.verification';
+export const PDD_VOUCHER_VIRTUAL_CARD_VERIFICATION_RESPONSE_KEY = 'voucher_voucher_info_verify_response';
 
 /**
  * 接口名称：卡券（电子）核销接口

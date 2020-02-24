@@ -1,4 +1,5 @@
 export const PDD_GOODS_TEMPLATE_PROPERTY_VALUE_SEARCH = 'pdd.goods.template.property.value.search';
+export const PDD_GOODS_TEMPLATE_PROPERTY_VALUE_SEARCH_RESPONSE_KEY = 'goods_template_prop_val_search_response';
 
 /**
  * 接口名称：模板属性值搜索接口

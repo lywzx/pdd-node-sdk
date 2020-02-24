@@ -1,4 +1,5 @@
 export const PDD_STOCK_GOODS_ID_TO_SKU_QUERY = 'pdd.stock.goods.id.to.sku.query';
+export const PDD_STOCK_GOODS_ID_TO_SKU_QUERY_RESPONSE_KEY = 'open_api_response';
 
 /**
  * 接口名称：根据商品id查询sku信息

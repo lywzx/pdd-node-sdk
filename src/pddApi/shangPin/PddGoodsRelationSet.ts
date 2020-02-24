@@ -1,4 +1,5 @@
 export const PDD_GOODS_RELATION_SET = 'pdd.goods.relation.set';
+export const PDD_GOODS_RELATION_SET_RESPONSE_KEY = 'goods_relation_set_response';
 
 /**
  * 接口名称：商品关联信息设置接口

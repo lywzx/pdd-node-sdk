@@ -1,4 +1,5 @@
 export const PDD_AD_PLAN_DELETE = 'pdd.ad.plan.delete';
+export const PDD_AD_PLAN_DELETE_RESPONSE_KEY = 'ad_plan_delete_response';
 
 /**
  * 接口名称：删除推广计划

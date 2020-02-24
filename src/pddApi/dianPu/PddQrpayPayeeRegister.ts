@@ -1,4 +1,5 @@
 export const PDD_QRPAY_PAYEE_REGISTER = 'pdd.qrpay.payee.register';
+export const PDD_QRPAY_PAYEE_REGISTER_RESPONSE_KEY = 'qrpay_payee_register_response';
 
 /**
  * 接口名称：交易二维码-参数注册接口

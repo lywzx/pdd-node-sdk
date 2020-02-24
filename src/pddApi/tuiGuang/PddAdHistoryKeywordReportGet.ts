@@ -1,4 +1,5 @@
 export const PDD_AD_HISTORY_KEYWORD_REPORT_GET = 'pdd.ad.history.keyword.report.get';
+export const PDD_AD_HISTORY_KEYWORD_REPORT_GET_RESPONSE_KEY = 'ad_keyword_history_report_get_response';
 
 /**
  * 接口名称：关键词历史报表数据

@@ -1,4 +1,5 @@
 export const PDD_REFUND_ADDRESS_LIST_GET = 'pdd.refund.address.list.get';
+export const PDD_REFUND_ADDRESS_LIST_GET_RESPONSE_KEY = 'refund_address_list_get_response';
 
 /**
  * 接口名称：获取商家退货地址库

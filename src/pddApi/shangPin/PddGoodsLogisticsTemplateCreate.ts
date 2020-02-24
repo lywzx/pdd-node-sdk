@@ -1,4 +1,5 @@
 export const PDD_GOODS_LOGISTICS_TEMPLATE_CREATE = 'pdd.goods.logistics.template.create';
+export const PDD_GOODS_LOGISTICS_TEMPLATE_CREATE_RESPONSE_KEY = 'goods_logistics_template_create_response';
 
 /**
  * 接口名称：创建商品物流模版

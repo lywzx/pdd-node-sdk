@@ -1,4 +1,5 @@
 export const PDD_SMS_SELL_SETTING_RECORD_CANCEL = 'pdd.sms.sell.setting.record.cancel';
+export const PDD_SMS_SELL_SETTING_RECORD_CANCEL_RESPONSE_KEY = 'sms_sell_setting_record_cancel_response';
 
 /**
  * 接口名称：取消任务

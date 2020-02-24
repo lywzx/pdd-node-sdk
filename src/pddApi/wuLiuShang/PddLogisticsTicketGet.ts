@@ -1,4 +1,5 @@
 export const PDD_LOGISTICS_TICKET_GET = 'pdd.logistics.ticket.get';
+export const PDD_LOGISTICS_TICKET_GET_RESPONSE_KEY = 'logistics_ticket_get_response';
 
 /**
  * 接口名称：快递公司工单查询接口

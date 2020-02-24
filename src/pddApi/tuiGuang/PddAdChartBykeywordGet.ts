@@ -1,4 +1,5 @@
 export const PDD_AD_CHART_BYKEYWORD_GET = 'pdd.ad.chart.bykeyword.get';
+export const PDD_AD_CHART_BYKEYWORD_GET_RESPONSE_KEY = 'ad_keyword_daily_report_response';
 
 /**
  * 接口名称：获取关键词推广报表信息

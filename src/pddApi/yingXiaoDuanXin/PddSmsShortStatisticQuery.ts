@@ -1,4 +1,5 @@
 export const PDD_SMS_SHORT_STATISTIC_QUERY = 'pdd.sms.short.statistic.query';
+export const PDD_SMS_SHORT_STATISTIC_QUERY_RESPONSE_KEY = 'sms_short_msg_statistic_query_response';
 
 /**
  * 接口名称：查看任务数据

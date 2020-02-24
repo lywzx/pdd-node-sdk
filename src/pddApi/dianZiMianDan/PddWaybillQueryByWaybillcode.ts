@@ -1,4 +1,5 @@
 export const PDD_WAYBILL_QUERY_BY_WAYBILLCODE = 'pdd.waybill.query.by.waybillcode';
+export const PDD_WAYBILL_QUERY_BY_WAYBILLCODE_RESPONSE_KEY = 'pdd_waybill_query_by_waybillcode_response';
 
 /**
  * 接口名称：通过面单号查询面单信息

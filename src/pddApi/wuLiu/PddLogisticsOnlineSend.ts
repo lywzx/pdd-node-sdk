@@ -1,4 +1,5 @@
 export const PDD_LOGISTICS_ONLINE_SEND = 'pdd.logistics.online.send';
+export const PDD_LOGISTICS_ONLINE_SEND_RESPONSE_KEY = 'logistics_online_send_response';
 
 /**
  * 接口名称：订单发货通知接口

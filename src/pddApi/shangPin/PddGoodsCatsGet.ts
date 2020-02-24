@@ -1,4 +1,5 @@
 export const PDD_GOODS_CATS_GET = 'pdd.goods.cats.get';
+export const PDD_GOODS_CATS_GET_RESPONSE_KEY = 'goods_cats_get_response';
 
 /**
  * 接口名称：商品标准类目接口

@@ -1,4 +1,5 @@
 export const PDD_AD_CAN_CREATE_PLAN = 'pdd.ad.can.create.plan';
+export const PDD_AD_CAN_CREATE_PLAN_RESPONSE_KEY = 'ad_plan_create_response';
 
 /**
  * 接口名称：是否可以创建计划验证接口

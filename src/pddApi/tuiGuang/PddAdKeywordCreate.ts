@@ -1,4 +1,5 @@
 export const PDD_AD_KEYWORD_CREATE = 'pdd.ad.keyword.create';
+export const PDD_AD_KEYWORD_CREATE_RESPONSE_KEY = 'ad_keyword_create_response';
 
 /**
  * 接口名称：推广单元添加关键词

@@ -1,4 +1,5 @@
 export const PDD_ONE_EXPRESS_COST_TEMPLATE = 'pdd.one.express.cost.template';
+export const PDD_ONE_EXPRESS_COST_TEMPLATE_RESPONSE_KEY = 'one_express_cost_template_response';
 
 /**
  * 接口名称：按id获取商品运费模版接口

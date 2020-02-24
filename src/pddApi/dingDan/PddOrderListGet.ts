@@ -1,4 +1,5 @@
 export const PDD_ORDER_LIST_GET = 'pdd.order.list.get';
+export const PDD_ORDER_LIST_GET_RESPONSE_KEY = 'order_list_get_response';
 
 /**
  * 接口名称：订单列表查询接口（根据成交时间）

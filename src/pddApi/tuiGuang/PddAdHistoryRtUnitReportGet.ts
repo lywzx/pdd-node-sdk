@@ -1,4 +1,5 @@
 export const PDD_AD_HISTORY_RT_UNIT_REPORT_GET = 'pdd.ad.history.rt.unit.report.get';
+export const PDD_AD_HISTORY_RT_UNIT_REPORT_GET_RESPONSE_KEY = 'ad_unit_real_time_report_response';
 
 /**
  * 接口名称：推广单元实时报表数据

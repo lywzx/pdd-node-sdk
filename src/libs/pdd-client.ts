@@ -1,11 +1,19 @@
 import { PddClientOptionsInterface } from '../interfaces/pdd-client-options.interface';
-import { PddCollectRequestInterface, PddCollectResponseInterface, PddCommonRequestInterface } from '../pddApi';
-import { checkRequired, md5, timestamp } from '../util';
+import {
+  PddCollectRequestInterface,
+  PddCollectShortResponseInterface,
+  PddCommonRequestInterface,
+  PddResponseTypeAndRequestTypeMapping,
+} from '../pddApi';
+import { md5, timestamp, promseToCallback } from '../util';
 import { AsyncResultCallbackInterface } from '../interfaces/async-result-callback.interface';
 import { NetworkAdapter, NetworkAdapterInterface } from './network-adapter';
 import { PDD_END_POINTS } from '../constant';
 import { extend } from 'lodash';
 import { RequestParamsType, RequestParamsFullType } from '../interfaces';
+import { retry } from 'async';
+import { RetryOptionsInterface } from '../interfaces/retry-options.interface';
+import { defaultRetryOptions } from './pdd-client-default';
 
 const defaultRequestParam = {
   // eslint-disable-next-line @typescript-eslint/camelcase
@@ -14,6 +22,7 @@ const defaultRequestParam = {
 };
 
 type AppTypes = PddCollectRequestInterface;
+type RetryOptionsType = RetryOptionsInterface | number;
 
 export class PddClient {
   constructor(public options: PddClientOptionsInterface, public adapter: NetworkAdapterInterface = NetworkAdapter) {
@@ -30,7 +39,6 @@ export class PddClient {
 
   /**
    * 发起一个普通request请求
-   * @param type
    * @param params
    * @param callback
    */
@@ -60,11 +68,96 @@ export class PddClient {
 
     const requestPromise = this.adapter.post(this.options.endpoint, defaultArgs);
 
-    if (callback && typeof callback === 'function') {
-      requestPromise.then(response => callback(null, response)).catch(error => callback(error));
-    } else {
-      return requestPromise;
+    return promseToCallback<R>(requestPromise, callback as any);
+  }
+
+  /**
+   * 附带重试机制的request
+   * @param params
+   * @param retryOptions
+   * @param callback
+   */
+  public requestWithRetry<R>(params: RequestParamsType, retryOptions?: RetryOptionsType): Promise<R>;
+  public requestWithRetry<R>(params: RequestParamsType, callback: AsyncResultCallbackInterface<R, never>): void;
+  public requestWithRetry<R>(
+    params: RequestParamsType,
+    retryOptions: RetryOptionsType,
+    callback: AsyncResultCallbackInterface<R, never>
+  ): void;
+  public requestWithRetry<R>(
+    params: RequestParamsType,
+    retryOptions?: RetryOptionsType | AsyncResultCallbackInterface<R, never>,
+    callback?: AsyncResultCallbackInterface<R, never>
+  ): Promise<R> | void {
+    let tryOptions: RetryOptionsInterface | undefined;
+    if (typeof retryOptions === 'function') {
+      tryOptions = defaultRetryOptions;
+      callback = (retryOptions as any) as AsyncResultCallbackInterface<R, never>;
+    } else if (typeof retryOptions === 'undefined') {
+      tryOptions = defaultRetryOptions;
+    } else if (typeof retryOptions === 'number') {
+      tryOptions = extend({}, defaultRetryOptions, { times: retryOptions });
     }
+
+    const retryResult = (retry<R>(tryOptions, clbk => {
+      this.request<R>(params, clbk);
+    }) as any) as Promise<R>;
+
+    return promseToCallback<R>(retryResult, callback as any);
+  }
+
+  /**
+   * 自动处理响应中带前缀的数据
+   * @param type
+   * @param params
+   * @param [retryOptions]
+   * @param [callback]
+   */
+  public execute<
+    K extends keyof PddCollectRequestInterface,
+    Req = PddCollectRequestInterface[K],
+    Res = PddCollectShortResponseInterface[K]
+  >(type: K, params: Req): Promise<Res>;
+  public execute<
+    K extends keyof PddCollectRequestInterface,
+    Req = PddCollectRequestInterface[K],
+    Res = PddCollectShortResponseInterface[K]
+  >(type: K, params: Req, retryOptions: RetryOptionsType): Promise<Res>;
+  public execute<
+    K extends keyof PddCollectRequestInterface,
+    Req = PddCollectRequestInterface[K],
+    Res = PddCollectShortResponseInterface[K]
+  >(type: K, params: Req, retryOptions: AsyncResultCallbackInterface<Res, never>): void;
+  public execute<
+    K extends keyof PddCollectRequestInterface,
+    Req = PddCollectRequestInterface[K],
+    Res = PddCollectShortResponseInterface[K]
+  >(type: K, params: Req, retryOptions: RetryOptionsType, callback: AsyncResultCallbackInterface<Res, never>): void;
+  public execute<
+    K extends keyof PddCollectRequestInterface,
+    Req = PddCollectRequestInterface[K],
+    Res = PddCollectShortResponseInterface[K]
+  >(
+    type: K,
+    params: Req,
+    retryOptions?: RetryOptionsType | AsyncResultCallbackInterface<Res, never>,
+    callback?: AsyncResultCallbackInterface<Res, never>
+  ): Promise<Res> | void {
+    const reqParams: Omit<PddCommonRequestInterface, 'sign'> = extend({}, params, { type: type }) as any;
+    if (typeof retryOptions === 'function') {
+      callback = retryOptions;
+      retryOptions = {};
+    }
+
+    const result = this.requestWithRetry<any>(reqParams, retryOptions as RetryOptionsType).then(response => {
+      if (type in PddResponseTypeAndRequestTypeMapping) {
+        const responseKey = (PddResponseTypeAndRequestTypeMapping as any)[type] as string;
+        return response[responseKey];
+      }
+      return response;
+    });
+
+    return promseToCallback(result, callback as any);
   }
 
   /**

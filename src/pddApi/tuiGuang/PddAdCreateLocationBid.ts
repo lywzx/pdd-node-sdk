@@ -1,4 +1,5 @@
 export const PDD_AD_CREATE_LOCATION_BID = 'pdd.ad.create.location.bid';
+export const PDD_AD_CREATE_LOCATION_BID_RESPONSE_KEY = 'open_api_response';
 
 /**
  * 接口名称：推广单元新增资源位信息（批量）

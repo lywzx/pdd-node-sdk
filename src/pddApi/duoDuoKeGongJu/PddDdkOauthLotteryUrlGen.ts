@@ -1,4 +1,5 @@
 export const PDD_DDK_OAUTH_LOTTERY_URL_GEN = 'pdd.ddk.oauth.lottery.url.gen';
+export const PDD_DDK_OAUTH_LOTTERY_URL_GEN_RESPONSE_KEY = 'lottery_url_response';
 
 /**
  * 接口名称：多多客工具生成转盘抽免单url

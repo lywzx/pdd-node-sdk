@@ -1,4 +1,5 @@
 export const PDD_LOGISTICS_ONLINE_CREATE = 'pdd.logistics.online.create';
+export const PDD_LOGISTICS_ONLINE_CREATE_RESPONSE_KEY = 'logistics_online_create_response';
 
 /**
  * 接口名称：在线下单订单下发接口

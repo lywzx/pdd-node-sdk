@@ -1,4 +1,5 @@
 export const PDD_AD_CREATIVE_QUERY = 'pdd.ad.creative.query';
+export const PDD_AD_CREATIVE_QUERY_RESPONSE_KEY = 'open_api_response';
 
 /**
  * 接口名称：根据推广单元id获取现有创意列表

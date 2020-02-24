@@ -1,4 +1,5 @@
 export const PDD_AD_HISTORY_PLAN_REPORT_GET = 'pdd.ad.history.plan.report.get';
+export const PDD_AD_HISTORY_PLAN_REPORT_GET_RESPONSE_KEY = 'ad_plan_history_report_get_response';
 
 /**
  * 接口名称：推广计划历史报表数据

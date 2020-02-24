@@ -1,4 +1,5 @@
 export const PDD_AD_KEYWORD_RELEVANCE_GET = 'pdd.ad.keyword.relevance.get';
+export const PDD_AD_KEYWORD_RELEVANCE_GET_RESPONSE_KEY = 'ad_keyword_relevance_list_response';
 
 /**
  * 接口名称：关键词商品相关性
