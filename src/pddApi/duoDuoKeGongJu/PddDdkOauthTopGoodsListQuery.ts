@@ -123,10 +123,10 @@ export interface PddDdkOauthTopGoodsListQueryTopGoodsListGetResponseListResponse
 
   /**
    * @description: 商品轮播图
-   * @type: string
+   * @type: string[]
    * @default:
    **/
-  goods_gallery_urls: string;
+  goods_gallery_urls: string[];
 
   /**
    * @description: 已售卖件数
@@ -193,17 +193,17 @@ export interface PddDdkOauthTopGoodsListQueryTopGoodsListGetResponseListResponse
 
   /**
    * @description: 商品标签id
-   * @type: string
+   * @type: string[]
    * @default:
    **/
-  opt_ids: string;
+  opt_ids: string[];
 
   /**
    * @description: 商品类目id
-   * @type: string
+   * @type: string[]
    * @default:
    **/
-  cat_ids: string;
+  cat_ids: string[];
 
   /**
    * @description: 该商品所在店铺是否参与全店推广，0：否，1：是

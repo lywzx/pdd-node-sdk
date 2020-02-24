@@ -181,17 +181,17 @@ export interface PddSmsRemainSettingDetailQuerySmsRemainSettingDetailQueryRespon
 
   /**
    * @description: 收货地区
-   * @type: string
+   * @type: number[]
    * @default:
    **/
-  region: string;
+  region: number[];
 
   /**
    * @description: 商品id列表
-   * @type: string
+   * @type: string[]
    * @default:
    **/
-  goods: string;
+  goods: string[];
 
   /**
    * @description: 是否排除商品

@@ -9,10 +9,10 @@ export const PDD_DDK_OAUTH_LOTTERY_URL_GEN_RESPONSE_KEY = 'lottery_url_response'
 export interface PddDdkOauthLotteryUrlGenRequestInterface {
   /**
    * @description: 推广位
-   * @type: string
+   * @type: string[]
    * @default:
    **/
-  pid_list?: string;
+  pid_list?: string[];
 
   /**
    * @description: 是否生成唤起微信客户端链接，true-是，false-否，默认false

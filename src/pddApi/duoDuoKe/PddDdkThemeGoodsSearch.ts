@@ -95,10 +95,10 @@ export interface PddDdkThemeGoodsSearchThemeListGetResponseGoodsListResponseInte
 
   /**
    * @description: 商品详情图列表
-   * @type: string
+   * @type: string[]
    * @default:
    **/
-  goods_gallery_urls: string;
+  goods_gallery_urls: string[];
 
   /**
    * @description: 最小拼团价格,单位为分
@@ -137,10 +137,10 @@ export interface PddDdkThemeGoodsSearchThemeListGetResponseGoodsListResponseInte
 
   /**
    * @description: 商品一~四级类目ID列表
-   * @type: string
+   * @type: number[]
    * @default:
    **/
-  cat_ids: string;
+  cat_ids: number[];
 
   /**
    * @description: 商品是否带券,true-带券,false-不带券

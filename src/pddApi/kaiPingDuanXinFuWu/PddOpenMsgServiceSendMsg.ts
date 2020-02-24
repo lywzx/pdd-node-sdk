@@ -8,10 +8,10 @@ export const PDD_OPEN_MSG_SERVICE_SEND_MSG = 'pdd.open.msg.service.send.msg';
 export interface PddOpenMsgServiceSendMsgRequestInterface {
   /**
    * @description: 接收短信的手机号码列表,["15900000000", "17600000000"]
-   * @type: string
+   * @type: string[]
    * @default:
    **/
-  phone_numbers?: string;
+  phone_numbers?: string[];
 
   /**
    * @description: 短信签名名称

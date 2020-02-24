@@ -167,10 +167,10 @@ export interface PddSmsSellSettingDetailQuerySmsSellSettingDetailQueryResponseCr
 
   /**
    * @description: 选自定义的时候列表存省代表的id
-   * @type: string
+   * @type: string[]
    * @default:
    **/
-  location: string;
+  location: string[];
 
   /**
    * @description: 性别
@@ -286,10 +286,10 @@ export interface PddSmsSellSettingDetailQuerySmsSellSettingDetailQueryResponseTa
 
   /**
    * @description: 收获地区
-   * @type: string
+   * @type: number[]
    * @default:
    **/
-  region: string;
+  region: number[];
 
   /**
    * @description: 地区类型

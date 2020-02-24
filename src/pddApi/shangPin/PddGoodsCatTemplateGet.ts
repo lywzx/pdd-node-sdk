@@ -229,10 +229,10 @@ export interface PddGoodsCatTemplateGetOpenApiResponsePropertiesResponseInterfac
 
   /**
    * @description: 若属性按条件展示,则只有show_vids中的值被选择时属性才可使用
-   * @type: string
+   * @type: string[]
    * @default:
    **/
-  show_vids: string;
+  show_vids: string[];
 }
 
 /**
@@ -286,10 +286,10 @@ export interface PddGoodsCatTemplateGetOpenApiResponsePropertiesValuesResponseIn
 
   /**
    * @description: 对应的父属性值id
-   * @type: string
+   * @type: string[]
    * @default:
    **/
-  parent_vids: string;
+  parent_vids: string[];
 }
 
 /**

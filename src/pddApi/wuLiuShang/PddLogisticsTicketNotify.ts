@@ -9,10 +9,10 @@ export const PDD_LOGISTICS_TICKET_NOTIFY_RESPONSE_KEY = 'logistics_ticket_notify
 export interface PddLogisticsTicketNotifyRequestInterface {
   /**
    * @description: 附件url,示例：["http://testimg.yangkeduo.com/pdd_oms/2018-01-16/411068e948835ae053a86c13f8ebb5ee.jpg"]
-   * @type: string
+   * @type: string[]
    * @default:
    **/
-  attach_path_list: string;
+  attach_path_list: string[];
 
   /**
    * @description: 工单id

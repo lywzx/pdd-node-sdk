@@ -7,7 +7,7 @@ export class PddException extends Error {
 
   public retryAble(): boolean {
     const errorCode = get(this, 'errObj.error_code') as number;
-    return [1].includes(errorCode);
+    return [70031, 70032, 70033, 70034].includes(errorCode);
   }
 }
 

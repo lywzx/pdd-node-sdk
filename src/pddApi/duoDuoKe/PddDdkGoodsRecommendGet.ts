@@ -214,17 +214,17 @@ export interface PddDdkGoodsRecommendGetGoodsBasicDetailResponseListResponseInte
 
   /**
    * @description: 商品一~四级类目ID列表
-   * @type: string
+   * @type: string[]
    * @default:
    **/
-  cat_ids: string;
+  cat_ids: string[];
 
   /**
    * @description: 商品一~四级标签类目ID列表
-   * @type: string
+   * @type: string[]
    * @default:
    **/
-  opt_ids: string;
+  opt_ids: string[];
 
   /**
    * @description: 商品标签名

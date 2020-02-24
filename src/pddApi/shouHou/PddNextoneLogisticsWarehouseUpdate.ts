@@ -30,10 +30,10 @@ export interface PddNextoneLogisticsWarehouseUpdateRequestRequestInterface {
 
   /**
    * @description: 操作时间
-   * @type: string
+   * @type: void
    * @default:
    **/
-  operate_time?: string;
+  operate_time?: void;
 
   /**
    * @description: order_sn

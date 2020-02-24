@@ -16,10 +16,10 @@ export interface PddSmsCustomSettingRequestInterface {
 
   /**
    * @description: 待发送手机号，["15671551276"]
-   * @type: string
+   * @type: string[]
    * @default:
    **/
-  phones?: string;
+  phones?: string[];
 
   /**
    * @description: 发送时间

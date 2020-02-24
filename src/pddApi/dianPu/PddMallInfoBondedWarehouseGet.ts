@@ -61,10 +61,10 @@ export interface PddMallInfoBondedWarehouseGetMallInfoBondedWarehouseGetResponse
 
   /**
    * @description: 清关服务商
-   * @type: string
+   * @type: string[]
    * @default:
    **/
-  customs_clearance_service_provider_list: string;
+  customs_clearance_service_provider_list: string[];
 
   /**
    * @description: 报关海关

@@ -23,10 +23,10 @@ export interface PddSmsCrowdsPeopleNumberQueryRequestInterface {
 
   /**
    * @description: [1,34] //  //选自定义的时候列表存省代表的id
-   * @type: string
+   * @type: string[]
    * @default:
    **/
-  location: string;
+  location: string[];
 
   /**
    * @description: //0-全部 1-男 2-女

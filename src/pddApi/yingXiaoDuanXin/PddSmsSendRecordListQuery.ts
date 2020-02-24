@@ -9,10 +9,10 @@ export const PDD_SMS_SEND_RECORD_LIST_QUERY_RESPONSE_KEY = 'sms_send_record_list
 export interface PddSmsSendRecordListQueryRequestInterface {
   /**
    * @description: 场景id,见前面枚举值用户关怀传[1,3]  ,智能营销[4, 5, 6, 8，9] 不传的话全部
-   * @type: string
+   * @type: string[]
    * @default:
    **/
-  scene: string;
+  scene: string[];
 
   /**
    * @description: 开始时间 2018-08-09 15:20:12

@@ -22,8 +22,8 @@ export interface PddUtilDivideBase64ImageRequestInterface {
 export interface PddUtilDivideBase64ImageResponseInterface {
   /**
    * @description: 切图后的地址列表
-   * @type: string
+   * @type: string[]
    * @default:
    **/
-  open_api_response: string;
+  open_api_response: string[];
 }

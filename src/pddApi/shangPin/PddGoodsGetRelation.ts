@@ -9,10 +9,10 @@ export const PDD_GOODS_GET_RELATION_RESPONSE_KEY = 'query_goods_relation_respons
 export interface PddGoodsGetRelationRequestInterface {
   /**
    * @description: 拼多多商品id
-   * @type: string
+   * @type: string[]
    * @default:
    **/
-  pdd_goods_id?: string;
+  pdd_goods_id?: string[];
 }
 
 /**

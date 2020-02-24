@@ -15,10 +15,10 @@ export interface PddMallInfoStoreCreatePostNopoiRequestInterface {
 
   /**
    * @description: 一周营业时间
-   * @type: string
+   * @type: number[]
    * @default:
    **/
-  business_week_list?: string;
+  business_week_list?: number[];
 
   /**
    * @description: 市
@@ -106,8 +106,8 @@ export interface PddMallInfoStoreCreatePostNopoiRequestInterface {
 export interface PddMallInfoStoreCreatePostNopoiResponseInterface {
   /**
    * @description:
-   * @type: string
+   * @type: void
    * @default:
    **/
-  res: string;
+  res: void;
 }

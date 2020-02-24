@@ -23,10 +23,10 @@ export interface PddDdkGoodsPidQueryRequestInterface {
 
   /**
    * @description: 推广位id列表
-   * @type: string
+   * @type: string[]
    * @default:
    **/
-  pid_list: string;
+  pid_list: string[];
 }
 
 /**

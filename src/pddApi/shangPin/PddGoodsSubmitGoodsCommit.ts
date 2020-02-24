@@ -23,10 +23,10 @@ export interface PddGoodsSubmitGoodsCommitRequestInterface {
 
   /**
    * @description: 商品轮播图，按次序上传，图片格式支持JPEG/JPG/PNG， 图片尺寸长宽比1：1且尺寸不低于480px，图片大小最高1MB
-   * @type: string
+   * @type: string[]
    * @default:
    **/
-  carousel_gallery?: string;
+  carousel_gallery?: string[];
 
   /**
    * @description: 商品视频
@@ -92,10 +92,10 @@ export interface PddGoodsSubmitGoodsCommitRequestInterface {
    * c. 数量限制在20张之间
    * d. 图片格式仅支持JPG,PNG格式
    * e. 点击上传时，支持批量上传详情图
-   * @type: string
+   * @type: string[]
    * @default:
    **/
-  detail_gallery?: string;
+  detail_gallery?: string[];
 
   /**
    * @description: 卡券类商品属性
@@ -631,10 +631,10 @@ export interface PddGoodsSubmitGoodsCommitSkuListRequestInterface {
 
   /**
    * @description: 商品规格列表，根据pdd.goods.spec.id.get生成的规格属性id，例如：颜色规格下商家新增白色和黑色，大小规格下商家新增L和XL，则由4种spec组合，入参一种组合即可，在skulist中需要有4个spec组合的sku
-   * @type: string
+   * @type: string[]
    * @default:
    **/
-  spec_id_list?: string;
+  spec_id_list?: string[];
 
   /**
    * @description: sku预览图，预览图尺寸：等宽高，且高度不低于480px，现已支持1M大小，越清晰越好卖，SKU预览图格式：仅支持JPG,PNG格式

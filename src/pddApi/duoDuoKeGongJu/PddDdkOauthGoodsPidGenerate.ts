@@ -16,10 +16,10 @@ export interface PddDdkOauthGoodsPidGenerateRequestInterface {
 
   /**
    * @description: 推广位名称，例如["1","2"]
-   * @type: string
+   * @type: string[]
    * @default:
    **/
-  p_id_name_list: string;
+  p_id_name_list: string[];
 }
 
 /**

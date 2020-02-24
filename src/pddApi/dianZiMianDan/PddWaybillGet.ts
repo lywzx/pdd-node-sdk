@@ -212,10 +212,10 @@ export interface PddWaybillGetParamWaybillCloudPrintApplyNewRequestTradeOrderInf
 
   /**
    * @description: 订单号,数量限制100
-   * @type: string
+   * @type: string[]
    * @default:
    **/
-  trade_order_list?: string;
+  trade_order_list?: string[];
 }
 
 /**

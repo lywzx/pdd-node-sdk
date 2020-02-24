@@ -16,10 +16,10 @@ export interface PddAdKeywordRelevanceGetRequestInterface {
 
   /**
    * @description: ["test"]
-   * @type: string
+   * @type: string[]
    * @default:
    **/
-  words?: string;
+  words?: string[];
 
   /**
    * @description: 商品id

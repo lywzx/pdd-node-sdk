@@ -30,10 +30,10 @@ export interface PddOpenMsgServiceSendExpressMsgRequestInterface {
 
   /**
    * @description: 物流单号集合
-   * @type: string
+   * @type: string[]
    * @default:
    **/
-  waybill_codes?: string;
+  waybill_codes?: string[];
 
   /**
    * @description: 快递公司编码

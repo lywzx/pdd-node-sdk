@@ -16,10 +16,10 @@ export interface PddDdkGoodsPromotionUrlGenerateRequestInterface {
 
   /**
    * @description: 商品ID，仅支持单个查询
-   * @type: string
+   * @type: string[]
    * @default:
    **/
-  goods_id_list?: string;
+  goods_id_list?: string[];
 
   /**
    * @description: 是否生成短链接，true-是，false-否

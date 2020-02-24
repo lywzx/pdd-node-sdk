@@ -132,10 +132,10 @@ export interface PddExpressAddDepotDepotRegionValueRequestInterface {
 
   /**
    * @description: 区id列表
-   * @type: string
+   * @type: string[]
    * @default:
    **/
-  value?: string;
+  value?: string[];
 }
 
 /**

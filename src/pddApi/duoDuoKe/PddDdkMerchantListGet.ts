@@ -30,17 +30,17 @@ export interface PddDdkMerchantListGetRequestInterface {
 
   /**
    * @description: 店铺id
-   * @type: string
+   * @type: string[]
    * @default:
    **/
-  mall_id_list: string;
+  mall_id_list: string[];
 
   /**
    * @description: 店铺类型
-   * @type: string
+   * @type: number[]
    * @default:
    **/
-  merchant_type_list: string;
+  merchant_type_list: number[];
 
   /**
    * @description: 每页数量
@@ -116,10 +116,10 @@ export interface PddDdkMerchantListGetMerchantListResponseResponseInterface {
 export interface PddDdkMerchantListGetMerchantListResponseMallSearchInfoVoListResponseInterface {
   /**
    * @description: 商品类目列表
-   * @type: string
+   * @type: number[]
    * @default:
    **/
-  cat_id_list: string;
+  cat_id_list: number[];
 
   /**
    * @description: 店铺收藏券ID
@@ -293,10 +293,10 @@ export interface PddDdkMerchantListGetMerchantListResponseMallSearchInfoVoListGo
 
   /**
    * @description: 商品标签列表，与optIds一样，兼容老版本
-   * @type: string
+   * @type: number[]
    * @default:
    **/
-  cat_ids: string;
+  cat_ids: number[];
 
   /**
    * @description: 店铺收藏券ID
@@ -433,10 +433,10 @@ export interface PddDdkMerchantListGetMerchantListResponseMallSearchInfoVoListGo
 
   /**
    * @description: 商品详情图
-   * @type: string
+   * @type: string[]
    * @default:
    **/
-  goods_gallery_urls: string;
+  goods_gallery_urls: string[];
 
   /**
    * @description: 商品id
@@ -601,10 +601,10 @@ export interface PddDdkMerchantListGetMerchantListResponseMallSearchInfoVoListGo
 
   /**
    * @description: 商品标签列表
-   * @type: string
+   * @type: number[]
    * @default:
    **/
-  opt_ids: string;
+  opt_ids: number[];
 
   /**
    * @description: 商品标签名
@@ -629,10 +629,10 @@ export interface PddDdkMerchantListGetMerchantListResponseMallSearchInfoVoListGo
 
   /**
    * @description: 服务类型
-   * @type: string
+   * @type: number[]
    * @default:
    **/
-  service_tags: string;
+  service_tags: number[];
 
   /**
    * @description: 服务评分

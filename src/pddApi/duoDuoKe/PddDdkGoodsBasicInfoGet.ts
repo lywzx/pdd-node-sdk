@@ -9,10 +9,10 @@ export const PDD_DDK_GOODS_BASIC_INFO_GET_RESPONSE_KEY = 'goods_basic_detail_res
 export interface PddDdkGoodsBasicInfoGetRequestInterface {
   /**
    * @description: 商品id
-   * @type: string
+   * @type: string[]
    * @default:
    **/
-  goods_id_list?: string;
+  goods_id_list?: string[];
 }
 
 /**

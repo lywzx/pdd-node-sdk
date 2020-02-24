@@ -28,7 +28,7 @@ export async function init() {
 
   const categories = await getAllApiCategory();
 
-  await eachLimit(categories, 1, async (item, callback) => {
+  await eachLimit(categories, 3, async (item, callback) => {
     const directory = nameToDirectoryName(item.name);
     if (directoryIsResolved(directory)) {
       return callback();

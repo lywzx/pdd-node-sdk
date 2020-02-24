@@ -32,45 +32,6 @@ import {
   PddOrderStatusGetResponseInterface,
   PddOrderStatusGetOrderStatusGetResponseResponseInterface,
 } from './dingDan/PddOrderStatusGet';
-// 售后API
-import {
-  PDD_NEXTONE_LOGISTICS_WAREHOUSE_UPDATE,
-  PddNextoneLogisticsWarehouseUpdateRequestInterface,
-  PddNextoneLogisticsWarehouseUpdateResponseInterface,
-} from './shouHou/PddNextoneLogisticsWarehouseUpdate';
-import {
-  PDD_RDC_PDDGENIUS_SENDGOODS_CANCEL,
-  PDD_RDC_PDDGENIUS_SENDGOODS_CANCEL_RESPONSE_KEY,
-  PddRdcPddgeniusSendgoodsCancelRequestInterface,
-  PddRdcPddgeniusSendgoodsCancelResponseInterface,
-  PddRdcPddgeniusSendgoodsCancelRdcPddgeniusSendgoodsCancelResponseResponseInterface,
-} from './shouHou/PddRdcPddgeniusSendgoodsCancel';
-import {
-  PDD_REFUND_ADDRESS_LIST_GET,
-  PDD_REFUND_ADDRESS_LIST_GET_RESPONSE_KEY,
-  PddRefundAddressListGetRequestInterface,
-  PddRefundAddressListGetResponseInterface,
-  PddRefundAddressListGetRefundAddressListGetResponseResponseInterface,
-} from './shouHou/PddRefundAddressListGet';
-import {
-  PDD_REFUND_INFORMATION_GET,
-  PddRefundInformationGetRequestInterface,
-  PddRefundInformationGetResponseInterface,
-} from './shouHou/PddRefundInformationGet';
-import {
-  PDD_REFUND_LIST_INCREMENT_GET,
-  PDD_REFUND_LIST_INCREMENT_GET_RESPONSE_KEY,
-  PddRefundListIncrementGetRequestInterface,
-  PddRefundListIncrementGetResponseInterface,
-  PddRefundListIncrementGetRefundIncrementGetResponseResponseInterface,
-} from './shouHou/PddRefundListIncrementGet';
-import {
-  PDD_REFUND_STATUS_CHECK,
-  PDD_REFUND_STATUS_CHECK_RESPONSE_KEY,
-  PddRefundStatusCheckRequestInterface,
-  PddRefundStatusCheckResponseInterface,
-  PddRefundStatusCheckRefundStatusCheckResponseResponseInterface,
-} from './shouHou/PddRefundStatusCheck';
 // 物流API
 import {
   PDD_LOGISTICS_ADDRESS_GET,
@@ -112,6 +73,45 @@ import {
   PddLogisticsOrdertraceGetRequestInterface,
   PddLogisticsOrdertraceGetResponseInterface,
 } from './wuLiu/PddLogisticsOrdertraceGet';
+// 售后API
+import {
+  PDD_NEXTONE_LOGISTICS_WAREHOUSE_UPDATE,
+  PddNextoneLogisticsWarehouseUpdateRequestInterface,
+  PddNextoneLogisticsWarehouseUpdateResponseInterface,
+} from './shouHou/PddNextoneLogisticsWarehouseUpdate';
+import {
+  PDD_RDC_PDDGENIUS_SENDGOODS_CANCEL,
+  PDD_RDC_PDDGENIUS_SENDGOODS_CANCEL_RESPONSE_KEY,
+  PddRdcPddgeniusSendgoodsCancelRequestInterface,
+  PddRdcPddgeniusSendgoodsCancelResponseInterface,
+  PddRdcPddgeniusSendgoodsCancelRdcPddgeniusSendgoodsCancelResponseResponseInterface,
+} from './shouHou/PddRdcPddgeniusSendgoodsCancel';
+import {
+  PDD_REFUND_ADDRESS_LIST_GET,
+  PDD_REFUND_ADDRESS_LIST_GET_RESPONSE_KEY,
+  PddRefundAddressListGetRequestInterface,
+  PddRefundAddressListGetResponseInterface,
+  PddRefundAddressListGetRefundAddressListGetResponseResponseInterface,
+} from './shouHou/PddRefundAddressListGet';
+import {
+  PDD_REFUND_INFORMATION_GET,
+  PddRefundInformationGetRequestInterface,
+  PddRefundInformationGetResponseInterface,
+} from './shouHou/PddRefundInformationGet';
+import {
+  PDD_REFUND_LIST_INCREMENT_GET,
+  PDD_REFUND_LIST_INCREMENT_GET_RESPONSE_KEY,
+  PddRefundListIncrementGetRequestInterface,
+  PddRefundListIncrementGetResponseInterface,
+  PddRefundListIncrementGetRefundIncrementGetResponseResponseInterface,
+} from './shouHou/PddRefundListIncrementGet';
+import {
+  PDD_REFUND_STATUS_CHECK,
+  PDD_REFUND_STATUS_CHECK_RESPONSE_KEY,
+  PddRefundStatusCheckRequestInterface,
+  PddRefundStatusCheckResponseInterface,
+  PddRefundStatusCheckRefundStatusCheckResponseResponseInterface,
+} from './shouHou/PddRefundStatusCheck';
 // 虚拟类目API
 import {
   PDD_VIRTUAL_GAME_SERVER_QUERY,
@@ -127,317 +127,6 @@ import {
   PddVirtualMobileChargeNotifyResponseInterface,
   PddVirtualMobileChargeNotifyMobileChargeNotifyResponseResponseInterface,
 } from './xuNiLeiMu/PddVirtualMobileChargeNotify';
-// 商品API
-import {
-  PDD_DELETE_DRAFT_COMMIT,
-  PddDeleteDraftCommitRequestInterface,
-  PddDeleteDraftCommitResponseInterface,
-} from './shangPin/PddDeleteDraftCommit';
-import {
-  PDD_DELETE_GOODS_COMMIT,
-  PddDeleteGoodsCommitRequestInterface,
-  PddDeleteGoodsCommitResponseInterface,
-} from './shangPin/PddDeleteGoodsCommit';
-import {
-  PDD_GOODS_ADD,
-  PDD_GOODS_ADD_RESPONSE_KEY,
-  PddGoodsAddRequestInterface,
-  PddGoodsAddResponseInterface,
-  PddGoodsAddGoodsAddResponseResponseInterface,
-} from './shangPin/PddGoodsAdd';
-import {
-  PDD_GOODS_AUTHORIZATION_CATS,
-  PDD_GOODS_AUTHORIZATION_CATS_RESPONSE_KEY,
-  PddGoodsAuthorizationCatsRequestInterface,
-  PddGoodsAuthorizationCatsResponseInterface,
-  PddGoodsAuthorizationCatsGoodsAuthCatsGetResponseResponseInterface,
-} from './shangPin/PddGoodsAuthorizationCats';
-import {
-  PDD_GOODS_CAT_TEMPLATE_GET,
-  PDD_GOODS_CAT_TEMPLATE_GET_RESPONSE_KEY,
-  PddGoodsCatTemplateGetRequestInterface,
-  PddGoodsCatTemplateGetResponseInterface,
-  PddGoodsCatTemplateGetOpenApiResponseResponseInterface,
-} from './shangPin/PddGoodsCatTemplateGet';
-import {
-  PDD_GOODS_CATS_GET,
-  PDD_GOODS_CATS_GET_RESPONSE_KEY,
-  PddGoodsCatsGetRequestInterface,
-  PddGoodsCatsGetResponseInterface,
-  PddGoodsCatsGetGoodsCatsGetResponseResponseInterface,
-} from './shangPin/PddGoodsCatsGet';
-import {
-  PDD_GOODS_COMMIT_DETAIL_GET,
-  PDD_GOODS_COMMIT_DETAIL_GET_RESPONSE_KEY,
-  PddGoodsCommitDetailGetRequestInterface,
-  PddGoodsCommitDetailGetResponseInterface,
-  PddGoodsCommitDetailGetGoodsCommitDetailResponseResponseInterface,
-} from './shangPin/PddGoodsCommitDetailGet';
-import {
-  PDD_GOODS_COMMIT_LIST_GET,
-  PDD_GOODS_COMMIT_LIST_GET_RESPONSE_KEY,
-  PddGoodsCommitListGetRequestInterface,
-  PddGoodsCommitListGetResponseInterface,
-  PddGoodsCommitListGetGoodsCommitListGetResponseResponseInterface,
-} from './shangPin/PddGoodsCommitListGet';
-import {
-  PDD_GOODS_COMMIT_STATUS_GET,
-  PDD_GOODS_COMMIT_STATUS_GET_RESPONSE_KEY,
-  PddGoodsCommitStatusGetRequestInterface,
-  PddGoodsCommitStatusGetResponseInterface,
-  PddGoodsCommitStatusGetGoodsCommitStatusGetResponseResponseInterface,
-} from './shangPin/PddGoodsCommitStatusGet';
-import {
-  PDD_GOODS_COUNTRY_GET,
-  PDD_GOODS_COUNTRY_GET_RESPONSE_KEY,
-  PddGoodsCountryGetRequestInterface,
-  PddGoodsCountryGetResponseInterface,
-  PddGoodsCountryGetGoodsCountryGetResponseResponseInterface,
-} from './shangPin/PddGoodsCountryGet';
-import {
-  PDD_GOODS_CPS_MALL_UNIT_CHANGE,
-  PDD_GOODS_CPS_MALL_UNIT_CHANGE_RESPONSE_KEY,
-  PddGoodsCpsMallUnitChangeRequestInterface,
-  PddGoodsCpsMallUnitChangeResponseInterface,
-  PddGoodsCpsMallUnitChangeGoodsCpsMallUnitChangeResponseResponseInterface,
-} from './shangPin/PddGoodsCpsMallUnitChange';
-import {
-  PDD_GOODS_CPS_MALL_UNIT_CREATE,
-  PddGoodsCpsMallUnitCreateRequestInterface,
-  PddGoodsCpsMallUnitCreateResponseInterface,
-} from './shangPin/PddGoodsCpsMallUnitCreate';
-import {
-  PDD_GOODS_CPS_MALL_UNIT_PAUSE,
-  PDD_GOODS_CPS_MALL_UNIT_PAUSE_RESPONSE_KEY,
-  PddGoodsCpsMallUnitPauseRequestInterface,
-  PddGoodsCpsMallUnitPauseResponseInterface,
-  PddGoodsCpsMallUnitPauseGoodsCpsMallUnitQueryResponseResponseInterface,
-} from './shangPin/PddGoodsCpsMallUnitPause';
-import {
-  PDD_GOODS_CPS_MALL_UNIT_QUERY,
-  PDD_GOODS_CPS_MALL_UNIT_QUERY_RESPONSE_KEY,
-  PddGoodsCpsMallUnitQueryRequestInterface,
-  PddGoodsCpsMallUnitQueryResponseInterface,
-  PddGoodsCpsMallUnitQueryGoodsCpsMallUnitQueryResponseResponseInterface,
-} from './shangPin/PddGoodsCpsMallUnitQuery';
-import {
-  PDD_GOODS_CPS_MALL_UNIT_RESUME,
-  PDD_GOODS_CPS_MALL_UNIT_RESUME_RESPONSE_KEY,
-  PddGoodsCpsMallUnitResumeRequestInterface,
-  PddGoodsCpsMallUnitResumeResponseInterface,
-  PddGoodsCpsMallUnitResumeGoodsCpsMallUnitResumeResponseResponseInterface,
-} from './shangPin/PddGoodsCpsMallUnitResume';
-import {
-  PDD_GOODS_CPS_UNIT_CHANGE,
-  PddGoodsCpsUnitChangeRequestInterface,
-  PddGoodsCpsUnitChangeResponseInterface,
-} from './shangPin/PddGoodsCpsUnitChange';
-import {
-  PDD_GOODS_CPS_UNIT_CREATE,
-  PddGoodsCpsUnitCreateRequestInterface,
-  PddGoodsCpsUnitCreateResponseInterface,
-} from './shangPin/PddGoodsCpsUnitCreate';
-import {
-  PDD_GOODS_CPS_UNIT_DELETE,
-  PDD_GOODS_CPS_UNIT_DELETE_RESPONSE_KEY,
-  PddGoodsCpsUnitDeleteRequestInterface,
-  PddGoodsCpsUnitDeleteResponseInterface,
-  PddGoodsCpsUnitDeleteGoodsCpsUnitDeleteResponseResponseInterface,
-} from './shangPin/PddGoodsCpsUnitDelete';
-import {
-  PDD_GOODS_CPS_UNIT_QUERY,
-  PddGoodsCpsUnitQueryRequestInterface,
-  PddGoodsCpsUnitQueryResponseInterface,
-} from './shangPin/PddGoodsCpsUnitQuery';
-import {
-  PDD_GOODS_DETAIL_GET,
-  PDD_GOODS_DETAIL_GET_RESPONSE_KEY,
-  PddGoodsDetailGetRequestInterface,
-  PddGoodsDetailGetResponseInterface,
-  PddGoodsDetailGetGoodsDetailGetResponseResponseInterface,
-} from './shangPin/PddGoodsDetailGet';
-import {
-  PDD_GOODS_EDIT_GOODS_COMMIT,
-  PDD_GOODS_EDIT_GOODS_COMMIT_RESPONSE_KEY,
-  PddGoodsEditGoodsCommitRequestInterface,
-  PddGoodsEditGoodsCommitResponseInterface,
-  PddGoodsEditGoodsCommitGoodsUpdateResponseResponseInterface,
-} from './shangPin/PddGoodsEditGoodsCommit';
-import {
-  PDD_GOODS_GET_RELATION,
-  PDD_GOODS_GET_RELATION_RESPONSE_KEY,
-  PddGoodsGetRelationRequestInterface,
-  PddGoodsGetRelationResponseInterface,
-  PddGoodsGetRelationQueryGoodsRelationResponseResponseInterface,
-} from './shangPin/PddGoodsGetRelation';
-import {
-  PDD_GOODS_IMAGE_UPLOAD,
-  PDD_GOODS_IMAGE_UPLOAD_RESPONSE_KEY,
-  PddGoodsImageUploadRequestInterface,
-  PddGoodsImageUploadResponseInterface,
-  PddGoodsImageUploadGoodsImageUploadResponseResponseInterface,
-} from './shangPin/PddGoodsImageUpload';
-import {
-  PDD_GOODS_INFORMATION_GET,
-  PDD_GOODS_INFORMATION_GET_RESPONSE_KEY,
-  PddGoodsInformationGetRequestInterface,
-  PddGoodsInformationGetResponseInterface,
-  PddGoodsInformationGetGoodsInfoGetResponseResponseInterface,
-} from './shangPin/PddGoodsInformationGet';
-import {
-  PDD_GOODS_INFORMATION_UPDATE,
-  PDD_GOODS_INFORMATION_UPDATE_RESPONSE_KEY,
-  PddGoodsInformationUpdateRequestInterface,
-  PddGoodsInformationUpdateResponseInterface,
-  PddGoodsInformationUpdateGoodsUpdateResponseResponseInterface,
-} from './shangPin/PddGoodsInformationUpdate';
-import {
-  PDD_GOODS_LATEST_COMMIT_STATUS_GET,
-  PDD_GOODS_LATEST_COMMIT_STATUS_GET_RESPONSE_KEY,
-  PddGoodsLatestCommitStatusGetRequestInterface,
-  PddGoodsLatestCommitStatusGetResponseInterface,
-  PddGoodsLatestCommitStatusGetGoodsLatestCommitStatusGetResponseResponseInterface,
-} from './shangPin/PddGoodsLatestCommitStatusGet';
-import {
-  PDD_GOODS_LIST_GET,
-  PDD_GOODS_LIST_GET_RESPONSE_KEY,
-  PddGoodsListGetRequestInterface,
-  PddGoodsListGetResponseInterface,
-  PddGoodsListGetGoodsListGetResponseResponseInterface,
-} from './shangPin/PddGoodsListGet';
-import {
-  PDD_GOODS_LOGISTICS_SER_TEMPLATE_CREATE,
-  PDD_GOODS_LOGISTICS_SER_TEMPLATE_CREATE_RESPONSE_KEY,
-  PddGoodsLogisticsSerTemplateCreateRequestInterface,
-  PddGoodsLogisticsSerTemplateCreateResponseInterface,
-  PddGoodsLogisticsSerTemplateCreateGoodsLogisticsSerTemplateCreateResponseResponseInterface,
-} from './shangPin/PddGoodsLogisticsSerTemplateCreate';
-import {
-  PDD_GOODS_LOGISTICS_SER_TEMPLATE_DELETE,
-  PDD_GOODS_LOGISTICS_SER_TEMPLATE_DELETE_RESPONSE_KEY,
-  PddGoodsLogisticsSerTemplateDeleteRequestInterface,
-  PddGoodsLogisticsSerTemplateDeleteResponseInterface,
-  PddGoodsLogisticsSerTemplateDeleteGoodsLogisticsSerTemplateDeleteResponseResponseInterface,
-} from './shangPin/PddGoodsLogisticsSerTemplateDelete';
-import {
-  PDD_GOODS_LOGISTICS_SER_TEMPLATE_DETAIL,
-  PDD_GOODS_LOGISTICS_SER_TEMPLATE_DETAIL_RESPONSE_KEY,
-  PddGoodsLogisticsSerTemplateDetailRequestInterface,
-  PddGoodsLogisticsSerTemplateDetailResponseInterface,
-  PddGoodsLogisticsSerTemplateDetailGoodsLogisticsSerTemplateDetailResponseResponseInterface,
-} from './shangPin/PddGoodsLogisticsSerTemplateDetail';
-import {
-  PDD_GOODS_LOGISTICS_SER_TEMPLATE_LIST,
-  PDD_GOODS_LOGISTICS_SER_TEMPLATE_LIST_RESPONSE_KEY,
-  PddGoodsLogisticsSerTemplateListRequestInterface,
-  PddGoodsLogisticsSerTemplateListResponseInterface,
-  PddGoodsLogisticsSerTemplateListGoodsLogisticsSerTemplateListResponseResponseInterface,
-} from './shangPin/PddGoodsLogisticsSerTemplateList';
-import {
-  PDD_GOODS_LOGISTICS_SER_TEMPLATE_UPDATE,
-  PDD_GOODS_LOGISTICS_SER_TEMPLATE_UPDATE_RESPONSE_KEY,
-  PddGoodsLogisticsSerTemplateUpdateRequestInterface,
-  PddGoodsLogisticsSerTemplateUpdateResponseInterface,
-  PddGoodsLogisticsSerTemplateUpdateGoodsLogisticsSerTemplateCreateResponseResponseInterface,
-} from './shangPin/PddGoodsLogisticsSerTemplateUpdate';
-import {
-  PDD_GOODS_LOGISTICS_TEMPLATE_CREATE,
-  PDD_GOODS_LOGISTICS_TEMPLATE_CREATE_RESPONSE_KEY,
-  PddGoodsLogisticsTemplateCreateRequestInterface,
-  PddGoodsLogisticsTemplateCreateResponseInterface,
-  PddGoodsLogisticsTemplateCreateGoodsLogisticsTemplateCreateResponseResponseInterface,
-} from './shangPin/PddGoodsLogisticsTemplateCreate';
-import {
-  PDD_GOODS_LOGISTICS_TEMPLATE_GET,
-  PDD_GOODS_LOGISTICS_TEMPLATE_GET_RESPONSE_KEY,
-  PddGoodsLogisticsTemplateGetRequestInterface,
-  PddGoodsLogisticsTemplateGetResponseInterface,
-  PddGoodsLogisticsTemplateGetGoodsLogisticsTemplateGetResponseResponseInterface,
-} from './shangPin/PddGoodsLogisticsTemplateGet';
-import {
-  PDD_GOODS_OPT_GET,
-  PDD_GOODS_OPT_GET_RESPONSE_KEY,
-  PddGoodsOptGetRequestInterface,
-  PddGoodsOptGetResponseInterface,
-  PddGoodsOptGetGoodsOptGetResponseResponseInterface,
-} from './shangPin/PddGoodsOptGet';
-import {
-  PDD_GOODS_OUTER_CAT_MAPPING_GET,
-  PDD_GOODS_OUTER_CAT_MAPPING_GET_RESPONSE_KEY,
-  PddGoodsOuterCatMappingGetRequestInterface,
-  PddGoodsOuterCatMappingGetResponseInterface,
-  PddGoodsOuterCatMappingGetOuterCatMappingGetResponseResponseInterface,
-} from './shangPin/PddGoodsOuterCatMappingGet';
-import {
-  PDD_GOODS_QUANTITY_UPDATE,
-  PDD_GOODS_QUANTITY_UPDATE_RESPONSE_KEY,
-  PddGoodsQuantityUpdateRequestInterface,
-  PddGoodsQuantityUpdateResponseInterface,
-  PddGoodsQuantityUpdateGoodsQuantityUpdateResponseResponseInterface,
-} from './shangPin/PddGoodsQuantityUpdate';
-import {
-  PDD_GOODS_RELATION_SET,
-  PDD_GOODS_RELATION_SET_RESPONSE_KEY,
-  PddGoodsRelationSetRequestInterface,
-  PddGoodsRelationSetResponseInterface,
-  PddGoodsRelationSetGoodsRelationSetResponseResponseInterface,
-} from './shangPin/PddGoodsRelationSet';
-import {
-  PDD_GOODS_SALE_STATUS_SET,
-  PDD_GOODS_SALE_STATUS_SET_RESPONSE_KEY,
-  PddGoodsSaleStatusSetRequestInterface,
-  PddGoodsSaleStatusSetResponseInterface,
-  PddGoodsSaleStatusSetGoodsSaleStatusSetResponseResponseInterface,
-} from './shangPin/PddGoodsSaleStatusSet';
-import {
-  PDD_GOODS_SKU_PRICE_UPDATE,
-  PDD_GOODS_SKU_PRICE_UPDATE_RESPONSE_KEY,
-  PddGoodsSkuPriceUpdateRequestInterface,
-  PddGoodsSkuPriceUpdateResponseInterface,
-  PddGoodsSkuPriceUpdateGoodsUpdateSkuPriceResponseResponseInterface,
-} from './shangPin/PddGoodsSkuPriceUpdate';
-import {
-  PDD_GOODS_SPEC_GET,
-  PDD_GOODS_SPEC_GET_RESPONSE_KEY,
-  PddGoodsSpecGetRequestInterface,
-  PddGoodsSpecGetResponseInterface,
-  PddGoodsSpecGetGoodsSpecGetResponseResponseInterface,
-} from './shangPin/PddGoodsSpecGet';
-import {
-  PDD_GOODS_SPEC_ID_GET,
-  PDD_GOODS_SPEC_ID_GET_RESPONSE_KEY,
-  PddGoodsSpecIdGetRequestInterface,
-  PddGoodsSpecIdGetResponseInterface,
-  PddGoodsSpecIdGetGoodsSpecIdGetResponseResponseInterface,
-} from './shangPin/PddGoodsSpecIdGet';
-import {
-  PDD_GOODS_SUBMIT_GOODS_COMMIT,
-  PDD_GOODS_SUBMIT_GOODS_COMMIT_RESPONSE_KEY,
-  PddGoodsSubmitGoodsCommitRequestInterface,
-  PddGoodsSubmitGoodsCommitResponseInterface,
-  PddGoodsSubmitGoodsCommitGoodsUpdateResponseResponseInterface,
-} from './shangPin/PddGoodsSubmitGoodsCommit';
-import {
-  PDD_GOODS_TEMPLATE_PROPERTY_VALUE_SEARCH,
-  PDD_GOODS_TEMPLATE_PROPERTY_VALUE_SEARCH_RESPONSE_KEY,
-  PddGoodsTemplatePropertyValueSearchRequestInterface,
-  PddGoodsTemplatePropertyValueSearchResponseInterface,
-  PddGoodsTemplatePropertyValueSearchGoodsTemplatePropValSearchResponseResponseInterface,
-} from './shangPin/PddGoodsTemplatePropertyValueSearch';
-import {
-  PDD_GOOODS_SKU_MEASUREMENT_LIST,
-  PDD_GOOODS_SKU_MEASUREMENT_LIST_RESPONSE_KEY,
-  PddGooodsSkuMeasurementListRequestInterface,
-  PddGooodsSkuMeasurementListResponseInterface,
-  PddGooodsSkuMeasurementListGooodsSkuMeasurementListResponseResponseInterface,
-} from './shangPin/PddGooodsSkuMeasurementList';
-import {
-  PDD_ONE_EXPRESS_COST_TEMPLATE,
-  PDD_ONE_EXPRESS_COST_TEMPLATE_RESPONSE_KEY,
-  PddOneExpressCostTemplateRequestInterface,
-  PddOneExpressCostTemplateResponseInterface,
-  PddOneExpressCostTemplateOneExpressCostTemplateResponseResponseInterface,
-} from './shangPin/PddOneExpressCostTemplate';
 // 推广API
 import {
   PDD_AD_BALANCE_GET,
@@ -753,6 +442,317 @@ import {
   PddAdUpdateLocationBidResponseInterface,
   PddAdUpdateLocationBidOpenApiResponseResponseInterface,
 } from './tuiGuang/PddAdUpdateLocationBid';
+// 商品API
+import {
+  PDD_DELETE_DRAFT_COMMIT,
+  PddDeleteDraftCommitRequestInterface,
+  PddDeleteDraftCommitResponseInterface,
+} from './shangPin/PddDeleteDraftCommit';
+import {
+  PDD_DELETE_GOODS_COMMIT,
+  PddDeleteGoodsCommitRequestInterface,
+  PddDeleteGoodsCommitResponseInterface,
+} from './shangPin/PddDeleteGoodsCommit';
+import {
+  PDD_GOODS_ADD,
+  PDD_GOODS_ADD_RESPONSE_KEY,
+  PddGoodsAddRequestInterface,
+  PddGoodsAddResponseInterface,
+  PddGoodsAddGoodsAddResponseResponseInterface,
+} from './shangPin/PddGoodsAdd';
+import {
+  PDD_GOODS_AUTHORIZATION_CATS,
+  PDD_GOODS_AUTHORIZATION_CATS_RESPONSE_KEY,
+  PddGoodsAuthorizationCatsRequestInterface,
+  PddGoodsAuthorizationCatsResponseInterface,
+  PddGoodsAuthorizationCatsGoodsAuthCatsGetResponseResponseInterface,
+} from './shangPin/PddGoodsAuthorizationCats';
+import {
+  PDD_GOODS_CAT_TEMPLATE_GET,
+  PDD_GOODS_CAT_TEMPLATE_GET_RESPONSE_KEY,
+  PddGoodsCatTemplateGetRequestInterface,
+  PddGoodsCatTemplateGetResponseInterface,
+  PddGoodsCatTemplateGetOpenApiResponseResponseInterface,
+} from './shangPin/PddGoodsCatTemplateGet';
+import {
+  PDD_GOODS_CATS_GET,
+  PDD_GOODS_CATS_GET_RESPONSE_KEY,
+  PddGoodsCatsGetRequestInterface,
+  PddGoodsCatsGetResponseInterface,
+  PddGoodsCatsGetGoodsCatsGetResponseResponseInterface,
+} from './shangPin/PddGoodsCatsGet';
+import {
+  PDD_GOODS_COMMIT_DETAIL_GET,
+  PDD_GOODS_COMMIT_DETAIL_GET_RESPONSE_KEY,
+  PddGoodsCommitDetailGetRequestInterface,
+  PddGoodsCommitDetailGetResponseInterface,
+  PddGoodsCommitDetailGetGoodsCommitDetailResponseResponseInterface,
+} from './shangPin/PddGoodsCommitDetailGet';
+import {
+  PDD_GOODS_COMMIT_LIST_GET,
+  PDD_GOODS_COMMIT_LIST_GET_RESPONSE_KEY,
+  PddGoodsCommitListGetRequestInterface,
+  PddGoodsCommitListGetResponseInterface,
+  PddGoodsCommitListGetGoodsCommitListGetResponseResponseInterface,
+} from './shangPin/PddGoodsCommitListGet';
+import {
+  PDD_GOODS_COMMIT_STATUS_GET,
+  PDD_GOODS_COMMIT_STATUS_GET_RESPONSE_KEY,
+  PddGoodsCommitStatusGetRequestInterface,
+  PddGoodsCommitStatusGetResponseInterface,
+  PddGoodsCommitStatusGetGoodsCommitStatusGetResponseResponseInterface,
+} from './shangPin/PddGoodsCommitStatusGet';
+import {
+  PDD_GOODS_COUNTRY_GET,
+  PDD_GOODS_COUNTRY_GET_RESPONSE_KEY,
+  PddGoodsCountryGetRequestInterface,
+  PddGoodsCountryGetResponseInterface,
+  PddGoodsCountryGetGoodsCountryGetResponseResponseInterface,
+} from './shangPin/PddGoodsCountryGet';
+import {
+  PDD_GOODS_CPS_MALL_UNIT_CHANGE,
+  PDD_GOODS_CPS_MALL_UNIT_CHANGE_RESPONSE_KEY,
+  PddGoodsCpsMallUnitChangeRequestInterface,
+  PddGoodsCpsMallUnitChangeResponseInterface,
+  PddGoodsCpsMallUnitChangeGoodsCpsMallUnitChangeResponseResponseInterface,
+} from './shangPin/PddGoodsCpsMallUnitChange';
+import {
+  PDD_GOODS_CPS_MALL_UNIT_CREATE,
+  PddGoodsCpsMallUnitCreateRequestInterface,
+  PddGoodsCpsMallUnitCreateResponseInterface,
+} from './shangPin/PddGoodsCpsMallUnitCreate';
+import {
+  PDD_GOODS_CPS_MALL_UNIT_PAUSE,
+  PDD_GOODS_CPS_MALL_UNIT_PAUSE_RESPONSE_KEY,
+  PddGoodsCpsMallUnitPauseRequestInterface,
+  PddGoodsCpsMallUnitPauseResponseInterface,
+  PddGoodsCpsMallUnitPauseGoodsCpsMallUnitQueryResponseResponseInterface,
+} from './shangPin/PddGoodsCpsMallUnitPause';
+import {
+  PDD_GOODS_CPS_MALL_UNIT_QUERY,
+  PDD_GOODS_CPS_MALL_UNIT_QUERY_RESPONSE_KEY,
+  PddGoodsCpsMallUnitQueryRequestInterface,
+  PddGoodsCpsMallUnitQueryResponseInterface,
+  PddGoodsCpsMallUnitQueryGoodsCpsMallUnitQueryResponseResponseInterface,
+} from './shangPin/PddGoodsCpsMallUnitQuery';
+import {
+  PDD_GOODS_CPS_MALL_UNIT_RESUME,
+  PDD_GOODS_CPS_MALL_UNIT_RESUME_RESPONSE_KEY,
+  PddGoodsCpsMallUnitResumeRequestInterface,
+  PddGoodsCpsMallUnitResumeResponseInterface,
+  PddGoodsCpsMallUnitResumeGoodsCpsMallUnitResumeResponseResponseInterface,
+} from './shangPin/PddGoodsCpsMallUnitResume';
+import {
+  PDD_GOODS_CPS_UNIT_CHANGE,
+  PddGoodsCpsUnitChangeRequestInterface,
+  PddGoodsCpsUnitChangeResponseInterface,
+} from './shangPin/PddGoodsCpsUnitChange';
+import {
+  PDD_GOODS_CPS_UNIT_CREATE,
+  PddGoodsCpsUnitCreateRequestInterface,
+  PddGoodsCpsUnitCreateResponseInterface,
+} from './shangPin/PddGoodsCpsUnitCreate';
+import {
+  PDD_GOODS_CPS_UNIT_DELETE,
+  PDD_GOODS_CPS_UNIT_DELETE_RESPONSE_KEY,
+  PddGoodsCpsUnitDeleteRequestInterface,
+  PddGoodsCpsUnitDeleteResponseInterface,
+  PddGoodsCpsUnitDeleteGoodsCpsUnitDeleteResponseResponseInterface,
+} from './shangPin/PddGoodsCpsUnitDelete';
+import {
+  PDD_GOODS_CPS_UNIT_QUERY,
+  PddGoodsCpsUnitQueryRequestInterface,
+  PddGoodsCpsUnitQueryResponseInterface,
+} from './shangPin/PddGoodsCpsUnitQuery';
+import {
+  PDD_GOODS_DETAIL_GET,
+  PDD_GOODS_DETAIL_GET_RESPONSE_KEY,
+  PddGoodsDetailGetRequestInterface,
+  PddGoodsDetailGetResponseInterface,
+  PddGoodsDetailGetGoodsDetailGetResponseResponseInterface,
+} from './shangPin/PddGoodsDetailGet';
+import {
+  PDD_GOODS_EDIT_GOODS_COMMIT,
+  PDD_GOODS_EDIT_GOODS_COMMIT_RESPONSE_KEY,
+  PddGoodsEditGoodsCommitRequestInterface,
+  PddGoodsEditGoodsCommitResponseInterface,
+  PddGoodsEditGoodsCommitGoodsUpdateResponseResponseInterface,
+} from './shangPin/PddGoodsEditGoodsCommit';
+import {
+  PDD_GOODS_GET_RELATION,
+  PDD_GOODS_GET_RELATION_RESPONSE_KEY,
+  PddGoodsGetRelationRequestInterface,
+  PddGoodsGetRelationResponseInterface,
+  PddGoodsGetRelationQueryGoodsRelationResponseResponseInterface,
+} from './shangPin/PddGoodsGetRelation';
+import {
+  PDD_GOODS_IMAGE_UPLOAD,
+  PDD_GOODS_IMAGE_UPLOAD_RESPONSE_KEY,
+  PddGoodsImageUploadRequestInterface,
+  PddGoodsImageUploadResponseInterface,
+  PddGoodsImageUploadGoodsImageUploadResponseResponseInterface,
+} from './shangPin/PddGoodsImageUpload';
+import {
+  PDD_GOODS_INFORMATION_GET,
+  PDD_GOODS_INFORMATION_GET_RESPONSE_KEY,
+  PddGoodsInformationGetRequestInterface,
+  PddGoodsInformationGetResponseInterface,
+  PddGoodsInformationGetGoodsInfoGetResponseResponseInterface,
+} from './shangPin/PddGoodsInformationGet';
+import {
+  PDD_GOODS_INFORMATION_UPDATE,
+  PDD_GOODS_INFORMATION_UPDATE_RESPONSE_KEY,
+  PddGoodsInformationUpdateRequestInterface,
+  PddGoodsInformationUpdateResponseInterface,
+  PddGoodsInformationUpdateGoodsUpdateResponseResponseInterface,
+} from './shangPin/PddGoodsInformationUpdate';
+import {
+  PDD_GOODS_LATEST_COMMIT_STATUS_GET,
+  PDD_GOODS_LATEST_COMMIT_STATUS_GET_RESPONSE_KEY,
+  PddGoodsLatestCommitStatusGetRequestInterface,
+  PddGoodsLatestCommitStatusGetResponseInterface,
+  PddGoodsLatestCommitStatusGetGoodsLatestCommitStatusGetResponseResponseInterface,
+} from './shangPin/PddGoodsLatestCommitStatusGet';
+import {
+  PDD_GOODS_LIST_GET,
+  PDD_GOODS_LIST_GET_RESPONSE_KEY,
+  PddGoodsListGetRequestInterface,
+  PddGoodsListGetResponseInterface,
+  PddGoodsListGetGoodsListGetResponseResponseInterface,
+} from './shangPin/PddGoodsListGet';
+import {
+  PDD_GOODS_LOGISTICS_SER_TEMPLATE_CREATE,
+  PDD_GOODS_LOGISTICS_SER_TEMPLATE_CREATE_RESPONSE_KEY,
+  PddGoodsLogisticsSerTemplateCreateRequestInterface,
+  PddGoodsLogisticsSerTemplateCreateResponseInterface,
+  PddGoodsLogisticsSerTemplateCreateGoodsLogisticsSerTemplateCreateResponseResponseInterface,
+} from './shangPin/PddGoodsLogisticsSerTemplateCreate';
+import {
+  PDD_GOODS_LOGISTICS_SER_TEMPLATE_DELETE,
+  PDD_GOODS_LOGISTICS_SER_TEMPLATE_DELETE_RESPONSE_KEY,
+  PddGoodsLogisticsSerTemplateDeleteRequestInterface,
+  PddGoodsLogisticsSerTemplateDeleteResponseInterface,
+  PddGoodsLogisticsSerTemplateDeleteGoodsLogisticsSerTemplateDeleteResponseResponseInterface,
+} from './shangPin/PddGoodsLogisticsSerTemplateDelete';
+import {
+  PDD_GOODS_LOGISTICS_SER_TEMPLATE_DETAIL,
+  PDD_GOODS_LOGISTICS_SER_TEMPLATE_DETAIL_RESPONSE_KEY,
+  PddGoodsLogisticsSerTemplateDetailRequestInterface,
+  PddGoodsLogisticsSerTemplateDetailResponseInterface,
+  PddGoodsLogisticsSerTemplateDetailGoodsLogisticsSerTemplateDetailResponseResponseInterface,
+} from './shangPin/PddGoodsLogisticsSerTemplateDetail';
+import {
+  PDD_GOODS_LOGISTICS_SER_TEMPLATE_LIST,
+  PDD_GOODS_LOGISTICS_SER_TEMPLATE_LIST_RESPONSE_KEY,
+  PddGoodsLogisticsSerTemplateListRequestInterface,
+  PddGoodsLogisticsSerTemplateListResponseInterface,
+  PddGoodsLogisticsSerTemplateListGoodsLogisticsSerTemplateListResponseResponseInterface,
+} from './shangPin/PddGoodsLogisticsSerTemplateList';
+import {
+  PDD_GOODS_LOGISTICS_SER_TEMPLATE_UPDATE,
+  PDD_GOODS_LOGISTICS_SER_TEMPLATE_UPDATE_RESPONSE_KEY,
+  PddGoodsLogisticsSerTemplateUpdateRequestInterface,
+  PddGoodsLogisticsSerTemplateUpdateResponseInterface,
+  PddGoodsLogisticsSerTemplateUpdateGoodsLogisticsSerTemplateCreateResponseResponseInterface,
+} from './shangPin/PddGoodsLogisticsSerTemplateUpdate';
+import {
+  PDD_GOODS_LOGISTICS_TEMPLATE_CREATE,
+  PDD_GOODS_LOGISTICS_TEMPLATE_CREATE_RESPONSE_KEY,
+  PddGoodsLogisticsTemplateCreateRequestInterface,
+  PddGoodsLogisticsTemplateCreateResponseInterface,
+  PddGoodsLogisticsTemplateCreateGoodsLogisticsTemplateCreateResponseResponseInterface,
+} from './shangPin/PddGoodsLogisticsTemplateCreate';
+import {
+  PDD_GOODS_LOGISTICS_TEMPLATE_GET,
+  PDD_GOODS_LOGISTICS_TEMPLATE_GET_RESPONSE_KEY,
+  PddGoodsLogisticsTemplateGetRequestInterface,
+  PddGoodsLogisticsTemplateGetResponseInterface,
+  PddGoodsLogisticsTemplateGetGoodsLogisticsTemplateGetResponseResponseInterface,
+} from './shangPin/PddGoodsLogisticsTemplateGet';
+import {
+  PDD_GOODS_OPT_GET,
+  PDD_GOODS_OPT_GET_RESPONSE_KEY,
+  PddGoodsOptGetRequestInterface,
+  PddGoodsOptGetResponseInterface,
+  PddGoodsOptGetGoodsOptGetResponseResponseInterface,
+} from './shangPin/PddGoodsOptGet';
+import {
+  PDD_GOODS_OUTER_CAT_MAPPING_GET,
+  PDD_GOODS_OUTER_CAT_MAPPING_GET_RESPONSE_KEY,
+  PddGoodsOuterCatMappingGetRequestInterface,
+  PddGoodsOuterCatMappingGetResponseInterface,
+  PddGoodsOuterCatMappingGetOuterCatMappingGetResponseResponseInterface,
+} from './shangPin/PddGoodsOuterCatMappingGet';
+import {
+  PDD_GOODS_QUANTITY_UPDATE,
+  PDD_GOODS_QUANTITY_UPDATE_RESPONSE_KEY,
+  PddGoodsQuantityUpdateRequestInterface,
+  PddGoodsQuantityUpdateResponseInterface,
+  PddGoodsQuantityUpdateGoodsQuantityUpdateResponseResponseInterface,
+} from './shangPin/PddGoodsQuantityUpdate';
+import {
+  PDD_GOODS_RELATION_SET,
+  PDD_GOODS_RELATION_SET_RESPONSE_KEY,
+  PddGoodsRelationSetRequestInterface,
+  PddGoodsRelationSetResponseInterface,
+  PddGoodsRelationSetGoodsRelationSetResponseResponseInterface,
+} from './shangPin/PddGoodsRelationSet';
+import {
+  PDD_GOODS_SALE_STATUS_SET,
+  PDD_GOODS_SALE_STATUS_SET_RESPONSE_KEY,
+  PddGoodsSaleStatusSetRequestInterface,
+  PddGoodsSaleStatusSetResponseInterface,
+  PddGoodsSaleStatusSetGoodsSaleStatusSetResponseResponseInterface,
+} from './shangPin/PddGoodsSaleStatusSet';
+import {
+  PDD_GOODS_SKU_PRICE_UPDATE,
+  PDD_GOODS_SKU_PRICE_UPDATE_RESPONSE_KEY,
+  PddGoodsSkuPriceUpdateRequestInterface,
+  PddGoodsSkuPriceUpdateResponseInterface,
+  PddGoodsSkuPriceUpdateGoodsUpdateSkuPriceResponseResponseInterface,
+} from './shangPin/PddGoodsSkuPriceUpdate';
+import {
+  PDD_GOODS_SPEC_GET,
+  PDD_GOODS_SPEC_GET_RESPONSE_KEY,
+  PddGoodsSpecGetRequestInterface,
+  PddGoodsSpecGetResponseInterface,
+  PddGoodsSpecGetGoodsSpecGetResponseResponseInterface,
+} from './shangPin/PddGoodsSpecGet';
+import {
+  PDD_GOODS_SPEC_ID_GET,
+  PDD_GOODS_SPEC_ID_GET_RESPONSE_KEY,
+  PddGoodsSpecIdGetRequestInterface,
+  PddGoodsSpecIdGetResponseInterface,
+  PddGoodsSpecIdGetGoodsSpecIdGetResponseResponseInterface,
+} from './shangPin/PddGoodsSpecIdGet';
+import {
+  PDD_GOODS_SUBMIT_GOODS_COMMIT,
+  PDD_GOODS_SUBMIT_GOODS_COMMIT_RESPONSE_KEY,
+  PddGoodsSubmitGoodsCommitRequestInterface,
+  PddGoodsSubmitGoodsCommitResponseInterface,
+  PddGoodsSubmitGoodsCommitGoodsUpdateResponseResponseInterface,
+} from './shangPin/PddGoodsSubmitGoodsCommit';
+import {
+  PDD_GOODS_TEMPLATE_PROPERTY_VALUE_SEARCH,
+  PDD_GOODS_TEMPLATE_PROPERTY_VALUE_SEARCH_RESPONSE_KEY,
+  PddGoodsTemplatePropertyValueSearchRequestInterface,
+  PddGoodsTemplatePropertyValueSearchResponseInterface,
+  PddGoodsTemplatePropertyValueSearchGoodsTemplatePropValSearchResponseResponseInterface,
+} from './shangPin/PddGoodsTemplatePropertyValueSearch';
+import {
+  PDD_GOOODS_SKU_MEASUREMENT_LIST,
+  PDD_GOOODS_SKU_MEASUREMENT_LIST_RESPONSE_KEY,
+  PddGooodsSkuMeasurementListRequestInterface,
+  PddGooodsSkuMeasurementListResponseInterface,
+  PddGooodsSkuMeasurementListGooodsSkuMeasurementListResponseResponseInterface,
+} from './shangPin/PddGooodsSkuMeasurementList';
+import {
+  PDD_ONE_EXPRESS_COST_TEMPLATE,
+  PDD_ONE_EXPRESS_COST_TEMPLATE_RESPONSE_KEY,
+  PddOneExpressCostTemplateRequestInterface,
+  PddOneExpressCostTemplateResponseInterface,
+  PddOneExpressCostTemplateOneExpressCostTemplateResponseResponseInterface,
+} from './shangPin/PddOneExpressCostTemplate';
 // 多多客API
 import {
   PDD_DDK_CMS_PROM_URL_GENERATE,
@@ -1557,6 +1557,14 @@ import {
   PddPmcUserPermitResponseInterface,
   PddPmcUserPermitPmcUserPermitResponseResponseInterface,
 } from './xiaoXiFuWu/PddPmcUserPermit';
+// 财务API
+import {
+  PDD_FINANCE_BALANCE_DAILY_BILL_URL_GET,
+  PDD_FINANCE_BALANCE_DAILY_BILL_URL_GET_RESPONSE_KEY,
+  PddFinanceBalanceDailyBillUrlGetRequestInterface,
+  PddFinanceBalanceDailyBillUrlGetResponseInterface,
+  PddFinanceBalanceDailyBillUrlGetFinanceBalanceDailyBillUrlGetResponseResponseInterface,
+} from './caiWu/PddFinanceBalanceDailyBillUrlGet';
 // 电子面单API
 import {
   PDD_CLOUDPRINT_CMDPRINT_RENDER,
@@ -1614,14 +1622,6 @@ import {
   PddWaybillUpdateResponseInterface,
   PddWaybillUpdatePddWaybillUpdateResponseResponseInterface,
 } from './dianZiMianDan/PddWaybillUpdate';
-// 财务API
-import {
-  PDD_FINANCE_BALANCE_DAILY_BILL_URL_GET,
-  PDD_FINANCE_BALANCE_DAILY_BILL_URL_GET_RESPONSE_KEY,
-  PddFinanceBalanceDailyBillUrlGetRequestInterface,
-  PddFinanceBalanceDailyBillUrlGetResponseInterface,
-  PddFinanceBalanceDailyBillUrlGetFinanceBalanceDailyBillUrlGetResponseResponseInterface,
-} from './caiWu/PddFinanceBalanceDailyBillUrlGet';
 // 开平短信服务API
 import {
   PDD_OPEN_MSG_SERVICE_QUERY_EXPRESS_MSG_RECORD,
@@ -1670,17 +1670,6 @@ import {
   PddVasOrderSearchResponseInterface,
   PddVasOrderSearchVasOrderSearchResponseResponseInterface,
 } from './fuWuShiChang/PddVasOrderSearch';
-// 短信供应商API
-import {
-  PDD_SMS_DETAILBILL_PUSH,
-  PddSmsDetailbillPushRequestInterface,
-  PddSmsDetailbillPushResponseInterface,
-} from './duanXinGongYingShang/PddSmsDetailbillPush';
-import {
-  PDD_SMS_VENDOR_COMPLAINT_CREATE,
-  PddSmsVendorComplaintCreateRequestInterface,
-  PddSmsVendorComplaintCreateResponseInterface,
-} from './duanXinGongYingShang/PddSmsVendorComplaintCreate';
 // 商家工单API
 import {
   PDD_MALL_TICKET_DETAIL,
@@ -1701,62 +1690,33 @@ import {
   PddMallTicketNotifyRequestInterface,
   PddMallTicketNotifyResponseInterface,
 } from './shangJiaGongDan/PddMallTicketNotify';
+// 短信供应商API
+import {
+  PDD_SMS_DETAILBILL_PUSH,
+  PddSmsDetailbillPushRequestInterface,
+  PddSmsDetailbillPushResponseInterface,
+} from './duanXinGongYingShang/PddSmsDetailbillPush';
+import {
+  PDD_SMS_VENDOR_COMPLAINT_CREATE,
+  PddSmsVendorComplaintCreateRequestInterface,
+  PddSmsVendorComplaintCreateResponseInterface,
+} from './duanXinGongYingShang/PddSmsVendorComplaintCreate';
 const PddResponseTypeAndRequestTypeMapping = {
   [PDD_ORDER_INFORMATION_GET]: PDD_ORDER_INFORMATION_GET_RESPONSE_KEY,
   [PDD_ORDER_LIST_GET]: PDD_ORDER_LIST_GET_RESPONSE_KEY,
   [PDD_ORDER_NUMBER_LIST_INCREMENT_GET]: PDD_ORDER_NUMBER_LIST_INCREMENT_GET_RESPONSE_KEY,
   [PDD_ORDER_STATUS_GET]: PDD_ORDER_STATUS_GET_RESPONSE_KEY,
-  [PDD_RDC_PDDGENIUS_SENDGOODS_CANCEL]: PDD_RDC_PDDGENIUS_SENDGOODS_CANCEL_RESPONSE_KEY,
-  [PDD_REFUND_ADDRESS_LIST_GET]: PDD_REFUND_ADDRESS_LIST_GET_RESPONSE_KEY,
-  [PDD_REFUND_LIST_INCREMENT_GET]: PDD_REFUND_LIST_INCREMENT_GET_RESPONSE_KEY,
-  [PDD_REFUND_STATUS_CHECK]: PDD_REFUND_STATUS_CHECK_RESPONSE_KEY,
   [PDD_LOGISTICS_ADDRESS_GET]: PDD_LOGISTICS_ADDRESS_GET_RESPONSE_KEY,
   [PDD_LOGISTICS_COMPANIES_GET]: PDD_LOGISTICS_COMPANIES_GET_RESPONSE_KEY,
   [PDD_LOGISTICS_ONLINE_CREATE]: PDD_LOGISTICS_ONLINE_CREATE_RESPONSE_KEY,
   [PDD_LOGISTICS_ONLINE_SEND]: PDD_LOGISTICS_ONLINE_SEND_RESPONSE_KEY,
   [PDD_LOGISTICS_ONLINE_STATUS_QUERY]: PDD_LOGISTICS_ONLINE_STATUS_QUERY_RESPONSE_KEY,
+  [PDD_RDC_PDDGENIUS_SENDGOODS_CANCEL]: PDD_RDC_PDDGENIUS_SENDGOODS_CANCEL_RESPONSE_KEY,
+  [PDD_REFUND_ADDRESS_LIST_GET]: PDD_REFUND_ADDRESS_LIST_GET_RESPONSE_KEY,
+  [PDD_REFUND_LIST_INCREMENT_GET]: PDD_REFUND_LIST_INCREMENT_GET_RESPONSE_KEY,
+  [PDD_REFUND_STATUS_CHECK]: PDD_REFUND_STATUS_CHECK_RESPONSE_KEY,
   [PDD_VIRTUAL_GAME_SERVER_QUERY]: PDD_VIRTUAL_GAME_SERVER_QUERY_RESPONSE_KEY,
   [PDD_VIRTUAL_MOBILE_CHARGE_NOTIFY]: PDD_VIRTUAL_MOBILE_CHARGE_NOTIFY_RESPONSE_KEY,
-  [PDD_GOODS_ADD]: PDD_GOODS_ADD_RESPONSE_KEY,
-  [PDD_GOODS_AUTHORIZATION_CATS]: PDD_GOODS_AUTHORIZATION_CATS_RESPONSE_KEY,
-  [PDD_GOODS_CAT_TEMPLATE_GET]: PDD_GOODS_CAT_TEMPLATE_GET_RESPONSE_KEY,
-  [PDD_GOODS_CATS_GET]: PDD_GOODS_CATS_GET_RESPONSE_KEY,
-  [PDD_GOODS_COMMIT_DETAIL_GET]: PDD_GOODS_COMMIT_DETAIL_GET_RESPONSE_KEY,
-  [PDD_GOODS_COMMIT_LIST_GET]: PDD_GOODS_COMMIT_LIST_GET_RESPONSE_KEY,
-  [PDD_GOODS_COMMIT_STATUS_GET]: PDD_GOODS_COMMIT_STATUS_GET_RESPONSE_KEY,
-  [PDD_GOODS_COUNTRY_GET]: PDD_GOODS_COUNTRY_GET_RESPONSE_KEY,
-  [PDD_GOODS_CPS_MALL_UNIT_CHANGE]: PDD_GOODS_CPS_MALL_UNIT_CHANGE_RESPONSE_KEY,
-  [PDD_GOODS_CPS_MALL_UNIT_PAUSE]: PDD_GOODS_CPS_MALL_UNIT_PAUSE_RESPONSE_KEY,
-  [PDD_GOODS_CPS_MALL_UNIT_QUERY]: PDD_GOODS_CPS_MALL_UNIT_QUERY_RESPONSE_KEY,
-  [PDD_GOODS_CPS_MALL_UNIT_RESUME]: PDD_GOODS_CPS_MALL_UNIT_RESUME_RESPONSE_KEY,
-  [PDD_GOODS_CPS_UNIT_DELETE]: PDD_GOODS_CPS_UNIT_DELETE_RESPONSE_KEY,
-  [PDD_GOODS_DETAIL_GET]: PDD_GOODS_DETAIL_GET_RESPONSE_KEY,
-  [PDD_GOODS_EDIT_GOODS_COMMIT]: PDD_GOODS_EDIT_GOODS_COMMIT_RESPONSE_KEY,
-  [PDD_GOODS_GET_RELATION]: PDD_GOODS_GET_RELATION_RESPONSE_KEY,
-  [PDD_GOODS_IMAGE_UPLOAD]: PDD_GOODS_IMAGE_UPLOAD_RESPONSE_KEY,
-  [PDD_GOODS_INFORMATION_GET]: PDD_GOODS_INFORMATION_GET_RESPONSE_KEY,
-  [PDD_GOODS_INFORMATION_UPDATE]: PDD_GOODS_INFORMATION_UPDATE_RESPONSE_KEY,
-  [PDD_GOODS_LATEST_COMMIT_STATUS_GET]: PDD_GOODS_LATEST_COMMIT_STATUS_GET_RESPONSE_KEY,
-  [PDD_GOODS_LIST_GET]: PDD_GOODS_LIST_GET_RESPONSE_KEY,
-  [PDD_GOODS_LOGISTICS_SER_TEMPLATE_CREATE]: PDD_GOODS_LOGISTICS_SER_TEMPLATE_CREATE_RESPONSE_KEY,
-  [PDD_GOODS_LOGISTICS_SER_TEMPLATE_DELETE]: PDD_GOODS_LOGISTICS_SER_TEMPLATE_DELETE_RESPONSE_KEY,
-  [PDD_GOODS_LOGISTICS_SER_TEMPLATE_DETAIL]: PDD_GOODS_LOGISTICS_SER_TEMPLATE_DETAIL_RESPONSE_KEY,
-  [PDD_GOODS_LOGISTICS_SER_TEMPLATE_LIST]: PDD_GOODS_LOGISTICS_SER_TEMPLATE_LIST_RESPONSE_KEY,
-  [PDD_GOODS_LOGISTICS_SER_TEMPLATE_UPDATE]: PDD_GOODS_LOGISTICS_SER_TEMPLATE_UPDATE_RESPONSE_KEY,
-  [PDD_GOODS_LOGISTICS_TEMPLATE_CREATE]: PDD_GOODS_LOGISTICS_TEMPLATE_CREATE_RESPONSE_KEY,
-  [PDD_GOODS_LOGISTICS_TEMPLATE_GET]: PDD_GOODS_LOGISTICS_TEMPLATE_GET_RESPONSE_KEY,
-  [PDD_GOODS_OPT_GET]: PDD_GOODS_OPT_GET_RESPONSE_KEY,
-  [PDD_GOODS_OUTER_CAT_MAPPING_GET]: PDD_GOODS_OUTER_CAT_MAPPING_GET_RESPONSE_KEY,
-  [PDD_GOODS_QUANTITY_UPDATE]: PDD_GOODS_QUANTITY_UPDATE_RESPONSE_KEY,
-  [PDD_GOODS_RELATION_SET]: PDD_GOODS_RELATION_SET_RESPONSE_KEY,
-  [PDD_GOODS_SALE_STATUS_SET]: PDD_GOODS_SALE_STATUS_SET_RESPONSE_KEY,
-  [PDD_GOODS_SKU_PRICE_UPDATE]: PDD_GOODS_SKU_PRICE_UPDATE_RESPONSE_KEY,
-  [PDD_GOODS_SPEC_GET]: PDD_GOODS_SPEC_GET_RESPONSE_KEY,
-  [PDD_GOODS_SPEC_ID_GET]: PDD_GOODS_SPEC_ID_GET_RESPONSE_KEY,
-  [PDD_GOODS_SUBMIT_GOODS_COMMIT]: PDD_GOODS_SUBMIT_GOODS_COMMIT_RESPONSE_KEY,
-  [PDD_GOODS_TEMPLATE_PROPERTY_VALUE_SEARCH]: PDD_GOODS_TEMPLATE_PROPERTY_VALUE_SEARCH_RESPONSE_KEY,
-  [PDD_GOOODS_SKU_MEASUREMENT_LIST]: PDD_GOOODS_SKU_MEASUREMENT_LIST_RESPONSE_KEY,
-  [PDD_ONE_EXPRESS_COST_TEMPLATE]: PDD_ONE_EXPRESS_COST_TEMPLATE_RESPONSE_KEY,
   [PDD_AD_BALANCE_GET]: PDD_AD_BALANCE_GET_RESPONSE_KEY,
   [PDD_AD_BID_QUERY_PROFILE]: PDD_AD_BID_QUERY_PROFILE_RESPONSE_KEY,
   [PDD_AD_CAN_CREATE_PLAN]: PDD_AD_CAN_CREATE_PLAN_RESPONSE_KEY,
@@ -1799,6 +1759,46 @@ const PddResponseTypeAndRequestTypeMapping = {
   [PDD_AD_UNIT_OPT_STATUS_UPDATE]: PDD_AD_UNIT_OPT_STATUS_UPDATE_RESPONSE_KEY,
   [PDD_AD_UPDATE_BID]: PDD_AD_UPDATE_BID_RESPONSE_KEY,
   [PDD_AD_UPDATE_LOCATION_BID]: PDD_AD_UPDATE_LOCATION_BID_RESPONSE_KEY,
+  [PDD_GOODS_ADD]: PDD_GOODS_ADD_RESPONSE_KEY,
+  [PDD_GOODS_AUTHORIZATION_CATS]: PDD_GOODS_AUTHORIZATION_CATS_RESPONSE_KEY,
+  [PDD_GOODS_CAT_TEMPLATE_GET]: PDD_GOODS_CAT_TEMPLATE_GET_RESPONSE_KEY,
+  [PDD_GOODS_CATS_GET]: PDD_GOODS_CATS_GET_RESPONSE_KEY,
+  [PDD_GOODS_COMMIT_DETAIL_GET]: PDD_GOODS_COMMIT_DETAIL_GET_RESPONSE_KEY,
+  [PDD_GOODS_COMMIT_LIST_GET]: PDD_GOODS_COMMIT_LIST_GET_RESPONSE_KEY,
+  [PDD_GOODS_COMMIT_STATUS_GET]: PDD_GOODS_COMMIT_STATUS_GET_RESPONSE_KEY,
+  [PDD_GOODS_COUNTRY_GET]: PDD_GOODS_COUNTRY_GET_RESPONSE_KEY,
+  [PDD_GOODS_CPS_MALL_UNIT_CHANGE]: PDD_GOODS_CPS_MALL_UNIT_CHANGE_RESPONSE_KEY,
+  [PDD_GOODS_CPS_MALL_UNIT_PAUSE]: PDD_GOODS_CPS_MALL_UNIT_PAUSE_RESPONSE_KEY,
+  [PDD_GOODS_CPS_MALL_UNIT_QUERY]: PDD_GOODS_CPS_MALL_UNIT_QUERY_RESPONSE_KEY,
+  [PDD_GOODS_CPS_MALL_UNIT_RESUME]: PDD_GOODS_CPS_MALL_UNIT_RESUME_RESPONSE_KEY,
+  [PDD_GOODS_CPS_UNIT_DELETE]: PDD_GOODS_CPS_UNIT_DELETE_RESPONSE_KEY,
+  [PDD_GOODS_DETAIL_GET]: PDD_GOODS_DETAIL_GET_RESPONSE_KEY,
+  [PDD_GOODS_EDIT_GOODS_COMMIT]: PDD_GOODS_EDIT_GOODS_COMMIT_RESPONSE_KEY,
+  [PDD_GOODS_GET_RELATION]: PDD_GOODS_GET_RELATION_RESPONSE_KEY,
+  [PDD_GOODS_IMAGE_UPLOAD]: PDD_GOODS_IMAGE_UPLOAD_RESPONSE_KEY,
+  [PDD_GOODS_INFORMATION_GET]: PDD_GOODS_INFORMATION_GET_RESPONSE_KEY,
+  [PDD_GOODS_INFORMATION_UPDATE]: PDD_GOODS_INFORMATION_UPDATE_RESPONSE_KEY,
+  [PDD_GOODS_LATEST_COMMIT_STATUS_GET]: PDD_GOODS_LATEST_COMMIT_STATUS_GET_RESPONSE_KEY,
+  [PDD_GOODS_LIST_GET]: PDD_GOODS_LIST_GET_RESPONSE_KEY,
+  [PDD_GOODS_LOGISTICS_SER_TEMPLATE_CREATE]: PDD_GOODS_LOGISTICS_SER_TEMPLATE_CREATE_RESPONSE_KEY,
+  [PDD_GOODS_LOGISTICS_SER_TEMPLATE_DELETE]: PDD_GOODS_LOGISTICS_SER_TEMPLATE_DELETE_RESPONSE_KEY,
+  [PDD_GOODS_LOGISTICS_SER_TEMPLATE_DETAIL]: PDD_GOODS_LOGISTICS_SER_TEMPLATE_DETAIL_RESPONSE_KEY,
+  [PDD_GOODS_LOGISTICS_SER_TEMPLATE_LIST]: PDD_GOODS_LOGISTICS_SER_TEMPLATE_LIST_RESPONSE_KEY,
+  [PDD_GOODS_LOGISTICS_SER_TEMPLATE_UPDATE]: PDD_GOODS_LOGISTICS_SER_TEMPLATE_UPDATE_RESPONSE_KEY,
+  [PDD_GOODS_LOGISTICS_TEMPLATE_CREATE]: PDD_GOODS_LOGISTICS_TEMPLATE_CREATE_RESPONSE_KEY,
+  [PDD_GOODS_LOGISTICS_TEMPLATE_GET]: PDD_GOODS_LOGISTICS_TEMPLATE_GET_RESPONSE_KEY,
+  [PDD_GOODS_OPT_GET]: PDD_GOODS_OPT_GET_RESPONSE_KEY,
+  [PDD_GOODS_OUTER_CAT_MAPPING_GET]: PDD_GOODS_OUTER_CAT_MAPPING_GET_RESPONSE_KEY,
+  [PDD_GOODS_QUANTITY_UPDATE]: PDD_GOODS_QUANTITY_UPDATE_RESPONSE_KEY,
+  [PDD_GOODS_RELATION_SET]: PDD_GOODS_RELATION_SET_RESPONSE_KEY,
+  [PDD_GOODS_SALE_STATUS_SET]: PDD_GOODS_SALE_STATUS_SET_RESPONSE_KEY,
+  [PDD_GOODS_SKU_PRICE_UPDATE]: PDD_GOODS_SKU_PRICE_UPDATE_RESPONSE_KEY,
+  [PDD_GOODS_SPEC_GET]: PDD_GOODS_SPEC_GET_RESPONSE_KEY,
+  [PDD_GOODS_SPEC_ID_GET]: PDD_GOODS_SPEC_ID_GET_RESPONSE_KEY,
+  [PDD_GOODS_SUBMIT_GOODS_COMMIT]: PDD_GOODS_SUBMIT_GOODS_COMMIT_RESPONSE_KEY,
+  [PDD_GOODS_TEMPLATE_PROPERTY_VALUE_SEARCH]: PDD_GOODS_TEMPLATE_PROPERTY_VALUE_SEARCH_RESPONSE_KEY,
+  [PDD_GOOODS_SKU_MEASUREMENT_LIST]: PDD_GOOODS_SKU_MEASUREMENT_LIST_RESPONSE_KEY,
+  [PDD_ONE_EXPRESS_COST_TEMPLATE]: PDD_ONE_EXPRESS_COST_TEMPLATE_RESPONSE_KEY,
   [PDD_DDK_CMS_PROM_URL_GENERATE]: PDD_DDK_CMS_PROM_URL_GENERATE_RESPONSE_KEY,
   [PDD_DDK_COUPON_INFO_QUERY]: PDD_DDK_COUPON_INFO_QUERY_RESPONSE_KEY,
   [PDD_DDK_FINANCE_CPA_QUERY]: PDD_DDK_FINANCE_CPA_QUERY_RESPONSE_KEY,
@@ -1903,6 +1903,7 @@ const PddResponseTypeAndRequestTypeMapping = {
   [PDD_PMC_USER_CANCEL]: PDD_PMC_USER_CANCEL_RESPONSE_KEY,
   [PDD_PMC_USER_GET]: PDD_PMC_USER_GET_RESPONSE_KEY,
   [PDD_PMC_USER_PERMIT]: PDD_PMC_USER_PERMIT_RESPONSE_KEY,
+  [PDD_FINANCE_BALANCE_DAILY_BILL_URL_GET]: PDD_FINANCE_BALANCE_DAILY_BILL_URL_GET_RESPONSE_KEY,
   [PDD_CLOUDPRINT_CMDPRINT_RENDER]: PDD_CLOUDPRINT_CMDPRINT_RENDER_RESPONSE_KEY,
   [PDD_CLOUDPRINT_CUSTOMARES_GET]: PDD_CLOUDPRINT_CUSTOMARES_GET_RESPONSE_KEY,
   [PDD_CLOUDPRINT_STDTEMPLATES_GET]: PDD_CLOUDPRINT_STDTEMPLATES_GET_RESPONSE_KEY,
@@ -1911,7 +1912,6 @@ const PddResponseTypeAndRequestTypeMapping = {
   [PDD_WAYBILL_QUERY_BY_WAYBILLCODE]: PDD_WAYBILL_QUERY_BY_WAYBILLCODE_RESPONSE_KEY,
   [PDD_WAYBILL_SEARCH]: PDD_WAYBILL_SEARCH_RESPONSE_KEY,
   [PDD_WAYBILL_UPDATE]: PDD_WAYBILL_UPDATE_RESPONSE_KEY,
-  [PDD_FINANCE_BALANCE_DAILY_BILL_URL_GET]: PDD_FINANCE_BALANCE_DAILY_BILL_URL_GET_RESPONSE_KEY,
   [PDD_SERVICEMARKET_SETTLEMENTBILL_GET]: PDD_SERVICEMARKET_SETTLEMENTBILL_GET_RESPONSE_KEY,
   [PDD_SERVICEMARKET_TRADELIST_GET]: PDD_SERVICEMARKET_TRADELIST_GET_RESPONSE_KEY,
   [PDD_VAS_ORDER_SEARCH]: PDD_VAS_ORDER_SEARCH_RESPONSE_KEY,
@@ -1942,32 +1942,6 @@ export {
   PddOrderStatusGetRequestInterface,
   PddOrderStatusGetResponseInterface,
   PddOrderStatusGetOrderStatusGetResponseResponseInterface,
-  PDD_NEXTONE_LOGISTICS_WAREHOUSE_UPDATE,
-  PddNextoneLogisticsWarehouseUpdateRequestInterface,
-  PddNextoneLogisticsWarehouseUpdateResponseInterface,
-  PDD_RDC_PDDGENIUS_SENDGOODS_CANCEL,
-  PDD_RDC_PDDGENIUS_SENDGOODS_CANCEL_RESPONSE_KEY,
-  PddRdcPddgeniusSendgoodsCancelRequestInterface,
-  PddRdcPddgeniusSendgoodsCancelResponseInterface,
-  PddRdcPddgeniusSendgoodsCancelRdcPddgeniusSendgoodsCancelResponseResponseInterface,
-  PDD_REFUND_ADDRESS_LIST_GET,
-  PDD_REFUND_ADDRESS_LIST_GET_RESPONSE_KEY,
-  PddRefundAddressListGetRequestInterface,
-  PddRefundAddressListGetResponseInterface,
-  PddRefundAddressListGetRefundAddressListGetResponseResponseInterface,
-  PDD_REFUND_INFORMATION_GET,
-  PddRefundInformationGetRequestInterface,
-  PddRefundInformationGetResponseInterface,
-  PDD_REFUND_LIST_INCREMENT_GET,
-  PDD_REFUND_LIST_INCREMENT_GET_RESPONSE_KEY,
-  PddRefundListIncrementGetRequestInterface,
-  PddRefundListIncrementGetResponseInterface,
-  PddRefundListIncrementGetRefundIncrementGetResponseResponseInterface,
-  PDD_REFUND_STATUS_CHECK,
-  PDD_REFUND_STATUS_CHECK_RESPONSE_KEY,
-  PddRefundStatusCheckRequestInterface,
-  PddRefundStatusCheckResponseInterface,
-  PddRefundStatusCheckRefundStatusCheckResponseResponseInterface,
   PDD_LOGISTICS_ADDRESS_GET,
   PDD_LOGISTICS_ADDRESS_GET_RESPONSE_KEY,
   PddLogisticsAddressGetRequestInterface,
@@ -1996,6 +1970,32 @@ export {
   PDD_LOGISTICS_ORDERTRACE_GET,
   PddLogisticsOrdertraceGetRequestInterface,
   PddLogisticsOrdertraceGetResponseInterface,
+  PDD_NEXTONE_LOGISTICS_WAREHOUSE_UPDATE,
+  PddNextoneLogisticsWarehouseUpdateRequestInterface,
+  PddNextoneLogisticsWarehouseUpdateResponseInterface,
+  PDD_RDC_PDDGENIUS_SENDGOODS_CANCEL,
+  PDD_RDC_PDDGENIUS_SENDGOODS_CANCEL_RESPONSE_KEY,
+  PddRdcPddgeniusSendgoodsCancelRequestInterface,
+  PddRdcPddgeniusSendgoodsCancelResponseInterface,
+  PddRdcPddgeniusSendgoodsCancelRdcPddgeniusSendgoodsCancelResponseResponseInterface,
+  PDD_REFUND_ADDRESS_LIST_GET,
+  PDD_REFUND_ADDRESS_LIST_GET_RESPONSE_KEY,
+  PddRefundAddressListGetRequestInterface,
+  PddRefundAddressListGetResponseInterface,
+  PddRefundAddressListGetRefundAddressListGetResponseResponseInterface,
+  PDD_REFUND_INFORMATION_GET,
+  PddRefundInformationGetRequestInterface,
+  PddRefundInformationGetResponseInterface,
+  PDD_REFUND_LIST_INCREMENT_GET,
+  PDD_REFUND_LIST_INCREMENT_GET_RESPONSE_KEY,
+  PddRefundListIncrementGetRequestInterface,
+  PddRefundListIncrementGetResponseInterface,
+  PddRefundListIncrementGetRefundIncrementGetResponseResponseInterface,
+  PDD_REFUND_STATUS_CHECK,
+  PDD_REFUND_STATUS_CHECK_RESPONSE_KEY,
+  PddRefundStatusCheckRequestInterface,
+  PddRefundStatusCheckResponseInterface,
+  PddRefundStatusCheckRefundStatusCheckResponseResponseInterface,
   PDD_VIRTUAL_GAME_SERVER_QUERY,
   PDD_VIRTUAL_GAME_SERVER_QUERY_RESPONSE_KEY,
   PddVirtualGameServerQueryRequestInterface,
@@ -2006,224 +2006,6 @@ export {
   PddVirtualMobileChargeNotifyRequestInterface,
   PddVirtualMobileChargeNotifyResponseInterface,
   PddVirtualMobileChargeNotifyMobileChargeNotifyResponseResponseInterface,
-  PDD_DELETE_DRAFT_COMMIT,
-  PddDeleteDraftCommitRequestInterface,
-  PddDeleteDraftCommitResponseInterface,
-  PDD_DELETE_GOODS_COMMIT,
-  PddDeleteGoodsCommitRequestInterface,
-  PddDeleteGoodsCommitResponseInterface,
-  PDD_GOODS_ADD,
-  PDD_GOODS_ADD_RESPONSE_KEY,
-  PddGoodsAddRequestInterface,
-  PddGoodsAddResponseInterface,
-  PddGoodsAddGoodsAddResponseResponseInterface,
-  PDD_GOODS_AUTHORIZATION_CATS,
-  PDD_GOODS_AUTHORIZATION_CATS_RESPONSE_KEY,
-  PddGoodsAuthorizationCatsRequestInterface,
-  PddGoodsAuthorizationCatsResponseInterface,
-  PddGoodsAuthorizationCatsGoodsAuthCatsGetResponseResponseInterface,
-  PDD_GOODS_CAT_TEMPLATE_GET,
-  PDD_GOODS_CAT_TEMPLATE_GET_RESPONSE_KEY,
-  PddGoodsCatTemplateGetRequestInterface,
-  PddGoodsCatTemplateGetResponseInterface,
-  PddGoodsCatTemplateGetOpenApiResponseResponseInterface,
-  PDD_GOODS_CATS_GET,
-  PDD_GOODS_CATS_GET_RESPONSE_KEY,
-  PddGoodsCatsGetRequestInterface,
-  PddGoodsCatsGetResponseInterface,
-  PddGoodsCatsGetGoodsCatsGetResponseResponseInterface,
-  PDD_GOODS_COMMIT_DETAIL_GET,
-  PDD_GOODS_COMMIT_DETAIL_GET_RESPONSE_KEY,
-  PddGoodsCommitDetailGetRequestInterface,
-  PddGoodsCommitDetailGetResponseInterface,
-  PddGoodsCommitDetailGetGoodsCommitDetailResponseResponseInterface,
-  PDD_GOODS_COMMIT_LIST_GET,
-  PDD_GOODS_COMMIT_LIST_GET_RESPONSE_KEY,
-  PddGoodsCommitListGetRequestInterface,
-  PddGoodsCommitListGetResponseInterface,
-  PddGoodsCommitListGetGoodsCommitListGetResponseResponseInterface,
-  PDD_GOODS_COMMIT_STATUS_GET,
-  PDD_GOODS_COMMIT_STATUS_GET_RESPONSE_KEY,
-  PddGoodsCommitStatusGetRequestInterface,
-  PddGoodsCommitStatusGetResponseInterface,
-  PddGoodsCommitStatusGetGoodsCommitStatusGetResponseResponseInterface,
-  PDD_GOODS_COUNTRY_GET,
-  PDD_GOODS_COUNTRY_GET_RESPONSE_KEY,
-  PddGoodsCountryGetRequestInterface,
-  PddGoodsCountryGetResponseInterface,
-  PddGoodsCountryGetGoodsCountryGetResponseResponseInterface,
-  PDD_GOODS_CPS_MALL_UNIT_CHANGE,
-  PDD_GOODS_CPS_MALL_UNIT_CHANGE_RESPONSE_KEY,
-  PddGoodsCpsMallUnitChangeRequestInterface,
-  PddGoodsCpsMallUnitChangeResponseInterface,
-  PddGoodsCpsMallUnitChangeGoodsCpsMallUnitChangeResponseResponseInterface,
-  PDD_GOODS_CPS_MALL_UNIT_CREATE,
-  PddGoodsCpsMallUnitCreateRequestInterface,
-  PddGoodsCpsMallUnitCreateResponseInterface,
-  PDD_GOODS_CPS_MALL_UNIT_PAUSE,
-  PDD_GOODS_CPS_MALL_UNIT_PAUSE_RESPONSE_KEY,
-  PddGoodsCpsMallUnitPauseRequestInterface,
-  PddGoodsCpsMallUnitPauseResponseInterface,
-  PddGoodsCpsMallUnitPauseGoodsCpsMallUnitQueryResponseResponseInterface,
-  PDD_GOODS_CPS_MALL_UNIT_QUERY,
-  PDD_GOODS_CPS_MALL_UNIT_QUERY_RESPONSE_KEY,
-  PddGoodsCpsMallUnitQueryRequestInterface,
-  PddGoodsCpsMallUnitQueryResponseInterface,
-  PddGoodsCpsMallUnitQueryGoodsCpsMallUnitQueryResponseResponseInterface,
-  PDD_GOODS_CPS_MALL_UNIT_RESUME,
-  PDD_GOODS_CPS_MALL_UNIT_RESUME_RESPONSE_KEY,
-  PddGoodsCpsMallUnitResumeRequestInterface,
-  PddGoodsCpsMallUnitResumeResponseInterface,
-  PddGoodsCpsMallUnitResumeGoodsCpsMallUnitResumeResponseResponseInterface,
-  PDD_GOODS_CPS_UNIT_CHANGE,
-  PddGoodsCpsUnitChangeRequestInterface,
-  PddGoodsCpsUnitChangeResponseInterface,
-  PDD_GOODS_CPS_UNIT_CREATE,
-  PddGoodsCpsUnitCreateRequestInterface,
-  PddGoodsCpsUnitCreateResponseInterface,
-  PDD_GOODS_CPS_UNIT_DELETE,
-  PDD_GOODS_CPS_UNIT_DELETE_RESPONSE_KEY,
-  PddGoodsCpsUnitDeleteRequestInterface,
-  PddGoodsCpsUnitDeleteResponseInterface,
-  PddGoodsCpsUnitDeleteGoodsCpsUnitDeleteResponseResponseInterface,
-  PDD_GOODS_CPS_UNIT_QUERY,
-  PddGoodsCpsUnitQueryRequestInterface,
-  PddGoodsCpsUnitQueryResponseInterface,
-  PDD_GOODS_DETAIL_GET,
-  PDD_GOODS_DETAIL_GET_RESPONSE_KEY,
-  PddGoodsDetailGetRequestInterface,
-  PddGoodsDetailGetResponseInterface,
-  PddGoodsDetailGetGoodsDetailGetResponseResponseInterface,
-  PDD_GOODS_EDIT_GOODS_COMMIT,
-  PDD_GOODS_EDIT_GOODS_COMMIT_RESPONSE_KEY,
-  PddGoodsEditGoodsCommitRequestInterface,
-  PddGoodsEditGoodsCommitResponseInterface,
-  PddGoodsEditGoodsCommitGoodsUpdateResponseResponseInterface,
-  PDD_GOODS_GET_RELATION,
-  PDD_GOODS_GET_RELATION_RESPONSE_KEY,
-  PddGoodsGetRelationRequestInterface,
-  PddGoodsGetRelationResponseInterface,
-  PddGoodsGetRelationQueryGoodsRelationResponseResponseInterface,
-  PDD_GOODS_IMAGE_UPLOAD,
-  PDD_GOODS_IMAGE_UPLOAD_RESPONSE_KEY,
-  PddGoodsImageUploadRequestInterface,
-  PddGoodsImageUploadResponseInterface,
-  PddGoodsImageUploadGoodsImageUploadResponseResponseInterface,
-  PDD_GOODS_INFORMATION_GET,
-  PDD_GOODS_INFORMATION_GET_RESPONSE_KEY,
-  PddGoodsInformationGetRequestInterface,
-  PddGoodsInformationGetResponseInterface,
-  PddGoodsInformationGetGoodsInfoGetResponseResponseInterface,
-  PDD_GOODS_INFORMATION_UPDATE,
-  PDD_GOODS_INFORMATION_UPDATE_RESPONSE_KEY,
-  PddGoodsInformationUpdateRequestInterface,
-  PddGoodsInformationUpdateResponseInterface,
-  PddGoodsInformationUpdateGoodsUpdateResponseResponseInterface,
-  PDD_GOODS_LATEST_COMMIT_STATUS_GET,
-  PDD_GOODS_LATEST_COMMIT_STATUS_GET_RESPONSE_KEY,
-  PddGoodsLatestCommitStatusGetRequestInterface,
-  PddGoodsLatestCommitStatusGetResponseInterface,
-  PddGoodsLatestCommitStatusGetGoodsLatestCommitStatusGetResponseResponseInterface,
-  PDD_GOODS_LIST_GET,
-  PDD_GOODS_LIST_GET_RESPONSE_KEY,
-  PddGoodsListGetRequestInterface,
-  PddGoodsListGetResponseInterface,
-  PddGoodsListGetGoodsListGetResponseResponseInterface,
-  PDD_GOODS_LOGISTICS_SER_TEMPLATE_CREATE,
-  PDD_GOODS_LOGISTICS_SER_TEMPLATE_CREATE_RESPONSE_KEY,
-  PddGoodsLogisticsSerTemplateCreateRequestInterface,
-  PddGoodsLogisticsSerTemplateCreateResponseInterface,
-  PddGoodsLogisticsSerTemplateCreateGoodsLogisticsSerTemplateCreateResponseResponseInterface,
-  PDD_GOODS_LOGISTICS_SER_TEMPLATE_DELETE,
-  PDD_GOODS_LOGISTICS_SER_TEMPLATE_DELETE_RESPONSE_KEY,
-  PddGoodsLogisticsSerTemplateDeleteRequestInterface,
-  PddGoodsLogisticsSerTemplateDeleteResponseInterface,
-  PddGoodsLogisticsSerTemplateDeleteGoodsLogisticsSerTemplateDeleteResponseResponseInterface,
-  PDD_GOODS_LOGISTICS_SER_TEMPLATE_DETAIL,
-  PDD_GOODS_LOGISTICS_SER_TEMPLATE_DETAIL_RESPONSE_KEY,
-  PddGoodsLogisticsSerTemplateDetailRequestInterface,
-  PddGoodsLogisticsSerTemplateDetailResponseInterface,
-  PddGoodsLogisticsSerTemplateDetailGoodsLogisticsSerTemplateDetailResponseResponseInterface,
-  PDD_GOODS_LOGISTICS_SER_TEMPLATE_LIST,
-  PDD_GOODS_LOGISTICS_SER_TEMPLATE_LIST_RESPONSE_KEY,
-  PddGoodsLogisticsSerTemplateListRequestInterface,
-  PddGoodsLogisticsSerTemplateListResponseInterface,
-  PddGoodsLogisticsSerTemplateListGoodsLogisticsSerTemplateListResponseResponseInterface,
-  PDD_GOODS_LOGISTICS_SER_TEMPLATE_UPDATE,
-  PDD_GOODS_LOGISTICS_SER_TEMPLATE_UPDATE_RESPONSE_KEY,
-  PddGoodsLogisticsSerTemplateUpdateRequestInterface,
-  PddGoodsLogisticsSerTemplateUpdateResponseInterface,
-  PddGoodsLogisticsSerTemplateUpdateGoodsLogisticsSerTemplateCreateResponseResponseInterface,
-  PDD_GOODS_LOGISTICS_TEMPLATE_CREATE,
-  PDD_GOODS_LOGISTICS_TEMPLATE_CREATE_RESPONSE_KEY,
-  PddGoodsLogisticsTemplateCreateRequestInterface,
-  PddGoodsLogisticsTemplateCreateResponseInterface,
-  PddGoodsLogisticsTemplateCreateGoodsLogisticsTemplateCreateResponseResponseInterface,
-  PDD_GOODS_LOGISTICS_TEMPLATE_GET,
-  PDD_GOODS_LOGISTICS_TEMPLATE_GET_RESPONSE_KEY,
-  PddGoodsLogisticsTemplateGetRequestInterface,
-  PddGoodsLogisticsTemplateGetResponseInterface,
-  PddGoodsLogisticsTemplateGetGoodsLogisticsTemplateGetResponseResponseInterface,
-  PDD_GOODS_OPT_GET,
-  PDD_GOODS_OPT_GET_RESPONSE_KEY,
-  PddGoodsOptGetRequestInterface,
-  PddGoodsOptGetResponseInterface,
-  PddGoodsOptGetGoodsOptGetResponseResponseInterface,
-  PDD_GOODS_OUTER_CAT_MAPPING_GET,
-  PDD_GOODS_OUTER_CAT_MAPPING_GET_RESPONSE_KEY,
-  PddGoodsOuterCatMappingGetRequestInterface,
-  PddGoodsOuterCatMappingGetResponseInterface,
-  PddGoodsOuterCatMappingGetOuterCatMappingGetResponseResponseInterface,
-  PDD_GOODS_QUANTITY_UPDATE,
-  PDD_GOODS_QUANTITY_UPDATE_RESPONSE_KEY,
-  PddGoodsQuantityUpdateRequestInterface,
-  PddGoodsQuantityUpdateResponseInterface,
-  PddGoodsQuantityUpdateGoodsQuantityUpdateResponseResponseInterface,
-  PDD_GOODS_RELATION_SET,
-  PDD_GOODS_RELATION_SET_RESPONSE_KEY,
-  PddGoodsRelationSetRequestInterface,
-  PddGoodsRelationSetResponseInterface,
-  PddGoodsRelationSetGoodsRelationSetResponseResponseInterface,
-  PDD_GOODS_SALE_STATUS_SET,
-  PDD_GOODS_SALE_STATUS_SET_RESPONSE_KEY,
-  PddGoodsSaleStatusSetRequestInterface,
-  PddGoodsSaleStatusSetResponseInterface,
-  PddGoodsSaleStatusSetGoodsSaleStatusSetResponseResponseInterface,
-  PDD_GOODS_SKU_PRICE_UPDATE,
-  PDD_GOODS_SKU_PRICE_UPDATE_RESPONSE_KEY,
-  PddGoodsSkuPriceUpdateRequestInterface,
-  PddGoodsSkuPriceUpdateResponseInterface,
-  PddGoodsSkuPriceUpdateGoodsUpdateSkuPriceResponseResponseInterface,
-  PDD_GOODS_SPEC_GET,
-  PDD_GOODS_SPEC_GET_RESPONSE_KEY,
-  PddGoodsSpecGetRequestInterface,
-  PddGoodsSpecGetResponseInterface,
-  PddGoodsSpecGetGoodsSpecGetResponseResponseInterface,
-  PDD_GOODS_SPEC_ID_GET,
-  PDD_GOODS_SPEC_ID_GET_RESPONSE_KEY,
-  PddGoodsSpecIdGetRequestInterface,
-  PddGoodsSpecIdGetResponseInterface,
-  PddGoodsSpecIdGetGoodsSpecIdGetResponseResponseInterface,
-  PDD_GOODS_SUBMIT_GOODS_COMMIT,
-  PDD_GOODS_SUBMIT_GOODS_COMMIT_RESPONSE_KEY,
-  PddGoodsSubmitGoodsCommitRequestInterface,
-  PddGoodsSubmitGoodsCommitResponseInterface,
-  PddGoodsSubmitGoodsCommitGoodsUpdateResponseResponseInterface,
-  PDD_GOODS_TEMPLATE_PROPERTY_VALUE_SEARCH,
-  PDD_GOODS_TEMPLATE_PROPERTY_VALUE_SEARCH_RESPONSE_KEY,
-  PddGoodsTemplatePropertyValueSearchRequestInterface,
-  PddGoodsTemplatePropertyValueSearchResponseInterface,
-  PddGoodsTemplatePropertyValueSearchGoodsTemplatePropValSearchResponseResponseInterface,
-  PDD_GOOODS_SKU_MEASUREMENT_LIST,
-  PDD_GOOODS_SKU_MEASUREMENT_LIST_RESPONSE_KEY,
-  PddGooodsSkuMeasurementListRequestInterface,
-  PddGooodsSkuMeasurementListResponseInterface,
-  PddGooodsSkuMeasurementListGooodsSkuMeasurementListResponseResponseInterface,
-  PDD_ONE_EXPRESS_COST_TEMPLATE,
-  PDD_ONE_EXPRESS_COST_TEMPLATE_RESPONSE_KEY,
-  PddOneExpressCostTemplateRequestInterface,
-  PddOneExpressCostTemplateResponseInterface,
-  PddOneExpressCostTemplateOneExpressCostTemplateResponseResponseInterface,
   PDD_AD_BALANCE_GET,
   PDD_AD_BALANCE_GET_RESPONSE_KEY,
   PddAdBalanceGetRequestInterface,
@@ -2446,6 +2228,224 @@ export {
   PddAdUpdateLocationBidRequestInterface,
   PddAdUpdateLocationBidResponseInterface,
   PddAdUpdateLocationBidOpenApiResponseResponseInterface,
+  PDD_DELETE_DRAFT_COMMIT,
+  PddDeleteDraftCommitRequestInterface,
+  PddDeleteDraftCommitResponseInterface,
+  PDD_DELETE_GOODS_COMMIT,
+  PddDeleteGoodsCommitRequestInterface,
+  PddDeleteGoodsCommitResponseInterface,
+  PDD_GOODS_ADD,
+  PDD_GOODS_ADD_RESPONSE_KEY,
+  PddGoodsAddRequestInterface,
+  PddGoodsAddResponseInterface,
+  PddGoodsAddGoodsAddResponseResponseInterface,
+  PDD_GOODS_AUTHORIZATION_CATS,
+  PDD_GOODS_AUTHORIZATION_CATS_RESPONSE_KEY,
+  PddGoodsAuthorizationCatsRequestInterface,
+  PddGoodsAuthorizationCatsResponseInterface,
+  PddGoodsAuthorizationCatsGoodsAuthCatsGetResponseResponseInterface,
+  PDD_GOODS_CAT_TEMPLATE_GET,
+  PDD_GOODS_CAT_TEMPLATE_GET_RESPONSE_KEY,
+  PddGoodsCatTemplateGetRequestInterface,
+  PddGoodsCatTemplateGetResponseInterface,
+  PddGoodsCatTemplateGetOpenApiResponseResponseInterface,
+  PDD_GOODS_CATS_GET,
+  PDD_GOODS_CATS_GET_RESPONSE_KEY,
+  PddGoodsCatsGetRequestInterface,
+  PddGoodsCatsGetResponseInterface,
+  PddGoodsCatsGetGoodsCatsGetResponseResponseInterface,
+  PDD_GOODS_COMMIT_DETAIL_GET,
+  PDD_GOODS_COMMIT_DETAIL_GET_RESPONSE_KEY,
+  PddGoodsCommitDetailGetRequestInterface,
+  PddGoodsCommitDetailGetResponseInterface,
+  PddGoodsCommitDetailGetGoodsCommitDetailResponseResponseInterface,
+  PDD_GOODS_COMMIT_LIST_GET,
+  PDD_GOODS_COMMIT_LIST_GET_RESPONSE_KEY,
+  PddGoodsCommitListGetRequestInterface,
+  PddGoodsCommitListGetResponseInterface,
+  PddGoodsCommitListGetGoodsCommitListGetResponseResponseInterface,
+  PDD_GOODS_COMMIT_STATUS_GET,
+  PDD_GOODS_COMMIT_STATUS_GET_RESPONSE_KEY,
+  PddGoodsCommitStatusGetRequestInterface,
+  PddGoodsCommitStatusGetResponseInterface,
+  PddGoodsCommitStatusGetGoodsCommitStatusGetResponseResponseInterface,
+  PDD_GOODS_COUNTRY_GET,
+  PDD_GOODS_COUNTRY_GET_RESPONSE_KEY,
+  PddGoodsCountryGetRequestInterface,
+  PddGoodsCountryGetResponseInterface,
+  PddGoodsCountryGetGoodsCountryGetResponseResponseInterface,
+  PDD_GOODS_CPS_MALL_UNIT_CHANGE,
+  PDD_GOODS_CPS_MALL_UNIT_CHANGE_RESPONSE_KEY,
+  PddGoodsCpsMallUnitChangeRequestInterface,
+  PddGoodsCpsMallUnitChangeResponseInterface,
+  PddGoodsCpsMallUnitChangeGoodsCpsMallUnitChangeResponseResponseInterface,
+  PDD_GOODS_CPS_MALL_UNIT_CREATE,
+  PddGoodsCpsMallUnitCreateRequestInterface,
+  PddGoodsCpsMallUnitCreateResponseInterface,
+  PDD_GOODS_CPS_MALL_UNIT_PAUSE,
+  PDD_GOODS_CPS_MALL_UNIT_PAUSE_RESPONSE_KEY,
+  PddGoodsCpsMallUnitPauseRequestInterface,
+  PddGoodsCpsMallUnitPauseResponseInterface,
+  PddGoodsCpsMallUnitPauseGoodsCpsMallUnitQueryResponseResponseInterface,
+  PDD_GOODS_CPS_MALL_UNIT_QUERY,
+  PDD_GOODS_CPS_MALL_UNIT_QUERY_RESPONSE_KEY,
+  PddGoodsCpsMallUnitQueryRequestInterface,
+  PddGoodsCpsMallUnitQueryResponseInterface,
+  PddGoodsCpsMallUnitQueryGoodsCpsMallUnitQueryResponseResponseInterface,
+  PDD_GOODS_CPS_MALL_UNIT_RESUME,
+  PDD_GOODS_CPS_MALL_UNIT_RESUME_RESPONSE_KEY,
+  PddGoodsCpsMallUnitResumeRequestInterface,
+  PddGoodsCpsMallUnitResumeResponseInterface,
+  PddGoodsCpsMallUnitResumeGoodsCpsMallUnitResumeResponseResponseInterface,
+  PDD_GOODS_CPS_UNIT_CHANGE,
+  PddGoodsCpsUnitChangeRequestInterface,
+  PddGoodsCpsUnitChangeResponseInterface,
+  PDD_GOODS_CPS_UNIT_CREATE,
+  PddGoodsCpsUnitCreateRequestInterface,
+  PddGoodsCpsUnitCreateResponseInterface,
+  PDD_GOODS_CPS_UNIT_DELETE,
+  PDD_GOODS_CPS_UNIT_DELETE_RESPONSE_KEY,
+  PddGoodsCpsUnitDeleteRequestInterface,
+  PddGoodsCpsUnitDeleteResponseInterface,
+  PddGoodsCpsUnitDeleteGoodsCpsUnitDeleteResponseResponseInterface,
+  PDD_GOODS_CPS_UNIT_QUERY,
+  PddGoodsCpsUnitQueryRequestInterface,
+  PddGoodsCpsUnitQueryResponseInterface,
+  PDD_GOODS_DETAIL_GET,
+  PDD_GOODS_DETAIL_GET_RESPONSE_KEY,
+  PddGoodsDetailGetRequestInterface,
+  PddGoodsDetailGetResponseInterface,
+  PddGoodsDetailGetGoodsDetailGetResponseResponseInterface,
+  PDD_GOODS_EDIT_GOODS_COMMIT,
+  PDD_GOODS_EDIT_GOODS_COMMIT_RESPONSE_KEY,
+  PddGoodsEditGoodsCommitRequestInterface,
+  PddGoodsEditGoodsCommitResponseInterface,
+  PddGoodsEditGoodsCommitGoodsUpdateResponseResponseInterface,
+  PDD_GOODS_GET_RELATION,
+  PDD_GOODS_GET_RELATION_RESPONSE_KEY,
+  PddGoodsGetRelationRequestInterface,
+  PddGoodsGetRelationResponseInterface,
+  PddGoodsGetRelationQueryGoodsRelationResponseResponseInterface,
+  PDD_GOODS_IMAGE_UPLOAD,
+  PDD_GOODS_IMAGE_UPLOAD_RESPONSE_KEY,
+  PddGoodsImageUploadRequestInterface,
+  PddGoodsImageUploadResponseInterface,
+  PddGoodsImageUploadGoodsImageUploadResponseResponseInterface,
+  PDD_GOODS_INFORMATION_GET,
+  PDD_GOODS_INFORMATION_GET_RESPONSE_KEY,
+  PddGoodsInformationGetRequestInterface,
+  PddGoodsInformationGetResponseInterface,
+  PddGoodsInformationGetGoodsInfoGetResponseResponseInterface,
+  PDD_GOODS_INFORMATION_UPDATE,
+  PDD_GOODS_INFORMATION_UPDATE_RESPONSE_KEY,
+  PddGoodsInformationUpdateRequestInterface,
+  PddGoodsInformationUpdateResponseInterface,
+  PddGoodsInformationUpdateGoodsUpdateResponseResponseInterface,
+  PDD_GOODS_LATEST_COMMIT_STATUS_GET,
+  PDD_GOODS_LATEST_COMMIT_STATUS_GET_RESPONSE_KEY,
+  PddGoodsLatestCommitStatusGetRequestInterface,
+  PddGoodsLatestCommitStatusGetResponseInterface,
+  PddGoodsLatestCommitStatusGetGoodsLatestCommitStatusGetResponseResponseInterface,
+  PDD_GOODS_LIST_GET,
+  PDD_GOODS_LIST_GET_RESPONSE_KEY,
+  PddGoodsListGetRequestInterface,
+  PddGoodsListGetResponseInterface,
+  PddGoodsListGetGoodsListGetResponseResponseInterface,
+  PDD_GOODS_LOGISTICS_SER_TEMPLATE_CREATE,
+  PDD_GOODS_LOGISTICS_SER_TEMPLATE_CREATE_RESPONSE_KEY,
+  PddGoodsLogisticsSerTemplateCreateRequestInterface,
+  PddGoodsLogisticsSerTemplateCreateResponseInterface,
+  PddGoodsLogisticsSerTemplateCreateGoodsLogisticsSerTemplateCreateResponseResponseInterface,
+  PDD_GOODS_LOGISTICS_SER_TEMPLATE_DELETE,
+  PDD_GOODS_LOGISTICS_SER_TEMPLATE_DELETE_RESPONSE_KEY,
+  PddGoodsLogisticsSerTemplateDeleteRequestInterface,
+  PddGoodsLogisticsSerTemplateDeleteResponseInterface,
+  PddGoodsLogisticsSerTemplateDeleteGoodsLogisticsSerTemplateDeleteResponseResponseInterface,
+  PDD_GOODS_LOGISTICS_SER_TEMPLATE_DETAIL,
+  PDD_GOODS_LOGISTICS_SER_TEMPLATE_DETAIL_RESPONSE_KEY,
+  PddGoodsLogisticsSerTemplateDetailRequestInterface,
+  PddGoodsLogisticsSerTemplateDetailResponseInterface,
+  PddGoodsLogisticsSerTemplateDetailGoodsLogisticsSerTemplateDetailResponseResponseInterface,
+  PDD_GOODS_LOGISTICS_SER_TEMPLATE_LIST,
+  PDD_GOODS_LOGISTICS_SER_TEMPLATE_LIST_RESPONSE_KEY,
+  PddGoodsLogisticsSerTemplateListRequestInterface,
+  PddGoodsLogisticsSerTemplateListResponseInterface,
+  PddGoodsLogisticsSerTemplateListGoodsLogisticsSerTemplateListResponseResponseInterface,
+  PDD_GOODS_LOGISTICS_SER_TEMPLATE_UPDATE,
+  PDD_GOODS_LOGISTICS_SER_TEMPLATE_UPDATE_RESPONSE_KEY,
+  PddGoodsLogisticsSerTemplateUpdateRequestInterface,
+  PddGoodsLogisticsSerTemplateUpdateResponseInterface,
+  PddGoodsLogisticsSerTemplateUpdateGoodsLogisticsSerTemplateCreateResponseResponseInterface,
+  PDD_GOODS_LOGISTICS_TEMPLATE_CREATE,
+  PDD_GOODS_LOGISTICS_TEMPLATE_CREATE_RESPONSE_KEY,
+  PddGoodsLogisticsTemplateCreateRequestInterface,
+  PddGoodsLogisticsTemplateCreateResponseInterface,
+  PddGoodsLogisticsTemplateCreateGoodsLogisticsTemplateCreateResponseResponseInterface,
+  PDD_GOODS_LOGISTICS_TEMPLATE_GET,
+  PDD_GOODS_LOGISTICS_TEMPLATE_GET_RESPONSE_KEY,
+  PddGoodsLogisticsTemplateGetRequestInterface,
+  PddGoodsLogisticsTemplateGetResponseInterface,
+  PddGoodsLogisticsTemplateGetGoodsLogisticsTemplateGetResponseResponseInterface,
+  PDD_GOODS_OPT_GET,
+  PDD_GOODS_OPT_GET_RESPONSE_KEY,
+  PddGoodsOptGetRequestInterface,
+  PddGoodsOptGetResponseInterface,
+  PddGoodsOptGetGoodsOptGetResponseResponseInterface,
+  PDD_GOODS_OUTER_CAT_MAPPING_GET,
+  PDD_GOODS_OUTER_CAT_MAPPING_GET_RESPONSE_KEY,
+  PddGoodsOuterCatMappingGetRequestInterface,
+  PddGoodsOuterCatMappingGetResponseInterface,
+  PddGoodsOuterCatMappingGetOuterCatMappingGetResponseResponseInterface,
+  PDD_GOODS_QUANTITY_UPDATE,
+  PDD_GOODS_QUANTITY_UPDATE_RESPONSE_KEY,
+  PddGoodsQuantityUpdateRequestInterface,
+  PddGoodsQuantityUpdateResponseInterface,
+  PddGoodsQuantityUpdateGoodsQuantityUpdateResponseResponseInterface,
+  PDD_GOODS_RELATION_SET,
+  PDD_GOODS_RELATION_SET_RESPONSE_KEY,
+  PddGoodsRelationSetRequestInterface,
+  PddGoodsRelationSetResponseInterface,
+  PddGoodsRelationSetGoodsRelationSetResponseResponseInterface,
+  PDD_GOODS_SALE_STATUS_SET,
+  PDD_GOODS_SALE_STATUS_SET_RESPONSE_KEY,
+  PddGoodsSaleStatusSetRequestInterface,
+  PddGoodsSaleStatusSetResponseInterface,
+  PddGoodsSaleStatusSetGoodsSaleStatusSetResponseResponseInterface,
+  PDD_GOODS_SKU_PRICE_UPDATE,
+  PDD_GOODS_SKU_PRICE_UPDATE_RESPONSE_KEY,
+  PddGoodsSkuPriceUpdateRequestInterface,
+  PddGoodsSkuPriceUpdateResponseInterface,
+  PddGoodsSkuPriceUpdateGoodsUpdateSkuPriceResponseResponseInterface,
+  PDD_GOODS_SPEC_GET,
+  PDD_GOODS_SPEC_GET_RESPONSE_KEY,
+  PddGoodsSpecGetRequestInterface,
+  PddGoodsSpecGetResponseInterface,
+  PddGoodsSpecGetGoodsSpecGetResponseResponseInterface,
+  PDD_GOODS_SPEC_ID_GET,
+  PDD_GOODS_SPEC_ID_GET_RESPONSE_KEY,
+  PddGoodsSpecIdGetRequestInterface,
+  PddGoodsSpecIdGetResponseInterface,
+  PddGoodsSpecIdGetGoodsSpecIdGetResponseResponseInterface,
+  PDD_GOODS_SUBMIT_GOODS_COMMIT,
+  PDD_GOODS_SUBMIT_GOODS_COMMIT_RESPONSE_KEY,
+  PddGoodsSubmitGoodsCommitRequestInterface,
+  PddGoodsSubmitGoodsCommitResponseInterface,
+  PddGoodsSubmitGoodsCommitGoodsUpdateResponseResponseInterface,
+  PDD_GOODS_TEMPLATE_PROPERTY_VALUE_SEARCH,
+  PDD_GOODS_TEMPLATE_PROPERTY_VALUE_SEARCH_RESPONSE_KEY,
+  PddGoodsTemplatePropertyValueSearchRequestInterface,
+  PddGoodsTemplatePropertyValueSearchResponseInterface,
+  PddGoodsTemplatePropertyValueSearchGoodsTemplatePropValSearchResponseResponseInterface,
+  PDD_GOOODS_SKU_MEASUREMENT_LIST,
+  PDD_GOOODS_SKU_MEASUREMENT_LIST_RESPONSE_KEY,
+  PddGooodsSkuMeasurementListRequestInterface,
+  PddGooodsSkuMeasurementListResponseInterface,
+  PddGooodsSkuMeasurementListGooodsSkuMeasurementListResponseResponseInterface,
+  PDD_ONE_EXPRESS_COST_TEMPLATE,
+  PDD_ONE_EXPRESS_COST_TEMPLATE_RESPONSE_KEY,
+  PddOneExpressCostTemplateRequestInterface,
+  PddOneExpressCostTemplateResponseInterface,
+  PddOneExpressCostTemplateOneExpressCostTemplateResponseResponseInterface,
   PDD_DDK_CMS_PROM_URL_GENERATE,
   PDD_DDK_CMS_PROM_URL_GENERATE_RESPONSE_KEY,
   PddDdkCmsPromUrlGenerateRequestInterface,
@@ -3005,6 +3005,11 @@ export {
   PddPmcUserPermitRequestInterface,
   PddPmcUserPermitResponseInterface,
   PddPmcUserPermitPmcUserPermitResponseResponseInterface,
+  PDD_FINANCE_BALANCE_DAILY_BILL_URL_GET,
+  PDD_FINANCE_BALANCE_DAILY_BILL_URL_GET_RESPONSE_KEY,
+  PddFinanceBalanceDailyBillUrlGetRequestInterface,
+  PddFinanceBalanceDailyBillUrlGetResponseInterface,
+  PddFinanceBalanceDailyBillUrlGetFinanceBalanceDailyBillUrlGetResponseResponseInterface,
   PDD_CLOUDPRINT_CMDPRINT_RENDER,
   PDD_CLOUDPRINT_CMDPRINT_RENDER_RESPONSE_KEY,
   PddCloudprintCmdprintRenderRequestInterface,
@@ -3045,11 +3050,6 @@ export {
   PddWaybillUpdateRequestInterface,
   PddWaybillUpdateResponseInterface,
   PddWaybillUpdatePddWaybillUpdateResponseResponseInterface,
-  PDD_FINANCE_BALANCE_DAILY_BILL_URL_GET,
-  PDD_FINANCE_BALANCE_DAILY_BILL_URL_GET_RESPONSE_KEY,
-  PddFinanceBalanceDailyBillUrlGetRequestInterface,
-  PddFinanceBalanceDailyBillUrlGetResponseInterface,
-  PddFinanceBalanceDailyBillUrlGetFinanceBalanceDailyBillUrlGetResponseResponseInterface,
   PDD_OPEN_MSG_SERVICE_QUERY_EXPRESS_MSG_RECORD,
   PddOpenMsgServiceQueryExpressMsgRecordRequestInterface,
   PddOpenMsgServiceQueryExpressMsgRecordResponseInterface,
@@ -3080,12 +3080,6 @@ export {
   PddVasOrderSearchRequestInterface,
   PddVasOrderSearchResponseInterface,
   PddVasOrderSearchVasOrderSearchResponseResponseInterface,
-  PDD_SMS_DETAILBILL_PUSH,
-  PddSmsDetailbillPushRequestInterface,
-  PddSmsDetailbillPushResponseInterface,
-  PDD_SMS_VENDOR_COMPLAINT_CREATE,
-  PddSmsVendorComplaintCreateRequestInterface,
-  PddSmsVendorComplaintCreateResponseInterface,
   PDD_MALL_TICKET_DETAIL,
   PDD_MALL_TICKET_DETAIL_RESPONSE_KEY,
   PddMallTicketDetailRequestInterface,
@@ -3099,6 +3093,12 @@ export {
   PDD_MALL_TICKET_NOTIFY,
   PddMallTicketNotifyRequestInterface,
   PddMallTicketNotifyResponseInterface,
+  PDD_SMS_DETAILBILL_PUSH,
+  PddSmsDetailbillPushRequestInterface,
+  PddSmsDetailbillPushResponseInterface,
+  PDD_SMS_VENDOR_COMPLAINT_CREATE,
+  PddSmsVendorComplaintCreateRequestInterface,
+  PddSmsVendorComplaintCreateResponseInterface,
   PddResponseTypeAndRequestTypeMapping,
 };
 export interface PddCollectRequestInterface {
@@ -3107,66 +3107,20 @@ export interface PddCollectRequestInterface {
   [PDD_ORDER_LIST_GET]: PddOrderListGetRequestInterface;
   [PDD_ORDER_NUMBER_LIST_INCREMENT_GET]: PddOrderNumberListIncrementGetRequestInterface;
   [PDD_ORDER_STATUS_GET]: PddOrderStatusGetRequestInterface;
-  [PDD_NEXTONE_LOGISTICS_WAREHOUSE_UPDATE]: PddNextoneLogisticsWarehouseUpdateRequestInterface;
-  [PDD_RDC_PDDGENIUS_SENDGOODS_CANCEL]: PddRdcPddgeniusSendgoodsCancelRequestInterface;
-  [PDD_REFUND_ADDRESS_LIST_GET]: PddRefundAddressListGetRequestInterface;
-  [PDD_REFUND_INFORMATION_GET]: PddRefundInformationGetRequestInterface;
-  [PDD_REFUND_LIST_INCREMENT_GET]: PddRefundListIncrementGetRequestInterface;
-  [PDD_REFUND_STATUS_CHECK]: PddRefundStatusCheckRequestInterface;
   [PDD_LOGISTICS_ADDRESS_GET]: PddLogisticsAddressGetRequestInterface;
   [PDD_LOGISTICS_COMPANIES_GET]: PddLogisticsCompaniesGetRequestInterface;
   [PDD_LOGISTICS_ONLINE_CREATE]: PddLogisticsOnlineCreateRequestInterface;
   [PDD_LOGISTICS_ONLINE_SEND]: PddLogisticsOnlineSendRequestInterface;
   [PDD_LOGISTICS_ONLINE_STATUS_QUERY]: PddLogisticsOnlineStatusQueryRequestInterface;
   [PDD_LOGISTICS_ORDERTRACE_GET]: PddLogisticsOrdertraceGetRequestInterface;
+  [PDD_NEXTONE_LOGISTICS_WAREHOUSE_UPDATE]: PddNextoneLogisticsWarehouseUpdateRequestInterface;
+  [PDD_RDC_PDDGENIUS_SENDGOODS_CANCEL]: PddRdcPddgeniusSendgoodsCancelRequestInterface;
+  [PDD_REFUND_ADDRESS_LIST_GET]: PddRefundAddressListGetRequestInterface;
+  [PDD_REFUND_INFORMATION_GET]: PddRefundInformationGetRequestInterface;
+  [PDD_REFUND_LIST_INCREMENT_GET]: PddRefundListIncrementGetRequestInterface;
+  [PDD_REFUND_STATUS_CHECK]: PddRefundStatusCheckRequestInterface;
   [PDD_VIRTUAL_GAME_SERVER_QUERY]: PddVirtualGameServerQueryRequestInterface;
   [PDD_VIRTUAL_MOBILE_CHARGE_NOTIFY]: PddVirtualMobileChargeNotifyRequestInterface;
-  [PDD_DELETE_DRAFT_COMMIT]: PddDeleteDraftCommitRequestInterface;
-  [PDD_DELETE_GOODS_COMMIT]: PddDeleteGoodsCommitRequestInterface;
-  [PDD_GOODS_ADD]: PddGoodsAddRequestInterface;
-  [PDD_GOODS_AUTHORIZATION_CATS]: PddGoodsAuthorizationCatsRequestInterface;
-  [PDD_GOODS_CAT_TEMPLATE_GET]: PddGoodsCatTemplateGetRequestInterface;
-  [PDD_GOODS_CATS_GET]: PddGoodsCatsGetRequestInterface;
-  [PDD_GOODS_COMMIT_DETAIL_GET]: PddGoodsCommitDetailGetRequestInterface;
-  [PDD_GOODS_COMMIT_LIST_GET]: PddGoodsCommitListGetRequestInterface;
-  [PDD_GOODS_COMMIT_STATUS_GET]: PddGoodsCommitStatusGetRequestInterface;
-  [PDD_GOODS_COUNTRY_GET]: PddGoodsCountryGetRequestInterface;
-  [PDD_GOODS_CPS_MALL_UNIT_CHANGE]: PddGoodsCpsMallUnitChangeRequestInterface;
-  [PDD_GOODS_CPS_MALL_UNIT_CREATE]: PddGoodsCpsMallUnitCreateRequestInterface;
-  [PDD_GOODS_CPS_MALL_UNIT_PAUSE]: PddGoodsCpsMallUnitPauseRequestInterface;
-  [PDD_GOODS_CPS_MALL_UNIT_QUERY]: PddGoodsCpsMallUnitQueryRequestInterface;
-  [PDD_GOODS_CPS_MALL_UNIT_RESUME]: PddGoodsCpsMallUnitResumeRequestInterface;
-  [PDD_GOODS_CPS_UNIT_CHANGE]: PddGoodsCpsUnitChangeRequestInterface;
-  [PDD_GOODS_CPS_UNIT_CREATE]: PddGoodsCpsUnitCreateRequestInterface;
-  [PDD_GOODS_CPS_UNIT_DELETE]: PddGoodsCpsUnitDeleteRequestInterface;
-  [PDD_GOODS_CPS_UNIT_QUERY]: PddGoodsCpsUnitQueryRequestInterface;
-  [PDD_GOODS_DETAIL_GET]: PddGoodsDetailGetRequestInterface;
-  [PDD_GOODS_EDIT_GOODS_COMMIT]: PddGoodsEditGoodsCommitRequestInterface;
-  [PDD_GOODS_GET_RELATION]: PddGoodsGetRelationRequestInterface;
-  [PDD_GOODS_IMAGE_UPLOAD]: PddGoodsImageUploadRequestInterface;
-  [PDD_GOODS_INFORMATION_GET]: PddGoodsInformationGetRequestInterface;
-  [PDD_GOODS_INFORMATION_UPDATE]: PddGoodsInformationUpdateRequestInterface;
-  [PDD_GOODS_LATEST_COMMIT_STATUS_GET]: PddGoodsLatestCommitStatusGetRequestInterface;
-  [PDD_GOODS_LIST_GET]: PddGoodsListGetRequestInterface;
-  [PDD_GOODS_LOGISTICS_SER_TEMPLATE_CREATE]: PddGoodsLogisticsSerTemplateCreateRequestInterface;
-  [PDD_GOODS_LOGISTICS_SER_TEMPLATE_DELETE]: PddGoodsLogisticsSerTemplateDeleteRequestInterface;
-  [PDD_GOODS_LOGISTICS_SER_TEMPLATE_DETAIL]: PddGoodsLogisticsSerTemplateDetailRequestInterface;
-  [PDD_GOODS_LOGISTICS_SER_TEMPLATE_LIST]: PddGoodsLogisticsSerTemplateListRequestInterface;
-  [PDD_GOODS_LOGISTICS_SER_TEMPLATE_UPDATE]: PddGoodsLogisticsSerTemplateUpdateRequestInterface;
-  [PDD_GOODS_LOGISTICS_TEMPLATE_CREATE]: PddGoodsLogisticsTemplateCreateRequestInterface;
-  [PDD_GOODS_LOGISTICS_TEMPLATE_GET]: PddGoodsLogisticsTemplateGetRequestInterface;
-  [PDD_GOODS_OPT_GET]: PddGoodsOptGetRequestInterface;
-  [PDD_GOODS_OUTER_CAT_MAPPING_GET]: PddGoodsOuterCatMappingGetRequestInterface;
-  [PDD_GOODS_QUANTITY_UPDATE]: PddGoodsQuantityUpdateRequestInterface;
-  [PDD_GOODS_RELATION_SET]: PddGoodsRelationSetRequestInterface;
-  [PDD_GOODS_SALE_STATUS_SET]: PddGoodsSaleStatusSetRequestInterface;
-  [PDD_GOODS_SKU_PRICE_UPDATE]: PddGoodsSkuPriceUpdateRequestInterface;
-  [PDD_GOODS_SPEC_GET]: PddGoodsSpecGetRequestInterface;
-  [PDD_GOODS_SPEC_ID_GET]: PddGoodsSpecIdGetRequestInterface;
-  [PDD_GOODS_SUBMIT_GOODS_COMMIT]: PddGoodsSubmitGoodsCommitRequestInterface;
-  [PDD_GOODS_TEMPLATE_PROPERTY_VALUE_SEARCH]: PddGoodsTemplatePropertyValueSearchRequestInterface;
-  [PDD_GOOODS_SKU_MEASUREMENT_LIST]: PddGooodsSkuMeasurementListRequestInterface;
-  [PDD_ONE_EXPRESS_COST_TEMPLATE]: PddOneExpressCostTemplateRequestInterface;
   [PDD_AD_BALANCE_GET]: PddAdBalanceGetRequestInterface;
   [PDD_AD_BID_QUERY_PROFILE]: PddAdBidQueryProfileRequestInterface;
   [PDD_AD_CAN_CREATE_PLAN]: PddAdCanCreatePlanRequestInterface;
@@ -3213,6 +3167,52 @@ export interface PddCollectRequestInterface {
   [PDD_AD_UNIT_OPT_STATUS_UPDATE]: PddAdUnitOptStatusUpdateRequestInterface;
   [PDD_AD_UPDATE_BID]: PddAdUpdateBidRequestInterface;
   [PDD_AD_UPDATE_LOCATION_BID]: PddAdUpdateLocationBidRequestInterface;
+  [PDD_DELETE_DRAFT_COMMIT]: PddDeleteDraftCommitRequestInterface;
+  [PDD_DELETE_GOODS_COMMIT]: PddDeleteGoodsCommitRequestInterface;
+  [PDD_GOODS_ADD]: PddGoodsAddRequestInterface;
+  [PDD_GOODS_AUTHORIZATION_CATS]: PddGoodsAuthorizationCatsRequestInterface;
+  [PDD_GOODS_CAT_TEMPLATE_GET]: PddGoodsCatTemplateGetRequestInterface;
+  [PDD_GOODS_CATS_GET]: PddGoodsCatsGetRequestInterface;
+  [PDD_GOODS_COMMIT_DETAIL_GET]: PddGoodsCommitDetailGetRequestInterface;
+  [PDD_GOODS_COMMIT_LIST_GET]: PddGoodsCommitListGetRequestInterface;
+  [PDD_GOODS_COMMIT_STATUS_GET]: PddGoodsCommitStatusGetRequestInterface;
+  [PDD_GOODS_COUNTRY_GET]: PddGoodsCountryGetRequestInterface;
+  [PDD_GOODS_CPS_MALL_UNIT_CHANGE]: PddGoodsCpsMallUnitChangeRequestInterface;
+  [PDD_GOODS_CPS_MALL_UNIT_CREATE]: PddGoodsCpsMallUnitCreateRequestInterface;
+  [PDD_GOODS_CPS_MALL_UNIT_PAUSE]: PddGoodsCpsMallUnitPauseRequestInterface;
+  [PDD_GOODS_CPS_MALL_UNIT_QUERY]: PddGoodsCpsMallUnitQueryRequestInterface;
+  [PDD_GOODS_CPS_MALL_UNIT_RESUME]: PddGoodsCpsMallUnitResumeRequestInterface;
+  [PDD_GOODS_CPS_UNIT_CHANGE]: PddGoodsCpsUnitChangeRequestInterface;
+  [PDD_GOODS_CPS_UNIT_CREATE]: PddGoodsCpsUnitCreateRequestInterface;
+  [PDD_GOODS_CPS_UNIT_DELETE]: PddGoodsCpsUnitDeleteRequestInterface;
+  [PDD_GOODS_CPS_UNIT_QUERY]: PddGoodsCpsUnitQueryRequestInterface;
+  [PDD_GOODS_DETAIL_GET]: PddGoodsDetailGetRequestInterface;
+  [PDD_GOODS_EDIT_GOODS_COMMIT]: PddGoodsEditGoodsCommitRequestInterface;
+  [PDD_GOODS_GET_RELATION]: PddGoodsGetRelationRequestInterface;
+  [PDD_GOODS_IMAGE_UPLOAD]: PddGoodsImageUploadRequestInterface;
+  [PDD_GOODS_INFORMATION_GET]: PddGoodsInformationGetRequestInterface;
+  [PDD_GOODS_INFORMATION_UPDATE]: PddGoodsInformationUpdateRequestInterface;
+  [PDD_GOODS_LATEST_COMMIT_STATUS_GET]: PddGoodsLatestCommitStatusGetRequestInterface;
+  [PDD_GOODS_LIST_GET]: PddGoodsListGetRequestInterface;
+  [PDD_GOODS_LOGISTICS_SER_TEMPLATE_CREATE]: PddGoodsLogisticsSerTemplateCreateRequestInterface;
+  [PDD_GOODS_LOGISTICS_SER_TEMPLATE_DELETE]: PddGoodsLogisticsSerTemplateDeleteRequestInterface;
+  [PDD_GOODS_LOGISTICS_SER_TEMPLATE_DETAIL]: PddGoodsLogisticsSerTemplateDetailRequestInterface;
+  [PDD_GOODS_LOGISTICS_SER_TEMPLATE_LIST]: PddGoodsLogisticsSerTemplateListRequestInterface;
+  [PDD_GOODS_LOGISTICS_SER_TEMPLATE_UPDATE]: PddGoodsLogisticsSerTemplateUpdateRequestInterface;
+  [PDD_GOODS_LOGISTICS_TEMPLATE_CREATE]: PddGoodsLogisticsTemplateCreateRequestInterface;
+  [PDD_GOODS_LOGISTICS_TEMPLATE_GET]: PddGoodsLogisticsTemplateGetRequestInterface;
+  [PDD_GOODS_OPT_GET]: PddGoodsOptGetRequestInterface;
+  [PDD_GOODS_OUTER_CAT_MAPPING_GET]: PddGoodsOuterCatMappingGetRequestInterface;
+  [PDD_GOODS_QUANTITY_UPDATE]: PddGoodsQuantityUpdateRequestInterface;
+  [PDD_GOODS_RELATION_SET]: PddGoodsRelationSetRequestInterface;
+  [PDD_GOODS_SALE_STATUS_SET]: PddGoodsSaleStatusSetRequestInterface;
+  [PDD_GOODS_SKU_PRICE_UPDATE]: PddGoodsSkuPriceUpdateRequestInterface;
+  [PDD_GOODS_SPEC_GET]: PddGoodsSpecGetRequestInterface;
+  [PDD_GOODS_SPEC_ID_GET]: PddGoodsSpecIdGetRequestInterface;
+  [PDD_GOODS_SUBMIT_GOODS_COMMIT]: PddGoodsSubmitGoodsCommitRequestInterface;
+  [PDD_GOODS_TEMPLATE_PROPERTY_VALUE_SEARCH]: PddGoodsTemplatePropertyValueSearchRequestInterface;
+  [PDD_GOOODS_SKU_MEASUREMENT_LIST]: PddGooodsSkuMeasurementListRequestInterface;
+  [PDD_ONE_EXPRESS_COST_TEMPLATE]: PddOneExpressCostTemplateRequestInterface;
   [PDD_DDK_CMS_PROM_URL_GENERATE]: PddDdkCmsPromUrlGenerateRequestInterface;
   [PDD_DDK_COUPON_INFO_QUERY]: PddDdkCouponInfoQueryRequestInterface;
   [PDD_DDK_FINANCE_CPA_QUERY]: PddDdkFinanceCpaQueryRequestInterface;
@@ -3330,6 +3330,7 @@ export interface PddCollectRequestInterface {
   [PDD_PMC_USER_CANCEL]: PddPmcUserCancelRequestInterface;
   [PDD_PMC_USER_GET]: PddPmcUserGetRequestInterface;
   [PDD_PMC_USER_PERMIT]: PddPmcUserPermitRequestInterface;
+  [PDD_FINANCE_BALANCE_DAILY_BILL_URL_GET]: PddFinanceBalanceDailyBillUrlGetRequestInterface;
   [PDD_CLOUDPRINT_CMDPRINT_RENDER]: PddCloudprintCmdprintRenderRequestInterface;
   [PDD_CLOUDPRINT_CUSTOMARES_GET]: PddCloudprintCustomaresGetRequestInterface;
   [PDD_CLOUDPRINT_STDTEMPLATES_GET]: PddCloudprintStdtemplatesGetRequestInterface;
@@ -3338,7 +3339,6 @@ export interface PddCollectRequestInterface {
   [PDD_WAYBILL_QUERY_BY_WAYBILLCODE]: PddWaybillQueryByWaybillcodeRequestInterface;
   [PDD_WAYBILL_SEARCH]: PddWaybillSearchRequestInterface;
   [PDD_WAYBILL_UPDATE]: PddWaybillUpdateRequestInterface;
-  [PDD_FINANCE_BALANCE_DAILY_BILL_URL_GET]: PddFinanceBalanceDailyBillUrlGetRequestInterface;
   [PDD_OPEN_MSG_SERVICE_QUERY_EXPRESS_MSG_RECORD]: PddOpenMsgServiceQueryExpressMsgRecordRequestInterface;
   [PDD_OPEN_MSG_SERVICE_QUERY_MSG_RECORD]: PddOpenMsgServiceQueryMsgRecordRequestInterface;
   [PDD_OPEN_MSG_SERVICE_SEND_BATCH_MSG]: PddOpenMsgServiceSendBatchMsgRequestInterface;
@@ -3347,11 +3347,11 @@ export interface PddCollectRequestInterface {
   [PDD_SERVICEMARKET_SETTLEMENTBILL_GET]: PddServicemarketSettlementbillGetRequestInterface;
   [PDD_SERVICEMARKET_TRADELIST_GET]: PddServicemarketTradelistGetRequestInterface;
   [PDD_VAS_ORDER_SEARCH]: PddVasOrderSearchRequestInterface;
-  [PDD_SMS_DETAILBILL_PUSH]: PddSmsDetailbillPushRequestInterface;
-  [PDD_SMS_VENDOR_COMPLAINT_CREATE]: PddSmsVendorComplaintCreateRequestInterface;
   [PDD_MALL_TICKET_DETAIL]: PddMallTicketDetailRequestInterface;
   [PDD_MALL_TICKET_LIST]: PddMallTicketListRequestInterface;
   [PDD_MALL_TICKET_NOTIFY]: PddMallTicketNotifyRequestInterface;
+  [PDD_SMS_DETAILBILL_PUSH]: PddSmsDetailbillPushRequestInterface;
+  [PDD_SMS_VENDOR_COMPLAINT_CREATE]: PddSmsVendorComplaintCreateRequestInterface;
 }
 export interface PddCollectRootResponseInterface {
   [PDD_ERP_ORDER_SYNC]: PddErpOrderSyncResponseInterface;
@@ -3359,66 +3359,20 @@ export interface PddCollectRootResponseInterface {
   [PDD_ORDER_LIST_GET]: PddOrderListGetResponseInterface;
   [PDD_ORDER_NUMBER_LIST_INCREMENT_GET]: PddOrderNumberListIncrementGetResponseInterface;
   [PDD_ORDER_STATUS_GET]: PddOrderStatusGetResponseInterface;
-  [PDD_NEXTONE_LOGISTICS_WAREHOUSE_UPDATE]: PddNextoneLogisticsWarehouseUpdateResponseInterface;
-  [PDD_RDC_PDDGENIUS_SENDGOODS_CANCEL]: PddRdcPddgeniusSendgoodsCancelResponseInterface;
-  [PDD_REFUND_ADDRESS_LIST_GET]: PddRefundAddressListGetResponseInterface;
-  [PDD_REFUND_INFORMATION_GET]: PddRefundInformationGetResponseInterface;
-  [PDD_REFUND_LIST_INCREMENT_GET]: PddRefundListIncrementGetResponseInterface;
-  [PDD_REFUND_STATUS_CHECK]: PddRefundStatusCheckResponseInterface;
   [PDD_LOGISTICS_ADDRESS_GET]: PddLogisticsAddressGetResponseInterface;
   [PDD_LOGISTICS_COMPANIES_GET]: PddLogisticsCompaniesGetResponseInterface;
   [PDD_LOGISTICS_ONLINE_CREATE]: PddLogisticsOnlineCreateResponseInterface;
   [PDD_LOGISTICS_ONLINE_SEND]: PddLogisticsOnlineSendResponseInterface;
   [PDD_LOGISTICS_ONLINE_STATUS_QUERY]: PddLogisticsOnlineStatusQueryResponseInterface;
   [PDD_LOGISTICS_ORDERTRACE_GET]: PddLogisticsOrdertraceGetResponseInterface;
+  [PDD_NEXTONE_LOGISTICS_WAREHOUSE_UPDATE]: PddNextoneLogisticsWarehouseUpdateResponseInterface;
+  [PDD_RDC_PDDGENIUS_SENDGOODS_CANCEL]: PddRdcPddgeniusSendgoodsCancelResponseInterface;
+  [PDD_REFUND_ADDRESS_LIST_GET]: PddRefundAddressListGetResponseInterface;
+  [PDD_REFUND_INFORMATION_GET]: PddRefundInformationGetResponseInterface;
+  [PDD_REFUND_LIST_INCREMENT_GET]: PddRefundListIncrementGetResponseInterface;
+  [PDD_REFUND_STATUS_CHECK]: PddRefundStatusCheckResponseInterface;
   [PDD_VIRTUAL_GAME_SERVER_QUERY]: PddVirtualGameServerQueryResponseInterface;
   [PDD_VIRTUAL_MOBILE_CHARGE_NOTIFY]: PddVirtualMobileChargeNotifyResponseInterface;
-  [PDD_DELETE_DRAFT_COMMIT]: PddDeleteDraftCommitResponseInterface;
-  [PDD_DELETE_GOODS_COMMIT]: PddDeleteGoodsCommitResponseInterface;
-  [PDD_GOODS_ADD]: PddGoodsAddResponseInterface;
-  [PDD_GOODS_AUTHORIZATION_CATS]: PddGoodsAuthorizationCatsResponseInterface;
-  [PDD_GOODS_CAT_TEMPLATE_GET]: PddGoodsCatTemplateGetResponseInterface;
-  [PDD_GOODS_CATS_GET]: PddGoodsCatsGetResponseInterface;
-  [PDD_GOODS_COMMIT_DETAIL_GET]: PddGoodsCommitDetailGetResponseInterface;
-  [PDD_GOODS_COMMIT_LIST_GET]: PddGoodsCommitListGetResponseInterface;
-  [PDD_GOODS_COMMIT_STATUS_GET]: PddGoodsCommitStatusGetResponseInterface;
-  [PDD_GOODS_COUNTRY_GET]: PddGoodsCountryGetResponseInterface;
-  [PDD_GOODS_CPS_MALL_UNIT_CHANGE]: PddGoodsCpsMallUnitChangeResponseInterface;
-  [PDD_GOODS_CPS_MALL_UNIT_CREATE]: PddGoodsCpsMallUnitCreateResponseInterface;
-  [PDD_GOODS_CPS_MALL_UNIT_PAUSE]: PddGoodsCpsMallUnitPauseResponseInterface;
-  [PDD_GOODS_CPS_MALL_UNIT_QUERY]: PddGoodsCpsMallUnitQueryResponseInterface;
-  [PDD_GOODS_CPS_MALL_UNIT_RESUME]: PddGoodsCpsMallUnitResumeResponseInterface;
-  [PDD_GOODS_CPS_UNIT_CHANGE]: PddGoodsCpsUnitChangeResponseInterface;
-  [PDD_GOODS_CPS_UNIT_CREATE]: PddGoodsCpsUnitCreateResponseInterface;
-  [PDD_GOODS_CPS_UNIT_DELETE]: PddGoodsCpsUnitDeleteResponseInterface;
-  [PDD_GOODS_CPS_UNIT_QUERY]: PddGoodsCpsUnitQueryResponseInterface;
-  [PDD_GOODS_DETAIL_GET]: PddGoodsDetailGetResponseInterface;
-  [PDD_GOODS_EDIT_GOODS_COMMIT]: PddGoodsEditGoodsCommitResponseInterface;
-  [PDD_GOODS_GET_RELATION]: PddGoodsGetRelationResponseInterface;
-  [PDD_GOODS_IMAGE_UPLOAD]: PddGoodsImageUploadResponseInterface;
-  [PDD_GOODS_INFORMATION_GET]: PddGoodsInformationGetResponseInterface;
-  [PDD_GOODS_INFORMATION_UPDATE]: PddGoodsInformationUpdateResponseInterface;
-  [PDD_GOODS_LATEST_COMMIT_STATUS_GET]: PddGoodsLatestCommitStatusGetResponseInterface;
-  [PDD_GOODS_LIST_GET]: PddGoodsListGetResponseInterface;
-  [PDD_GOODS_LOGISTICS_SER_TEMPLATE_CREATE]: PddGoodsLogisticsSerTemplateCreateResponseInterface;
-  [PDD_GOODS_LOGISTICS_SER_TEMPLATE_DELETE]: PddGoodsLogisticsSerTemplateDeleteResponseInterface;
-  [PDD_GOODS_LOGISTICS_SER_TEMPLATE_DETAIL]: PddGoodsLogisticsSerTemplateDetailResponseInterface;
-  [PDD_GOODS_LOGISTICS_SER_TEMPLATE_LIST]: PddGoodsLogisticsSerTemplateListResponseInterface;
-  [PDD_GOODS_LOGISTICS_SER_TEMPLATE_UPDATE]: PddGoodsLogisticsSerTemplateUpdateResponseInterface;
-  [PDD_GOODS_LOGISTICS_TEMPLATE_CREATE]: PddGoodsLogisticsTemplateCreateResponseInterface;
-  [PDD_GOODS_LOGISTICS_TEMPLATE_GET]: PddGoodsLogisticsTemplateGetResponseInterface;
-  [PDD_GOODS_OPT_GET]: PddGoodsOptGetResponseInterface;
-  [PDD_GOODS_OUTER_CAT_MAPPING_GET]: PddGoodsOuterCatMappingGetResponseInterface;
-  [PDD_GOODS_QUANTITY_UPDATE]: PddGoodsQuantityUpdateResponseInterface;
-  [PDD_GOODS_RELATION_SET]: PddGoodsRelationSetResponseInterface;
-  [PDD_GOODS_SALE_STATUS_SET]: PddGoodsSaleStatusSetResponseInterface;
-  [PDD_GOODS_SKU_PRICE_UPDATE]: PddGoodsSkuPriceUpdateResponseInterface;
-  [PDD_GOODS_SPEC_GET]: PddGoodsSpecGetResponseInterface;
-  [PDD_GOODS_SPEC_ID_GET]: PddGoodsSpecIdGetResponseInterface;
-  [PDD_GOODS_SUBMIT_GOODS_COMMIT]: PddGoodsSubmitGoodsCommitResponseInterface;
-  [PDD_GOODS_TEMPLATE_PROPERTY_VALUE_SEARCH]: PddGoodsTemplatePropertyValueSearchResponseInterface;
-  [PDD_GOOODS_SKU_MEASUREMENT_LIST]: PddGooodsSkuMeasurementListResponseInterface;
-  [PDD_ONE_EXPRESS_COST_TEMPLATE]: PddOneExpressCostTemplateResponseInterface;
   [PDD_AD_BALANCE_GET]: PddAdBalanceGetResponseInterface;
   [PDD_AD_BID_QUERY_PROFILE]: PddAdBidQueryProfileResponseInterface;
   [PDD_AD_CAN_CREATE_PLAN]: PddAdCanCreatePlanResponseInterface;
@@ -3465,6 +3419,52 @@ export interface PddCollectRootResponseInterface {
   [PDD_AD_UNIT_OPT_STATUS_UPDATE]: PddAdUnitOptStatusUpdateResponseInterface;
   [PDD_AD_UPDATE_BID]: PddAdUpdateBidResponseInterface;
   [PDD_AD_UPDATE_LOCATION_BID]: PddAdUpdateLocationBidResponseInterface;
+  [PDD_DELETE_DRAFT_COMMIT]: PddDeleteDraftCommitResponseInterface;
+  [PDD_DELETE_GOODS_COMMIT]: PddDeleteGoodsCommitResponseInterface;
+  [PDD_GOODS_ADD]: PddGoodsAddResponseInterface;
+  [PDD_GOODS_AUTHORIZATION_CATS]: PddGoodsAuthorizationCatsResponseInterface;
+  [PDD_GOODS_CAT_TEMPLATE_GET]: PddGoodsCatTemplateGetResponseInterface;
+  [PDD_GOODS_CATS_GET]: PddGoodsCatsGetResponseInterface;
+  [PDD_GOODS_COMMIT_DETAIL_GET]: PddGoodsCommitDetailGetResponseInterface;
+  [PDD_GOODS_COMMIT_LIST_GET]: PddGoodsCommitListGetResponseInterface;
+  [PDD_GOODS_COMMIT_STATUS_GET]: PddGoodsCommitStatusGetResponseInterface;
+  [PDD_GOODS_COUNTRY_GET]: PddGoodsCountryGetResponseInterface;
+  [PDD_GOODS_CPS_MALL_UNIT_CHANGE]: PddGoodsCpsMallUnitChangeResponseInterface;
+  [PDD_GOODS_CPS_MALL_UNIT_CREATE]: PddGoodsCpsMallUnitCreateResponseInterface;
+  [PDD_GOODS_CPS_MALL_UNIT_PAUSE]: PddGoodsCpsMallUnitPauseResponseInterface;
+  [PDD_GOODS_CPS_MALL_UNIT_QUERY]: PddGoodsCpsMallUnitQueryResponseInterface;
+  [PDD_GOODS_CPS_MALL_UNIT_RESUME]: PddGoodsCpsMallUnitResumeResponseInterface;
+  [PDD_GOODS_CPS_UNIT_CHANGE]: PddGoodsCpsUnitChangeResponseInterface;
+  [PDD_GOODS_CPS_UNIT_CREATE]: PddGoodsCpsUnitCreateResponseInterface;
+  [PDD_GOODS_CPS_UNIT_DELETE]: PddGoodsCpsUnitDeleteResponseInterface;
+  [PDD_GOODS_CPS_UNIT_QUERY]: PddGoodsCpsUnitQueryResponseInterface;
+  [PDD_GOODS_DETAIL_GET]: PddGoodsDetailGetResponseInterface;
+  [PDD_GOODS_EDIT_GOODS_COMMIT]: PddGoodsEditGoodsCommitResponseInterface;
+  [PDD_GOODS_GET_RELATION]: PddGoodsGetRelationResponseInterface;
+  [PDD_GOODS_IMAGE_UPLOAD]: PddGoodsImageUploadResponseInterface;
+  [PDD_GOODS_INFORMATION_GET]: PddGoodsInformationGetResponseInterface;
+  [PDD_GOODS_INFORMATION_UPDATE]: PddGoodsInformationUpdateResponseInterface;
+  [PDD_GOODS_LATEST_COMMIT_STATUS_GET]: PddGoodsLatestCommitStatusGetResponseInterface;
+  [PDD_GOODS_LIST_GET]: PddGoodsListGetResponseInterface;
+  [PDD_GOODS_LOGISTICS_SER_TEMPLATE_CREATE]: PddGoodsLogisticsSerTemplateCreateResponseInterface;
+  [PDD_GOODS_LOGISTICS_SER_TEMPLATE_DELETE]: PddGoodsLogisticsSerTemplateDeleteResponseInterface;
+  [PDD_GOODS_LOGISTICS_SER_TEMPLATE_DETAIL]: PddGoodsLogisticsSerTemplateDetailResponseInterface;
+  [PDD_GOODS_LOGISTICS_SER_TEMPLATE_LIST]: PddGoodsLogisticsSerTemplateListResponseInterface;
+  [PDD_GOODS_LOGISTICS_SER_TEMPLATE_UPDATE]: PddGoodsLogisticsSerTemplateUpdateResponseInterface;
+  [PDD_GOODS_LOGISTICS_TEMPLATE_CREATE]: PddGoodsLogisticsTemplateCreateResponseInterface;
+  [PDD_GOODS_LOGISTICS_TEMPLATE_GET]: PddGoodsLogisticsTemplateGetResponseInterface;
+  [PDD_GOODS_OPT_GET]: PddGoodsOptGetResponseInterface;
+  [PDD_GOODS_OUTER_CAT_MAPPING_GET]: PddGoodsOuterCatMappingGetResponseInterface;
+  [PDD_GOODS_QUANTITY_UPDATE]: PddGoodsQuantityUpdateResponseInterface;
+  [PDD_GOODS_RELATION_SET]: PddGoodsRelationSetResponseInterface;
+  [PDD_GOODS_SALE_STATUS_SET]: PddGoodsSaleStatusSetResponseInterface;
+  [PDD_GOODS_SKU_PRICE_UPDATE]: PddGoodsSkuPriceUpdateResponseInterface;
+  [PDD_GOODS_SPEC_GET]: PddGoodsSpecGetResponseInterface;
+  [PDD_GOODS_SPEC_ID_GET]: PddGoodsSpecIdGetResponseInterface;
+  [PDD_GOODS_SUBMIT_GOODS_COMMIT]: PddGoodsSubmitGoodsCommitResponseInterface;
+  [PDD_GOODS_TEMPLATE_PROPERTY_VALUE_SEARCH]: PddGoodsTemplatePropertyValueSearchResponseInterface;
+  [PDD_GOOODS_SKU_MEASUREMENT_LIST]: PddGooodsSkuMeasurementListResponseInterface;
+  [PDD_ONE_EXPRESS_COST_TEMPLATE]: PddOneExpressCostTemplateResponseInterface;
   [PDD_DDK_CMS_PROM_URL_GENERATE]: PddDdkCmsPromUrlGenerateResponseInterface;
   [PDD_DDK_COUPON_INFO_QUERY]: PddDdkCouponInfoQueryResponseInterface;
   [PDD_DDK_FINANCE_CPA_QUERY]: PddDdkFinanceCpaQueryResponseInterface;
@@ -3582,6 +3582,7 @@ export interface PddCollectRootResponseInterface {
   [PDD_PMC_USER_CANCEL]: PddPmcUserCancelResponseInterface;
   [PDD_PMC_USER_GET]: PddPmcUserGetResponseInterface;
   [PDD_PMC_USER_PERMIT]: PddPmcUserPermitResponseInterface;
+  [PDD_FINANCE_BALANCE_DAILY_BILL_URL_GET]: PddFinanceBalanceDailyBillUrlGetResponseInterface;
   [PDD_CLOUDPRINT_CMDPRINT_RENDER]: PddCloudprintCmdprintRenderResponseInterface;
   [PDD_CLOUDPRINT_CUSTOMARES_GET]: PddCloudprintCustomaresGetResponseInterface;
   [PDD_CLOUDPRINT_STDTEMPLATES_GET]: PddCloudprintStdtemplatesGetResponseInterface;
@@ -3590,7 +3591,6 @@ export interface PddCollectRootResponseInterface {
   [PDD_WAYBILL_QUERY_BY_WAYBILLCODE]: PddWaybillQueryByWaybillcodeResponseInterface;
   [PDD_WAYBILL_SEARCH]: PddWaybillSearchResponseInterface;
   [PDD_WAYBILL_UPDATE]: PddWaybillUpdateResponseInterface;
-  [PDD_FINANCE_BALANCE_DAILY_BILL_URL_GET]: PddFinanceBalanceDailyBillUrlGetResponseInterface;
   [PDD_OPEN_MSG_SERVICE_QUERY_EXPRESS_MSG_RECORD]: PddOpenMsgServiceQueryExpressMsgRecordResponseInterface;
   [PDD_OPEN_MSG_SERVICE_QUERY_MSG_RECORD]: PddOpenMsgServiceQueryMsgRecordResponseInterface;
   [PDD_OPEN_MSG_SERVICE_SEND_BATCH_MSG]: PddOpenMsgServiceSendBatchMsgResponseInterface;
@@ -3599,11 +3599,11 @@ export interface PddCollectRootResponseInterface {
   [PDD_SERVICEMARKET_SETTLEMENTBILL_GET]: PddServicemarketSettlementbillGetResponseInterface;
   [PDD_SERVICEMARKET_TRADELIST_GET]: PddServicemarketTradelistGetResponseInterface;
   [PDD_VAS_ORDER_SEARCH]: PddVasOrderSearchResponseInterface;
-  [PDD_SMS_DETAILBILL_PUSH]: PddSmsDetailbillPushResponseInterface;
-  [PDD_SMS_VENDOR_COMPLAINT_CREATE]: PddSmsVendorComplaintCreateResponseInterface;
   [PDD_MALL_TICKET_DETAIL]: PddMallTicketDetailResponseInterface;
   [PDD_MALL_TICKET_LIST]: PddMallTicketListResponseInterface;
   [PDD_MALL_TICKET_NOTIFY]: PddMallTicketNotifyResponseInterface;
+  [PDD_SMS_DETAILBILL_PUSH]: PddSmsDetailbillPushResponseInterface;
+  [PDD_SMS_VENDOR_COMPLAINT_CREATE]: PddSmsVendorComplaintCreateResponseInterface;
 }
 export interface PddCollectShortResponseInterface {
   [PDD_ERP_ORDER_SYNC]: PddErpOrderSyncResponseInterface;
@@ -3611,66 +3611,20 @@ export interface PddCollectShortResponseInterface {
   [PDD_ORDER_LIST_GET]: PddOrderListGetOrderListGetResponseResponseInterface;
   [PDD_ORDER_NUMBER_LIST_INCREMENT_GET]: PddOrderNumberListIncrementGetOrderSnIncrementGetResponseResponseInterface;
   [PDD_ORDER_STATUS_GET]: PddOrderStatusGetOrderStatusGetResponseResponseInterface;
-  [PDD_NEXTONE_LOGISTICS_WAREHOUSE_UPDATE]: PddNextoneLogisticsWarehouseUpdateResponseInterface;
-  [PDD_RDC_PDDGENIUS_SENDGOODS_CANCEL]: PddRdcPddgeniusSendgoodsCancelRdcPddgeniusSendgoodsCancelResponseResponseInterface;
-  [PDD_REFUND_ADDRESS_LIST_GET]: PddRefundAddressListGetRefundAddressListGetResponseResponseInterface;
-  [PDD_REFUND_INFORMATION_GET]: PddRefundInformationGetResponseInterface;
-  [PDD_REFUND_LIST_INCREMENT_GET]: PddRefundListIncrementGetRefundIncrementGetResponseResponseInterface;
-  [PDD_REFUND_STATUS_CHECK]: PddRefundStatusCheckRefundStatusCheckResponseResponseInterface;
   [PDD_LOGISTICS_ADDRESS_GET]: PddLogisticsAddressGetLogisticsAddressGetResponseResponseInterface;
   [PDD_LOGISTICS_COMPANIES_GET]: PddLogisticsCompaniesGetLogisticsCompaniesGetResponseResponseInterface;
   [PDD_LOGISTICS_ONLINE_CREATE]: PddLogisticsOnlineCreateLogisticsOnlineCreateResponseResponseInterface;
   [PDD_LOGISTICS_ONLINE_SEND]: PddLogisticsOnlineSendLogisticsOnlineSendResponseResponseInterface;
   [PDD_LOGISTICS_ONLINE_STATUS_QUERY]: PddLogisticsOnlineStatusQueryLogisticsOnlineStatusQueryResponseResponseInterface;
   [PDD_LOGISTICS_ORDERTRACE_GET]: PddLogisticsOrdertraceGetResponseInterface;
+  [PDD_NEXTONE_LOGISTICS_WAREHOUSE_UPDATE]: PddNextoneLogisticsWarehouseUpdateResponseInterface;
+  [PDD_RDC_PDDGENIUS_SENDGOODS_CANCEL]: PddRdcPddgeniusSendgoodsCancelRdcPddgeniusSendgoodsCancelResponseResponseInterface;
+  [PDD_REFUND_ADDRESS_LIST_GET]: PddRefundAddressListGetRefundAddressListGetResponseResponseInterface;
+  [PDD_REFUND_INFORMATION_GET]: PddRefundInformationGetResponseInterface;
+  [PDD_REFUND_LIST_INCREMENT_GET]: PddRefundListIncrementGetRefundIncrementGetResponseResponseInterface;
+  [PDD_REFUND_STATUS_CHECK]: PddRefundStatusCheckRefundStatusCheckResponseResponseInterface;
   [PDD_VIRTUAL_GAME_SERVER_QUERY]: PddVirtualGameServerQueryGameServerQueryResponseResponseInterface;
   [PDD_VIRTUAL_MOBILE_CHARGE_NOTIFY]: PddVirtualMobileChargeNotifyMobileChargeNotifyResponseResponseInterface;
-  [PDD_DELETE_DRAFT_COMMIT]: PddDeleteDraftCommitResponseInterface;
-  [PDD_DELETE_GOODS_COMMIT]: PddDeleteGoodsCommitResponseInterface;
-  [PDD_GOODS_ADD]: PddGoodsAddGoodsAddResponseResponseInterface;
-  [PDD_GOODS_AUTHORIZATION_CATS]: PddGoodsAuthorizationCatsGoodsAuthCatsGetResponseResponseInterface;
-  [PDD_GOODS_CAT_TEMPLATE_GET]: PddGoodsCatTemplateGetOpenApiResponseResponseInterface;
-  [PDD_GOODS_CATS_GET]: PddGoodsCatsGetGoodsCatsGetResponseResponseInterface;
-  [PDD_GOODS_COMMIT_DETAIL_GET]: PddGoodsCommitDetailGetGoodsCommitDetailResponseResponseInterface;
-  [PDD_GOODS_COMMIT_LIST_GET]: PddGoodsCommitListGetGoodsCommitListGetResponseResponseInterface;
-  [PDD_GOODS_COMMIT_STATUS_GET]: PddGoodsCommitStatusGetGoodsCommitStatusGetResponseResponseInterface;
-  [PDD_GOODS_COUNTRY_GET]: PddGoodsCountryGetGoodsCountryGetResponseResponseInterface;
-  [PDD_GOODS_CPS_MALL_UNIT_CHANGE]: PddGoodsCpsMallUnitChangeGoodsCpsMallUnitChangeResponseResponseInterface;
-  [PDD_GOODS_CPS_MALL_UNIT_CREATE]: PddGoodsCpsMallUnitCreateResponseInterface;
-  [PDD_GOODS_CPS_MALL_UNIT_PAUSE]: PddGoodsCpsMallUnitPauseGoodsCpsMallUnitQueryResponseResponseInterface;
-  [PDD_GOODS_CPS_MALL_UNIT_QUERY]: PddGoodsCpsMallUnitQueryGoodsCpsMallUnitQueryResponseResponseInterface;
-  [PDD_GOODS_CPS_MALL_UNIT_RESUME]: PddGoodsCpsMallUnitResumeGoodsCpsMallUnitResumeResponseResponseInterface;
-  [PDD_GOODS_CPS_UNIT_CHANGE]: PddGoodsCpsUnitChangeResponseInterface;
-  [PDD_GOODS_CPS_UNIT_CREATE]: PddGoodsCpsUnitCreateResponseInterface;
-  [PDD_GOODS_CPS_UNIT_DELETE]: PddGoodsCpsUnitDeleteGoodsCpsUnitDeleteResponseResponseInterface;
-  [PDD_GOODS_CPS_UNIT_QUERY]: PddGoodsCpsUnitQueryResponseInterface;
-  [PDD_GOODS_DETAIL_GET]: PddGoodsDetailGetGoodsDetailGetResponseResponseInterface;
-  [PDD_GOODS_EDIT_GOODS_COMMIT]: PddGoodsEditGoodsCommitGoodsUpdateResponseResponseInterface;
-  [PDD_GOODS_GET_RELATION]: PddGoodsGetRelationQueryGoodsRelationResponseResponseInterface;
-  [PDD_GOODS_IMAGE_UPLOAD]: PddGoodsImageUploadGoodsImageUploadResponseResponseInterface;
-  [PDD_GOODS_INFORMATION_GET]: PddGoodsInformationGetGoodsInfoGetResponseResponseInterface;
-  [PDD_GOODS_INFORMATION_UPDATE]: PddGoodsInformationUpdateGoodsUpdateResponseResponseInterface;
-  [PDD_GOODS_LATEST_COMMIT_STATUS_GET]: PddGoodsLatestCommitStatusGetGoodsLatestCommitStatusGetResponseResponseInterface;
-  [PDD_GOODS_LIST_GET]: PddGoodsListGetGoodsListGetResponseResponseInterface;
-  [PDD_GOODS_LOGISTICS_SER_TEMPLATE_CREATE]: PddGoodsLogisticsSerTemplateCreateGoodsLogisticsSerTemplateCreateResponseResponseInterface;
-  [PDD_GOODS_LOGISTICS_SER_TEMPLATE_DELETE]: PddGoodsLogisticsSerTemplateDeleteGoodsLogisticsSerTemplateDeleteResponseResponseInterface;
-  [PDD_GOODS_LOGISTICS_SER_TEMPLATE_DETAIL]: PddGoodsLogisticsSerTemplateDetailGoodsLogisticsSerTemplateDetailResponseResponseInterface;
-  [PDD_GOODS_LOGISTICS_SER_TEMPLATE_LIST]: PddGoodsLogisticsSerTemplateListGoodsLogisticsSerTemplateListResponseResponseInterface;
-  [PDD_GOODS_LOGISTICS_SER_TEMPLATE_UPDATE]: PddGoodsLogisticsSerTemplateUpdateGoodsLogisticsSerTemplateCreateResponseResponseInterface;
-  [PDD_GOODS_LOGISTICS_TEMPLATE_CREATE]: PddGoodsLogisticsTemplateCreateGoodsLogisticsTemplateCreateResponseResponseInterface;
-  [PDD_GOODS_LOGISTICS_TEMPLATE_GET]: PddGoodsLogisticsTemplateGetGoodsLogisticsTemplateGetResponseResponseInterface;
-  [PDD_GOODS_OPT_GET]: PddGoodsOptGetGoodsOptGetResponseResponseInterface;
-  [PDD_GOODS_OUTER_CAT_MAPPING_GET]: PddGoodsOuterCatMappingGetOuterCatMappingGetResponseResponseInterface;
-  [PDD_GOODS_QUANTITY_UPDATE]: PddGoodsQuantityUpdateGoodsQuantityUpdateResponseResponseInterface;
-  [PDD_GOODS_RELATION_SET]: PddGoodsRelationSetGoodsRelationSetResponseResponseInterface;
-  [PDD_GOODS_SALE_STATUS_SET]: PddGoodsSaleStatusSetGoodsSaleStatusSetResponseResponseInterface;
-  [PDD_GOODS_SKU_PRICE_UPDATE]: PddGoodsSkuPriceUpdateGoodsUpdateSkuPriceResponseResponseInterface;
-  [PDD_GOODS_SPEC_GET]: PddGoodsSpecGetGoodsSpecGetResponseResponseInterface;
-  [PDD_GOODS_SPEC_ID_GET]: PddGoodsSpecIdGetGoodsSpecIdGetResponseResponseInterface;
-  [PDD_GOODS_SUBMIT_GOODS_COMMIT]: PddGoodsSubmitGoodsCommitGoodsUpdateResponseResponseInterface;
-  [PDD_GOODS_TEMPLATE_PROPERTY_VALUE_SEARCH]: PddGoodsTemplatePropertyValueSearchGoodsTemplatePropValSearchResponseResponseInterface;
-  [PDD_GOOODS_SKU_MEASUREMENT_LIST]: PddGooodsSkuMeasurementListGooodsSkuMeasurementListResponseResponseInterface;
-  [PDD_ONE_EXPRESS_COST_TEMPLATE]: PddOneExpressCostTemplateOneExpressCostTemplateResponseResponseInterface;
   [PDD_AD_BALANCE_GET]: PddAdBalanceGetAdBalanceGetResponseResponseInterface;
   [PDD_AD_BID_QUERY_PROFILE]: PddAdBidQueryProfileOpenApiResponseResponseInterface;
   [PDD_AD_CAN_CREATE_PLAN]: PddAdCanCreatePlanAdPlanCreateResponseResponseInterface;
@@ -3717,6 +3671,52 @@ export interface PddCollectShortResponseInterface {
   [PDD_AD_UNIT_OPT_STATUS_UPDATE]: PddAdUnitOptStatusUpdateAdUnitOptStatusUpdateResponseResponseInterface;
   [PDD_AD_UPDATE_BID]: PddAdUpdateBidOpenApiResponseResponseInterface;
   [PDD_AD_UPDATE_LOCATION_BID]: PddAdUpdateLocationBidOpenApiResponseResponseInterface;
+  [PDD_DELETE_DRAFT_COMMIT]: PddDeleteDraftCommitResponseInterface;
+  [PDD_DELETE_GOODS_COMMIT]: PddDeleteGoodsCommitResponseInterface;
+  [PDD_GOODS_ADD]: PddGoodsAddGoodsAddResponseResponseInterface;
+  [PDD_GOODS_AUTHORIZATION_CATS]: PddGoodsAuthorizationCatsGoodsAuthCatsGetResponseResponseInterface;
+  [PDD_GOODS_CAT_TEMPLATE_GET]: PddGoodsCatTemplateGetOpenApiResponseResponseInterface;
+  [PDD_GOODS_CATS_GET]: PddGoodsCatsGetGoodsCatsGetResponseResponseInterface;
+  [PDD_GOODS_COMMIT_DETAIL_GET]: PddGoodsCommitDetailGetGoodsCommitDetailResponseResponseInterface;
+  [PDD_GOODS_COMMIT_LIST_GET]: PddGoodsCommitListGetGoodsCommitListGetResponseResponseInterface;
+  [PDD_GOODS_COMMIT_STATUS_GET]: PddGoodsCommitStatusGetGoodsCommitStatusGetResponseResponseInterface;
+  [PDD_GOODS_COUNTRY_GET]: PddGoodsCountryGetGoodsCountryGetResponseResponseInterface;
+  [PDD_GOODS_CPS_MALL_UNIT_CHANGE]: PddGoodsCpsMallUnitChangeGoodsCpsMallUnitChangeResponseResponseInterface;
+  [PDD_GOODS_CPS_MALL_UNIT_CREATE]: PddGoodsCpsMallUnitCreateResponseInterface;
+  [PDD_GOODS_CPS_MALL_UNIT_PAUSE]: PddGoodsCpsMallUnitPauseGoodsCpsMallUnitQueryResponseResponseInterface;
+  [PDD_GOODS_CPS_MALL_UNIT_QUERY]: PddGoodsCpsMallUnitQueryGoodsCpsMallUnitQueryResponseResponseInterface;
+  [PDD_GOODS_CPS_MALL_UNIT_RESUME]: PddGoodsCpsMallUnitResumeGoodsCpsMallUnitResumeResponseResponseInterface;
+  [PDD_GOODS_CPS_UNIT_CHANGE]: PddGoodsCpsUnitChangeResponseInterface;
+  [PDD_GOODS_CPS_UNIT_CREATE]: PddGoodsCpsUnitCreateResponseInterface;
+  [PDD_GOODS_CPS_UNIT_DELETE]: PddGoodsCpsUnitDeleteGoodsCpsUnitDeleteResponseResponseInterface;
+  [PDD_GOODS_CPS_UNIT_QUERY]: PddGoodsCpsUnitQueryResponseInterface;
+  [PDD_GOODS_DETAIL_GET]: PddGoodsDetailGetGoodsDetailGetResponseResponseInterface;
+  [PDD_GOODS_EDIT_GOODS_COMMIT]: PddGoodsEditGoodsCommitGoodsUpdateResponseResponseInterface;
+  [PDD_GOODS_GET_RELATION]: PddGoodsGetRelationQueryGoodsRelationResponseResponseInterface;
+  [PDD_GOODS_IMAGE_UPLOAD]: PddGoodsImageUploadGoodsImageUploadResponseResponseInterface;
+  [PDD_GOODS_INFORMATION_GET]: PddGoodsInformationGetGoodsInfoGetResponseResponseInterface;
+  [PDD_GOODS_INFORMATION_UPDATE]: PddGoodsInformationUpdateGoodsUpdateResponseResponseInterface;
+  [PDD_GOODS_LATEST_COMMIT_STATUS_GET]: PddGoodsLatestCommitStatusGetGoodsLatestCommitStatusGetResponseResponseInterface;
+  [PDD_GOODS_LIST_GET]: PddGoodsListGetGoodsListGetResponseResponseInterface;
+  [PDD_GOODS_LOGISTICS_SER_TEMPLATE_CREATE]: PddGoodsLogisticsSerTemplateCreateGoodsLogisticsSerTemplateCreateResponseResponseInterface;
+  [PDD_GOODS_LOGISTICS_SER_TEMPLATE_DELETE]: PddGoodsLogisticsSerTemplateDeleteGoodsLogisticsSerTemplateDeleteResponseResponseInterface;
+  [PDD_GOODS_LOGISTICS_SER_TEMPLATE_DETAIL]: PddGoodsLogisticsSerTemplateDetailGoodsLogisticsSerTemplateDetailResponseResponseInterface;
+  [PDD_GOODS_LOGISTICS_SER_TEMPLATE_LIST]: PddGoodsLogisticsSerTemplateListGoodsLogisticsSerTemplateListResponseResponseInterface;
+  [PDD_GOODS_LOGISTICS_SER_TEMPLATE_UPDATE]: PddGoodsLogisticsSerTemplateUpdateGoodsLogisticsSerTemplateCreateResponseResponseInterface;
+  [PDD_GOODS_LOGISTICS_TEMPLATE_CREATE]: PddGoodsLogisticsTemplateCreateGoodsLogisticsTemplateCreateResponseResponseInterface;
+  [PDD_GOODS_LOGISTICS_TEMPLATE_GET]: PddGoodsLogisticsTemplateGetGoodsLogisticsTemplateGetResponseResponseInterface;
+  [PDD_GOODS_OPT_GET]: PddGoodsOptGetGoodsOptGetResponseResponseInterface;
+  [PDD_GOODS_OUTER_CAT_MAPPING_GET]: PddGoodsOuterCatMappingGetOuterCatMappingGetResponseResponseInterface;
+  [PDD_GOODS_QUANTITY_UPDATE]: PddGoodsQuantityUpdateGoodsQuantityUpdateResponseResponseInterface;
+  [PDD_GOODS_RELATION_SET]: PddGoodsRelationSetGoodsRelationSetResponseResponseInterface;
+  [PDD_GOODS_SALE_STATUS_SET]: PddGoodsSaleStatusSetGoodsSaleStatusSetResponseResponseInterface;
+  [PDD_GOODS_SKU_PRICE_UPDATE]: PddGoodsSkuPriceUpdateGoodsUpdateSkuPriceResponseResponseInterface;
+  [PDD_GOODS_SPEC_GET]: PddGoodsSpecGetGoodsSpecGetResponseResponseInterface;
+  [PDD_GOODS_SPEC_ID_GET]: PddGoodsSpecIdGetGoodsSpecIdGetResponseResponseInterface;
+  [PDD_GOODS_SUBMIT_GOODS_COMMIT]: PddGoodsSubmitGoodsCommitGoodsUpdateResponseResponseInterface;
+  [PDD_GOODS_TEMPLATE_PROPERTY_VALUE_SEARCH]: PddGoodsTemplatePropertyValueSearchGoodsTemplatePropValSearchResponseResponseInterface;
+  [PDD_GOOODS_SKU_MEASUREMENT_LIST]: PddGooodsSkuMeasurementListGooodsSkuMeasurementListResponseResponseInterface;
+  [PDD_ONE_EXPRESS_COST_TEMPLATE]: PddOneExpressCostTemplateOneExpressCostTemplateResponseResponseInterface;
   [PDD_DDK_CMS_PROM_URL_GENERATE]: PddDdkCmsPromUrlGenerateCmsPromotionUrlGenerateResponseResponseInterface;
   [PDD_DDK_COUPON_INFO_QUERY]: PddDdkCouponInfoQueryDdkCouponInfoQueryResponseResponseInterface;
   [PDD_DDK_FINANCE_CPA_QUERY]: PddDdkFinanceCpaQueryFinanceCpaQueryResponseResponseInterface;
@@ -3834,6 +3834,7 @@ export interface PddCollectShortResponseInterface {
   [PDD_PMC_USER_CANCEL]: PddPmcUserCancelPmcUserCancelResponseResponseInterface;
   [PDD_PMC_USER_GET]: PddPmcUserGetPmcUserGetResponseResponseInterface;
   [PDD_PMC_USER_PERMIT]: PddPmcUserPermitPmcUserPermitResponseResponseInterface;
+  [PDD_FINANCE_BALANCE_DAILY_BILL_URL_GET]: PddFinanceBalanceDailyBillUrlGetFinanceBalanceDailyBillUrlGetResponseResponseInterface;
   [PDD_CLOUDPRINT_CMDPRINT_RENDER]: PddCloudprintCmdprintRenderCloudprintCmdprintRenderResponseResponseInterface;
   [PDD_CLOUDPRINT_CUSTOMARES_GET]: PddCloudprintCustomaresGetPddCloudprintCustomaresGetResponseResponseInterface;
   [PDD_CLOUDPRINT_STDTEMPLATES_GET]: PddCloudprintStdtemplatesGetPddCloudprintStdtemplatesGetResponseResponseInterface;
@@ -3842,7 +3843,6 @@ export interface PddCollectShortResponseInterface {
   [PDD_WAYBILL_QUERY_BY_WAYBILLCODE]: PddWaybillQueryByWaybillcodePddWaybillQueryByWaybillcodeResponseResponseInterface;
   [PDD_WAYBILL_SEARCH]: PddWaybillSearchPddWaybillSearchResponseResponseInterface;
   [PDD_WAYBILL_UPDATE]: PddWaybillUpdatePddWaybillUpdateResponseResponseInterface;
-  [PDD_FINANCE_BALANCE_DAILY_BILL_URL_GET]: PddFinanceBalanceDailyBillUrlGetFinanceBalanceDailyBillUrlGetResponseResponseInterface;
   [PDD_OPEN_MSG_SERVICE_QUERY_EXPRESS_MSG_RECORD]: PddOpenMsgServiceQueryExpressMsgRecordResponseInterface;
   [PDD_OPEN_MSG_SERVICE_QUERY_MSG_RECORD]: PddOpenMsgServiceQueryMsgRecordResponseInterface;
   [PDD_OPEN_MSG_SERVICE_SEND_BATCH_MSG]: PddOpenMsgServiceSendBatchMsgResponseInterface;
@@ -3851,11 +3851,11 @@ export interface PddCollectShortResponseInterface {
   [PDD_SERVICEMARKET_SETTLEMENTBILL_GET]: PddServicemarketSettlementbillGetSettlementBillSearchResponseResponseInterface;
   [PDD_SERVICEMARKET_TRADELIST_GET]: PddServicemarketTradelistGetMallBalanceFlowSearchResponseResponseInterface;
   [PDD_VAS_ORDER_SEARCH]: PddVasOrderSearchVasOrderSearchResponseResponseInterface;
-  [PDD_SMS_DETAILBILL_PUSH]: PddSmsDetailbillPushResponseInterface;
-  [PDD_SMS_VENDOR_COMPLAINT_CREATE]: PddSmsVendorComplaintCreateResponseInterface;
   [PDD_MALL_TICKET_DETAIL]: PddMallTicketDetailMallTicketDetailResponseResponseInterface;
   [PDD_MALL_TICKET_LIST]: PddMallTicketListMallTicketListResponseResponseInterface;
   [PDD_MALL_TICKET_NOTIFY]: PddMallTicketNotifyResponseInterface;
+  [PDD_SMS_DETAILBILL_PUSH]: PddSmsDetailbillPushResponseInterface;
+  [PDD_SMS_VENDOR_COMPLAINT_CREATE]: PddSmsVendorComplaintCreateResponseInterface;
 }
 export interface PddCommonRequestInterface {
   /**

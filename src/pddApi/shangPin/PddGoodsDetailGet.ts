@@ -123,10 +123,10 @@ export interface PddGoodsDetailGetGoodsDetailGetResponseResponseInterface {
 
   /**
    * @description: 商品轮播图列表
-   * @type: string
+   * @type: string[]
    * @default:
    **/
-  carousel_gallery_list: string;
+  carousel_gallery_list: string[];
 
   /**
    * @description: 叶子类目ID
@@ -271,10 +271,10 @@ export interface PddGoodsDetailGetGoodsDetailGetResponseResponseInterface {
 
   /**
    * @description: 商品详情图
-   * @type: string
+   * @type: string[]
    * @default:
    **/
-  detail_gallery_list: string;
+  detail_gallery_list: string[];
 
   /**
    * @description: 商家编码（商品维度），同其他接口中的outer_goods_id 、out_goods_id、out_goods_sn、outer_goods_sn 都为商家编码（goods维度）。

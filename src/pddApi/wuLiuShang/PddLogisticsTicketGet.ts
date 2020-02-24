@@ -81,10 +81,10 @@ export interface PddLogisticsTicketGetLogisticsTicketGetResponseResponseInterfac
 export interface PddLogisticsTicketGetLogisticsTicketGetResponseLogisticsTicketListResponseInterface {
   /**
    * @description: 附件列表
-   * @type: string
+   * @type: string[]
    * @default:
    **/
-  attach_url: string;
+  attach_url: string[];
 
   /**
    * @description: 赔付金额(单位:分)
@@ -130,10 +130,10 @@ export interface PddLogisticsTicketGetLogisticsTicketGetResponseLogisticsTicketL
 
   /**
    * @description: 物流商回传凭证
-   * @type: string
+   * @type: string[]
    * @default:
    **/
-  express_attachment: string;
+  express_attachment: string[];
 
   /**
    * @description: 物流商快递编码

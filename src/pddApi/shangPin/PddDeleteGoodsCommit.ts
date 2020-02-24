@@ -8,10 +8,10 @@ export const PDD_DELETE_GOODS_COMMIT = 'pdd.delete.goods.commit';
 export interface PddDeleteGoodsCommitRequestInterface {
   /**
    * @description: 商品id 列表(List<Long>) json string，例：[1,2]，一次操作数量请小于50
-   * @type: string
+   * @type: string[]
    * @default:
    **/
-  goods_ids?: string;
+  goods_ids?: string[];
 }
 
 /**

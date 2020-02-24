@@ -16,10 +16,10 @@ export interface PddAdUnitOptStatusUpdateRequestInterface {
 
   /**
    * @description: unit_id列表，[1,2]
-   * @type: string
+   * @type: string[]
    * @default:
    **/
-  unit_ids?: string;
+  unit_ids?: string[];
 
   /**
    * @description: 1 已启用,2 已暂停

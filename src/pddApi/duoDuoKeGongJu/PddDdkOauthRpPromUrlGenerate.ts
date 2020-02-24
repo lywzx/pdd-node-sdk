@@ -58,10 +58,10 @@ export interface PddDdkOauthRpPromUrlGenerateRequestInterface {
 
   /**
    * @description: 推广位列表，例如：["60005_612"]
-   * @type: string
+   * @type: string[]
    * @default:
    **/
-  p_id_list?: string;
+  p_id_list?: string[];
 
   /**
    * @description: 唤起微信app推广短链接
@@ -152,10 +152,10 @@ export interface PddDdkOauthRpPromUrlGenerateDiyLotteryParamRangeItemsRequestInt
 export interface PddDdkOauthRpPromUrlGenerateDiyRedPacketParamRequestInterface {
   /**
    * @description: 红包金额列表，200、300、500、1000、2000，单位分。红包金额和红包抵后价设置只能二选一，默认设置了红包金额会忽略红包抵后价设置
-   * @type: string
+   * @type: string[]
    * @default:
    **/
-  amount_probability: string;
+  amount_probability: string[];
 
   /**
    * @description: 设置玩法，false-现金红包, true-现金券

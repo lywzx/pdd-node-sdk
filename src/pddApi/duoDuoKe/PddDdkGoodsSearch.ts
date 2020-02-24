@@ -65,10 +65,10 @@ export interface PddDdkGoodsSearchRequestInterface {
 
   /**
    * @description: 商品ID列表。例如：[123456,123]，当入参带有goods_id_list字段，将不会以opt_id、 cat_id、keyword维度筛选商品
-   * @type: string
+   * @type: string[]
    * @default:
    **/
-  goods_id_list: string;
+  goods_id_list: string[];
 
   /**
    * @description: 店铺类型，1-个人，2-企业，3-旗舰店，4-专卖店，5-专营店，6-普通店（未传为全部）
@@ -93,10 +93,10 @@ export interface PddDdkGoodsSearchRequestInterface {
 
   /**
    * @description: 店铺类型数组
-   * @type: string
+   * @type: number[]
    * @default:
    **/
-  merchant_type_list: string;
+  merchant_type_list: number[];
 
   /**
    * @description: 是否为品牌商品
@@ -107,10 +107,10 @@ export interface PddDdkGoodsSearchRequestInterface {
 
   /**
    * @description: 商品活动标记数组，例：[4,7]，4-秒杀 7-百亿补贴等
-   * @type: string
+   * @type: number[]
    * @default:
    **/
-  activity_tags: string;
+  activity_tags: number[];
 }
 
 /**
@@ -270,10 +270,10 @@ export interface PddDdkGoodsSearchGoodsSearchResponseGoodsListResponseInterface 
 
   /**
    * @description: 商品轮播图
-   * @type: string
+   * @type: string[]
    * @default:
    **/
-  goods_gallery_urls: string;
+  goods_gallery_urls: string[];
 
   /**
    * @description: 最小拼团价（单位为分）
@@ -333,17 +333,17 @@ export interface PddDdkGoodsSearchGoodsSearchResponseGoodsListResponseInterface 
 
   /**
    * @description: 商品标签id
-   * @type: string
+   * @type: string[]
    * @default:
    **/
-  opt_ids: string;
+  opt_ids: string[];
 
   /**
    * @description: 商品类目id
-   * @type: string
+   * @type: string[]
    * @default:
    **/
-  cat_ids: string;
+  cat_ids: string[];
 
   /**
    * @description: 该商品所在店铺是否参与全店推广，0：否，1：是
@@ -431,10 +431,10 @@ export interface PddDdkGoodsSearchGoodsSearchResponseGoodsListResponseInterface 
 
   /**
    * @description: 服务标签: 4-送货入户并安装,5-送货入户,6-电子发票,9-坏果包赔,11-闪电退款,12-24小时发货,13-48小时发货,17-顺丰包邮,18-只换不修,19-全国联保,20-分期付款,24-极速退款,25-品质保障,26-缺重包退,27-当日发货,28-可定制化,29-预约配送,1000001-正品发票,1000002-送货入户并安装
-   * @type: string
+   * @type: string[]
    * @default:
    **/
-  service_tags: string;
+  service_tags: string[];
 
   /**
    * @description: 店铺收藏券id
@@ -536,8 +536,8 @@ export interface PddDdkGoodsSearchGoodsSearchResponseGoodsListResponseInterface 
 
   /**
    * @description: 商品活动标记数组，例：[4,7]，4-秒杀 7-百亿补贴等
-   * @type: string
+   * @type: number[]
    * @default:
    **/
-  activity_tags: string;
+  activity_tags: number[];
 }

@@ -59,10 +59,10 @@ export interface PddGoodsCommitDetailGetGoodsCommitDetailResponseResponseInterfa
 
   /**
    * @description: 商品轮播图列表
-   * @type: string
+   * @type: string[]
    * @default:
    **/
-  carousel_gallery_list: string;
+  carousel_gallery_list: string[];
 
   /**
    * @description: 商品视频
@@ -137,10 +137,10 @@ export interface PddGoodsCommitDetailGetGoodsCommitDetailResponseResponseInterfa
 
   /**
    * @description: 商品详情图
-   * @type: string
+   * @type: string[]
    * @default:
    **/
-  detail_gallery_list: string;
+  detail_gallery_list: string[];
 
   /**
    * @description: 卡券类商品属性

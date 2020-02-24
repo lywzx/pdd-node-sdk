@@ -207,17 +207,17 @@ export interface PddDdkMallGoodsListGetGoodsInfoListResponseGoodsListResponseInt
 
   /**
    * @description: 商品标签ID
-   * @type: string
+   * @type: string[]
    * @default:
    **/
-  opt_ids: string;
+  opt_ids: string[];
 
   /**
    * @description: 商品标签ID（多级）
-   * @type: string
+   * @type: string[]
    * @default:
    **/
-  cat_ids: string;
+  cat_ids: string[];
 
   /**
    * @description: 商品类型，1-普通商品，2-进口商品，3-直供，4-直邮

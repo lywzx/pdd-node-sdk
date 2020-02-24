@@ -187,10 +187,10 @@ export interface PddExpressDepotInfoGetOtherRegionValueDistrictResponseInterface
 
   /**
    * @description: 区id列表
-   * @type: string
+   * @type: number[]
    * @default:
    **/
-  value: string;
+  value: number[];
 }
 
 /**
@@ -252,8 +252,8 @@ export interface PddExpressDepotInfoGetRegionValueDistrictResponseInterface {
 
   /**
    * @description: 区id列表
-   * @type: string
+   * @type: string[]
    * @default:
    **/
-  value: string;
+  value: string[];
 }

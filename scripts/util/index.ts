@@ -5,6 +5,7 @@ import { normalize, sep } from 'path';
 import { promisify } from 'util';
 import { TreeType } from '../interface/tree.interface';
 import { ApiDetailInterface, ApiDetailResponseParamInterface } from '../interface/api-detail.interface';
+import { AsyncResultCallback } from 'async';
 
 export function nameToDirectoryName(name: string): string {
   if (tinyPinYin.isSupported()) {
@@ -135,5 +136,30 @@ export function getPddResponseRootKey(apiInfo: ApiDetailInterface): string | voi
     limitType.includes(first.paramType)
   ) {
     return first.paramName;
+  }
+}
+
+/**
+ * 将promise转成callback形式
+ * @param promise
+ * @param callback
+ */
+export function promseToCallback<R, E = never>(promise: Promise<R>): Promise<R>;
+export function promseToCallback<R, E = never>(promise: Promise<R>, callback: AsyncResultCallback<R, E>): void;
+export function promseToCallback<R, E = never>(
+  promise: Promise<R>,
+  callback?: AsyncResultCallback<R, E>
+): Promise<R> | void {
+  if (typeof callback === 'function') {
+    promise.then(
+      response => {
+        callback(null, response);
+      },
+      err => {
+        callback(err);
+      }
+    );
+  } else {
+    return promise;
   }
 }

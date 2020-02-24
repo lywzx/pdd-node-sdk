@@ -16,10 +16,10 @@ export interface PddMallInfoStoreUpdatePostRequestInterface {
 
   /**
    * @description: 营业天数
-   * @type: string
+   * @type: number[]
    * @default:
    **/
-  business_week_list?: string;
+  business_week_list?: number[];
 
   /**
    * @description: 省市区三级地址-市

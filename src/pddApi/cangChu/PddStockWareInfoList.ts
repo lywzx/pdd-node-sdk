@@ -9,10 +9,10 @@ export const PDD_STOCK_WARE_INFO_LIST_RESPONSE_KEY = 'stock_ware_info_list_respo
 export interface PddStockWareInfoListRequestInterface {
   /**
    * @description: 货品编码集合
-   * @type: string
+   * @type: string[]
    * @default:
    **/
-  ware_sn_list?: string;
+  ware_sn_list?: string[];
 }
 
 /**

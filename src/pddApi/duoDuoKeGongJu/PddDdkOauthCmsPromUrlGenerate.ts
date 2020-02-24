@@ -16,10 +16,10 @@ export interface PddDdkOauthCmsPromUrlGenerateRequestInterface {
 
   /**
    * @description: 推广位列表，例如：["60005_612"]
-   * @type: string
+   * @type: string[]
    * @default:
    **/
-  p_id_list?: string;
+  p_id_list?: string[];
 
   /**
    * @description: 是否生成手机跳转链接。true-是，false-否，默认false

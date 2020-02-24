@@ -9,10 +9,10 @@ export const PDD_DDK_GOODS_DETAIL_RESPONSE_KEY = 'goods_detail_response';
 export interface PddDdkGoodsDetailRequestInterface {
   /**
    * @description: 商品ID，仅支持单个查询。例如：[123456]
-   * @type: string
+   * @type: string[]
    * @default:
    **/
-  goods_id_list?: string;
+  goods_id_list?: string[];
 
   /**
    * @description: 推广位id
@@ -172,10 +172,10 @@ export interface PddDdkGoodsDetailGoodsDetailResponseGoodsDetailsResponseInterfa
 
   /**
    * @description: 商品轮播图
-   * @type: string
+   * @type: string[]
    * @default:
    **/
-  goods_gallery_urls: string;
+  goods_gallery_urls: string[];
 
   /**
    * @description: 最低价sku的拼团价，单位为分
@@ -214,17 +214,17 @@ export interface PddDdkGoodsDetailGoodsDetailResponseGoodsDetailsResponseInterfa
 
   /**
    * @description: 商品标签ID
-   * @type: string
+   * @type: number[]
    * @default:
    **/
-  opt_ids: string;
+  opt_ids: number[];
 
   /**
    * @description: 商品一~四级类目ID列表
-   * @type: string
+   * @type: number[]
    * @default:
    **/
-  cat_ids: string;
+  cat_ids: number[];
 
   /**
    * @description: 优惠券门槛金额，单位为分
@@ -305,10 +305,10 @@ export interface PddDdkGoodsDetailGoodsDetailResponseGoodsDetailsResponseInterfa
 
   /**
    * @description: 服务标签: 4-送货入户并安装,5-送货入户,6-电子发票,9-坏果包赔,11-闪电退款,12-24小时发货,13-48小时发货,17-顺丰包邮,18-只换不修,19-全国联保,20-分期付款,24-极速退款,25-品质保障,26-缺重包退,27-当日发货,28-可定制化,29-预约配送,1000001-正品发票,1000002-送货入户并安装
-   * @type: string
+   * @type: number[]
    * @default:
    **/
-  service_tags: string;
+  service_tags: number[];
 
   /**
    * @description: 店铺收藏券id

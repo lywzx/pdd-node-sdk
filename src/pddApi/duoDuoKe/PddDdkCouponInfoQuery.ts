@@ -9,10 +9,10 @@ export const PDD_DDK_COUPON_INFO_QUERY_RESPONSE_KEY = 'ddk_coupon_info_query_res
 export interface PddDdkCouponInfoQueryRequestInterface {
   /**
    * @description: 优惠券id
-   * @type: string
+   * @type: string[]
    * @default:
    **/
-  coupon_ids?: string;
+  coupon_ids?: string[];
 }
 
 /**

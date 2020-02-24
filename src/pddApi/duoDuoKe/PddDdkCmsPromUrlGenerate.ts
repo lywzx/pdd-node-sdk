@@ -65,10 +65,10 @@ export interface PddDdkCmsPromUrlGenerateRequestInterface {
 
   /**
    * @description: 推广位列表，例如：["60005_612"]
-   * @type: string
+   * @type: string[]
    * @default:
    **/
-  p_id_list?: string;
+  p_id_list?: string[];
 
   /**
    * @description: 是否返回 schema URL

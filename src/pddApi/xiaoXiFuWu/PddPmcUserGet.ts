@@ -81,8 +81,8 @@ export interface PddPmcUserGetPmcUserGetResponsePmcUserResponseInterface {
 
   /**
    * @description: 用户开通的消息类型列表。如果为空表示应用开通的所有类型
-   * @type: string
+   * @type: string[]
    * @default:
    **/
-  topics: string;
+  topics: string[];
 }

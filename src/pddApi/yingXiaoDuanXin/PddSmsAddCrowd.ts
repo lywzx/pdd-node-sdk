@@ -9,10 +9,10 @@ export const PDD_SMS_ADD_CROWD_RESPONSE_KEY = 'sms_add_crowd_response';
 export interface PddSmsAddCrowdRequestInterface {
   /**
    * @description: 选自定义的时候列表存省代表的id [10]
-   * @type: string
+   * @type: string[]
    * @default:
    **/
-  location: string;
+  location: string[];
 
   /**
    * @description: 地区类型 0-不限 1-江浙沪 2-自定义

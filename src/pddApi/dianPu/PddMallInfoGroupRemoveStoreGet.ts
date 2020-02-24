@@ -16,10 +16,10 @@ export interface PddMallInfoGroupRemoveStoreGetRequestInterface {
 
   /**
    * @description: 门店ID列表
-   * @type: string
+   * @type: string[]
    * @default:
    **/
-  store_id_list?: string;
+  store_id_list?: string[];
 }
 
 /**

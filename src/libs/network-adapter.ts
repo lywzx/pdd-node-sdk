@@ -2,6 +2,7 @@ import axios, { AxiosInstance } from 'axios';
 import { PddClientOptionsInterface } from '../interfaces/pdd-client-options.interface';
 import { stringify } from 'querystring';
 import { PddException } from '../exceptions';
+import { isObject, once } from 'lodash';
 
 const axiosInstance: AxiosInstance = axios.create({});
 
@@ -32,20 +33,20 @@ export class NetworkAdapter {
   static post = createMethods('post');
   static delete = createMethods('delete');
   static put = createMethods('put');
-  static set(options: PddClientOptionsInterface): void {
+  static set = once((options: PddClientOptionsInterface) => {
     axiosInstance.defaults.baseURL = options.endpoint;
     axiosInstance.defaults.url = '';
 
     axiosInstance.interceptors.response.use(response => {
       const data = response.data;
 
-      if ('error_response' in data) {
-        throw new PddException(data.error_response as any);
+      if (isObject(data) && 'error_response' in data) {
+        throw new PddException((data as any).error_response as any);
       }
 
       return data;
     });
-  }
+  });
 }
 
 type requestFnType = (...arg: any) => Promise<any>;
