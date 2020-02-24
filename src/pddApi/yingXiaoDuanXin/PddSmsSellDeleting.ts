@@ -9,10 +9,10 @@ export const PDD_SMS_SELL_DELETING_RESPONSE_KEY = 'sms_sell_deleting_response';
 export interface PddSmsSellDeletingRequestInterface {
   /**
    * @description: 任务id
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  id?: string;
+  id?: string | number;
 }
 
 /**

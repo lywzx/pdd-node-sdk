@@ -9,10 +9,10 @@ export const PDD_GOODS_LATEST_COMMIT_STATUS_GET_RESPONSE_KEY = 'goods_latest_com
 export interface PddGoodsLatestCommitStatusGetRequestInterface {
   /**
    * @description: 商品id(不超过100个)
-   * @type: string[]
+   * @type: Array<string | number>
    * @default:
    **/
-  goods_id_list?: string[];
+  goods_id_list?: Array<string | number>;
 }
 
 /**
@@ -60,10 +60,10 @@ export interface PddGoodsLatestCommitStatusGetGoodsLatestCommitStatusGetResponse
 
   /**
    * @description: 商品id
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  goods_id: string;
+  goods_id: string | number;
 
   /**
    * @description: 驳回原因

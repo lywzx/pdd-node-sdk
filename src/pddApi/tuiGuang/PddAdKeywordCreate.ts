@@ -16,10 +16,10 @@ export interface PddAdKeywordCreateRequestInterface {
 
   /**
    * @description: 单元id
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  unit_id?: string;
+  unit_id?: string | number;
 
   /**
    * @description: [{"word":"test","bid":200}]
@@ -38,10 +38,10 @@ export interface PddAdKeywordCreateRequestInterface {
 export interface PddAdKeywordCreateKeywordsRequestInterface {
   /**
    * @description: 关键字出价（厘）范围需在0.10~99.0元区间内
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  bid?: string;
+  bid?: string | number;
 
   /**
    * @description: 关键词

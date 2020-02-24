@@ -8,10 +8,10 @@ export const PDD_STOCK_WARE_UPDATE = 'pdd.stock.ware.update';
 export interface PddStockWareUpdateRequestInterface {
   /**
    * @description: 货品id
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  id?: string;
+  id?: string | number;
 
   /**
    * @description: 类型 0:单独货品。1:组合货品
@@ -142,10 +142,10 @@ export interface PddStockWareUpdateRequestInterface {
 export interface PddStockWareUpdateWareInfosRequestInterface {
   /**
    * @description: 子货品id
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  ware_id?: string;
+  ware_id?: string | number;
 
   /**
    * @description: 子货品数量
@@ -163,8 +163,8 @@ export interface PddStockWareUpdateWareInfosRequestInterface {
 export interface PddStockWareUpdateResponseInterface {
   /**
    * @description: 货品id
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  open_api_response: string;
+  open_api_response: string | number;
 }

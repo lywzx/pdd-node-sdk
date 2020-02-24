@@ -95,17 +95,17 @@ export interface PddAdHistoryReportGetAdMallHistoryReportResponseMallHistoryRepo
 
   /**
    * @description: 广告曝光数
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  impression: string;
+  impression: string | number;
 
   /**
    * @description: 广告点击数
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  click: string;
+  click: string | number;
 
   /**
    * @description: 广告点击率
@@ -116,10 +116,10 @@ export interface PddAdHistoryReportGetAdMallHistoryReportResponseMallHistoryRepo
 
   /**
    * @description: 广告消耗,单位厘
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  spend: string;
+  spend: string | number;
 
   /**
    * @description: 点击单价，单位厘
@@ -130,17 +130,17 @@ export interface PddAdHistoryReportGetAdMallHistoryReportResponseMallHistoryRepo
 
   /**
    * @description: 广告转化支付订单数
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  order_num: string;
+  order_num: string | number;
 
   /**
    * @description: 广告转化支付金额，单位厘
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  gmv: string;
+  gmv: string | number;
 
   /**
    * @description: 日期

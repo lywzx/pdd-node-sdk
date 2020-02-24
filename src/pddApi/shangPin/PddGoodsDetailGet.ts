@@ -9,10 +9,10 @@ export const PDD_GOODS_DETAIL_GET_RESPONSE_KEY = 'goods_detail_get_response';
 export interface PddGoodsDetailGetRequestInterface {
   /**
    * @description: 1213414
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  goods_id?: string;
+  goods_id?: string | number;
 }
 
 /**
@@ -109,17 +109,17 @@ export interface PddGoodsDetailGetGoodsDetailGetResponseResponseInterface {
 
   /**
    * @description: 商品id
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  goods_id: string;
+  goods_id: string | number;
 
   /**
    * @description: 限购次数
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  buy_limit: string;
+  buy_limit: string | number;
 
   /**
    * @description: 商品轮播图列表
@@ -130,17 +130,17 @@ export interface PddGoodsDetailGetGoodsDetailGetResponseResponseInterface {
 
   /**
    * @description: 叶子类目ID
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  cat_id: string;
+  cat_id: string | number;
 
   /**
    * @description: 运费模版id
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  cost_template_id: string;
+  cost_template_id: string | number;
 
   /**
    * @description: 国家id
@@ -151,10 +151,10 @@ export interface PddGoodsDetailGetGoodsDetailGetResponseResponseInterface {
 
   /**
    * @description: 团购人数
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  customer_num: string;
+  customer_num: string | number;
 
   /**
    * @description: 商品类型：1-国内普通商品，2-进口，3-国外海淘，4-直邮 ,5-流量,6-话费,7,优惠券;8-QQ充值,9-加油卡 暂时支持1-普通商品的上架
@@ -200,10 +200,10 @@ export interface PddGoodsDetailGetGoodsDetailGetResponseResponseInterface {
 
   /**
    * @description: 市场价格，单位为分
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  market_price: string;
+  market_price: string | number;
 
   /**
    * @description: 是否预售,1-预售商品，0-非预售商品
@@ -214,24 +214,24 @@ export interface PddGoodsDetailGetGoodsDetailGetResponseResponseInterface {
 
   /**
    * @description: 预售时间
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  pre_sale_time: string;
+  pre_sale_time: string | number;
 
   /**
    * @description: 承诺发货时间（ 秒）
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  shipment_limit_second: string;
+  shipment_limit_second: string | number;
 
   /**
    * @description: 单次限量
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  order_limit: string;
+  order_limit: string | number;
 
   /**
    * @description: 是否7天无理由退换货，1-支持，0-不支持
@@ -336,17 +336,17 @@ export interface PddGoodsDetailGetGoodsDetailGetResponseResponseInterface {
 export interface PddGoodsDetailGetGoodsDetailGetResponseGoodsPropertyListResponseInterface {
   /**
    * @description: 引用属性id
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  ref_pid: string;
+  ref_pid: string | number;
 
   /**
    * @description: 模板属性Id
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  template_pid: string;
+  template_pid: string | number;
 
   /**
    * @description: 基础属性值
@@ -357,10 +357,10 @@ export interface PddGoodsDetailGetGoodsDetailGetResponseGoodsPropertyListRespons
 
   /**
    * @description: 基础属性值Id
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  vid: string;
+  vid: string | number;
 
   /**
    * @description: 属性单位
@@ -378,17 +378,17 @@ export interface PddGoodsDetailGetGoodsDetailGetResponseGoodsPropertyListRespons
 export interface PddGoodsDetailGetGoodsDetailGetResponseSkuListResponseInterface {
   /**
    * @description: sku送装参数：长度
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  length: string;
+  length: string | number;
 
   /**
    * @description: sku编码
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  sku_id: string;
+  sku_id: string | number;
 
   /**
    * @description: 上下架状态 1：上架 0 ：下架
@@ -399,38 +399,38 @@ export interface PddGoodsDetailGetGoodsDetailGetResponseSkuListResponseInterface
 
   /**
    * @description: sku购买限制
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  limit_quantity: string;
+  limit_quantity: string | number;
 
   /**
    * @description: 商品团购价格 单位分
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  multi_price: string;
+  multi_price: string | number;
 
   /**
    * @description: 商品单买价格 单位分
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  price: string;
+  price: string | number;
 
   /**
    * @description: 库存
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  quantity: string;
+  quantity: string | number;
 
   /**
    * @description: 重量，单位为g
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  weight: string;
+  weight: string | number;
 
   /**
    * @description: sku预览图
@@ -471,10 +471,10 @@ export interface PddGoodsDetailGetGoodsDetailGetResponseSkuListResponseInterface
 export interface PddGoodsDetailGetGoodsDetailGetResponseSkuListSpecResponseInterface {
   /**
    * @description: 自定义规格所属的规格ID
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  parent_id: string;
+  parent_id: string | number;
 
   /**
    * @description: 商品规格ID对应的规格名称
@@ -485,10 +485,10 @@ export interface PddGoodsDetailGetGoodsDetailGetResponseSkuListSpecResponseInter
 
   /**
    * @description: 自定义规格ID
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  spec_id: string;
+  spec_id: string | number;
 
   /**
    * @description: 自定义规格名称

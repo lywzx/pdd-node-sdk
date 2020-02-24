@@ -9,10 +9,10 @@ export const PDD_GOODS_SPEC_ID_GET_RESPONSE_KEY = 'goods_spec_id_get_response';
 export interface PddGoodsSpecIdGetRequestInterface {
   /**
    * @description: 拼多多标准规格ID，可以通过pdd.goods.spec.get接口获取
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  parent_spec_id?: string;
+  parent_spec_id?: string | number;
 
   /**
    * @description: 商家编辑的规格值，如颜色规格下设置白色属性
@@ -45,10 +45,10 @@ export interface PddGoodsSpecIdGetResponseInterface {
 export interface PddGoodsSpecIdGetGoodsSpecIdGetResponseResponseInterface {
   /**
    * @description: 自定义规格所属的规格ID
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  parent_spec_id: string;
+  parent_spec_id: string | number;
 
   /**
    * @description: 生成的自定义规格名称
@@ -59,8 +59,8 @@ export interface PddGoodsSpecIdGetGoodsSpecIdGetResponseResponseInterface {
 
   /**
    * @description: 生成的自定义规格ID
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  spec_id: string;
+  spec_id: string | number;
 }

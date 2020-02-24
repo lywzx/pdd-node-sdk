@@ -16,10 +16,10 @@ export interface PddDdkGoodsPromotionUrlGenerateRequestInterface {
 
   /**
    * @description: 商品ID，仅支持单个查询
-   * @type: string[]
+   * @type: Array<string | number>
    * @default:
    **/
-  goods_id_list?: string[];
+  goods_id_list?: Array<string | number>;
 
   /**
    * @description: 是否生成短链接，true-是，false-否
@@ -51,10 +51,10 @@ export interface PddDdkGoodsPromotionUrlGenerateRequestInterface {
 
   /**
    * @description: 招商多多客ID
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  zs_duo_id: string;
+  zs_duo_id: string | number;
 
   /**
    * @description: 是否生成小程序推广

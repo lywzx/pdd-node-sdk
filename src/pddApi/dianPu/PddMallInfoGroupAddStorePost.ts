@@ -9,17 +9,17 @@ export const PDD_MALL_INFO_GROUP_ADD_STORE_POST_RESPONSE_KEY = 'mall_info_group_
 export interface PddMallInfoGroupAddStorePostRequestInterface {
   /**
    * @description: 店铺ID
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  group_id?: string;
+  group_id?: string | number;
 
   /**
    * @description: 门店ID列表
-   * @type: string[]
+   * @type: Array<string | number>
    * @default:
    **/
-  store_id_list?: string[];
+  store_id_list?: Array<string | number>;
 }
 
 /**

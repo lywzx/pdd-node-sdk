@@ -203,31 +203,31 @@ export interface PddOrderInformationGetOrderInfoGetResponseOrderInfoResponseInte
 
   /**
    * @description: 商品一级分类
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  cat_id_1: string;
+  cat_id_1: string | number;
 
   /**
    * @description: 商品二级分类
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  cat_id_2: string;
+  cat_id_2: string | number;
 
   /**
    * @description: 商品三级分类
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  cat_id_3: string;
+  cat_id_3: string | number;
 
   /**
    * @description: 商品四级分类
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  cat_id_4: string;
+  cat_id_4: string | number;
 
   /**
    * @description: 缺货处理状态 -1:无缺货处理 0: 缺货待处理 1缺货已处理
@@ -392,10 +392,10 @@ export interface PddOrderInformationGetOrderInfoGetResponseOrderInfoResponseInte
 
   /**
    * @description: 快递公司编号
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  logistics_id: string;
+  logistics_id: string | number;
 
   /**
    * @description: 快递运单号
@@ -626,10 +626,10 @@ export interface PddOrderInformationGetOrderInfoGetResponseOrderInfoOrderDepotIn
 export interface PddOrderInformationGetOrderInfoGetResponseOrderInfoOrderDepotInfoWareSubInfoListResponseInterface {
   /**
    * @description: 子货品id
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  ware_id: string;
+  ware_id: string | number;
 
   /**
    * @description: 子货品编码
@@ -640,10 +640,10 @@ export interface PddOrderInformationGetOrderInfoGetResponseOrderInfoOrderDepotIn
 
   /**
    * @description: 子货品数量
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  ware_quantity: string;
+  ware_quantity: string | number;
 
   /**
    * @description: 子货品1编码
@@ -682,17 +682,17 @@ export interface PddOrderInformationGetOrderInfoGetResponseOrderInfoCardInfoList
 export interface PddOrderInformationGetOrderInfoGetResponseOrderInfoItemListResponseInterface {
   /**
    * @description: 商品编号
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  goods_id: string;
+  goods_id: string | number;
 
   /**
    * @description: 商品规格编码
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  sku_id: string;
+  sku_id: string | number;
 
   /**
    * @description: 商家外部编码（sku），注意：编辑商品后必须等待商品审核通过后方可生效，订单中商品信息为交易快照的商品信息。
@@ -752,10 +752,10 @@ export interface PddOrderInformationGetOrderInfoGetResponseOrderInfoItemListResp
 export interface PddOrderInformationGetOrderInfoGetResponseOrderInfoStoreInfoResponseInterface {
   /**
    * @description: 门店id
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  store_id: string;
+  store_id: string | number;
 
   /**
    * @description: 门店名称

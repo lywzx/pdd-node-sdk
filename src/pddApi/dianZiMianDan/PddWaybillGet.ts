@@ -191,10 +191,10 @@ export interface PddWaybillGetParamWaybillCloudPrintApplyNewRequestTradeOrderInf
 
   /**
    * @description: 使用者ID
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  user_id?: string;
+  user_id?: string | number;
 }
 
 /**
@@ -262,17 +262,17 @@ export interface PddWaybillGetParamWaybillCloudPrintApplyNewRequestTradeOrderInf
 
   /**
    * @description: 体积, 单位 ml
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  volume: string;
+  volume: string | number;
 
   /**
    * @description: 重量,单位 g
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  weight: string;
+  weight: string | number;
 }
 
 /**

@@ -54,8 +54,8 @@ export interface PddLogisticsTicketProblemTypeGetLogisticsProblemTypeGetResponse
 
   /**
    * @description: 问题类型id
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  id: string;
+  id: string | number;
 }

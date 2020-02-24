@@ -40,17 +40,17 @@ export interface PddAdBalanceGetAdBalanceGetResponseResponseInterface {
 
   /**
    * @description: 总余额，单位厘
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  advertiser_balance: string;
+  advertiser_balance: string | number;
 
   /**
    * @description: 店铺id
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  mall_id: string;
+  mall_id: string | number;
 }
 
 /**
@@ -68,22 +68,22 @@ export interface PddAdBalanceGetAdBalanceGetResponseAccountsBalanceResponseInter
 
   /**
    * @description: 余额
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  balance: string;
+  balance: string | number;
 
   /**
    * @description: 店铺id
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  mall_id: string;
+  mall_id: string | number;
 
   /**
    * @description: 可消费余额
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  spendable_balance: string;
+  spendable_balance: string | number;
 }

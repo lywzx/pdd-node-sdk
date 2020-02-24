@@ -9,10 +9,10 @@ export const PDD_DDK_MERCHANT_LIST_GET_RESPONSE_KEY = 'merchant_list_response';
 export interface PddDdkMerchantListGetRequestInterface {
   /**
    * @description: 商品类目ID，使用pdd.goods.cats.get接口获取
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  cat_id: string;
+  cat_id: string | number;
 
   /**
    * @description: 是否有店铺收藏券 （0 所有；1 必须有券）
@@ -30,10 +30,10 @@ export interface PddDdkMerchantListGetRequestInterface {
 
   /**
    * @description: 店铺id
-   * @type: string[]
+   * @type: Array<string | number>
    * @default:
    **/
-  mall_id_list: string[];
+  mall_id_list: Array<string | number>;
 
   /**
    * @description: 店铺类型
@@ -130,45 +130,45 @@ export interface PddDdkMerchantListGetMerchantListResponseMallSearchInfoVoListRe
 
   /**
    * @description: 店铺收藏券券面额
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  clt_cpn_discount: string;
+  clt_cpn_discount: string | number;
 
   /**
    * @description: 店铺收藏券失效时间
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  clt_cpn_end_time: string;
+  clt_cpn_end_time: string | number;
 
   /**
    * @description: 店铺收藏券使用门槛
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  clt_cpn_min_amt: string;
+  clt_cpn_min_amt: string | number;
 
   /**
    * @description: 店铺收藏券总量
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  clt_cpn_quantity: string;
+  clt_cpn_quantity: string | number;
 
   /**
    * @description: 店铺收藏券剩余量
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  clt_cpn_remain_quantity: string;
+  clt_cpn_remain_quantity: string | number;
 
   /**
    * @description: 店铺收藏券生效时间
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  clt_cpn_start_time: string;
+  clt_cpn_start_time: string | number;
 
   /**
    * @description: 描述评分
@@ -216,10 +216,10 @@ export interface PddDdkMerchantListGetMerchantListResponseMallSearchInfoVoListRe
 
   /**
    * @description: 店铺id
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  mall_id: string;
+  mall_id: string | number;
 
   /**
    * @description: 店铺名称
@@ -272,10 +272,10 @@ export interface PddDdkMerchantListGetMerchantListResponseMallSearchInfoVoListGo
 
   /**
    * @description: 商品标签，与optId一样，兼容老版本
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  category_id: string;
+  category_id: string | number;
 
   /**
    * @description: 商品标签名，与optName一样，兼容老版本
@@ -286,10 +286,10 @@ export interface PddDdkMerchantListGetMerchantListResponseMallSearchInfoVoListGo
 
   /**
    * @description: 未赋值，无用字段，兼容老版本
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  cat_id: string;
+  cat_id: string | number;
 
   /**
    * @description: 商品标签列表，与optIds一样，兼容老版本
@@ -307,87 +307,87 @@ export interface PddDdkMerchantListGetMerchantListResponseMallSearchInfoVoListGo
 
   /**
    * @description: 店铺收藏券折扣
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  clt_cpn_discount: string;
+  clt_cpn_discount: string | number;
 
   /**
    * @description: 店铺收藏券截止时间
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  clt_cpn_end_time: string;
+  clt_cpn_end_time: string | number;
 
   /**
    * @description: 店铺收藏券使用门槛
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  clt_cpn_min_amt: string;
+  clt_cpn_min_amt: string | number;
 
   /**
    * @description: 店铺收藏券总量
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  clt_cpn_quantity: string;
+  clt_cpn_quantity: string | number;
 
   /**
    * @description: 店铺收藏券剩余量
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  clt_cpn_remain_quantity: string;
+  clt_cpn_remain_quantity: string | number;
 
   /**
    * @description: 店铺收藏券起始时间
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  clt_cpn_start_time: string;
+  clt_cpn_start_time: string | number;
 
   /**
    * @description: 单品优惠券面额（单位为分）
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  coupon_discount: string;
+  coupon_discount: string | number;
 
   /**
    * @description: 单品优惠券结束时间
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  coupon_end_time: string;
+  coupon_end_time: string | number;
 
   /**
    * @description: 使用单品优惠券的门槛金额（单位为分）
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  coupon_min_order_amount: string;
+  coupon_min_order_amount: string | number;
 
   /**
    * @description: 单品优惠券剩余数量
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  coupon_remain_quantity: string;
+  coupon_remain_quantity: string | number;
 
   /**
    * @description: 单品优惠券开始时间
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  coupon_start_time: string;
+  coupon_start_time: string | number;
 
   /**
    * @description: 单品优惠券总数量
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  coupon_total_quantity: string;
+  coupon_total_quantity: string | number;
 
   /**
    * @description: cpsSign
@@ -398,10 +398,10 @@ export interface PddDdkMerchantListGetMerchantListResponseMallSearchInfoVoListGo
 
   /**
    * @description: 创建时间
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  create_at: string;
+  create_at: string | number;
 
   /**
    * @description: 店铺近30天申请售后率
@@ -426,10 +426,10 @@ export interface PddDdkMerchantListGetMerchantListResponseMallSearchInfoVoListGo
 
   /**
    * @description: 商品评价数
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  goods_eval_count: string;
+  goods_eval_count: string | number;
 
   /**
    * @description: 商品详情图
@@ -440,10 +440,10 @@ export interface PddDdkMerchantListGetMerchantListResponseMallSearchInfoVoListGo
 
   /**
    * @description: 商品id
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  goods_id: string;
+  goods_id: string | number;
 
   /**
    * @description: 商品主图
@@ -496,17 +496,17 @@ export interface PddDdkMerchantListGetMerchantListResponseMallSearchInfoVoListGo
 
   /**
    * @description: 店铺折扣券失效时间
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  mall_coupon_end_time: string;
+  mall_coupon_end_time: string | number;
 
   /**
    * @description: 店铺折扣券Id
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  mall_coupon_id: string;
+  mall_coupon_id: string | number;
 
   /**
    * @description: 店铺券减免上限金额（单位为分）
@@ -524,24 +524,24 @@ export interface PddDdkMerchantListGetMerchantListResponseMallSearchInfoVoListGo
 
   /**
    * @description: 店铺折扣券余量
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  mall_coupon_remain_quantity: string;
+  mall_coupon_remain_quantity: string | number;
 
   /**
    * @description: 店铺折扣券生效时间
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  mall_coupon_start_time: string;
+  mall_coupon_start_time: string | number;
 
   /**
    * @description: 店铺折扣券总量
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  mall_coupon_total_quantity: string;
+  mall_coupon_total_quantity: string | number;
 
   /**
    * @description: 商品所在店铺是否开通全店推广 0：否，1：是
@@ -552,10 +552,10 @@ export interface PddDdkMerchantListGetMerchantListResponseMallSearchInfoVoListGo
 
   /**
    * @description: 店铺id
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  mall_id: string;
+  mall_id: string | number;
 
   /**
    * @description: 店铺名称
@@ -580,24 +580,24 @@ export interface PddDdkMerchantListGetMerchantListResponseMallSearchInfoVoListGo
 
   /**
    * @description: 商品最小成团价（单位为分）
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  min_group_price: string;
+  min_group_price: string | number;
 
   /**
    * @description: 商品单买价（单位为分）
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  min_normal_price: string;
+  min_normal_price: string | number;
 
   /**
    * @description: 商品标签
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  opt_id: string;
+  opt_id: string | number;
 
   /**
    * @description: 商品标签列表
@@ -615,10 +615,10 @@ export interface PddDdkMerchantListGetMerchantListResponseMallSearchInfoVoListGo
 
   /**
    * @description: 单品推广佣金
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  promotion_rate: string;
+  promotion_rate: string | number;
 
   /**
    * @description: 销量
@@ -650,38 +650,38 @@ export interface PddDdkMerchantListGetMerchantListResponseMallSearchInfoVoListGo
 export interface PddDdkMerchantListGetMerchantListResponseMallSearchInfoVoListMallCouponInfoListResponseInterface {
   /**
    * @description: 店铺券失效时间
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  coupon_end_time: string;
+  coupon_end_time: string | number;
 
   /**
    * @description: 店铺折扣券ID
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  coupon_id: string;
+  coupon_id: string | number;
 
   /**
    * @description: 店铺券总量
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  coupon_quantity: string;
+  coupon_quantity: string | number;
 
   /**
    * @description: 店铺券剩余量
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  coupon_remain_quantity: string;
+  coupon_remain_quantity: string | number;
 
   /**
    * @description: 店铺券生效时间
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  coupon_start_time: string;
+  coupon_start_time: string | number;
 
   /**
    * @description: 店铺折扣券类型
@@ -699,10 +699,10 @@ export interface PddDdkMerchantListGetMerchantListResponseMallSearchInfoVoListMa
 
   /**
    * @description: 店铺id
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  mall_id: string;
+  mall_id: string | number;
 
   /**
    * @description: 店铺券减免上限金额（单位为分）

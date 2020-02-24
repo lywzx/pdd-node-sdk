@@ -23,17 +23,17 @@ export interface PddPromotionMerchantCouponListGetRequestInterface {
 
   /**
    * @description: 批次开始时间（范围开始）
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  batch_start_time_from: string;
+  batch_start_time_from: string | number;
 
   /**
    * @description: 批次开始时间（范围结束）
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  batch_start_time_to: string;
+  batch_start_time_to: string | number;
 
   /**
    * @description: 批次状态	1 领取中，2 已领完，3 已结束
@@ -95,10 +95,10 @@ export interface PddPromotionMerchantCouponListGetMerchantCouponBatchListRespons
 export interface PddPromotionMerchantCouponListGetMerchantCouponBatchListResponseCouponBatchListResponseInterface {
   /**
    * @description: 批次ID
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  id: string;
+  id: string | number;
 
   /**
    * @description: 批次名
@@ -123,52 +123,52 @@ export interface PddPromotionMerchantCouponListGetMerchantCouponBatchListRespons
 
   /**
    * @description: 折扣参数，为请求中传入的discount_amount，表示折扣金额，单位: 分
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  discount_param: string;
+  discount_param: string | number;
 
   /**
    * @description: 初始数量
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  init_quantity: string;
+  init_quantity: string | number;
 
   /**
    * @description: 剩余数量
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  remain_quantity: string;
+  remain_quantity: string | number;
 
   /**
    * @description: 已使用数量
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  used_quantity: string;
+  used_quantity: string | number;
 
   /**
    * @description: 用户限领张数，-1 代表不限制
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  user_limit: string;
+  user_limit: string | number;
 
   /**
    * @description: 最大折扣金额
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  max_discount_amount: string;
+  max_discount_amount: string | number;
 
   /**
    * @description: 券有效时长
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  duration: string;
+  duration: string | number;
 
   /**
    * @description: 券有效期时长的单位，0 代表天，2 代表小时
@@ -179,17 +179,17 @@ export interface PddPromotionMerchantCouponListGetMerchantCouponBatchListRespons
 
   /**
    * @description: 批次开始时间
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  batch_start_time: string;
+  batch_start_time: string | number;
 
   /**
    * @description: 批次结束时间
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  batch_end_time: string;
+  batch_end_time: string | number;
 
   /**
    * @description: 券来源类型，16 店铺直接领券，41 店铺精选评价优惠券，66 商家短信营销优惠券
@@ -228,8 +228,8 @@ export interface PddPromotionMerchantCouponListGetMerchantCouponBatchListRespons
 
   /**
    * @description: 批次创建时间
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  created_at: string;
+  created_at: string | number;
 }

@@ -54,10 +54,10 @@ export interface PddLogisticsCompaniesGetLogisticsCompaniesGetResponseLogisticsC
 
   /**
    * @description: 快递公司编码
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  id: string;
+  id: string | number;
 
   /**
    * @description: 快递公司名称

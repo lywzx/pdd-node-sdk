@@ -16,10 +16,10 @@ export interface PddAdUnitGetByPlanIdRequestInterface {
 
   /**
    * @description: 计划id
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  plan_id?: string;
+  plan_id?: string | number;
 }
 
 /**
@@ -60,17 +60,17 @@ export interface PddAdUnitGetByPlanIdAdUnitBaseInfoListResponseResponseInterface
 export interface PddAdUnitGetByPlanIdAdUnitBaseInfoListResponseUnitBaseInfoListResponseInterface {
   /**
    * @description: 关键词个数
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  keyword_count: string;
+  keyword_count: string | number;
 
   /**
    * @description: 商品id
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  goods_id: string;
+  goods_id: string | number;
 
   /**
    * @description: 单元状态。1表示推广中，2表示手动暂停，3表示商品售罄，4表示商品下架，5表示限制推广，6表示已删除，7表示审核中，8表示无推广中创意，9表示审核驳回，10表示品牌词重审驳回
@@ -81,8 +81,8 @@ export interface PddAdUnitGetByPlanIdAdUnitBaseInfoListResponseUnitBaseInfoListR
 
   /**
    * @description: 单元id
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  unit_id: string;
+  unit_id: string | number;
 }

@@ -16,10 +16,10 @@ export interface PddAdQueryLocationBidListRequestInterface {
 
   /**
    * @description: 单元id
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  unit_id?: string;
+  unit_id?: string | number;
 }
 
 /**
@@ -45,10 +45,10 @@ export interface PddAdQueryLocationBidListResponseInterface {
 export interface PddAdQueryLocationBidListOpenApiResponseResponseInterface {
   /**
    * @description: 店铺收藏数
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  mall_fav_num: string;
+  mall_fav_num: string | number;
 
   /**
    * @description: 千次展现成本
@@ -66,17 +66,17 @@ export interface PddAdQueryLocationBidListOpenApiResponseResponseInterface {
 
   /**
    * @description: 广告转化支付金额，单位厘
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  gmv: string;
+  gmv: string | number;
 
   /**
    * @description: 广告转化支付订单数
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  order_num: string;
+  order_num: string | number;
 
   /**
    * @description: 点击单价，单位厘
@@ -87,10 +87,10 @@ export interface PddAdQueryLocationBidListOpenApiResponseResponseInterface {
 
   /**
    * @description: 广告消耗,单位厘
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  spend: string;
+  spend: string | number;
 
   /**
    * @description: 广告点击率
@@ -129,8 +129,8 @@ export interface PddAdQueryLocationBidListOpenApiResponseResponseInterface {
 
   /**
    * @description: 资源位ID（基础流量包没有ID）
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  location_bid_id: string;
+  location_bid_id: string | number;
 }

@@ -9,10 +9,10 @@ export const PDD_SMS_SELL_SETTING_RECORD_CANCEL_RESPONSE_KEY = 'sms_sell_setting
 export interface PddSmsSellSettingRecordCancelRequestInterface {
   /**
    * @description: 任务id
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  id?: string;
+  id?: string | number;
 }
 
 /**

@@ -23,10 +23,10 @@ export interface PddInvoiceDetailUploadRequestInterface {
 
   /**
    * @description: 申请流水号
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  application_id?: string;
+  application_id?: string | number;
 
   /**
    * @description: 抬头类型：0-个人，1-企业
@@ -51,17 +51,17 @@ export interface PddInvoiceDetailUploadRequestInterface {
 
   /**
    * @description: 开票金额，整数，单位：分
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  invoice_amount?: string;
+  invoice_amount?: string | number;
 
   /**
    * @description: 不含税金额，整数，单位：分
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  sum_price?: string;
+  sum_price?: string | number;
 
   /**
    * @description: 税号，企业必填
@@ -121,10 +121,10 @@ export interface PddInvoiceDetailUploadRequestInterface {
 
   /**
    * @description: 开票日期,时间戳（毫秒）
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  invoice_time?: string;
+  invoice_time?: string | number;
 
   /**
    * @description: 发票内容，pdf文件，转码base64编码

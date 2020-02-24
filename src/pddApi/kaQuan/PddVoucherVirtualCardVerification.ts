@@ -38,10 +38,10 @@ export interface PddVoucherVirtualCardVerificationVoucherDataListRequestInterfac
 
   /**
    * @description: 券状态更改时间
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  voucher_time?: string;
+  voucher_time?: string | number;
 
   /**
    * @description: 券状态 1：已核销；2：已销毁
@@ -88,24 +88,24 @@ export interface PddVoucherVirtualCardVerificationVoucherVoucherInfoVerifyRespon
 
   /**
    * @description: 商品id
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  goods_id: string;
+  goods_id: string | number;
 
   /**
    * @description: 商品属性id
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  sku_id: string;
+  sku_id: string | number;
 
   /**
    * @description: 店铺id
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  mall_id: string;
+  mall_id: string | number;
 
   /**
    * @description: 券信息数组
@@ -159,8 +159,8 @@ export interface PddVoucherVirtualCardVerificationVoucherVoucherInfoVerifyRespon
 
   /**
    * @description: 验证处
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  verification_at: string;
+  verification_at: string | number;
 }

@@ -91,17 +91,17 @@ export interface PddWaybillUpdateParamWaybillCloudPrintUpdateRequestPackageInfoR
 
   /**
    * @description: 体积
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  volume: string;
+  volume: string | number;
 
   /**
    * @description: 重量
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  weight: string;
+  weight: string | number;
 }
 
 /**

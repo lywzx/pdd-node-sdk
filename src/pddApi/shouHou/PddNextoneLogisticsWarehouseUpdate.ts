@@ -23,10 +23,10 @@ export interface PddNextoneLogisticsWarehouseUpdateRequestInterface {
 export interface PddNextoneLogisticsWarehouseUpdateRequestRequestInterface {
   /**
    * @description: 售后id
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  after_sales_id?: string;
+  after_sales_id?: string | number;
 
   /**
    * @description: 操作时间
@@ -102,10 +102,10 @@ export interface PddNextoneLogisticsWarehouseUpdateResponseResponseInterface {
 export interface PddNextoneLogisticsWarehouseUpdateResponseResultResponseInterface {
   /**
    * @description: after_sales_id
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  after_sales_id: string;
+  after_sales_id: string | number;
 
   /**
    * @description: order_sn

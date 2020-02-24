@@ -38,38 +38,38 @@ export interface PddAdHistoryRtReportGetResponseInterface {
 export interface PddAdHistoryRtReportGetAdMallRealTimeReportResponseResponseInterface {
   /**
    * @description: 广告曝光数
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  ad_impr_num: string;
+  ad_impr_num: string | number;
 
   /**
    * @description: 广告点击数
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  ad_clk_num: string;
+  ad_clk_num: string | number;
 
   /**
    * @description: 广告消耗
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  spend: string;
+  spend: string | number;
 
   /**
    * @description: 广告转化支付订单数
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  pay_order_num: string;
+  pay_order_num: string | number;
 
   /**
    * @description: 广告转化支付金额
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  pay_gmv: string;
+  pay_gmv: string | number;
 
   /**
    * @description: 投入产出比

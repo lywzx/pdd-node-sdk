@@ -9,10 +9,10 @@ export const PDD_SMS_CROWDS_PEOPLE_NUMBER_QUERY_RESPONSE_KEY = 'sms_crows_people
 export interface PddSmsCrowdsPeopleNumberQueryRequestInterface {
   /**
    * @description: 人群id
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  crowd_id: string;
+  crowd_id: string | number;
 
   /**
    * @description: //0-全部 1-江浙沪 2-自定义
@@ -23,10 +23,10 @@ export interface PddSmsCrowdsPeopleNumberQueryRequestInterface {
 
   /**
    * @description: [1,34] //  //选自定义的时候列表存省代表的id
-   * @type: string[]
+   * @type: Array<string | number>
    * @default:
    **/
-  location: string[];
+  location: Array<string | number>;
 
   /**
    * @description: //0-全部 1-男 2-女
@@ -37,45 +37,45 @@ export interface PddSmsCrowdsPeopleNumberQueryRequestInterface {
 
   /**
    * @description: 店铺有购买天数
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  purchase_days: string;
+  purchase_days: string | number;
 
   /**
    * @description: 店铺无购买天数
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  none_purchase_days: string;
+  none_purchase_days: string | number;
 
   /**
    * @description: 收藏物品天数
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  goods_favor_days: string;
+  goods_favor_days: string | number;
 
   /**
    * @description: 收藏店铺天数
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  mall_favor_days: string;
+  mall_favor_days: string | number;
 
   /**
    * @description: 历史订单成交次数
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  min_order_count: string;
+  min_order_count: string | number;
 
   /**
    * @description: 历史订单成交次数
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  max_order_count: string;
+  max_order_count: string | number;
 
   /**
    * @description: 第一次购买时间
@@ -93,10 +93,10 @@ export interface PddSmsCrowdsPeopleNumberQueryRequestInterface {
 
   /**
    * @description: 店铺有访问天数
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  mall_visit_days: string;
+  mall_visit_days: string | number;
 }
 
 /**
@@ -122,15 +122,15 @@ export interface PddSmsCrowdsPeopleNumberQueryResponseInterface {
 export interface PddSmsCrowdsPeopleNumberQuerySmsCrowsPeopleNumberQueryResponseResponseInterface {
   /**
    * @description: 筛选人数
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  object_num: string;
+  object_num: string | number;
 
   /**
    * @description: 短信余量
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  remain: string;
+  remain: string | number;
 }

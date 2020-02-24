@@ -16,10 +16,10 @@ export interface PddAdHistoryRtUnitReportGetRequestInterface {
 
   /**
    * @description: 计划id
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  plan_id?: string;
+  plan_id?: string | number;
 }
 
 /**
@@ -67,24 +67,24 @@ export interface PddAdHistoryRtUnitReportGetAdUnitRealTimeReportResponseUnitReal
 
   /**
    * @description: 计划id
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  plan_id: string;
+  plan_id: string | number;
 
   /**
    * @description: 单元id
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  unit_id: string;
+  unit_id: string | number;
 
   /**
    * @description: 商品id
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  goods_id: string;
+  goods_id: string | number;
 
   /**
    * @description: 1：已启用，2：未启用
@@ -109,17 +109,17 @@ export interface PddAdHistoryRtUnitReportGetAdUnitRealTimeReportResponseUnitReal
 
   /**
    * @description: 最小团购价
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  min_group_price: string;
+  min_group_price: string | number;
 
   /**
    * @description: 最大团购价
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  max_group_price: string;
+  max_group_price: string | number;
 
   /**
    * @description: 广告投资回报率
@@ -137,17 +137,17 @@ export interface PddAdHistoryRtUnitReportGetAdUnitRealTimeReportResponseUnitReal
 
   /**
    * @description: 广告曝光数
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  impression: string;
+  impression: string | number;
 
   /**
    * @description: 广告点击数
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  click: string;
+  click: string | number;
 
   /**
    * @description: 广告点击率
@@ -158,10 +158,10 @@ export interface PddAdHistoryRtUnitReportGetAdUnitRealTimeReportResponseUnitReal
 
   /**
    * @description: 广告消耗,单位厘
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  spend: string;
+  spend: string | number;
 
   /**
    * @description: 点击单价，单位厘
@@ -172,17 +172,17 @@ export interface PddAdHistoryRtUnitReportGetAdUnitRealTimeReportResponseUnitReal
 
   /**
    * @description: 广告转化支付订单数
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  order_num: string;
+  order_num: string | number;
 
   /**
    * @description: 广告转化支付金额，单位厘
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  gmv: string;
+  gmv: string | number;
 
   /**
    * @description: 日期

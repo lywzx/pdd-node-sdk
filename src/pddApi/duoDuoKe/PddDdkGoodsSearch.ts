@@ -16,10 +16,10 @@ export interface PddDdkGoodsSearchRequestInterface {
 
   /**
    * @description: 商品标签类目ID，使用pdd.goods.opt.get获取
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  opt_id: string;
+  opt_id: string | number;
 
   /**
    * @description: 默认值1，商品分页数
@@ -58,17 +58,17 @@ export interface PddDdkGoodsSearchRequestInterface {
 
   /**
    * @description: 商品类目ID，使用pdd.goods.cats.get接口获取
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  cat_id: string;
+  cat_id: string | number;
 
   /**
    * @description: 商品ID列表。例如：[123456,123]，当入参带有goods_id_list字段，将不会以opt_id、 cat_id、keyword维度筛选商品
-   * @type: string[]
+   * @type: Array<string | number>
    * @default:
    **/
-  goods_id_list: string[];
+  goods_id_list: Array<string | number>;
 
   /**
    * @description: 店铺类型，1-个人，2-企业，3-旗舰店，4-专卖店，5-专营店，6-普通店（未传为全部）
@@ -172,10 +172,10 @@ export interface PddDdkGoodsSearchGoodsSearchResponseGoodsListResponseInterface 
 
   /**
    * @description: 店铺券id
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  mall_coupon_id: string;
+  mall_coupon_id: string | number;
 
   /**
    * @description: 店铺券折扣
@@ -200,45 +200,45 @@ export interface PddDdkGoodsSearchGoodsSearchResponseGoodsListResponseInterface 
 
   /**
    * @description: 店铺券总量
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  mall_coupon_total_quantity: string;
+  mall_coupon_total_quantity: string | number;
 
   /**
    * @description: 店铺券余量
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  mall_coupon_remain_quantity: string;
+  mall_coupon_remain_quantity: string | number;
 
   /**
    * @description: 店铺券开始使用时间
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  mall_coupon_start_time: string;
+  mall_coupon_start_time: string | number;
 
   /**
    * @description: 店铺券结束使用时间
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  mall_coupon_end_time: string;
+  mall_coupon_end_time: string | number;
 
   /**
    * @description: 创建时间（unix时间戳）
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  create_at: string;
+  create_at: string | number;
 
   /**
    * @description: 商品id
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  goods_id: string;
+  goods_id: string | number;
 
   /**
    * @description: 商品名称
@@ -277,17 +277,17 @@ export interface PddDdkGoodsSearchGoodsSearchResponseGoodsListResponseInterface 
 
   /**
    * @description: 最小拼团价（单位为分）
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  min_group_price: string;
+  min_group_price: string | number;
 
   /**
    * @description: 最小单买价格（单位为分）
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  min_normal_price: string;
+  min_normal_price: string | number;
 
   /**
    * @description: 店铺名字
@@ -305,10 +305,10 @@ export interface PddDdkGoodsSearchGoodsSearchResponseGoodsListResponseInterface 
 
   /**
    * @description: 商品类目ID，使用pdd.goods.cats.get接口获取
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  category_id: string;
+  category_id: string | number;
 
   /**
    * @description: 商品类目名
@@ -319,10 +319,10 @@ export interface PddDdkGoodsSearchGoodsSearchResponseGoodsListResponseInterface 
 
   /**
    * @description: 商品标签ID，使用pdd.goods.opts.get接口获取
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  opt_id: string;
+  opt_id: string | number;
 
   /**
    * @description: 商品标签名
@@ -333,17 +333,17 @@ export interface PddDdkGoodsSearchGoodsSearchResponseGoodsListResponseInterface 
 
   /**
    * @description: 商品标签id
-   * @type: string[]
+   * @type: Array<string | number>
    * @default:
    **/
-  opt_ids: string[];
+  opt_ids: Array<string | number>;
 
   /**
    * @description: 商品类目id
-   * @type: string[]
+   * @type: Array<string | number>
    * @default:
    **/
-  cat_ids: string[];
+  cat_ids: Array<string | number>;
 
   /**
    * @description: 该商品所在店铺是否参与全店推广，0：否，1：是
@@ -361,59 +361,59 @@ export interface PddDdkGoodsSearchGoodsSearchResponseGoodsListResponseInterface 
 
   /**
    * @description: 优惠券门槛价格，单位为分
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  coupon_min_order_amount: string;
+  coupon_min_order_amount: string | number;
 
   /**
    * @description: 优惠券面额，单位为分
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  coupon_discount: string;
+  coupon_discount: string | number;
 
   /**
    * @description: 优惠券总数量
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  coupon_total_quantity: string;
+  coupon_total_quantity: string | number;
 
   /**
    * @description: 优惠券剩余数量
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  coupon_remain_quantity: string;
+  coupon_remain_quantity: string | number;
 
   /**
    * @description: 优惠券生效时间，UNIX时间戳
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  coupon_start_time: string;
+  coupon_start_time: string | number;
 
   /**
    * @description: 优惠券失效时间，UNIX时间戳
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  coupon_end_time: string;
+  coupon_end_time: string | number;
 
   /**
    * @description: 佣金比例，千分比
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  promotion_rate: string;
+  promotion_rate: string | number;
 
   /**
    * @description: 商品评价数量
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  goods_eval_count: string;
+  goods_eval_count: string | number;
 
   /**
    * @description: 已售卖件数
@@ -431,10 +431,10 @@ export interface PddDdkGoodsSearchGoodsSearchResponseGoodsListResponseInterface 
 
   /**
    * @description: 服务标签: 4-送货入户并安装,5-送货入户,6-电子发票,9-坏果包赔,11-闪电退款,12-24小时发货,13-48小时发货,17-顺丰包邮,18-只换不修,19-全国联保,20-分期付款,24-极速退款,25-品质保障,26-缺重包退,27-当日发货,28-可定制化,29-预约配送,1000001-正品发票,1000002-送货入户并安装
-   * @type: string[]
+   * @type: Array<string | number>
    * @default:
    **/
-  service_tags: string[];
+  service_tags: Array<string | number>;
 
   /**
    * @description: 店铺收藏券id
@@ -445,45 +445,45 @@ export interface PddDdkGoodsSearchGoodsSearchResponseGoodsListResponseInterface 
 
   /**
    * @description: 店铺收藏券起始时间
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  clt_cpn_start_time: string;
+  clt_cpn_start_time: string | number;
 
   /**
    * @description: 店铺收藏券截止时间
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  clt_cpn_end_time: string;
+  clt_cpn_end_time: string | number;
 
   /**
    * @description: 店铺收藏券总量
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  clt_cpn_quantity: string;
+  clt_cpn_quantity: string | number;
 
   /**
    * @description: 店铺收藏券剩余量
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  clt_cpn_remain_quantity: string;
+  clt_cpn_remain_quantity: string | number;
 
   /**
    * @description: 店铺收藏券面额，单位为分
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  clt_cpn_discount: string;
+  clt_cpn_discount: string | number;
 
   /**
    * @description: 店铺收藏券使用门槛价格，单位为分
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  clt_cpn_min_amt: string;
+  clt_cpn_min_amt: string | number;
 
   /**
    * @description: 描述分
@@ -515,10 +515,10 @@ export interface PddDdkGoodsSearchGoodsSearchResponseGoodsListResponseInterface 
 
   /**
    * @description: 招商团长id
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  zs_duo_id: string;
+  zs_duo_id: string | number;
 
   /**
    * @description: 快手专享

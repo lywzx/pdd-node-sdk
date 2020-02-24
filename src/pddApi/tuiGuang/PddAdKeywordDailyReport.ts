@@ -8,10 +8,10 @@ export const PDD_AD_KEYWORD_DAILY_REPORT = 'pdd.ad.keyword.daily.report';
 export interface PddAdKeywordDailyReportRequestInterface {
   /**
    * @description:
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  unit_id?: string;
+  unit_id?: string | number;
 
   /**
    * @description: 0:搜索广告

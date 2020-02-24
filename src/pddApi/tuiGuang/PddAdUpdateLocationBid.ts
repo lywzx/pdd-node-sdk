@@ -16,10 +16,10 @@ export interface PddAdUpdateLocationBidRequestInterface {
 
   /**
    * @description: 单元ID
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  unit_id?: string;
+  unit_id?: string | number;
 
   /**
    * @description:
@@ -45,10 +45,10 @@ export interface PddAdUpdateLocationBidLocationBidListRequestInterface {
 
   /**
    * @description: 资源位id
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  location_bid_id?: string;
+  location_bid_id?: string | number;
 }
 
 /**

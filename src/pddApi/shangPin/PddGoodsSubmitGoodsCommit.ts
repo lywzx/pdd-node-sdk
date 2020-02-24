@@ -16,10 +16,10 @@ export interface PddGoodsSubmitGoodsCommitRequestInterface {
 
   /**
    * @description: 限购次数
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  buy_limit: string;
+  buy_limit: string | number;
 
   /**
    * @description: 商品轮播图，按次序上传，图片格式支持JPEG/JPG/PNG， 图片尺寸长宽比1：1且尺寸不低于480px，图片大小最高1MB
@@ -45,17 +45,17 @@ export interface PddGoodsSubmitGoodsCommitRequestInterface {
 
   /**
    * @description: 叶子类目ID
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  cat_id?: string;
+  cat_id?: string | number;
 
   /**
    * @description: 物流运费模板ID，可使用pdd.logistics.template.get获取
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  cost_template_id?: string;
+  cost_template_id?: string | number;
 
   /**
    * @description: 国家ID，0-中国，暂时只传0（普通商品）
@@ -66,10 +66,10 @@ export interface PddGoodsSubmitGoodsCommitRequestInterface {
 
   /**
    * @description: 团购人数
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  customer_num: string;
+  customer_num: string | number;
 
   /**
    * @description: 海关名称，只在goods_type为直供商品时有效（现阶段暂不支持）
@@ -107,10 +107,10 @@ export interface PddGoodsSubmitGoodsCommitRequestInterface {
 
   /**
    * @description: 草稿id
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  goods_commit_id?: string;
+  goods_commit_id?: string | number;
 
   /**
    * @description: 商品描述， 字数限制：20-500，例如，新包装，保证产品的口感和新鲜度。单颗独立小包装，双重营养，1斤家庭分享装，更实惠新疆一级骏枣夹核桃仁。
@@ -121,10 +121,10 @@ export interface PddGoodsSubmitGoodsCommitRequestInterface {
 
   /**
    * @description: 1213414
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  goods_id?: string;
+  goods_id?: string | number;
 
   /**
    * @description: 商品标题，例如，新疆特产 红满疆枣夹核桃500g
@@ -211,10 +211,10 @@ export interface PddGoodsSubmitGoodsCommitRequestInterface {
 
   /**
    * @description: 市场价格，单位为分
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  market_price?: string;
+  market_price?: string | number;
 
   /**
    * @description: 0:提交， 1：保存（默认提交）
@@ -225,10 +225,10 @@ export interface PddGoodsSubmitGoodsCommitRequestInterface {
 
   /**
    * @description: 单次限量
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  order_limit: string;
+  order_limit: string | number;
 
   /**
    * @description: 原产地id，是指海淘商品的生产地址，仅在goods type=3/4的时候必填，可以通过pdd.goods.country.get获取
@@ -269,10 +269,10 @@ export interface PddGoodsSubmitGoodsCommitRequestInterface {
 
   /**
    * @description: 预售时间，is_pre_sale为1时必传，UNIX时间戳
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  pre_sale_time: string;
+  pre_sale_time: string | number;
 
   /**
    * @description: 0：不支持全国联保；1：支持全国联保
@@ -297,10 +297,10 @@ export interface PddGoodsSubmitGoodsCommitRequestInterface {
 
   /**
    * @description: 承诺发货时间（ 秒），48小时或24小时，is_pre_sale为1时不必传
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  shipment_limit_second?: string;
+  shipment_limit_second?: string | number;
 
   /**
    * @description: sku对象列表,实例：[{
@@ -383,10 +383,10 @@ export interface PddGoodsSubmitGoodsCommitRequestInterface {
 export interface PddGoodsSubmitGoodsCommitCarouselVideoRequestInterface {
   /**
    * @description: 商品视频id
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  file_id: string;
+  file_id: string | number;
 
   /**
    * @description: 商品视频url
@@ -404,10 +404,10 @@ export interface PddGoodsSubmitGoodsCommitCarouselVideoRequestInterface {
 export interface PddGoodsSubmitGoodsCommitElecGoodsAttributesRequestInterface {
   /**
    * @description: 开始时间（timeType=1时必填表示核销的开始时间）（精确到毫秒）
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  begin_time: string;
+  begin_time: string | number;
 
   /**
    * @description: 天数内有效（timeType=3必填，表示发货后几天内核销）
@@ -418,10 +418,10 @@ export interface PddGoodsSubmitGoodsCommitElecGoodsAttributesRequestInterface {
 
   /**
    * @description: 截止时间（timeType=1,2时必填，表示发货后核销的截止时间）（精确到毫秒）
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  end_time: string;
+  end_time: string | number;
 
   /**
    * @description: 卡券核销类型（1：起始时间内有效，2：发货后后至截止时间内有效，3：发货后多少天内有效）
@@ -460,24 +460,24 @@ export interface PddGoodsSubmitGoodsCommitGoodsPropertiesRequestInterface {
 
   /**
    * @description: 父属性id，非销售属性不用传
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  parent_spec_id: string;
+  parent_spec_id: string | number;
 
   /**
    * @description: 属性id，非销售属性不用传
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  spec_id: string;
+  spec_id: string | number;
 
   /**
    * @description: 模板属性id
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  template_pid: string;
+  template_pid: string | number;
 
   /**
    * @description: 属性值
@@ -495,10 +495,10 @@ export interface PddGoodsSubmitGoodsCommitGoodsPropertiesRequestInterface {
 
   /**
    * @description: 属性值id
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  vid: string;
+  vid: string | number;
 }
 
 /**
@@ -581,24 +581,24 @@ export interface PddGoodsSubmitGoodsCommitSkuListRequestInterface {
 
   /**
    * @description: sku送装参数：长度
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  length: string;
+  length: string | number;
 
   /**
    * @description: sku购买限制，只入参999
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  limit_quantity?: string;
+  limit_quantity?: string | number;
 
   /**
    * @description: 商品团购价格
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  multi_price?: string;
+  multi_price?: string | number;
 
   /**
    * @description: 商品sku外部编码
@@ -617,24 +617,24 @@ export interface PddGoodsSubmitGoodsCommitSkuListRequestInterface {
 
   /**
    * @description: 商品单买价格
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  price?: string;
+  price?: string | number;
 
   /**
    * @description: 商品sku库存初始数量，后续库存update只使用stocks.update接口进行调用
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  quantity?: string;
+  quantity?: string | number;
 
   /**
    * @description: 商品规格列表，根据pdd.goods.spec.id.get生成的规格属性id，例如：颜色规格下商家新增白色和黑色，大小规格下商家新增L和XL，则由4种spec组合，入参一种组合即可，在skulist中需要有4个spec组合的sku
-   * @type: string[]
+   * @type: Array<string | number>
    * @default:
    **/
-  spec_id_list?: string[];
+  spec_id_list?: Array<string | number>;
 
   /**
    * @description: sku预览图，预览图尺寸：等宽高，且高度不低于480px，现已支持1M大小，越清晰越好卖，SKU预览图格式：仅支持JPG,PNG格式
@@ -645,10 +645,10 @@ export interface PddGoodsSubmitGoodsCommitSkuListRequestInterface {
 
   /**
    * @description: 重量，单位为g
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  weight?: string;
+  weight?: string | number;
 }
 
 /**
@@ -702,15 +702,15 @@ export interface PddGoodsSubmitGoodsCommitResponseInterface {
 export interface PddGoodsSubmitGoodsCommitGoodsUpdateResponseResponseInterface {
   /**
    * @description: 提交申请的序列id
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  goods_commit_id: string;
+  goods_commit_id: string | number;
 
   /**
    * @description: 商品id
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  goods_id: string;
+  goods_id: string | number;
 }

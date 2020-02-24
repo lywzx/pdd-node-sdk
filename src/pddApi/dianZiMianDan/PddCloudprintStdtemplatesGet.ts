@@ -111,8 +111,8 @@ export interface PddCloudprintStdtemplatesGetPddCloudprintStdtemplatesGetRespons
 
   /**
    * @description: 标准模板id
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  standard_template_id: string;
+  standard_template_id: string | number;
 }

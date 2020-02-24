@@ -31,17 +31,17 @@ export interface PddAdKeywordUpdateRequestInterface {
 export interface PddAdKeywordUpdateKeywordsRequestInterface {
   /**
    * @description: 关键字出价（厘）范围需在0.10~99.0元区间内
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  bid?: string;
+  bid?: string | number;
 
   /**
    * @description: 关键词id
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  keyword_id?: string;
+  keyword_id?: string | number;
 }
 
 /**

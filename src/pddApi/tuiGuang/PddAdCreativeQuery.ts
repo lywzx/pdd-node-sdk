@@ -9,10 +9,10 @@ export const PDD_AD_CREATIVE_QUERY_RESPONSE_KEY = 'open_api_response';
 export interface PddAdCreativeQueryRequestInterface {
   /**
    * @description: 单元id
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  unit_id?: string;
+  unit_id?: string | number;
 
   /**
    * @description: 格式："yyyy-MM-dd" 时区："GMT+8"
@@ -73,17 +73,17 @@ export interface PddAdCreativeQueryOpenApiResponseResponseInterface {
 
   /**
    * @description: 广告转化支付金额，单位厘
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  gmv: string;
+  gmv: string | number;
 
   /**
    * @description: 广告转化支付订单数
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  order_num: string;
+  order_num: string | number;
 
   /**
    * @description: 点击单价，单位厘
@@ -94,10 +94,10 @@ export interface PddAdCreativeQueryOpenApiResponseResponseInterface {
 
   /**
    * @description: 广告消耗,单位厘
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  spend: string;
+  spend: string | number;
 
   /**
    * @description: 广告点击率
@@ -129,17 +129,17 @@ export interface PddAdCreativeQueryOpenApiResponseResponseInterface {
 
   /**
    * @description: 销量
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  sold_quantity: string;
+  sold_quantity: string | number;
 
   /**
    * @description: 最小团购价
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  min_group_price: string;
+  min_group_price: string | number;
 
   /**
    * @description: 广告主操作状态：1-有效，2-暂停
@@ -171,10 +171,10 @@ export interface PddAdCreativeQueryOpenApiResponseResponseInterface {
 
   /**
    * @description: 图片id
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  image_id: string;
+  image_id: string | number;
 
   /**
    * @description: 标题
@@ -185,8 +185,8 @@ export interface PddAdCreativeQueryOpenApiResponseResponseInterface {
 
   /**
    * @description: 创意id
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  creative_id: string;
+  creative_id: string | number;
 }

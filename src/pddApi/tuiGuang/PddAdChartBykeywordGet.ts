@@ -52,10 +52,10 @@ export interface PddAdChartBykeywordGetResponseInterface {
 export interface PddAdChartBykeywordGetAdKeywordDailyReportResponseResponseInterface {
   /**
    * @description: 返回的关键词报表总条数
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  total_count: string;
+  total_count: string | number;
 
   /**
    * @description: 数据报表对象
@@ -97,24 +97,24 @@ export interface PddAdChartBykeywordGetAdKeywordDailyReportResponseKeywordDailyR
 
   /**
    * @description: 点击量数据
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  click_num: string;
+  click_num: string | number;
 
   /**
    * @description: 展现量数据
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  impression_num: string;
+  impression_num: string | number;
 
   /**
    * @description: 广告花费，单位为分
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  spend: string;
+  spend: string | number;
 }
 
 /**
@@ -125,31 +125,31 @@ export interface PddAdChartBykeywordGetAdKeywordDailyReportResponseKeywordDailyR
 export interface PddAdChartBykeywordGetAdKeywordDailyReportResponseKeywordDailyReportListConversionResponseInterface {
   /**
    * @description: 总推广订单数
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  total_order_num: string;
+  total_order_num: string | number;
 
   /**
    * @description: 总推广订单金额
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  total_gmv: string;
+  total_gmv: string | number;
 
   /**
    * @description: 直接发生购买转化的订单总销售金额，单位为分
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  direct_gmv: string;
+  direct_gmv: string | number;
 
   /**
    * @description: 直接发生购买转化的订单数
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  direct_order_num: string;
+  direct_order_num: string | number;
 }
 
 /**

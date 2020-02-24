@@ -16,10 +16,10 @@ export interface PddLogisticsOnlineSendRequestInterface {
 
   /**
    * @description: 快递公司编号
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  logistics_id?: string;
+  logistics_id?: string | number;
 
   /**
    * @description: 订单号。形如：20150909-452750051

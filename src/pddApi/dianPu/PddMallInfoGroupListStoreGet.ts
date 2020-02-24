@@ -9,10 +9,10 @@ export const PDD_MALL_INFO_GROUP_LIST_STORE_GET_RESPONSE_KEY = 'mall_info_group_
 export interface PddMallInfoGroupListStoreGetRequestInterface {
   /**
    * @description: 门店组ID
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  group_id?: string;
+  group_id?: string | number;
 
   /**
    * @description: 分页页码
@@ -116,10 +116,10 @@ export interface PddMallInfoGroupListStoreGetMallInfoGroupListStoreGetResponseMa
 
   /**
    * @description: 门店ID
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  storeId: string;
+  storeId: string | number;
 
   /**
    * @description: 店铺名称

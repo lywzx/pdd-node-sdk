@@ -53,10 +53,10 @@ export interface PddDdkCouponInfoQueryDdkCouponInfoQueryResponseResponseInterfac
 export interface PddDdkCouponInfoQueryDdkCouponInfoQueryResponseListResponseInterface {
   /**
    * @description: 优惠券结束时间
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  coupon_end_time: string;
+  coupon_end_time: string | number;
 
   /**
    * @description: 优惠券id
@@ -67,10 +67,10 @@ export interface PddDdkCouponInfoQueryDdkCouponInfoQueryResponseListResponseInte
 
   /**
    * @description: 优惠券开始时间
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  coupon_start_time: string;
+  coupon_start_time: string | number;
 
   /**
    * @description: 优惠券类型
@@ -81,22 +81,22 @@ export interface PddDdkCouponInfoQueryDdkCouponInfoQueryResponseListResponseInte
 
   /**
    * @description: 优惠券面额 单位：厘
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  discount: string;
+  discount: string | number;
 
   /**
    * @description: 优惠券总量
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  init_quantity: string;
+  init_quantity: string | number;
 
   /**
    * @description: 优惠券剩余数量
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  remain_quantity: string;
+  remain_quantity: string | number;
 }

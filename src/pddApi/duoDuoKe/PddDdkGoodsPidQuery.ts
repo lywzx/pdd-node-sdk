@@ -60,10 +60,10 @@ export interface PddDdkGoodsPidQueryPIdQueryResponseResponseInterface {
 
   /**
    * @description: 返回推广位总数
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  total_count: string;
+  total_count: string | number;
 }
 
 /**
@@ -74,10 +74,10 @@ export interface PddDdkGoodsPidQueryPIdQueryResponseResponseInterface {
 export interface PddDdkGoodsPidQueryPIdQueryResponsePIdListResponseInterface {
   /**
    * @description: 推广位生成时间
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  create_time: string;
+  create_time: string | number;
 
   /**
    * @description: 推广位名称

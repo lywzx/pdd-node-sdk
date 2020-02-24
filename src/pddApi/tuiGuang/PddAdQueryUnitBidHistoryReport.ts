@@ -16,17 +16,17 @@ export interface PddAdQueryUnitBidHistoryReportRequestInterface {
 
   /**
    * @description: 单元id ，分天查询时必填
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  unit_id: string;
+  unit_id: string | number;
 
   /**
    * @description: 计划id
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  plan_id: string;
+  plan_id: string | number;
 
   /**
    * @description: 数据聚合方式（1 - 日期，2 - 实体 Id）
@@ -44,10 +44,10 @@ export interface PddAdQueryUnitBidHistoryReportRequestInterface {
 
   /**
    * @description: 分天查询时必填 兴趣点ID，targetType不为6/7时，传 0
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  sub_level_target_id: string;
+  sub_level_target_id: string | number;
 
   /**
    * @description: 定向类型列表。汇总报销必填。多个定向以英文逗号隔开，值所代表的含义参见target_type字段
@@ -147,10 +147,10 @@ export interface PddAdQueryUnitBidHistoryReportOpenApiResponseResponseInterface 
 
   /**
    * @description: 总数
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  total: string;
+  total: string | number;
 }
 
 /**
@@ -161,10 +161,10 @@ export interface PddAdQueryUnitBidHistoryReportOpenApiResponseResponseInterface 
 export interface PddAdQueryUnitBidHistoryReportOpenApiResponseResultResponseInterface {
   /**
    * @description: 店铺关注数
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  mall_fav_num: string;
+  mall_fav_num: string | number;
 
   /**
    * @description: 千次展现成本
@@ -182,17 +182,17 @@ export interface PddAdQueryUnitBidHistoryReportOpenApiResponseResultResponseInte
 
   /**
    * @description: 广告转化支付金额，单位厘
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  gmv: string;
+  gmv: string | number;
 
   /**
    * @description: 广告转化支付订单数
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  order_num: string;
+  order_num: string | number;
 
   /**
    * @description: 点击单价，单位厘
@@ -203,10 +203,10 @@ export interface PddAdQueryUnitBidHistoryReportOpenApiResponseResultResponseInte
 
   /**
    * @description: 广告消耗,单位厘
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  spend: string;
+  spend: string | number;
 
   /**
    * @description: 广告点击率
@@ -252,10 +252,10 @@ export interface PddAdQueryUnitBidHistoryReportOpenApiResponseResultResponseInte
 
   /**
    * @description: targetType值为6时表示兴趣点ID，targetType值为7时表示人群包ID，targetType值为8时表示地域ID。分天查询时该字段无值
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  sub_level_target_id: string;
+  sub_level_target_id: string | number;
 
   /**
    * @description: 定向类型
@@ -266,29 +266,29 @@ export interface PddAdQueryUnitBidHistoryReportOpenApiResponseResultResponseInte
 
   /**
    * @description: 定向id
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  target_id: string;
+  target_id: string | number;
 
   /**
    * @description: 单元id
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  unit_id: string;
+  unit_id: string | number;
 
   /**
    * @description: 计划id
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  plan_id: string;
+  plan_id: string | number;
 
   /**
    * @description: 广告主ID
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  mall_id: string;
+  mall_id: string | number;
 }

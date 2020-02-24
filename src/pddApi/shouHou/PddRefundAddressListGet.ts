@@ -61,10 +61,10 @@ export interface PddRefundAddressListGetRefundAddressListGetResponseRefundAddres
 
   /**
    * @description: 退货地址ID
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  id: string;
+  id: string | number;
 
   /**
    * @description: 退货地址
@@ -89,10 +89,10 @@ export interface PddRefundAddressListGetRefundAddressListGetResponseRefundAddres
 
   /**
    * @description: 店铺ID
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  mall_id: string;
+  mall_id: string | number;
 
   /**
    * @description: 是否为默认退货地址

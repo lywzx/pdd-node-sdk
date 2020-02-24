@@ -8,10 +8,10 @@ export const PDD_AD_CREATIVE_UPDATE = 'pdd.ad.creative.update';
 export interface PddAdCreativeUpdateRequestInterface {
   /**
    * @description:
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  creative_id?: string;
+  creative_id?: string | number;
 
   /**
    * @description: 0:搜索广告

@@ -17,17 +17,17 @@ export interface PddAdUnitCreateRequestInterface {
 
   /**
    * @description: 计划id
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  plan_id?: string;
+  plan_id?: string | number;
 
   /**
    * @description: 商品id
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  goods_id?: string;
+  goods_id?: string | number;
 
   /**
    * @description: [{"word":"test","bid":200}]
@@ -47,10 +47,10 @@ export interface PddAdUnitCreateRequestInterface {
 
   /**
    * @description: 通投单元出价，单位厘，出价需在0.10~99.0元区间内。展示推广必填
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  bid: string;
+  bid: string | number;
 }
 
 /**
@@ -61,10 +61,10 @@ export interface PddAdUnitCreateRequestInterface {
 export interface PddAdUnitCreateKeywordsRequestInterface {
   /**
    * @description: 关键字出价（厘）范围需在0.10~99.0元区间内
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  bid?: string;
+  bid?: string | number;
 
   /**
    * @description: 关键词
@@ -118,10 +118,10 @@ export interface PddAdUnitCreateResponseInterface {
 export interface PddAdUnitCreateAdUnitCreateResponseResponseInterface {
   /**
    * @description: 单元id
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  unit_id: string;
+  unit_id: string | number;
 
   /**
    * @description: 是否成功

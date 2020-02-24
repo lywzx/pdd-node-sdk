@@ -9,10 +9,10 @@ export const PDD_INVOICE_APPLICATION_UPDATE_RESPONSE_KEY = 'invoice_application_
 export interface PddInvoiceApplicationUpdateRequestInterface {
   /**
    * @description: 申请流水号
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  application_id?: string;
+  application_id?: string | number;
 
   /**
    * @description: 订单号

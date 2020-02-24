@@ -9,17 +9,17 @@ export const PDD_STOCK_GOODS_ID_TO_SKU_QUERY_RESPONSE_KEY = 'open_api_response';
 export interface PddStockGoodsIdToSkuQueryRequestInterface {
   /**
    * @description: 商品id
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  goods_id?: string;
+  goods_id?: string | number;
 
   /**
    * @description: 货品id
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  ware_id?: string;
+  ware_id?: string | number;
 }
 
 /**
@@ -67,24 +67,24 @@ export interface PddStockGoodsIdToSkuQueryOpenApiResponseResponseInterface {
 export interface PddStockGoodsIdToSkuQueryOpenApiResponseSkusResponseInterface {
   /**
    * @description: 商品id
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  goods_id: string;
+  goods_id: string | number;
 
   /**
    * @description: sku_id
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  sku_id: string;
+  sku_id: string | number;
 
   /**
    * @description: 货品id
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  ware_id: string;
+  ware_id: string | number;
 
   /**
    * @description: 是否已经绑定货品false/true
@@ -117,10 +117,10 @@ export interface PddStockGoodsIdToSkuQueryOpenApiResponseSkusResponseInterface {
 export interface PddStockGoodsIdToSkuQueryOpenApiResponseSkusSpecsResponseInterface {
   /**
    * @description: 规格id
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  spec_id: string;
+  spec_id: string | number;
 
   /**
    * @description: 规格名称

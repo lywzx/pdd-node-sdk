@@ -60,10 +60,10 @@ export interface PddStockWareInfoListStockWareInfoListResponseWareListResponseIn
 
   /**
    * @description: 货品ID
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  ware_id: string;
+  ware_id: string | number;
 
   /**
    * @description: 是否删除

@@ -38,10 +38,10 @@ export interface PddAdQueryLocationBidPvListResponseInterface {
 export interface PddAdQueryLocationBidPvListOpenApiResponseResponseInterface {
   /**
    * @description: 日均可竞流量
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  location_pv: string;
+  location_pv: string | number;
 
   /**
    * @description: 资源位类型描述

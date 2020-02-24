@@ -9,10 +9,10 @@ export const PDD_GOODS_OUTER_CAT_MAPPING_GET_RESPONSE_KEY = 'outer_cat_mapping_g
 export interface PddGoodsOuterCatMappingGetRequestInterface {
   /**
    * @description: 外部叶子类目id
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  outer_cat_id?: string;
+  outer_cat_id?: string | number;
 
   /**
    * @description: 外部叶子类目名称
@@ -52,29 +52,29 @@ export interface PddGoodsOuterCatMappingGetResponseInterface {
 export interface PddGoodsOuterCatMappingGetOuterCatMappingGetResponseResponseInterface {
   /**
    * @description: 一级类目
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  cat_id1: string;
+  cat_id1: string | number;
 
   /**
    * @description: 二级类目
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  cat_id2: string;
+  cat_id2: string | number;
 
   /**
    * @description: 三级类目
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  cat_id3: string;
+  cat_id3: string | number;
 
   /**
    * @description: 四级类目
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  cat_id4: string;
+  cat_id4: string | number;
 }

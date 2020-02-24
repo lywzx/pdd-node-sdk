@@ -29,10 +29,10 @@ export interface PddErpOrderSyncRequestInterface {
 
   /**
    * @description: 物流公司编码
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  logistics_id?: string;
+  logistics_id?: string | number;
 }
 
 /**
@@ -50,10 +50,10 @@ export interface PddErpOrderSyncResponseInterface {
 
   /**
    * @description: 错误代码
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  error_code: string;
+  error_code: string | number;
 
   /**
    * @description: 错误参数

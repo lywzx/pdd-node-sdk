@@ -9,10 +9,10 @@ export const PDD_GOODS_CPS_UNIT_DELETE_RESPONSE_KEY = 'goods_cps_unit_delete_res
 export interface PddGoodsCpsUnitDeleteRequestInterface {
   /**
    * @description: 商品id
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  goods_id?: string;
+  goods_id?: string | number;
 }
 
 /**

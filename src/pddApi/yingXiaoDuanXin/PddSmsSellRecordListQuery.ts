@@ -84,10 +84,10 @@ export interface PddSmsSellRecordListQuerySmsSellRecordListQueryResponseResponse
 export interface PddSmsSellRecordListQuerySmsSellRecordListQueryResponseResultResponseInterface {
   /**
    * @description: 删除用的id
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  id: string;
+  id: string | number;
 
   /**
    * @description: 任务名称
@@ -105,10 +105,10 @@ export interface PddSmsSellRecordListQuerySmsSellRecordListQueryResponseResultRe
 
   /**
    * @description: 计划时间
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  send_time: string;
+  send_time: string | number;
 
   /**
    * @description: 发送状态

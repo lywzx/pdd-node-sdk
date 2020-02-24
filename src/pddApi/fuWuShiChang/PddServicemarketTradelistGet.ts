@@ -95,10 +95,10 @@ export interface PddServicemarketTradelistGetMallBalanceFlowSearchResponseRespon
 export interface PddServicemarketTradelistGetMallBalanceFlowSearchResponseDataResponseInterface {
   /**
    * @description: 交易金额，单位分
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  amount: string;
+  amount: string | number;
 
   /**
    * @description: 流水类目名称，1-交易收入，2-优惠券结算，3-退款，4-提现，5-技术服务费，7-扣款
@@ -116,10 +116,10 @@ export interface PddServicemarketTradelistGetMallBalanceFlowSearchResponseDataRe
 
   /**
    * @description: 交易流水号
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  flow_id: string;
+  flow_id: string | number;
 
   /**
    * @description: 资金流向，1-收入，2-支出

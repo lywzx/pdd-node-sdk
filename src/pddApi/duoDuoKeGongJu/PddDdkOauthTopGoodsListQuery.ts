@@ -67,10 +67,10 @@ export interface PddDdkOauthTopGoodsListQueryTopGoodsListGetResponseResponseInte
 
   /**
    * @description: 返回商品总数
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  total: string;
+  total: string | number;
 
   /**
    * @description: 搜索id
@@ -88,10 +88,10 @@ export interface PddDdkOauthTopGoodsListQueryTopGoodsListGetResponseResponseInte
 export interface PddDdkOauthTopGoodsListQueryTopGoodsListGetResponseListResponseInterface {
   /**
    * @description: 商品id
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  goods_id: string;
+  goods_id: string | number;
 
   /**
    * @description: 商品名称
@@ -130,24 +130,24 @@ export interface PddDdkOauthTopGoodsListQueryTopGoodsListGetResponseListResponse
 
   /**
    * @description: 已售卖件数
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  sales_tip: string;
+  sales_tip: string | number;
 
   /**
    * @description: 最小拼团价（单位为分）
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  min_group_price: string;
+  min_group_price: string | number;
 
   /**
    * @description: 最小单买价格（单位为分）
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  min_normal_price: string;
+  min_normal_price: string | number;
 
   /**
    * @description: 店铺名字
@@ -165,10 +165,10 @@ export interface PddDdkOauthTopGoodsListQueryTopGoodsListGetResponseListResponse
 
   /**
    * @description: 商品类目ID，使用pdd.goods.cats.get接口获取
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  category_id: string;
+  category_id: string | number;
 
   /**
    * @description: 商品类目名
@@ -179,10 +179,10 @@ export interface PddDdkOauthTopGoodsListQueryTopGoodsListGetResponseListResponse
 
   /**
    * @description: 商品标签ID，使用pdd.goods.opts.get接口获取
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  opt_id: string;
+  opt_id: string | number;
 
   /**
    * @description: 商品标签名
@@ -193,17 +193,17 @@ export interface PddDdkOauthTopGoodsListQueryTopGoodsListGetResponseListResponse
 
   /**
    * @description: 商品标签id
-   * @type: string[]
+   * @type: Array<string | number>
    * @default:
    **/
-  opt_ids: string[];
+  opt_ids: Array<string | number>;
 
   /**
    * @description: 商品类目id
-   * @type: string[]
+   * @type: Array<string | number>
    * @default:
    **/
-  cat_ids: string[];
+  cat_ids: Array<string | number>;
 
   /**
    * @description: 该商品所在店铺是否参与全店推广，0：否，1：是
@@ -221,59 +221,59 @@ export interface PddDdkOauthTopGoodsListQueryTopGoodsListGetResponseListResponse
 
   /**
    * @description: 优惠券门槛价格，单位为分
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  coupon_min_order_amount: string;
+  coupon_min_order_amount: string | number;
 
   /**
    * @description: 优惠券面额，单位为分
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  coupon_discount: string;
+  coupon_discount: string | number;
 
   /**
    * @description: 优惠券总数量
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  coupon_total_quantity: string;
+  coupon_total_quantity: string | number;
 
   /**
    * @description: 优惠券剩余数量
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  coupon_remain_quantity: string;
+  coupon_remain_quantity: string | number;
 
   /**
    * @description: 优惠券生效时间，UNIX时间戳
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  coupon_start_time: string;
+  coupon_start_time: string | number;
 
   /**
    * @description: 优惠券失效时间，UNIX时间戳
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  coupon_end_time: string;
+  coupon_end_time: string | number;
 
   /**
    * @description: 佣金比例，千分比
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  promotion_rate: string;
+  promotion_rate: string | number;
 
   /**
    * @description: 商品评价数量
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  goods_eval_count: string;
+  goods_eval_count: string | number;
 
   /**
    * @description: 描述分

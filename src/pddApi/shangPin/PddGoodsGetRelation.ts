@@ -9,10 +9,10 @@ export const PDD_GOODS_GET_RELATION_RESPONSE_KEY = 'query_goods_relation_respons
 export interface PddGoodsGetRelationRequestInterface {
   /**
    * @description: 拼多多商品id
-   * @type: string[]
+   * @type: Array<string | number>
    * @default:
    **/
-  pdd_goods_id?: string[];
+  pdd_goods_id?: Array<string | number>;
 }
 
 /**
@@ -38,10 +38,10 @@ export interface PddGoodsGetRelationResponseInterface {
 export interface PddGoodsGetRelationQueryGoodsRelationResponseResponseInterface {
   /**
    * @description: 拼多多商品id
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  pdd_goods_id: string;
+  pdd_goods_id: string | number;
 
   /**
    * @description: 外部平台枚举值， 淘宝/天猫 0，京东1，1688 2，唯品会3，苏宁4，亚马逊,5，网易6，其他7

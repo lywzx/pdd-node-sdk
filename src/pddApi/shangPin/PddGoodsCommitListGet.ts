@@ -16,10 +16,10 @@ export interface PddGoodsCommitListGetRequestInterface {
 
   /**
    * @description: 商品id
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  goods_id: string;
+  goods_id: string | number;
 
   /**
    * @description: 页码，最多不超过100
@@ -67,10 +67,10 @@ export interface PddGoodsCommitListGetGoodsCommitListGetResponseResponseInterfac
 
   /**
    * @description: total
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  total: string;
+  total: string | number;
 }
 
 /**
@@ -81,17 +81,17 @@ export interface PddGoodsCommitListGetGoodsCommitListGetResponseResponseInterfac
 export interface PddGoodsCommitListGetGoodsCommitListGetResponseListResponseInterface {
   /**
    * @description: 草稿id
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  commit_id: string;
+  commit_id: string | number;
 
   /**
    * @description: 商品id
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  goods_id: string;
+  goods_id: string | number;
 
   /**
    * @description: 商家编码

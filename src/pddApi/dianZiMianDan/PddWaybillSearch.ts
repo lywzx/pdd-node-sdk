@@ -82,10 +82,10 @@ export interface PddWaybillSearchPddWaybillSearchResponseWaybillApplySubscriptio
 export interface PddWaybillSearchPddWaybillSearchResponseWaybillApplySubscriptionColsBranchAccountColsResponseInterface {
   /**
    * @description: 已用面单数量
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  allocated_quantity: string;
+  allocated_quantity: string | number;
 
   /**
    * @description: 网点Code
@@ -103,24 +103,24 @@ export interface PddWaybillSearchPddWaybillSearchResponseWaybillApplySubscriptio
 
   /**
    * @description: 取消的面单总数
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  cancel_quantity: string;
+  cancel_quantity: string | number;
 
   /**
    * @description: 电子面单余额数量
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  quantity: string;
+  quantity: string | number;
 
   /**
    * @description: 已回收用面单数量
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  recycled_quantity: string;
+  recycled_quantity: string | number;
 
   /**
    * @description: 服务类型列表

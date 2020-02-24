@@ -16,10 +16,10 @@ export interface PddAdKeywordDeleteRequestInterface {
 
   /**
    * @description: keyword_id列表，[1,2]
-   * @type: string[]
+   * @type: Array<string | number>
    * @default:
    **/
-  keyword_ids?: string[];
+  keyword_ids?: Array<string | number>;
 }
 
 /**

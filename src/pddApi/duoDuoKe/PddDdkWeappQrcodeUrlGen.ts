@@ -16,10 +16,10 @@ export interface PddDdkWeappQrcodeUrlGenRequestInterface {
 
   /**
    * @description: 商品ID，仅支持单个查询
-   * @type: string[]
+   * @type: Array<string | number>
    * @default:
    **/
-  goods_id_list?: string[];
+  goods_id_list?: Array<string | number>;
 
   /**
    * @description: 自定义参数，为链接打上自定义标签。自定义参数最长限制64个字节。
@@ -30,10 +30,10 @@ export interface PddDdkWeappQrcodeUrlGenRequestInterface {
 
   /**
    * @description: 招商多多客ID
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  zs_duo_id: string;
+  zs_duo_id: string | number;
 
   /**
    * @description: 是否生成店铺收藏券推广链接

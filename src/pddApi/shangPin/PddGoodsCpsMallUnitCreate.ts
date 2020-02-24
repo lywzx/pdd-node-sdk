@@ -8,10 +8,10 @@ export const PDD_GOODS_CPS_MALL_UNIT_CREATE = 'pdd.goods.cps.mall.unit.create';
 export interface PddGoodsCpsMallUnitCreateRequestInterface {
   /**
    * @description: 佣金比（千分比）
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  rate?: string;
+  rate?: string | number;
 
   /**
    * @description: 合作方code

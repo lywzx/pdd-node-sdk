@@ -53,10 +53,10 @@ export interface PddLogisticsCsHistoryMessageGetLogisticsCsHistoryMessageGetResp
 export interface PddLogisticsCsHistoryMessageGetLogisticsCsHistoryMessageGetResponseMessageInfosResponseInterface {
   /**
    * @description: 消息id
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  id: string;
+  id: string | number;
 
   /**
    * @description: 消息时间戳,样式YYYY-MM-DD HH:MM:SS

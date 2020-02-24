@@ -67,10 +67,10 @@ export interface PddDdkThemeListGetThemeListGetResponseResponseInterface {
 export interface PddDdkThemeListGetThemeListGetResponseThemeListResponseInterface {
   /**
    * @description: 主题ID
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  id: string;
+  id: string | number;
 
   /**
    * @description: 主题图片
@@ -88,8 +88,8 @@ export interface PddDdkThemeListGetThemeListGetResponseThemeListResponseInterfac
 
   /**
    * @description: 主题包含的商品数量
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  goods_num: string;
+  goods_num: string | number;
 }

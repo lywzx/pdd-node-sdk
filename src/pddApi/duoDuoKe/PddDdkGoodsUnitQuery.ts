@@ -9,17 +9,17 @@ export const PDD_DDK_GOODS_UNIT_QUERY_RESPONSE_KEY = 'ddk_goods_unit_query_respo
 export interface PddDdkGoodsUnitQueryRequestInterface {
   /**
    * @description: 商品id
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  goods_id?: string;
+  goods_id?: string | number;
 
   /**
    * @description: 招商duoId
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  zs_duo_id: string;
+  zs_duo_id: string | number;
 }
 
 /**
@@ -45,10 +45,10 @@ export interface PddDdkGoodsUnitQueryResponseInterface {
 export interface PddDdkGoodsUnitQueryDdkGoodsUnitQueryResponseResponseInterface {
   /**
    * @description: 优惠券结束时间，单位：秒
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  coupon_end_time: string;
+  coupon_end_time: string | number;
 
   /**
    * @description: 优惠券id
@@ -59,10 +59,10 @@ export interface PddDdkGoodsUnitQueryDdkGoodsUnitQueryResponseResponseInterface 
 
   /**
    * @description: 优惠券开始时间，单位：秒
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  coupon_start_time: string;
+  coupon_start_time: string | number;
 
   /**
    * @description: 优惠券面额，单位：厘
@@ -73,10 +73,10 @@ export interface PddDdkGoodsUnitQueryDdkGoodsUnitQueryResponseResponseInterface 
 
   /**
    * @description: 优惠券总数量
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  init_quantity: string;
+  init_quantity: string | number;
 
   /**
    * @description: 商品的佣金比例，单位：千分位，比如100，表示10%
@@ -87,10 +87,10 @@ export interface PddDdkGoodsUnitQueryDdkGoodsUnitQueryResponseResponseInterface 
 
   /**
    * @description: 优惠券剩余数量
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  remain_quantity: string;
+  remain_quantity: string | number;
 
   /**
    * @description: 商品的推广计划类型，1-通用推广，2-专属推广，3-招商推广，4-全店推广

@@ -9,17 +9,17 @@ export const PDD_DDK_ALL_ORDER_LIST_INCREMENT_GET_RESPONSE_KEY = 'order_list_get
 export interface PddDdkAllOrderListIncrementGetRequestInterface {
   /**
    * @description: 最近90天内多多进宝商品订单更新时间--查询时间开始。note：此时间为时间戳，指格林威治时间 1970 年01 月 01 日 00 时 00 分 00 秒(北京时间 1970 年 01 月 01 日 08 时 00 分 00 秒)起至现在的总秒数
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  start_update_time?: string;
+  start_update_time?: string | number;
 
   /**
    * @description: 查询结束时间，和开始时间相差不能超过24小时。note：此时间为时间戳，指格林威治时间 1970 年01 月 01 日 00 时 00 分 00 秒(北京时间 1970 年 01 月 01 日 08 时 00 分 00 秒)起至现在的总秒数
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  end_update_time?: string;
+  end_update_time?: string | number;
 
   /**
    * @description: 返回的每页结果订单数，默认为100，范围为10到100，建议使用40~50，可以提高成功率，减少超时数量。
@@ -67,10 +67,10 @@ export interface PddDdkAllOrderListIncrementGetOrderListGetResponseResponseInter
 
   /**
    * @description: 请求到的结果数
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  total_count: string;
+  total_count: string | number;
 }
 
 /**
@@ -81,31 +81,31 @@ export interface PddDdkAllOrderListIncrementGetOrderListGetResponseResponseInter
 export interface PddDdkAllOrderListIncrementGetOrderListGetResponseOrderListResponseInterface {
   /**
    * @description: 审核时间
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  order_verify_time: string;
+  order_verify_time: string | number;
 
   /**
    * @description: 支付时间
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  order_pay_time: string;
+  order_pay_time: string | number;
 
   /**
    * @description: 成团时间
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  order_group_success_time: string;
+  order_group_success_time: string | number;
 
   /**
    * @description: 最后更新时间
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  order_modify_at: string;
+  order_modify_at: string | number;
 
   /**
    * @description: 订单状态描述
@@ -130,45 +130,45 @@ export interface PddDdkAllOrderListIncrementGetOrderListGetResponseOrderListResp
 
   /**
    * @description: 佣金金额，单位为分
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  promotion_amount: string;
+  promotion_amount: string | number;
 
   /**
    * @description: 佣金比例，千分比
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  promotion_rate: string;
+  promotion_rate: string | number;
 
   /**
    * @description: 订单生成时间，UNIX时间戳
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  order_create_time: string;
+  order_create_time: string | number;
 
   /**
    * @description: 实际支付金额，单位为分
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  order_amount: string;
+  order_amount: string | number;
 
   /**
    * @description: 订单中sku的单件价格，单位为分
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  goods_price: string;
+  goods_price: string | number;
 
   /**
    * @description: 购买商品的数量
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  goods_quantity: string;
+  goods_quantity: string | number;
 
   /**
    * @description: 商品缩略图
@@ -186,10 +186,10 @@ export interface PddDdkAllOrderListIncrementGetOrderListGetResponseOrderListResp
 
   /**
    * @description: 商品ID
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  goods_id: string;
+  goods_id: string | number;
 
   /**
    * @description: 推广订单编号

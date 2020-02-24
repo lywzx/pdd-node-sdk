@@ -8,10 +8,10 @@ export const PDD_STOCK_WARE_DELETE = 'pdd.stock.ware.delete';
 export interface PddStockWareDeleteRequestInterface {
   /**
    * @description: 货品id
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  ware_id?: string;
+  ware_id?: string | number;
 }
 
 /**

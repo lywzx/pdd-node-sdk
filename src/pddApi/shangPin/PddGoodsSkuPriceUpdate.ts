@@ -9,10 +9,10 @@ export const PDD_GOODS_SKU_PRICE_UPDATE_RESPONSE_KEY = 'goods_update_sku_price_r
 export interface PddGoodsSkuPriceUpdateRequestInterface {
   /**
    * @description: 商品id
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  goods_id?: string;
+  goods_id?: string | number;
 
   /**
    * @description: 待修改的sku价格
@@ -24,10 +24,10 @@ export interface PddGoodsSkuPriceUpdateRequestInterface {
 
   /**
    * @description: 市场价 （单位分）
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  market_price: string;
+  market_price: string | number;
 
   /**
    * @description: 市场价 （单位元）
@@ -59,24 +59,24 @@ export interface PddGoodsSkuPriceUpdateSkuPriceListRequestInterface {
 
   /**
    * @description: 单独购买价格（单位分）
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  single_price?: string;
+  single_price?: string | number;
 
   /**
    * @description: 拼团购买价格（单位分）
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  group_price?: string;
+  group_price?: string | number;
 
   /**
    * @description: sku标识
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  sku_id?: string;
+  sku_id?: string | number;
 }
 
 /**

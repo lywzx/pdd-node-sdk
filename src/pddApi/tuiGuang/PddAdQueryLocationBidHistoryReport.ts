@@ -16,17 +16,17 @@ export interface PddAdQueryLocationBidHistoryReportRequestInterface {
 
   /**
    * @description: 分天数据查询时必填 单元Id
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  unit_id: string;
+  unit_id: string | number;
 
   /**
    * @description: 计划ID
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  planId: string;
+  planId: string | number;
 
   /**
    * @description: 分天数据查询时必填，资源位类型。0表示基础流量包，1表示类目商品页，2表示商品详情页，3表示营销活动页，4表示店铺关注页，5表示订单评价页，6表示优选活动页
@@ -140,10 +140,10 @@ export interface PddAdQueryLocationBidHistoryReportOpenApiResponseResponseInterf
 
   /**
    * @description: 总数
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  total: string;
+  total: string | number;
 }
 
 /**
@@ -154,10 +154,10 @@ export interface PddAdQueryLocationBidHistoryReportOpenApiResponseResponseInterf
 export interface PddAdQueryLocationBidHistoryReportOpenApiResponseResultResponseInterface {
   /**
    * @description: 店铺关注数
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  mall_fav_num: string;
+  mall_fav_num: string | number;
 
   /**
    * @description: 千次展现成本
@@ -175,17 +175,17 @@ export interface PddAdQueryLocationBidHistoryReportOpenApiResponseResultResponse
 
   /**
    * @description: 广告转化支付金额，单位厘
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  gmv: string;
+  gmv: string | number;
 
   /**
    * @description: 广告转化支付订单数
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  order_num: string;
+  order_num: string | number;
 
   /**
    * @description: 点击单价，单位厘
@@ -196,10 +196,10 @@ export interface PddAdQueryLocationBidHistoryReportOpenApiResponseResultResponse
 
   /**
    * @description: 广告消耗,单位厘
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  spend: string;
+  spend: string | number;
 
   /**
    * @description: 广告点击率
@@ -238,10 +238,10 @@ export interface PddAdQueryLocationBidHistoryReportOpenApiResponseResultResponse
 
   /**
    * @description: 资源位ID。汇总报表查询时该字段才有值
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  location_id: string;
+  location_id: string | number;
 
   /**
    * @description: 分天数据查询时必填，资源位类型。0表示基础流量包，1表示类目商品页，2表示商品详情页，3表示营销活动页，4表示店铺关注页，5表示订单评价页，6表示优选活动页
@@ -252,22 +252,22 @@ export interface PddAdQueryLocationBidHistoryReportOpenApiResponseResultResponse
 
   /**
    * @description: 单元ID
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  unit_id: string;
+  unit_id: string | number;
 
   /**
    * @description: 计划id
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  plan_id: string;
+  plan_id: string | number;
 
   /**
    * @description: 广告主ID
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  mall_id: string;
+  mall_id: string | number;
 }

@@ -16,10 +16,10 @@ export interface PddAdHistoryRtKeywordReportGetRequestInterface {
 
   /**
    * @description: 单元id
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  unit_id?: string;
+  unit_id?: string | number;
 }
 
 /**
@@ -60,10 +60,10 @@ export interface PddAdHistoryRtKeywordReportGetAdKeywordRealTimeReportResponseRe
 export interface PddAdHistoryRtKeywordReportGetAdKeywordRealTimeReportResponseKeywordRealTimeReportListResponseInterface {
   /**
    * @description: 关键词id
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  keyword_id: string;
+  keyword_id: string | number;
 
   /**
    * @description: 关键词
@@ -74,10 +74,10 @@ export interface PddAdHistoryRtKeywordReportGetAdKeywordRealTimeReportResponseKe
 
   /**
    * @description: 出价
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  bid: string;
+  bid: string | number;
 
   /**
    * @description: 关键词状态 1-推广中 2-已删除
@@ -88,10 +88,10 @@ export interface PddAdHistoryRtKeywordReportGetAdKeywordRealTimeReportResponseKe
 
   /**
    * @description: 质量分
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  quality_score: string;
+  quality_score: string | number;
 
   /**
    * @description: 关键词状态。1表示推广中，2表示已删除
@@ -116,17 +116,17 @@ export interface PddAdHistoryRtKeywordReportGetAdKeywordRealTimeReportResponseKe
 
   /**
    * @description: 广告曝光数
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  impression: string;
+  impression: string | number;
 
   /**
    * @description: 广告点击数
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  click: string;
+  click: string | number;
 
   /**
    * @description: 广告点击率
@@ -137,10 +137,10 @@ export interface PddAdHistoryRtKeywordReportGetAdKeywordRealTimeReportResponseKe
 
   /**
    * @description: 广告消耗,单位厘
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  spend: string;
+  spend: string | number;
 
   /**
    * @description: 点击单价，单位厘
@@ -151,17 +151,17 @@ export interface PddAdHistoryRtKeywordReportGetAdKeywordRealTimeReportResponseKe
 
   /**
    * @description: 广告转化支付订单数
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  order_num: string;
+  order_num: string | number;
 
   /**
    * @description: 广告转化支付金额，单位厘
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  gmv: string;
+  gmv: string | number;
 
   /**
    * @description: 日期

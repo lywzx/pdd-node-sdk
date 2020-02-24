@@ -65,10 +65,10 @@ export interface PddAdHistoryKeywordReportGetRequestInterface {
 
   /**
    * @description: 单元id，groupBy = 1时必须传值，groupBy = 2时可以传值
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  unit_id: string;
+  unit_id: string | number;
 
   /**
    * @description: 关键词，仅当groupBy = 1时必须传值
@@ -79,10 +79,10 @@ export interface PddAdHistoryKeywordReportGetRequestInterface {
 
   /**
    * @description: 计划id，仅当groupBy = 2时可以传值
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  plan_id: string;
+  plan_id: string | number;
 }
 
 /**
@@ -152,17 +152,17 @@ export interface PddAdHistoryKeywordReportGetAdKeywordHistoryReportGetResponseRe
 
   /**
    * @description: 广告曝光数
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  impression: string;
+  impression: string | number;
 
   /**
    * @description: 广告点击数
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  click: string;
+  click: string | number;
 
   /**
    * @description: 广告点击率
@@ -173,10 +173,10 @@ export interface PddAdHistoryKeywordReportGetAdKeywordHistoryReportGetResponseRe
 
   /**
    * @description: 广告消耗,单位厘
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  spend: string;
+  spend: string | number;
 
   /**
    * @description: 点击单价，单位厘
@@ -187,17 +187,17 @@ export interface PddAdHistoryKeywordReportGetAdKeywordHistoryReportGetResponseRe
 
   /**
    * @description: 广告转化支付订单数
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  order_num: string;
+  order_num: string | number;
 
   /**
    * @description: 广告转化支付金额，单位厘
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  gmv: string;
+  gmv: string | number;
 
   /**
    * @description: 日期

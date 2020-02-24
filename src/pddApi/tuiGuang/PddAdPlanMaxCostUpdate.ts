@@ -16,17 +16,17 @@ export interface PddAdPlanMaxCostUpdateRequestInterface {
 
   /**
    * @description: 计划id
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  plan_id?: string;
+  plan_id?: string | number;
 
   /**
    * @description: 计划日限额，单位厘
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  max_cost?: string;
+  max_cost?: string | number;
 }
 
 /**

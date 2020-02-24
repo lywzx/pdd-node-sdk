@@ -9,10 +9,10 @@ export const PDD_DDK_MALL_GOODS_LIST_GET_RESPONSE_KEY = 'goods_info_list_respons
 export interface PddDdkMallGoodsListGetRequestInterface {
   /**
    * @description: 店铺id
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  mall_id?: string;
+  mall_id?: string | number;
 
   /**
    * @description: 分页数
@@ -74,17 +74,17 @@ export interface PddDdkMallGoodsListGetGoodsInfoListResponseResponseInterface {
 export interface PddDdkMallGoodsListGetGoodsInfoListResponseGoodsListResponseInterface {
   /**
    * @description: 商品创建时间（UNIX时间戳）
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  create_at: string;
+  create_at: string | number;
 
   /**
    * @description: 商品id
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  goods_id: string;
+  goods_id: string | number;
 
   /**
    * @description: 商品名称
@@ -130,38 +130,38 @@ export interface PddDdkMallGoodsListGetGoodsInfoListResponseGoodsListResponseInt
 
   /**
    * @description: 商品市场价（单位为分）
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  goods_mark_price: string;
+  goods_mark_price: string | number;
 
   /**
    * @description: 商品实际价格（单位为分）
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  goods_fact_price: string;
+  goods_fact_price: string | number;
 
   /**
    * @description: 商品拼团价（单位为分）
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  min_group_price: string;
+  min_group_price: string | number;
 
   /**
    * @description: 商品单买价（单位为分）
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  min_normal_price: string;
+  min_normal_price: string | number;
 
   /**
    * @description: 店铺id
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  mall_id: string;
+  mall_id: string | number;
 
   /**
    * @description: 店铺名称
@@ -179,10 +179,10 @@ export interface PddDdkMallGoodsListGetGoodsInfoListResponseGoodsListResponseInt
 
   /**
    * @description: 商品类目id
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  category_id: string;
+  category_id: string | number;
 
   /**
    * @description: 商品类目名
@@ -193,10 +193,10 @@ export interface PddDdkMallGoodsListGetGoodsInfoListResponseGoodsListResponseInt
 
   /**
    * @description: 商品标签id
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  opt_id: string;
+  opt_id: string | number;
 
   /**
    * @description: 商品标签名
@@ -207,17 +207,17 @@ export interface PddDdkMallGoodsListGetGoodsInfoListResponseGoodsListResponseInt
 
   /**
    * @description: 商品标签ID
-   * @type: string[]
+   * @type: Array<string | number>
    * @default:
    **/
-  opt_ids: string[];
+  opt_ids: Array<string | number>;
 
   /**
    * @description: 商品标签ID（多级）
-   * @type: string[]
+   * @type: Array<string | number>
    * @default:
    **/
-  cat_ids: string[];
+  cat_ids: Array<string | number>;
 
   /**
    * @description: 商品类型，1-普通商品，2-进口商品，3-直供，4-直邮
@@ -235,80 +235,80 @@ export interface PddDdkMallGoodsListGetGoodsInfoListResponseGoodsListResponseInt
 
   /**
    * @description: 优惠券ID
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  coupon_id: string;
+  coupon_id: string | number;
 
   /**
    * @description: 优惠券最小门槛价（单位为分）
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  coupon_min_order_amount: string;
+  coupon_min_order_amount: string | number;
 
   /**
    * @description: 优惠券面额（单位为分）
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  coupon_discount: string;
+  coupon_discount: string | number;
 
   /**
    * @description: 优惠券总数量
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  coupon_total_quantity: string;
+  coupon_total_quantity: string | number;
 
   /**
    * @description: 优惠券剩余数量
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  coupon_remain_quantity: string;
+  coupon_remain_quantity: string | number;
 
   /**
    * @description: 优惠券开始时间（unix时间戳）
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  coupon_start_time: string;
+  coupon_start_time: string | number;
 
   /**
    * @description: 优惠券结束时间（unix时间戳）
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  coupon_end_time: string;
+  coupon_end_time: string | number;
 
   /**
    * @description: 佣金比（千分比）
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  promotion_rate: string;
+  promotion_rate: string | number;
 
   /**
    * @description: 优惠券面额
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  coupon_price: string;
+  coupon_price: string | number;
 
   /**
    * @description: 商品佣金比（千分比）
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  goods_rate: string;
+  goods_rate: string | number;
 
   /**
    * @description: 佣金（单位为分）
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  market_fee: string;
+  market_fee: string | number;
 
   /**
    * @description: 该商品所在店铺是否参与全店推广，0：否，1：是
@@ -319,17 +319,17 @@ export interface PddDdkMallGoodsListGetGoodsInfoListResponseGoodsListResponseInt
 
   /**
    * @description: 商品评价数
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  goods_eval_count: string;
+  goods_eval_count: string | number;
 
   /**
    * @description: 商品类目ID
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  cat_id: string;
+  cat_id: string | number;
 
   /**
    * @description: 分享文案
@@ -347,10 +347,10 @@ export interface PddDdkMallGoodsListGetGoodsInfoListResponseGoodsListResponseInt
 
   /**
    * @description: 全店推广店铺佣金比（千分比）
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  mall_rate: string;
+  mall_rate: string | number;
 
   /**
    * @description: 描述分

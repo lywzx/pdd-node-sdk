@@ -23,24 +23,24 @@ export interface PddGoodsCpsUnitCreateRequestInterface {
 export interface PddGoodsCpsUnitCreateUnitsRequestInterface {
   /**
    * @description: 商品id
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  goods_id?: string;
+  goods_id?: string | number;
 
   /**
    * @description: 佣金比例（千分比）
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  rate?: string;
+  rate?: string | number;
 
   /**
    * @description: 优惠券id
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  coupon_id: string;
+  coupon_id: string | number;
 
   /**
    * @description: 优惠券开始时间
@@ -58,24 +58,24 @@ export interface PddGoodsCpsUnitCreateUnitsRequestInterface {
 
   /**
    * @description: 优惠券面额（单位为分）
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  discount: string;
+  discount: string | number;
 
   /**
    * @description: 设置的优惠券张数
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  init_quantity: string;
+  init_quantity: string | number;
 
   /**
    * @description: 剩余的优惠券张数
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  remain_quantity: string;
+  remain_quantity: string | number;
 }
 
 /**
@@ -101,10 +101,10 @@ export interface PddGoodsCpsUnitCreateResponseInterface {
 export interface PddGoodsCpsUnitCreateFailedVosResponseInterface {
   /**
    * @description: 创建失败的商品id
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  goods_id: string;
+  goods_id: string | number;
 
   /**
    * @description: 创建失败原因

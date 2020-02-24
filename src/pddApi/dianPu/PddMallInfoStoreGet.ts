@@ -43,10 +43,10 @@ export interface PddMallInfoStoreGetRequestInterface {
 
   /**
    * @description: 门店Id
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  store_id: string;
+  store_id: string | number;
 
   /**
    * @description: 门店名称
@@ -122,10 +122,10 @@ export interface PddMallInfoStoreGetResMallStoreVOListResponseInterface {
 
   /**
    * @description: 店铺id
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  mall_id: string;
+  mall_id: string | number;
 
   /**
    * @description: 门店纬度
@@ -157,10 +157,10 @@ export interface PddMallInfoStoreGetResMallStoreVOListResponseInterface {
 
   /**
    * @description: 门店id
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  store_id: string;
+  store_id: string | number;
 
   /**
    * @description: 门店名称

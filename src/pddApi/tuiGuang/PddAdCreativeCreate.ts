@@ -9,10 +9,10 @@ export const PDD_AD_CREATIVE_CREATE_RESPONSE_KEY = 'open_api_response';
 export interface PddAdCreativeCreateRequestInterface {
   /**
    * @description: 单元id
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  unit_id?: string;
+  unit_id?: string | number;
 
   /**
    * @description: 0:搜索广告

@@ -22,10 +22,10 @@ export interface PddOpenMsgServiceSendMsgRequestInterface {
 
   /**
    * @description: 短信模板ID
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  template_code?: string;
+  template_code?: string | number;
 
   /**
    * @description: 短信模板变量对应的实际值，JSON格式

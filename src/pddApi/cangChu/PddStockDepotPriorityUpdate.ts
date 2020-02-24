@@ -51,10 +51,10 @@ export interface PddStockDepotPriorityUpdatePriorityListRequestInterface {
 
   /**
    * @description: 仓库id
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  depot_id?: string;
+  depot_id?: string | number;
 }
 
 /**

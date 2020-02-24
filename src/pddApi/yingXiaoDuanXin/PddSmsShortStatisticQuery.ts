@@ -9,10 +9,10 @@ export const PDD_SMS_SHORT_STATISTIC_QUERY_RESPONSE_KEY = 'sms_short_msg_statist
 export interface PddSmsShortStatisticQueryRequestInterface {
   /**
    * @description: 任务id
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  setting_id?: string;
+  setting_id?: string | number;
 }
 
 /**
@@ -61,10 +61,10 @@ export interface PddSmsShortStatisticQuerySmsShortMsgStatisticQueryResponseRespo
 export interface PddSmsShortStatisticQuerySmsShortMsgStatisticQueryResponseSettingAndCrowdReturnVoResponseInterface {
   /**
    * @description: 人群id
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  id: string;
+  id: string | number;
 
   /**
    * @description: 人群名称
@@ -75,17 +75,17 @@ export interface PddSmsShortStatisticQuerySmsShortMsgStatisticQueryResponseSetti
 
   /**
    * @description: 人群数量
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  people_num: string;
+  people_num: string | number;
 
   /**
    * @description: 发送时间
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  send_time: string;
+  send_time: string | number;
 }
 
 /**
@@ -96,45 +96,45 @@ export interface PddSmsShortStatisticQuerySmsShortMsgStatisticQueryResponseSetti
 export interface PddSmsShortStatisticQuerySmsShortMsgStatisticQueryResponseStatisticVoResponseInterface {
   /**
    * @description: 商家店铺id
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  mall_id: string;
+  mall_id: string | number;
 
   /**
    * @description: 批次id
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  setting_id: string;
+  setting_id: string | number;
 
   /**
    * @description: 场景id
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  scene: string;
+  scene: string | number;
 
   /**
    * @description: 成功触达人数
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  sms_succ_cnt_1d: string;
+  sms_succ_cnt_1d: string | number;
 
   /**
    * @description: 进店人数
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  online_mall_cnt: string;
+  online_mall_cnt: string | number;
 
   /**
    * @description: 支付订单数量
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  pay_mall_cnt: string;
+  pay_mall_cnt: string | number;
 
   /**
    * @description: 支付订单数

@@ -17,10 +17,10 @@ export interface PddAdQueryBidListRequestInterface {
 
   /**
    * @description: 单元ID
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  unit_id?: string;
+  unit_id?: string | number;
 }
 
 /**
@@ -47,10 +47,10 @@ export interface PddAdQueryBidListResponseInterface {
 export interface PddAdQueryBidListOpenApiResponseResponseInterface {
   /**
    * @description: 店铺收藏数
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  mall_fav_num: string;
+  mall_fav_num: string | number;
 
   /**
    * @description: 千次展现成本
@@ -68,17 +68,17 @@ export interface PddAdQueryBidListOpenApiResponseResponseInterface {
 
   /**
    * @description: 广告转化支付金额，单位厘
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  gmv: string;
+  gmv: string | number;
 
   /**
    * @description: 广告转化支付订单数
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  order_num: string;
+  order_num: string | number;
 
   /**
    * @description: 点击单价，单位厘
@@ -89,10 +89,10 @@ export interface PddAdQueryBidListOpenApiResponseResponseInterface {
 
   /**
    * @description: 广告消耗,单位厘
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  spend: string;
+  spend: string | number;
 
   /**
    * @description: 广告点击率
@@ -124,10 +124,10 @@ export interface PddAdQueryBidListOpenApiResponseResponseInterface {
 
   /**
    * @description: 溢价绝对值，单位厘（targetType=1，通投时使用这个值）
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  bid: string;
+  bid: string | number;
 
   /**
    * @description: targetType值为6时表示兴趣点名称，targetType值为7时表示人群包名称，targetType值为8时表示地域名称
@@ -138,10 +138,10 @@ export interface PddAdQueryBidListOpenApiResponseResponseInterface {
 
   /**
    * @description: targetType值为6时表示兴趣点ID，targetType值为7时表示人群包ID，targetType值为8时表示地域ID
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  sub_level_target_id: string;
+  sub_level_target_id: string | number;
 
   /**
    * @description: 定向类型。1表示通投，2表示访客重定向，3表示相似商品定向，4表示叶子类目定向，5表示相似店铺定向，6表示兴趣点定向，7表示人群包定向，8表示地域定向人群，9表示商品高潜人群，10表示高品质商品偏好人群，11表示大促偏好人群，12表示爱分享人群
@@ -152,8 +152,8 @@ export interface PddAdQueryBidListOpenApiResponseResponseInterface {
 
   /**
    * @description: 定向ID
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  bid_id: string;
+  bid_id: string | number;
 }

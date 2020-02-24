@@ -9,24 +9,24 @@ export const PDD_VAS_ORDER_SEARCH_RESPONSE_KEY = 'vas_order_search_response';
 export interface PddVasOrderSearchRequestInterface {
   /**
    * @description: 订单创建时间结束，UNIX时间戳（ms 级别）
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  create_time_end: string;
+  create_time_end: string | number;
 
   /**
    * @description: 订单创建时间开始，UNIX时间戳（ms级别）
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  create_time_start: string;
+  create_time_start: string | number;
 
   /**
    * @description: 买家店铺id
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  mall_id: string;
+  mall_id: string | number;
 
   /**
    * @description: 服务订单号
@@ -58,24 +58,24 @@ export interface PddVasOrderSearchRequestInterface {
 
   /**
    * @description: 支付完成时间开始，UNIX时间戳（ms 级别）
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  pay_time_end: string;
+  pay_time_end: string | number;
 
   /**
    * @description: 支付完成时间开始，UNIX时间戳（ms 级别）
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  pay_time_start: string;
+  pay_time_start: string | number;
 
   /**
    * @description: 服务sku_id，可在服务详情页中获取
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  sku_id: string;
+  sku_id: string | number;
 }
 
 /**
@@ -123,24 +123,24 @@ export interface PddVasOrderSearchVasOrderSearchResponseResponseInterface {
 export interface PddVasOrderSearchVasOrderSearchResponseOrdersResponseInterface {
   /**
    * @description: 实付价格
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  amount: string;
+  amount: string | number;
 
   /**
    * @description: 订单创建时间
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  create_time: string;
+  create_time: string | number;
 
   /**
    * @description: 店铺ID
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  mall_id: string;
+  mall_id: string | number;
 
   /**
    * @description: 服务订单ID
@@ -158,17 +158,17 @@ export interface PddVasOrderSearchVasOrderSearchResponseOrdersResponseInterface 
 
   /**
    * @description: 支付时间
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  pay_time: string;
+  pay_time: string | number;
 
   /**
    * @description: 服务ID
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  service_id: string;
+  service_id: string | number;
 
   /**
    * @description: 服务名称
@@ -179,10 +179,10 @@ export interface PddVasOrderSearchVasOrderSearchResponseOrdersResponseInterface 
 
   /**
    * @description: 服务SKUID
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  sku_id: string;
+  sku_id: string | number;
 
   /**
    * @description: 服务SKU名称
@@ -200,15 +200,15 @@ export interface PddVasOrderSearchVasOrderSearchResponseOrdersResponseInterface 
 
   /**
    * @description: 订购时长
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  time_length: string;
+  time_length: string | number;
 
   /**
    * @description: 售后完成时间，如果没有申请过售后则为null
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  refund_finish_time: string;
+  refund_finish_time: string | number;
 }

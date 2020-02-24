@@ -9,10 +9,10 @@ export const PDD_GOODS_CATS_GET_RESPONSE_KEY = 'goods_cats_get_response';
 export interface PddGoodsCatsGetRequestInterface {
   /**
    * @description: 值=0时为顶点cat_id,通过树顶级节点获取cat树
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  parent_cat_id?: string;
+  parent_cat_id?: string | number;
 }
 
 /**
@@ -67,15 +67,15 @@ export interface PddGoodsCatsGetGoodsCatsGetResponseGoodsCatsListResponseInterfa
 
   /**
    * @description: id所属父类目ID，其中，parent_id=0时为顶级节点
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  parent_cat_id: string;
+  parent_cat_id: string | number;
 
   /**
    * @description: 商品类目ID
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  cat_id: string;
+  cat_id: string | number;
 }

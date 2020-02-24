@@ -8,10 +8,10 @@ export const PDD_STOCK_WARE_SKU_UPDATE = 'pdd.stock.ware.sku.update';
 export interface PddStockWareSkuUpdateRequestInterface {
   /**
    * @description: 货品id
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  ware_id?: string;
+  ware_id?: string | number;
 
   /**
    * @description: 组合货品中子货品的关联关系
@@ -30,17 +30,17 @@ export interface PddStockWareSkuUpdateRequestInterface {
 export interface PddStockWareSkuUpdateWareSkusRequestInterface {
   /**
    * @description: sku id
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  sku_id?: string;
+  sku_id?: string | number;
 
   /**
    * @description: 商品id
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  goods_id?: string;
+  goods_id?: string | number;
 }
 
 /**

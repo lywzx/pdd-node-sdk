@@ -16,10 +16,10 @@ export interface PddAdDeleteBidRequestInterface {
 
   /**
    * @description: 单元ID
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  unit_id?: string;
+  unit_id?: string | number;
 
   /**
    * @description: 定向ID，不能删除全体人群定向。 List<Long>的json string。示例[111,222,333]

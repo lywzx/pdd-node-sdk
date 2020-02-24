@@ -16,10 +16,10 @@ export interface PddDdkThemePromUrlGenerateRequestInterface {
 
   /**
    * @description: 主题ID列表,例如[1,235]
-   * @type: string[]
+   * @type: Array<string | number>
    * @default:
    **/
-  theme_id_list?: string[];
+  theme_id_list?: Array<string | number>;
 
   /**
    * @description: 是否生成短链接,true-是,false-否

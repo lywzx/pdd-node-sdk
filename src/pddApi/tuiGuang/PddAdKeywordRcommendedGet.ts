@@ -16,10 +16,10 @@ export interface PddAdKeywordRcommendedGetRequestInterface {
 
   /**
    * @description: 商品id
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  goods_id?: string;
+  goods_id?: string | number;
 }
 
 /**

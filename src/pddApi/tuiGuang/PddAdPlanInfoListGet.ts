@@ -16,10 +16,10 @@ export interface PddAdPlanInfoListGetRequestInterface {
 
   /**
    * @description: 计划id
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  plan_id: string;
+  plan_id: string | number;
 }
 
 /**
@@ -60,17 +60,17 @@ export interface PddAdPlanInfoListGetAdPlanInfoListResponseResponseInterface {
 export interface PddAdPlanInfoListGetAdPlanInfoListResponsePlanInfoListResponseInterface {
   /**
    * @description: 推广单元个数
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  unit_num: string;
+  unit_num: string | number;
 
   /**
    * @description: 计划日限额，单位厘
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  max_cost: string;
+  max_cost: string | number;
 
   /**
    * @description: 1 - 余额充足 2 - 余额不足 3 - 超出消耗上限
@@ -102,8 +102,8 @@ export interface PddAdPlanInfoListGetAdPlanInfoListResponsePlanInfoListResponseI
 
   /**
    * @description: 计划id
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  plan_id: string;
+  plan_id: string | number;
 }

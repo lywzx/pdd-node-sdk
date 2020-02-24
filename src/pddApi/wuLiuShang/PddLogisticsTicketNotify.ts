@@ -16,10 +16,10 @@ export interface PddLogisticsTicketNotifyRequestInterface {
 
   /**
    * @description: 工单id
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  ticket_id?: string;
+  ticket_id?: string | number;
 
   /**
    * @description: 运单号
@@ -51,10 +51,10 @@ export interface PddLogisticsTicketNotifyRequestInterface {
 
   /**
    * @description: 赔付金额(单位:分)
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  compensate_amount?: string;
+  compensate_amount?: string | number;
 
   /**
    * @description: 责任方，0:默认, 1:消费者,2:商家,3:快递公司,4:其他

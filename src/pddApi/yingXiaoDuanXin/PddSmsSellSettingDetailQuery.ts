@@ -9,10 +9,10 @@ export const PDD_SMS_SELL_SETTING_DETAIL_QUERY_RESPONSE_KEY = 'sms_sell_setting_
 export interface PddSmsSellSettingDetailQueryRequestInterface {
   /**
    * @description: 任务id
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  id?: string;
+  id?: string | number;
 }
 
 /**
@@ -73,10 +73,10 @@ export interface PddSmsSellSettingDetailQuerySmsSellSettingDetailQueryResponseRe
 
   /**
    * @description: 人群id
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  crowd_id: string;
+  crowd_id: string | number;
 
   /**
    * @description: 人群
@@ -88,17 +88,17 @@ export interface PddSmsSellSettingDetailQuerySmsSellSettingDetailQueryResponseRe
 
   /**
    * @description: 任务id
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  id: string;
+  id: string | number;
 
   /**
    * @description: 店铺id
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  mall_id: string;
+  mall_id: string | number;
 
   /**
    * @description: 设置类型
@@ -138,10 +138,10 @@ export interface PddSmsSellSettingDetailQuerySmsSellSettingDetailQueryResponseCr
 
   /**
    * @description: 人群数量
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  people_num: string;
+  people_num: string | number;
 
   /**
    * @description: 人群
@@ -167,10 +167,10 @@ export interface PddSmsSellSettingDetailQuerySmsSellSettingDetailQueryResponseCr
 
   /**
    * @description: 选自定义的时候列表存省代表的id
-   * @type: string[]
+   * @type: Array<string | number>
    * @default:
    **/
-  location: string[];
+  location: Array<string | number>;
 
   /**
    * @description: 性别
@@ -181,73 +181,73 @@ export interface PddSmsSellSettingDetailQuerySmsSellSettingDetailQueryResponseCr
 
   /**
    * @description: 店铺有购买天数
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  purchase_days: string;
+  purchase_days: string | number;
 
   /**
    * @description: 店铺无购买天数
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  none_purchase_days: string;
+  none_purchase_days: string | number;
 
   /**
    * @description: 商品收藏天数
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  goods_favor_days: string;
+  goods_favor_days: string | number;
 
   /**
    * @description: 店铺收藏天数
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  mall_favor_days: string;
+  mall_favor_days: string | number;
 
   /**
    * @description: 历史订单最小成交次数
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  min_order_count: string;
+  min_order_count: string | number;
 
   /**
    * @description: 历史订单最大成交次数
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  max_order_count: string;
+  max_order_count: string | number;
 
   /**
    * @description: 首次购买开始时间
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  first_buy_start_time: string;
+  first_buy_start_time: string | number;
 
   /**
    * @description: 首次购买结束时间
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  first_buy_end_time: string;
+  first_buy_end_time: string | number;
 
   /**
    * @description: 店铺有访问天数
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  mall_visit_days: string;
+  mall_visit_days: string | number;
 
   /**
    * @description: 店铺无访问天数
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  mall_none_visit_days: string;
+  mall_none_visit_days: string | number;
 }
 
 /**
@@ -258,17 +258,17 @@ export interface PddSmsSellSettingDetailQuerySmsSellSettingDetailQueryResponseCr
 export interface PddSmsSellSettingDetailQuerySmsSellSettingDetailQueryResponseTargetResponseInterface {
   /**
    * @description: 实付金额最低价
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  min_pay_amount: string;
+  min_pay_amount: string | number;
 
   /**
    * @description: 实付金额最高价
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  max_pay_amount: string;
+  max_pay_amount: string | number;
 
   /**
    * @description: 是否不限

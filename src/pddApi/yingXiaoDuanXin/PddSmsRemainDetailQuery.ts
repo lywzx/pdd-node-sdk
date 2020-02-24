@@ -32,15 +32,15 @@ export interface PddSmsRemainDetailQueryResponseInterface {
 export interface PddSmsRemainDetailQuerySmsRemainDetailQueryResponseResponseInterface {
   /**
    * @description: 剩余金额
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  remain_money: string;
+  remain_money: string | number;
 
   /**
    * @description: 剩余数量
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  remain_number: string;
+  remain_number: string | number;
 }

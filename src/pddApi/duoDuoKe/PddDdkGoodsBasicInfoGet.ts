@@ -9,10 +9,10 @@ export const PDD_DDK_GOODS_BASIC_INFO_GET_RESPONSE_KEY = 'goods_basic_detail_res
 export interface PddDdkGoodsBasicInfoGetRequestInterface {
   /**
    * @description: 商品id
-   * @type: string[]
+   * @type: Array<string | number>
    * @default:
    **/
-  goods_id_list?: string[];
+  goods_id_list?: Array<string | number>;
 }
 
 /**
@@ -53,24 +53,24 @@ export interface PddDdkGoodsBasicInfoGetGoodsBasicDetailResponseResponseInterfac
 export interface PddDdkGoodsBasicInfoGetGoodsBasicDetailResponseGoodsListResponseInterface {
   /**
    * @description: 商品id
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  goods_id: string;
+  goods_id: string | number;
 
   /**
    * @description: 最小单买价格，单位分
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  min_normal_price: string;
+  min_normal_price: string | number;
 
   /**
    * @description: 最小成团价格，单位分
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  min_group_price: string;
+  min_group_price: string | number;
 
   /**
    * @description: 商品缩略图

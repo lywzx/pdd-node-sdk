@@ -26,19 +26,19 @@ export interface PddOrderNumberListIncrementGetRequestInterface {
 
   /**
    * @description: 必填，最后更新时间开始时间的时间戳，指格林威治时间 1970 年01 月 01 日 00 时 00 分 00 秒(北京时间 1970 年 01 月 01 日 08 时 00 分 00 秒)起至现在的总秒数
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  start_updated_at?: string;
+  start_updated_at?: string | number;
 
   /**
    * @description: 必填，最后更新时间结束时间的时间戳，指格林威治时间 1970 年 01 月 01 日 00 时 00 分 00 秒(北京时间 1970 年 01 月 01 日 08 时
    * 00 分 00 秒)起至现在的总秒数
    * PS：开始时间结束时间间距不超过 30 分钟
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  end_updated_at?: string;
+  end_updated_at?: string | number;
 
   /**
    * @description: 返回数量，默认 100。最大 100
@@ -281,31 +281,31 @@ export interface PddOrderNumberListIncrementGetOrderSnIncrementGetResponseOrderS
 
   /**
    * @description: 商品一级分类
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  cat_id_1: string;
+  cat_id_1: string | number;
 
   /**
    * @description: 商品二级分类
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  cat_id_2: string;
+  cat_id_2: string | number;
 
   /**
    * @description: 商品三级分类
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  cat_id_3: string;
+  cat_id_3: string | number;
 
   /**
    * @description: 商品四级分类
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  cat_id_4: string;
+  cat_id_4: string | number;
 
   /**
    * @description: 缺货处理状态，-1:无缺货处理 0: 缺货待处理 1缺货已处理
@@ -477,10 +477,10 @@ export interface PddOrderNumberListIncrementGetOrderSnIncrementGetResponseOrderS
 
   /**
    * @description: 快递公司编号
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  logistics_id: string;
+  logistics_id: string | number;
 
   /**
    * @description: 快递运单号
@@ -724,10 +724,10 @@ export interface PddOrderNumberListIncrementGetOrderSnIncrementGetResponseOrderS
 
   /**
    * @description: 子货品数量
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  ware_quantity: string;
+  ware_quantity: string | number;
 
   /**
    * @description: 子货品名称
@@ -738,10 +738,10 @@ export interface PddOrderNumberListIncrementGetOrderSnIncrementGetResponseOrderS
 
   /**
    * @description: 子货品1id
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  ware_id: string;
+  ware_id: string | number;
 }
 
 /**
@@ -752,17 +752,17 @@ export interface PddOrderNumberListIncrementGetOrderSnIncrementGetResponseOrderS
 export interface PddOrderNumberListIncrementGetOrderSnIncrementGetResponseOrderSnListItemListResponseInterface {
   /**
    * @description: 商品编号
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  goods_id: string;
+  goods_id: string | number;
 
   /**
    * @description: 商品规格编码
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  sku_id: string;
+  sku_id: string | number;
 
   /**
    * @description: 商家外部编码（sku），注意：编辑商品后必须等待商品审核通过后方可生效，订单中商品信息为交易快照的商品信息。
@@ -801,10 +801,10 @@ export interface PddOrderNumberListIncrementGetOrderSnIncrementGetResponseOrderS
 
   /**
    * @description: 商品数量
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  goods_count: string;
+  goods_count: string | number;
 
   /**
    * @description: 商品图片

@@ -124,10 +124,10 @@ export interface PddDdkRpPromUrlGenerateDiyLotteryParamRequestInterface {
 export interface PddDdkRpPromUrlGenerateDiyLotteryParamRangeItemsRequestInterface {
   /**
    * @description: 区间的开始值
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  range_from: string;
+  range_from: string | number;
 
   /**
    * @description: range_id为1表示价格（单位分）， range_id为2表示商品佣金（单位千分之几)
@@ -138,10 +138,10 @@ export interface PddDdkRpPromUrlGenerateDiyLotteryParamRangeItemsRequestInterfac
 
   /**
    * @description: 区间的结束值
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  range_to: string;
+  range_to: string | number;
 }
 
 /**
@@ -152,10 +152,10 @@ export interface PddDdkRpPromUrlGenerateDiyLotteryParamRangeItemsRequestInterfac
 export interface PddDdkRpPromUrlGenerateDiyRedPacketParamRequestInterface {
   /**
    * @description: 红包金额列表，200、300、500、1000、2000，单位分。红包金额和红包抵后价设置只能二选一，默认设置了红包金额会忽略红包抵后价设置
-   * @type: string[]
+   * @type: Array<string | number>
    * @default:
    **/
-  amount_probability: string[];
+  amount_probability: Array<string | number>;
 
   /**
    * @description: 设置玩法，false-现金红包, true-现金券
@@ -195,10 +195,10 @@ export interface PddDdkRpPromUrlGenerateDiyRedPacketParamRequestInterface {
 export interface PddDdkRpPromUrlGenerateDiyRedPacketParamRangeItemsRequestInterface {
   /**
    * @description: 区间的开始值
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  range_from: string;
+  range_from: string | number;
 
   /**
    * @description: range_id为1表示红包抵后价（单位分）， range_id为2表示佣金比例（单位千分之几)
@@ -209,10 +209,10 @@ export interface PddDdkRpPromUrlGenerateDiyRedPacketParamRangeItemsRequestInterf
 
   /**
    * @description: 区间的结束值
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  range_to: string;
+  range_to: string | number;
 }
 
 /**

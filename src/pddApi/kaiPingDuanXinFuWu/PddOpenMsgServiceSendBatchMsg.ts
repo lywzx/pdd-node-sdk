@@ -22,10 +22,10 @@ export interface PddOpenMsgServiceSendBatchMsgRequestInterface {
 
   /**
    * @description: 短信模板CODE
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  template_code?: string;
+  template_code?: string | number;
 
   /**
    * @description: 短信模板变量JSON集合(与手机号对应)

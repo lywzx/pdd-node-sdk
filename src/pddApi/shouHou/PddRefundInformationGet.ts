@@ -8,10 +8,10 @@ export const PDD_REFUND_INFORMATION_GET = 'pdd.refund.information.get';
 export interface PddRefundInformationGetRequestInterface {
   /**
    * @description: 售后单id
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  after_sales_id?: string;
+  after_sales_id?: string | number;
 
   /**
    * @description: 订单号
@@ -50,10 +50,10 @@ export interface PddRefundInformationGetResponseInterface {
 
   /**
    * @description: 订单成团时间
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  confirm_time: string;
+  confirm_time: string | number;
 
   /**
    * @description: 订单折扣金额
@@ -85,17 +85,17 @@ export interface PddRefundInformationGetResponseInterface {
 
   /**
    * @description: 售后单id
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  id: string;
+  id: string | number;
 
   /**
    * @description: 交易金额
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  order_amount: string;
+  order_amount: string | number;
 
   /**
    * @description: 订单号
@@ -106,10 +106,10 @@ export interface PddRefundInformationGetResponseInterface {
 
   /**
    * @description: 售后单创建时间（重新申请时间）
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  recreated_at: string;
+  recreated_at: string | number;
 
   /**
    * @description: 退款金额
@@ -134,8 +134,8 @@ export interface PddRefundInformationGetResponseInterface {
 
   /**
    * @description: 售后逾期时间（只提供待商家处理状态下的，其余的状态为null）
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  expire_time: string;
+  expire_time: string | number;
 }

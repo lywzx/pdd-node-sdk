@@ -78,10 +78,10 @@ export interface PddMallInfoStoreUpdatePostNopoiRequestInterface {
 
   /**
    * @description: 门店id
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  store_id?: string;
+  store_id?: string | number;
 
   /**
    * @description: 门店名称

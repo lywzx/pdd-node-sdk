@@ -75,10 +75,10 @@ export interface PddQrpayPayeeRegisterQrpayPayeeRegisterResponsePayeeResultListR
 
   /**
    * @description: 参数id
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  payee_id: string;
+  payee_id: string | number;
 
   /**
    * @description: 交易二维码图片UR

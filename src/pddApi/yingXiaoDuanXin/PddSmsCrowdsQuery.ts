@@ -74,10 +74,10 @@ export interface PddSmsCrowdsQuerySmsCrowsQueryResponseResponseInterface {
 export interface PddSmsCrowdsQuerySmsCrowsQueryResponseResultResponseInterface {
   /**
    * @description: 人群id
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  id: string;
+  id: string | number;
 
   /**
    * @description: 类型
@@ -95,10 +95,10 @@ export interface PddSmsCrowdsQuerySmsCrowsQueryResponseResultResponseInterface {
 
   /**
    * @description: 店铺id
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  mall_id: string;
+  mall_id: string | number;
 
   /**
    * @description: 名称
@@ -109,10 +109,10 @@ export interface PddSmsCrowdsQuerySmsCrowsQueryResponseResultResponseInterface {
 
   /**
    * @description: 人群数量
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  people_num: string;
+  people_num: string | number;
 
   /**
    * @description: 人群
@@ -152,71 +152,71 @@ export interface PddSmsCrowdsQuerySmsCrowsQueryResponseResultCrowdResponseInterf
 
   /**
    * @description: 有购买天数
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  purchase_days: string;
+  purchase_days: string | number;
 
   /**
    * @description: 无购买天数
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  none_purchase_days: string;
+  none_purchase_days: string | number;
 
   /**
    * @description: 商品被收藏天数
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  goods_favor_days: string;
+  goods_favor_days: string | number;
 
   /**
    * @description: 店铺被收藏天数
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  mall_favor_days: string;
+  mall_favor_days: string | number;
 
   /**
    * @description: 最小订单金额
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  min_order_count: string;
+  min_order_count: string | number;
 
   /**
    * @description: 最大订单金额
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  max_order_count: string;
+  max_order_count: string | number;
 
   /**
    * @description: 首次购买开始时间
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  first_buy_start_time: string;
+  first_buy_start_time: string | number;
 
   /**
    * @description: 首次购买结束时间
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  first_buy_end_time: string;
+  first_buy_end_time: string | number;
 
   /**
    * @description: 店铺有浏览天数
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  mall_visit_days: string;
+  mall_visit_days: string | number;
 
   /**
    * @description: 店铺无浏览天数
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  mall_none_visit_days: string;
+  mall_none_visit_days: string | number;
 }

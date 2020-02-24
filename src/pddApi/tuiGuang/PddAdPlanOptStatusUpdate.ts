@@ -16,10 +16,10 @@ export interface PddAdPlanOptStatusUpdateRequestInterface {
 
   /**
    * @description: 计划id
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  plan_id?: string;
+  plan_id?: string | number;
 
   /**
    * @description: 1 已启用,2 已暂停

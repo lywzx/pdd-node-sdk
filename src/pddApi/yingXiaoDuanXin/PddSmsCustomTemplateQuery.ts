@@ -90,17 +90,17 @@ export interface PddSmsCustomTemplateQuerySmsCustomTemplateListQueryResponseResp
 export interface PddSmsCustomTemplateQuerySmsCustomTemplateListQueryResponseResultResponseInterface {
   /**
    * @description: 模板id
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  id: string;
+  id: string | number;
 
   /**
    * @description: 店铺id
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  mall_id: string;
+  mall_id: string | number;
 
   /**
    * @description: 模板名称
@@ -111,10 +111,10 @@ export interface PddSmsCustomTemplateQuerySmsCustomTemplateListQueryResponseResu
 
   /**
    * @description: 更新时间
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  updated_time: string;
+  updated_time: string | number;
 
   /**
    * @description: 内容

@@ -60,10 +60,10 @@ export interface PddGoodsOptGetGoodsOptGetResponseGoodsOptListResponseInterface 
 
   /**
    * @description: id所属父ID，其中，parent_id=0时为顶级节点
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  parent_opt_id: string;
+  parent_opt_id: string | number;
 
   /**
    * @description: 商品标签名
@@ -74,8 +74,8 @@ export interface PddGoodsOptGetGoodsOptGetResponseGoodsOptListResponseInterface 
 
   /**
    * @description: 商品标签ID
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  opt_id: string;
+  opt_id: string | number;
 }

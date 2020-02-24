@@ -9,10 +9,10 @@ export const PDD_PROMOTION_COUPON_CLOSE_RESPONSE_KEY = 'promotion_coupon_batch_c
 export interface PddPromotionCouponCloseRequestInterface {
   /**
    * @description: 券批次ID
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  batch_id?: string;
+  batch_id?: string | number;
 }
 
 /**

@@ -103,10 +103,10 @@ export interface PddGoodsLogisticsTemplateGetGoodsLogisticsTemplateGetResponseLo
 
   /**
    * @description: 模板id
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  template_id: string;
+  template_id: string | number;
 
   /**
    * @description: 运费模板名称
@@ -147,31 +147,31 @@ export interface PddGoodsLogisticsTemplateGetGoodsLogisticsTemplateGetResponseLo
 
   /**
    * @description: 首件
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  first_standard: string;
+  first_standard: string | number;
 
   /**
    * @description: 首件或首重价格，单位为分
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  first_cost: string;
+  first_cost: string | number;
 
   /**
    * @description: 续重或续件
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  add_standard: string;
+  add_standard: string | number;
 
   /**
    * @description: 续件或续重价格，单位为分
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  add_cost: string;
+  add_cost: string | number;
 
   /**
    * @description: 对不包邮地区，true-若要包邮须满足件数包邮，false-不开启满足件数包邮
@@ -182,10 +182,10 @@ export interface PddGoodsLogisticsTemplateGetGoodsLogisticsTemplateGetResponseLo
 
   /**
    * @description: 对不包邮地区，满足指定件数包邮，该值为商家设置的指定件数，若为-1则商家没有开启满足件数包邮
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  have_free_min_count: string;
+  have_free_min_count: string | number;
 
   /**
    * @description: 对不包邮地区，true-若要包邮须满足指定价格则可以包邮，false-不开启满足指定价格包邮
@@ -196,10 +196,10 @@ export interface PddGoodsLogisticsTemplateGetGoodsLogisticsTemplateGetResponseLo
 
   /**
    * @description: 对不包邮地区，满足指定价格包邮，该值为商家设置的指定订单金额，若为-1则商家没有开启满足指定价格包邮，注意，单位为分
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  have_free_min_amount: string;
+  have_free_min_amount: string | number;
 }
 
 /**
@@ -231,10 +231,10 @@ export interface PddGoodsLogisticsTemplateGetGoodsLogisticsTemplateGetResponseLo
 export interface PddGoodsLogisticsTemplateGetGoodsLogisticsTemplateGetResponseLogisticsTemplateListFreeProvinceListResponseInterface {
   /**
    * @description: 省份id
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  province_id: string;
+  province_id: string | number;
 
   /**
    * @description: 省份

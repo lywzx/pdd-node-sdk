@@ -9,10 +9,10 @@ export const PDD_GOODS_INFORMATION_GET_RESPONSE_KEY = 'goods_info_get_response';
 export interface PddGoodsInformationGetRequestInterface {
   /**
    * @description: 商品编码
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  goods_id?: string;
+  goods_id?: string | number;
 }
 
 /**
@@ -53,10 +53,10 @@ export interface PddGoodsInformationGetGoodsInfoGetResponseResponseInterface {
 export interface PddGoodsInformationGetGoodsInfoGetResponseGoodsInfoResponseInterface {
   /**
    * @description: 商品编码
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  goods_id: string;
+  goods_id: string | number;
 
   /**
    * @description: 商品序列编码
@@ -95,10 +95,10 @@ export interface PddGoodsInformationGetGoodsInfoGetResponseGoodsInfoResponseInte
 
   /**
    * @description: 承诺发货时间
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  shipment_limit_second: string;
+  shipment_limit_second: string | number;
 
   /**
    * @description: 商品名称
@@ -137,10 +137,10 @@ export interface PddGoodsInformationGetGoodsInfoGetResponseGoodsInfoResponseInte
 
   /**
    * @description: 成团人数
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  group_required_customer_num: string;
+  group_required_customer_num: string | number;
 
   /**
    * @description: sku列表对象
@@ -166,17 +166,17 @@ export interface PddGoodsInformationGetGoodsInfoGetResponseGoodsInfoSkuListRespo
 
   /**
    * @description: 商品sku编码
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  sku_id: string;
+  sku_id: string | number;
 
   /**
    * @description: 商品sku库存
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  sku_quantity: string;
+  sku_quantity: string | number;
 
   /**
    * @description: 商家外部编码（sku），同其他接口中的outer_id 、out_id、out_sku_sn、outer_sku_sn、out_sku_id、outer_sku_id 都为商家编码（sku维度）。

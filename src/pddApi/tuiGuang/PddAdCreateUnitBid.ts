@@ -16,10 +16,10 @@ export interface PddAdCreateUnitBidRequestInterface {
 
   /**
    * @description: 单元ID
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  unit_id?: string;
+  unit_id?: string | number;
 
   /**
    * @description: 定向人群列表
@@ -48,17 +48,17 @@ export interface PddAdCreateUnitBidBidsRequestInterface {
 
   /**
    * @description: 通投时填 , 溢价绝对值，单位厘
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  bid: string;
+  bid: string | number;
 
   /**
    * @description: 兴趣点ID，targetType不为6/7时，传 0
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  sub_level_target_id?: string;
+  sub_level_target_id?: string | number;
 
   /**
    * @description: 定向类型。1表示通投，2表示访客重定向，3表示相似商品定向，4表示叶子类目定向，5表示相似店铺定向，6表示兴趣点定向，7表示人群包定向，8表示地域定向人群，9表示商品高潜人群，10表示高品质商品偏好人群，11表示大促偏好人群，12表示爱分享人群

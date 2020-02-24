@@ -149,8 +149,8 @@ export interface PddOpenMsgServiceQueryExpressMsgRecordSmsSendDetailsResponseInt
 
   /**
    * @description: 模板ID
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  template_code: string;
+  template_code: string | number;
 }

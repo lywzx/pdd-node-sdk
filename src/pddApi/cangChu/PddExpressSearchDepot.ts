@@ -59,10 +59,10 @@ export interface PddExpressSearchDepotResponseInterface {
 export interface PddExpressSearchDepotOpenApiResponseResponseInterface {
   /**
    * @description: 数量
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  count: string;
+  count: string | number;
 
   /**
    * @description: 仓库列表
@@ -123,10 +123,10 @@ export interface PddExpressSearchDepotOpenApiResponseDepotListResponseInterface 
 
   /**
    * @description: 仓库id
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  depot_id: string;
+  depot_id: string | number;
 
   /**
    * @description: 仓库地址（区编号）

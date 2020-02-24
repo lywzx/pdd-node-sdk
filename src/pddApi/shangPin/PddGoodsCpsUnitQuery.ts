@@ -8,10 +8,10 @@ export const PDD_GOODS_CPS_UNIT_QUERY = 'pdd.goods.cps.unit.query';
 export interface PddGoodsCpsUnitQueryRequestInterface {
   /**
    * @description: 商品id
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  goods_id?: string;
+  goods_id?: string | number;
 }
 
 /**
@@ -22,10 +22,10 @@ export interface PddGoodsCpsUnitQueryRequestInterface {
 export interface PddGoodsCpsUnitQueryResponseInterface {
   /**
    * @description: 商品id
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  goods_id: string;
+  goods_id: string | number;
 
   /**
    * @description: 佣金比例（千分比）
@@ -107,15 +107,15 @@ export interface PddGoodsCpsUnitQueryCouponVoResponseInterface {
 
   /**
    * @description: init_quantity
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  init_quantity: string;
+  init_quantity: string | number;
 
   /**
    * @description: remain_quantity
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  remain_quantity: string;
+  remain_quantity: string | number;
 }

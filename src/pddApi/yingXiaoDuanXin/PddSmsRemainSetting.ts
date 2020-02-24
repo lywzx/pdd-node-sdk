@@ -66,8 +66,8 @@ export interface PddSmsRemainSettingResponseInterface {
 export interface PddSmsRemainSettingSmsRemainSettingResponseResponseInterface {
   /**
    * @description: 结果
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  result: string;
+  result: string | number;
 }

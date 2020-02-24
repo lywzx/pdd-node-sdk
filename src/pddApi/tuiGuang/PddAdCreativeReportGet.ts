@@ -88,17 +88,17 @@ export interface PddAdCreativeReportGetAdCreativeReportGetResponseResultResponse
 
   /**
    * @description: 商家id
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  mall_id: string;
+  mall_id: string | number;
 
   /**
    * @description: 计划编号
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  plan_id: string;
+  plan_id: string | number;
 
   /**
    * @description: 计划名称
@@ -144,45 +144,45 @@ export interface PddAdCreativeReportGetAdCreativeReportGetResponseResultResponse
 
   /**
    * @description: 展现量
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  impr_num: string;
+  impr_num: string | number;
 
   /**
    * @description: 点击量
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  click_num: string;
+  click_num: string | number;
 
   /**
    * @description: 花费
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  spend: string;
+  spend: string | number;
 
   /**
    * @description: 成交订单数
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  pay_order_num: string;
+  pay_order_num: string | number;
 
   /**
    * @description: 成交订单金额
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  pay_gmv: string;
+  pay_gmv: string | number;
 
   /**
    * @description: CPT日消耗
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  plan_cpt_spend: string;
+  plan_cpt_spend: string | number;
 
   /**
    * @description: 跳转URL

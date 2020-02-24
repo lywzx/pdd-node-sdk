@@ -45,10 +45,10 @@ export interface PddVirtualMobileChargeNotifyRequestInterface {
 export interface PddVirtualMobileChargeNotifyChargeCertiRequestInterface {
   /**
    * @description: 直充充值金额（单位：分）
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  charge_certi_amount: string;
+  charge_certi_amount: string | number;
 
   /**
    * @description: 直充充值成功时间 （yyyy-MM-dd HH:mm:ss格式）

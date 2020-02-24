@@ -103,17 +103,17 @@ export interface PddGoodsLogisticsSerTemplateUpdateCatListRequestInterface {
 
   /**
    * @description: 四级类目id
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  cat_id4: string;
+  cat_id4: string | number;
 
   /**
    * @description: 三级类目id
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  cat_id3?: string;
+  cat_id3?: string | number;
 }
 
 /**
@@ -132,10 +132,10 @@ export interface PddGoodsLogisticsSerTemplateUpdateCatListListRequestInterface {
 
   /**
    * @description: 按“件”收取费用时配置的内容：按件限价时输入数字，表示每件商品附加费用$value分；按属性限价时不用传value和content必须设置一个
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  value?: string;
+  value?: string | number;
 
   /**
    * @description: 分类目收取服务费用方式：1-按件收取费用，2-按属性收取费用
@@ -153,24 +153,24 @@ export interface PddGoodsLogisticsSerTemplateUpdateCatListListRequestInterface {
 export interface PddGoodsLogisticsSerTemplateUpdateCatListListContentRequestInterface {
   /**
    * @description: 价格。单位：分
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  price?: string;
+  price?: string | number;
 
   /**
    * @description: 属性区间大值，-1表示"其他"示例：要配置区间"100-200"的费用，则maxPro输入"200"要配置区间"其他"的费用，则maxPro输入"-1"备注：表示长度时单位为：mm
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  max_pro?: string;
+  max_pro?: string | number;
 
   /**
    * @description: 属性区间小值，-1表示"其他"示例：要配置区间"100-200"的费用，则minPro输入"100"要配置区间"其他"的费用，则minPro输入"-1"备注：表示长度时单位为：mm
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  min_pro?: string;
+  min_pro?: string | number;
 }
 
 /**

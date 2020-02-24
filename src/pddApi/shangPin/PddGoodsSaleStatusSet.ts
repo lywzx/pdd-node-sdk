@@ -9,10 +9,10 @@ export const PDD_GOODS_SALE_STATUS_SET_RESPONSE_KEY = 'goods_sale_status_set_res
 export interface PddGoodsSaleStatusSetRequestInterface {
   /**
    * @description: 拼多多商品id
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  goods_id?: string;
+  goods_id?: string | number;
 
   /**
    * @description: 上下架状态：1:上架 0:下架

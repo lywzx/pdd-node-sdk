@@ -23,10 +23,10 @@ export interface PddPromotionGoodsCouponListGetRequestInterface {
 
   /**
    * @description: 商品ID
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  goods_id: string;
+  goods_id: string | number;
 
   /**
    * @description: 查询范围	0 全部，1 多多进宝券，2 无门槛商品券；默认1
@@ -95,10 +95,10 @@ export interface PddPromotionGoodsCouponListGetGoodsCouponBatchListResponseRespo
 export interface PddPromotionGoodsCouponListGetGoodsCouponBatchListResponseCouponBatchListResponseInterface {
   /**
    * @description: 批次ID
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  id: string;
+  id: string | number;
 
   /**
    * @description: 批次描述
@@ -109,59 +109,59 @@ export interface PddPromotionGoodsCouponListGetGoodsCouponBatchListResponseCoupo
 
   /**
    * @description: 折扣参数，为请求中传入的discountAmount，表示折扣金额，单位: 分
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  discount_param: string;
+  discount_param: string | number;
 
   /**
    * @description: 最小可用订单金额
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  min_order_amount: string;
+  min_order_amount: string | number;
 
   /**
    * @description: 初始数量
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  init_quantity: string;
+  init_quantity: string | number;
 
   /**
    * @description: 剩余数量
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  remain_quantity: string;
+  remain_quantity: string | number;
 
   /**
    * @description: 已使用数量
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  used_quantity: string;
+  used_quantity: string | number;
 
   /**
    * @description: 用户限领张数，-1 代表不限制
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  user_limit: string;
+  user_limit: string | number;
 
   /**
    * @description: 批次开始时间
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  batch_start_time: string;
+  batch_start_time: string | number;
 
   /**
    * @description: 批次结束时间
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  batch_end_time: string;
+  batch_end_time: string | number;
 
   /**
    * @description: 券来源类型，45 店铺多多进宝商品券，54 无门槛商品券，87 店铺多多进宝大淘客定向商品券，88 店铺多多果园商品券
@@ -172,10 +172,10 @@ export interface PddPromotionGoodsCouponListGetGoodsCouponBatchListResponseCoupo
 
   /**
    * @description: 商品ID
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  goods_id: string;
+  goods_id: string | number;
 
   /**
    * @description: 商品名
@@ -200,8 +200,8 @@ export interface PddPromotionGoodsCouponListGetGoodsCouponBatchListResponseCoupo
 
   /**
    * @description: 批次创建时间
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  created_at: string;
+  created_at: string | number;
 }

@@ -16,10 +16,10 @@ export interface PddAdUpdateBidRequestInterface {
 
   /**
    * @description: 单元ID
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  unit_id?: string;
+  unit_id?: string | number;
 
   /**
    * @description: 定向列表
@@ -48,17 +48,17 @@ export interface PddAdUpdateBidBidListRequestInterface {
 
   /**
    * @description: 通投必填	溢价绝对值，单位厘，通投时，使用这个值，其他情况使用bid_premium_rate
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  bid: string;
+  bid: string | number;
 
   /**
    * @description: 定向ID
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  bid_id?: string;
+  bid_id?: string | number;
 }
 
 /**

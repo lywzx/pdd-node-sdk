@@ -9,10 +9,10 @@ export const PDD_GOODS_TEMPLATE_PROPERTY_VALUE_SEARCH_RESPONSE_KEY = 'goods_temp
 export interface PddGoodsTemplatePropertyValueSearchRequestInterface {
   /**
    * @description: 类目id
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  cat_id?: string;
+  cat_id?: string | number;
 
   /**
    * @description: 页码 从1开始
@@ -30,17 +30,17 @@ export interface PddGoodsTemplatePropertyValueSearchRequestInterface {
 
   /**
    * @description: 父属性值id
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  parent_vid: string;
+  parent_vid: string | number;
 
   /**
    * @description: 模板属性id
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  template_pid?: string;
+  template_pid?: string | number;
 
   /**
    * @description: 需要模糊搜索的属性值
@@ -95,8 +95,8 @@ export interface PddGoodsTemplatePropertyValueSearchGoodsTemplatePropValSearchRe
 
   /**
    * @description: 属性值id
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  vid: string;
+  vid: string | number;
 }

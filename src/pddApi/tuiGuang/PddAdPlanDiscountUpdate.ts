@@ -8,10 +8,10 @@ export const PDD_AD_PLAN_DISCOUNT_UPDATE = 'pdd.ad.plan.discount.update';
 export interface PddAdPlanDiscountUpdateRequestInterface {
   /**
    * @description: 推广计划id
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  plan_id?: string;
+  plan_id?: string | number;
 
   /**
    * @description: List<JsonObject> 的json string. 示例：[{"rate":1000,"index":12},{"rate":1000,"index":13}]

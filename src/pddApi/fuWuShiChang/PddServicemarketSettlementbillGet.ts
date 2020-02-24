@@ -88,10 +88,10 @@ export interface PddServicemarketSettlementbillGetSettlementBillSearchResponseDa
 
   /**
    * @description: 当期结算金额，单位分
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  settle_amount: string;
+  settle_amount: string | number;
 
   /**
    * @description: 结算月份
@@ -109,8 +109,8 @@ export interface PddServicemarketSettlementbillGetSettlementBillSearchResponseDa
 
   /**
    * @description: 待结算金额，单位分
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  unsettle_amount: string;
+  unsettle_amount: string | number;
 }

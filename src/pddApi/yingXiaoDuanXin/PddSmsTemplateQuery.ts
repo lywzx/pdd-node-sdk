@@ -62,10 +62,10 @@ export interface PddSmsTemplateQuerySmsTemplateQueryResponseResponseInterface {
 export interface PddSmsTemplateQuerySmsTemplateQueryResponseResultResponseInterface {
   /**
    * @description: 编号
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  code: string;
+  code: string | number;
 
   /**
    * @description: 描述

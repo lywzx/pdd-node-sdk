@@ -172,14 +172,19 @@ ${buildColumns(it.columns, 2)}
  * 转换拼多多的类型
  */
 const typeMap = {
-  LONG: 'string',
+  LONG: 'string | number',
+  'LONG[]': 'Array<string | number>',
   INTEGER: 'number',
   MAP: 'object',
   DOUBLE: 'string',
 };
 function pddTypeToTypescriptType(type: string) {
+  if (type in typeMap) {
+    return (typeMap as any)[type];
+  }
   const onlyType = type.replace('[]', '');
   const toType = (typeMap as any)[onlyType] || onlyType.toLowerCase();
+
   if (onlyType === type) {
     return toType;
   } else {

@@ -9,10 +9,10 @@ export const PDD_GOODS_SPEC_GET_RESPONSE_KEY = 'goods_spec_get_response';
 export interface PddGoodsSpecGetRequestInterface {
   /**
    * @description: 叶子类目ID，必须入参level=3时的cat_id,否则无法返回正确的参数
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  cat_id?: string;
+  cat_id?: string | number;
 }
 
 /**
@@ -53,17 +53,17 @@ export interface PddGoodsSpecGetGoodsSpecGetResponseResponseInterface {
 export interface PddGoodsSpecGetGoodsSpecGetResponseGoodsSpecListResponseInterface {
   /**
    * @description: 规格所属的叶子类目ID
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  cat_id: string;
+  cat_id: string | number;
 
   /**
    * @description: 商品规格对应的ID
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  parent_spec_id: string;
+  parent_spec_id: string | number;
 
   /**
    * @description: 商品规格ID对应的规格名称

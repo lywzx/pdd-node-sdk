@@ -16,10 +16,10 @@ export interface PddVoucherOtaCardVerificationRequestInterface {
 
   /**
    * @description: 核销门店id
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  store_id?: string;
+  store_id?: string | number;
 
   /**
    * @description: 核销门店名称
@@ -95,10 +95,10 @@ export interface PddVoucherOtaCardVerificationVoucherOtaCardVerificationResponse
 
   /**
    * @description: 店铺编码
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  mall_id: string;
+  mall_id: string | number;
 
   /**
    * @description: 订单号
@@ -116,10 +116,10 @@ export interface PddVoucherOtaCardVerificationVoucherOtaCardVerificationResponse
 
   /**
    * @description: 门店编码
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  store_id: string;
+  store_id: string | number;
 
   /**
    * @description: 门店名称

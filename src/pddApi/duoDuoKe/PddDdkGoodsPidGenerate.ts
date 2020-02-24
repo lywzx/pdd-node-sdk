@@ -9,10 +9,10 @@ export const PDD_DDK_GOODS_PID_GENERATE_RESPONSE_KEY = 'p_id_generate_response';
 export interface PddDdkGoodsPidGenerateRequestInterface {
   /**
    * @description: 要生成的推广位数量，默认为10，范围为：1~100
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  number?: string;
+  number?: string | number;
 
   /**
    * @description: 推广位名称，例如["1","2"]
@@ -67,10 +67,10 @@ export interface PddDdkGoodsPidGeneratePIdGenerateResponseResponseInterface {
 export interface PddDdkGoodsPidGeneratePIdGenerateResponsePIdListResponseInterface {
   /**
    * @description: 推广位创建时间
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  create_time: string;
+  create_time: string | number;
 
   /**
    * @description: 推广位名称

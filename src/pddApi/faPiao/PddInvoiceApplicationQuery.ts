@@ -9,10 +9,10 @@ export const PDD_INVOICE_APPLICATION_QUERY_RESPONSE_KEY = 'invoice_application_q
 export interface PddInvoiceApplicationQueryRequestInterface {
   /**
    * @description: 申请流水号
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  application_id: string;
+  application_id: string | number;
 
   /**
    * @description: 订单号；订单号和申请时间必填其一
@@ -30,17 +30,17 @@ export interface PddInvoiceApplicationQueryRequestInterface {
 
   /**
    * @description: 申请开始时间, 时间戳（毫秒）
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  update_start_time: string;
+  update_start_time: string | number;
 
   /**
    * @description: 申请结束时间, 时间戳（毫秒）
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  update_end_time: string;
+  update_end_time: string | number;
 
   /**
    * @description: 页码，默认1
@@ -95,17 +95,17 @@ export interface PddInvoiceApplicationQueryInvoiceApplicationQueryResponseRespon
 export interface PddInvoiceApplicationQueryInvoiceApplicationQueryResponseInvoiceApplicationListResponseInterface {
   /**
    * @description: 修改时间
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  gmt_modified: string;
+  gmt_modified: string | number;
 
   /**
    * @description: 创建时间
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  gmt_create: string;
+  gmt_create: string | number;
 
   /**
    * @description: 备注
@@ -186,10 +186,10 @@ export interface PddInvoiceApplicationQueryInvoiceApplicationQueryResponseInvoic
 
   /**
    * @description: 店铺id
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  mall_id: string;
+  mall_id: string | number;
 
   /**
    * @description: 订单号
@@ -214,8 +214,8 @@ export interface PddInvoiceApplicationQueryInvoiceApplicationQueryResponseInvoic
 
   /**
    * @description: 申请流水号
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  application_id: string;
+  application_id: string | number;
 }

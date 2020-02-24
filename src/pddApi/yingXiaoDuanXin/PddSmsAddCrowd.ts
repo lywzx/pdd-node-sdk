@@ -9,10 +9,10 @@ export const PDD_SMS_ADD_CROWD_RESPONSE_KEY = 'sms_add_crowd_response';
 export interface PddSmsAddCrowdRequestInterface {
   /**
    * @description: 选自定义的时候列表存省代表的id [10]
-   * @type: string[]
+   * @type: Array<string | number>
    * @default:
    **/
-  location: string[];
+  location: Array<string | number>;
 
   /**
    * @description: 地区类型 0-不限 1-江浙沪 2-自定义
@@ -30,17 +30,17 @@ export interface PddSmsAddCrowdRequestInterface {
 
   /**
    * @description: 商品收藏天数
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  goods_favor_days: string;
+  goods_favor_days: string | number;
 
   /**
    * @description: 店铺收藏天数
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  mall_favor_days: string;
+  mall_favor_days: string | number;
 
   /**
    * @description: 人群名称
@@ -51,31 +51,31 @@ export interface PddSmsAddCrowdRequestInterface {
 
   /**
    * @description: 店铺无购买天数
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  none_purchase_days: string;
+  none_purchase_days: string | number;
 
   /**
    * @description: 店铺有购买天数
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  purchase_days: string;
+  purchase_days: string | number;
 
   /**
    * @description: 历史成交最小次数
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  min_order_count: string;
+  min_order_count: string | number;
 
   /**
    * @description: 历史成交最大次数
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  max_order_count: string;
+  max_order_count: string | number;
 
   /**
    * @description: 首次购买开始时间 "2017-10-19 00:00:00"
@@ -93,10 +93,10 @@ export interface PddSmsAddCrowdRequestInterface {
 
   /**
    * @description: 店铺有访问天数
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  mall_visit_days: string;
+  mall_visit_days: string | number;
 }
 
 /**

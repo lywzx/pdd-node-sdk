@@ -16,10 +16,10 @@ export interface PddAdPlanDeleteRequestInterface {
 
   /**
    * @description: plan_id 列表，示例：[1,2]
-   * @type: string[]
+   * @type: Array<string | number>
    * @default:
    **/
-  plan_ids?: string[];
+  plan_ids?: Array<string | number>;
 }
 
 /**

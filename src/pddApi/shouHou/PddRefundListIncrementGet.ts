@@ -23,10 +23,10 @@ export interface PddRefundListIncrementGetRequestInterface {
 
   /**
    * @description: 必填，最后更新时间结束时间的UNIX时间戳，指格林威治时间 1970 年01 月 01 日 00 时 00 分 00 秒(北京时间 1970 年 01 月 01 日 08 时00 分 00 秒)起至现在的总秒数 PS：开始时间结束时间间距不超过 30 分钟
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  end_updated_at?: string;
+  end_updated_at?: string | number;
 
   /**
    * @description: 返回页码 默认 1，页码从 1 开始 PS：当前采用分页返回，数量和页数会一起传，如果不传，则采用 默认值
@@ -44,10 +44,10 @@ export interface PddRefundListIncrementGetRequestInterface {
 
   /**
    * @description: 必填，最后更新时间开始时间的UNIX时间戳，指格林威治时间 1970 年01月 01 日 00 时 00 分 00 秒(北京时间 1970 年 01 月 01 日 08 时 00分 00 秒)起至现在的总秒数
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  start_updated_at?: string;
+  start_updated_at?: string | number;
 }
 
 /**
@@ -151,10 +151,10 @@ export interface PddRefundListIncrementGetRefundIncrementGetResponseRefundListRe
 
   /**
    * @description: 商品编码
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  goods_id: string;
+  goods_id: string | number;
 
   /**
    * @description: 商品名称
@@ -179,10 +179,10 @@ export interface PddRefundListIncrementGetRefundIncrementGetResponseRefundListRe
 
   /**
    * @description: 售后编号
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  id: string;
+  id: string | number;
 
   /**
    * @description: 订单金额（元）

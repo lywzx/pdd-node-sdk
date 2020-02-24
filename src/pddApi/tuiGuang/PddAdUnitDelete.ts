@@ -16,10 +16,10 @@ export interface PddAdUnitDeleteRequestInterface {
 
   /**
    * @description: unit_id列表，[1,2]
-   * @type: string[]
+   * @type: Array<string | number>
    * @default:
    **/
-  unit_ids?: string[];
+  unit_ids?: Array<string | number>;
 }
 
 /**

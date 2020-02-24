@@ -9,17 +9,17 @@ export const PDD_EXPRESS_DEPOT_LIST_GET_RESPONSE_KEY = 'open_api_response';
 export interface PddExpressDepotListGetRequestInterface {
   /**
    * @description: 分页数据size
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  length?: string;
+  length?: string | number;
 
   /**
    * @description: 分页数据起始位置
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  start?: string;
+  start?: string | number;
 }
 
 /**
@@ -109,10 +109,10 @@ export interface PddExpressDepotListGetOpenApiResponseDepotListResponseInterface
 
   /**
    * @description: 仓库Id
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  depot_id: string;
+  depot_id: string | number;
 
   /**
    * @description: 仓库所在区

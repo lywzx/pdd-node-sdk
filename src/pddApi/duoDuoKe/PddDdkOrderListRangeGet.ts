@@ -102,10 +102,10 @@ export interface PddDdkOrderListRangeGetOrderListGetResponseOrderListResponseInt
 
   /**
    * @description: 商品ID
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  goods_id: string;
+  goods_id: string | number;
 
   /**
    * @description: 商品标题
@@ -116,17 +116,17 @@ export interface PddDdkOrderListRangeGetOrderListGetResponseOrderListResponseInt
 
   /**
    * @description: 订单中sku的单件价格，单位为分
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  goods_price: string;
+  goods_price: string | number;
 
   /**
    * @description: 购买商品的数量
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  goods_quantity: string;
+  goods_quantity: string | number;
 
   /**
    * @description: 商品缩略图
@@ -137,38 +137,38 @@ export interface PddDdkOrderListRangeGetOrderListGetResponseOrderListResponseInt
 
   /**
    * @description: 实际支付金额，单位为分
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  order_amount: string;
+  order_amount: string | number;
 
   /**
    * @description: 订单生成时间，UNIX时间戳
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  order_create_time: string;
+  order_create_time: string | number;
 
   /**
    * @description: 成团时间
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  order_group_success_time: string;
+  order_group_success_time: string | number;
 
   /**
    * @description: 最后更新时间
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  order_modify_at: string;
+  order_modify_at: string | number;
 
   /**
    * @description: 支付时间
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  order_pay_time: string;
+  order_pay_time: string | number;
 
   /**
    * @description: 推广订单编号
@@ -193,24 +193,24 @@ export interface PddDdkOrderListRangeGetOrderListGetResponseOrderListResponseInt
 
   /**
    * @description: 审核时间
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  order_verify_time: string;
+  order_verify_time: string | number;
 
   /**
    * @description: 佣金金额，单位为分
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  promotion_amount: string;
+  promotion_amount: string | number;
 
   /**
    * @description: 佣金比例，千分比
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  promotion_rate: string;
+  promotion_rate: string | number;
 
   /**
    * @description: 推广位ID

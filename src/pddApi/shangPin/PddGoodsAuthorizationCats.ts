@@ -9,10 +9,10 @@ export const PDD_GOODS_AUTHORIZATION_CATS_RESPONSE_KEY = 'goods_auth_cats_get_re
 export interface PddGoodsAuthorizationCatsRequestInterface {
   /**
    * @description: 默认值=0，值=0时为顶点cat_id,通过树顶级节点获取一级类目
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  parent_cat_id: string;
+  parent_cat_id: string | number;
 }
 
 /**
@@ -60,8 +60,8 @@ export interface PddGoodsAuthorizationCatsGoodsAuthCatsGetResponseGoodsCatsListR
 
   /**
    * @description: 类目ID，一级类目ID
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  cat_id: string;
+  cat_id: string | number;
 }

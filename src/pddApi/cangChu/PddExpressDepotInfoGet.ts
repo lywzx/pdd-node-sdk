@@ -8,10 +8,10 @@ export const PDD_EXPRESS_DEPOT_INFO_GET = 'pdd.express.depot.info.get';
 export interface PddExpressDepotInfoGetRequestInterface {
   /**
    * @description: 仓库id
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  depot_id?: string;
+  depot_id?: string | number;
 }
 
 /**
@@ -64,10 +64,10 @@ export interface PddExpressDepotInfoGetResponseInterface {
 
   /**
    * @description: 仓库id
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  depot_id: string;
+  depot_id: string | number;
 
   /**
    * @description: 仓库地址（区编号）

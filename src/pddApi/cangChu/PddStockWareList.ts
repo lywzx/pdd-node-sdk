@@ -9,10 +9,10 @@ export const PDD_STOCK_WARE_LIST_RESPONSE_KEY = 'open_api_response';
 export interface PddStockWareListRequestInterface {
   /**
    * @description: 货品id
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  id: string;
+  id: string | number;
 
   /**
    * @description: 货品编码
@@ -95,10 +95,10 @@ export interface PddStockWareListOpenApiResponseResponseInterface {
 export interface PddStockWareListOpenApiResponseWareDetailsResponseInterface {
   /**
    * @description: 货品id
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  id: string;
+  id: string | number;
 
   /**
    * @description: 货品类型.0:单独货品 1:组合货品
@@ -230,24 +230,24 @@ export interface PddStockWareListOpenApiResponseWareDetailsResponseInterface {
 
   /**
    * @description: 库存
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  quantity: string;
+  quantity: string | number;
 
   /**
    * @description: 创建时间（毫秒）
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  created_at: string;
+  created_at: string | number;
 
   /**
    * @description: 更新时间（毫秒）
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  updated_at: string;
+  updated_at: string | number;
 }
 
 /**
@@ -272,17 +272,17 @@ export interface PddStockWareListOpenApiResponseWareDetailsWareInfosResponseInte
 
   /**
    * @description: 子货品数量
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  ware_quantity: string;
+  ware_quantity: string | number;
 
   /**
    * @description: 子货品id
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  ware_id: string;
+  ware_id: string | number;
 }
 
 /**
@@ -293,24 +293,24 @@ export interface PddStockWareListOpenApiResponseWareDetailsWareInfosResponseInte
 export interface PddStockWareListOpenApiResponseWareDetailsWareSkusResponseInterface {
   /**
    * @description: 商品id
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  goods_id: string;
+  goods_id: string | number;
 
   /**
    * @description: skuid
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  sku_id: string;
+  sku_id: string | number;
 
   /**
    * @description: 货品id
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  ware_id: string;
+  ware_id: string | number;
 
   /**
    * @description: 是否已绑定货品true/false
@@ -357,8 +357,8 @@ export interface PddStockWareListOpenApiResponseWareDetailsWareSkusSpecsResponse
 
   /**
    * @description: 规格id
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  spec_id: string;
+  spec_id: string | number;
 }

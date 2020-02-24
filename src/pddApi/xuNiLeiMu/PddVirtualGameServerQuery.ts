@@ -60,10 +60,10 @@ export interface PddVirtualGameServerQueryGameServerQueryResponseResponseInterfa
 
   /**
    * @description: 游戏ID
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  goods_config_id: string;
+  goods_config_id: string | number;
 }
 
 /**
@@ -82,10 +82,10 @@ export interface PddVirtualGameServerQueryGameServerQueryResponseItemListRespons
 
   /**
    * @description: 区服ID
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  id: string;
+  id: string | number;
 
   /**
    * @description: 名称
@@ -110,10 +110,10 @@ export interface PddVirtualGameServerQueryGameServerQueryResponseItemListRespons
 export interface PddVirtualGameServerQueryGameServerQueryResponseItemListChildrenResponseInterface {
   /**
    * @description: 区服ID
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  id: string;
+  id: string | number;
 
   /**
    * @description: 名称

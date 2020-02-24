@@ -47,10 +47,10 @@ export interface PddGoodsCountryGetGoodsCountryGetResponseResponseInterface {
 export interface PddGoodsCountryGetGoodsCountryGetResponseCountryListResponseInterface {
   /**
    * @description: 国家或地区对应的ID
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  country_id: string;
+  country_id: string | number;
 
   /**
    * @description: 对应ID下的国家或地区名称

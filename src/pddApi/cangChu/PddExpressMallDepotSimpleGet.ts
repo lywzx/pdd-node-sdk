@@ -32,10 +32,10 @@ export interface PddExpressMallDepotSimpleGetResponseInterface {
 export interface PddExpressMallDepotSimpleGetOpenApiResponseResponseInterface {
   /**
    * @description: 仓库Id
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  depot_id: string;
+  depot_id: string | number;
 
   /**
    * @description: 仓库id的string表示

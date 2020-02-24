@@ -8,10 +8,10 @@ export const PDD_DELETE_DRAFT_COMMIT = 'pdd.delete.draft.commit';
 export interface PddDeleteDraftCommitRequestInterface {
   /**
    * @description: 草稿id
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  goods_commit_id?: string;
+  goods_commit_id?: string | number;
 }
 
 /**

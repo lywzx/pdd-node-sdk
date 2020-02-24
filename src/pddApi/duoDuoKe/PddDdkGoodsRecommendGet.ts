@@ -116,87 +116,87 @@ export interface PddDdkGoodsRecommendGetGoodsBasicDetailResponseListResponseInte
 
   /**
    * @description: 商品评价数量
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  goods_eval_count: string;
+  goods_eval_count: string | number;
 
   /**
    * @description: 市场服务费
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  market_fee: string;
+  market_fee: string | number;
 
   /**
    * @description: 商品等级
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  goods_rate: string;
+  goods_rate: string | number;
 
   /**
    * @description: 优惠券金额
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  coupon_price: string;
+  coupon_price: string | number;
 
   /**
    * @description: 佣金比例,千分比
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  promotion_rate: string;
+  promotion_rate: string | number;
 
   /**
    * @description: 优惠券失效时间,UNIX时间戳
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  coupon_end_time: string;
+  coupon_end_time: string | number;
 
   /**
    * @description: 优惠券生效时间,UNIX时间戳
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  coupon_start_time: string;
+  coupon_start_time: string | number;
 
   /**
    * @description: 优惠券剩余数量
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  coupon_remain_quantity: string;
+  coupon_remain_quantity: string | number;
 
   /**
    * @description: 优惠券总数量
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  coupon_total_quantity: string;
+  coupon_total_quantity: string | number;
 
   /**
    * @description: 优惠券面额,单位为分
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  coupon_discount: string;
+  coupon_discount: string | number;
 
   /**
    * @description: 优惠券门槛价格,单位为分
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  coupon_min_order_amount: string;
+  coupon_min_order_amount: string | number;
 
   /**
    * @description: 优惠券id
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  coupon_id: string;
+  coupon_id: string | number;
 
   /**
    * @description: 商品是否带券,true-带券,false-不带券
@@ -214,17 +214,17 @@ export interface PddDdkGoodsRecommendGetGoodsBasicDetailResponseListResponseInte
 
   /**
    * @description: 商品一~四级类目ID列表
-   * @type: string[]
+   * @type: Array<string | number>
    * @default:
    **/
-  cat_ids: string[];
+  cat_ids: Array<string | number>;
 
   /**
    * @description: 商品一~四级标签类目ID列表
-   * @type: string[]
+   * @type: Array<string | number>
    * @default:
    **/
-  opt_ids: string[];
+  opt_ids: Array<string | number>;
 
   /**
    * @description: 商品标签名
@@ -270,38 +270,38 @@ export interface PddDdkGoodsRecommendGetGoodsBasicDetailResponseListResponseInte
 
   /**
    * @description: 商家id
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  mall_id: string;
+  mall_id: string | number;
 
   /**
    * @description: 最小单买价格，单位分
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  min_normal_price: string;
+  min_normal_price: string | number;
 
   /**
    * @description: 最小成团价格，单位分
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  min_group_price: string;
+  min_group_price: string | number;
 
   /**
    * @description: 商品实际价格
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  goods_fact_price: string;
+  goods_fact_price: string | number;
 
   /**
    * @description: 商品标准价格
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  goods_mark_price: string;
+  goods_mark_price: string | number;
 
   /**
    * @description: 商品详情图列表
@@ -340,17 +340,17 @@ export interface PddDdkGoodsRecommendGetGoodsBasicDetailResponseListResponseInte
 
   /**
    * @description: 商品id
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  goods_id: string;
+  goods_id: string | number;
 
   /**
    * @description: 创建时间
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  create_at: string;
+  create_at: string | number;
 
   /**
    * @description: 销售量

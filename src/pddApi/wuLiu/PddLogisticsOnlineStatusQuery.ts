@@ -45,8 +45,8 @@ export interface PddLogisticsOnlineStatusQueryLogisticsOnlineStatusQueryResponse
 
   /**
    * @description: 状态最新操作时间戳;（Integer）
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  update_time: string;
+  update_time: string | number;
 }

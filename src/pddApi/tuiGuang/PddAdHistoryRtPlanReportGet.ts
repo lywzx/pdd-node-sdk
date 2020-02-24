@@ -53,10 +53,10 @@ export interface PddAdHistoryRtPlanReportGetAdPlanRealTimeReportResponseResponse
 export interface PddAdHistoryRtPlanReportGetAdPlanRealTimeReportResponsePlanRealTimeReportListResponseInterface {
   /**
    * @description: 计划id
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  plan_id: string;
+  plan_id: string | number;
 
   /**
    * @description: 计划名
@@ -67,10 +67,10 @@ export interface PddAdHistoryRtPlanReportGetAdPlanRealTimeReportResponsePlanReal
 
   /**
    * @description: 计划日限额，单位厘
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  max_cost: string;
+  max_cost: string | number;
 
   /**
    * @description: 1：已启用，2：未启用
@@ -102,10 +102,10 @@ export interface PddAdHistoryRtPlanReportGetAdPlanRealTimeReportResponsePlanReal
 
   /**
    * @description: 推广单元数量
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  ad_unit_num: string;
+  ad_unit_num: string | number;
 
   /**
    * @description: 广告投资回报率
@@ -116,17 +116,17 @@ export interface PddAdHistoryRtPlanReportGetAdPlanRealTimeReportResponsePlanReal
 
   /**
    * @description: 广告曝光数
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  impression: string;
+  impression: string | number;
 
   /**
    * @description: 广告点击数
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  click: string;
+  click: string | number;
 
   /**
    * @description: 广告点击率
@@ -137,10 +137,10 @@ export interface PddAdHistoryRtPlanReportGetAdPlanRealTimeReportResponsePlanReal
 
   /**
    * @description: 广告消耗,单位厘
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  spend: string;
+  spend: string | number;
 
   /**
    * @description: 点击单价，单位厘
@@ -151,17 +151,17 @@ export interface PddAdHistoryRtPlanReportGetAdPlanRealTimeReportResponsePlanReal
 
   /**
    * @description: 广告转化支付订单数
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  order_num: string;
+  order_num: string | number;
 
   /**
    * @description: 广告转化支付金额，单位厘
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  gmv: string;
+  gmv: string | number;
 
   /**
    * @description: 日期

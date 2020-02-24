@@ -16,10 +16,10 @@ export interface PddAdBidQueryProfileRequestInterface {
 
   /**
    * @description: 单元ID
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  unit_id?: string;
+  unit_id?: string | number;
 }
 
 /**
@@ -74,8 +74,8 @@ export interface PddAdBidQueryProfileOpenApiResponseFeaturesResponseInterface {
 
   /**
    * @description: 兴趣点ID
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  sub_level_target_id: string;
+  sub_level_target_id: string | number;
 }

@@ -51,10 +51,10 @@ export interface PddGoodsListGetRequestInterface {
 
   /**
    * @description: 模版id
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  cost_template_id: string;
+  cost_template_id: string | number;
 }
 
 /**
@@ -109,10 +109,10 @@ export interface PddGoodsListGetGoodsListGetResponseGoodsListResponseInterface {
 
   /**
    * @description: 商品编码
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  goods_id: string;
+  goods_id: string | number;
 
   /**
    * @description: 商品名称
@@ -137,10 +137,10 @@ export interface PddGoodsListGetGoodsListGetResponseGoodsListResponseInterface {
 
   /**
    * @description: 商品总数量
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  goods_quantity: string;
+  goods_quantity: string | number;
 
   /**
    * @description: 是否在架上，0-下架中，1-架上
@@ -173,17 +173,17 @@ export interface PddGoodsListGetGoodsListGetResponseGoodsListSkuListResponseInte
 
   /**
    * @description: sku编码
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  sku_id: string;
+  sku_id: string | number;
 
   /**
    * @description: sku库存
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  sku_quantity: string;
+  sku_quantity: string | number;
 
   /**
    * @description: 商家外部编码（sku），同其他接口中的outer_id 、out_id、out_sku_sn、outer_sku_sn、out_sku_id、outer_sku_id 都为商家编码（sku维度）。

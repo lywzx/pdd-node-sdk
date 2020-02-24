@@ -9,24 +9,24 @@ export const PDD_AD_CREATIVE_HISTORY_REPORT_GET_RESPONSE_KEY = 'open_api_respons
 export interface PddAdCreativeHistoryReportGetRequestInterface {
   /**
    * @description: 创意ID, 分天数据必填，汇总表数据无需填
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  creative_id: string;
+  creative_id: string | number;
 
   /**
    * @description: 单元ID, 分天数据无需填，汇总表数据选填
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  unit_id: string;
+  unit_id: string | number;
 
   /**
    * @description: 计划ID, 分天数据无需填，汇总表数据选填
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  plan_id: string;
+  plan_id: string | number;
 
   /**
    * @description: 数据聚合方式（1 - 日期，2 - 实体 Id）
@@ -133,10 +133,10 @@ export interface PddAdCreativeHistoryReportGetOpenApiResponseResponseInterface {
 
   /**
    * @description: 总数
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  total: string;
+  total: string | number;
 }
 
 /**
@@ -147,10 +147,10 @@ export interface PddAdCreativeHistoryReportGetOpenApiResponseResponseInterface {
 export interface PddAdCreativeHistoryReportGetOpenApiResponseResultResponseInterface {
   /**
    * @description: 店铺关注数
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  mall_fav_num: string;
+  mall_fav_num: string | number;
 
   /**
    * @description: 千次展现成本
@@ -168,17 +168,17 @@ export interface PddAdCreativeHistoryReportGetOpenApiResponseResultResponseInter
 
   /**
    * @description: 广告转化支付金额，单位厘
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  gmv: string;
+  gmv: string | number;
 
   /**
    * @description: 广告转化支付订单数
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  order_num: string;
+  order_num: string | number;
 
   /**
    * @description: 点击单价，单位厘
@@ -189,10 +189,10 @@ export interface PddAdCreativeHistoryReportGetOpenApiResponseResultResponseInter
 
   /**
    * @description: 广告消耗,单位厘
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  spend: string;
+  spend: string | number;
 
   /**
    * @description: 广告点击率
@@ -224,31 +224,31 @@ export interface PddAdCreativeHistoryReportGetOpenApiResponseResultResponseInter
 
   /**
    * @description: 创意ID
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  creative_id: string;
+  creative_id: string | number;
 
   /**
    * @description: 单元ID, 分天数据里无此数据
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  unit_id: string;
+  unit_id: string | number;
 
   /**
    * @description: 计划ID,分天数据无此数据
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  plan_id: string;
+  plan_id: string | number;
 
   /**
    * @description: 广告主ID
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  mall_id: string;
+  mall_id: string | number;
 
   /**
    * @description: 分天数据日期，汇总报表无此数据

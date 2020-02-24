@@ -9,10 +9,10 @@ export const PDD_SMS_CUSTOM_SETTING_RESPONSE_KEY = 'sms_custom_setting_response'
 export interface PddSmsCustomSettingRequestInterface {
   /**
    * @description: 模板id
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  template_id?: string;
+  template_id?: string | number;
 
   /**
    * @description: 待发送手机号，["15671551276"]
@@ -59,8 +59,8 @@ export interface PddSmsCustomSettingResponseInterface {
 export interface PddSmsCustomSettingSmsCustomSettingResponseResponseInterface {
   /**
    * @description: 结果
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  result: string;
+  result: string | number;
 }

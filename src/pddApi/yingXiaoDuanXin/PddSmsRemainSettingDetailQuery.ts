@@ -45,10 +45,10 @@ export interface PddSmsRemainSettingDetailQuerySmsRemainSettingDetailQueryRespon
 
   /**
    * @description: 错误代码
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  error_code: string;
+  error_code: string | number;
 
   /**
    * @description: 错误类型
@@ -74,10 +74,10 @@ export interface PddSmsRemainSettingDetailQuerySmsRemainSettingDetailQueryRespon
 export interface PddSmsRemainSettingDetailQuerySmsRemainSettingDetailQueryResponseResultResponseInterface {
   /**
    * @description: 店铺id
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  mall_id: string;
+  mall_id: string | number;
 
   /**
    * @description: 设置类型
@@ -104,10 +104,10 @@ export interface PddSmsRemainSettingDetailQuerySmsRemainSettingDetailQueryRespon
 
   /**
    * @description: 模板id
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  template_id: string;
+  template_id: string | number;
 
   /**
    * @description: 是否开启
@@ -118,17 +118,17 @@ export interface PddSmsRemainSettingDetailQuerySmsRemainSettingDetailQueryRespon
 
   /**
    * @description: 全部条数
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  send_num: string;
+  send_num: string | number;
 
   /**
    * @description: 失败条数
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  send_failed_num: string;
+  send_failed_num: string | number;
 }
 
 /**
@@ -139,10 +139,10 @@ export interface PddSmsRemainSettingDetailQuerySmsRemainSettingDetailQueryRespon
 export interface PddSmsRemainSettingDetailQuerySmsRemainSettingDetailQueryResponseResultTriggerConditionResponseInterface {
   /**
    * @description: 距离系统自动取消订单，单位分钟
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  unpaid_duration: string;
+  unpaid_duration: string | number;
 }
 
 /**
@@ -153,17 +153,17 @@ export interface PddSmsRemainSettingDetailQuerySmsRemainSettingDetailQueryRespon
 export interface PddSmsRemainSettingDetailQuerySmsRemainSettingDetailQueryResponseResultTargetResponseInterface {
   /**
    * @description: 商家实收金额，最低价
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  min_pay_amount: string;
+  min_pay_amount: string | number;
 
   /**
    * @description: 商家实收金额，最高价
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  max_pay_amount: string;
+  max_pay_amount: string | number;
 
   /**
    * @description: 支付金额是否不限
@@ -188,10 +188,10 @@ export interface PddSmsRemainSettingDetailQuerySmsRemainSettingDetailQueryRespon
 
   /**
    * @description: 商品id列表
-   * @type: string[]
+   * @type: Array<string | number>
    * @default:
    **/
-  goods: string[];
+  goods: Array<string | number>;
 
   /**
    * @description: 是否排除商品

@@ -9,10 +9,10 @@ export const PDD_DDK_THEME_GOODS_SEARCH_RESPONSE_KEY = 'theme_list_get_response'
 export interface PddDdkThemeGoodsSearchRequestInterface {
   /**
    * @description: 主题ID
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  theme_id?: string;
+  theme_id?: string | number;
 }
 
 /**
@@ -38,10 +38,10 @@ export interface PddDdkThemeGoodsSearchResponseInterface {
 export interface PddDdkThemeGoodsSearchThemeListGetResponseResponseInterface {
   /**
    * @description: 返回商品总数
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  total: string;
+  total: string | number;
 
   /**
    * @description: 商品列表对象
@@ -60,10 +60,10 @@ export interface PddDdkThemeGoodsSearchThemeListGetResponseResponseInterface {
 export interface PddDdkThemeGoodsSearchThemeListGetResponseGoodsListResponseInterface {
   /**
    * @description: 商品编码
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  goods_id: string;
+  goods_id: string | number;
 
   /**
    * @description: 商品名称
@@ -102,17 +102,17 @@ export interface PddDdkThemeGoodsSearchThemeListGetResponseGoodsListResponseInte
 
   /**
    * @description: 最小拼团价格,单位为分
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  min_group_price: string;
+  min_group_price: string | number;
 
   /**
    * @description: 最小单买价格,单位为分
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  min_normal_price: string;
+  min_normal_price: string | number;
 
   /**
    * @description: 店铺名称
@@ -123,10 +123,10 @@ export interface PddDdkThemeGoodsSearchThemeListGetResponseGoodsListResponseInte
 
   /**
    * @description: 商品标签类目ID,使用pdd.goods.opt.get获取
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  opt_id: string;
+  opt_id: string | number;
 
   /**
    * @description: 商品标签名
@@ -151,59 +151,59 @@ export interface PddDdkThemeGoodsSearchThemeListGetResponseGoodsListResponseInte
 
   /**
    * @description: 优惠券门槛价格,单位为分
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  coupon_min_order_amount: string;
+  coupon_min_order_amount: string | number;
 
   /**
    * @description: 优惠券面额,单位为分
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  coupon_discount: string;
+  coupon_discount: string | number;
 
   /**
    * @description: 优惠券总数量
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  coupon_total_quantity: string;
+  coupon_total_quantity: string | number;
 
   /**
    * @description: 优惠券剩余数量
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  coupon_remain_quantity: string;
+  coupon_remain_quantity: string | number;
 
   /**
    * @description: 优惠券生效时间,UNIX时间戳
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  coupon_start_time: string;
+  coupon_start_time: string | number;
 
   /**
    * @description: 优惠券失效时间,UNIX时间戳
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  coupon_end_time: string;
+  coupon_end_time: string | number;
 
   /**
    * @description: 佣金比例,千分比
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  promotion_rate: string;
+  promotion_rate: string | number;
 
   /**
    * @description: 商品评价数量
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  goods_eval_count: string;
+  goods_eval_count: string | number;
 
   /**
    * @description: 已售卖件数

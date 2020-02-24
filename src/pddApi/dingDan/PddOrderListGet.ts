@@ -23,17 +23,17 @@ export interface PddOrderListGetRequestInterface {
 
   /**
    * @description: 必填，成交时间开始时间的时间戳，指格林威治时间 1970 年 01 月 01 日 00 时 00 分 00 秒(北京时间 1970 年 01 月 01 日 08 时 00 分 00 秒)起至现在的总秒数
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  start_confirm_at?: string;
+  start_confirm_at?: string | number;
 
   /**
    * @description: 必填，成交时间结束时间的时间戳，指格林威治时间 1970 年 01 月 01 日 00 时 00 分 00 秒(北京时间 1970 年 01 月 01 日 08 时 00 分 00 秒)起至现在的总秒数 PS：开始时间结束时间间距不超过 24 小时
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  end_confirm_at?: string;
+  end_confirm_at?: string | number;
 
   /**
    * @description: 返回页码 默认 1，页码从 1 开始 PS：当前采用分页返回，数量和页数会一起传，如果不传，则采用 默认值
@@ -287,10 +287,10 @@ export interface PddOrderListGetOrderListGetResponseOrderListResponseInterface {
 
   /**
    * @description: 快递公司在拼多多的代码
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  logistics_id: string;
+  logistics_id: string | number;
 
   /**
    * @description: 支付方式，枚举值：QQ,WEIXIN,ALIPAY,LIANLIANPAY
@@ -448,31 +448,31 @@ export interface PddOrderListGetOrderListGetResponseOrderListResponseInterface {
 
   /**
    * @description: 商品四级分类
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  cat_id_4: string;
+  cat_id_4: string | number;
 
   /**
    * @description: 商品三级分类
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  cat_id_3: string;
+  cat_id_3: string | number;
 
   /**
    * @description: 商品二级分类
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  cat_id_2: string;
+  cat_id_2: string | number;
 
   /**
    * @description: 商品一级分类
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  cat_id_1: string;
+  cat_id_1: string | number;
 
   /**
    * @description: 支付申报订单号（多多国际清关请使用此字段，单号以XP开头）
@@ -701,10 +701,10 @@ export interface PddOrderListGetOrderListGetResponseOrderListItemListResponseInt
 export interface PddOrderListGetOrderListGetResponseOrderListOrderDepotInfoResponseInterface {
   /**
    * @description: 仓库id
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  depot_id: string;
+  depot_id: string | number;
 
   /**
    * @description: 仓库名称
@@ -722,10 +722,10 @@ export interface PddOrderListGetOrderListGetResponseOrderListOrderDepotInfoRespo
 
   /**
    * @description: 货品id
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  ware_id: string;
+  ware_id: string | number;
 
   /**
    * @description: 货品名称
@@ -779,10 +779,10 @@ export interface PddOrderListGetOrderListGetResponseOrderListOrderDepotInfoWareS
 
   /**
    * @description: 子货品数量
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  ware_quantity: string;
+  ware_quantity: string | number;
 
   /**
    * @description: 子货品名称
@@ -793,8 +793,8 @@ export interface PddOrderListGetOrderListGetResponseOrderListOrderDepotInfoWareS
 
   /**
    * @description: 子货品id
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  ware_id: string;
+  ware_id: string | number;
 }

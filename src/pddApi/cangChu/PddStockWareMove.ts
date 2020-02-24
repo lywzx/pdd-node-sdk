@@ -59,10 +59,10 @@ export interface PddStockWareMoveStockMoveOrderActionDtoRequestInterface {
 
   /**
    * @description: 调整时间
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  move_time?: string;
+  move_time?: string | number;
 
   /**
    * @description: 调整单号
@@ -87,10 +87,10 @@ export interface PddStockWareMoveStockMoveRecordActionDtoListRequestInterface {
 
   /**
    * @description: 调整数量
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  move_num?: string;
+  move_num?: string | number;
 
   /**
    * @description: 货品sn
@@ -108,8 +108,8 @@ export interface PddStockWareMoveStockMoveRecordActionDtoListRequestInterface {
 export interface PddStockWareMoveResponseInterface {
   /**
    * @description: 调整单ID
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  open_api_response: string;
+  open_api_response: string | number;
 }

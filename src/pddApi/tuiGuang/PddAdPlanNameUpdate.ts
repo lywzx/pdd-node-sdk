@@ -16,10 +16,10 @@ export interface PddAdPlanNameUpdateRequestInterface {
 
   /**
    * @description: 计划id
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  plan_id?: string;
+  plan_id?: string | number;
 
   /**
    * @description: 计划名

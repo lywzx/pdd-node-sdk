@@ -16,10 +16,10 @@ export interface PddSmsSellSettingRequestInterface {
 
   /**
    * @description: 人群id，个性化营销短信必填
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  crowd_id: string;
+  crowd_id: string | number;
 
   /**
    * @description: 发送时间 必填
@@ -66,8 +66,8 @@ export interface PddSmsSellSettingResponseInterface {
 export interface PddSmsSellSettingSmsSellSettingResponseResponseInterface {
   /**
    * @description: 请求结果
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  result: string;
+  result: string | number;
 }

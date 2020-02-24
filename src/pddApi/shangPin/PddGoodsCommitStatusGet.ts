@@ -9,10 +9,10 @@ export const PDD_GOODS_COMMIT_STATUS_GET_RESPONSE_KEY = 'goods_commit_status_get
 export interface PddGoodsCommitStatusGetRequestInterface {
   /**
    * @description: goods_commit_id列表
-   * @type: string[]
+   * @type: Array<string | number>
    * @default:
    **/
-  goods_commit_id_list?: string[];
+  goods_commit_id_list?: Array<string | number>;
 }
 
 /**
@@ -60,10 +60,10 @@ export interface PddGoodsCommitStatusGetGoodsCommitStatusGetResponseListResponse
 
   /**
    * @description: 草稿id
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  goods_commit_id: string;
+  goods_commit_id: string | number;
 
   /**
    * @description: 驳回原因

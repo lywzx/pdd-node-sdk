@@ -75,15 +75,15 @@ export interface PddLogisticsAddressGetLogisticsAddressGetResponseLogisticsAddre
 
   /**
    * @description: 父地区ID，顶点id为0
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  parent_id: string;
+  parent_id: string | number;
 
   /**
    * @description: 地区ID
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  id: string;
+  id: string | number;
 }

@@ -100,10 +100,10 @@ export interface PddOpenMsgServiceQueryMsgRecordSmsSendDetailsResponseInterface 
 
   /**
    * @description: 错误码
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  error_code: string;
+  error_code: string | number;
 
   /**
    * @description: 外部id
@@ -142,8 +142,8 @@ export interface PddOpenMsgServiceQueryMsgRecordSmsSendDetailsResponseInterface 
 
   /**
    * @description: 模板ID
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  template_code: string;
+  template_code: string | number;
 }

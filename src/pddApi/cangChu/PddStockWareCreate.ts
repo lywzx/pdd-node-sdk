@@ -142,10 +142,10 @@ export interface PddStockWareCreateWareInfosRequestInterface {
 
   /**
    * @description:
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  ware_id?: string;
+  ware_id?: string | number;
 }
 
 /**

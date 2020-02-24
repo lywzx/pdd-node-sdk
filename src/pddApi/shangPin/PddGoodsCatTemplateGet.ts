@@ -9,10 +9,10 @@ export const PDD_GOODS_CAT_TEMPLATE_GET_RESPONSE_KEY = 'open_api_response';
 export interface PddGoodsCatTemplateGetRequestInterface {
   /**
    * @description: 类目id
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  cat_id?: string;
+  cat_id?: string | number;
 }
 
 /**
@@ -38,10 +38,10 @@ export interface PddGoodsCatTemplateGetResponseInterface {
 export interface PddGoodsCatTemplateGetOpenApiResponseResponseInterface {
   /**
    * @description: 模板允许的最大的自定义规格数量
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  input_max_spec_num: string;
+  input_max_spec_num: string | number;
 
   /**
    * @description: 限定规格不支持部分选取，为true时限定规格要么全选要么全不选
@@ -52,17 +52,17 @@ export interface PddGoodsCatTemplateGetOpenApiResponseResponseInterface {
 
   /**
    * @description: 单个自定义规格值上限
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  single_spec_value_num: string;
+  single_spec_value_num: string | number;
 
   /**
    * @description: 最大sku数目上限
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  max_sku_num: string;
+  max_sku_num: string | number;
 
   /**
    * @description: 属性信息
@@ -81,10 +81,10 @@ export interface PddGoodsCatTemplateGetOpenApiResponseResponseInterface {
 export interface PddGoodsCatTemplateGetOpenApiResponsePropertiesResponseInterface {
   /**
    * @description: 模板属性id
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  id: string;
+  id: string | number;
 
   /**
    * @description: 属性别名
@@ -165,10 +165,10 @@ export interface PddGoodsCatTemplateGetOpenApiResponsePropertiesResponseInterfac
 
   /**
    * @description: 父属性id
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  parent_id: string;
+  parent_id: string | number;
 
   /**
    * @description: 是否销售属性
@@ -186,10 +186,10 @@ export interface PddGoodsCatTemplateGetOpenApiResponsePropertiesResponseInterfac
 
   /**
    * @description: 销售属性规格id，非销售属性为null
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  spec_id: string;
+  spec_id: string | number;
 
   /**
    * @description: 属性特性:0普通，1颜色，2尺码
@@ -207,10 +207,10 @@ export interface PddGoodsCatTemplateGetOpenApiResponsePropertiesResponseInterfac
 
   /**
    * @description: 引用属性id
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  ref_pid: string;
+  ref_pid: string | number;
 
   /**
    * @description: 属性值列表
@@ -229,10 +229,10 @@ export interface PddGoodsCatTemplateGetOpenApiResponsePropertiesResponseInterfac
 
   /**
    * @description: 若属性按条件展示,则只有show_vids中的值被选择时属性才可使用
-   * @type: string[]
+   * @type: Array<string | number>
    * @default:
    **/
-  show_vids: string[];
+  show_vids: Array<string | number>;
 }
 
 /**
@@ -243,10 +243,10 @@ export interface PddGoodsCatTemplateGetOpenApiResponsePropertiesResponseInterfac
 export interface PddGoodsCatTemplateGetOpenApiResponsePropertiesValuesResponseInterface {
   /**
    * @description: 基础属性值id
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  vid: string;
+  vid: string | number;
 
   /**
    * @description: 属性值
@@ -272,10 +272,10 @@ export interface PddGoodsCatTemplateGetOpenApiResponsePropertiesValuesResponseIn
 
   /**
    * @description: 规格id,非销售属性为null
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  spec_id: string;
+  spec_id: string | number;
 
   /**
    * @description: 是否父属性值
@@ -286,10 +286,10 @@ export interface PddGoodsCatTemplateGetOpenApiResponsePropertiesValuesResponseIn
 
   /**
    * @description: 对应的父属性值id
-   * @type: string[]
+   * @type: Array<string | number>
    * @default:
    **/
-  parent_vids: string[];
+  parent_vids: Array<string | number>;
 }
 
 /**

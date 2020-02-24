@@ -9,17 +9,17 @@ export const PDD_PROMOTION_COUPON_QUANTITY_ADD_RESPONSE_KEY = 'coupon_quantity_a
 export interface PddPromotionCouponQuantityAddRequestInterface {
   /**
    * @description: 券批次ID
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  batch_id?: string;
+  batch_id?: string | number;
 
   /**
    * @description: 要增加的数量
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  add_quantity?: string;
+  add_quantity?: string | number;
 }
 
 /**

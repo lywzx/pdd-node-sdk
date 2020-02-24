@@ -45,10 +45,10 @@ export interface PddDdkOauthOrderDetailGetOrderDetailResponseResponseInterface {
 
   /**
    * @description: 商品id
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  goods_id: string;
+  goods_id: string | number;
 
   /**
    * @description: 商品名称
@@ -66,38 +66,38 @@ export interface PddDdkOauthOrderDetailGetOrderDetailResponseResponseInterface {
 
   /**
    * @description: 商品数量
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  goods_quantity: string;
+  goods_quantity: string | number;
 
   /**
    * @description: 商品价格（分）
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  goods_price: string;
+  goods_price: string | number;
 
   /**
    * @description: 订单价格（分）
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  order_amount: string;
+  order_amount: string | number;
 
   /**
    * @description: 佣金比例 千分比
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  promotion_rate: string;
+  promotion_rate: string | number;
 
   /**
    * @description: 佣金（分）
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  promotion_amount: string;
+  promotion_amount: string | number;
 
   /**
    * @description: 结算批次号
@@ -122,52 +122,52 @@ export interface PddDdkOauthOrderDetailGetOrderDetailResponseResponseInterface {
 
   /**
    * @description: 订单创建时间（UNIX时间戳）
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  order_create_time: string;
+  order_create_time: string | number;
 
   /**
    * @description: 订单支付时间（UNIX时间戳）
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  order_pay_time: string;
+  order_pay_time: string | number;
 
   /**
    * @description: 订单成团时间（UNIX时间戳）
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  order_group_success_time: string;
+  order_group_success_time: string | number;
 
   /**
    * @description: 订单确认收货时间（UNIX时间戳）
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  order_receive_time: string;
+  order_receive_time: string | number;
 
   /**
    * @description: 订单审核时间（UNIX时间戳）
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  order_verify_time: string;
+  order_verify_time: string | number;
 
   /**
    * @description: 订单结算时间（UNIX时间戳）
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  order_settle_time: string;
+  order_settle_time: string | number;
 
   /**
    * @description: 订单最后更新时间（UNIX时间戳）
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  order_modify_at: string;
+  order_modify_at: string | number;
 
   /**
    * @description: 订单类型：0：领券页面， 1： 红包页， 2：领券页， 3： 题页
@@ -178,24 +178,24 @@ export interface PddDdkOauthOrderDetailGetOrderDetailResponseResponseInterface {
 
   /**
    * @description: 成团编号
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  group_id: string;
+  group_id: string | number;
 
   /**
    * @description: 多多客工具id
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  auth_duo_id: string;
+  auth_duo_id: string | number;
 
   /**
    * @description: 招商多多客id
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  zs_duo_id: string;
+  zs_duo_id: string | number;
 
   /**
    * @description: 自定义参数
@@ -213,17 +213,17 @@ export interface PddDdkOauthOrderDetailGetOrderDetailResponseResponseInterface {
 
   /**
    * @description: 链接最后一次生产时间
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  url_last_generate_time: string;
+  url_last_generate_time: string | number;
 
   /**
    * @description: 打点时间
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  point_time: string;
+  point_time: string | number;
 
   /**
    * @description: 售后状态：0：无，1：售后中，2：售后完成

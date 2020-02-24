@@ -9,17 +9,17 @@ export const PDD_LOGISTICS_TICKET_GET_RESPONSE_KEY = 'logistics_ticket_get_respo
 export interface PddLogisticsTicketGetRequestInterface {
   /**
    * @description: 必填，最后更新时间开始时间的时间戳，指格林威治时间 1970 年 01 月 01 日 00 时 00 分 00 秒(北京时间 1970 年 01 月 01 日 08 时 00 分 00 秒)起至现在的总秒数。示例：1523762012。
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  start_updated_at?: string;
+  start_updated_at?: string | number;
 
   /**
    * @description: 必填，最后更新时间结束时间的时间戳，指格林威治时间 1970 年 01 月 01 日 00 时 00 分 00 秒(北京时间 1970 年 01 月 01 日 08 时 00 分 00 秒)起至现在的总秒数 PS：开始时间结束时间间距不超过 30 分钟。示例：1523763012。
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  end_updated_at?: string;
+  end_updated_at?: string | number;
 
   /**
    * @description: 返回页码 默认 1，页码从 1 开始 PS：当前采用分页返回，数量和页数会一起传，如果不传，则采用 默认值。注：必须采用倒序的分页方式（从最后一页往回取）才能避免漏单问题
@@ -88,10 +88,10 @@ export interface PddLogisticsTicketGetLogisticsTicketGetResponseLogisticsTicketL
 
   /**
    * @description: 赔付金额(单位:分)
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  compensate_amount: string;
+  compensate_amount: string | number;
 
   /**
    * @description: 赔付状态 0:默认,1:未赔付,2:已赔付
@@ -102,10 +102,10 @@ export interface PddLogisticsTicketGetLogisticsTicketGetResponseLogisticsTicketL
 
   /**
    * @description: 工单创建时间戳
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  created_at: string;
+  created_at: string | number;
 
   /**
    * @description: create_type
@@ -137,10 +137,10 @@ export interface PddLogisticsTicketGetLogisticsTicketGetResponseLogisticsTicketL
 
   /**
    * @description: 物流商快递编码
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  express_company_id: string;
+  express_company_id: string | number;
 
   /**
    * @description: 处理人
@@ -165,10 +165,10 @@ export interface PddLogisticsTicketGetLogisticsTicketGetResponseLogisticsTicketL
 
   /**
    * @description: 订单金额
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  pay_amount: string;
+  pay_amount: string | number;
 
   /**
    * @description: 订单号生成的物流单号
@@ -200,10 +200,10 @@ export interface PddLogisticsTicketGetLogisticsTicketGetResponseLogisticsTicketL
 
   /**
    * @description: 工单退回次数
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  retreat_count: string;
+  retreat_count: string | number;
 
   /**
    * @description: send_address
@@ -235,10 +235,10 @@ export interface PddLogisticsTicketGetLogisticsTicketGetResponseLogisticsTicketL
 
   /**
    * @description: 工单id
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  ticket_id: string;
+  ticket_id: string | number;
 
   /**
    * @description: 问题描述
@@ -249,17 +249,17 @@ export interface PddLogisticsTicketGetLogisticsTicketGetResponseLogisticsTicketL
 
   /**
    * @description: 问题类型id
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  type_id: string;
+  type_id: string | number;
 
   /**
    * @description: 工单最后更新时间戳
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  updated_at: string;
+  updated_at: string | number;
 
   /**
    * @description: 紧急度，0:中,1:紧急

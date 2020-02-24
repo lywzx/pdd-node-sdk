@@ -24,10 +24,10 @@ export interface PddRdcPddgeniusSendgoodsCancelRequestInterface {
 export interface PddRdcPddgeniusSendgoodsCancelParamRequestInterface {
   /**
    * @description: 操作时间戳（毫秒）
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  operate_time: string;
+  operate_time: string | number;
 
   /**
    * @description: 订单号
@@ -45,10 +45,10 @@ export interface PddRdcPddgeniusSendgoodsCancelParamRequestInterface {
 
   /**
    * @description: 退款单ID
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  refund_id?: string;
+  refund_id?: string | number;
 
   /**
    * @description: 退款金额 单位 分
@@ -125,8 +125,8 @@ export interface PddRdcPddgeniusSendgoodsCancelRdcPddgeniusSendgoodsCancelRespon
 export interface PddRdcPddgeniusSendgoodsCancelRdcPddgeniusSendgoodsCancelResponseResultResultDataResponseInterface {
   /**
    * @description: 退款单ID
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  refund_id: string;
+  refund_id: string | number;
 }

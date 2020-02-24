@@ -38,10 +38,10 @@ export interface PddVoucherAppointmentInfoSendRequestInterface {
 
   /**
    * @description: 预约时间, 距离格林威治时间 1970 年 01 月 01 日 00 时 00 分 00 秒(北京时间 1970 年 01 月 01 日 08 时 00 分 00 秒)起至现在的总毫秒数
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  appointment_time?: string;
+  appointment_time?: string | number;
 }
 
 /**

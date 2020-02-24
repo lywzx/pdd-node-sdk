@@ -9,10 +9,10 @@ export const PDD_DDK_MALL_URL_GEN_RESPONSE_KEY = 'mall_coupon_generate_url_respo
 export interface PddDdkMallUrlGenRequestInterface {
   /**
    * @description: 店铺id
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  mall_id?: string;
+  mall_id?: string | number;
 
   /**
    * @description: 推广位

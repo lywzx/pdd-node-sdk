@@ -66,10 +66,10 @@ export interface PddInvoiceDetailQueryInvoiceDetailQueryResponseResponseInterfac
 
   /**
    * @description: 开票日期,时间戳（毫秒）
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  invoice_time: string;
+  invoice_time: string | number;
 
   /**
    * @description: 开票人
@@ -108,31 +108,31 @@ export interface PddInvoiceDetailQueryInvoiceDetailQueryResponseResponseInterfac
 
   /**
    * @description: 总税额
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  sum_tax: string;
+  sum_tax: string | number;
 
   /**
    * @description: 税率
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  tax_rate: string;
+  tax_rate: string | number;
 
   /**
    * @description: 不含税金额
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  sum_price: string;
+  sum_price: string | number;
 
   /**
    * @description: 开票金额
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  invoice_amount: string;
+  invoice_amount: string | number;
 
   /**
    * @description: 开票类型：0-蓝票，1-红票；目前只支持0
@@ -178,10 +178,10 @@ export interface PddInvoiceDetailQueryInvoiceDetailQueryResponseResponseInterfac
 
   /**
    * @description: 店铺id
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  mall_id: string;
+  mall_id: string | number;
 
   /**
    * @description: 发票流水号

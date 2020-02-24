@@ -23,10 +23,10 @@ export interface PddAdPlanCreateRequestInterface {
 
   /**
    * @description: 单日消耗，单位厘;上限不能超过1000000元，单日消耗上限不能低于100元 , 默认不限额，即1000000 元
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  max_cost: string;
+  max_cost: string | number;
 
   /**
    * @description: List<JsonObject> 的json string. 示例：[{"rate":1000,"index":12},{"rate":1000,"index":13}]
@@ -81,8 +81,8 @@ export interface PddAdPlanCreateResponseInterface {
 export interface PddAdPlanCreateAdPlanCreateResponseResponseInterface {
   /**
    * @description: 广告计划id
-   * @type: string
+   * @type: string | number
    * @default:
    **/
-  ad_plan_id: string;
+  ad_plan_id: string | number;
 }
