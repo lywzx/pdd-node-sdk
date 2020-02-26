@@ -1,8 +1,5 @@
 import { template } from 'lodash';
 
-// 拼多多默认网关地址
-export const PDD_END_POINTS = 'https://gw-api.pinduoduo.com/api/router';
-
 // 处理成OAuth的Type类型
 export enum OAuthType {
   // 商家
@@ -25,3 +22,9 @@ export const PDD_OAUTH_TEMPLATE = {
     'https://jinbao.pinduoduo.com/open.html?client_id=<%= clientId %>&response_type=code&redirect_uri=<%= redirectUri %>'
   ),
 };
+
+// 拼多多默认网关地址
+export const PDD_END_POINTS = 'https://gw-api.pinduoduo.com/api/router';
+
+// 拼多多OAuth认证时，换取token信息
+export const PDD_OAUTH_TOKEN_URL = 'https://open-api.pinduoduo.com/oauth/token';

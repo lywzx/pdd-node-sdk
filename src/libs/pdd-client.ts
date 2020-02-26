@@ -8,13 +8,14 @@ import {
 import { md5, timestamp, promseToCallback } from '../util';
 import { AsyncResultCallbackInterface } from '../interfaces/async-result-callback.interface';
 import { NetworkAdapter, NetworkAdapterInterface } from './network-adapter';
-import { PDD_END_POINTS, PDD_OAUTH_TEMPLATE, OAuthType } from '../constant';
+import { PDD_END_POINTS, PDD_OAUTH_TEMPLATE, OAuthType, PDD_OAUTH_TOKEN_URL } from '../constant';
 import { extend, castArray } from 'lodash';
 import {
   RequestParamsType,
   RequestParamsFullType,
   PddClientOAuthOptionsInterface,
   PddOAuthLinkInterface,
+  PddAccessTokenResponseInterface,
 } from '../interfaces';
 import { retry } from 'async';
 import { RetryOptionsInterface } from '../interfaces/retry-options.interface';
@@ -203,11 +204,63 @@ export class PddClient {
     if (!oAuthType || !newOptions.redirectUri) {
       throw new Error('create o auth link error, auth type or redirectUrl is unknown!');
     }
+    newOptions.redirectUri = encodeURIComponent(newOptions.redirectUri);
     return castArray(oAuthType).map((type: OAuthType) => {
       return {
         type,
         url: PDD_OAUTH_TEMPLATE[type](newOptions),
       };
     });
+  }
+
+  /**
+   * 生成access token
+   * @param code
+   * @param callback
+   */
+  public generate(code: string): Promise<PddAccessTokenResponseInterface>;
+  public generate(code: string, callback: AsyncResultCallbackInterface<PddAccessTokenResponseInterface, never>): void;
+  public generate(
+    code: string,
+    callback?: AsyncResultCallbackInterface<PddAccessTokenResponseInterface, never>
+  ): Promise<PddAccessTokenResponseInterface> | void {
+    const clientOptions = this.options;
+    const resPromise = this.adapter.post(PDD_OAUTH_TOKEN_URL, {
+      code,
+      /* eslint-disable @typescript-eslint/camelcase */
+      client_id: clientOptions.clientId,
+      grant_type: 'authorization_code',
+      client_secret: clientOptions.clientSecret,
+      /* eslint-enable @typescript-eslint/camelcase */
+    });
+    return promseToCallback(resPromise, callback as any);
+  }
+
+  /**
+   * 刷新freshToken的内容
+   * @param freshToken
+   * @param callback
+   */
+  public refresh(freshToken: string): Promise<PddAccessTokenResponseInterface>;
+  public refresh(
+    freshToken: string,
+    callback: AsyncResultCallbackInterface<PddAccessTokenResponseInterface, never>
+  ): void;
+  public refresh(
+    freshToken: string,
+    callback?: AsyncResultCallbackInterface<PddAccessTokenResponseInterface, never>
+  ): Promise<PddAccessTokenResponseInterface> | void {
+    const clientOptions = this.options;
+
+    const resPromise = this.adapter.post({
+      /* eslint-disable @typescript-eslint/camelcase */
+      client_id: clientOptions.clientId,
+      refresh_token: freshToken,
+      grant_type: 'refresh_token',
+      client_secret: clientOptions.clientSecret,
+      /* eslint-enable @typescript-eslint/camelcase */
+    });
+
+    return promseToCallback(resPromise, callback as any);
   }
 }

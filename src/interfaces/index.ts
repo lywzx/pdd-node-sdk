@@ -1,14 +1,16 @@
 import { PddCommonRequestInterface } from '../pddApi';
 
-export * from './async-result-callback.interface';
-
 export * from './pdd-client-options.interface';
+
+export * from './async-result-callback.interface';
 
 export * from './retry-options.interface';
 
 export * from './pdd-client-o-auth-options.interface';
 
 export * from './pdd-o-auth-link.interface';
+
+export * from './pdd-access-token-response.interface';
 
 export type RequestParamsType = Omit<PddCommonRequestInterface, 'sign' | 'timestamp' | 'client_id'> & {
   [s: string]: any;

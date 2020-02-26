@@ -3,5 +3,5 @@ export interface PddClientOAuthOptionsInterface {
   state?: string | number;
 
   // 重定向时，页面地址
-  redirectUri: string | number;
+  redirectUri?: string | number;
 }
