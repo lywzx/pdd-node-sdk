@@ -8,9 +8,14 @@ import {
 import { md5, timestamp, promseToCallback } from '../util';
 import { AsyncResultCallbackInterface } from '../interfaces/async-result-callback.interface';
 import { NetworkAdapter, NetworkAdapterInterface } from './network-adapter';
-import { PDD_END_POINTS } from '../constant';
-import { extend } from 'lodash';
-import { RequestParamsType, RequestParamsFullType } from '../interfaces';
+import { PDD_END_POINTS, PDD_OAUTH_TEMPLATE, OAuthType } from '../constant';
+import { extend, castArray } from 'lodash';
+import {
+  RequestParamsType,
+  RequestParamsFullType,
+  PddClientOAuthOptionsInterface,
+  PddOAuthLinkInterface,
+} from '../interfaces';
 import { retry } from 'async';
 import { RetryOptionsInterface } from '../interfaces/retry-options.interface';
 import { defaultRetryOptions } from './pdd-client-default';
@@ -176,5 +181,33 @@ export class PddClient {
     baseString += clientSecret;
 
     return md5(baseString).toUpperCase();
+  }
+
+  /**
+   * 获取当前客户端OAuth授权地址
+   * @param oAuthOptions
+   */
+  public createOAuthLink(oAuthOptions?: PddClientOAuthOptionsInterface): PddOAuthLinkInterface[] {
+    const { oAuthType, oAuthRedirectUrl, ...leftOptions } = this.options;
+
+    const newOptions = extend(
+      {},
+      {
+        clientId: leftOptions.clientId,
+        redirectUri: oAuthRedirectUrl,
+        state: Date.now(),
+      },
+      oAuthOptions
+    );
+
+    if (!oAuthType || !newOptions.redirectUri) {
+      throw new Error('create o auth link error, auth type or redirectUrl is unknown!');
+    }
+    return castArray(oAuthType).map((type: OAuthType) => {
+      return {
+        type,
+        url: PDD_OAUTH_TEMPLATE[type](newOptions),
+      };
+    });
   }
 }

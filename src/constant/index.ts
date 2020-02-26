@@ -1,9 +1,9 @@
+import { template } from 'lodash';
+
 // 拼多多默认网关地址
 export const PDD_END_POINTS = 'https://gw-api.pinduoduo.com/api/router';
 
-// 拼多多默认认证地址
-export const PDD_OAUTH_URL = '';
-
+// 处理成OAuth的Type类型
 export enum OAuthType {
   // 商家
   mms = 'mms',
@@ -12,3 +12,16 @@ export enum OAuthType {
   // 多多
   jinbao = 'jinbao',
 }
+
+// 拼多多默认认证地址
+export const PDD_OAUTH_TEMPLATE = {
+  [OAuthType.mms]: template(
+    'https://mms.pinduoduo.com/open.html?response_type=code&client_id=<%= clientId %>&redirect_uri=<%= redirectUri %>&state=<%= state %>'
+  ),
+  [OAuthType.mai]: template(
+    'https://mai.pinduoduo.com/h5-login.html?response_type=code&client_id=<%= clientId %>&redirect_uri=<%= redirectUri %>&state=<%= state %>&view=h5'
+  ),
+  [OAuthType.jinbao]: template(
+    'https://jinbao.pinduoduo.com/open.html?client_id=<%= clientId %>&response_type=code&redirect_uri=<%= redirectUri %>'
+  ),
+};
