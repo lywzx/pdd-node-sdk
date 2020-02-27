@@ -75,6 +75,7 @@ async function resolveCategory(category: CategoryListItemInterface) {
         {
           apiName: api.scopeName,
           name: `./${directory}/${createClassName(api.scopeName)}`,
+          needAuth: !!apiInfo.needOauth,
           constVariable,
           requestInterface: createRequestClassName(api.scopeName),
           responseInterface,

@@ -14,7 +14,7 @@ import { tree } from './index';
 import { CodeColumnInterface, CodeInterface } from '../interface/code.interface';
 import { TreeType } from '../interface/tree.interface';
 import { RunStateFileInterface, RunStateInterface } from '../interface/run-state.interface';
-import { map, flattenDeep } from 'lodash';
+import { map, flattenDeep, filter } from 'lodash';
 
 // 创建代码
 export function generateCode(apiId: string, detail: ApiDetailInterface) {
@@ -197,6 +197,7 @@ function pddTypeToTypescriptType(type: string) {
  * @param state
  */
 export async function generatorIndexCode(state: RunStateInterface) {
+  // 导入变量信息
   const importCodes = map(state.resolvedFiles, resolved => {
     return [
       `// ${resolved.name}`,
@@ -219,6 +220,7 @@ export async function generatorIndexCode(state: RunStateInterface) {
 
   const flattenResolvedFiles = flattenDeep(map(state.resolvedFiles, 'files'));
 
+  // 请求的type与响应的key之间的响射
   const PddResponseTypeAndRequestTypeMapping = 'PddResponseTypeAndRequestTypeMapping';
   const typeAndResponseKeyMappingInnerCode = map(flattenResolvedFiles, (it: RunStateFileInterface) => {
     if (it.responseKey) {
@@ -232,12 +234,24 @@ export async function generatorIndexCode(state: RunStateInterface) {
   ${typeAndResponseKeyMappingInnerCode}
 };`;
 
+  // 这里生成一个数组，存储着type，需要用户授权的列表
+  const PddNeedAccessTokenTypeCollections = 'PddNeedAccessTokenTypeCollections';
+  const PddNeedAccessTokenTypeCollectionsInnerCodes = filter(flattenResolvedFiles, 'needAuth')
+    .map((it: RunStateFileInterface) => {
+      return it.constVariable;
+    })
+    .join('\n,  ');
+  const PddNeedAccessTokenTypeCollectionsCodes = `const ${PddNeedAccessTokenTypeCollections} = [
+  ${PddNeedAccessTokenTypeCollectionsInnerCodes}
+];`;
+
+  // 导出的变量信息
   const exportVariables = map(flattenResolvedFiles, (fl: RunStateFileInterface) => {
     return [fl.constVariable, fl.responseKey, fl.requestInterface, fl.responseInterface, fl.secoundResponseInterface]
       .filter(it => !!it)
       .join(',\n  ');
   })
-    .concat(PddResponseTypeAndRequestTypeMapping)
+    .concat([PddResponseTypeAndRequestTypeMapping, PddNeedAccessTokenTypeCollections])
     .join(',\n  ');
 
   const exportVariablesCode = `export {
@@ -275,6 +289,7 @@ export async function generatorIndexCode(state: RunStateInterface) {
     [
       ...importCodes,
       typeAndResponseKeyMappingCode,
+      PddNeedAccessTokenTypeCollectionsCodes,
       exportVariablesCode,
       exportPddRequestInterfaceCode,
       exportPddResponseInterfaceCode,

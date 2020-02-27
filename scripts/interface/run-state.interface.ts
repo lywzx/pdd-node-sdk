@@ -19,6 +19,9 @@ export interface RunStateFileInterface {
   // 文件名
   name: string;
 
+  // 是否免费
+  needAuth: boolean;
+
   // 常量名称
   constVariable: string;
 
