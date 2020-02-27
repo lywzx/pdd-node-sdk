@@ -252,7 +252,7 @@ export class PddClient {
   ): Promise<PddAccessTokenResponseInterface> | void {
     const clientOptions = this.options;
 
-    const resPromise = this.adapter.post({
+    const resPromise = this.adapter.post(PDD_OAUTH_TOKEN_URL, {
       /* eslint-disable @typescript-eslint/camelcase */
       client_id: clientOptions.clientId,
       refresh_token: freshToken,
