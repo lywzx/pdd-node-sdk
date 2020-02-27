@@ -20,6 +20,7 @@ import {
 import { retry } from 'async';
 import { RetryOptionsInterface } from '../interfaces/retry-options.interface';
 import { defaultRetryOptions } from './pdd-client-default';
+import { isString, isObject } from 'util';
 
 const defaultRequestParam = {
   // eslint-disable-next-line @typescript-eslint/camelcase
@@ -27,11 +28,20 @@ const defaultRequestParam = {
   version: 'V1',
 };
 
-type AppTypes = PddCollectRequestInterface;
 type RetryOptionsType = RetryOptionsInterface | number;
+type PddClientGenerateType =
+  | string
+  | {
+      code: string;
+      grant_type: 'authorization_code';
+    }
+  | {
+      refresh_token: string;
+      grant_type: 'refresh_token';
+    };
 
 export class PddClient {
-  constructor(public options: PddClientOptionsInterface, public adapter: NetworkAdapterInterface = NetworkAdapter) {
+  constructor(public options: PddClientOptionsInterface, protected adapter: NetworkAdapterInterface = NetworkAdapter) {
     if (!options.clientId || !options.clientSecret) {
       throw new Error('clientId and clientSecret are necessary!');
     }
@@ -218,22 +228,37 @@ export class PddClient {
    * @param code
    * @param callback
    */
-  public generate(code: string): Promise<PddAccessTokenResponseInterface>;
-  public generate(code: string, callback: AsyncResultCallbackInterface<PddAccessTokenResponseInterface, never>): void;
+  public generate(code: PddClientGenerateType): Promise<PddAccessTokenResponseInterface>;
   public generate(
-    code: string,
+    code: PddClientGenerateType,
+    callback: AsyncResultCallbackInterface<PddAccessTokenResponseInterface, never>
+  ): void;
+  public generate(
+    code: PddClientGenerateType,
     callback?: AsyncResultCallbackInterface<PddAccessTokenResponseInterface, never>
   ): Promise<PddAccessTokenResponseInterface> | void {
+    /* eslint-disable @typescript-eslint/camelcase */
     const clientOptions = this.options;
-    const resPromise = this.adapter.post(PDD_OAUTH_TOKEN_URL, {
-      code,
-      /* eslint-disable @typescript-eslint/camelcase */
+    const callOptions = {
       client_id: clientOptions.clientId,
-      grant_type: 'authorization_code',
       client_secret: clientOptions.clientSecret,
-      /* eslint-enable @typescript-eslint/camelcase */
-    });
+    };
+    if (isString(code)) {
+      extend(callOptions, {
+        code,
+        grant_type: 'authorization_code',
+      });
+    } else if (isObject(code)) {
+      extend(callOptions, code);
+    }
+
+    if (!(callOptions as any).grant_type) {
+      throw new Error("grant type can't be empty!");
+    }
+
+    const resPromise = this.adapter.post(PDD_OAUTH_TOKEN_URL, callOptions);
     return promseToCallback(resPromise, callback as any);
+    /* eslint-enable @typescript-eslint/camelcase */
   }
 
   /**
@@ -250,17 +275,14 @@ export class PddClient {
     freshToken: string,
     callback?: AsyncResultCallbackInterface<PddAccessTokenResponseInterface, never>
   ): Promise<PddAccessTokenResponseInterface> | void {
-    const clientOptions = this.options;
-
-    const resPromise = this.adapter.post(PDD_OAUTH_TOKEN_URL, {
-      /* eslint-disable @typescript-eslint/camelcase */
-      client_id: clientOptions.clientId,
-      refresh_token: freshToken,
-      grant_type: 'refresh_token',
-      client_secret: clientOptions.clientSecret,
-      /* eslint-enable @typescript-eslint/camelcase */
-    });
-
-    return promseToCallback(resPromise, callback as any);
+    /* eslint-disable @typescript-eslint/camelcase */
+    return this.generate(
+      {
+        refresh_token: freshToken,
+        grant_type: 'refresh_token',
+      },
+      callback as any
+    );
+    /* eslint-enable @typescript-eslint/camelcase */
   }
 }

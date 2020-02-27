@@ -20,4 +20,10 @@ export interface PddAccessTokenResponseInterface {
 
   // 当前用户名称
   owner_name: string;
+
+  // 过期有时间点
+  expires_at: string;
+
+  // 刷新token的过期时间点
+  refresh_token_expires_at: string;
 }

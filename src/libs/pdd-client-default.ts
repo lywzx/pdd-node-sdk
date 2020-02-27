@@ -8,6 +8,6 @@ export const defaultRetryOptions: RetryOptionsInterface = {
     if (error instanceof PddException) {
       return error.retryAble();
     }
-    return false;
+    return true;
   },
 };
