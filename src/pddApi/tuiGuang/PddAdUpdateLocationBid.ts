@@ -12,14 +12,14 @@ export interface PddAdUpdateLocationBidRequestInterface {
    * @type: number
    * @default:
    **/
-  scene_type?: number;
+  scene_type: number;
 
   /**
    * @description: 单元ID
    * @type: string | number
    * @default:
    **/
-  unit_id?: string | number;
+  unit_id: string | number;
 
   /**
    * @description:
@@ -27,7 +27,7 @@ export interface PddAdUpdateLocationBidRequestInterface {
    * @default:
    *
    **/
-  location_bid_list?: PddAdUpdateLocationBidLocationBidListRequestInterface[];
+  location_bid_list: PddAdUpdateLocationBidLocationBidListRequestInterface[];
 }
 
 /**
@@ -41,14 +41,14 @@ export interface PddAdUpdateLocationBidLocationBidListRequestInterface {
    * @type: number
    * @default:
    **/
-  bid_premium_rate?: number;
+  bid_premium_rate: number;
 
   /**
    * @description: 资源位id
    * @type: string | number
    * @default:
    **/
-  location_bid_id?: string | number;
+  location_bid_id: string | number;
 }
 
 /**

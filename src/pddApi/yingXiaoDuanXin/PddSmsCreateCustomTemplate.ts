@@ -12,7 +12,7 @@ export interface PddSmsCreateCustomTemplateRequestInterface {
    * @type: string
    * @default:
    **/
-  name?: string;
+  name: string;
 
   /**
    * @description: 拼接短信内容
@@ -20,7 +20,7 @@ export interface PddSmsCreateCustomTemplateRequestInterface {
    * @default:
    *
    **/
-  content?: PddSmsCreateCustomTemplateContentRequestInterface[];
+  content: PddSmsCreateCustomTemplateContentRequestInterface[];
 }
 
 /**
@@ -34,14 +34,14 @@ export interface PddSmsCreateCustomTemplateContentRequestInterface {
    * @type: string
    * @default:
    **/
-  value?: string;
+  value: string;
 
   /**
    * @description: 文本类型。1：自定义短信内容，2：店铺短链接，3：商品短链接，4：优惠券面额，5：优惠券到期时间
    * @type: number
    * @default:
    **/
-  type?: number;
+  type: number;
 }
 
 /**

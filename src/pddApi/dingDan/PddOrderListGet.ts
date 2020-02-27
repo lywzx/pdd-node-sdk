@@ -12,56 +12,56 @@ export interface PddOrderListGetRequestInterface {
    * @type: number
    * @default:
    **/
-  order_status?: number;
+  order_status: number;
 
   /**
    * @description: 售后状态 1：无售后或售后关闭，2：售后处理中，3：退款中，4： 退款成功 5：全部
    * @type: number
    * @default:
    **/
-  refund_status?: number;
+  refund_status: number;
 
   /**
    * @description: 必填，成交时间开始时间的时间戳，指格林威治时间 1970 年 01 月 01 日 00 时 00 分 00 秒(北京时间 1970 年 01 月 01 日 08 时 00 分 00 秒)起至现在的总秒数
    * @type: string | number
    * @default:
    **/
-  start_confirm_at?: string | number;
+  start_confirm_at: string | number;
 
   /**
    * @description: 必填，成交时间结束时间的时间戳，指格林威治时间 1970 年 01 月 01 日 00 时 00 分 00 秒(北京时间 1970 年 01 月 01 日 08 时 00 分 00 秒)起至现在的总秒数 PS：开始时间结束时间间距不超过 24 小时
    * @type: string | number
    * @default:
    **/
-  end_confirm_at?: string | number;
+  end_confirm_at: string | number;
 
   /**
    * @description: 返回页码 默认 1，页码从 1 开始 PS：当前采用分页返回，数量和页数会一起传，如果不传，则采用 默认值
    * @type: number
    * @default:
    **/
-  page?: number;
+  page: number;
 
   /**
    * @description: 返回数量，默认 100。最大 100
    * @type: number
    * @default:
    **/
-  page_size?: number;
+  page_size: number;
 
   /**
    * @description: 订单类型 0-普通订单 ，1- 定金订单
    * @type: number
    * @default:
    **/
-  trade_type: number;
+  trade_type?: number;
 
   /**
    * @description: 是否启用has_next的分页方式，如果指定true,则返回的结果中不包含总记录数，但是会新增一个是否存在下一页的的字段，通过此种方式获取增量交易，效率在原有的基础上有80%的提升。
    * @type: boolean
    * @default:
    **/
-  use_has_next: boolean;
+  use_has_next?: boolean;
 }
 
 /**

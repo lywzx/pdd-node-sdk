@@ -35,6 +35,7 @@ function createMethods(method: methodTypes) {
 }
 
 export class NetworkAdapter {
+  public static axiosInstance = axiosInstance;
   static get = createMethods('get');
   static post = createMethods('post');
   static delete = createMethods('delete');

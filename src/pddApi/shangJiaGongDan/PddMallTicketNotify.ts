@@ -11,21 +11,21 @@ export interface PddMallTicketNotifyRequestInterface {
    * @type: string
    * @default:
    **/
-  content: string;
+  content?: string;
 
   /**
    * @description: 是否同步给消费者(消费者投诉才有效)
    * @type: boolean
    * @default:
    **/
-  syn_to_user: boolean;
+  syn_to_user?: boolean;
 
   /**
    * @description: 工单编号
    * @type: string
    * @default:
    **/
-  ticket_id: string;
+  ticket_id?: string;
 }
 
 /**

@@ -12,14 +12,14 @@ export interface PddMallInfoGroupAddStorePostRequestInterface {
    * @type: string | number
    * @default:
    **/
-  group_id?: string | number;
+  group_id: string | number;
 
   /**
    * @description: 门店ID列表
    * @type: Array<string | number>
    * @default:
    **/
-  store_id_list?: Array<string | number>;
+  store_id_list: Array<string | number>;
 }
 
 /**

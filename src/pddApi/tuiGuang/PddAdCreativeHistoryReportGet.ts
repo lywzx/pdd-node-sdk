@@ -12,28 +12,28 @@ export interface PddAdCreativeHistoryReportGetRequestInterface {
    * @type: string | number
    * @default:
    **/
-  creative_id: string | number;
+  creative_id?: string | number;
 
   /**
    * @description: 单元ID, 分天数据无需填，汇总表数据选填
    * @type: string | number
    * @default:
    **/
-  unit_id: string | number;
+  unit_id?: string | number;
 
   /**
    * @description: 计划ID, 分天数据无需填，汇总表数据选填
    * @type: string | number
    * @default:
    **/
-  plan_id: string | number;
+  plan_id?: string | number;
 
   /**
    * @description: 数据聚合方式（1 - 日期，2 - 实体 Id）
    * @type: number
    * @default:
    **/
-  group_by?: number;
+  group_by: number;
 
   /**
    * @description: 分页参数
@@ -41,28 +41,28 @@ export interface PddAdCreativeHistoryReportGetRequestInterface {
    * @default:
    *
    **/
-  page_request: PddAdCreativeHistoryReportGetPageRequestRequestInterface;
+  page_request?: PddAdCreativeHistoryReportGetPageRequestRequestInterface;
 
   /**
    * @description: 开始日期，示例："2018-11-04"
    * @type: string
    * @default:
    **/
-  begin_date?: string;
+  begin_date: string;
 
   /**
    * @description: 结束日期，示例："2018-11-04"
    * @type: string
    * @default:
    **/
-  end_date?: string;
+  end_date: string;
 
   /**
    * @description: 排序字段  默认DATE（8）0 - IMPR_NUM - 曝光量排序、1 - CLK_NUM - 点击量排序2 - CLK_RATE - 点击率3 - CPC - 点击单价排序4 - SPEND - 消耗排序5 - PAY_ORDER_NUM - 订单数排序6 - PAY_GVM - 交易额排序7 - ROI - 产出比排序8 - DATE - 日期9 - CPM - 千次曝光单价10 - FAV_MALL - 店铺关注数
    * @type: number
    * @default:
    **/
-  order_by: number;
+  order_by?: number;
 
   /**
    * @description: 排序方式 默认降序（0）
@@ -71,14 +71,14 @@ export interface PddAdCreativeHistoryReportGetRequestInterface {
    * @type: number
    * @default:
    **/
-  sort_by: number;
+  sort_by?: number;
 
   /**
    * @description: 推广类型，0-搜索推广，2-展示推广
    * @type: number
    * @default:
    **/
-  scene_type?: number;
+  scene_type: number;
 }
 
 /**
@@ -92,14 +92,14 @@ export interface PddAdCreativeHistoryReportGetPageRequestRequestInterface {
    * @type: number
    * @default:
    **/
-  page_number: number;
+  page_number?: number;
 
   /**
    * @description: 单页记录数 默认 10
    * @type: number
    * @default:
    **/
-  page_size: number;
+  page_size?: number;
 }
 
 /**

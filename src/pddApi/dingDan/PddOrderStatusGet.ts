@@ -12,7 +12,7 @@ export interface PddOrderStatusGetRequestInterface {
    * @type: string
    * @default:
    **/
-  order_sns?: string;
+  order_sns: string;
 }
 
 /**

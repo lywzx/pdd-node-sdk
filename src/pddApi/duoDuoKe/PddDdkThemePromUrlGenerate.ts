@@ -12,77 +12,77 @@ export interface PddDdkThemePromUrlGenerateRequestInterface {
    * @type: string
    * @default:
    **/
-  pid?: string;
+  pid: string;
 
   /**
    * @description: 主题ID列表,例如[1,235]
    * @type: Array<string | number>
    * @default:
    **/
-  theme_id_list?: Array<string | number>;
+  theme_id_list: Array<string | number>;
 
   /**
    * @description: 是否生成短链接,true-是,false-否
    * @type: boolean
    * @default:
    **/
-  generate_short_url: boolean;
+  generate_short_url?: boolean;
 
   /**
    * @description: 是否生成手机跳转链接。true-是,false-否,默认false
    * @type: boolean
    * @default:
    **/
-  generate_mobile: boolean;
+  generate_mobile?: boolean;
 
   /**
    * @description: 自定义参数,为链接打上自定义标签。自定义参数最长限制64个字节。
    * @type: string
    * @default:
    **/
-  custom_parameters: string;
+  custom_parameters?: string;
 
   /**
    * @description: 是否唤起微信客户端， 默认false 否，true 是
    * @type: boolean
    * @default:
    **/
-  generate_weapp_webview: boolean;
+  generate_weapp_webview?: boolean;
 
   /**
    * @description: 唤起微信app推广短链接
    * @type: boolean
    * @default:
    **/
-  we_app_web_view_short_url: boolean;
+  we_app_web_view_short_url?: boolean;
 
   /**
    * @description: 唤起微信app推广链接
    * @type: boolean
    * @default:
    **/
-  we_app_web_wiew_url: boolean;
+  we_app_web_wiew_url?: boolean;
 
   /**
    * @description: 是否生成小程序链接
    * @type: boolean
    * @default:
    **/
-  generate_we_app: boolean;
+  generate_we_app?: boolean;
 
   /**
    * @description: 是否返回 schema URL
    * @type: boolean
    * @default: false
    **/
-  generate_schema_url: boolean;
+  generate_schema_url?: boolean;
 
   /**
    * @description: 是否生成qq小程序
    * @type: boolean
    * @default: false
    **/
-  generate_qq_app: boolean;
+  generate_qq_app?: boolean;
 }
 
 /**

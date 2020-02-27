@@ -11,7 +11,7 @@ export interface PddExpressDepotInfoGetRequestInterface {
    * @type: string | number
    * @default:
    **/
-  depot_id?: string | number;
+  depot_id: string | number;
 }
 
 /**

@@ -12,56 +12,56 @@ export interface PddDdkLotteryUrlGenRequestInterface {
    * @type: string[]
    * @default:
    **/
-  pid_list?: string[];
+  pid_list: string[];
 
   /**
    * @description: 是否生成唤起微信客户端链接，true-是，false-否，默认false
    * @type: boolean
    * @default:
    **/
-  generate_weapp_webview: boolean;
+  generate_weapp_webview?: boolean;
 
   /**
    * @description: 是否生成短链接，true-是，false-否
    * @type: string
    * @default:
    **/
-  generate_short_url: string;
+  generate_short_url?: string;
 
   /**
    * @description: true--生成多人团推广链接 false--生成单人团推广链接（默认false）1、单人团推广链接：用户访问单人团推广链接，可直接购买商品无需拼团。2、多人团推广链接：用户访问双人团推广链接开团，若用户分享给他人参团，则开团者和参团者的佣金均结算给推手
    * @type: boolean
    * @default:
    **/
-  multi_group: boolean;
+  multi_group?: boolean;
 
   /**
    * @description: 自定义参数，为链接打上自定义标签。自定义参数最长限制64个字节。
    * @type: string
    * @default:
    **/
-  custom_parameters: string;
+  custom_parameters?: string;
 
   /**
    * @description: 是否生成大转盘和主题的小程序推广链接
    * @type: boolean
    * @default:
    **/
-  generate_we_app: boolean;
+  generate_we_app?: boolean;
 
   /**
    * @description: 是否返回 schema URL
    * @type: boolean
    * @default: false
    **/
-  generate_schema_url: boolean;
+  generate_schema_url?: boolean;
 
   /**
    * @description: 是否生成qq小程序
    * @type: boolean
    * @default: false
    **/
-  generate_qq_app: boolean;
+  generate_qq_app?: boolean;
 }
 
 /**

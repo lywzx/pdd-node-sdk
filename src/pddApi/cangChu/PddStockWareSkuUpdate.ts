@@ -11,7 +11,7 @@ export interface PddStockWareSkuUpdateRequestInterface {
    * @type: string | number
    * @default:
    **/
-  ware_id?: string | number;
+  ware_id: string | number;
 
   /**
    * @description: 组合货品中子货品的关联关系
@@ -19,7 +19,7 @@ export interface PddStockWareSkuUpdateRequestInterface {
    * @default:
    *
    **/
-  ware_skus?: PddStockWareSkuUpdateWareSkusRequestInterface[];
+  ware_skus: PddStockWareSkuUpdateWareSkusRequestInterface[];
 }
 
 /**
@@ -33,14 +33,14 @@ export interface PddStockWareSkuUpdateWareSkusRequestInterface {
    * @type: string | number
    * @default:
    **/
-  sku_id?: string | number;
+  sku_id: string | number;
 
   /**
    * @description: 商品id
    * @type: string | number
    * @default:
    **/
-  goods_id?: string | number;
+  goods_id: string | number;
 }
 
 /**

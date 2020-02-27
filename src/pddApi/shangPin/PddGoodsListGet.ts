@@ -12,49 +12,49 @@ export interface PddGoodsListGetRequestInterface {
    * @type: string
    * @default:
    **/
-  outer_id: string;
+  outer_id?: string;
 
   /**
    * @description: 上下架状态，0-下架，1-上架,outer_id,is_onsale,goods_name三选一，优先级is_onsale>outer_id>goods_name
    * @type: number
    * @default:
    **/
-  is_onsale: number;
+  is_onsale?: number;
 
   /**
    * @description: 商品名称模糊查询,outer_id,is_onsale,goods_name三选一，优先级is_onsale>outer_id>goods_name
    * @type: string
    * @default:
    **/
-  goods_name: string;
+  goods_name?: string;
 
   /**
    * @description: 返回数量，默认 100，最大100。
    * @type: number
    * @default:
    **/
-  page_size: number;
+  page_size?: number;
 
   /**
    * @description: 返回页码 默认 1，页码从 1 开始PS：当前采用分页返回，数量和页数会一起传，如果不传，则采用 默认值
    * @type: number
    * @default:
    **/
-  page: number;
+  page?: number;
 
   /**
    * @description: 商家外部商品编码，支持多个，用逗号隔开，最多10个
    * @type: string
    * @default:
    **/
-  outer_goods_id: string;
+  outer_goods_id?: string;
 
   /**
    * @description: 模版id
    * @type: string | number
    * @default:
    **/
-  cost_template_id: string | number;
+  cost_template_id?: string | number;
 }
 
 /**

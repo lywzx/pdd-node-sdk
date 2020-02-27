@@ -12,133 +12,133 @@ export interface PddInvoiceDetailUploadRequestInterface {
    * @type: string
    * @default:
    **/
-  payer_name?: string;
+  payer_name: string;
 
   /**
    * @description: 订单号
    * @type: string
    * @default:
    **/
-  order_sn?: string;
+  order_sn: string;
 
   /**
    * @description: 申请流水号
    * @type: string | number
    * @default:
    **/
-  application_id?: string | number;
+  application_id: string | number;
 
   /**
    * @description: 抬头类型：0-个人，1-企业
    * @type: number
    * @default:
    **/
-  business_type?: number;
+  business_type: number;
 
   /**
    * @description: 发票种类：0-电子发票，1-纸质发票，2-专票；目前只支持0
    * @type: number
    * @default:
    **/
-  invoice_kind?: number;
+  invoice_kind: number;
 
   /**
    * @description: 开票类型：0-蓝票，1-红票；目前 只支持0
    * @type: number
    * @default:
    **/
-  invoice_type?: number;
+  invoice_type: number;
 
   /**
    * @description: 开票金额，整数，单位：分
    * @type: string | number
    * @default:
    **/
-  invoice_amount?: string | number;
+  invoice_amount: string | number;
 
   /**
    * @description: 不含税金额，整数，单位：分
    * @type: string | number
    * @default:
    **/
-  sum_price?: string | number;
+  sum_price: string | number;
 
   /**
    * @description: 税号，企业必填
    * @type: string
    * @default:
    **/
-  payer_register_no?: string;
+  payer_register_no: string;
 
   /**
    * @description: 税率,整数
    * @type: number
    * @default:
    **/
-  tax_rate?: number;
+  tax_rate: number;
 
   /**
    * @description: 总税额，整数，单位：分
    * @type: number
    * @default:
    **/
-  sum_tax?: number;
+  sum_tax: number;
 
   /**
    * @description: 发票代码
    * @type: string
    * @default:
    **/
-  invoice_code?: string;
+  invoice_code: string;
 
   /**
    * @description: 发票号码
    * @type: string
    * @default:
    **/
-  invoice_no?: string;
+  invoice_no: string;
 
   /**
    * @description: 原蓝票代码（红票必填）
    * @type: string
    * @default:
    **/
-  original_invoice_code: string;
+  original_invoice_code?: string;
 
   /**
    * @description: 原蓝票号码（红票必填）
    * @type: string
    * @default:
    **/
-  original_invoice_no: string;
+  original_invoice_no?: string;
 
   /**
    * @description: 开票人
    * @type: string
    * @default:
    **/
-  payee_operator?: string;
+  payee_operator: string;
 
   /**
    * @description: 开票日期,时间戳（毫秒）
    * @type: string | number
    * @default:
    **/
-  invoice_time?: string | number;
+  invoice_time: string | number;
 
   /**
    * @description: 发票内容，pdf文件，转码base64编码
    * @type: string
    * @default:
    **/
-  invoice_file_content?: string;
+  invoice_file_content: string;
 
   /**
    * @description: 备注
    * @type: string
    * @default:
    **/
-  memo: string;
+  memo?: string;
 }
 
 /**

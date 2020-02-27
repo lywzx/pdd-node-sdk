@@ -12,21 +12,21 @@ export interface PddAdPlanNameUpdateRequestInterface {
    * @type: number
    * @default:
    **/
-  scene_type?: number;
+  scene_type: number;
 
   /**
    * @description: 计划id
    * @type: string | number
    * @default:
    **/
-  plan_id?: string | number;
+  plan_id: string | number;
 
   /**
    * @description: 计划名
    * @type: string
    * @default:
    **/
-  plan_name?: string;
+  plan_name: string;
 }
 
 /**

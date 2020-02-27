@@ -12,14 +12,14 @@ export interface PddInvoiceDetailQueryRequestInterface {
    * @type: string
    * @default:
    **/
-  order_sn?: string;
+  order_sn: string;
 
   /**
    * @description: 发票流水号
    * @type: string
    * @default:
    **/
-  serial_no: string;
+  serial_no?: string;
 }
 
 /**

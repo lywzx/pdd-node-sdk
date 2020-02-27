@@ -12,7 +12,7 @@ export interface PddLogisticsTicketImageUploadRequestInterface {
    * @type: string
    * @default:
    **/
-  image?: string;
+  image: string;
 }
 
 /**

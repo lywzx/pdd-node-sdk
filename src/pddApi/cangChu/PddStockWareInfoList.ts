@@ -12,7 +12,7 @@ export interface PddStockWareInfoListRequestInterface {
    * @type: string[]
    * @default:
    **/
-  ware_sn_list?: string[];
+  ware_sn_list: string[];
 }
 
 /**

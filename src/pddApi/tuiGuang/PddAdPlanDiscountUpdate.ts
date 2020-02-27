@@ -11,7 +11,7 @@ export interface PddAdPlanDiscountUpdateRequestInterface {
    * @type: string | number
    * @default:
    **/
-  plan_id?: string | number;
+  plan_id: string | number;
 
   /**
    * @description: List<JsonObject> 的json string. 示例：[{"rate":1000,"index":12},{"rate":1000,"index":13}]
@@ -19,14 +19,14 @@ export interface PddAdPlanDiscountUpdateRequestInterface {
    * @default:
    *
    **/
-  discounts: PddAdPlanDiscountUpdateDiscountsRequestInterface[];
+  discounts?: PddAdPlanDiscountUpdateDiscountsRequestInterface[];
 
   /**
    * @description: 0 :搜索广告
    * @type: number
    * @default:
    **/
-  scene_type?: number;
+  scene_type: number;
 }
 
 /**
@@ -40,14 +40,14 @@ export interface PddAdPlanDiscountUpdateDiscountsRequestInterface {
    * @type: number
    * @default:
    **/
-  rate?: number;
+  rate: number;
 
   /**
    * @description: 时间段索引，0 ~ 23
    * @type: number
    * @default:
    **/
-  index?: number;
+  index: number;
 }
 
 /**

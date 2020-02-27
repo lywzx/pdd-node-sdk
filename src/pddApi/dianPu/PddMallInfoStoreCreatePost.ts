@@ -12,91 +12,91 @@ export interface PddMallInfoStoreCreatePostRequestInterface {
    * @type: number
    * @default:
    **/
-  business_status?: number;
+  business_status: number;
 
   /**
    * @description: 营业天数
    * @type: number[]
    * @default:
    **/
-  business_week_list?: number[];
+  business_week_list: number[];
 
   /**
    * @description: 省市区三级地址-市名
    * @type: string
    * @default:
    **/
-  city?: string;
+  city: string;
 
   /**
    * @description: 省市区三级地址-区名
    * @type: string
    * @default:
    **/
-  district?: string;
+  district: string;
 
   /**
    * @description: 结束营业时间段
    * @type: string
    * @default:
    **/
-  end_business_hour?: string;
+  end_business_hour: string;
 
   /**
    * @description: 腾讯地图POI信息ID
    * @type: string
    * @default:
    **/
-  poi_id?: string;
+  poi_id: string;
 
   /**
    * @description: 门店纬度
    * @type: string
    * @default:
    **/
-  poi_latitude?: string;
+  poi_latitude: string;
 
   /**
    * @description: 门店经度
    * @type: string
    * @default:
    **/
-  poi_longitude?: string;
+  poi_longitude: string;
 
   /**
    * @description: 省市区三级地址-省名
    * @type: string
    * @default:
    **/
-  province?: string;
+  province: string;
 
   /**
    * @description: 起始营业时间段
    * @type: string
    * @default:
    **/
-  start_business_hour?: string;
+  start_business_hour: string;
 
   /**
    * @description: 门店名称
    * @type: string
    * @default:
    **/
-  store_name?: string;
+  store_name: string;
 
   /**
    * @description: 门店自有编号
    * @type: string
    * @default:
    **/
-  store_number: string;
+  store_number?: string;
 
   /**
    * @description: 门店电话
    * @type: string
    * @default:
    **/
-  store_phone?: string;
+  store_phone: string;
 }
 
 /**

@@ -12,28 +12,28 @@ export interface PddAdCreativeReportGetRequestInterface {
    * @type: string
    * @default:
    **/
-  begin_date?: string;
+  begin_date: string;
 
   /**
    * @description: 结束时间 2018-01-01
    * @type: string
    * @default:
    **/
-  end_date?: string;
+  end_date: string;
 
   /**
    * @description: 页面大小,默认100
    * @type: number
    * @default:
    **/
-  page_size: number;
+  page_size?: number;
 
   /**
    * @description: 页面数,默认1
    * @type: number
    * @default:
    **/
-  page_number: number;
+  page_number?: number;
 }
 
 /**

@@ -13,7 +13,7 @@ export interface PddGoodsLogisticsTemplateCreateRequestInterface {
    * @default:
    *
    **/
-  cost_template_list?: PddGoodsLogisticsTemplateCreateCostTemplateListRequestInterface[];
+  cost_template_list: PddGoodsLogisticsTemplateCreateCostTemplateListRequestInterface[];
 
   /**
    * @description: 包邮地区
@@ -21,42 +21,42 @@ export interface PddGoodsLogisticsTemplateCreateRequestInterface {
    * @default:
    *
    **/
-  free_province_list?: PddGoodsLogisticsTemplateCreateFreeProvinceListRequestInterface[];
+  free_province_list: PddGoodsLogisticsTemplateCreateFreeProvinceListRequestInterface[];
 
   /**
    * @description: 计费方式，0-按件计费，1-按重量计费
    * @type: number
    * @default:
    **/
-  cost_type?: number;
+  cost_type: number;
 
   /**
    * @description: 运费模板名称
    * @type: string
    * @default:
    **/
-  template_name?: string;
+  template_name: string;
 
   /**
    * @description: 发货地省份id
    * @type: number
    * @default:
    **/
-  province_id: number;
+  province_id?: number;
 
   /**
    * @description: 发货地城市id
    * @type: number
    * @default:
    **/
-  city_id: number;
+  city_id?: number;
 
   /**
    * @description: 发货地区id
    * @type: number
    * @default:
    **/
-  district_id: number;
+  district_id?: number;
 }
 
 /**
@@ -70,56 +70,56 @@ export interface PddGoodsLogisticsTemplateCreateCostTemplateListRequestInterface
    * @type: string | number
    * @default:
    **/
-  first_standard?: string | number;
+  first_standard: string | number;
 
   /**
    * @description: 首件或首重价格，单位为分
    * @type: string | number
    * @default:
    **/
-  first_cost?: string | number;
+  first_cost: string | number;
 
   /**
    * @description: 续重或续件
    * @type: string | number
    * @default:
    **/
-  add_standard?: string | number;
+  add_standard: string | number;
 
   /**
    * @description: 续件或续重价格，单位为分
    * @type: string | number
    * @default:
    **/
-  add_cost?: string | number;
+  add_cost: string | number;
 
   /**
    * @description: 对不包邮地区，true-若要包邮须满足件数包邮，false-不开启满足件数包邮
    * @type: boolean
    * @default:
    **/
-  is_have_free_min_count?: boolean;
+  is_have_free_min_count: boolean;
 
   /**
    * @description: 对不包邮地区，满足指定件数包邮，该值为商家设置的指定件数，若为-1则商家没有开启满足件数包邮
    * @type: number
    * @default:
    **/
-  have_free_min_count?: number;
+  have_free_min_count: number;
 
   /**
    * @description: 对不包邮地区，true-若要包邮须满足指定价格则可以包邮，false-不开启满足指定价格包邮
    * @type: boolean
    * @default:
    **/
-  is_have_free_min_amount?: boolean;
+  is_have_free_min_amount: boolean;
 
   /**
    * @description: 对不包邮地区，满足指定价格包邮，该值为商家设置的指定订单金额，若为-1则商家没有开启满足指定价格包邮，注意，单位为分
    * @type: string | number
    * @default:
    **/
-  have_free_min_amount?: string | number;
+  have_free_min_amount: string | number;
 
   /**
    * @description: 省份列表
@@ -127,7 +127,7 @@ export interface PddGoodsLogisticsTemplateCreateCostTemplateListRequestInterface
    * @default:
    *
    **/
-  cost_province_list?: PddGoodsLogisticsTemplateCreateCostTemplateListCostProvinceListRequestInterface[];
+  cost_province_list: PddGoodsLogisticsTemplateCreateCostTemplateListCostProvinceListRequestInterface[];
 }
 
 /**
@@ -141,7 +141,7 @@ export interface PddGoodsLogisticsTemplateCreateCostTemplateListCostProvinceList
    * @type: number
    * @default:
    **/
-  province_id?: number;
+  province_id: number;
 }
 
 /**
@@ -155,7 +155,7 @@ export interface PddGoodsLogisticsTemplateCreateFreeProvinceListRequestInterface
    * @type: number
    * @default:
    **/
-  province_id?: number;
+  province_id: number;
 }
 
 /**

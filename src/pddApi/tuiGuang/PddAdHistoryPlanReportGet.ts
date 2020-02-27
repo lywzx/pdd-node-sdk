@@ -12,63 +12,63 @@ export interface PddAdHistoryPlanReportGetRequestInterface {
    * @type: string
    * @default:
    **/
-  begin_date?: string;
+  begin_date: string;
 
   /**
    * @description: 结束时间：2018-05-02（周期不超过一个月，记录保存最近30天）
    * @type: string
    * @default:
    **/
-  end_date?: string;
+  end_date: string;
 
   /**
    * @description: 0--搜索广告,1--明星店铺,2--定向广告,3--首页Banner广告（目前只支持0，暂不支持1、2、3）
    * @type: number
    * @default:
    **/
-  scene_type?: number;
+  scene_type: number;
 
   /**
    * @description: 0--曝光量排序,1--点击量排序,2--点击率,3--点击单价排序,4--消耗排序,5--订单数排序,6--交易额排序,7--产出比排序,8--日期,9--千次曝光单价;默认8
    * @type: number
    * @default:
    **/
-  order_by: number;
+  order_by?: number;
 
   /**
    * @description: 0--降序,1--升序;默认0
    * @type: number
    * @default:
    **/
-  sort_by: number;
+  sort_by?: number;
 
   /**
    * @description: 1--按日期分组,2--按计划id分组
    * @type: number
    * @default:
    **/
-  group_by?: number;
+  group_by: number;
 
   /**
    * @description: 页码，默认1，当group_by=2时才生效
    * @type: number
    * @default:
    **/
-  page: number;
+  page?: number;
 
   /**
    * @description: 每页数量，默认100，当group_by=2时才生效
    * @type: number
    * @default:
    **/
-  page_size: number;
+  page_size?: number;
 
   /**
    * @description: 计划id，当group_by=1时，plan_Id必填
    * @type: string | number
    * @default:
    **/
-  plan_id: string | number;
+  plan_id?: string | number;
 }
 
 /**

@@ -12,21 +12,21 @@ export interface PddSmsCrowdsQueryRequestInterface {
    * @type: number
    * @default:
    **/
-  crows_type?: number;
+  crows_type: number;
 
   /**
    * @description: 页码
    * @type: number
    * @default:
    **/
-  page_number: number;
+  page_number?: number;
 
   /**
    * @description: 每页条目数
    * @type: number
    * @default:
    **/
-  page_size: number;
+  page_size?: number;
 }
 
 /**

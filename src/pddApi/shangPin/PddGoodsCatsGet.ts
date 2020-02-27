@@ -12,7 +12,7 @@ export interface PddGoodsCatsGetRequestInterface {
    * @type: string | number
    * @default:
    **/
-  parent_cat_id?: string | number;
+  parent_cat_id: string | number;
 }
 
 /**

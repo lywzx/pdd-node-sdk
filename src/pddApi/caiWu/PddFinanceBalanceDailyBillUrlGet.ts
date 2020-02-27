@@ -12,7 +12,7 @@ export interface PddFinanceBalanceDailyBillUrlGetRequestInterface {
    * @type: string
    * @default:
    **/
-  bill_date?: string;
+  bill_date: string;
 }
 
 /**

@@ -12,21 +12,21 @@ export interface PddMallInfoGroupListStoreGetRequestInterface {
    * @type: string | number
    * @default:
    **/
-  group_id?: string | number;
+  group_id: string | number;
 
   /**
    * @description: 分页页码
    * @type: number
    * @default:
    **/
-  page_number?: number;
+  page_number: number;
 
   /**
    * @description: 分页大小
    * @type: number
    * @default:
    **/
-  page_size?: number;
+  page_size: number;
 }
 
 /**

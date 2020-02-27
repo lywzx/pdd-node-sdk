@@ -12,42 +12,42 @@ export interface PddGoodsTemplatePropertyValueSearchRequestInterface {
    * @type: string | number
    * @default:
    **/
-  cat_id?: string | number;
+  cat_id: string | number;
 
   /**
    * @description: 页码 从1开始
    * @type: number
    * @default:
    **/
-  page_num: number;
+  page_num?: number;
 
   /**
    * @description: 1页查询的最大数据 [1，500], 默认100
    * @type: number
    * @default:
    **/
-  page_size: number;
+  page_size?: number;
 
   /**
    * @description: 父属性值id
    * @type: string | number
    * @default:
    **/
-  parent_vid: string | number;
+  parent_vid?: string | number;
 
   /**
    * @description: 模板属性id
    * @type: string | number
    * @default:
    **/
-  template_pid?: string | number;
+  template_pid: string | number;
 
   /**
    * @description: 需要模糊搜索的属性值
    * @type: string
    * @default:
    **/
-  value?: string;
+  value: string;
 }
 
 /**

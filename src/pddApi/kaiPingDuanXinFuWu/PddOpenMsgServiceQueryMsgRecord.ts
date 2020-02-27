@@ -11,35 +11,35 @@ export interface PddOpenMsgServiceQueryMsgRecordRequestInterface {
    * @type: string
    * @default:
    **/
-  biz_id: string;
+  biz_id?: string;
 
   /**
    * @description: 分页参数,页码
    * @type: number
    * @default:
    **/
-  page_number?: number;
+  page_number: number;
 
   /**
    * @description: 分页参数，每页数量。最大值50
    * @type: number
    * @default:
    **/
-  page_size?: number;
+  page_size: number;
 
   /**
    * @description: 查询手机号码
    * @type: string
    * @default:
    **/
-  phone_number?: string;
+  phone_number: string;
 
   /**
    * @description: 短信发送日期，支持近30天记录查询，格式yyyyMMdd
    * @type: string
    * @default:
    **/
-  send_date?: string;
+  send_date: string;
 }
 
 /**

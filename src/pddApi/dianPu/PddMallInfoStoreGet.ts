@@ -11,56 +11,56 @@ export interface PddMallInfoStoreGetRequestInterface {
    * @type: string
    * @default:
    **/
-  city: string;
+  city?: string;
 
   /**
    * @description: 区
    * @type: string
    * @default:
    **/
-  district: string;
+  district?: string;
 
   /**
    * @description: 分页
    * @type: number
    * @default:
    **/
-  page_number?: number;
+  page_number: number;
 
   /**
    * @description: 分页大小
    * @type: number
    * @default:
    **/
-  page_size?: number;
+  page_size: number;
 
   /**
    * @description: 省
    * @type: string
    * @default:
    **/
-  province: string;
+  province?: string;
 
   /**
    * @description: 门店Id
    * @type: string | number
    * @default:
    **/
-  store_id: string | number;
+  store_id?: string | number;
 
   /**
    * @description: 门店名称
    * @type: string
    * @default:
    **/
-  store_name: string;
+  store_name?: string;
 
   /**
    * @description: 门店自有编号
    * @type: string
    * @default:
    **/
-  store_number: string;
+  store_number?: string;
 }
 
 /**

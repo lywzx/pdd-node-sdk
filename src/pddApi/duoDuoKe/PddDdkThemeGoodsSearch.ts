@@ -12,7 +12,7 @@ export interface PddDdkThemeGoodsSearchRequestInterface {
    * @type: string | number
    * @default:
    **/
-  theme_id?: string | number;
+  theme_id: string | number;
 }
 
 /**

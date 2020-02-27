@@ -12,7 +12,7 @@ export * from './pdd-o-auth-link.interface';
 
 export * from './pdd-access-token-response.interface';
 
-export type RequestParamsType = Omit<PddCommonRequestInterface, 'sign' | 'timestamp' | 'client_id'> & {
+export type RequestParamsType = Partial<Omit<PddCommonRequestInterface, 'sign' | 'timestamp' | 'client_id'>> & {
   [s: string]: any;
 };
 

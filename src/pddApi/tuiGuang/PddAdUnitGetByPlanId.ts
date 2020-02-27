@@ -12,14 +12,14 @@ export interface PddAdUnitGetByPlanIdRequestInterface {
    * @type: number
    * @default:
    **/
-  scene_type?: number;
+  scene_type: number;
 
   /**
    * @description: 计划id
    * @type: string | number
    * @default:
    **/
-  plan_id?: string | number;
+  plan_id: string | number;
 }
 
 /**

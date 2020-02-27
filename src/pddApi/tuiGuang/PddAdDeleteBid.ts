@@ -12,21 +12,21 @@ export interface PddAdDeleteBidRequestInterface {
    * @type: number
    * @default:
    **/
-  scene_type?: number;
+  scene_type: number;
 
   /**
    * @description: 单元ID
    * @type: string | number
    * @default:
    **/
-  unit_id?: string | number;
+  unit_id: string | number;
 
   /**
    * @description: 定向ID，不能删除全体人群定向。 List<Long>的json string。示例[111,222,333]
    * @type: string
    * @default:
    **/
-  bid_ids?: string;
+  bid_ids: string;
 }
 
 /**

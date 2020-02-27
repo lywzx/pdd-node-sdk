@@ -12,21 +12,21 @@ export interface PddGoodsOuterCatMappingGetRequestInterface {
    * @type: string | number
    * @default:
    **/
-  outer_cat_id?: string | number;
+  outer_cat_id: string | number;
 
   /**
    * @description: 外部叶子类目名称
    * @type: string
    * @default:
    **/
-  outer_cat_name?: string;
+  outer_cat_name: string;
 
   /**
    * @description: 外部商品名称
    * @type: string
    * @default:
    **/
-  outer_goods_name?: string;
+  outer_goods_name: string;
 }
 
 /**

@@ -12,7 +12,7 @@ export interface PddNextoneLogisticsWarehouseUpdateRequestInterface {
    * @default:
    *
    **/
-  request?: PddNextoneLogisticsWarehouseUpdateRequestRequestInterface;
+  request: PddNextoneLogisticsWarehouseUpdateRequestRequestInterface;
 }
 
 /**
@@ -26,42 +26,42 @@ export interface PddNextoneLogisticsWarehouseUpdateRequestRequestInterface {
    * @type: string | number
    * @default:
    **/
-  after_sales_id?: string | number;
+  after_sales_id: string | number;
 
   /**
    * @description: 操作时间
    * @type: void
    * @default:
    **/
-  operate_time?: void;
+  operate_time: void;
 
   /**
    * @description: order_sn
    * @type: string
    * @default:
    **/
-  order_sn?: string;
+  order_sn: string;
 
   /**
    * @description: 物流公司id
    * @type: number
    * @default:
    **/
-  reverse_logistics_id?: number;
+  reverse_logistics_id: number;
 
   /**
    * @description: 物流单号
    * @type: string
    * @default:
    **/
-  reverse_tracking_number?: string;
+  reverse_tracking_number: string;
 
   /**
    * @description: 退货入库状态 1：成功；2：失败
    * @type: number
    * @default:
    **/
-  warehouse_status?: number;
+  warehouse_status: number;
 }
 
 /**

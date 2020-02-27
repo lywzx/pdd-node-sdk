@@ -12,7 +12,7 @@ export interface PddPromotionCouponCloseRequestInterface {
    * @type: string | number
    * @default:
    **/
-  batch_id?: string | number;
+  batch_id: string | number;
 }
 
 /**

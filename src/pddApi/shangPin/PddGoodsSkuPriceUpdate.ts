@@ -12,7 +12,7 @@ export interface PddGoodsSkuPriceUpdateRequestInterface {
    * @type: string | number
    * @default:
    **/
-  goods_id?: string | number;
+  goods_id: string | number;
 
   /**
    * @description: 待修改的sku价格
@@ -20,28 +20,28 @@ export interface PddGoodsSkuPriceUpdateRequestInterface {
    * @default:
    *
    **/
-  sku_price_list?: PddGoodsSkuPriceUpdateSkuPriceListRequestInterface[];
+  sku_price_list: PddGoodsSkuPriceUpdateSkuPriceListRequestInterface[];
 
   /**
    * @description: 市场价 （单位分）
    * @type: string | number
    * @default:
    **/
-  market_price: string | number;
+  market_price?: string | number;
 
   /**
    * @description: 市场价 （单位元）
    * @type: string
    * @default:
    **/
-  market_price_in_yuan: string;
+  market_price_in_yuan?: string;
 
   /**
    * @description: 提交后上架状态，0:上架,1:保持原样
    * @type: number
    * @default:
    **/
-  sync_goods_operate: number;
+  sync_goods_operate?: number;
 }
 
 /**
@@ -55,28 +55,28 @@ export interface PddGoodsSkuPriceUpdateSkuPriceListRequestInterface {
    * @type: number
    * @default:
    **/
-  is_onsale: number;
+  is_onsale?: number;
 
   /**
    * @description: 单独购买价格（单位分）
    * @type: string | number
    * @default:
    **/
-  single_price?: string | number;
+  single_price: string | number;
 
   /**
    * @description: 拼团购买价格（单位分）
    * @type: string | number
    * @default:
    **/
-  group_price?: string | number;
+  group_price: string | number;
 
   /**
    * @description: sku标识
    * @type: string | number
    * @default:
    **/
-  sku_id?: string | number;
+  sku_id: string | number;
 }
 
 /**

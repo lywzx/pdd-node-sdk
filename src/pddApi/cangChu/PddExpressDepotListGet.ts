@@ -12,14 +12,14 @@ export interface PddExpressDepotListGetRequestInterface {
    * @type: string | number
    * @default:
    **/
-  length?: string | number;
+  length: string | number;
 
   /**
    * @description: 分页数据起始位置
    * @type: string | number
    * @default:
    **/
-  start?: string | number;
+  start: string | number;
 }
 
 /**

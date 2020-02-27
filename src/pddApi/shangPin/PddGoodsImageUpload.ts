@@ -12,7 +12,7 @@ export interface PddGoodsImageUploadRequestInterface {
    * @type: string
    * @default:
    **/
-  image?: string;
+  image: string;
 }
 
 /**

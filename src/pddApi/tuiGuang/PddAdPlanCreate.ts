@@ -12,21 +12,21 @@ export interface PddAdPlanCreateRequestInterface {
    * @type: number
    * @default:
    **/
-  scene_type?: number;
+  scene_type: number;
 
   /**
    * @description: 计划名
    * @type: string
    * @default:
    **/
-  plan_name?: string;
+  plan_name: string;
 
   /**
    * @description: 单日消耗，单位厘;上限不能超过1000000元，单日消耗上限不能低于100元 , 默认不限额，即1000000 元
    * @type: string | number
    * @default:
    **/
-  max_cost: string | number;
+  max_cost?: string | number;
 
   /**
    * @description: List<JsonObject> 的json string. 示例：[{"rate":1000,"index":12},{"rate":1000,"index":13}]
@@ -34,7 +34,7 @@ export interface PddAdPlanCreateRequestInterface {
    * @default:
    *
    **/
-  discounts: PddAdPlanCreateDiscountsRequestInterface[];
+  discounts?: PddAdPlanCreateDiscountsRequestInterface[];
 }
 
 /**
@@ -48,14 +48,14 @@ export interface PddAdPlanCreateDiscountsRequestInterface {
    * @type: number
    * @default:
    **/
-  rate: number;
+  rate?: number;
 
   /**
    * @description: 时间段索引，0 ~ 23
    * @type: number
    * @default:
    **/
-  index: number;
+  index?: number;
 }
 
 /**

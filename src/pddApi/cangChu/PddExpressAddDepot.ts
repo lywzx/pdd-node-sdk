@@ -11,56 +11,56 @@ export interface PddExpressAddDepotRequestInterface {
    * @type: string
    * @default:
    **/
-  contact_name: string;
+  contact_name?: string;
 
   /**
    * @description: 仓库详细地址5-20字
    * @type: string
    * @default:
    **/
-  depot_address?: string;
+  depot_address: string;
 
   /**
    * @description: 别名
    * @type: string
    * @default:
    **/
-  depot_alias?: string;
+  depot_alias: string;
 
   /**
    * @description: 所在市id
    * @type: number
    * @default:
    **/
-  depot_city_id?: number;
+  depot_city_id: number;
 
   /**
    * @description: 仓库编码
    * @type: string
    * @default:
    **/
-  depot_code?: string;
+  depot_code: string;
 
   /**
    * @description: 所在区id
    * @type: number
    * @default:
    **/
-  depot_district_id?: number;
+  depot_district_id: number;
 
   /**
    * @description: 仓库名称
    * @type: string
    * @default:
    **/
-  depot_name?: string;
+  depot_name: string;
 
   /**
    * @description: 所在省id
    * @type: number
    * @default:
    **/
-  depot_province_id?: number;
+  depot_province_id: number;
 
   /**
    * @description: 仓库区域（ 省->市->区id列表）例如：{"34":{"396":[3383]}}Map<Integer, Map<Integer, List<Integer>>>
@@ -73,21 +73,21 @@ export interface PddExpressAddDepotRequestInterface {
    * @default:
    *
    **/
-  depot_region?: PddExpressAddDepotDepotRegionRequestInterface;
+  depot_region: PddExpressAddDepotDepotRegionRequestInterface;
 
   /**
    * @description: 联系人电话
    * @type: string
    * @default:
    **/
-  telephone: string;
+  telephone?: string;
 
   /**
    * @description: 邮编
    * @type: string
    * @default:
    **/
-  zip_code: string;
+  zip_code?: string;
 }
 
 /**
@@ -106,7 +106,7 @@ export interface PddExpressAddDepotDepotRegionRequestInterface {
    * @type: string
    * @default:
    **/
-  key?: string;
+  key: string;
 
   /**
    * @description: 市 -> 区id列表
@@ -114,7 +114,7 @@ export interface PddExpressAddDepotDepotRegionRequestInterface {
    * @default:
    *
    **/
-  value?: PddExpressAddDepotDepotRegionValueRequestInterface;
+  value: PddExpressAddDepotDepotRegionValueRequestInterface;
 }
 
 /**
@@ -128,14 +128,14 @@ export interface PddExpressAddDepotDepotRegionValueRequestInterface {
    * @type: string
    * @default:
    **/
-  key?: string;
+  key: string;
 
   /**
    * @description: 区id列表
    * @type: string[]
    * @default:
    **/
-  value?: string[];
+  value: string[];
 }
 
 /**

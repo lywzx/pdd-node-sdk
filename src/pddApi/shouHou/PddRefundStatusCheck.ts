@@ -12,7 +12,7 @@ export interface PddRefundStatusCheckRequestInterface {
    * @type: string
    * @default:
    **/
-  order_sns?: string;
+  order_sns: string;
 }
 
 /**

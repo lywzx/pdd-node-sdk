@@ -12,21 +12,21 @@ export interface PddAdPlanOptStatusUpdateRequestInterface {
    * @type: number
    * @default:
    **/
-  scene_type?: number;
+  scene_type: number;
 
   /**
    * @description: 计划id
    * @type: string | number
    * @default:
    **/
-  plan_id?: string | number;
+  plan_id: string | number;
 
   /**
    * @description: 1 已启用,2 已暂停
    * @type: number
    * @default:
    **/
-  opt_status?: number;
+  opt_status: number;
 }
 
 /**

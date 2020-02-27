@@ -11,14 +11,14 @@ export interface PddOpenMsgServiceSendExpressMsgRequestInterface {
    * @type: string
    * @default:
    **/
-  sign_name?: string;
+  sign_name: string;
 
   /**
    * @description: 短信模板CODE
    * @type: string | number
    * @default:
    **/
-  template_code?: string | number;
+  template_code: string | number;
 
   /**
    * @description: 短信模板变量JSON集合(与手机号对应)与按照手机号发短信一致key变量名 value变量值
@@ -26,28 +26,28 @@ export interface PddOpenMsgServiceSendExpressMsgRequestInterface {
    * @default:
    *
    **/
-  template_param_json: PddOpenMsgServiceSendExpressMsgTemplateParamJsonRequestInterface[];
+  template_param_json?: PddOpenMsgServiceSendExpressMsgTemplateParamJsonRequestInterface[];
 
   /**
    * @description: 物流单号集合
    * @type: string[]
    * @default:
    **/
-  waybill_codes?: string[];
+  waybill_codes: string[];
 
   /**
    * @description: 快递公司编码
    * @type: string
    * @default:
    **/
-  wp_code?: string;
+  wp_code: string;
 
   /**
    * @description: 业务请求唯一标识
    * @type: string
    * @default:
    **/
-  out_id: string;
+  out_id?: string;
 }
 
 /**
@@ -61,14 +61,14 @@ export interface PddOpenMsgServiceSendExpressMsgTemplateParamJsonRequestInterfac
    * @type: string
    * @default:
    **/
-  $key: string;
+  $key?: string;
 
   /**
    * @description: 模板变量value
    * @type: string
    * @default:
    **/
-  $value: string;
+  $value?: string;
 }
 
 /**

@@ -12,7 +12,7 @@ export interface PddDdkOrderDetailGetRequestInterface {
    * @type: string
    * @default:
    **/
-  order_sn?: string;
+  order_sn: string;
 }
 
 /**

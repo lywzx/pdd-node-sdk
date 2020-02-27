@@ -12,14 +12,14 @@ export interface PddPromotionCouponQuantityAddRequestInterface {
    * @type: string | number
    * @default:
    **/
-  batch_id?: string | number;
+  batch_id: string | number;
 
   /**
    * @description: 要增加的数量
    * @type: string | number
    * @default:
    **/
-  add_quantity?: string | number;
+  add_quantity: string | number;
 }
 
 /**

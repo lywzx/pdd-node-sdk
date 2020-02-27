@@ -12,14 +12,14 @@ export interface PddGoodsSpecIdGetRequestInterface {
    * @type: string | number
    * @default:
    **/
-  parent_spec_id?: string | number;
+  parent_spec_id: string | number;
 
   /**
    * @description: 商家编辑的规格值，如颜色规格下设置白色属性
    * @type: string
    * @default:
    **/
-  spec_name?: string;
+  spec_name: string;
 }
 
 /**

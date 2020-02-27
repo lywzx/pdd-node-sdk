@@ -12,7 +12,7 @@ export interface PddMallTicketDetailRequestInterface {
    * @type: string
    * @default:
    **/
-  ticket_id?: string;
+  ticket_id: string;
 }
 
 /**

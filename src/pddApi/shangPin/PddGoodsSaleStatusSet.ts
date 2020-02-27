@@ -12,14 +12,14 @@ export interface PddGoodsSaleStatusSetRequestInterface {
    * @type: string | number
    * @default:
    **/
-  goods_id?: string | number;
+  goods_id: string | number;
 
   /**
    * @description: 上下架状态：1:上架 0:下架
    * @type: number
    * @default:
    **/
-  is_onsale?: number;
+  is_onsale: number;
 }
 
 /**

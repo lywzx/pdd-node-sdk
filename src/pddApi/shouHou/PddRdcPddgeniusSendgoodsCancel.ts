@@ -13,7 +13,7 @@ export interface PddRdcPddgeniusSendgoodsCancelRequestInterface {
    * @default:
    *
    **/
-  param?: PddRdcPddgeniusSendgoodsCancelParamRequestInterface;
+  param: PddRdcPddgeniusSendgoodsCancelParamRequestInterface;
 }
 
 /**
@@ -27,49 +27,49 @@ export interface PddRdcPddgeniusSendgoodsCancelParamRequestInterface {
    * @type: string | number
    * @default:
    **/
-  operate_time: string | number;
+  operate_time?: string | number;
 
   /**
    * @description: 订单号
    * @type: string
    * @default:
    **/
-  tid?: string;
+  tid: string;
 
   /**
    * @description: 状态SUCCESS、FAIL
    * @type: string
    * @default:
    **/
-  status?: string;
+  status: string;
 
   /**
    * @description: 退款单ID
    * @type: string | number
    * @default:
    **/
-  refund_id?: string | number;
+  refund_id: string | number;
 
   /**
    * @description: 退款金额 单位 分
    * @type: number
    * @default:
    **/
-  refund_fee: number;
+  refund_fee?: number;
 
   /**
    * @description: 描述
    * @type: string
    * @default:
    **/
-  msg: string;
+  msg?: string;
 
   /**
    * @description: 错误码：1001 错误场景：该订单未同步，无法取消发货 实际含义：订单未同步到isv;  错误码：1002 错误场景：该订单已发货，无法取消发货 实际含义：订单已经发货;  错误码：1003 错误场景：该订单已发货，无法取消发货 实际含义：订单已打印电子面单
    * @type: number
    * @default:
    **/
-  fail_reason_code: number;
+  fail_reason_code?: number;
 }
 
 /**

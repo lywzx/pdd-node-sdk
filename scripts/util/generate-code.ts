@@ -78,7 +78,7 @@ export function buildInterfaceColumn(
   while ((current = columnsClone.shift())) {
     const name = current.paramName;
     let type;
-    const optional = 'isMust' in current ? !!current.isMust : false;
+    const optional = 'isMust' in current ? !current.isMust : false;
     let comment;
     const example = current.example;
     if (current.childrenNum == 0) {

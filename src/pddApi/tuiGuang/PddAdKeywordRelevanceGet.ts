@@ -12,21 +12,21 @@ export interface PddAdKeywordRelevanceGetRequestInterface {
    * @type: number
    * @default:
    **/
-  scene_type?: number;
+  scene_type: number;
 
   /**
    * @description: ["test"]
    * @type: string[]
    * @default:
    **/
-  words?: string[];
+  words: string[];
 
   /**
    * @description: 商品id
    * @type: string | number
    * @default:
    **/
-  goods_id?: string | number;
+  goods_id: string | number;
 }
 
 /**

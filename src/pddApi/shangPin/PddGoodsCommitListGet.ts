@@ -12,28 +12,28 @@ export interface PddGoodsCommitListGetRequestInterface {
    * @type: number
    * @default:
    **/
-  check_status?: number;
+  check_status: number;
 
   /**
    * @description: 商品id
    * @type: string | number
    * @default:
    **/
-  goods_id: string | number;
+  goods_id?: string | number;
 
   /**
    * @description: 页码，最多不超过100
    * @type: number
    * @default:
    **/
-  page?: number;
+  page: number;
 
   /**
    * @description: 每页数量，最多不超过100
    * @type: number
    * @default:
    **/
-  page_size?: number;
+  page_size: number;
 }
 
 /**

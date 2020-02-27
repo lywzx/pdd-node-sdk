@@ -12,21 +12,21 @@ export interface PddAdDeleteLocationBidRequestInterface {
    * @type: number
    * @default:
    **/
-  scene_type?: number;
+  scene_type: number;
 
   /**
    * @description: 单元ID
    * @type: string | number
    * @default:
    **/
-  unit_id?: string | number;
+  unit_id: string | number;
 
   /**
    * @description: 资源位ID, List<Long>的json string
    * @type: string
    * @default:
    **/
-  location_bid_ids?: string;
+  location_bid_ids: string;
 }
 
 /**

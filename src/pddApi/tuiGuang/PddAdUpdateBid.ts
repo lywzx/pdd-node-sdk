@@ -12,14 +12,14 @@ export interface PddAdUpdateBidRequestInterface {
    * @type: number
    * @default:
    **/
-  scene_type?: number;
+  scene_type: number;
 
   /**
    * @description: 单元ID
    * @type: string | number
    * @default:
    **/
-  unit_id?: string | number;
+  unit_id: string | number;
 
   /**
    * @description: 定向列表
@@ -27,7 +27,7 @@ export interface PddAdUpdateBidRequestInterface {
    * @default:
    *
    **/
-  bid_list?: PddAdUpdateBidBidListRequestInterface;
+  bid_list: PddAdUpdateBidBidListRequestInterface;
 }
 
 /**
@@ -44,21 +44,21 @@ export interface PddAdUpdateBidBidListRequestInterface {
    * @type: number
    * @default:
    **/
-  bid_premium_rate: number;
+  bid_premium_rate?: number;
 
   /**
    * @description: 通投必填	溢价绝对值，单位厘，通投时，使用这个值，其他情况使用bid_premium_rate
    * @type: string | number
    * @default:
    **/
-  bid: string | number;
+  bid?: string | number;
 
   /**
    * @description: 定向ID
    * @type: string | number
    * @default:
    **/
-  bid_id?: string | number;
+  bid_id: string | number;
 }
 
 /**

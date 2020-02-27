@@ -12,7 +12,7 @@ export interface PddStockWareMoveRequestInterface {
    * @default:
    *
    **/
-  stock_move_order_action_dto?: PddStockWareMoveStockMoveOrderActionDtoRequestInterface;
+  stock_move_order_action_dto: PddStockWareMoveStockMoveOrderActionDtoRequestInterface;
 
   /**
    * @description: List<JsonObject>的json string, 一次传入StockMoveRecordActionDTO list size不超过30个
@@ -20,7 +20,7 @@ export interface PddStockWareMoveRequestInterface {
    * @default:
    *
    **/
-  stock_move_record_action_dto_list?: PddStockWareMoveStockMoveRecordActionDtoListRequestInterface[];
+  stock_move_record_action_dto_list: PddStockWareMoveStockMoveRecordActionDtoListRequestInterface[];
 }
 
 /**
@@ -34,42 +34,42 @@ export interface PddStockWareMoveStockMoveOrderActionDtoRequestInterface {
    * @type: number
    * @default:
    **/
-  move_direction?: number;
+  move_direction: number;
 
   /**
    * @description: 调整单备注
    * @type: string
    * @default:
    **/
-  order_note: string;
+  order_note?: string;
 
   /**
    * @description: 业务类型。1, "采购"；2, "调拨"；3, "退货"；4, "盘点"；5, "发货"；6, "库存同步"
    * @type: number
    * @default:
    **/
-  business_type?: number;
+  business_type: number;
 
   /**
    * @description: 仓库编码
    * @type: string
    * @default:
    **/
-  warehouse_sn?: string;
+  warehouse_sn: string;
 
   /**
    * @description: 调整时间
    * @type: string | number
    * @default:
    **/
-  move_time?: string | number;
+  move_time: string | number;
 
   /**
    * @description: 调整单号
    * @type: string
    * @default:
    **/
-  move_order_sn?: string;
+  move_order_sn: string;
 }
 
 /**
@@ -83,21 +83,21 @@ export interface PddStockWareMoveStockMoveRecordActionDtoListRequestInterface {
    * @type: string
    * @default:
    **/
-  note: string;
+  note?: string;
 
   /**
    * @description: 调整数量
    * @type: string | number
    * @default:
    **/
-  move_num?: string | number;
+  move_num: string | number;
 
   /**
    * @description: 货品sn
    * @type: string
    * @default:
    **/
-  ware_sn?: string;
+  ware_sn: string;
 }
 
 /**

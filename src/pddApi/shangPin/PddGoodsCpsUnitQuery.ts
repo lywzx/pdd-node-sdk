@@ -11,7 +11,7 @@ export interface PddGoodsCpsUnitQueryRequestInterface {
    * @type: string | number
    * @default:
    **/
-  goods_id?: string | number;
+  goods_id: string | number;
 }
 
 /**

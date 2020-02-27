@@ -12,14 +12,14 @@ export interface PddDdkGoodsPidGenerateRequestInterface {
    * @type: string | number
    * @default:
    **/
-  number?: string | number;
+  number: string | number;
 
   /**
    * @description: 推广位名称，例如["1","2"]
    * @type: string[]
    * @default:
    **/
-  p_id_name_list: string[];
+  p_id_name_list?: string[];
 }
 
 /**

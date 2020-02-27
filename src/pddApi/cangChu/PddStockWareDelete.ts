@@ -11,7 +11,7 @@ export interface PddStockWareDeleteRequestInterface {
    * @type: string | number
    * @default:
    **/
-  ware_id?: string | number;
+  ware_id: string | number;
 }
 
 /**

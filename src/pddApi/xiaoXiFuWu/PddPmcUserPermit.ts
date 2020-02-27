@@ -12,7 +12,7 @@ export interface PddPmcUserPermitRequestInterface {
    * @type: string
    * @default:
    **/
-  topics: string;
+  topics?: string;
 }
 
 /**

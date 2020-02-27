@@ -12,21 +12,21 @@ export interface PddAdChartBykeywordGetRequestInterface {
    * @type: string
    * @default:
    **/
-  date?: string;
+  date: string;
 
   /**
    * @description: 返回页数，默认1页
    * @type: number
    * @default:
    **/
-  page: number;
+  page?: number;
 
   /**
    * @description: 每页返回条数，默认20条
    * @type: number
    * @default:
    **/
-  page_size: number;
+  page_size?: number;
 }
 
 /**

@@ -40,6 +40,7 @@ type PddClientGenerateType =
       refresh_token: string;
       grant_type: 'refresh_token';
     };
+type PddCommonRequestExcludeSomeAttr = Pick<PddCommonRequestInterface, 'access_token'>;
 
 export class PddClient {
   constructor(public options: PddClientOptionsInterface, protected adapter: NetworkAdapterInterface = NetworkAdapter) {
@@ -59,29 +60,35 @@ export class PddClient {
    * @param params
    * @param callback
    */
-  public request<R>(params: RequestParamsType): Promise<R>;
-  public request<R>(params: RequestParamsType, callback: AsyncResultCallbackInterface<R, never>): void;
-  public request<R>(params: RequestParamsType, callback?: AsyncResultCallbackInterface<R, never>): Promise<R> | void {
+  public request<T extends {}, R>(params: T & RequestParamsType): Promise<R>;
+  public request<T extends {}, R>(
+    params: T & RequestParamsType,
+    callback: AsyncResultCallbackInterface<R, never>
+  ): void;
+  public request<T extends {}, R>(
+    params: T & RequestParamsType,
+    callback?: AsyncResultCallbackInterface<R, never>
+  ): Promise<R> | void {
     const defaultArgs: Partial<RequestParamsFullType> = extend({}, defaultRequestParam, {
       // eslint-disable-next-line @typescript-eslint/camelcase
       client_id: this.options.clientId,
       timestamp: timestamp(),
     });
 
-    const newParams: object = extend({}, params);
+    const newParams = extend({}, params);
 
     for (const k in newParams) {
       if (newParams.hasOwnProperty(k)) {
-        const value: any = (newParams as any)[k];
+        const value: any = newParams[k];
         if (typeof value === 'object') {
-          (defaultArgs as any)[k] = JSON.stringify(value);
+          defaultArgs[k] = JSON.stringify(value);
         } else {
-          (defaultArgs as any)[k] = value;
+          defaultArgs[k] = value;
         }
       }
     }
 
-    (defaultArgs as any).sign = this.sign((defaultArgs as any) as { [s: string]: string | number });
+    defaultArgs.sign = this.sign((defaultArgs as any) as { [s: string]: string | number });
 
     const requestPromise = this.adapter.post(this.options.endpoint, defaultArgs);
 
@@ -94,15 +101,18 @@ export class PddClient {
    * @param retryOptions
    * @param callback
    */
-  public requestWithRetry<R>(params: RequestParamsType, retryOptions?: RetryOptionsType): Promise<R>;
-  public requestWithRetry<R>(params: RequestParamsType, callback: AsyncResultCallbackInterface<R, never>): void;
-  public requestWithRetry<R>(
-    params: RequestParamsType,
+  public requestWithRetry<T extends {}, R>(params: T & RequestParamsType, retryOptions?: RetryOptionsType): Promise<R>;
+  public requestWithRetry<T extends {}, R>(
+    params: T & RequestParamsType,
+    callback: AsyncResultCallbackInterface<R, never>
+  ): void;
+  public requestWithRetry<T extends {}, R>(
+    params: T & RequestParamsType,
     retryOptions: RetryOptionsType,
     callback: AsyncResultCallbackInterface<R, never>
   ): void;
-  public requestWithRetry<R>(
-    params: RequestParamsType,
+  public requestWithRetry<T extends {}, R>(
+    params: T & RequestParamsType,
     retryOptions?: RetryOptionsType | AsyncResultCallbackInterface<R, never>,
     callback?: AsyncResultCallbackInterface<R, never>
   ): Promise<R> | void {
@@ -117,7 +127,7 @@ export class PddClient {
     }
 
     const retryResult = (retry<R>(tryOptions, clbk => {
-      this.request<R>(params, clbk);
+      this.request<T, R>(params, clbk);
     }) as any) as Promise<R>;
 
     return promseToCallback<R>(retryResult, callback as any);
@@ -134,39 +144,50 @@ export class PddClient {
     K extends keyof PddCollectRequestInterface,
     Req = PddCollectRequestInterface[K],
     Res = PddCollectShortResponseInterface[K]
-  >(type: K, params: Req): Promise<Res>;
+  >(type: K, params: Req & PddCommonRequestExcludeSomeAttr): Promise<Res>;
   public execute<
     K extends keyof PddCollectRequestInterface,
-    Req = PddCollectRequestInterface[K],
+    Req = PddCollectRequestInterface[K] & PddCommonRequestExcludeSomeAttr,
     Res = PddCollectShortResponseInterface[K]
-  >(type: K, params: Req, retryOptions: RetryOptionsType): Promise<Res>;
-  public execute<
-    K extends keyof PddCollectRequestInterface,
-    Req = PddCollectRequestInterface[K],
-    Res = PddCollectShortResponseInterface[K]
-  >(type: K, params: Req, retryOptions: AsyncResultCallbackInterface<Res, never>): void;
-  public execute<
-    K extends keyof PddCollectRequestInterface,
-    Req = PddCollectRequestInterface[K],
-    Res = PddCollectShortResponseInterface[K]
-  >(type: K, params: Req, retryOptions: RetryOptionsType, callback: AsyncResultCallbackInterface<Res, never>): void;
+  >(type: K, params: Req & PddCommonRequestExcludeSomeAttr, retryOptions: RetryOptionsType): Promise<Res>;
   public execute<
     K extends keyof PddCollectRequestInterface,
     Req = PddCollectRequestInterface[K],
     Res = PddCollectShortResponseInterface[K]
   >(
     type: K,
-    params: Req,
+    params: Req & PddCommonRequestExcludeSomeAttr,
+    retryOptions: AsyncResultCallbackInterface<Res, never>
+  ): void;
+  public execute<
+    K extends keyof PddCollectRequestInterface,
+    Req = PddCollectRequestInterface[K] & PddCommonRequestExcludeSomeAttr,
+    Res = PddCollectShortResponseInterface[K]
+  >(
+    type: K,
+    params: Req & PddCommonRequestExcludeSomeAttr,
+    retryOptions: RetryOptionsType,
+    callback: AsyncResultCallbackInterface<Res, never>
+  ): void;
+  public execute<
+    K extends keyof PddCollectRequestInterface,
+    Req = PddCollectRequestInterface[K],
+    Res = PddCollectShortResponseInterface[K]
+  >(
+    type: K,
+    params: Req & PddCommonRequestExcludeSomeAttr,
     retryOptions?: RetryOptionsType | AsyncResultCallbackInterface<Res, never>,
     callback?: AsyncResultCallbackInterface<Res, never>
   ): Promise<Res> | void {
-    const reqParams: Omit<PddCommonRequestInterface, 'sign'> = extend({}, params, { type: type }) as any;
+    const reqParams = extend({}, params, { type: type }) as any;
     if (typeof retryOptions === 'function') {
       callback = retryOptions;
       retryOptions = {};
     }
-
-    const result = this.requestWithRetry<any>(reqParams, retryOptions as RetryOptionsType).then(response => {
+    const result = this.requestWithRetry<
+      Req & Omit<PddCommonRequestInterface, 'sign' | 'timestamp' | 'client_id'>,
+      any
+    >(reqParams, retryOptions as RetryOptionsType).then(response => {
       if (type in PddResponseTypeAndRequestTypeMapping) {
         const responseKey = (PddResponseTypeAndRequestTypeMapping as any)[type] as string;
         return response[responseKey];

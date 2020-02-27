@@ -12,7 +12,7 @@ export interface PddVoucherVirtualCardVerificationRequestInterface {
    * @type: string
    * @default:
    **/
-  order_sn?: string;
+  order_sn: string;
 
   /**
    * @description: 券信息列表
@@ -20,7 +20,7 @@ export interface PddVoucherVirtualCardVerificationRequestInterface {
    * @default:
    *
    **/
-  voucher_data_list?: PddVoucherVirtualCardVerificationVoucherDataListRequestInterface[];
+  voucher_data_list: PddVoucherVirtualCardVerificationVoucherDataListRequestInterface[];
 }
 
 /**
@@ -34,28 +34,28 @@ export interface PddVoucherVirtualCardVerificationVoucherDataListRequestInterfac
    * @type: string
    * @default:
    **/
-  out_trans_no?: string;
+  out_trans_no: string;
 
   /**
    * @description: 券状态更改时间
    * @type: string | number
    * @default:
    **/
-  voucher_time?: string | number;
+  voucher_time: string | number;
 
   /**
    * @description: 券状态 1：已核销；2：已销毁
    * @type: number
    * @default:
    **/
-  voucher_status?: number;
+  voucher_status: number;
 
   /**
    * @description: 券号
    * @type: string
    * @default:
    **/
-  voucher_no?: string;
+  voucher_no: string;
 }
 
 /**

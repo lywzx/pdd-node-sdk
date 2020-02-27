@@ -12,63 +12,63 @@ export interface PddDdkMerchantListGetRequestInterface {
    * @type: string | number
    * @default:
    **/
-  cat_id: string | number;
+  cat_id?: string | number;
 
   /**
    * @description: 是否有店铺收藏券 （0 所有；1 必须有券）
    * @type: boolean
    * @default:
    **/
-  has_clt_cpn: boolean;
+  has_clt_cpn?: boolean;
 
   /**
    * @description: 是否有优惠券 （0 所有；1 必须有券。）
    * @type: number
    * @default:
    **/
-  has_coupon: number;
+  has_coupon?: number;
 
   /**
    * @description: 店铺id
    * @type: Array<string | number>
    * @default:
    **/
-  mall_id_list: Array<string | number>;
+  mall_id_list?: Array<string | number>;
 
   /**
    * @description: 店铺类型
    * @type: number[]
    * @default:
    **/
-  merchant_type_list: number[];
+  merchant_type_list?: number[];
 
   /**
    * @description: 每页数量
    * @type: number
    * @default:
    **/
-  page_number: number;
+  page_number?: number;
 
   /**
    * @description: 分页数
    * @type: number
    * @default:
    **/
-  page_size: number;
+  page_size?: number;
 
   /**
    * @description: 查询范围0----商品拼团价格区间；1----商品券后价价格区间；2----佣金比例区间；3----优惠券金额区间；4----加入多多进宝时间区间；5----销量区间；6----佣金金额区间
    * @type: number
    * @default:
    **/
-  query_range_str: number;
+  query_range_str?: number;
 
   /**
    * @description: 筛选范围
    * @type: string
    * @default:
    **/
-  range_vo_list: string;
+  range_vo_list?: string;
 }
 
 /**

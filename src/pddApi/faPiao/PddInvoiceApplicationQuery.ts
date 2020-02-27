@@ -12,49 +12,49 @@ export interface PddInvoiceApplicationQueryRequestInterface {
    * @type: string | number
    * @default:
    **/
-  application_id: string | number;
+  application_id?: string | number;
 
   /**
    * @description: 订单号；订单号和申请时间必填其一
    * @type: string
    * @default:
    **/
-  order_sn: string;
+  order_sn?: string;
 
   /**
    * @description: 申请状态：0-已拒绝，1-申请中，2-已同意
    * @type: number
    * @default:
    **/
-  status: number;
+  status?: number;
 
   /**
    * @description: 申请开始时间, 时间戳（毫秒）
    * @type: string | number
    * @default:
    **/
-  update_start_time: string | number;
+  update_start_time?: string | number;
 
   /**
    * @description: 申请结束时间, 时间戳（毫秒）
    * @type: string | number
    * @default:
    **/
-  update_end_time: string | number;
+  update_end_time?: string | number;
 
   /**
    * @description: 页码，默认1
    * @type: number
    * @default:
    **/
-  page: number;
+  page?: number;
 
   /**
    * @description: 每页返回数目，默认50
    * @type: number
    * @default:
    **/
-  page_size: number;
+  page_size?: number;
 }
 
 /**

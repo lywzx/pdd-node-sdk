@@ -12,28 +12,28 @@ export interface PddInvoiceApplicationUpdateRequestInterface {
    * @type: string | number
    * @default:
    **/
-  application_id?: string | number;
+  application_id: string | number;
 
   /**
    * @description: 订单号
    * @type: string
    * @default:
    **/
-  order_sn?: string;
+  order_sn: string;
 
   /**
    * @description: 审核结果：0 = 拒绝，2 = 同意
    * @type: number
    * @default:
    **/
-  status?: number;
+  status: number;
 
   /**
    * @description: 驳回原因，status=0必填
    * @type: string
    * @default:
    **/
-  reason?: string;
+  reason: string;
 }
 
 /**

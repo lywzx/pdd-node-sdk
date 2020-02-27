@@ -13,7 +13,7 @@ export interface PddCloudprintCmdprintRenderRequestInterface {
    * @default:
    *
    **/
-  request?: PddCloudprintCmdprintRenderRequestRequestInterface;
+  request: PddCloudprintCmdprintRenderRequestRequestInterface;
 }
 
 /**
@@ -27,14 +27,14 @@ export interface PddCloudprintCmdprintRenderRequestRequestInterface {
    * @type: string
    * @default:
    **/
-  client_side_id?: string;
+  client_side_id: string;
 
   /**
    * @description: 客户端类型
    * @type: string
    * @default:
    **/
-  client_type?: string;
+  client_type: string;
 
   /**
    * @description: 打印配置
@@ -42,7 +42,7 @@ export interface PddCloudprintCmdprintRenderRequestRequestInterface {
    * @default:
    *
    **/
-  config?: PddCloudprintCmdprintRenderRequestConfigRequestInterface;
+  config: PddCloudprintCmdprintRenderRequestConfigRequestInterface;
 
   /**
    * @description: 需要打印的文档，包括模板地址，打印数据
@@ -50,21 +50,21 @@ export interface PddCloudprintCmdprintRenderRequestRequestInterface {
    * @default:
    *
    **/
-  document?: PddCloudprintCmdprintRenderRequestDocumentRequestInterface;
+  document: PddCloudprintCmdprintRenderRequestDocumentRequestInterface;
 
   /**
    * @description: 打印机名称
    * @type: string
    * @default:
    **/
-  printer_name?: string;
+  printer_name: string;
 
   /**
    * @description: 枚举值：CPCL、TSPL
    * @type: string
    * @default:
    **/
-  print_command_type?: string;
+  print_command_type: string;
 }
 
 /**
@@ -78,42 +78,42 @@ export interface PddCloudprintCmdprintRenderRequestConfigRequestInterface {
    * @type: string
    * @default:
    **/
-  horizontal_offset: string;
+  horizontal_offset?: string;
 
   /**
    * @description: 是否打印下联logo
    * @type: boolean
    * @default:
    **/
-  need_bottom_logo: boolean;
+  need_bottom_logo?: boolean;
 
   /**
    * @description: 是否打印中联logo
    * @type: boolean
    * @default:
    **/
-  need_middle_logo: boolean;
+  need_middle_logo?: boolean;
 
   /**
    * @description: 是否打印上联logo
    * @type: boolean
    * @default:
    **/
-  need_top_logo: boolean;
+  need_top_logo?: boolean;
 
   /**
    * @description: 打印方向 normal-正常 reverse-翻转
    * @type: string
    * @default:
    **/
-  orientation?: string;
+  orientation: string;
 
   /**
    * @description: 垂直偏移
    * @type: string
    * @default:
    **/
-  vertical_offset: string;
+  vertical_offset?: string;
 }
 
 /**
@@ -128,7 +128,7 @@ export interface PddCloudprintCmdprintRenderRequestDocumentRequestInterface {
    * @default:
    *
    **/
-  contents?: PddCloudprintCmdprintRenderRequestDocumentContentsRequestInterface[];
+  contents: PddCloudprintCmdprintRenderRequestDocumentContentsRequestInterface[];
 }
 
 /**
@@ -142,42 +142,42 @@ export interface PddCloudprintCmdprintRenderRequestDocumentContentsRequestInterf
    * @type: string
    * @default:
    **/
-  add_data: string;
+  add_data?: string;
 
   /**
    * @description: 是否获取加密数据
    * @type: boolean
    * @default:
    **/
-  encrypted: boolean;
+  encrypted?: boolean;
 
   /**
    * @description: 打印数据
    * @type: string
    * @default:
    **/
-  print_data?: string;
+  print_data: string;
 
   /**
    * @description: 数据签名
    * @type: string
    * @default:
    **/
-  signature: string;
+  signature?: string;
 
   /**
    * @description: 模板url
    * @type: string
    * @default:
    **/
-  template_url?: string;
+  template_url: string;
 
   /**
    * @description: 加密数据使用秘钥版本
    * @type: string
    * @default:
    **/
-  ver: string;
+  ver?: string;
 }
 
 /**

@@ -12,14 +12,14 @@ export interface PddAdPlanDeleteRequestInterface {
    * @type: number
    * @default:
    **/
-  scene_type?: number;
+  scene_type: number;
 
   /**
    * @description: plan_id 列表，示例：[1,2]
    * @type: Array<string | number>
    * @default:
    **/
-  plan_ids?: Array<string | number>;
+  plan_ids: Array<string | number>;
 }
 
 /**

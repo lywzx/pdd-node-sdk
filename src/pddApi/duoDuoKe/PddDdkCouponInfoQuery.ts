@@ -12,7 +12,7 @@ export interface PddDdkCouponInfoQueryRequestInterface {
    * @type: string[]
    * @default:
    **/
-  coupon_ids?: string[];
+  coupon_ids: string[];
 }
 
 /**

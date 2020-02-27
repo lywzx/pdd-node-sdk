@@ -12,42 +12,42 @@ export interface PddAdQueryLocationBidHistoryReportRequestInterface {
    * @type: number
    * @default:
    **/
-  scene_type?: number;
+  scene_type: number;
 
   /**
    * @description: 分天数据查询时必填 单元Id
    * @type: string | number
    * @default:
    **/
-  unit_id: string | number;
+  unit_id?: string | number;
 
   /**
    * @description: 计划ID
    * @type: string | number
    * @default:
    **/
-  planId: string | number;
+  planId?: string | number;
 
   /**
    * @description: 分天数据查询时必填，资源位类型。0表示基础流量包，1表示类目商品页，2表示商品详情页，3表示营销活动页，4表示店铺关注页，5表示订单评价页，6表示优选活动页
    * @type: number
    * @default:
    **/
-  location_type: number;
+  location_type?: number;
 
   /**
    * @description: 汇总报表查询时必填，资源位类型列表，多个资源位以逗号隔开。值所代表的含义参见location_type字段.
    * @type: string
    * @default:
    **/
-  location_types: string;
+  location_types?: string;
 
   /**
    * @description: 聚合方式，1-日期，2-实体
    * @type: number
    * @default:
    **/
-  group_by?: number;
+  group_by: number;
 
   /**
    * @description: page_request
@@ -55,28 +55,28 @@ export interface PddAdQueryLocationBidHistoryReportRequestInterface {
    * @default:
    *
    **/
-  page_request: PddAdQueryLocationBidHistoryReportPageRequestRequestInterface;
+  page_request?: PddAdQueryLocationBidHistoryReportPageRequestRequestInterface;
 
   /**
    * @description: 起始日期 "2018-11-01"
    * @type: string
    * @default:
    **/
-  begin_date?: string;
+  begin_date: string;
 
   /**
    * @description: 结束日期 "2018-11-01"
    * @type: string
    * @default:
    **/
-  end_date?: string;
+  end_date: string;
 
   /**
    * @description: 排序字段 默认DATE（8）0 - IMPR_NUM - 曝光量排序、1 - CLK_NUM - 点击量排序2 - CLK_RATE - 点击率3 - CPC - 点击单价排序4 - SPEND - 消耗排序5 - PAY_ORDER_NUM - 订单数排序6 - PAY_GVM - 交易额排序7 - ROI - 产出比排序8 - DATE - 日期9 - CPM - 千次曝光单价10 - FAV_MALL - 店铺关注数
    * @type: number
    * @default:
    **/
-  order_by: number;
+  order_by?: number;
 
   /**
    * @description: 排序方式  默认降序（0）
@@ -85,7 +85,7 @@ export interface PddAdQueryLocationBidHistoryReportRequestInterface {
    * @type: number
    * @default:
    **/
-  sort_by: number;
+  sort_by?: number;
 }
 
 /**
@@ -99,14 +99,14 @@ export interface PddAdQueryLocationBidHistoryReportPageRequestRequestInterface {
    * @type: number
    * @default:
    **/
-  page_number: number;
+  page_number?: number;
 
   /**
    * @description: 单页记录数 默认 10
    * @type: number
    * @default:
    **/
-  page_size: number;
+  page_size?: number;
 }
 
 /**

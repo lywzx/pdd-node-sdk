@@ -12,7 +12,7 @@ export interface PddStockWareDetailQueryRequestInterface {
    * @type: string | number
    * @default:
    **/
-  ware_id?: string | number;
+  ware_id: string | number;
 }
 
 /**

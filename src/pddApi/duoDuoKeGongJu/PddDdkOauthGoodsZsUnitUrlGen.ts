@@ -12,21 +12,21 @@ export interface PddDdkOauthGoodsZsUnitUrlGenRequestInterface {
    * @type: string
    * @default:
    **/
-  source_url?: string;
+  source_url: string;
 
   /**
    * @description: 渠道id
    * @type: string
    * @default:
    **/
-  pid?: string;
+  pid: string;
 
   /**
    * @description: 是否返回 schema URL
    * @type: string
    * @default: false
    **/
-  generate_schema_url: string;
+  generate_schema_url?: string;
 }
 
 /**

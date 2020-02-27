@@ -12,7 +12,7 @@ export interface PddOneExpressCostTemplateRequestInterface {
    * @type: string | number
    * @default:
    **/
-  cost_template_id?: string | number;
+  cost_template_id: string | number;
 }
 
 /**

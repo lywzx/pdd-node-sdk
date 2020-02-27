@@ -11,21 +11,21 @@ export interface PddLogisticsOrdertraceGetRequestInterface {
    * @type: string
    * @default:
    **/
-  company_code?: string;
+  company_code: string;
 
   /**
    * @description: 运单号
    * @type: string
    * @default:
    **/
-  mail_no?: string;
+  mail_no: string;
 
   /**
    * @description: 是否缓存
    * @type: boolean
    * @default:
    **/
-  cache?: boolean;
+  cache: boolean;
 }
 
 /**

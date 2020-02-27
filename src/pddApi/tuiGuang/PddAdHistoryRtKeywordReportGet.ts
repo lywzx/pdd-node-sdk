@@ -12,14 +12,14 @@ export interface PddAdHistoryRtKeywordReportGetRequestInterface {
    * @type: number
    * @default:
    **/
-  scene_type?: number;
+  scene_type: number;
 
   /**
    * @description: 单元id
    * @type: string | number
    * @default:
    **/
-  unit_id?: string | number;
+  unit_id: string | number;
 }
 
 /**

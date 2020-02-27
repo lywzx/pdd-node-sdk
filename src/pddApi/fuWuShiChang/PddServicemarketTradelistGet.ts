@@ -12,42 +12,42 @@ export interface PddServicemarketTradelistGetRequestInterface {
    * @type: number
    * @default:
    **/
-  begin_time?: number;
+  begin_time: number;
 
   /**
    * @description: 查询结束时间，精确到秒，起止时间间隔最大31天
    * @type: number
    * @default:
    **/
-  end_time?: number;
+  end_time: number;
 
   /**
    * @description: 收支类型，空-全部 1-收入 2-支出
    * @type: number
    * @default:
    **/
-  group_type: number;
+  group_type?: number;
 
   /**
    * @description: 分页页码，最大1000
    * @type: number
    * @default:
    **/
-  page?: number;
+  page: number;
 
   /**
    * @description: 分页大小，最大1000
    * @type: number
    * @default:
    **/
-  page_size?: number;
+  page_size: number;
 
   /**
    * @description: 服务订单号
    * @type: string
    * @default:
    **/
-  service_order_sn: string;
+  service_order_sn?: string;
 }
 
 /**

@@ -13,7 +13,7 @@ export interface PddWaybillGetRequestInterface {
    * @default:
    *
    **/
-  param_waybill_cloud_print_apply_new_request?: PddWaybillGetParamWaybillCloudPrintApplyNewRequestRequestInterface;
+  param_waybill_cloud_print_apply_new_request: PddWaybillGetParamWaybillCloudPrintApplyNewRequestRequestInterface;
 }
 
 /**
@@ -27,7 +27,7 @@ export interface PddWaybillGetParamWaybillCloudPrintApplyNewRequestRequestInterf
    * @type: boolean
    * @default:
    **/
-  need_encrypt: boolean;
+  need_encrypt?: boolean;
 
   /**
    * @description: 发货人信息
@@ -35,7 +35,7 @@ export interface PddWaybillGetParamWaybillCloudPrintApplyNewRequestRequestInterf
    * @default:
    *
    **/
-  sender?: PddWaybillGetParamWaybillCloudPrintApplyNewRequestSenderRequestInterface;
+  sender: PddWaybillGetParamWaybillCloudPrintApplyNewRequestSenderRequestInterface;
 
   /**
    * @description: 请求面单信息，数量限制为10
@@ -43,14 +43,14 @@ export interface PddWaybillGetParamWaybillCloudPrintApplyNewRequestRequestInterf
    * @default:
    *
    **/
-  trade_order_info_dtos: PddWaybillGetParamWaybillCloudPrintApplyNewRequestTradeOrderInfoDtosRequestInterface[];
+  trade_order_info_dtos?: PddWaybillGetParamWaybillCloudPrintApplyNewRequestTradeOrderInfoDtosRequestInterface[];
 
   /**
    * @description: 物流公司Code
    * @type: string
    * @default:
    **/
-  wp_code?: string;
+  wp_code: string;
 }
 
 /**
@@ -65,28 +65,28 @@ export interface PddWaybillGetParamWaybillCloudPrintApplyNewRequestSenderRequest
    * @default:
    *
    **/
-  address?: PddWaybillGetParamWaybillCloudPrintApplyNewRequestSenderAddressRequestInterface;
+  address: PddWaybillGetParamWaybillCloudPrintApplyNewRequestSenderAddressRequestInterface;
 
   /**
    * @description: 手机号码
    * @type: string
    * @default:
    **/
-  mobile: string;
+  mobile?: string;
 
   /**
    * @description: 姓名
    * @type: string
    * @default:
    **/
-  name?: string;
+  name: string;
 
   /**
    * @description: 固定电话
    * @type: string
    * @default:
    **/
-  phone: string;
+  phone?: string;
 }
 
 /**
@@ -100,42 +100,42 @@ export interface PddWaybillGetParamWaybillCloudPrintApplyNewRequestSenderAddress
    * @type: string
    * @default:
    **/
-  city: string;
+  city?: string;
 
   /**
    * @description: 详细地址
    * @type: string
    * @default:
    **/
-  detail?: string;
+  detail: string;
 
   /**
    * @description: 区
    * @type: string
    * @default:
    **/
-  district: string;
+  district?: string;
 
   /**
    * @description: 省
    * @type: string
    * @default:
    **/
-  province?: string;
+  province: string;
 
   /**
    * @description: 街道
    * @type: string
    * @default:
    **/
-  town: string;
+  town?: string;
 
   /**
    * @description: 国家/地区
    * @type: string
    * @default:
    **/
-  country: string;
+  country?: string;
 }
 
 /**
@@ -149,14 +149,14 @@ export interface PddWaybillGetParamWaybillCloudPrintApplyNewRequestTradeOrderInf
    * @type: string
    * @default:
    **/
-  logistics_services: string;
+  logistics_services?: string;
 
   /**
    * @description: 请求id
    * @type: string
    * @default:
    **/
-  object_id?: string;
+  object_id: string;
 
   /**
    * @description: 订单信息
@@ -164,7 +164,7 @@ export interface PddWaybillGetParamWaybillCloudPrintApplyNewRequestTradeOrderInf
    * @default:
    *
    **/
-  order_info?: PddWaybillGetParamWaybillCloudPrintApplyNewRequestTradeOrderInfoDtosOrderInfoRequestInterface;
+  order_info: PddWaybillGetParamWaybillCloudPrintApplyNewRequestTradeOrderInfoDtosOrderInfoRequestInterface;
 
   /**
    * @description: 包裹信息
@@ -172,7 +172,7 @@ export interface PddWaybillGetParamWaybillCloudPrintApplyNewRequestTradeOrderInf
    * @default:
    *
    **/
-  package_info?: PddWaybillGetParamWaybillCloudPrintApplyNewRequestTradeOrderInfoDtosPackageInfoRequestInterface;
+  package_info: PddWaybillGetParamWaybillCloudPrintApplyNewRequestTradeOrderInfoDtosPackageInfoRequestInterface;
 
   /**
    * @description: 收件人信息
@@ -180,21 +180,21 @@ export interface PddWaybillGetParamWaybillCloudPrintApplyNewRequestTradeOrderInf
    * @default:
    *
    **/
-  recipient: PddWaybillGetParamWaybillCloudPrintApplyNewRequestTradeOrderInfoDtosRecipientRequestInterface;
+  recipient?: PddWaybillGetParamWaybillCloudPrintApplyNewRequestTradeOrderInfoDtosRecipientRequestInterface;
 
   /**
    * @description: 标准模板模板URL
    * @type: string
    * @default:
    **/
-  template_url?: string;
+  template_url: string;
 
   /**
    * @description: 使用者ID
    * @type: string | number
    * @default:
    **/
-  user_id?: string | number;
+  user_id: string | number;
 }
 
 /**
@@ -208,14 +208,14 @@ export interface PddWaybillGetParamWaybillCloudPrintApplyNewRequestTradeOrderInf
    * @type: string
    * @default:
    **/
-  order_channels_type?: string;
+  order_channels_type: string;
 
   /**
    * @description: 订单号,数量限制100
    * @type: string[]
    * @default:
    **/
-  trade_order_list?: string[];
+  trade_order_list: string[];
 }
 
 /**
@@ -229,14 +229,14 @@ export interface PddWaybillGetParamWaybillCloudPrintApplyNewRequestTradeOrderInf
    * @type: string
    * @default:
    **/
-  goods_description: string;
+  goods_description?: string;
 
   /**
    * @description: 包裹id,拆合单使用
    * @type: string
    * @default:
    **/
-  id: string;
+  id?: string;
 
   /**
    * @description: 商品信息,数量限制为100
@@ -244,35 +244,35 @@ export interface PddWaybillGetParamWaybillCloudPrintApplyNewRequestTradeOrderInf
    * @default:
    *
    **/
-  items?: PddWaybillGetParamWaybillCloudPrintApplyNewRequestTradeOrderInfoDtosPackageInfoItemsRequestInterface[];
+  items: PddWaybillGetParamWaybillCloudPrintApplyNewRequestTradeOrderInfoDtosPackageInfoItemsRequestInterface[];
 
   /**
    * @description: 快运包装方式描述
    * @type: string
    * @default:
    **/
-  packaging_description: string;
+  packaging_description?: string;
 
   /**
    * @description: 子母件总包裹数
    * @type: number
    * @default:
    **/
-  total_packages_count: number;
+  total_packages_count?: number;
 
   /**
    * @description: 体积, 单位 ml
    * @type: string | number
    * @default:
    **/
-  volume: string | number;
+  volume?: string | number;
 
   /**
    * @description: 重量,单位 g
    * @type: string | number
    * @default:
    **/
-  weight: string | number;
+  weight?: string | number;
 }
 
 /**
@@ -286,14 +286,14 @@ export interface PddWaybillGetParamWaybillCloudPrintApplyNewRequestTradeOrderInf
    * @type: number
    * @default:
    **/
-  count?: number;
+  count: number;
 
   /**
    * @description: 名称
    * @type: string
    * @default:
    **/
-  name?: string;
+  name: string;
 }
 
 /**
@@ -308,28 +308,28 @@ export interface PddWaybillGetParamWaybillCloudPrintApplyNewRequestTradeOrderInf
    * @default:
    *
    **/
-  address?: PddWaybillGetParamWaybillCloudPrintApplyNewRequestTradeOrderInfoDtosRecipientAddressRequestInterface;
+  address: PddWaybillGetParamWaybillCloudPrintApplyNewRequestTradeOrderInfoDtosRecipientAddressRequestInterface;
 
   /**
    * @description: 手机号码
    * @type: string
    * @default:
    **/
-  mobile: string;
+  mobile?: string;
 
   /**
    * @description: 姓名
    * @type: string
    * @default:
    **/
-  name?: string;
+  name: string;
 
   /**
    * @description: 固定电话
    * @type: string
    * @default:
    **/
-  phone: string;
+  phone?: string;
 }
 
 /**
@@ -343,42 +343,42 @@ export interface PddWaybillGetParamWaybillCloudPrintApplyNewRequestTradeOrderInf
    * @type: string
    * @default:
    **/
-  city: string;
+  city?: string;
 
   /**
    * @description: 详细地址
    * @type: string
    * @default:
    **/
-  detail?: string;
+  detail: string;
 
   /**
    * @description: 区
    * @type: string
    * @default:
    **/
-  district: string;
+  district?: string;
 
   /**
    * @description: 省
    * @type: string
    * @default:
    **/
-  province?: string;
+  province: string;
 
   /**
    * @description: 街道
    * @type: string
    * @default:
    **/
-  town: string;
+  town?: string;
 
   /**
    * @description: 国家
    * @type: string
    * @default:
    **/
-  country: string;
+  country?: string;
 }
 
 /**

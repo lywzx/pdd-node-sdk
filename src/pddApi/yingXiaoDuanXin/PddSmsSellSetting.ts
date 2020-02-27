@@ -12,35 +12,35 @@ export interface PddSmsSellSettingRequestInterface {
    * @type: number
    * @default:
    **/
-  scene?: number;
+  scene: number;
 
   /**
    * @description: 人群id，个性化营销短信必填
    * @type: string | number
    * @default:
    **/
-  crowd_id: string | number;
+  crowd_id?: string | number;
 
   /**
    * @description: 发送时间 必填
    * @type: string
    * @default:
    **/
-  send_time?: string;
+  send_time: string;
 
   /**
    * @description: 短信模板id
    * @type: number
    * @default:
    **/
-  template_id?: number;
+  template_id: number;
 
   /**
    * @description: 短信模版类型， 1-官方模版，2-自定义模版
    * @type: number
    * @default:
    **/
-  template_type?: number;
+  template_type: number;
 }
 
 /**

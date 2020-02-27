@@ -12,42 +12,42 @@ export interface PddStockDepotPriorityListRequestInterface {
    * @type: number
    * @default:
    **/
-  province_id: number;
+  province_id?: number;
 
   /**
    * @description: 市id
    * @type: number
    * @default:
    **/
-  city_id: number;
+  city_id?: number;
 
   /**
    * @description: 区id
    * @type: number
    * @default:
    **/
-  district_id: number;
+  district_id?: number;
 
   /**
    * @description: 仓库编码
    * @type: string
    * @default:
    **/
-  depot_code: string;
+  depot_code?: string;
 
   /**
    * @description: 每页数据显示数量
    * @type: number
    * @default:
    **/
-  page_size?: number;
+  page_size: number;
 
   /**
    * @description: 当前页数 从1开始
    * @type: number
    * @default:
    **/
-  page_num?: number;
+  page_num: number;
 }
 
 /**

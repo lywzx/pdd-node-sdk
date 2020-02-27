@@ -12,21 +12,21 @@ export interface PddVoucherOtaCardVerificationRequestInterface {
    * @type: string
    * @default:
    **/
-  card_no?: string;
+  card_no: string;
 
   /**
    * @description: 核销门店id
    * @type: string | number
    * @default:
    **/
-  store_id?: string | number;
+  store_id: string | number;
 
   /**
    * @description: 核销门店名称
    * @type: string
    * @default:
    **/
-  store_name?: string;
+  store_name: string;
 }
 
 /**

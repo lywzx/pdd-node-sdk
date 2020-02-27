@@ -12,21 +12,21 @@ export interface PddAdPlanMaxCostUpdateRequestInterface {
    * @type: number
    * @default:
    **/
-  scene_type?: number;
+  scene_type: number;
 
   /**
    * @description: 计划id
    * @type: string | number
    * @default:
    **/
-  plan_id?: string | number;
+  plan_id: string | number;
 
   /**
    * @description: 计划日限额，单位厘
    * @type: string | number
    * @default:
    **/
-  max_cost?: string | number;
+  max_cost: string | number;
 }
 
 /**

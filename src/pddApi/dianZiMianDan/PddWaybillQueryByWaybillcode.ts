@@ -13,7 +13,7 @@ export interface PddWaybillQueryByWaybillcodeRequestInterface {
    * @default:
    *
    **/
-  param_list?: PddWaybillQueryByWaybillcodeParamListRequestInterface[];
+  param_list: PddWaybillQueryByWaybillcodeParamListRequestInterface[];
 }
 
 /**
@@ -27,21 +27,21 @@ export interface PddWaybillQueryByWaybillcodeParamListRequestInterface {
    * @type: string
    * @default:
    **/
-  object_id?: string;
+  object_id: string;
 
   /**
    * @description: 电子面单号
    * @type: string
    * @default:
    **/
-  waybill_code?: string;
+  waybill_code: string;
 
   /**
    * @description: 快递公司code
    * @type: string
    * @default:
    **/
-  wp_code?: string;
+  wp_code: string;
 }
 
 /**

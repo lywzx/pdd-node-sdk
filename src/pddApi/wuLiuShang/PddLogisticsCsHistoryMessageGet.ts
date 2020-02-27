@@ -12,7 +12,7 @@ export interface PddLogisticsCsHistoryMessageGetRequestInterface {
    * @type: string
    * @default:
    **/
-  session_id?: string;
+  session_id: string;
 }
 
 /**

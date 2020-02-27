@@ -12,14 +12,14 @@ export interface PddWaybillCancelRequestInterface {
    * @type: string
    * @default:
    **/
-  waybill_code: string;
+  waybill_code?: string;
 
   /**
    * @description: 快递公司code
    * @type: string
    * @default:
    **/
-  wp_code: string;
+  wp_code?: string;
 }
 
 /**

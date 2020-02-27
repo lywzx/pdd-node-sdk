@@ -12,7 +12,7 @@ export interface PddAdQueryLocationBidPvListRequestInterface {
    * @type: number
    * @default:
    **/
-  scene_type?: number;
+  scene_type: number;
 }
 
 /**

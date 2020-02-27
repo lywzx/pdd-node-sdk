@@ -12,21 +12,21 @@ export interface PddAdUnitOptStatusUpdateRequestInterface {
    * @type: number
    * @default:
    **/
-  scene_type?: number;
+  scene_type: number;
 
   /**
    * @description: unit_id列表，[1,2]
    * @type: Array<string | number>
    * @default:
    **/
-  unit_ids?: Array<string | number>;
+  unit_ids: Array<string | number>;
 
   /**
    * @description: 1 已启用,2 已暂停
    * @type: number
    * @default:
    **/
-  opt_status?: number;
+  opt_status: number;
 }
 
 /**

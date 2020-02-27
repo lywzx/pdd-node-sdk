@@ -12,7 +12,7 @@ export interface PddVirtualGameServerQueryRequestInterface {
    * @type: string
    * @default:
    **/
-  goods_config_code?: string;
+  goods_config_code: string;
 }
 
 /**

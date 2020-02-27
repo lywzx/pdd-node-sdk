@@ -12,7 +12,7 @@ export interface PddGoodsCommitStatusGetRequestInterface {
    * @type: Array<string | number>
    * @default:
    **/
-  goods_commit_id_list?: Array<string | number>;
+  goods_commit_id_list: Array<string | number>;
 }
 
 /**

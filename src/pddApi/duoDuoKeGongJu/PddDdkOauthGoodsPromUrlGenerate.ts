@@ -12,91 +12,91 @@ export interface PddDdkOauthGoodsPromUrlGenerateRequestInterface {
    * @type: string
    * @default:
    **/
-  p_id?: string;
+  p_id: string;
 
   /**
    * @description: 商品ID，仅支持单个查询
    * @type: Array<string | number>
    * @default:
    **/
-  goods_id_list?: Array<string | number>;
+  goods_id_list: Array<string | number>;
 
   /**
    * @description: 是否生成短链接，true-是，false-否
    * @type: boolean
    * @default:
    **/
-  generate_short_url: boolean;
+  generate_short_url?: boolean;
 
   /**
    * @description: true--生成多人团推广链接 false--生成单人团推广链接（默认false）1、单人团推广链接：用户访问单人团推广链接，可直接购买商品无需拼团。2、多人团推广链接：用户访问双人团推广链接开团，若用户分享给他人参团，则开团者和参团者的佣金均结算给推手
    * @type: boolean
    * @default:
    **/
-  multi_group: boolean;
+  multi_group?: boolean;
 
   /**
    * @description: 自定义参数，为链接打上自定义标签。自定义参数最长限制64个字节。
    * @type: string
    * @default:
    **/
-  custom_parameters: string;
+  custom_parameters?: string;
 
   /**
    * @description: 是否生成唤起微信客户端链接，true-是，false-否，默认false
    * @type: boolean
    * @default:
    **/
-  generate_weapp_webview: boolean;
+  generate_weapp_webview?: boolean;
 
   /**
    * @description: 招商多多客ID
    * @type: string | number
    * @default:
    **/
-  zs_duo_id: string | number;
+  zs_duo_id?: string | number;
 
   /**
    * @description: 是否生成小程序推广
    * @type: boolean
    * @default:
    **/
-  generate_we_app: boolean;
+  generate_we_app?: boolean;
 
   /**
    * @description: 是否生成微博推广
    * @type: boolean
    * @default:
    **/
-  generate_weiboapp_webview: boolean;
+  generate_weiboapp_webview?: boolean;
 
   /**
    * @description: 是否返回 schema URL
    * @type: boolean
    * @default: false
    **/
-  generate_schema_url: boolean;
+  generate_schema_url?: boolean;
 
   /**
    * @description: 是否使用多多客专属推广计划
    * @type: boolean
    * @default: false
    **/
-  force_duo_id: boolean;
+  force_duo_id?: boolean;
 
   /**
    * @description: 是否生成qq小程序
    * @type: boolean
    * @default: false
    **/
-  generate_qq_app: boolean;
+  generate_qq_app?: boolean;
 
   /**
    * @description: 搜索id
    * @type: string
    * @default:
    **/
-  search_id: string;
+  search_id?: string;
 }
 
 /**

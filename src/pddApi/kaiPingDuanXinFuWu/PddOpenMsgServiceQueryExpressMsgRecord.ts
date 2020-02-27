@@ -11,42 +11,42 @@ export interface PddOpenMsgServiceQueryExpressMsgRecordRequestInterface {
    * @type: string
    * @default:
    **/
-  biz_id: string;
+  biz_id?: string;
 
   /**
    * @description: 分页参数，每页数量。最大值50
    * @type: number
    * @default:
    **/
-  page_number?: number;
+  page_number: number;
 
   /**
    * @description: 分页参数,页码
    * @type: number
    * @default:
    **/
-  page_size?: number;
+  page_size: number;
 
   /**
    * @description: 短信发送日期，支持近30天记录查询，格式yyyyMMdd
    * @type: string
    * @default:
    **/
-  send_date?: string;
+  send_date: string;
 
   /**
    * @description: 查询的物流编号
    * @type: string
    * @default:
    **/
-  waybill_code?: string;
+  waybill_code: string;
 
   /**
    * @description: 物流公司编号
    * @type: string
    * @default:
    **/
-  wp_code?: string;
+  wp_code: string;
 }
 
 /**

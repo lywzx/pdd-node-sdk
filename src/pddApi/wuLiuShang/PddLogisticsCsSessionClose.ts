@@ -12,21 +12,21 @@ export interface PddLogisticsCsSessionCloseRequestInterface {
    * @type: string
    * @default:
    **/
-  session_id?: string;
+  session_id: string;
 
   /**
    * @description: 物流公司会话id
    * @type: string
    * @default:
    **/
-  wp_session_id?: string;
+  wp_session_id: string;
 
   /**
    * @description: 样式YYYY-MM-DD HH:MM:SS
    * @type: string
    * @default:
    **/
-  action_time?: string;
+  action_time: string;
 }
 
 /**

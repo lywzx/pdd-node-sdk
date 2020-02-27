@@ -12,14 +12,14 @@ export interface PddAdKeywordCreateRequestInterface {
    * @type: number
    * @default:
    **/
-  scene_type?: number;
+  scene_type: number;
 
   /**
    * @description: 单元id
    * @type: string | number
    * @default:
    **/
-  unit_id?: string | number;
+  unit_id: string | number;
 
   /**
    * @description: [{"word":"test","bid":200}]
@@ -27,7 +27,7 @@ export interface PddAdKeywordCreateRequestInterface {
    * @default:
    *
    **/
-  keywords?: PddAdKeywordCreateKeywordsRequestInterface[];
+  keywords: PddAdKeywordCreateKeywordsRequestInterface[];
 }
 
 /**
@@ -41,14 +41,14 @@ export interface PddAdKeywordCreateKeywordsRequestInterface {
    * @type: string | number
    * @default:
    **/
-  bid?: string | number;
+  bid: string | number;
 
   /**
    * @description: 关键词
    * @type: string
    * @default:
    **/
-  word?: string;
+  word: string;
 }
 
 /**

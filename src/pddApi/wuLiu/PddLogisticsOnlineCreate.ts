@@ -12,56 +12,56 @@ export interface PddLogisticsOnlineCreateRequestInterface {
    * @type: string
    * @default:
    **/
-  tracking_number: string;
+  tracking_number?: string;
 
   /**
    * @description: 物流公司id
    * @type: number
    * @default:
    **/
-  shipping_id?: number;
+  shipping_id: number;
 
   /**
    * @description: refund_address_id 通过pdd.refund.address.list.get 这个接口获取
    * @type: string
    * @default:
    **/
-  return_id?: string;
+  return_id: string;
 
   /**
    * @description: 发货人电话
    * @type: string
    * @default:
    **/
-  delivery_phone?: string;
+  delivery_phone: string;
 
   /**
    * @description: 发货人姓名
    * @type: string
    * @default:
    **/
-  delivery_name?: string;
+  delivery_name: string;
 
   /**
    * @description: 发货人地址
    * @type: string
    * @default:
    **/
-  delivery_address?: string;
+  delivery_address: string;
 
   /**
    * @description: 发货人地址id
    * @type: string
    * @default:
    **/
-  delivery_id?: string;
+  delivery_id: string;
 
   /**
    * @description: 订单编号
    * @type: string
    * @default:
    **/
-  order_sn?: string;
+  order_sn: string;
 }
 
 /**

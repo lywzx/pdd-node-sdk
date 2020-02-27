@@ -12,28 +12,28 @@ export interface PddDdkOrderListRangeGetRequestInterface {
    * @type: string
    * @default:
    **/
-  end_time?: string;
+  end_time: string;
 
   /**
    * @description: 上一次的迭代器id(第一次不填)
    * @type: string
    * @default:
    **/
-  last_order_id: string;
+  last_order_id?: string;
 
   /**
    * @description: 每次请求多少条，建议300
    * @type: number
    * @default:
    **/
-  page_size: number;
+  page_size?: number;
 
   /**
    * @description: 支付起始时间
    * @type: string
    * @default:
    **/
-  start_time?: string;
+  start_time: string;
 }
 
 /**

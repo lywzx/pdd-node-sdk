@@ -12,49 +12,49 @@ export interface PddDdkOauthResourceUrlGenRequestInterface {
    * @type: string
    * @default:
    **/
-  custom_parameters: string;
+  custom_parameters?: string;
 
   /**
    * @description: 是否生成小程序
    * @type: boolean
    * @default: false
    **/
-  generate_we_app: boolean;
+  generate_we_app?: boolean;
 
   /**
    * @description: 推广位
    * @type: string
    * @default:
    **/
-  pid?: string;
+  pid: string;
 
   /**
    * @description: 频道来源：4-限时秒杀,39997-充值中心, 39998-转链type，39999-电器城，39996-百亿补贴
    * @type: number
    * @default:
    **/
-  resource_type: number;
+  resource_type?: number;
 
   /**
    * @description: 原链接
    * @type: string
    * @default:
    **/
-  url: string;
+  url?: string;
 
   /**
    * @description: 是否返回 schema URL
    * @type: boolean
    * @default: false
    **/
-  generate_schema_url: boolean;
+  generate_schema_url?: boolean;
 
   /**
    * @description: 是否生成qq小程序
    * @type: boolean
    * @default: false
    **/
-  generate_qq_app: boolean;
+  generate_qq_app?: boolean;
 }
 
 /**

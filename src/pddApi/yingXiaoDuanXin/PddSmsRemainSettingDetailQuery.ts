@@ -12,7 +12,7 @@ export interface PddSmsRemainSettingDetailQueryRequestInterface {
    * @type: number
    * @default:
    **/
-  scene?: number;
+  scene: number;
 }
 
 /**

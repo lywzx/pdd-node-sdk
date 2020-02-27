@@ -13,21 +13,21 @@ export interface PddAdUnitCreateRequestInterface {
    * @type: number
    * @default:
    **/
-  scene_type?: number;
+  scene_type: number;
 
   /**
    * @description: 计划id
    * @type: string | number
    * @default:
    **/
-  plan_id?: string | number;
+  plan_id: string | number;
 
   /**
    * @description: 商品id
    * @type: string | number
    * @default:
    **/
-  goods_id?: string | number;
+  goods_id: string | number;
 
   /**
    * @description: [{"word":"test","bid":200}]
@@ -35,7 +35,7 @@ export interface PddAdUnitCreateRequestInterface {
    * @default:
    *
    **/
-  keywords: PddAdUnitCreateKeywordsRequestInterface[];
+  keywords?: PddAdUnitCreateKeywordsRequestInterface[];
 
   /**
    * @description: 创意列表 [{"image_url":"123.jpg","title":"test"}]
@@ -43,14 +43,14 @@ export interface PddAdUnitCreateRequestInterface {
    * @default:
    *
    **/
-  creative_list: PddAdUnitCreateCreativeListRequestInterface[];
+  creative_list?: PddAdUnitCreateCreativeListRequestInterface[];
 
   /**
    * @description: 通投单元出价，单位厘，出价需在0.10~99.0元区间内。展示推广必填
    * @type: string | number
    * @default:
    **/
-  bid: string | number;
+  bid?: string | number;
 }
 
 /**
@@ -64,14 +64,14 @@ export interface PddAdUnitCreateKeywordsRequestInterface {
    * @type: string | number
    * @default:
    **/
-  bid?: string | number;
+  bid: string | number;
 
   /**
    * @description: 关键词
    * @type: string
    * @default:
    **/
-  word?: string;
+  word: string;
 }
 
 /**
@@ -85,14 +85,14 @@ export interface PddAdUnitCreateCreativeListRequestInterface {
    * @type: string
    * @default:
    **/
-  image_url?: string;
+  image_url: string;
 
   /**
    * @description: 标题
    * @type: string
    * @default:
    **/
-  title?: string;
+  title: string;
 }
 
 /**

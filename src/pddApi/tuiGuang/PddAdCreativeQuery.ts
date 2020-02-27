@@ -12,28 +12,28 @@ export interface PddAdCreativeQueryRequestInterface {
    * @type: string | number
    * @default:
    **/
-  unit_id?: string | number;
+  unit_id: string | number;
 
   /**
    * @description: 格式："yyyy-MM-dd" 时区："GMT+8"
    * @type: string
    * @default:
    **/
-  begin_date?: string;
+  begin_date: string;
 
   /**
    * @description: 格式："yyyy-MM-dd" 时区："GMT+8"
    * @type: string
    * @default:
    **/
-  end_date?: string;
+  end_date: string;
 
   /**
    * @description: 0:搜索广告
    * @type: number
    * @default:
    **/
-  scene_type?: number;
+  scene_type: number;
 }
 
 /**

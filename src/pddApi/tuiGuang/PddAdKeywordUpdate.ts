@@ -12,7 +12,7 @@ export interface PddAdKeywordUpdateRequestInterface {
    * @type: number
    * @default:
    **/
-  scene_type?: number;
+  scene_type: number;
 
   /**
    * @description:
@@ -20,7 +20,7 @@ export interface PddAdKeywordUpdateRequestInterface {
    * @default:
    *
    **/
-  keywords?: PddAdKeywordUpdateKeywordsRequestInterface[];
+  keywords: PddAdKeywordUpdateKeywordsRequestInterface[];
 }
 
 /**
@@ -34,14 +34,14 @@ export interface PddAdKeywordUpdateKeywordsRequestInterface {
    * @type: string | number
    * @default:
    **/
-  bid?: string | number;
+  bid: string | number;
 
   /**
    * @description: 关键词id
    * @type: string | number
    * @default:
    **/
-  keyword_id?: string | number;
+  keyword_id: string | number;
 }
 
 /**

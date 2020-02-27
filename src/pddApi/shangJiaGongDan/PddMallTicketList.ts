@@ -12,35 +12,35 @@ export interface PddMallTicketListRequestInterface {
    * @type: number
    * @default:
    **/
-  create_end_time?: number;
+  create_end_time: number;
 
   /**
    * @description: 开始时间戳(格式:秒)
    * @type: number
    * @default:
    **/
-  create_start_time?: number;
+  create_start_time: number;
 
   /**
    * @description: 页数(从0开始)
    * @type: number
    * @default:
    **/
-  page_num: number;
+  page_num?: number;
 
   /**
    * @description: 每页条数(默认100，最大100)
    * @type: number
    * @default:
    **/
-  page_size: number;
+  page_size?: number;
 
   /**
    * @description: 0:待处理 1:已解决 2:超时
    * @type: number
    * @default:
    **/
-  progress: number;
+  progress?: number;
 }
 
 /**

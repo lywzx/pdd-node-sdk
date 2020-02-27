@@ -11,14 +11,14 @@ export interface PddGoodsCpsMallUnitCreateRequestInterface {
    * @type: string | number
    * @default:
    **/
-  rate?: string | number;
+  rate: string | number;
 
   /**
    * @description: 合作方code
    * @type: string
    * @default:
    **/
-  erp_code: string;
+  erp_code?: string;
 }
 
 /**

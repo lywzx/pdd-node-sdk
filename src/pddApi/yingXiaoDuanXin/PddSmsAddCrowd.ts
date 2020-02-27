@@ -12,91 +12,91 @@ export interface PddSmsAddCrowdRequestInterface {
    * @type: Array<string | number>
    * @default:
    **/
-  location: Array<string | number>;
+  location?: Array<string | number>;
 
   /**
    * @description: 地区类型 0-不限 1-江浙沪 2-自定义
    * @type: number
    * @default:
    **/
-  location_type: number;
+  location_type?: number;
 
   /**
    * @description: 性别 0-全部 1-男 2-女
    * @type: number
    * @default:
    **/
-  gender: number;
+  gender?: number;
 
   /**
    * @description: 商品收藏天数
    * @type: string | number
    * @default:
    **/
-  goods_favor_days: string | number;
+  goods_favor_days?: string | number;
 
   /**
    * @description: 店铺收藏天数
    * @type: string | number
    * @default:
    **/
-  mall_favor_days: string | number;
+  mall_favor_days?: string | number;
 
   /**
    * @description: 人群名称
    * @type: string
    * @default:
    **/
-  name?: string;
+  name: string;
 
   /**
    * @description: 店铺无购买天数
    * @type: string | number
    * @default:
    **/
-  none_purchase_days: string | number;
+  none_purchase_days?: string | number;
 
   /**
    * @description: 店铺有购买天数
    * @type: string | number
    * @default:
    **/
-  purchase_days: string | number;
+  purchase_days?: string | number;
 
   /**
    * @description: 历史成交最小次数
    * @type: string | number
    * @default:
    **/
-  min_order_count: string | number;
+  min_order_count?: string | number;
 
   /**
    * @description: 历史成交最大次数
    * @type: string | number
    * @default:
    **/
-  max_order_count: string | number;
+  max_order_count?: string | number;
 
   /**
    * @description: 首次购买开始时间 "2017-10-19 00:00:00"
    * @type: string
    * @default:
    **/
-  first_buy_start_time: string;
+  first_buy_start_time?: string;
 
   /**
    * @description: 首次购买结束时间
    * @type: string
    * @default:
    **/
-  first_buy_end_time: string;
+  first_buy_end_time?: string;
 
   /**
    * @description: 店铺有访问天数
    * @type: string | number
    * @default:
    **/
-  mall_visit_days: string | number;
+  mall_visit_days?: string | number;
 }
 
 /**

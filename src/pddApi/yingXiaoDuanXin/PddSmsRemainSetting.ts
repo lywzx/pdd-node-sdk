@@ -12,35 +12,35 @@ export interface PddSmsRemainSettingRequestInterface {
    * @type: string
    * @default:
    **/
-  unpaid_duration: string;
+  unpaid_duration?: string;
 
   /**
    * @description: 指定的短信任务的模板id
    * @type: string
    * @default:
    **/
-  template_id: string;
+  template_id?: string;
 
   /**
    * @description: 该提醒任务是否处于处于打开状态，0-关闭，此时提醒任务被关闭，1-打开，此时提醒任务打开
    * @type: number
    * @default:
    **/
-  open?: number;
+  open: number;
 
   /**
    * @description: 该任务对应的场景//1-提醒付款 3-召唤买家成团
    * @type: number
    * @default:
    **/
-  scene?: number;
+  scene: number;
 
   /**
    * @description: operate_type// 1-开启任务   2-编辑
    * @type: number
    * @default:
    **/
-  operate_type?: number;
+  operate_type: number;
 }
 
 /**

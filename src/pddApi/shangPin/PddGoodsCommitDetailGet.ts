@@ -12,14 +12,14 @@ export interface PddGoodsCommitDetailGetRequestInterface {
    * @type: string | number
    * @default:
    **/
-  goods_commit_id?: string | number;
+  goods_commit_id: string | number;
 
   /**
    * @description: 商品id
    * @type: string | number
    * @default:
    **/
-  goods_id?: string | number;
+  goods_id: string | number;
 }
 
 /**

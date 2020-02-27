@@ -11,7 +11,7 @@ export interface PddDeleteDraftCommitRequestInterface {
    * @type: string | number
    * @default:
    **/
-  goods_commit_id?: string | number;
+  goods_commit_id: string | number;
 }
 
 /**

@@ -12,70 +12,70 @@ export interface PddVasOrderSearchRequestInterface {
    * @type: string | number
    * @default:
    **/
-  create_time_end: string | number;
+  create_time_end?: string | number;
 
   /**
    * @description: 订单创建时间开始，UNIX时间戳（ms级别）
    * @type: string | number
    * @default:
    **/
-  create_time_start: string | number;
+  create_time_start?: string | number;
 
   /**
    * @description: 买家店铺id
    * @type: string | number
    * @default:
    **/
-  mall_id: string | number;
+  mall_id?: string | number;
 
   /**
    * @description: 服务订单号
    * @type: string
    * @default:
    **/
-  order_sn: string;
+  order_sn?: string;
 
   /**
    * @description: 订单状态，枚举值，0-未完成，1-已完成，2-已取消，空-全部
    * @type: number
    * @default:
    **/
-  order_status: number;
+  order_status?: number;
 
   /**
    * @description: 分页页码
    * @type: number
    * @default:
    **/
-  page?: number;
+  page: number;
 
   /**
    * @description: 分页大小
    * @type: number
    * @default:
    **/
-  page_size?: number;
+  page_size: number;
 
   /**
    * @description: 支付完成时间开始，UNIX时间戳（ms 级别）
    * @type: string | number
    * @default:
    **/
-  pay_time_end: string | number;
+  pay_time_end?: string | number;
 
   /**
    * @description: 支付完成时间开始，UNIX时间戳（ms 级别）
    * @type: string | number
    * @default:
    **/
-  pay_time_start: string | number;
+  pay_time_start?: string | number;
 
   /**
    * @description: 服务sku_id，可在服务详情页中获取
    * @type: string | number
    * @default:
    **/
-  sku_id: string | number;
+  sku_id?: string | number;
 }
 
 /**

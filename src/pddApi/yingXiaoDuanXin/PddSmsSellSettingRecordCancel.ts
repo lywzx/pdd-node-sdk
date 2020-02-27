@@ -12,7 +12,7 @@ export interface PddSmsSellSettingRecordCancelRequestInterface {
    * @type: string | number
    * @default:
    **/
-  id?: string | number;
+  id: string | number;
 }
 
 /**

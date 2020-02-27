@@ -12,7 +12,7 @@ export interface PddGoodsLogisticsSerTemplateDetailRequestInterface {
    * @type: string
    * @default:
    **/
-  template_id?: string;
+  template_id: string;
 }
 
 /**

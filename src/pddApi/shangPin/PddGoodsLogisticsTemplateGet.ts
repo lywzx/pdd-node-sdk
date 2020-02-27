@@ -12,14 +12,14 @@ export interface PddGoodsLogisticsTemplateGetRequestInterface {
    * @type: number
    * @default:
    **/
-  page: number;
+  page?: number;
 
   /**
    * @description: 默认返回20条模板数据，最多100条数据
    * @type: number
    * @default:
    **/
-  page_size: number;
+  page_size?: number;
 }
 
 /**

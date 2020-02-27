@@ -12,7 +12,7 @@ export interface PddStockDepotPriorityUpdateRequestInterface {
    * @default:
    *
    **/
-  priority_list?: PddStockDepotPriorityUpdatePriorityListRequestInterface[];
+  priority_list: PddStockDepotPriorityUpdatePriorityListRequestInterface[];
 }
 
 /**
@@ -26,35 +26,35 @@ export interface PddStockDepotPriorityUpdatePriorityListRequestInterface {
    * @type: number
    * @default:
    **/
-  priority?: number;
+  priority: number;
 
   /**
    * @description: 区id
    * @type: number
    * @default:
    **/
-  district_id?: number;
+  district_id: number;
 
   /**
    * @description: 市id
    * @type: number
    * @default:
    **/
-  city_id?: number;
+  city_id: number;
 
   /**
    * @description: 省id
    * @type: number
    * @default:
    **/
-  province_id?: number;
+  province_id: number;
 
   /**
    * @description: 仓库id
    * @type: string | number
    * @default:
    **/
-  depot_id?: string | number;
+  depot_id: string | number;
 }
 
 /**

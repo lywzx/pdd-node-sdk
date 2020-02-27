@@ -21,7 +21,7 @@ export interface PddSmsTemplateQueryRequestInterface {
    * @type: number
    * @default:
    **/
-  scene?: number;
+  scene: number;
 }
 
 /**

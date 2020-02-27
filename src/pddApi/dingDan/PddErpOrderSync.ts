@@ -11,28 +11,28 @@ export interface PddErpOrderSyncRequestInterface {
    * @type: string
    * @default:
    **/
-  order_sn?: string;
+  order_sn: string;
 
   /**
    * @description: 订单状态：1-已打单
    * @type: number
    * @default:
    **/
-  order_state?: number;
+  order_state: number;
 
   /**
    * @description: 运单号
    * @type: string
    * @default:
    **/
-  waybill_no?: string;
+  waybill_no: string;
 
   /**
    * @description: 物流公司编码
    * @type: string | number
    * @default:
    **/
-  logistics_id?: string | number;
+  logistics_id: string | number;
 }
 
 /**

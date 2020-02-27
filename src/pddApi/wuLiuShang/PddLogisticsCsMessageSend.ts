@@ -12,49 +12,49 @@ export interface PddLogisticsCsMessageSendRequestInterface {
    * @type: string
    * @default:
    **/
-  session_id?: string;
+  session_id: string;
 
   /**
    * @description: 物流公司会话id
    * @type: string
    * @default:
    **/
-  wp_session_id?: string;
+  wp_session_id: string;
 
   /**
    * @description: 样式YYYY-MM-DD HH:MM:SS
    * @type: string
    * @default:
    **/
-  action_time?: string;
+  action_time: string;
 
   /**
    * @description: 0：文本1：图片
    * @type: number
    * @default:
    **/
-  message_type?: number;
+  message_type: number;
 
   /**
    * @description: message_type为0时不为空
    * @type: string
    * @default:
    **/
-  text: string;
+  text?: string;
 
   /**
    * @description: message_type为1时不为空
    * @type: string
    * @default:
    **/
-  attach: string;
+  attach?: string;
 
   /**
    * @description: message_type为1时不为空
    * @type: string
    * @default:
    **/
-  preview: string;
+  preview?: string;
 }
 
 /**

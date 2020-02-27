@@ -12,14 +12,14 @@ export interface PddAdKeywordDeleteRequestInterface {
    * @type: number
    * @default:
    **/
-  scene_type?: number;
+  scene_type: number;
 
   /**
    * @description: keyword_id列表，[1,2]
    * @type: Array<string | number>
    * @default:
    **/
-  keyword_ids?: Array<string | number>;
+  keyword_ids: Array<string | number>;
 }
 
 /**

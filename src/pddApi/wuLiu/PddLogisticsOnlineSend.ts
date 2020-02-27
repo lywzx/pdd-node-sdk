@@ -12,35 +12,35 @@ export interface PddLogisticsOnlineSendRequestInterface {
    * @type: string
    * @default:
    **/
-  feature: string;
+  feature?: string;
 
   /**
    * @description: 快递公司编号
    * @type: string | number
    * @default:
    **/
-  logistics_id?: string | number;
+  logistics_id: string | number;
 
   /**
    * @description: 订单号。形如：20150909-452750051
    * @type: string
    * @default:
    **/
-  order_sn?: string;
+  order_sn: string;
 
   /**
    * @description: 退货地址的id，不填则取商家默认地址
    * @type: string
    * @default:
    **/
-  refund_address_id: string;
+  refund_address_id?: string;
 
   /**
    * @description: 快递单号
    * @type: string
    * @default:
    **/
-  tracking_number?: string;
+  tracking_number: string;
 }
 
 /**

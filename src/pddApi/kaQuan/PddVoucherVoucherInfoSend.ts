@@ -12,14 +12,14 @@ export interface PddVoucherVoucherInfoSendRequestInterface {
    * @type: string
    * @default:
    **/
-  order_sn?: string;
+  order_sn: string;
 
   /**
    * @description: 外部流水号
    * @type: string
    * @default:
    **/
-  out_biz_no?: string;
+  out_biz_no: string;
 
   /**
    * @description: 卡券信息列表,例子[{"voucher_id":"test voucher_id","voucher_no":"test voucher_no"}]
@@ -27,7 +27,7 @@ export interface PddVoucherVoucherInfoSendRequestInterface {
    * @default:
    *
    **/
-  voucher_list?: PddVoucherVoucherInfoSendVoucherListRequestInterface[];
+  voucher_list: PddVoucherVoucherInfoSendVoucherListRequestInterface[];
 }
 
 /**
@@ -41,14 +41,14 @@ export interface PddVoucherVoucherInfoSendVoucherListRequestInterface {
    * @type: string
    * @default:
    **/
-  voucher_id?: string;
+  voucher_id: string;
 
   /**
    * @description: 卡券号
    * @type: string
    * @default:
    **/
-  voucher_no?: string;
+  voucher_no: string;
 }
 
 /**

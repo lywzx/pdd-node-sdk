@@ -12,7 +12,7 @@ export interface PddAdHistoryRtReportGetRequestInterface {
    * @type: number
    * @default:
    **/
-  scene_type?: number;
+  scene_type: number;
 }
 
 /**

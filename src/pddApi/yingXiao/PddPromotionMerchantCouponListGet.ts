@@ -12,42 +12,42 @@ export interface PddPromotionMerchantCouponListGetRequestInterface {
    * @type: number
    * @default:
    **/
-  page: number;
+  page?: number;
 
   /**
    * @description: 每页数量，默认100
    * @type: number
    * @default:
    **/
-  page_size: number;
+  page_size?: number;
 
   /**
    * @description: 批次开始时间（范围开始）
    * @type: string | number
    * @default:
    **/
-  batch_start_time_from: string | number;
+  batch_start_time_from?: string | number;
 
   /**
    * @description: 批次开始时间（范围结束）
    * @type: string | number
    * @default:
    **/
-  batch_start_time_to: string | number;
+  batch_start_time_to?: string | number;
 
   /**
    * @description: 批次状态	1 领取中，2 已领完，3 已结束
    * @type: number
    * @default:
    **/
-  batch_status: number;
+  batch_status?: number;
 
   /**
    * @description: 排序	1 创建时间正序，2 创建时间倒序，3 开始时间正序，4 开始时间倒序，5 初始数量正序， 6 初始数量倒序，7 领取数量正序，8 领取数量倒序；默认2
    * @type: number
    * @default:
    **/
-  sort_by: number;
+  sort_by?: number;
 }
 
 /**

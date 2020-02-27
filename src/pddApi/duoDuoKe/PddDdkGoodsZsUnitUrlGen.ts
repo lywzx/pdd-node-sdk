@@ -12,14 +12,14 @@ export interface PddDdkGoodsZsUnitUrlGenRequestInterface {
    * @type: string
    * @default:
    **/
-  source_url?: string;
+  source_url: string;
 
   /**
    * @description: 渠道id
    * @type: string
    * @default:
    **/
-  pid?: string;
+  pid: string;
 }
 
 /**

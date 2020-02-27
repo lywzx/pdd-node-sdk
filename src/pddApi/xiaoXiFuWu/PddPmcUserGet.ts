@@ -12,7 +12,7 @@ export interface PddPmcUserGetRequestInterface {
    * @type: string
    * @default:
    **/
-  owner_id?: string;
+  owner_id: string;
 }
 
 /**

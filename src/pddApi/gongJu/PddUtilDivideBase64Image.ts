@@ -11,7 +11,7 @@ export interface PddUtilDivideBase64ImageRequestInterface {
    * @type: string
    * @default:
    **/
-  img_data?: string;
+  img_data: string;
 }
 
 /**

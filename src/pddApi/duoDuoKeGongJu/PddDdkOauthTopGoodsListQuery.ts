@@ -12,28 +12,28 @@ export interface PddDdkOauthTopGoodsListQueryRequestInterface {
    * @type: string
    * @default:
    **/
-  p_id: string;
+  p_id?: string;
 
   /**
    * @description: 从多少位置开始请求；默认值 ： 0
    * @type: number
    * @default:
    **/
-  offset: number;
+  offset?: number;
 
   /**
    * @description: 1-实时热销榜；2-实时收益榜
    * @type: number
    * @default:
    **/
-  sort_type: number;
+  sort_type?: number;
 
   /**
    * @description: 请求数量；默认值 ： 400
    * @type: number
    * @default:
    **/
-  limit: number;
+  limit?: number;
 }
 
 /**

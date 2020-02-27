@@ -12,14 +12,14 @@ export interface PddAdCanCreatePlanRequestInterface {
    * @type: string
    * @default:
    **/
-  plan_name?: string;
+  plan_name: string;
 
   /**
    * @description: 0--搜索广告,1--明星店铺,2--定向广告,3--首页Banner广告
    * @type: number
    * @default:
    **/
-  scene_type?: number;
+  scene_type: number;
 }
 
 /**

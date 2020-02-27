@@ -13,7 +13,7 @@ export interface PddWaybillUpdateRequestInterface {
    * @default:
    *
    **/
-  param_waybill_cloud_print_update_request?: PddWaybillUpdateParamWaybillCloudPrintUpdateRequestRequestInterface;
+  param_waybill_cloud_print_update_request: PddWaybillUpdateParamWaybillCloudPrintUpdateRequestRequestInterface;
 }
 
 /**
@@ -27,7 +27,7 @@ export interface PddWaybillUpdateParamWaybillCloudPrintUpdateRequestRequestInter
    * @type: string
    * @default:
    **/
-  object_id: string;
+  object_id?: string;
 
   /**
    * @description: 包裹信息
@@ -35,7 +35,7 @@ export interface PddWaybillUpdateParamWaybillCloudPrintUpdateRequestRequestInter
    * @default:
    *
    **/
-  package_info: PddWaybillUpdateParamWaybillCloudPrintUpdateRequestPackageInfoRequestInterface;
+  package_info?: PddWaybillUpdateParamWaybillCloudPrintUpdateRequestPackageInfoRequestInterface;
 
   /**
    * @description: 收件信息
@@ -43,7 +43,7 @@ export interface PddWaybillUpdateParamWaybillCloudPrintUpdateRequestRequestInter
    * @default:
    *
    **/
-  recipient: PddWaybillUpdateParamWaybillCloudPrintUpdateRequestRecipientRequestInterface;
+  recipient?: PddWaybillUpdateParamWaybillCloudPrintUpdateRequestRecipientRequestInterface;
 
   /**
    * @description: 发件信息
@@ -51,28 +51,28 @@ export interface PddWaybillUpdateParamWaybillCloudPrintUpdateRequestRequestInter
    * @default:
    *
    **/
-  sender: PddWaybillUpdateParamWaybillCloudPrintUpdateRequestSenderRequestInterface;
+  sender?: PddWaybillUpdateParamWaybillCloudPrintUpdateRequestSenderRequestInterface;
 
   /**
    * @description: 模板URL
    * @type: string
    * @default:
    **/
-  template_url: string;
+  template_url?: string;
 
   /**
    * @description: 面单号
    * @type: string
    * @default:
    **/
-  waybill_code?: string;
+  waybill_code: string;
 
   /**
    * @description: 物流公司CODE
    * @type: string
    * @default:
    **/
-  wp_code?: string;
+  wp_code: string;
 }
 
 /**
@@ -87,21 +87,21 @@ export interface PddWaybillUpdateParamWaybillCloudPrintUpdateRequestPackageInfoR
    * @default:
    *
    **/
-  items: PddWaybillUpdateParamWaybillCloudPrintUpdateRequestPackageInfoItemsRequestInterface[];
+  items?: PddWaybillUpdateParamWaybillCloudPrintUpdateRequestPackageInfoItemsRequestInterface[];
 
   /**
    * @description: 体积
    * @type: string | number
    * @default:
    **/
-  volume: string | number;
+  volume?: string | number;
 
   /**
    * @description: 重量
    * @type: string | number
    * @default:
    **/
-  weight: string | number;
+  weight?: string | number;
 }
 
 /**
@@ -115,14 +115,14 @@ export interface PddWaybillUpdateParamWaybillCloudPrintUpdateRequestPackageInfoI
    * @type: number
    * @default:
    **/
-  count: number;
+  count?: number;
 
   /**
    * @description: 名称
    * @type: string
    * @default:
    **/
-  name: string;
+  name?: string;
 }
 
 /**
@@ -137,28 +137,28 @@ export interface PddWaybillUpdateParamWaybillCloudPrintUpdateRequestRecipientReq
    * @default:
    *
    **/
-  address: PddWaybillUpdateParamWaybillCloudPrintUpdateRequestRecipientAddressRequestInterface;
+  address?: PddWaybillUpdateParamWaybillCloudPrintUpdateRequestRecipientAddressRequestInterface;
 
   /**
    * @description: 手机号码
    * @type: string
    * @default:
    **/
-  mobile: string;
+  mobile?: string;
 
   /**
    * @description: 姓名
    * @type: string
    * @default:
    **/
-  name: string;
+  name?: string;
 
   /**
    * @description: 固定电话
    * @type: string
    * @default:
    **/
-  phone: string;
+  phone?: string;
 }
 
 /**
@@ -172,42 +172,42 @@ export interface PddWaybillUpdateParamWaybillCloudPrintUpdateRequestRecipientAdd
    * @type: string
    * @default:
    **/
-  city: string;
+  city?: string;
 
   /**
    * @description: 详细地址
    * @type: string
    * @default:
    **/
-  detail: string;
+  detail?: string;
 
   /**
    * @description: 区地址
    * @type: string
    * @default:
    **/
-  district: string;
+  district?: string;
 
   /**
    * @description: 省
    * @type: string
    * @default:
    **/
-  province: string;
+  province?: string;
 
   /**
    * @description: 街道
    * @type: string
    * @default:
    **/
-  town: string;
+  town?: string;
 
   /**
    * @description: 国家/地区
    * @type: string
    * @default:
    **/
-  country: string;
+  country?: string;
 }
 
 /**
@@ -221,21 +221,21 @@ export interface PddWaybillUpdateParamWaybillCloudPrintUpdateRequestSenderReques
    * @type: string
    * @default:
    **/
-  mobile: string;
+  mobile?: string;
 
   /**
    * @description: 姓名
    * @type: string
    * @default:
    **/
-  name: string;
+  name?: string;
 
   /**
    * @description: 固定电话
    * @type: string
    * @default:
    **/
-  phone: string;
+  phone?: string;
 }
 
 /**

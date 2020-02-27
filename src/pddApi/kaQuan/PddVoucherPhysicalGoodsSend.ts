@@ -12,14 +12,14 @@ export interface PddVoucherPhysicalGoodsSendRequestInterface {
    * @type: string
    * @default:
    **/
-  order_sn?: string;
+  order_sn: string;
 
   /**
    * @description: 外部流水号
    * @type: string
    * @default:
    **/
-  out_biz_no?: string;
+  out_biz_no: string;
 
   /**
    * @description: 优惠券信息列表,例子[{"voucher_id":"test voucher_id","voucher_no":"test voucher_no"}]
@@ -27,56 +27,56 @@ export interface PddVoucherPhysicalGoodsSendRequestInterface {
    * @default:
    *
    **/
-  voucher_list?: PddVoucherPhysicalGoodsSendVoucherListRequestInterface[];
+  voucher_list: PddVoucherPhysicalGoodsSendVoucherListRequestInterface[];
 
   /**
    * @description: 物流方式  1  物流发货   2 自提
    * @type: number
    * @default:
    **/
-  logistics_type?: number;
+  logistics_type: number;
 
   /**
    * @description: 收件人
    * @type: string
    * @default:
    **/
-  recipient?: string;
+  recipient: string;
 
   /**
    * @description: 收件人电话
    * @type: string
    * @default:
    **/
-  recipient_mobile?: string;
+  recipient_mobile: string;
 
   /**
    * @description: 收件人地址
    * @type: string
    * @default:
    **/
-  recipient_address?: string;
+  recipient_address: string;
 
   /**
    * @description: 物流单号
    * @type: string
    * @default:
    **/
-  logistics_no?: string;
+  logistics_no: string;
 
   /**
    * @description: 物流公司编号
    * @type: string
    * @default:
    **/
-  logistics_company_id?: string;
+  logistics_company_id: string;
 
   /**
    * @description: 物流公司名称
    * @type: string
    * @default:
    **/
-  logistics_company?: string;
+  logistics_company: string;
 }
 
 /**
@@ -90,14 +90,14 @@ export interface PddVoucherPhysicalGoodsSendVoucherListRequestInterface {
    * @type: string
    * @default:
    **/
-  voucher_id?: string;
+  voucher_id: string;
 
   /**
    * @description: 卡券号
    * @type: string
    * @default:
    **/
-  voucher_no?: string;
+  voucher_no: string;
 }
 
 /**

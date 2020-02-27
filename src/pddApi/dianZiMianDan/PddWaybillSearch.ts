@@ -12,7 +12,7 @@ export interface PddWaybillSearchRequestInterface {
    * @type: string
    * @default:
    **/
-  wp_code: string;
+  wp_code?: string;
 }
 
 /**

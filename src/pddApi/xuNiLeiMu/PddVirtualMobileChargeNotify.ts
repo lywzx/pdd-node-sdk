@@ -13,28 +13,28 @@ export interface PddVirtualMobileChargeNotifyRequestInterface {
    * @default:
    *
    **/
-  charge_certi: PddVirtualMobileChargeNotifyChargeCertiRequestInterface[];
+  charge_certi?: PddVirtualMobileChargeNotifyChargeCertiRequestInterface[];
 
   /**
    * @description: 拼多多订单编码
    * @type: string
    * @default:
    **/
-  order_sn?: string;
+  order_sn: string;
 
   /**
    * @description: 11122dafa 外部系统订单编码
    * @type: string
    * @default:
    **/
-  outer_order_sn?: string;
+  outer_order_sn: string;
 
   /**
    * @description: 虚拟系统充值结果，SUCCESS-充值成功，FAIL-充值失败
    * @type: string
    * @default:
    **/
-  status?: string;
+  status: string;
 }
 
 /**
@@ -48,49 +48,49 @@ export interface PddVirtualMobileChargeNotifyChargeCertiRequestInterface {
    * @type: string | number
    * @default:
    **/
-  charge_certi_amount: string | number;
+  charge_certi_amount?: string | number;
 
   /**
    * @description: 直充充值成功时间 （yyyy-MM-dd HH:mm:ss格式）
    * @type: string
    * @default:
    **/
-  charge_certi_date: string;
+  charge_certi_date?: string;
 
   /**
    * @description: 直充充值号码
    * @type: string
    * @default:
    **/
-  charge_certi_mobile: string;
+  charge_certi_mobile?: string;
 
   /**
    * @description: 充值卡号尾号
    * @type: string
    * @default:
    **/
-  charge_certi_mobile_tail: string;
+  charge_certi_mobile_tail?: string;
 
   /**
    * @description: 直充充值单号
    * @type: string
    * @default:
    **/
-  charge_certi_order_sn: string;
+  charge_certi_order_sn?: string;
 
   /**
    * @description: 直充短信原文
    * @type: string
    * @default:
    **/
-  charge_certi_text: string;
+  charge_certi_text?: string;
 
   /**
    * @description: 代理商(渠道)编号
    * @type: string
    * @default:
    **/
-  merchant_outer_id: string;
+  merchant_outer_id?: string;
 }
 
 /**

@@ -12,21 +12,21 @@ export interface PddDdkMallGoodsListGetRequestInterface {
    * @type: string | number
    * @default:
    **/
-  mall_id?: string | number;
+  mall_id: string | number;
 
   /**
    * @description: 分页数
    * @type: number
    * @default:
    **/
-  page_number?: number;
+  page_number: number;
 
   /**
    * @description: 每页商品数量
    * @type: number
    * @default:
    **/
-  page_size?: number;
+  page_size: number;
 }
 
 /**

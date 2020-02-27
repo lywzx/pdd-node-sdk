@@ -12,14 +12,14 @@ export interface PddDdkThemeListGetRequestInterface {
    * @type: number
    * @default:
    **/
-  page_size: number;
+  page_size?: number;
 
   /**
    * @description: 返回的页码
    * @type: number
    * @default:
    **/
-  page: number;
+  page?: number;
 }
 
 /**

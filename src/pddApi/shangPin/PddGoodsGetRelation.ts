@@ -12,7 +12,7 @@ export interface PddGoodsGetRelationRequestInterface {
    * @type: Array<string | number>
    * @default:
    **/
-  pdd_goods_id?: Array<string | number>;
+  pdd_goods_id: Array<string | number>;
 }
 
 /**

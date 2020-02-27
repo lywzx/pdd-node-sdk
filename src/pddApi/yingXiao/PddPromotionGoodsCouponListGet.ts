@@ -12,42 +12,42 @@ export interface PddPromotionGoodsCouponListGetRequestInterface {
    * @type: number
    * @default:
    **/
-  page: number;
+  page?: number;
 
   /**
    * @description: 每页数量，默认100
    * @type: number
    * @default:
    **/
-  page_size: number;
+  page_size?: number;
 
   /**
    * @description: 商品ID
    * @type: string | number
    * @default:
    **/
-  goods_id: string | number;
+  goods_id?: string | number;
 
   /**
    * @description: 查询范围	0 全部，1 多多进宝券，2 无门槛商品券；默认1
    * @type: number
    * @default:
    **/
-  query_range: number;
+  query_range?: number;
 
   /**
    * @description: 批次状态	1 领取中，2 已领完，3 已结束，4 已暂停
    * @type: number
    * @default:
    **/
-  batch_status: number;
+  batch_status?: number;
 
   /**
    * @description: 排序	1 创建时间正序，2 创建时间倒序，3 开始时间正序，4 开始时间倒序，5 初始数量正序， 6 初始数量倒序，7 领取数量正序，8 领取数量倒序；默认2
    * @type: number
    * @default:
    **/
-  sort_by: number;
+  sort_by?: number;
 }
 
 /**

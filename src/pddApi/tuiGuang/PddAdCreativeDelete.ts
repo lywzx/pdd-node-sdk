@@ -11,14 +11,14 @@ export interface PddAdCreativeDeleteRequestInterface {
    * @type: string | number
    * @default:
    **/
-  creative_id?: string | number;
+  creative_id: string | number;
 
   /**
    * @description: 0:搜索广告
    * @type: number
    * @default:
    **/
-  scene_type?: number;
+  scene_type: number;
 }
 
 /**

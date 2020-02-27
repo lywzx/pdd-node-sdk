@@ -11,14 +11,14 @@ export interface PddAdCreativeUpdateRequestInterface {
    * @type: string | number
    * @default:
    **/
-  creative_id?: string | number;
+  creative_id: string | number;
 
   /**
    * @description: 0:搜索广告
    * @type: number
    * @default:
    **/
-  scene_type?: number;
+  scene_type: number;
 
   /**
    * @description: jsonObject 的json string。 示例：{"title":"ceshi","image_url":"https://img12.360buyimg.com/n7/g14/M07/16/00/rBEhVlJfpdwIAAAAAADurQhBHX0AAETNABbGNkAAO7F355.jpg"}
@@ -26,7 +26,7 @@ export interface PddAdCreativeUpdateRequestInterface {
    * @default:
    *
    **/
-  creative?: PddAdCreativeUpdateCreativeRequestInterface;
+  creative: PddAdCreativeUpdateCreativeRequestInterface;
 }
 
 /**
@@ -40,14 +40,14 @@ export interface PddAdCreativeUpdateCreativeRequestInterface {
    * @type: string
    * @default:
    **/
-  image_url?: string;
+  image_url: string;
 
   /**
    * @description:
    * @type: string
    * @default:
    **/
-  title?: string;
+  title: string;
 }
 
 /**

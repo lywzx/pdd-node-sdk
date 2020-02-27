@@ -12,14 +12,14 @@ export interface PddVoucherAppointmentInfoSendRequestInterface {
    * @type: string
    * @default:
    **/
-  order_sn?: string;
+  order_sn: string;
 
   /**
    * @description: 外部流水号
    * @type: string
    * @default:
    **/
-  out_biz_no?: string;
+  out_biz_no: string;
 
   /**
    * @description: 优惠券信息列表,例子[{"voucher_id":"test voucher_id","voucher_no":"test voucher_no"}]
@@ -27,21 +27,21 @@ export interface PddVoucherAppointmentInfoSendRequestInterface {
    * @default:
    *
    **/
-  voucher_list?: PddVoucherAppointmentInfoSendVoucherListRequestInterface[];
+  voucher_list: PddVoucherAppointmentInfoSendVoucherListRequestInterface[];
 
   /**
    * @description: 物流方式  1  物流发货   2 自提
    * @type: number
    * @default:
    **/
-  logistics_type?: number;
+  logistics_type: number;
 
   /**
    * @description: 预约时间, 距离格林威治时间 1970 年 01 月 01 日 00 时 00 分 00 秒(北京时间 1970 年 01 月 01 日 08 时 00 分 00 秒)起至现在的总毫秒数
    * @type: string | number
    * @default:
    **/
-  appointment_time?: string | number;
+  appointment_time: string | number;
 }
 
 /**
@@ -55,14 +55,14 @@ export interface PddVoucherAppointmentInfoSendVoucherListRequestInterface {
    * @type: string
    * @default:
    **/
-  voucher_id?: string;
+  voucher_id: string;
 
   /**
    * @description: 卡券号
    * @type: string
    * @default:
    **/
-  voucher_no?: string;
+  voucher_no: string;
 }
 
 /**

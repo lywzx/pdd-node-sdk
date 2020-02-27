@@ -12,28 +12,28 @@ export interface PddServicemarketSettlementbillGetRequestInterface {
    * @type: number
    * @default:
    **/
-  page?: number;
+  page: number;
 
   /**
    * @description: 分页大小，最大不能超过1000
    * @type: number
    * @default:
    **/
-  page_size?: number;
+  page_size: number;
 
   /**
    * @description: 服务订单号
    * @type: string
    * @default:
    **/
-  service_order_sn: string;
+  service_order_sn?: string;
 
   /**
    * @description: 结算月份
    * @type: string
    * @default:
    **/
-  settle_month?: string;
+  settle_month: string;
 }
 
 /**

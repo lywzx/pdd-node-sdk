@@ -12,35 +12,35 @@ export interface PddDdkGoodsRecommendGetRequestInterface {
    * @type: number
    * @default:
    **/
-  offset: number;
+  offset?: number;
 
   /**
    * @description: 请求数量；默认值 ： 400
    * @type: number
    * @default:
    **/
-  limit: number;
+  limit?: number;
 
   /**
    * @description: 频道类型；0, "1.9包邮", 1, "今日爆款", 2, "品牌清仓", 非必填 ,默认是1
    * @type: number
    * @default:
    **/
-  channel_type: number;
+  channel_type?: number;
 
   /**
    * @description: 推广位id
    * @type: string
    * @default:
    **/
-  pid: string;
+  pid?: string;
 
   /**
    * @description: 自定义参数
    * @type: string
    * @default:
    **/
-  custom_parameters: string;
+  custom_parameters?: string;
 }
 
 /**

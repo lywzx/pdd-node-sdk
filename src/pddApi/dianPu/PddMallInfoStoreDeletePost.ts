@@ -12,7 +12,7 @@ export interface PddMallInfoStoreDeletePostRequestInterface {
    * @type: Array<string | number>
    * @default:
    **/
-  store_id_list?: Array<string | number>;
+  store_id_list: Array<string | number>;
 }
 
 /**

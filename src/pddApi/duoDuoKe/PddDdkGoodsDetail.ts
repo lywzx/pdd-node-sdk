@@ -12,42 +12,42 @@ export interface PddDdkGoodsDetailRequestInterface {
    * @type: Array<string | number>
    * @default:
    **/
-  goods_id_list?: Array<string | number>;
+  goods_id_list: Array<string | number>;
 
   /**
    * @description: 推广位id
    * @type: string
    * @default:
    **/
-  pid: string;
+  pid?: string;
 
   /**
    * @description: 自定义参数
    * @type: string
    * @default:
    **/
-  custom_parameters: string;
+  custom_parameters?: string;
 
   /**
    * @description: 招商多多客ID
    * @type: string | number
    * @default:
    **/
-  zs_duo_id: string | number;
+  zs_duo_id?: string | number;
 
   /**
    * @description: 佣金优惠券对应推广类型，3：专属 4：招商
    * @type: number
    * @default:
    **/
-  plan_type: number;
+  plan_type?: number;
 
   /**
    * @description: 搜索id
    * @type: string
    * @default:
    **/
-  search_id: string;
+  search_id?: string;
 }
 
 /**

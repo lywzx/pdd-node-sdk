@@ -12,28 +12,28 @@ export interface PddGoodsLogisticsSerTemplateListRequestInterface {
    * @type: number
    * @default:
    **/
-  template_type?: number;
+  template_type: number;
 
   /**
    * @description: 查询偏移量
    * @type: number
    * @default:
    **/
-  start?: number;
+  start: number;
 
   /**
    * @description: 查询大小
    * @type: number
    * @default:
    **/
-  length?: number;
+  length: number;
 
   /**
    * @description: 查询类型
    * @type: number
    * @default:
    **/
-  query_type?: number;
+  query_type: number;
 }
 
 /**

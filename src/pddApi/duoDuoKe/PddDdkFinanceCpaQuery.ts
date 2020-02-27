@@ -12,14 +12,14 @@ export interface PddDdkFinanceCpaQueryRequestInterface {
    * @type: string
    * @default:
    **/
-  date_query?: string;
+  date_query: string;
 
   /**
    * @description: 推广位id
    * @type: string
    * @default:
    **/
-  pid: string;
+  pid?: string;
 }
 
 /**

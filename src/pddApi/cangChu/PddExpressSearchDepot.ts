@@ -12,28 +12,28 @@ export interface PddExpressSearchDepotRequestInterface {
    * @type: string
    * @default:
    **/
-  code?: string;
+  code: string;
 
   /**
    * @description: 10 分页数据size
    * @type: number
    * @default:
    **/
-  length?: number;
+  length: number;
 
   /**
    * @description: 仓库名称
    * @type: string
    * @default:
    **/
-  name?: string;
+  name: string;
 
   /**
    * @description: 0 分页数据起始位置
    * @type: number
    * @default:
    **/
-  start?: number;
+  start: number;
 }
 
 /**

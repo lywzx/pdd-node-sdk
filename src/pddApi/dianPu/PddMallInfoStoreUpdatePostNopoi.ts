@@ -11,98 +11,98 @@ export interface PddMallInfoStoreUpdatePostNopoiRequestInterface {
    * @type: number
    * @default:
    **/
-  business_status?: number;
+  business_status: number;
 
   /**
    * @description: 一周营业时间
    * @type: number[]
    * @default:
    **/
-  business_week_list?: number[];
+  business_week_list: number[];
 
   /**
    * @description: 市
    * @type: string
    * @default:
    **/
-  city?: string;
+  city: string;
 
   /**
    * @description: 区
    * @type: string
    * @default:
    **/
-  district?: string;
+  district: string;
 
   /**
    * @description: 结束营业时间
    * @type: string
    * @default:
    **/
-  end_business_hour?: string;
+  end_business_hour: string;
 
   /**
    * @description: 门店纬度
    * @type: string
    * @default:
    **/
-  poi_latitude?: string;
+  poi_latitude: string;
 
   /**
    * @description: 门店经度
    * @type: string
    * @default:
    **/
-  poi_longitude?: string;
+  poi_longitude: string;
 
   /**
    * @description: 省
    * @type: string
    * @default:
    **/
-  province?: string;
+  province: string;
 
   /**
    * @description: 起始营业时间
    * @type: string
    * @default:
    **/
-  start_business_hour?: string;
+  start_business_hour: string;
 
   /**
    * @description: 详细地址
    * @type: string
    * @default:
    **/
-  store_address?: string;
+  store_address: string;
 
   /**
    * @description: 门店id
    * @type: string | number
    * @default:
    **/
-  store_id?: string | number;
+  store_id: string | number;
 
   /**
    * @description: 门店名称
    * @type: string
    * @default:
    **/
-  store_name?: string;
+  store_name: string;
 
   /**
    * @description: 门店自有编号
    * @type: string
    * @default:
    **/
-  store_number: string;
+  store_number?: string;
 
   /**
    * @description: 门店电话
    * @type: string
    * @default:
    **/
-  store_phone?: string;
+  store_phone: string;
 }
 
 /**

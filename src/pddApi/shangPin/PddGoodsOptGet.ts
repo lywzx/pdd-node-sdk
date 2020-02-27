@@ -12,7 +12,7 @@ export interface PddGoodsOptGetRequestInterface {
    * @type: number
    * @default:
    **/
-  parent_opt_id?: number;
+  parent_opt_id: number;
 }
 
 /**

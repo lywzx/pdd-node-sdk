@@ -12,49 +12,49 @@ export interface PddAdQueryUnitBidHistoryReportRequestInterface {
    * @type: number
    * @default:
    **/
-  scene_type?: number;
+  scene_type: number;
 
   /**
    * @description: 单元id ，分天查询时必填
    * @type: string | number
    * @default:
    **/
-  unit_id: string | number;
+  unit_id?: string | number;
 
   /**
    * @description: 计划id
    * @type: string | number
    * @default:
    **/
-  plan_id: string | number;
+  plan_id?: string | number;
 
   /**
    * @description: 数据聚合方式（1 - 日期，2 - 实体 Id）
    * @type: number
    * @default:
    **/
-  group_by?: number;
+  group_by: number;
 
   /**
    * @description: 分定向类型。分天查询时必填。1表示通投，2表示访客重定向，3表示相似商品定向，4表示叶子类目定向，5表示相似店铺定向，6表示兴趣点定向，7表示人群包定向，8表示地域定向人群，9表示商品高潜人群，10表示高品质商品偏好人群，11表示大促偏好人群，12表示爱分享人群
    * @type: number
    * @default:
    **/
-  target_type?: number;
+  target_type: number;
 
   /**
    * @description: 分天查询时必填 兴趣点ID，targetType不为6/7时，传 0
    * @type: string | number
    * @default:
    **/
-  sub_level_target_id: string | number;
+  sub_level_target_id?: string | number;
 
   /**
    * @description: 定向类型列表。汇总报销必填。多个定向以英文逗号隔开，值所代表的含义参见target_type字段
    * @type: string
    * @default:
    **/
-  target_types: string;
+  target_types?: string;
 
   /**
    * @description: page_request
@@ -62,28 +62,28 @@ export interface PddAdQueryUnitBidHistoryReportRequestInterface {
    * @default:
    *
    **/
-  page_request: PddAdQueryUnitBidHistoryReportPageRequestRequestInterface;
+  page_request?: PddAdQueryUnitBidHistoryReportPageRequestRequestInterface;
 
   /**
    * @description: 起始日期 2018-09-28
    * @type: string
    * @default:
    **/
-  begin_date?: string;
+  begin_date: string;
 
   /**
    * @description: 结束日期 2018-09-28
    * @type: string
    * @default:
    **/
-  end_date?: string;
+  end_date: string;
 
   /**
    * @description: 排序字段 默认DATE（8）0 - IMPR_NUM - 曝光量排序、1 - CLK_NUM - 点击量排序2 - CLK_RATE - 点击率3 - CPC - 点击单价排序4 - SPEND - 消耗排序5 - PAY_ORDER_NUM - 订单数排序6 - PAY_GVM - 交易额排序7 - ROI - 产出比排序8 - DATE - 日期9 - CPM - 千次曝光单价10 - FAV_MALL - 店铺关注数
    * @type: number
    * @default:
    **/
-  order_by: number;
+  order_by?: number;
 
   /**
    * @description: 排序方式 默认降序（0）
@@ -92,7 +92,7 @@ export interface PddAdQueryUnitBidHistoryReportRequestInterface {
    * @type: number
    * @default:
    **/
-  sort_by: number;
+  sort_by?: number;
 }
 
 /**
@@ -106,14 +106,14 @@ export interface PddAdQueryUnitBidHistoryReportPageRequestRequestInterface {
    * @type: number
    * @default:
    **/
-  page_number: number;
+  page_number?: number;
 
   /**
    * @description: 单页记录数 默认 10
    * @type: number
    * @default:
    **/
-  page_size: number;
+  page_size?: number;
 }
 
 /**

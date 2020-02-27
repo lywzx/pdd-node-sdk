@@ -12,77 +12,77 @@ export interface PddLogisticsCsSessionStartRequestInterface {
    * @type: string
    * @default:
    **/
-  session_id?: string;
+  session_id: string;
 
   /**
    * @description: 物流公司会话id
    * @type: string
    * @default:
    **/
-  wp_session_id?: string;
+  wp_session_id: string;
 
   /**
    * @description: 样式YYYY-MM-DD HH:MM:SS
    * @type: string
    * @default:
    **/
-  action_time?: string;
+  action_time: string;
 
   /**
    * @description: 可选值：1：已分配 2：排队中 3：分配异常
    * @type: number
    * @default:
    **/
-  biz_type?: number;
+  biz_type: number;
 
   /**
    * @description: 客服id，biz_type为1时必填
    * @type: string
    * @default:
    **/
-  dealer_id: string;
+  dealer_id?: string;
 
   /**
    * @description: 队列id，biz_type为1时必填
    * @type: string
    * @default:
    **/
-  queue_id: string;
+  queue_id?: string;
 
   /**
    * @description: 网点名，biz_type为1时必填
    * @type: string
    * @default:
    **/
-  queue_name: string;
+  queue_name?: string;
 
   /**
    * @description: 排队位置，biz_type为2时必填
    * @type: number
    * @default:
    **/
-  queue_index: number;
+  queue_index?: number;
 
   /**
    * @description: 分配遇到的异常，示例：33222，biz_type为3时不为空
    * @type: number
    * @default:
    **/
-  exception_code: number;
+  exception_code?: number;
 
   /**
    * @description: 物流客服系统遇到的异常，biz_type为3时不为空
    * @type: string
    * @default:
    **/
-  exception_msg: string;
+  exception_msg?: string;
 
   /**
    * @description: 接待的网点地址，biz_type为1时必填，示例: ”河南省”
    * @type: string
    * @default:
    **/
-  queue_address: string;
+  queue_address?: string;
 }
 
 /**

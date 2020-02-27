@@ -12,42 +12,42 @@ export interface PddSmsSendRecordListQueryRequestInterface {
    * @type: Array<string | number>
    * @default:
    **/
-  scene: Array<string | number>;
+  scene?: Array<string | number>;
 
   /**
    * @description: 开始时间 2018-08-09 15:20:12
    * @type: string
    * @default:
    **/
-  start_time?: string;
+  start_time: string;
 
   /**
    * @description: 结束时间 2018-08-09 15:20:12
    * @type: string
    * @default:
    **/
-  end_time?: string;
+  end_time: string;
 
   /**
    * @description: 1-成功 2-失败 全部-不传
    * @type: number
    * @default:
    **/
-  status: number;
+  status?: number;
 
   /**
    * @description: 页码
    * @type: number
    * @default:
    **/
-  page_number: number;
+  page_number?: number;
 
   /**
    * @description: 每页数量
    * @type: number
    * @default:
    **/
-  page_size: number;
+  page_size?: number;
 }
 
 /**

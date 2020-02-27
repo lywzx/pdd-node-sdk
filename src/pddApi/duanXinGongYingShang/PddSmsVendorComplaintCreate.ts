@@ -11,56 +11,56 @@ export interface PddSmsVendorComplaintCreateRequestInterface {
    * @type: string
    * @default:
    **/
-  account?: string;
+  account: string;
 
   /**
    * @description: 投诉时间(格式yyyy-MM-dd HH:mm:ss)
    * @type: string
    * @default:
    **/
-  complaint_time?: string;
+  complaint_time: string;
 
   /**
    * @description: 投诉次数
    * @type: number
    * @default:
    **/
-  count?: number;
+  count: number;
 
   /**
    * @description: 短信下发时间(格式yyyy-MM-dd HH:mm:ss)
    * @type: string
    * @default:
    **/
-  deliver_time: string;
+  deliver_time?: string;
 
   /**
    * @description: 手机号码
    * @type: string
    * @default:
    **/
-  mobile?: string;
+  mobile: string;
 
   /**
    * @description: 归属运营商
    * @type: string
    * @default:
    **/
-  operator?: string;
+  operator: string;
 
   /**
    * @description: 归属地省份
    * @type: string
    * @default:
    **/
-  province?: string;
+  province: string;
 
   /**
    * @description: 短信投诉内容(不超过500个字)
    * @type: string
    * @default:
    **/
-  sms_content: string;
+  sms_content?: string;
 }
 
 /**

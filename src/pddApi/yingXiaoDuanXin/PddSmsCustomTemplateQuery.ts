@@ -12,28 +12,28 @@ export interface PddSmsCustomTemplateQueryRequestInterface {
    * @type: number
    * @default:
    **/
-  status: number;
+  status?: number;
 
   /**
    * @description: true or false//审核通过的排前面，在模版选择的时候调用
    * @type: boolean
    * @default:
    **/
-  order_by_status: boolean;
+  order_by_status?: boolean;
 
   /**
    * @description: 页码
    * @type: number
    * @default:
    **/
-  page_number: number;
+  page_number?: number;
 
   /**
    * @description: 每页大小
    * @type: number
    * @default:
    **/
-  page_size: number;
+  page_size?: number;
 
   /**
    * @description: 自定义模板类型
@@ -42,7 +42,7 @@ export interface PddSmsCustomTemplateQueryRequestInterface {
    * @type: number
    * @default:
    **/
-  template_type: number;
+  template_type?: number;
 }
 
 /**

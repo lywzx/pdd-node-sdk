@@ -12,14 +12,14 @@ export interface PddAdCreateLocationBidRequestInterface {
    * @type: number
    * @default:
    **/
-  scene_type?: number;
+  scene_type: number;
 
   /**
    * @description: 单元ID
    * @type: string | number
    * @default:
    **/
-  unit_id?: string | number;
+  unit_id: string | number;
 
   /**
    * @description: location_bids
@@ -27,7 +27,7 @@ export interface PddAdCreateLocationBidRequestInterface {
    * @default:
    *
    **/
-  location_bids?: PddAdCreateLocationBidLocationBidsRequestInterface[];
+  location_bids: PddAdCreateLocationBidLocationBidsRequestInterface[];
 }
 
 /**
@@ -41,14 +41,14 @@ export interface PddAdCreateLocationBidLocationBidsRequestInterface {
    * @type: number
    * @default:
    **/
-  bid_premium_rate?: number;
+  bid_premium_rate: number;
 
   /**
    * @description: 资源位类型。0表示基础流量包，1表示类目商品页，2表示商品详情页，3表示营销活动页，4表示店铺关注页，5表示订单评价页，6表示优选活动页
    * @type: number
    * @default:
    **/
-  location_type?: number;
+  location_type: number;
 }
 
 /**

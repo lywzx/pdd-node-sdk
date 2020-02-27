@@ -11,21 +11,21 @@ export interface PddOpenMsgServiceSendMsgRequestInterface {
    * @type: string[]
    * @default:
    **/
-  phone_numbers?: string[];
+  phone_numbers: string[];
 
   /**
    * @description: 短信签名名称
    * @type: string
    * @default:
    **/
-  sign_name?: string;
+  sign_name: string;
 
   /**
    * @description: 短信模板ID
    * @type: string | number
    * @default:
    **/
-  template_code?: string | number;
+  template_code: string | number;
 
   /**
    * @description: 短信模板变量对应的实际值，JSON格式
@@ -33,14 +33,14 @@ export interface PddOpenMsgServiceSendMsgRequestInterface {
    * @default:
    *
    **/
-  template_param: PddOpenMsgServiceSendMsgTemplateParamRequestInterface;
+  template_param?: PddOpenMsgServiceSendMsgTemplateParamRequestInterface;
 
   /**
    * @description: 业务请求唯一标识
    * @type: string
    * @default:
    **/
-  out_id: string;
+  out_id?: string;
 }
 
 /**
@@ -54,14 +54,14 @@ export interface PddOpenMsgServiceSendMsgTemplateParamRequestInterface {
    * @type: string
    * @default:
    **/
-  $key: string;
+  $key?: string;
 
   /**
    * @description: 模板变量值
    * @type: string
    * @default:
    **/
-  $value: string;
+  $value?: string;
 }
 
 /**

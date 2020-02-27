@@ -15,28 +15,28 @@ export interface PddSmsSellRecordListQueryRequestInterface {
    * @type: number
    * @default:
    **/
-  status: number;
+  status?: number;
 
   /**
    * @description: //排序  1-升序 2-倒序
    * @type: number
    * @default:
    **/
-  order_by_send_time: number;
+  order_by_send_time?: number;
 
   /**
    * @description: 页码数
    * @type: number
    * @default:
    **/
-  page_number: number;
+  page_number?: number;
 
   /**
    * @description: 单页条目数
    * @type: number
    * @default:
    **/
-  page_size: number;
+  page_size?: number;
 }
 
 /**

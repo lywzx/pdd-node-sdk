@@ -12,14 +12,14 @@ export interface PddDdkGoodsUnitQueryRequestInterface {
    * @type: string | number
    * @default:
    **/
-  goods_id?: string | number;
+  goods_id: string | number;
 
   /**
    * @description: 招商duoId
    * @type: string | number
    * @default:
    **/
-  zs_duo_id: string | number;
+  zs_duo_id?: string | number;
 }
 
 /**

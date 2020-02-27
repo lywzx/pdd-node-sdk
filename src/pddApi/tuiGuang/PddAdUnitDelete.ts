@@ -12,14 +12,14 @@ export interface PddAdUnitDeleteRequestInterface {
    * @type: number
    * @default:
    **/
-  scene_type?: number;
+  scene_type: number;
 
   /**
    * @description: unit_id列表，[1,2]
    * @type: Array<string | number>
    * @default:
    **/
-  unit_ids?: Array<string | number>;
+  unit_ids: Array<string | number>;
 }
 
 /**

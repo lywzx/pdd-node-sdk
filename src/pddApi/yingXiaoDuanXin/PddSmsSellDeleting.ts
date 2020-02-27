@@ -12,7 +12,7 @@ export interface PddSmsSellDeletingRequestInterface {
    * @type: string | number
    * @default:
    **/
-  id?: string | number;
+  id: string | number;
 }
 
 /**

@@ -12,14 +12,14 @@ export interface PddStockGoodsIdToSkuQueryRequestInterface {
    * @type: string | number
    * @default:
    **/
-  goods_id?: string | number;
+  goods_id: string | number;
 
   /**
    * @description: 货品id
    * @type: string | number
    * @default:
    **/
-  ware_id?: string | number;
+  ware_id: string | number;
 }
 
 /**

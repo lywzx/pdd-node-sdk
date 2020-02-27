@@ -11,7 +11,7 @@ export interface PddDeleteGoodsCommitRequestInterface {
    * @type: Array<string | number>
    * @default:
    **/
-  goods_ids?: Array<string | number>;
+  goods_ids: Array<string | number>;
 }
 
 /**

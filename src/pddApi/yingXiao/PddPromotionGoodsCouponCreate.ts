@@ -12,49 +12,49 @@ export interface PddPromotionGoodsCouponCreateRequestInterface {
    * @type: string
    * @default:
    **/
-  batch_desc?: string;
+  batch_desc: string;
 
   /**
    * @description: 开始时间，指到格林威治时间 1970 年 01 月 01 日 00 时 00 分 00 秒(北京时间 1970 年 01 月 01 日 08 时 00 分 00 秒)的总毫秒数
    * @type: string | number
    * @default:
    **/
-  batch_start_time?: string | number;
+  batch_start_time: string | number;
 
   /**
    * @description: 结束时间，指到格林威治时间 1970 年 01 月 01 日 00 时 00 分 00 秒(北京时间 1970 年 01 月 01 日 08 时 00 分 00 秒)的总毫秒数
    * @type: string | number
    * @default:
    **/
-  batch_end_time?: string | number;
+  batch_end_time: string | number;
 
   /**
    * @description: 优惠金额	单位: 分
    * @type: string | number
    * @default:
    **/
-  discount?: string | number;
+  discount: string | number;
 
   /**
    * @description: 可领取数量
    * @type: string | number
    * @default:
    **/
-  init_quantity?: string | number;
+  init_quantity: string | number;
 
   /**
    * @description: 每个用户限领张数
    * @type: string | number
    * @default:
    **/
-  user_limit?: string | number;
+  user_limit: string | number;
 
   /**
    * @description: 商品ID
    * @type: string | number
    * @default:
    **/
-  goods_id?: string | number;
+  goods_id: string | number;
 }
 
 /**

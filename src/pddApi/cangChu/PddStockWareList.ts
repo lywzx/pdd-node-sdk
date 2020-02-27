@@ -12,42 +12,42 @@ export interface PddStockWareListRequestInterface {
    * @type: string | number
    * @default:
    **/
-  id: string | number;
+  id?: string | number;
 
   /**
    * @description: 货品编码
    * @type: string
    * @default:
    **/
-  ware_sn: string;
+  ware_sn?: string;
 
   /**
    * @description: 货品名称
    * @type: string
    * @default:
    **/
-  ware_name: string;
+  ware_name?: string;
 
   /**
    * @description: 类型 0:单独货品。1:组合货品
    * @type: number
    * @default:
    **/
-  ware_type: number;
+  ware_type?: number;
 
   /**
    * @description: 页数，从1开始
    * @type: number
    * @default:
    **/
-  page?: number;
+  page: number;
 
   /**
    * @description: 每页记录数
    * @type: number
    * @default:
    **/
-  size?: number;
+  size: number;
 }
 
 /**

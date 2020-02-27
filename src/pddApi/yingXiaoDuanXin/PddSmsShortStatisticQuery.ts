@@ -12,7 +12,7 @@ export interface PddSmsShortStatisticQueryRequestInterface {
    * @type: string | number
    * @default:
    **/
-  setting_id?: string | number;
+  setting_id: string | number;
 }
 
 /**

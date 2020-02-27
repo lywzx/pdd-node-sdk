@@ -12,28 +12,28 @@ export interface PddSmsCustomSettingRequestInterface {
    * @type: string | number
    * @default:
    **/
-  template_id?: string | number;
+  template_id: string | number;
 
   /**
    * @description: 待发送手机号，["15671551276"]
    * @type: string[]
    * @default:
    **/
-  phones?: string[];
+  phones: string[];
 
   /**
    * @description: 发送时间
    * @type: string
    * @default:
    **/
-  send_time?: string;
+  send_time: string;
 
   /**
    * @description: //短信模版类型， 1-官方模版，2-自定义模版
    * @type: number
    * @default:
    **/
-  template_type?: number;
+  template_type: number;
 }
 
 /**

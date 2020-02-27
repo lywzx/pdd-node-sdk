@@ -12,21 +12,21 @@ export interface PddDdkGoodsPidQueryRequestInterface {
    * @type: number
    * @default:
    **/
-  page: number;
+  page?: number;
 
   /**
    * @description: 返回的每页推广位数量
    * @type: number
    * @default:
    **/
-  page_size: number;
+  page_size?: number;
 
   /**
    * @description: 推广位id列表
    * @type: string[]
    * @default:
    **/
-  pid_list: string[];
+  pid_list?: string[];
 }
 
 /**

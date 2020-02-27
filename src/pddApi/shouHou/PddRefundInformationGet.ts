@@ -11,14 +11,14 @@ export interface PddRefundInformationGetRequestInterface {
    * @type: string | number
    * @default:
    **/
-  after_sales_id?: string | number;
+  after_sales_id: string | number;
 
   /**
    * @description: 订单号
    * @type: string
    * @default:
    **/
-  order_sn?: string;
+  order_sn: string;
 }
 
 /**

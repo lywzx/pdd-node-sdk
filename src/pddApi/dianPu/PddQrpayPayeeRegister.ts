@@ -13,7 +13,7 @@ export interface PddQrpayPayeeRegisterRequestInterface {
    * @default:
    *
    **/
-  payee_list?: PddQrpayPayeeRegisterPayeeListRequestInterface[];
+  payee_list: PddQrpayPayeeRegisterPayeeListRequestInterface[];
 }
 
 /**
@@ -27,7 +27,7 @@ export interface PddQrpayPayeeRegisterPayeeListRequestInterface {
    * @type: string
    * @default:
    **/
-  payee?: string;
+  payee: string;
 }
 
 /**

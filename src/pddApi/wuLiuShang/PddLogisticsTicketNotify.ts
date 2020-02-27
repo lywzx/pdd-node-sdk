@@ -12,70 +12,70 @@ export interface PddLogisticsTicketNotifyRequestInterface {
    * @type: string[]
    * @default:
    **/
-  attach_path_list: string[];
+  attach_path_list?: string[];
 
   /**
    * @description: 工单id
    * @type: string | number
    * @default:
    **/
-  ticket_id?: string | number;
+  ticket_id: string | number;
 
   /**
    * @description: 运单号
    * @type: string
    * @default:
    **/
-  waybill_no?: string;
+  waybill_no: string;
 
   /**
    * @description: 处理结果
    * @type: string
    * @default:
    **/
-  handle_result?: string;
+  handle_result: string;
 
   /**
    * @description: 签收状态，0:默认,1:未签收,2:已签收
    * @type: number
    * @default:
    **/
-  sign_state?: number;
+  sign_state: number;
 
   /**
    * @description: 是否赔付，0:默认,1:未赔付,2:已赔付
    * @type: number
    * @default:
    **/
-  compensate_state?: number;
+  compensate_state: number;
 
   /**
    * @description: 赔付金额(单位:分)
    * @type: string | number
    * @default:
    **/
-  compensate_amount?: string | number;
+  compensate_amount: string | number;
 
   /**
    * @description: 责任方，0:默认, 1:消费者,2:商家,3:快递公司,4:其他
    * @type: number
    * @default:
    **/
-  duty: number;
+  duty?: number;
 
   /**
    * @description: 处理人
    * @type: string
    * @default:
    **/
-  express_dealer: string;
+  express_dealer?: string;
 
   /**
    * @description: 处理人联系方式
    * @type: string
    * @default:
    **/
-  express_dealer_contact: string;
+  express_dealer_contact?: string;
 }
 
 /**
