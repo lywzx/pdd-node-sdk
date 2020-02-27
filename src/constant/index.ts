@@ -19,7 +19,7 @@ export const PDD_OAUTH_TEMPLATE = {
     'https://mai.pinduoduo.com/h5-login.html?response_type=code&client_id=<%= clientId %>&redirect_uri=<%= redirectUri %>&state=<%= state %>&view=h5'
   ),
   [OAuthType.jinbao]: template(
-    'https://jinbao.pinduoduo.com/open.html?client_id=<%= clientId %>&response_type=code&redirect_uri=<%= redirectUri %>'
+    'https://jinbao.pinduoduo.com/open.html?client_id=<%= clientId %>&response_type=code&redirect_uri=<%= redirectUri %>&state=<%= state %>'
   ),
 };
 

@@ -3,10 +3,12 @@ import { PddClientOptionsInterface } from '../interfaces/pdd-client-options.inte
 import { stringify } from 'querystring';
 import { PddException } from '../exceptions';
 import { isObject, once } from 'lodash';
+import { APPLICATION_FORM, APPLICATION_JSON } from '../constant/content-type';
+import { get } from 'lodash';
 
 const axiosInstance: AxiosInstance = axios.create({});
 
-axiosInstance.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded;charset=utf-8';
+axiosInstance.defaults.headers.post['Content-Type'] = APPLICATION_FORM;
 axiosInstance.defaults.headers.post.Accept = 'application/json';
 
 type methodTypes = 'get' | 'post' | 'delete' | 'put';
@@ -17,7 +19,11 @@ function createMethods(method: methodTypes) {
     if (method === 'get') {
       requestData.params = data;
     } else {
-      requestData.data = stringify(data);
+      if (get(options, 'headers.Content-Type') === APPLICATION_JSON) {
+        requestData.data = JSON.stringify(data);
+      } else {
+        requestData.data = stringify(data);
+      }
     }
     return axiosInstance({
       url,

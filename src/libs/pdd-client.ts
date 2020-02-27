@@ -21,6 +21,7 @@ import { retry } from 'async';
 import { RetryOptionsInterface } from '../interfaces/retry-options.interface';
 import { defaultRetryOptions } from './pdd-client-default';
 import { isString, isObject } from 'util';
+import { APPLICATION_JSON } from '../constant/content-type';
 
 const defaultRequestParam = {
   // eslint-disable-next-line @typescript-eslint/camelcase
@@ -255,8 +256,11 @@ export class PddClient {
     if (!(callOptions as any).grant_type) {
       throw new Error("grant type can't be empty!");
     }
-
-    const resPromise = this.adapter.post(PDD_OAUTH_TOKEN_URL, callOptions);
+    const resPromise = this.adapter.post(PDD_OAUTH_TOKEN_URL, callOptions, {
+      headers: {
+        'Content-Type': APPLICATION_JSON,
+      },
+    });
     return promseToCallback(resPromise, callback as any);
     /* eslint-enable @typescript-eslint/camelcase */
   }
