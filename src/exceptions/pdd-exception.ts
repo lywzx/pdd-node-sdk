@@ -2,7 +2,7 @@ import { get } from 'lodash';
 
 export class PddException extends Error {
   constructor(public errObj: PddErrorResponse) {
-    super(errObj.toString());
+    super(JSON.stringify(errObj));
   }
 
   /**
