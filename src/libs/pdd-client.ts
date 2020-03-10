@@ -124,6 +124,8 @@ export class PddClient {
       tryOptions = defaultRetryOptions;
     } else if (typeof retryOptions === 'number') {
       tryOptions = extend({}, defaultRetryOptions, { times: retryOptions });
+    } else if (typeof retryOptions === 'object') {
+      tryOptions = extend({}, defaultRetryOptions, retryOptions);
     }
 
     const retryResult = (retry<R>(tryOptions, clbk => {
