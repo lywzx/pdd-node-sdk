@@ -210,7 +210,7 @@ export class PddClient {
     let baseString = clientSecret;
     for (let i = 0, l = sorted.length; i < l; i++) {
       const k = sorted[i] as keyof T;
-      baseString += k + (params[k] || '').toString();
+      baseString += k + params[k].toString();
     }
 
     baseString += clientSecret;
