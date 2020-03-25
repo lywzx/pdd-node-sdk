@@ -4,9 +4,9 @@ import { stringify } from 'querystring';
 import { PddException } from '../exceptions';
 import { isObject, once } from 'lodash';
 import { APPLICATION_FORM, APPLICATION_JSON } from '../constant/content-type';
-import { get } from 'lodash';
+import { get, extend } from 'lodash';
 
-const axiosInstance: AxiosInstance = axios.create({});
+const axiosInstance: AxiosInstance = axios.create();
 
 axiosInstance.defaults.headers.post['Content-Type'] = APPLICATION_FORM;
 axiosInstance.defaults.headers.post.Accept = 'application/json';
@@ -41,6 +41,9 @@ export class NetworkAdapter {
   static delete = createMethods('delete');
   static put = createMethods('put');
   static set = once((options: PddClientOptionsInterface) => {
+    if (options.axiosRequestConfig) {
+      extend(axiosInstance.defaults, options.axiosRequestConfig);
+    }
     axiosInstance.defaults.baseURL = options.endpoint;
     axiosInstance.defaults.url = '';
 

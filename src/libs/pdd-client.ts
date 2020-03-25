@@ -9,7 +9,7 @@ import { md5, timestamp, promseToCallback } from '../util';
 import { AsyncResultCallbackInterface } from '../interfaces/async-result-callback.interface';
 import { NetworkAdapter, NetworkAdapterInterface } from './network-adapter';
 import { PDD_END_POINTS, PDD_OAUTH_TEMPLATE, OAuthType, PDD_OAUTH_TOKEN_URL } from '../constant';
-import { extend, castArray } from 'lodash';
+import { extend, castArray, omit } from 'lodash';
 import {
   RequestParamsType,
   RequestParamsFullType,
@@ -29,7 +29,9 @@ const defaultRequestParam = {
   version: 'V1',
 };
 
-type RetryOptionsType = RetryOptionsInterface | number;
+// 限制拼多多接口的响应等待时间
+type PddAxiosClientOptions = { timeout?: number };
+type RetryOptionsType = (RetryOptionsInterface & PddAxiosClientOptions) | number;
 type PddClientGenerateType =
   | string
   | {
@@ -60,15 +62,25 @@ export class PddClient {
    * @param params
    * @param callback
    */
-  public request<T extends {}, R>(params: T & RequestParamsType): Promise<R>;
+  public request<T extends {}, R>(params: T & RequestParamsType, axiosOptions?: PddAxiosClientOptions): Promise<R>;
   public request<T extends {}, R>(
     params: T & RequestParamsType,
     callback: AsyncResultCallbackInterface<R, never>
   ): void;
   public request<T extends {}, R>(
     params: T & RequestParamsType,
+    axiosOptions: PddAxiosClientOptions,
+    callback: AsyncResultCallbackInterface<R, never>
+  ): void;
+  public request<T extends {}, R>(
+    params: T & RequestParamsType,
+    axiosOptions?: AsyncResultCallbackInterface<R, never> | PddAxiosClientOptions,
     callback?: AsyncResultCallbackInterface<R, never>
   ): Promise<R> | void {
+    if (typeof axiosOptions === 'function') {
+      callback = axiosOptions;
+      axiosOptions = undefined;
+    }
     const defaultArgs: Partial<RequestParamsFullType> = extend({}, defaultRequestParam, {
       // eslint-disable-next-line @typescript-eslint/camelcase
       client_id: this.options.clientId,
@@ -90,7 +102,7 @@ export class PddClient {
 
     defaultArgs.sign = this.sign((defaultArgs as any) as { [s: string]: string | number });
 
-    const requestPromise = this.adapter.post(this.options.endpoint, defaultArgs);
+    const requestPromise = this.adapter.post(this.options.endpoint, defaultArgs, axiosOptions || {});
 
     return promseToCallback<R>(requestPromise, callback as any);
   }
@@ -117,6 +129,7 @@ export class PddClient {
     callback?: AsyncResultCallbackInterface<R, never>
   ): Promise<R> | void {
     let tryOptions: RetryOptionsInterface | undefined;
+    let axiosClientOptions: PddAxiosClientOptions;
     if (typeof retryOptions === 'function') {
       tryOptions = defaultRetryOptions;
       callback = (retryOptions as any) as AsyncResultCallbackInterface<R, never>;
@@ -125,11 +138,16 @@ export class PddClient {
     } else if (typeof retryOptions === 'number') {
       tryOptions = extend({}, defaultRetryOptions, { times: retryOptions });
     } else if (typeof retryOptions === 'object') {
-      tryOptions = extend({}, defaultRetryOptions, retryOptions);
+      tryOptions = extend({}, defaultRetryOptions, omit(retryOptions, ['timeout']));
+      if (retryOptions.timeout) {
+        axiosClientOptions = {
+          timeout: retryOptions.timeout,
+        };
+      }
     }
 
     const retryResult = (retry<R>(tryOptions, clbk => {
-      this.request<T, R>(params, clbk);
+      this.request<T, R>(params, axiosClientOptions, clbk);
     }) as any) as Promise<R>;
 
     return promseToCallback<R>(retryResult, callback as any);
