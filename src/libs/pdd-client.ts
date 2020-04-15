@@ -22,6 +22,8 @@ import { RetryOptionsInterface } from '../interfaces/retry-options.interface';
 import { defaultRetryOptions } from './pdd-client-default';
 import { isString, isObject } from 'util';
 import { APPLICATION_JSON } from '../constant/content-type';
+import { pddLog } from '../util/debug';
+import { PddException } from '../exceptions/pdd-exception';
 
 const defaultRequestParam = {
   // eslint-disable-next-line @typescript-eslint/camelcase
@@ -102,7 +104,29 @@ export class PddClient {
 
     defaultArgs.sign = this.sign((defaultArgs as any) as { [s: string]: string | number });
 
-    const requestPromise = this.adapter.post(this.options.endpoint, defaultArgs, axiosOptions || {});
+    pddLog(`start run pdd client request, type: %s, params: %o`, params.type, params);
+    let requestPromise = this.adapter.post(this.options.endpoint, defaultArgs, axiosOptions || {});
+
+    // debug
+    if (pddLog.enabled) {
+      requestPromise = requestPromise.then(
+        response => {
+          pddLog('end run pdd client request, type: %s, result: %o', params.type, response);
+          return response;
+        },
+        err => {
+          const errObj =
+            (err && (err as PddException).errObj) || (err && (err as Error).stack) || (err as Error).message || err;
+          pddLog(
+            'end run pdd client request with error, type: %s,  params: %o, error msg: %o',
+            params.type,
+            params,
+            errObj
+          );
+          throw err;
+        }
+      );
+    }
 
     return promseToCallback<R>(requestPromise, callback as any);
   }
@@ -146,8 +170,55 @@ export class PddClient {
       }
     }
 
+    let retryCount: number;
+    if (pddLog.enabled) {
+      retryCount = 0;
+    }
+
     const retryResult = (retry<R>(tryOptions, clbk => {
-      this.request<T, R>(params, axiosClientOptions, clbk);
+      // first run not print out message
+      if (retryCount) {
+        pddLog(
+          'start retry pdd client request, retry %d th, max retry count: %d, type: %s, params: %o',
+          tryOptions?.times,
+          retryCount,
+          params.type,
+          params
+        );
+      }
+
+      let result = this.request<T, R>(params, axiosClientOptions);
+
+      if (pddLog.enabled) {
+        result = result.then(
+          response => {
+            if (retryCount) {
+              pddLog(
+                'success retry pdd client request, retry %d th, type: %s, result: %o',
+                retryCount,
+                params.type,
+                response
+              );
+            }
+            return response;
+          },
+          err => {
+            if (retryCount) {
+              const errObj =
+                (err && (err as PddException).errObj) || (err && (err as Error).stack) || (err as Error).message || err;
+              pddLog(
+                'error retry pdd client request, retry %d th, type: %s, error msg: %o',
+                retryCount,
+                params.type,
+                errObj
+              );
+            }
+            throw err;
+          }
+        );
+      }
+
+      return promseToCallback<R>(result, clbk as any);
     }) as any) as Promise<R>;
 
     return promseToCallback<R>(retryResult, callback as any);
