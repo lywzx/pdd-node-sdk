@@ -22,7 +22,7 @@ import { RetryOptionsInterface } from '../interfaces/retry-options.interface';
 import { defaultRetryOptions } from './pdd-client-default';
 import { isString, isObject } from 'util';
 import { APPLICATION_JSON } from '../constant/content-type';
-import { pddLog } from '../util/debug';
+import { pddLog, getPddLogClient } from '../util/debug';
 import { PddException } from '../exceptions/pdd-exception';
 
 const defaultRequestParam = {
@@ -108,7 +108,7 @@ export class PddClient {
     let requestPromise = this.adapter.post(this.options.endpoint, defaultArgs, axiosOptions || {});
 
     // debug
-    if (pddLog.enabled) {
+    if (getPddLogClient().enabled) {
       requestPromise = requestPromise.then(
         response => {
           pddLog('end run pdd client request, type: %s, result: %o', params.type, response);
@@ -171,7 +171,7 @@ export class PddClient {
     }
 
     let retryCount: number;
-    if (pddLog.enabled) {
+    if (getPddLogClient().enabled) {
       retryCount = 0;
     }
 
@@ -189,7 +189,7 @@ export class PddClient {
 
       let result = this.request<T, R>(params, axiosClientOptions);
 
-      if (pddLog.enabled) {
+      if (getPddLogClient().enabled) {
         result = result.then(
           response => {
             if (retryCount) {
