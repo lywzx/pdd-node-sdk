@@ -5,7 +5,7 @@ import {
   PddCommonRequestInterface,
   PddResponseTypeAndRequestTypeMapping,
 } from '../pddApi';
-import { md5, timestamp, promseToCallback } from '../util';
+import { md5, timestamp, promseToCallback, defer, checkRequired } from '../util';
 import { AsyncResultCallbackInterface } from '../interfaces/async-result-callback.interface';
 import { NetworkAdapter, NetworkAdapterInterface } from './network-adapter';
 import { PDD_END_POINTS, PDD_OAUTH_TEMPLATE, OAuthType, PDD_OAUTH_TOKEN_URL } from '../constant';
@@ -83,6 +83,7 @@ export class PddClient {
       callback = axiosOptions;
       axiosOptions = undefined;
     }
+    const retDefer = defer<R>();
     const defaultArgs: Partial<RequestParamsFullType> = extend({}, defaultRequestParam, {
       // eslint-disable-next-line @typescript-eslint/camelcase
       client_id: this.options.clientId,
@@ -90,6 +91,14 @@ export class PddClient {
     });
 
     const newParams = extend({}, params);
+
+    const err = checkRequired(newParams, 'type');
+
+    if (err) {
+      retDefer.reject(err);
+
+      return promseToCallback<R>(retDefer.promise, callback as any);
+    }
 
     for (const k in newParams) {
       if (newParams.hasOwnProperty(k)) {
@@ -128,7 +137,9 @@ export class PddClient {
       );
     }
 
-    return promseToCallback<R>(requestPromise, callback as any);
+    retDefer.resolve(requestPromise);
+
+    return promseToCallback<R>(retDefer.promise, callback as any);
   }
 
   /**

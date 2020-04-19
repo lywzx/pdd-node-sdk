@@ -12,6 +12,8 @@ export * from './pdd-o-auth-link.interface';
 
 export * from './pdd-access-token-response.interface';
 
+export * from './promise-defer.interface';
+
 export type RequestParamsType = Partial<Omit<PddCommonRequestInterface, 'sign' | 'timestamp' | 'client_id'>> & {
   [s: string]: any;
 };

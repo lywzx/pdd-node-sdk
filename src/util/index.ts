@@ -1,6 +1,6 @@
 import CryptoJS from 'crypto-js';
 import { PddRequestParamsMissingException } from '../exceptions/pdd-request-params-missing-exception';
-import { AsyncResultCallbackInterface } from '../interfaces';
+import { AsyncResultCallbackInterface, PromiseDefer } from '../interfaces';
 
 /**
  * MD5加密字符
@@ -97,7 +97,25 @@ export function formatDate(d: Date, mask: string): string {
 }
 
 /**
- *
+ * generate defer from promise
+ */
+export function defer<T>(): PromiseDefer<T> {
+  let resolve: (value?: T | PromiseLike<T>) => void, reject: (reason?: any) => void;
+  const promise = new Promise<T>((rs, rj) => {
+    resolve = rs;
+    reject = rj;
+  });
+  return {
+    promise,
+    // @ts-ignore
+    resolve,
+    // @ts-ignore
+    reject,
+  };
+}
+
+/**
+ * check params is required
  * @param params
  * @param keys
  */

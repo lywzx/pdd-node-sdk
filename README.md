@@ -2,7 +2,7 @@
 
 拼多多开放平台链接地址：`https://open.pinduoduo.com/#/apidocument`
 
-sdk职在辅助快速开发，除了几个简单的方便，可以在src/pddApi/中，找到拼多多官网上的类型声明信息(通过js抓取生成的代码)。
+`pdd-node-sdk`职在辅助快速开发，除了方便使用，sdk还提供了的拼多多开放平台的类型声名，存放于`src/pddApi/`目录当中，如果你在使用中发布类型声明文件与官方文档不一致，可以执行`npm run generate`重新生成声明文件。
 
 # 安装及使用
 
@@ -46,3 +46,18 @@ async function getGoodsTemplate(catId, assessToken) {
   return detail;
 }
 ```
+
+# 关于打印日志
+
+`pdd-node-sdk`是依赖于[debug](https://github.com/visionmedia/debug)包打印日志，所以你可以在启动时，在环境变量中添加：
+
+```bash
+set DEBUG=pdd:log && ...
+```
+
+具体关于`debug`的使用，可以参见`debug`文档。
+
+# 待完善：
+
+* 添加完善的单元测试
+* 添加API调用文件锁
