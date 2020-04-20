@@ -1,8 +1,17 @@
 # 拼多多开放平台Node版SDK
 
-拼多多开放平台链接地址：`https://open.pinduoduo.com/#/apidocument`
+拼多多开放平台链接地址：`[https://open.pinduoduo.com/#/apidocument](https://open.pinduoduo.com/#/apidocument)`
 
 `pdd-node-sdk`职在辅助快速开发，除了方便使用，sdk还提供了的拼多多开放平台的类型声名，存放于`src/pddApi/`目录当中，如果你在使用中发布类型声明文件与官方文档不一致，可以执行`npm run generate`重新生成声明文件。
+
+
+[![NPM version](https://img.shields.io/npm/v/pdd-node-sdk.svg?style=flat-square)](https://www.npmjs.com/package/pdd-node-sdk)
+[![NPM downloads](https://img.shields.io/npm/dm/pdd-node-sdk.svg?style=flat-square)](https://www.npmjs.com/package/pdd-node-sdk)
+[![Build Status](https://img.shields.io/travis/lywzx/pdd-node-sdk/master.svg)](https://travis-ci.org/lywzx/pdd-node-sdk)
+[![Known Vulnerabilities](https://snyk.io/test/github/lywzx/pdd-node-sdk/badge.svg?targetFile=package.json)](https://snyk.io/test/github/lywzx/pdd-node-sdk?targetFile=package.json)
+[![License](https://img.shields.io/npm/l/pdd-node-sdk.svg?sanitize=true)](https://www.npmjs.com/package/pdd-node-sdk)
+[![Dependency Status](https://david-dm.org/lywzx/pdd-node-sdk.svg)](https://david-dm.org/lywzx/pdd-node-sdk)
+[![devDependencies Status](https://david-dm.org/lywzx/pdd-node-sdk/dev-status.svg)](https://david-dm.org/lywzx/pdd-node-sdk?type=dev)
 
 # 安装及使用
 

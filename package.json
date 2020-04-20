@@ -9,6 +9,7 @@
     "lint": "eslint src --ext .ts --fix",
     "format": "prettier --write \"+(src|scripts)/**/*.ts\"",
     "test": "mocha --require ts-node/register test/*.ts test/**/*.ts",
+    "report-coverage": "codecov",
     "generate": "cross-env NODE_ICU_DATA=node_modules/full-icu ts-node -r tsconfig-paths/register ./scripts/index.ts"
   },
   "engines": {
