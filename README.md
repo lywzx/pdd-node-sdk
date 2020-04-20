@@ -1,6 +1,6 @@
 # 拼多多开放平台Node版SDK
 
-拼多多开放平台链接地址：`[https://open.pinduoduo.com/#/apidocument](https://open.pinduoduo.com/#/apidocument)`
+拼多多开放平台链接地址：[https://open.pinduoduo.com/#/apidocument](https://open.pinduoduo.com/#/apidocument)
 
 `pdd-node-sdk`职在辅助快速开发，除了方便使用，sdk还提供了的拼多多开放平台的类型声名，存放于`src/pddApi/`目录当中，如果你在使用中发布类型声明文件与官方文档不一致，可以执行`npm run generate`重新生成声明文件。
 
