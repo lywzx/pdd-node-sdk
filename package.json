@@ -10,7 +10,9 @@
     "format": "prettier --write \"+(src|scripts)/**/*.ts\"",
     "test": "mocha --require ts-node/register test/*.ts test/**/*.ts",
     "report-coverage": "codecov",
-    "generate": "cross-env NODE_ICU_DATA=node_modules/full-icu ts-node -r tsconfig-paths/register ./scripts/index.ts"
+    "generate": "cross-env NODE_ICU_DATA=node_modules/full-icu ts-node -r tsconfig-paths/register ./scripts/index.ts",
+    "snyk-protect": "snyk protect",
+    "prepare": "npm run snyk-protect"
   },
   "engines": {
     "node": ">=8.9.0"
@@ -64,6 +66,8 @@
     "axios": "^0.19.2",
     "crypto-js": "^4.0.0",
     "debug": "^4.1.1",
-    "lodash": "^4.17.15"
-  }
+    "lodash": "^4.17.15",
+    "snyk": "^1.316.1"
+  },
+  "snyk": true
 }
