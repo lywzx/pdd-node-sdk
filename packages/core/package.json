@@ -1,0 +1,29 @@
+{
+  "name": "@pin-duo-duo/core",
+  "version": "0.0.0",
+  "description": "> TODO: description",
+  "author": "lywzx <liuyang@lyblog.net>",
+  "homepage": "https://github.com/lywzx/pdd-node-sdk/tree/master/packages/core#readme",
+  "license": "MIT",
+  "main": "src/index.ts",
+  "directories": {
+    "lib": "src",
+    "test": "__tests__"
+  },
+  "files": [
+    "src"
+  ],
+  "publishConfig": {
+    "registry": "https://registry.npm.taobao.org"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lywzx/pdd-node-sdk.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: run tests from root\" && exit 1"
+  },
+  "bugs": {
+    "url": "https://github.com/lywzx/pdd-node-sdk/issues"
+  }
+}
