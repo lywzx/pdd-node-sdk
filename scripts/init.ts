@@ -23,6 +23,8 @@ import {
 } from './util/running-status';
 import { ApiDetailInterface } from './interface/api-detail.interface';
 
+const rootDir = 'packages/pdd-origin-api/src';
+
 export async function init() {
   const lastRunState = await getLastRunState();
 
@@ -97,7 +99,7 @@ async function generatorApiFile(api: ApiListItemInterface, catName: string): Pro
 
   const code = generateCode(api.scopeName, apiInfo);
 
-  const fileName = join(`src/pddApi/${nameToDirectoryName(catName)}/${createClassName(api.scopeName)}.ts`);
+  const fileName = join(rootDir, `${nameToDirectoryName(catName)}/${createClassName(api.scopeName)}.ts`);
   await saveCode(fileName, code);
 
   return apiInfo;
