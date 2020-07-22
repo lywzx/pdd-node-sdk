@@ -4,7 +4,10 @@
   "description": "pinduoduo open platform node sdk",
   "main": "dist/index.js",
   "types": "dist/@types/index.d.ts",
-  "homepage": "https://www.lyblog.net",
+  "workspaces": [
+    "packages/*"
+  ],
+  "private": true,
   "scripts": {
     "build": "tsc",
     "lint": "eslint src --ext .ts --fix",

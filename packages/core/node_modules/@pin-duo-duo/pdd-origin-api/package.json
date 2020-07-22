@@ -1,20 +1,11 @@
 {
-  "name": "@pin-duo-duo/core",
+  "name": "@pin-duo-duo/pdd-origin-api",
   "version": "0.0.0",
-  "keywords": [
-    "pdd",
-    "pinduoduo",
-    "duoduoke",
-    "pdd-sdk",
-    "sdk",
-    "拼多多",
-    "多多客",
-    "拼多多SDK"
-  ],
+  "description": "> TODO: description",
   "author": "lywzx <liuyang@lyblog.net>",
-  "homepage": "https://github.com/lywzx/pdd-node-sdk/tree/master/packages/core#readme",
+  "homepage": "https://github.com/lywzx/pdd-node-sdk/tree/master/packages/pdd-origin-api#readme",
   "license": "MIT",
-  "main": "src/index.ts",
+  "main": "lib/index.js",
   "directories": {
     "lib": "lib",
     "test": "test"
@@ -34,8 +25,5 @@
   },
   "bugs": {
     "url": "https://github.com/lywzx/pdd-node-sdk/issues"
-  },
-  "dependencies": {
-    "@pin-duo-duo/pdd-origin-api": "^0.0.0"
   }
 }
