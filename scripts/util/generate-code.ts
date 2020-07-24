@@ -285,7 +285,7 @@ export async function generatorIndexCode(state: RunStateInterface) {
     return fl.constVariable;
   }).join(' | ');*/
   return saveCode(
-    'src/pddApi/index.ts',
+    'packages/pdd-origin-api/src/index.ts',
     [
       ...importCodes,
       typeAndResponseKeyMappingCode,

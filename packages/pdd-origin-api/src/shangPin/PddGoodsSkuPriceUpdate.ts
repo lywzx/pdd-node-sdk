@@ -15,14 +15,6 @@ export interface PddGoodsSkuPriceUpdateRequestInterface {
   goods_id: string | number;
 
   /**
-   * @description: 待修改的sku价格
-   * @type: PddGoodsSkuPriceUpdateSkuPriceListRequestInterface[]
-   * @default:
-   *
-   **/
-  sku_price_list: PddGoodsSkuPriceUpdateSkuPriceListRequestInterface[];
-
-  /**
    * @description: 市场价 （单位分）
    * @type: string | number
    * @default:
@@ -35,6 +27,14 @@ export interface PddGoodsSkuPriceUpdateRequestInterface {
    * @default:
    **/
   market_price_in_yuan?: string;
+
+  /**
+   * @description: 待修改的sku价格
+   * @type: PddGoodsSkuPriceUpdateSkuPriceListRequestInterface[]
+   * @default:
+   *
+   **/
+  sku_price_list: PddGoodsSkuPriceUpdateSkuPriceListRequestInterface[];
 
   /**
    * @description: 提交后上架状态，0:上架,1:保持原样
@@ -51,18 +51,18 @@ export interface PddGoodsSkuPriceUpdateRequestInterface {
  **/
 export interface PddGoodsSkuPriceUpdateSkuPriceListRequestInterface {
   /**
-   * @description: sku标识
-   * @type: string | number
-   * @default:
-   **/
-  sku_id: string | number;
-
-  /**
    * @description: 拼团购买价格（单位分）
    * @type: string | number
    * @default:
    **/
   group_price: string | number;
+
+  /**
+   * @description: sku上架状态，0-已下架，1-上架中
+   * @type: number
+   * @default:
+   **/
+  is_onsale?: number;
 
   /**
    * @description: 单独购买价格（单位分）
@@ -72,11 +72,11 @@ export interface PddGoodsSkuPriceUpdateSkuPriceListRequestInterface {
   single_price: string | number;
 
   /**
-   * @description: sku上架状态，0-已下架，1-上架中
-   * @type: number
+   * @description: sku标识
+   * @type: string | number
    * @default:
    **/
-  is_onsale?: number;
+  sku_id: string | number;
 }
 
 /**
@@ -100,6 +100,13 @@ export interface PddGoodsSkuPriceUpdateResponseInterface {
  * @example
  **/
 export interface PddGoodsSkuPriceUpdateGoodsUpdateSkuPriceResponseResponseInterface {
+  /**
+   * @description:
+   * @type: string | number
+   * @default:
+   **/
+  goods_commit_id: string | number;
+
   /**
    * @description: 是否成功
    * @type: boolean

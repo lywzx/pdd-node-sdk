@@ -34,6 +34,13 @@ export interface PddDdkAllOrderListIncrementGetRequestInterface {
    * @default:
    **/
   start_update_time: string | number;
+
+  /**
+   * @description: 订单类型：1-推广订单；2-直播间订单
+   * @type: number
+   * @default: 1
+   **/
+  query_order_type?: number;
 }
 
 /**
@@ -288,4 +295,39 @@ export interface PddDdkAllOrderListIncrementGetOrderListGetResponseOrderListResp
    * @default:
    **/
   is_direct: number;
+
+  /**
+   * @description: 直播间订单推广duoId
+   * @type: string | number
+   * @default:
+   **/
+  sep_duo_id: string | number;
+
+  /**
+   * @description: 直播间推广佣金
+   * @type: number
+   * @default:
+   **/
+  sep_market_fee: number;
+
+  /**
+   * @description: 直播间订单推广位
+   * @type: string
+   * @default:
+   **/
+  sep_pid: string;
+
+  /**
+   * @description: 直播间推广佣金比例
+   * @type: number
+   * @default:
+   **/
+  sep_rate: number;
+
+  /**
+   * @description: 直播间推广自定义参数
+   * @type: string
+   * @default:
+   **/
+  sep_parameters: string;
 }

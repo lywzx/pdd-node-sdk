@@ -65,7 +65,7 @@ async function resolveCategory(category: CategoryListItemInterface) {
       const responseInterface = createResponseClassName(api.scopeName);
       const originResponseKey = getPddResponseRootKey(apiInfo);
       const responseKey = originResponseKey ? `${constVariable}_RESPONSE_KEY` : undefined;
-      const secoundResponseInterface = originResponseKey
+      const secondResponseInterface = originResponseKey
         ? createResponseClassName(`${responseInterface.replace('ResponseInterface', '')}_${originResponseKey}`)
         : undefined;
 
@@ -81,7 +81,7 @@ async function resolveCategory(category: CategoryListItemInterface) {
           constVariable,
           requestInterface: createRequestClassName(api.scopeName),
           responseInterface,
-          secoundResponseInterface,
+          secoundResponseInterface: secondResponseInterface,
           responseKey,
         }
       );

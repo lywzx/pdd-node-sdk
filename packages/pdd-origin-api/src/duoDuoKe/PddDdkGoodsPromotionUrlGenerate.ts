@@ -97,6 +97,20 @@ export interface PddDdkGoodsPromotionUrlGenerateRequestInterface {
    * @default:
    **/
   zs_duo_id?: string | number;
+
+  /**
+   * @description: 直播间id列表，如果生成直播间推广链接该参数必填，goods_id_list填[1]
+   * @type: string[]
+   * @default:
+   **/
+  room_id_list?: string[];
+
+  /**
+   * @description: 直播预约id列表，如果生成直播间预约推广链接该参数必填，goods_id_list填[1]，room_id_list不填
+   * @type: string[]
+   * @default:
+   **/
+  target_id_list?: string[];
 }
 
 /**

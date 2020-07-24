@@ -8,7 +8,7 @@ export const PDD_DDK_RP_PROM_URL_GENERATE_RESPONSE_KEY = 'rp_promotion_url_gener
  **/
 export interface PddDdkRpPromUrlGenerateRequestInterface {
   /**
-   * @description: -1-活动列表，0-默认红包，2–新人红包，3-刮刮卡，4-转盘 ，5-员工内购，6-购物车，7-大促会场
+   * @description: -1-活动列表，0-默认红包，2–新人红包，3-刮刮卡，5-员工内购，6-购物车，7-大促会场，8-直播间列表集合页
    * @type: number
    * @default:
    **/

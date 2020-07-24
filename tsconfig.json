@@ -11,9 +11,16 @@
     "sourceMap": true,
     "lib": ["es6"]
   },
-  "include": [
-    "src/**/*"
-  ],
+  "include": ["packages", "examples"],
+  "baseUrl": ".",
+  "paths": {
+    "@pin-duo-duo/core": [
+      "packages/core/src"
+    ],
+    "@pin-duo-duo/pdd-origin-api": [
+      "packages/pdd-origin-api/src"
+    ]
+  },
   "exclude": [
     "node_modules",
     "**/*.spec.ts"
