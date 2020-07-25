@@ -1,4 +1,4 @@
-import { PddCommonRequestInterface } from '../pddApi';
+import { PddCommonRequestInterface } from '@pin-duo-duo/pdd-origin-api';
 
 export * from './pdd-client-options.interface';
 

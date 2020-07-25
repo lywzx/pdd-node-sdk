@@ -1,4 +1,4 @@
-import { PddCollectRequestInterface } from '../pddApi';
+import { PddCollectRequestInterface } from '@pin-duo-duo/pdd-origin-api';
 
 type keys = keyof PddCollectRequestInterface;
 

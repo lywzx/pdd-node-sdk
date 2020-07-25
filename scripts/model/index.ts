@@ -1,4 +1,6 @@
 import axios from 'axios';
+import { Agent as HttpAgent } from 'http';
+import { Agent as HttpsAgent } from 'https';
 import { Exception } from './exception';
 import { CategoryListItemInterface } from '../interface/category-list-item.interface';
 import { nameToDirectoryName, promseToCallback } from '../util';
@@ -12,7 +14,10 @@ const instance = axios.create({
   headers: {
     Origin: 'https://open.pinduoduo.com',
     Referer: 'https://open.pinduoduo.com/',
+    Connection: 'keep-alive',
   },
+  httpAgent: new HttpAgent(),
+  httpsAgent: new HttpsAgent(),
 });
 
 instance.interceptors.response.use((value: any) => {

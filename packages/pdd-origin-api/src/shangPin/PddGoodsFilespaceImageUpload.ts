@@ -9,10 +9,10 @@ export const PDD_GOODS_FILESPACE_IMAGE_UPLOAD_RESPONSE_KEY = 'goods_filespace_im
 export interface PddGoodsFilespaceImageUploadRequestInterface {
   /**
    * @description: 图片文件流
-   * @type: file
+   * @type: Buffer
    * @default:
    **/
-  file: file;
+  file: Buffer;
 }
 
 /**

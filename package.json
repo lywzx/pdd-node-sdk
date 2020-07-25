@@ -1,5 +1,5 @@
 {
-  "name": "@pin-duo-duo/core",
+  "name": "root",
   "version": "0.0.1",
   "description": "pinduoduo open platform node sdk",
   "main": "dist/index.js",
@@ -9,14 +9,16 @@
   ],
   "private": true,
   "scripts": {
-    "build": "tsc",
+    "start": "",
+    "build": "tsc --build packages/pdd-origin-api/tsconfig.json && tsc --build packages/core/tsconfig.json",
     "lint": "eslint src --ext .ts --fix",
     "format": "prettier --write \"+(packages|scripts)/**/*.ts\"",
-    "test": "mocha --require ts-node/register test/*.ts test/**/*.ts",
+    "test": "mocha --require ts-node/register --require tsconfig-paths/register packages/**/*.spec.ts --colors",
     "report-coverage": "codecov",
     "generate": "cross-env NODE_ICU_DATA=node_modules/full-icu ts-node -r tsconfig-paths/register ./scripts/index.ts",
     "snyk-protect": "snyk protect",
-    "prepare": "npm run snyk-protect"
+    "prepare": "npm run snyk-protect",
+    "lint-staged": "lint-staged"
   },
   "engines": {
     "node": ">=8.9.0"
@@ -71,8 +73,7 @@
     "axios": "^0.19.2",
     "crypto-js": "^4.0.0",
     "debug": "^4.2.0",
-    "lodash": "^4.17.15",
-    "snyk": "^1.323.1"
+    "lodash": "^4.17.15"
   },
   "husky": {
     "hooks": {

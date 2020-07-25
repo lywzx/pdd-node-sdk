@@ -177,6 +177,7 @@ const typeMap = {
   INTEGER: 'number',
   MAP: 'object',
   DOUBLE: 'string',
+  FILE: 'Buffer',
 };
 function pddTypeToTypescriptType(type: string) {
   if (type in typeMap) {

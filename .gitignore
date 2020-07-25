@@ -3,3 +3,4 @@ dist/
 apidocs/
 /scripts/.tmp
 node_modules
+lib/

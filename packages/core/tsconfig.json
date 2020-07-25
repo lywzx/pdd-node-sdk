@@ -10,9 +10,6 @@
     "sourceMap": true,
     "lib": ["es6"]
   },
-  "include": ["packages", "examples", "scripts"],
-  "exclude": [
-    "node_modules",
-    "**/*.spec.ts"
-  ]
+  "include": ["src"],
+  "exclude": ["node_modules"]
 }

@@ -1,12 +1,12 @@
-import { PddClientOptionsInterface } from '../interfaces/pdd-client-options.interface';
 import {
   PddCollectRequestInterface,
   PddCollectShortResponseInterface,
   PddCommonRequestInterface,
   PddResponseTypeAndRequestTypeMapping,
-} from '../pddApi';
+} from '@pin-duo-duo/pdd-origin-api';
+import { PddClientOptionsInterface } from '../interfaces';
 import { md5, timestamp, promseToCallback, defer, checkRequired } from '../util';
-import { AsyncResultCallbackInterface } from '../interfaces/async-result-callback.interface';
+import { AsyncResultCallbackInterface } from '../interfaces';
 import { NetworkAdapter, NetworkAdapterInterface } from './network-adapter';
 import { PDD_END_POINTS, PDD_OAUTH_TEMPLATE, OAuthType, PDD_OAUTH_TOKEN_URL } from '../constant';
 import { extend, castArray, omit } from 'lodash';
@@ -18,14 +18,14 @@ import {
   PddAccessTokenResponseInterface,
 } from '../interfaces';
 import { retry } from 'async';
-import { RetryOptionsInterface } from '../interfaces/retry-options.interface';
+import { RetryOptionsInterface } from '../interfaces';
 import { defaultRetryOptions } from './pdd-client-default';
-import { isString, isObject } from 'util';
+import { isString, isObject } from 'lodash';
 import { APPLICATION_JSON } from '../constant/content-type';
 import { pddLog, getPddLogClient } from '../util/debug';
-import { PddException } from '../exceptions/pdd-exception';
+import { PddException } from '../exceptions';
 
-const defaultRequestParam = {
+const defaultRequestParam: Pick<PddCommonRequestInterface, 'data_type' | 'version'> = {
   // eslint-disable-next-line @typescript-eslint/camelcase
   data_type: 'JSON',
   version: 'V1',
@@ -113,7 +113,7 @@ export class PddClient {
 
     defaultArgs.sign = this.sign((defaultArgs as any) as { [s: string]: string | number });
 
-    pddLog(`start run pdd client request, type: %s, params: %o`, params.type, params);
+    pddLog('start run pdd client request, type: %s, params: %o', params.type, params);
     let requestPromise = this.adapter.post(this.options.endpoint, defaultArgs, axiosOptions || {});
 
     // debug
