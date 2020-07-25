@@ -5,7 +5,7 @@
   "author": "lywzx <liuyang@lyblog.net>",
   "homepage": "https://github.com/lywzx/pdd-node-sdk/tree/master/packages/pdd-origin-api#readme",
   "license": "MIT",
-  "main": "src/index.ts",
+  "main": "lib/index.js",
   "directories": {
     "lib": "lib",
     "test": "test"

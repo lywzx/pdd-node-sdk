@@ -14,7 +14,7 @@
   "author": "lywzx <liuyang@lyblog.net>",
   "homepage": "https://github.com/lywzx/pdd-node-sdk/tree/master/packages/core#readme",
   "license": "MIT",
-  "main": "src/index.ts",
+  "main": "lib/index.js",
   "directories": {
     "lib": "lib",
     "test": "test"
@@ -36,6 +36,10 @@
     "url": "https://github.com/lywzx/pdd-node-sdk/issues"
   },
   "dependencies": {
-    "@pin-duo-duo/pdd-origin-api": "^0.0.0"
+    "@pin-duo-duo/pdd-origin-api": "^0.0.0",
+    "lodash": "^4.17.19"
+  },
+  "devDependencies": {
+    "@types/lodash": "^4.14.158"
   }
 }

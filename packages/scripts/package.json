@@ -21,9 +21,16 @@
     "url": "git+https://github.com/lywzx/pdd-node-sdk.git"
   },
   "scripts": {
+    "start": "",
     "test": "echo \"Error: run tests from root\" && exit 1"
   },
   "bugs": {
     "url": "https://github.com/lywzx/pdd-node-sdk/issues"
+  },
+  "dependencies": {
+    "lodash": "^4.17.19"
+  },
+  "devDependencies": {
+    "@types/lodash": "^4.14.158"
   }
 }
