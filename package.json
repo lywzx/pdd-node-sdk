@@ -15,7 +15,7 @@
     "format": "prettier --write \"+(packages|scripts)/**/*.ts\"",
     "test": "mocha --require ts-node/register --require tsconfig-paths/register packages/**/*.spec.ts --colors",
     "report-coverage": "codecov",
-    "generate": "cross-env NODE_ICU_DATA=node_modules/full-icu ts-node -r tsconfig-paths/register ./scripts/index.ts",
+    "generate": "cross-env NODE_ICU_DATA=node_modules/full-icu ts-node -r tsconfig-paths/register packages/scripts/src/index.ts",
     "snyk-protect": "snyk protect",
     "prepare": "npm run snyk-protect",
     "lint-staged": "lint-staged"
