@@ -2,6 +2,7 @@ language: node_js
 
 node_js:
   - 'node'
+  - '13
   - '12'
   - '11'
   - '10'
@@ -9,9 +10,10 @@ node_js:
   - '8'
 
 install:
-  - npm install
+  - lerna bootstrap
 
 script:
+  - npm install snyk
   - npm install codecov -g
   - npm test
   - codecov -f coverage/*.json
