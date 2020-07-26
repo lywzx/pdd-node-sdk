@@ -17,8 +17,8 @@ node_js:
 install:
   - npm install lerna -g
   - lerna bootstrap --hoist=false
-  - npm run build
+  - npm install snyk
 
 script:
-  - npm install snyk
+  - npm run build
   - npm run coverage:report
