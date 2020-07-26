@@ -5,7 +5,7 @@ import {
   PddResponseTypeAndRequestTypeMapping,
 } from '@pin-duo-duo/pdd-origin-api';
 import { PddClientOptionsInterface } from '../interfaces';
-import { md5, timestamp, promseToCallback, defer, checkRequired } from '../util';
+import { md5, timestamp, promiseToCallback, defer, checkRequired } from '../util';
 import { AsyncResultCallbackInterface } from '../interfaces';
 import { NetworkAdapter, NetworkAdapterInterface } from './network-adapter';
 import { PDD_END_POINTS, PDD_OAUTH_TEMPLATE, OAuthType, PDD_OAUTH_TOKEN_URL } from '../constant';
@@ -97,7 +97,7 @@ export class PddClient {
     if (err) {
       retDefer.reject(err);
 
-      return promseToCallback<R>(retDefer.promise, callback as any);
+      return promiseToCallback<R>(retDefer.promise, callback as any);
     }
 
     for (const k in newParams) {
@@ -139,7 +139,7 @@ export class PddClient {
 
     retDefer.resolve(requestPromise);
 
-    return promseToCallback<R>(retDefer.promise, callback as any);
+    return promiseToCallback<R>(retDefer.promise, callback as any);
   }
 
   /**
@@ -229,10 +229,10 @@ export class PddClient {
         );
       }
 
-      return promseToCallback<R>(result, clbk as any);
+      return promiseToCallback<R>(result, clbk as any);
     }) as any) as Promise<R>;
 
-    return promseToCallback<R>(retryResult, callback as any);
+    return promiseToCallback<R>(retryResult, callback as any);
   }
 
   /**
@@ -297,7 +297,7 @@ export class PddClient {
       return response;
     });
 
-    return promseToCallback(result, callback as any);
+    return promiseToCallback(result, callback as any);
   }
 
   /**
@@ -385,7 +385,7 @@ export class PddClient {
         'Content-Type': APPLICATION_JSON,
       },
     });
-    return promseToCallback(resPromise, callback as any);
+    return promiseToCallback(resPromise, callback as any);
     /* eslint-enable @typescript-eslint/camelcase */
   }
 
