@@ -16,7 +16,7 @@ node_js:
 
 install:
   - npm install lerna -g
-  - lerna bootstrap
+  - lerna bootstrap --hoist=false
   - npm run build
 
 script:
