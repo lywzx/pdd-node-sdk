@@ -15,8 +15,6 @@
     "coverage": "nyc npm run test",
     "coverage:report": "nyc npm run test --reporter=lcov --reporter=text-summary",
     "generate-code": "cross-env NODE_ICU_DATA=node_modules/full-icu ts-node -r tsconfig-paths/register packages/scripts/src/index.ts",
-    "snyk-protect": "snyk protect",
-    "prepare": "npm run snyk-protect",
     "lint-staged": "lint-staged"
   },
   "engines": {

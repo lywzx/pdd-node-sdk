@@ -18,7 +18,7 @@ install:
   - npm install lerna -g
   - npm install codecov -g
   - lerna bootstrap --hoist=false
-  - npm install snyk
+  - npm install snyk -g
 
 script:
   - npm run build
