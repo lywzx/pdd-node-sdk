@@ -29,7 +29,8 @@
   },
   "dependencies": {
     "lodash": "^4.17.19",
-    "async": "^3.2.0"
+    "async": "^3.2.0",
+    "axios": "^0.19.2"
   },
   "devDependencies": {
     "@types/lodash": "^4.14.158",
