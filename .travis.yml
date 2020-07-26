@@ -17,4 +17,4 @@ script:
   - npm install snyk
   - npm install nyc -g
   - npm test
-  - npm run coverage
+  - npm run coverage:report
