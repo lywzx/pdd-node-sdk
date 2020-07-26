@@ -1,5 +1,12 @@
 export const PDD_DDK_GOODS_RECOMMEND_GET = 'pdd.ddk.goods.recommend.get';
 export const PDD_DDK_GOODS_RECOMMEND_GET_RESPONSE_KEY = 'goods_basic_detail_response';
+export const PDD_DDK_GOODS_RECOMMEND_GET_LIMITERS = [
+  {
+    limiterLevel: 3,
+    timeRange: 3600,
+    times: 3000000,
+  },
+];
 
 /**
  * 接口名称：多多进宝商品推荐API

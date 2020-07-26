@@ -1,5 +1,12 @@
 export const PDD_LOGISTICS_TICKET_PROBLEM_TYPE_GET = 'pdd.logistics.ticket.problem.type.get';
 export const PDD_LOGISTICS_TICKET_PROBLEM_TYPE_GET_RESPONSE_KEY = 'logistics_problem_type_get_response';
+export const PDD_LOGISTICS_TICKET_PROBLEM_TYPE_GET_LIMITERS = [
+  {
+    limiterLevel: 3,
+    timeRange: 60,
+    times: 10000,
+  },
+];
 
 /**
  * 接口名称：快递公司工单问题类型列表接口

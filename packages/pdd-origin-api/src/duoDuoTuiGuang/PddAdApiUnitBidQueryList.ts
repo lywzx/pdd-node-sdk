@@ -1,5 +1,13 @@
 export const PDD_AD_API_UNIT_BID_QUERY_LIST = 'pdd.ad.api.unit.bid.query.list';
 
+export const PDD_AD_API_UNIT_BID_QUERY_LIST_LIMITERS = [
+  {
+    limiterLevel: 1,
+    timeRange: 10,
+    times: 20,
+  },
+];
+
 /**
  * 接口名称：查询定向/资源位列表
  * 接口标识：pdd.ad.api.unit.bid.query.list

@@ -14,16 +14,13 @@ export interface ApiDetailInterface {
   requestCodeExample: string | null;
   responseCodeExample: string;
   feeType: string;
-
   requestParamList: ApiDetailRequestParamInterface[];
-
   responseParamList: ApiDetailResponseParamInterface[];
-
   errorParamList: ApiDetailErrorParamInterface[];
-
   permissionsPkgs: ApiDetailPermissionInterface[];
-
   sdkDemos: ApiDetailSdkDemoInterface[];
+  apiAccessSourceLimitType: number;
+  limiters: any[];
 }
 
 export interface ApiDetailRequestParamInterface {

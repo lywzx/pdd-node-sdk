@@ -1,5 +1,13 @@
 export const PDD_AD_API_PLAN_QUERY_CAN_CREATE_AD_PLAN = 'pdd.ad.api.plan.query.can.create.ad.plan';
 
+export const PDD_AD_API_PLAN_QUERY_CAN_CREATE_AD_PLAN_LIMITERS = [
+  {
+    limiterLevel: 1,
+    timeRange: 10,
+    times: 20,
+  },
+];
+
 /**
  * 接口名称：校验是否能创建计划
  * 接口标识：pdd.ad.api.plan.query.can.create.ad.plan

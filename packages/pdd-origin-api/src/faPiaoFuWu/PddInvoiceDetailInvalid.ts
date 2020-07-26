@@ -1,5 +1,17 @@
 export const PDD_INVOICE_DETAIL_INVALID = 'pdd.invoice.detail.invalid';
 export const PDD_INVOICE_DETAIL_INVALID_RESPONSE_KEY = 'invoice_detail_invalid_response';
+export const PDD_INVOICE_DETAIL_INVALID_LIMITERS = [
+  {
+    limiterLevel: 3,
+    timeRange: 5,
+    times: 10000,
+  },
+  {
+    limiterLevel: 1,
+    timeRange: 5,
+    times: 1000,
+  },
+];
 
 /**
  * 接口名称：订单发票冲红

@@ -1,5 +1,12 @@
 export const PDD_PROMOTION_GOODS_COUPON_LIST_GET = 'pdd.promotion.goods.coupon.list.get';
 export const PDD_PROMOTION_GOODS_COUPON_LIST_GET_RESPONSE_KEY = 'goods_coupon_batch_list_response';
+export const PDD_PROMOTION_GOODS_COUPON_LIST_GET_LIMITERS = [
+  {
+    limiterLevel: 1,
+    timeRange: 60,
+    times: 2500,
+  },
+];
 
 /**
  * 接口名称：商品优惠券批次列表查询

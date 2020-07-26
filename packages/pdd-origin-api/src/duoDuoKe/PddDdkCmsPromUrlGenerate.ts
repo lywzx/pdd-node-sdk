@@ -1,5 +1,12 @@
 export const PDD_DDK_CMS_PROM_URL_GENERATE = 'pdd.ddk.cms.prom.url.generate';
 export const PDD_DDK_CMS_PROM_URL_GENERATE_RESPONSE_KEY = 'cms_promotion_url_generate_response';
+export const PDD_DDK_CMS_PROM_URL_GENERATE_LIMITERS = [
+  {
+    limiterLevel: 3,
+    timeRange: 10,
+    times: 8375,
+  },
+];
 
 /**
  * 接口名称：生成商城-频道推广链接

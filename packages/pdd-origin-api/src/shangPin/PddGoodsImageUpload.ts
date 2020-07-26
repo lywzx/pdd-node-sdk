@@ -1,5 +1,22 @@
 export const PDD_GOODS_IMAGE_UPLOAD = 'pdd.goods.image.upload';
 export const PDD_GOODS_IMAGE_UPLOAD_RESPONSE_KEY = 'goods_image_upload_response';
+export const PDD_GOODS_IMAGE_UPLOAD_LIMITERS = [
+  {
+    limiterLevel: 1,
+    timeRange: 60,
+    times: 3000,
+  },
+  {
+    limiterLevel: 3,
+    timeRange: 10,
+    times: 125000,
+  },
+  {
+    limiterLevel: 4,
+    timeRange: 10,
+    times: 5000,
+  },
+];
 
 /**
  * 接口名称：商品图片上传接口

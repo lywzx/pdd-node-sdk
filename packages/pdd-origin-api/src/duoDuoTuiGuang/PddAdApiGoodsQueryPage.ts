@@ -1,5 +1,13 @@
 export const PDD_AD_API_GOODS_QUERY_PAGE = 'pdd.ad.api.goods.query.page';
 
+export const PDD_AD_API_GOODS_QUERY_PAGE_LIMITERS = [
+  {
+    limiterLevel: 1,
+    timeRange: 10,
+    times: 20,
+  },
+];
+
 /**
  * 接口名称：查询可用商品列表（分页）
  * 接口标识：pdd.ad.api.goods.query.page

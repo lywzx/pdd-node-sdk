@@ -1,5 +1,13 @@
 export const PDD_AD_API_PLAN_UPDATE_PLAN_NAME = 'pdd.ad.api.plan.update.plan.name';
 
+export const PDD_AD_API_PLAN_UPDATE_PLAN_NAME_LIMITERS = [
+  {
+    limiterLevel: 1,
+    timeRange: 10,
+    times: 20,
+  },
+];
+
 /**
  * 接口名称：更新计划名称
  * 接口标识：pdd.ad.api.plan.update.plan.name

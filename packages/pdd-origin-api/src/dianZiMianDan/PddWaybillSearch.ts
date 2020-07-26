@@ -1,5 +1,12 @@
 export const PDD_WAYBILL_SEARCH = 'pdd.waybill.search';
 export const PDD_WAYBILL_SEARCH_RESPONSE_KEY = 'pdd_waybill_search_response';
+export const PDD_WAYBILL_SEARCH_LIMITERS = [
+  {
+    limiterLevel: 3,
+    timeRange: 1,
+    times: 5000,
+  },
+];
 
 /**
  * 接口名称：查询面单服务订购及面单使用情况

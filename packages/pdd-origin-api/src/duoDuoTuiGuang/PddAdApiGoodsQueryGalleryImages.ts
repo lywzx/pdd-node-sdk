@@ -1,5 +1,13 @@
 export const PDD_AD_API_GOODS_QUERY_GALLERY_IMAGES = 'pdd.ad.api.goods.query.gallery.images';
 
+export const PDD_AD_API_GOODS_QUERY_GALLERY_IMAGES_LIMITERS = [
+  {
+    limiterLevel: 1,
+    timeRange: 10,
+    times: 20,
+  },
+];
+
 /**
  * 接口名称：查询商品轮播图
  * 接口标识：pdd.ad.api.goods.query.gallery.images

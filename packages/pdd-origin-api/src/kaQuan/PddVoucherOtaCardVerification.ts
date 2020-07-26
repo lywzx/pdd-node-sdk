@@ -1,5 +1,12 @@
 export const PDD_VOUCHER_OTA_CARD_VERIFICATION = 'pdd.voucher.ota.card.verification';
 export const PDD_VOUCHER_OTA_CARD_VERIFICATION_RESPONSE_KEY = 'voucher_ota_card_verification_response';
+export const PDD_VOUCHER_OTA_CARD_VERIFICATION_LIMITERS = [
+  {
+    limiterLevel: 3,
+    timeRange: 3600,
+    times: 10000,
+  },
+];
 
 /**
  * 接口名称：卡券（电子）核销接口（平台生成卡密）

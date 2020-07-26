@@ -1,5 +1,17 @@
 export const PDD_INVOICE_APPLICATION_QUERY = 'pdd.invoice.application.query';
 export const PDD_INVOICE_APPLICATION_QUERY_RESPONSE_KEY = 'invoice_application_query_response';
+export const PDD_INVOICE_APPLICATION_QUERY_LIMITERS = [
+  {
+    limiterLevel: 3,
+    timeRange: 5,
+    times: 10000,
+  },
+  {
+    limiterLevel: 1,
+    timeRange: 60,
+    times: 3000,
+  },
+];
 
 /**
  * 接口名称：开票申请单查询

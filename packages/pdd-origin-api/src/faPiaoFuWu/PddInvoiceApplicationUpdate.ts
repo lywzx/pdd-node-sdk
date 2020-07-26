@@ -1,5 +1,12 @@
 export const PDD_INVOICE_APPLICATION_UPDATE = 'pdd.invoice.application.update';
 export const PDD_INVOICE_APPLICATION_UPDATE_RESPONSE_KEY = 'invoice_application_update_response';
+export const PDD_INVOICE_APPLICATION_UPDATE_LIMITERS = [
+  {
+    limiterLevel: 3,
+    timeRange: 5,
+    times: 1,
+  },
+];
 
 /**
  * 接口名称：开票申请单审核

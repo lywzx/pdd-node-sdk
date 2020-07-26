@@ -1,5 +1,12 @@
 export const PDD_DDK_FINANCE_CPA_QUERY = 'pdd.ddk.finance.cpa.query';
 export const PDD_DDK_FINANCE_CPA_QUERY_RESPONSE_KEY = 'finance_cpa_query_response';
+export const PDD_DDK_FINANCE_CPA_QUERY_LIMITERS = [
+  {
+    limiterLevel: 3,
+    timeRange: 3600,
+    times: 3000000,
+  },
+];
 
 /**
  * 接口名称：查询CPA数据

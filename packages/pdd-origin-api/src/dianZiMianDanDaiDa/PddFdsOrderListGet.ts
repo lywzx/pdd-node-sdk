@@ -1,5 +1,17 @@
 export const PDD_FDS_ORDER_LIST_GET = 'pdd.fds.order.list.get';
 export const PDD_FDS_ORDER_LIST_GET_RESPONSE_KEY = 'pdd_fds_order_list_get_response';
+export const PDD_FDS_ORDER_LIST_GET_LIMITERS = [
+  {
+    limiterLevel: 1,
+    timeRange: 1,
+    times: 100,
+  },
+  {
+    limiterLevel: 3,
+    timeRange: 2,
+    times: 1000,
+  },
+];
 
 /**
  * 接口名称：根据更新时间查询订单列表

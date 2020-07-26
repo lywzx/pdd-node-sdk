@@ -1,5 +1,12 @@
 export const PDD_GOODS_QUANTITY_UPDATE = 'pdd.goods.quantity.update';
 export const PDD_GOODS_QUANTITY_UPDATE_RESPONSE_KEY = 'goods_quantity_update_response';
+export const PDD_GOODS_QUANTITY_UPDATE_LIMITERS = [
+  {
+    limiterLevel: 3,
+    timeRange: 10,
+    times: 25000,
+  },
+];
 
 /**
  * 接口名称：商品库存更新接口

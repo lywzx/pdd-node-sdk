@@ -1,5 +1,13 @@
 export const PDD_REFUND_INFORMATION_GET = 'pdd.refund.information.get';
 
+export const PDD_REFUND_INFORMATION_GET_LIMITERS = [
+  {
+    limiterLevel: 3,
+    timeRange: 1,
+    times: 1400,
+  },
+];
+
 /**
  * 接口名称：售后单详情接口
  * 接口标识：pdd.refund.information.get

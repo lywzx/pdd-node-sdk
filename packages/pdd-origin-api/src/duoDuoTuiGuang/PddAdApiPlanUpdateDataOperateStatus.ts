@@ -1,5 +1,13 @@
 export const PDD_AD_API_PLAN_UPDATE_DATA_OPERATE_STATUS = 'pdd.ad.api.plan.update.data.operate.status';
 
+export const PDD_AD_API_PLAN_UPDATE_DATA_OPERATE_STATUS_LIMITERS = [
+  {
+    limiterLevel: 1,
+    timeRange: 10,
+    times: 20,
+  },
+];
+
 /**
  * 接口名称：启动或暂停计划
  * 接口标识：pdd.ad.api.plan.update.data.operate.status

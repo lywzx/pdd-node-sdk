@@ -1,5 +1,17 @@
 export const PDD_GOODS_INFORMATION_UPDATE = 'pdd.goods.information.update';
 export const PDD_GOODS_INFORMATION_UPDATE_RESPONSE_KEY = 'goods_update_response';
+export const PDD_GOODS_INFORMATION_UPDATE_LIMITERS = [
+  {
+    limiterLevel: 1,
+    timeRange: 60,
+    times: 2500,
+  },
+  {
+    limiterLevel: 3,
+    timeRange: 5,
+    times: 3000,
+  },
+];
 
 /**
  * 接口名称：商品编辑

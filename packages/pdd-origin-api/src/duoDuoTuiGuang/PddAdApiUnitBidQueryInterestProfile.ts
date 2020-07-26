@@ -1,5 +1,13 @@
 export const PDD_AD_API_UNIT_BID_QUERY_INTEREST_PROFILE = 'pdd.ad.api.unit.bid.query.interest.profile';
 
+export const PDD_AD_API_UNIT_BID_QUERY_INTEREST_PROFILE_LIMITERS = [
+  {
+    limiterLevel: 1,
+    timeRange: 10,
+    times: 20,
+  },
+];
+
 /**
  * 接口名称：获取可用兴趣点定向
  * 接口标识：pdd.ad.api.unit.bid.query.interest.profile

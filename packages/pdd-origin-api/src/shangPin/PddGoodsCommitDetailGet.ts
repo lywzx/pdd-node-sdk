@@ -1,5 +1,12 @@
 export const PDD_GOODS_COMMIT_DETAIL_GET = 'pdd.goods.commit.detail.get';
 export const PDD_GOODS_COMMIT_DETAIL_GET_RESPONSE_KEY = 'goods_commit_detail_response';
+export const PDD_GOODS_COMMIT_DETAIL_GET_LIMITERS = [
+  {
+    limiterLevel: 1,
+    timeRange: 60,
+    times: 2500,
+  },
+];
 
 /**
  * 接口名称：获取商品提交的商品详情

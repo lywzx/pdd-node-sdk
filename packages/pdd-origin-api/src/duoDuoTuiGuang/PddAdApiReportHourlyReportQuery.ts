@@ -1,5 +1,18 @@
 export const PDD_AD_API_REPORT_HOURLY_REPORT_QUERY = 'pdd.ad.api.report.hourly.report.query';
 
+export const PDD_AD_API_REPORT_HOURLY_REPORT_QUERY_LIMITERS = [
+  {
+    limiterLevel: 1,
+    timeRange: 10,
+    times: 20,
+  },
+  {
+    limiterLevel: 4,
+    timeRange: 1,
+    times: 50,
+  },
+];
+
 /**
  * 接口名称：报表小时数据查询接口
  * 接口标识：pdd.ad.api.report.hourly.report.query

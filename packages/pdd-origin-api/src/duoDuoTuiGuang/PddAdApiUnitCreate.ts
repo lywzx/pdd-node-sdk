@@ -1,5 +1,13 @@
 export const PDD_AD_API_UNIT_CREATE = 'pdd.ad.api.unit.create';
 
+export const PDD_AD_API_UNIT_CREATE_LIMITERS = [
+  {
+    limiterLevel: 1,
+    timeRange: 10,
+    times: 5,
+  },
+];
+
 /**
  * 接口名称：创建单元
  * 接口标识：pdd.ad.api.unit.create

@@ -1,5 +1,13 @@
 export const PDD_AD_API_PLAN_CREATE = 'pdd.ad.api.plan.create';
 
+export const PDD_AD_API_PLAN_CREATE_LIMITERS = [
+  {
+    limiterLevel: 1,
+    timeRange: 10,
+    times: 5,
+  },
+];
+
 /**
  * 接口名称：创建计划
  * 接口标识：pdd.ad.api.plan.create

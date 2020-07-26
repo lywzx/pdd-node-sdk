@@ -1,5 +1,13 @@
 export const PDD_AD_API_ADVERTISER_QUERY_ACCOUNT_INFO = 'pdd.ad.api.advertiser.query.account.info';
 
+export const PDD_AD_API_ADVERTISER_QUERY_ACCOUNT_INFO_LIMITERS = [
+  {
+    limiterLevel: 1,
+    timeRange: 10,
+    times: 20,
+  },
+];
+
 /**
  * 接口名称：查询广告开户信息
  * 接口标识：pdd.ad.api.advertiser.query.account.info

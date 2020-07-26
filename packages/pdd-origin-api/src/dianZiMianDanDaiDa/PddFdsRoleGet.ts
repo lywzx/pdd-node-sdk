@@ -1,5 +1,12 @@
 export const PDD_FDS_ROLE_GET = 'pdd.fds.role.get';
 export const PDD_FDS_ROLE_GET_RESPONSE_KEY = 'pdd_fds_role_get_response';
+export const PDD_FDS_ROLE_GET_LIMITERS = [
+  {
+    limiterLevel: 1,
+    timeRange: 1,
+    times: 1,
+  },
+];
 
 /**
  * 接口名称：查询店铺身份

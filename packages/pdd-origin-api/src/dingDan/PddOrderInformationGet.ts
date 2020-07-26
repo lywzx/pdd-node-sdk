@@ -1,5 +1,17 @@
 export const PDD_ORDER_INFORMATION_GET = 'pdd.order.information.get';
 export const PDD_ORDER_INFORMATION_GET_RESPONSE_KEY = 'order_info_get_response';
+export const PDD_ORDER_INFORMATION_GET_LIMITERS = [
+  {
+    limiterLevel: 1,
+    timeRange: 60,
+    times: 25000,
+  },
+  {
+    limiterLevel: 3,
+    timeRange: 1,
+    times: 2000,
+  },
+];
 
 /**
  * 接口名称：订单详情

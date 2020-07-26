@@ -1,3 +1,4 @@
+import { SOURCE_ROOT_DIR } from './constant';
 import { getAllApiCategory, getAllApiListByCategoryId, getApiDetailByApiId } from './model';
 import { CategoryListItemInterface } from './interface/category-list-item.interface';
 import { eachLimit } from 'async';
@@ -13,6 +14,7 @@ import {
 import { join } from 'path';
 import { ApiListItemInterface } from './interface/api-list.interface';
 import { generateCode, generatorIndexCode } from './util/generate-code';
+import { generateLimiterName } from './util/key-name';
 import {
   apiIsResolved,
   directoryIsResolved,
@@ -22,8 +24,6 @@ import {
   resolvedFile,
 } from './util/running-status';
 import { ApiDetailInterface } from './interface/api-detail.interface';
-
-const rootDir = 'packages/pdd-origin-api/src';
 
 export async function init() {
   const lastRunState = await getLastRunState();
@@ -68,6 +68,8 @@ async function resolveCategory(category: CategoryListItemInterface) {
       const secondResponseInterface = originResponseKey
         ? createResponseClassName(`${responseInterface.replace('ResponseInterface', '')}_${originResponseKey}`)
         : undefined;
+      const apiLimiters =
+        apiInfo.limiters && apiInfo.limiters.length ? `${generateLimiterName(constVariable)}` : undefined;
 
       resolvedFile(
         {
@@ -81,8 +83,9 @@ async function resolveCategory(category: CategoryListItemInterface) {
           constVariable,
           requestInterface: createRequestClassName(api.scopeName),
           responseInterface,
-          secoundResponseInterface: secondResponseInterface,
+          secondResponseInterface: secondResponseInterface,
           responseKey,
+          apiLimiters,
         }
       );
       callback();
@@ -99,7 +102,7 @@ async function generatorApiFile(api: ApiListItemInterface, catName: string): Pro
 
   const code = generateCode(api.scopeName, apiInfo);
 
-  const fileName = join(rootDir, `${nameToDirectoryName(catName)}/${createClassName(api.scopeName)}.ts`);
+  const fileName = join(SOURCE_ROOT_DIR, `${nameToDirectoryName(catName)}/${createClassName(api.scopeName)}.ts`);
   await saveCode(fileName, code);
 
   return apiInfo;

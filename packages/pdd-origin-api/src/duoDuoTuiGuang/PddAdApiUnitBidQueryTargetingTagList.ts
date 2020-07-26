@@ -1,5 +1,13 @@
 export const PDD_AD_API_UNIT_BID_QUERY_TARGETING_TAG_LIST = 'pdd.ad.api.unit.bid.query.targeting.tag.list';
 
+export const PDD_AD_API_UNIT_BID_QUERY_TARGETING_TAG_LIST_LIMITERS = [
+  {
+    limiterLevel: 1,
+    timeRange: 10,
+    times: 20,
+  },
+];
+
 /**
  * 接口名称：获取定向标签数据
  * 接口标识：pdd.ad.api.unit.bid.query.targeting.tag.list

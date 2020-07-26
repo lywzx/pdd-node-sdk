@@ -1,5 +1,13 @@
 export const PDD_AD_API_KEYWORD_CREATE = 'pdd.ad.api.keyword.create';
 
+export const PDD_AD_API_KEYWORD_CREATE_LIMITERS = [
+  {
+    limiterLevel: 1,
+    timeRange: 10,
+    times: 20,
+  },
+];
+
 /**
  * 接口名称：批量创建关键词
  * 接口标识：pdd.ad.api.keyword.create

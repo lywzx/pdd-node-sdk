@@ -1,5 +1,13 @@
 export const PDD_AD_API_UNIT_UPDATE_UNIT_BID = 'pdd.ad.api.unit.update.unit.bid';
 
+export const PDD_AD_API_UNIT_UPDATE_UNIT_BID_LIMITERS = [
+  {
+    limiterLevel: 1,
+    timeRange: 10,
+    times: 20,
+  },
+];
+
 /**
  * 接口名称：更新单元出价
  * 接口标识：pdd.ad.api.unit.update.unit.bid

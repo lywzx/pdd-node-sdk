@@ -1,5 +1,17 @@
 export const PDD_FDS_ORDER_GET = 'pdd.fds.order.get';
 export const PDD_FDS_ORDER_GET_RESPONSE_KEY = 'pdd_fds_order_get_response';
+export const PDD_FDS_ORDER_GET_LIMITERS = [
+  {
+    limiterLevel: 1,
+    timeRange: 1,
+    times: 100,
+  },
+  {
+    limiterLevel: 3,
+    timeRange: 1,
+    times: 2000,
+  },
+];
 
 /**
  * 接口名称：订单详情

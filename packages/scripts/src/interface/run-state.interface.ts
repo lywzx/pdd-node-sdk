@@ -19,7 +19,7 @@ export interface RunStateFileInterface {
   // 文件名
   name: string;
 
-  // 是否免费
+  // 是否需要认证
   needAuth: boolean;
 
   // 常量名称
@@ -32,8 +32,11 @@ export interface RunStateFileInterface {
   responseInterface: string;
 
   // 次级响应的responseInterface
-  secoundResponseInterface?: string;
+  secondResponseInterface?: string;
 
   // 简化response时，需要用到的参数
   responseKey?: string;
+
+  // 当前接口的限流信息
+  apiLimiters?: string;
 }

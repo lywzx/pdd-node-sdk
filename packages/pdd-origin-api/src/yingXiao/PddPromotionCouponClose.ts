@@ -1,5 +1,12 @@
 export const PDD_PROMOTION_COUPON_CLOSE = 'pdd.promotion.coupon.close';
 export const PDD_PROMOTION_COUPON_CLOSE_RESPONSE_KEY = 'promotion_coupon_batch_close_response';
+export const PDD_PROMOTION_COUPON_CLOSE_LIMITERS = [
+  {
+    limiterLevel: 1,
+    timeRange: 60,
+    times: 2500,
+  },
+];
 
 /**
  * 接口名称：关闭批次接口

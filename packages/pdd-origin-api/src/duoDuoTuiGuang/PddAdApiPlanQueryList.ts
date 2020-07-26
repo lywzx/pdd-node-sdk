@@ -1,5 +1,13 @@
 export const PDD_AD_API_PLAN_QUERY_LIST = 'pdd.ad.api.plan.query.list';
 
+export const PDD_AD_API_PLAN_QUERY_LIST_LIMITERS = [
+  {
+    limiterLevel: 1,
+    timeRange: 10,
+    times: 20,
+  },
+];
+
 /**
  * 接口名称：查询计划列表页
  * 接口标识：pdd.ad.api.plan.query.list

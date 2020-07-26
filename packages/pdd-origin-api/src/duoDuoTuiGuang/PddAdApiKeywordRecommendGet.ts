@@ -1,5 +1,13 @@
 export const PDD_AD_API_KEYWORD_RECOMMEND_GET = 'pdd.ad.api.keyword.recommend.get';
 
+export const PDD_AD_API_KEYWORD_RECOMMEND_GET_LIMITERS = [
+  {
+    limiterLevel: 1,
+    timeRange: 10,
+    times: 20,
+  },
+];
+
 /**
  * 接口名称：获取推荐关键词
  * 接口标识：pdd.ad.api.keyword.recommend.get

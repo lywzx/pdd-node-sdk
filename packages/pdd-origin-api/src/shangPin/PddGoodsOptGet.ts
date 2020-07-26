@@ -1,5 +1,12 @@
 export const PDD_GOODS_OPT_GET = 'pdd.goods.opt.get';
 export const PDD_GOODS_OPT_GET_RESPONSE_KEY = 'goods_opt_get_response';
+export const PDD_GOODS_OPT_GET_LIMITERS = [
+  {
+    limiterLevel: 4,
+    timeRange: 10,
+    times: 1000,
+  },
+];
 
 /**
  * 接口名称：查询商品标签列表

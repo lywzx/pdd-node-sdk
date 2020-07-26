@@ -1,5 +1,13 @@
 export const PDD_LOGISTICS_ORDERTRACE_GET = 'pdd.logistics.ordertrace.get';
 
+export const PDD_LOGISTICS_ORDERTRACE_GET_LIMITERS = [
+  {
+    limiterLevel: 4,
+    timeRange: 20,
+    times: 4000,
+  },
+];
+
 /**
  * 接口名称：轨迹查询接口
  * 接口标识：pdd.logistics.ordertrace.get

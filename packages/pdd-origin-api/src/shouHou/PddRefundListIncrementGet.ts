@@ -1,5 +1,17 @@
 export const PDD_REFUND_LIST_INCREMENT_GET = 'pdd.refund.list.increment.get';
 export const PDD_REFUND_LIST_INCREMENT_GET_RESPONSE_KEY = 'refund_increment_get_response';
+export const PDD_REFUND_LIST_INCREMENT_GET_LIMITERS = [
+  {
+    limiterLevel: 1,
+    timeRange: 60,
+    times: 600,
+  },
+  {
+    limiterLevel: 3,
+    timeRange: 1,
+    times: 10000,
+  },
+];
 
 /**
  * 接口名称：售后列表接口

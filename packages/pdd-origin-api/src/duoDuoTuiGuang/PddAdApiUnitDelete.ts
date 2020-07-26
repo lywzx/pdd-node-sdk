@@ -1,5 +1,13 @@
 export const PDD_AD_API_UNIT_DELETE = 'pdd.ad.api.unit.delete';
 
+export const PDD_AD_API_UNIT_DELETE_LIMITERS = [
+  {
+    limiterLevel: 1,
+    timeRange: 20,
+    times: 5,
+  },
+];
+
 /**
  * 接口名称：删除单元
  * 接口标识：pdd.ad.api.unit.delete

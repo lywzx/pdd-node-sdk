@@ -1,5 +1,13 @@
 export const PDD_AD_API_UNIT_CREATIVE_DISTRIBUTE_FLOW_RATE = 'pdd.ad.api.unit.creative.distribute.flow.rate';
 
+export const PDD_AD_API_UNIT_CREATIVE_DISTRIBUTE_FLOW_RATE_LIMITERS = [
+  {
+    limiterLevel: 1,
+    timeRange: 10,
+    times: 20,
+  },
+];
+
 /**
  * 接口名称：智能创意流量比例分配
  * 接口标识：pdd.ad.api.unit.creative.distribute.flow.rate

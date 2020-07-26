@@ -1,5 +1,12 @@
 export const PDD_GOODS_LIST_GET = 'pdd.goods.list.get';
 export const PDD_GOODS_LIST_GET_RESPONSE_KEY = 'goods_list_get_response';
+export const PDD_GOODS_LIST_GET_LIMITERS = [
+  {
+    limiterLevel: 1,
+    timeRange: 60,
+    times: 500,
+  },
+];
 
 /**
  * 接口名称：商品列表接口

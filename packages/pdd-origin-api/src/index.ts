@@ -1,44 +1,3 @@
-// 订单API
-import {
-  PDD_ERP_ORDER_SYNC,
-  PddErpOrderSyncRequestInterface,
-  PddErpOrderSyncResponseInterface,
-} from './dingDan/PddErpOrderSync';
-import {
-  PDD_ORDER_BASIC_LIST_GET,
-  PDD_ORDER_BASIC_LIST_GET_RESPONSE_KEY,
-  PddOrderBasicListGetRequestInterface,
-  PddOrderBasicListGetResponseInterface,
-  PddOrderBasicListGetOrderBasicListGetResponseResponseInterface,
-} from './dingDan/PddOrderBasicListGet';
-import {
-  PDD_ORDER_INFORMATION_GET,
-  PDD_ORDER_INFORMATION_GET_RESPONSE_KEY,
-  PddOrderInformationGetRequestInterface,
-  PddOrderInformationGetResponseInterface,
-  PddOrderInformationGetOrderInfoGetResponseResponseInterface,
-} from './dingDan/PddOrderInformationGet';
-import {
-  PDD_ORDER_LIST_GET,
-  PDD_ORDER_LIST_GET_RESPONSE_KEY,
-  PddOrderListGetRequestInterface,
-  PddOrderListGetResponseInterface,
-  PddOrderListGetOrderListGetResponseResponseInterface,
-} from './dingDan/PddOrderListGet';
-import {
-  PDD_ORDER_NUMBER_LIST_INCREMENT_GET,
-  PDD_ORDER_NUMBER_LIST_INCREMENT_GET_RESPONSE_KEY,
-  PddOrderNumberListIncrementGetRequestInterface,
-  PddOrderNumberListIncrementGetResponseInterface,
-  PddOrderNumberListIncrementGetOrderSnIncrementGetResponseResponseInterface,
-} from './dingDan/PddOrderNumberListIncrementGet';
-import {
-  PDD_ORDER_STATUS_GET,
-  PDD_ORDER_STATUS_GET_RESPONSE_KEY,
-  PddOrderStatusGetRequestInterface,
-  PddOrderStatusGetResponseInterface,
-  PddOrderStatusGetOrderStatusGetResponseResponseInterface,
-} from './dingDan/PddOrderStatusGet';
 // 物流API
 import {
   PDD_LOGISTICS_ADDRESS_GET,
@@ -46,6 +5,7 @@ import {
   PddLogisticsAddressGetRequestInterface,
   PddLogisticsAddressGetResponseInterface,
   PddLogisticsAddressGetLogisticsAddressGetResponseResponseInterface,
+  PDD_LOGISTICS_ADDRESS_GET_LIMITERS,
 } from './wuLiu/PddLogisticsAddressGet';
 import {
   PDD_LOGISTICS_COMPANIES_GET,
@@ -53,11 +13,13 @@ import {
   PddLogisticsCompaniesGetRequestInterface,
   PddLogisticsCompaniesGetResponseInterface,
   PddLogisticsCompaniesGetLogisticsCompaniesGetResponseResponseInterface,
+  PDD_LOGISTICS_COMPANIES_GET_LIMITERS,
 } from './wuLiu/PddLogisticsCompaniesGet';
 import {
   PDD_LOGISTICS_ISV_TRACE_NOTIFY_SUB,
   PddLogisticsIsvTraceNotifySubRequestInterface,
   PddLogisticsIsvTraceNotifySubResponseInterface,
+  PDD_LOGISTICS_ISV_TRACE_NOTIFY_SUB_LIMITERS,
 } from './wuLiu/PddLogisticsIsvTraceNotifySub';
 import {
   PDD_LOGISTICS_ONLINE_CREATE,
@@ -72,6 +34,7 @@ import {
   PddLogisticsOnlineSendRequestInterface,
   PddLogisticsOnlineSendResponseInterface,
   PddLogisticsOnlineSendLogisticsOnlineSendResponseResponseInterface,
+  PDD_LOGISTICS_ONLINE_SEND_LIMITERS,
 } from './wuLiu/PddLogisticsOnlineSend';
 import {
   PDD_LOGISTICS_ONLINE_STATUS_QUERY,
@@ -84,7 +47,54 @@ import {
   PDD_LOGISTICS_ORDERTRACE_GET,
   PddLogisticsOrdertraceGetRequestInterface,
   PddLogisticsOrdertraceGetResponseInterface,
+  PDD_LOGISTICS_ORDERTRACE_GET_LIMITERS,
 } from './wuLiu/PddLogisticsOrdertraceGet';
+// 订单API
+import {
+  PDD_ERP_ORDER_SYNC,
+  PddErpOrderSyncRequestInterface,
+  PddErpOrderSyncResponseInterface,
+  PDD_ERP_ORDER_SYNC_LIMITERS,
+} from './dingDan/PddErpOrderSync';
+import {
+  PDD_ORDER_BASIC_LIST_GET,
+  PDD_ORDER_BASIC_LIST_GET_RESPONSE_KEY,
+  PddOrderBasicListGetRequestInterface,
+  PddOrderBasicListGetResponseInterface,
+  PddOrderBasicListGetOrderBasicListGetResponseResponseInterface,
+} from './dingDan/PddOrderBasicListGet';
+import {
+  PDD_ORDER_INFORMATION_GET,
+  PDD_ORDER_INFORMATION_GET_RESPONSE_KEY,
+  PddOrderInformationGetRequestInterface,
+  PddOrderInformationGetResponseInterface,
+  PddOrderInformationGetOrderInfoGetResponseResponseInterface,
+  PDD_ORDER_INFORMATION_GET_LIMITERS,
+} from './dingDan/PddOrderInformationGet';
+import {
+  PDD_ORDER_LIST_GET,
+  PDD_ORDER_LIST_GET_RESPONSE_KEY,
+  PddOrderListGetRequestInterface,
+  PddOrderListGetResponseInterface,
+  PddOrderListGetOrderListGetResponseResponseInterface,
+  PDD_ORDER_LIST_GET_LIMITERS,
+} from './dingDan/PddOrderListGet';
+import {
+  PDD_ORDER_NUMBER_LIST_INCREMENT_GET,
+  PDD_ORDER_NUMBER_LIST_INCREMENT_GET_RESPONSE_KEY,
+  PddOrderNumberListIncrementGetRequestInterface,
+  PddOrderNumberListIncrementGetResponseInterface,
+  PddOrderNumberListIncrementGetOrderSnIncrementGetResponseResponseInterface,
+  PDD_ORDER_NUMBER_LIST_INCREMENT_GET_LIMITERS,
+} from './dingDan/PddOrderNumberListIncrementGet';
+import {
+  PDD_ORDER_STATUS_GET,
+  PDD_ORDER_STATUS_GET_RESPONSE_KEY,
+  PddOrderStatusGetRequestInterface,
+  PddOrderStatusGetResponseInterface,
+  PddOrderStatusGetOrderStatusGetResponseResponseInterface,
+  PDD_ORDER_STATUS_GET_LIMITERS,
+} from './dingDan/PddOrderStatusGet';
 // 售后API
 import {
   PDD_NEXTONE_LOGISTICS_WAREHOUSE_UPDATE,
@@ -97,6 +107,7 @@ import {
   PddRdcPddgeniusSendgoodsCancelRequestInterface,
   PddRdcPddgeniusSendgoodsCancelResponseInterface,
   PddRdcPddgeniusSendgoodsCancelRdcPddgeniusSendgoodsCancelResponseResponseInterface,
+  PDD_RDC_PDDGENIUS_SENDGOODS_CANCEL_LIMITERS,
 } from './shouHou/PddRdcPddgeniusSendgoodsCancel';
 import {
   PDD_REFUND_ADDRESS_LIST_GET,
@@ -104,11 +115,13 @@ import {
   PddRefundAddressListGetRequestInterface,
   PddRefundAddressListGetResponseInterface,
   PddRefundAddressListGetRefundAddressListGetResponseResponseInterface,
+  PDD_REFUND_ADDRESS_LIST_GET_LIMITERS,
 } from './shouHou/PddRefundAddressListGet';
 import {
   PDD_REFUND_INFORMATION_GET,
   PddRefundInformationGetRequestInterface,
   PddRefundInformationGetResponseInterface,
+  PDD_REFUND_INFORMATION_GET_LIMITERS,
 } from './shouHou/PddRefundInformationGet';
 import {
   PDD_REFUND_LIST_INCREMENT_GET,
@@ -116,6 +129,7 @@ import {
   PddRefundListIncrementGetRequestInterface,
   PddRefundListIncrementGetResponseInterface,
   PddRefundListIncrementGetRefundIncrementGetResponseResponseInterface,
+  PDD_REFUND_LIST_INCREMENT_GET_LIMITERS,
 } from './shouHou/PddRefundListIncrementGet';
 import {
   PDD_REFUND_STATUS_CHECK,
@@ -123,6 +137,7 @@ import {
   PddRefundStatusCheckRequestInterface,
   PddRefundStatusCheckResponseInterface,
   PddRefundStatusCheckRefundStatusCheckResponseResponseInterface,
+  PDD_REFUND_STATUS_CHECK_LIMITERS,
 } from './shouHou/PddRefundStatusCheck';
 // 虚拟类目API
 import {
@@ -138,17 +153,20 @@ import {
   PddVirtualMobileChargeNotifyRequestInterface,
   PddVirtualMobileChargeNotifyResponseInterface,
   PddVirtualMobileChargeNotifyMobileChargeNotifyResponseResponseInterface,
+  PDD_VIRTUAL_MOBILE_CHARGE_NOTIFY_LIMITERS,
 } from './xuNiLeiMu/PddVirtualMobileChargeNotify';
 // 商品API
 import {
   PDD_DELETE_DRAFT_COMMIT,
   PddDeleteDraftCommitRequestInterface,
   PddDeleteDraftCommitResponseInterface,
+  PDD_DELETE_DRAFT_COMMIT_LIMITERS,
 } from './shangPin/PddDeleteDraftCommit';
 import {
   PDD_DELETE_GOODS_COMMIT,
   PddDeleteGoodsCommitRequestInterface,
   PddDeleteGoodsCommitResponseInterface,
+  PDD_DELETE_GOODS_COMMIT_LIMITERS,
 } from './shangPin/PddDeleteGoodsCommit';
 import {
   PDD_GOODS_ADD,
@@ -156,6 +174,7 @@ import {
   PddGoodsAddRequestInterface,
   PddGoodsAddResponseInterface,
   PddGoodsAddGoodsAddResponseResponseInterface,
+  PDD_GOODS_ADD_LIMITERS,
 } from './shangPin/PddGoodsAdd';
 import {
   PDD_GOODS_AUTHORIZATION_CATS,
@@ -163,6 +182,7 @@ import {
   PddGoodsAuthorizationCatsRequestInterface,
   PddGoodsAuthorizationCatsResponseInterface,
   PddGoodsAuthorizationCatsGoodsAuthCatsGetResponseResponseInterface,
+  PDD_GOODS_AUTHORIZATION_CATS_LIMITERS,
 } from './shangPin/PddGoodsAuthorizationCats';
 import {
   PDD_GOODS_CAT_TEMPLATE_GET,
@@ -170,6 +190,7 @@ import {
   PddGoodsCatTemplateGetRequestInterface,
   PddGoodsCatTemplateGetResponseInterface,
   PddGoodsCatTemplateGetOpenApiResponseResponseInterface,
+  PDD_GOODS_CAT_TEMPLATE_GET_LIMITERS,
 } from './shangPin/PddGoodsCatTemplateGet';
 import {
   PDD_GOODS_CATS_GET,
@@ -177,6 +198,7 @@ import {
   PddGoodsCatsGetRequestInterface,
   PddGoodsCatsGetResponseInterface,
   PddGoodsCatsGetGoodsCatsGetResponseResponseInterface,
+  PDD_GOODS_CATS_GET_LIMITERS,
 } from './shangPin/PddGoodsCatsGet';
 import {
   PDD_GOODS_COMMIT_DETAIL_GET,
@@ -184,6 +206,7 @@ import {
   PddGoodsCommitDetailGetRequestInterface,
   PddGoodsCommitDetailGetResponseInterface,
   PddGoodsCommitDetailGetGoodsCommitDetailResponseResponseInterface,
+  PDD_GOODS_COMMIT_DETAIL_GET_LIMITERS,
 } from './shangPin/PddGoodsCommitDetailGet';
 import {
   PDD_GOODS_COMMIT_LIST_GET,
@@ -205,6 +228,7 @@ import {
   PddGoodsCountryGetRequestInterface,
   PddGoodsCountryGetResponseInterface,
   PddGoodsCountryGetGoodsCountryGetResponseResponseInterface,
+  PDD_GOODS_COUNTRY_GET_LIMITERS,
 } from './shangPin/PddGoodsCountryGet';
 import {
   PDD_GOODS_CPS_MALL_UNIT_CHANGE,
@@ -217,6 +241,7 @@ import {
   PDD_GOODS_CPS_MALL_UNIT_CREATE,
   PddGoodsCpsMallUnitCreateRequestInterface,
   PddGoodsCpsMallUnitCreateResponseInterface,
+  PDD_GOODS_CPS_MALL_UNIT_CREATE_LIMITERS,
 } from './shangPin/PddGoodsCpsMallUnitCreate';
 import {
   PDD_GOODS_CPS_MALL_UNIT_PAUSE,
@@ -238,16 +263,19 @@ import {
   PddGoodsCpsMallUnitResumeRequestInterface,
   PddGoodsCpsMallUnitResumeResponseInterface,
   PddGoodsCpsMallUnitResumeGoodsCpsMallUnitResumeResponseResponseInterface,
+  PDD_GOODS_CPS_MALL_UNIT_RESUME_LIMITERS,
 } from './shangPin/PddGoodsCpsMallUnitResume';
 import {
   PDD_GOODS_CPS_UNIT_CHANGE,
   PddGoodsCpsUnitChangeRequestInterface,
   PddGoodsCpsUnitChangeResponseInterface,
+  PDD_GOODS_CPS_UNIT_CHANGE_LIMITERS,
 } from './shangPin/PddGoodsCpsUnitChange';
 import {
   PDD_GOODS_CPS_UNIT_CREATE,
   PddGoodsCpsUnitCreateRequestInterface,
   PddGoodsCpsUnitCreateResponseInterface,
+  PDD_GOODS_CPS_UNIT_CREATE_LIMITERS,
 } from './shangPin/PddGoodsCpsUnitCreate';
 import {
   PDD_GOODS_CPS_UNIT_DELETE,
@@ -255,11 +283,13 @@ import {
   PddGoodsCpsUnitDeleteRequestInterface,
   PddGoodsCpsUnitDeleteResponseInterface,
   PddGoodsCpsUnitDeleteGoodsCpsUnitDeleteResponseResponseInterface,
+  PDD_GOODS_CPS_UNIT_DELETE_LIMITERS,
 } from './shangPin/PddGoodsCpsUnitDelete';
 import {
   PDD_GOODS_CPS_UNIT_QUERY,
   PddGoodsCpsUnitQueryRequestInterface,
   PddGoodsCpsUnitQueryResponseInterface,
+  PDD_GOODS_CPS_UNIT_QUERY_LIMITERS,
 } from './shangPin/PddGoodsCpsUnitQuery';
 import {
   PDD_GOODS_DETAIL_GET,
@@ -267,6 +297,7 @@ import {
   PddGoodsDetailGetRequestInterface,
   PddGoodsDetailGetResponseInterface,
   PddGoodsDetailGetGoodsDetailGetResponseResponseInterface,
+  PDD_GOODS_DETAIL_GET_LIMITERS,
 } from './shangPin/PddGoodsDetailGet';
 import {
   PDD_GOODS_EDIT_GOODS_COMMIT,
@@ -274,6 +305,7 @@ import {
   PddGoodsEditGoodsCommitRequestInterface,
   PddGoodsEditGoodsCommitResponseInterface,
   PddGoodsEditGoodsCommitGoodsUpdateResponseResponseInterface,
+  PDD_GOODS_EDIT_GOODS_COMMIT_LIMITERS,
 } from './shangPin/PddGoodsEditGoodsCommit';
 import {
   PDD_GOODS_FILESPACE_IMAGE_UPLOAD,
@@ -288,6 +320,7 @@ import {
   PddGoodsImageUploadRequestInterface,
   PddGoodsImageUploadResponseInterface,
   PddGoodsImageUploadGoodsImageUploadResponseResponseInterface,
+  PDD_GOODS_IMAGE_UPLOAD_LIMITERS,
 } from './shangPin/PddGoodsImageUpload';
 import {
   PDD_GOODS_INFORMATION_GET,
@@ -295,6 +328,7 @@ import {
   PddGoodsInformationGetRequestInterface,
   PddGoodsInformationGetResponseInterface,
   PddGoodsInformationGetGoodsInfoGetResponseResponseInterface,
+  PDD_GOODS_INFORMATION_GET_LIMITERS,
 } from './shangPin/PddGoodsInformationGet';
 import {
   PDD_GOODS_INFORMATION_UPDATE,
@@ -302,6 +336,7 @@ import {
   PddGoodsInformationUpdateRequestInterface,
   PddGoodsInformationUpdateResponseInterface,
   PddGoodsInformationUpdateGoodsUpdateResponseResponseInterface,
+  PDD_GOODS_INFORMATION_UPDATE_LIMITERS,
 } from './shangPin/PddGoodsInformationUpdate';
 import {
   PDD_GOODS_LATEST_COMMIT_STATUS_GET,
@@ -316,6 +351,7 @@ import {
   PddGoodsListGetRequestInterface,
   PddGoodsListGetResponseInterface,
   PddGoodsListGetGoodsListGetResponseResponseInterface,
+  PDD_GOODS_LIST_GET_LIMITERS,
 } from './shangPin/PddGoodsListGet';
 import {
   PDD_GOODS_LOGISTICS_SER_TEMPLATE_CREATE,
@@ -358,6 +394,7 @@ import {
   PddGoodsLogisticsTemplateCreateRequestInterface,
   PddGoodsLogisticsTemplateCreateResponseInterface,
   PddGoodsLogisticsTemplateCreateGoodsLogisticsTemplateCreateResponseResponseInterface,
+  PDD_GOODS_LOGISTICS_TEMPLATE_CREATE_LIMITERS,
 } from './shangPin/PddGoodsLogisticsTemplateCreate';
 import {
   PDD_GOODS_LOGISTICS_TEMPLATE_GET,
@@ -365,6 +402,7 @@ import {
   PddGoodsLogisticsTemplateGetRequestInterface,
   PddGoodsLogisticsTemplateGetResponseInterface,
   PddGoodsLogisticsTemplateGetGoodsLogisticsTemplateGetResponseResponseInterface,
+  PDD_GOODS_LOGISTICS_TEMPLATE_GET_LIMITERS,
 } from './shangPin/PddGoodsLogisticsTemplateGet';
 import {
   PDD_GOODS_MATERIAL_CREATE,
@@ -387,6 +425,7 @@ import {
   PddGoodsOptGetRequestInterface,
   PddGoodsOptGetResponseInterface,
   PddGoodsOptGetGoodsOptGetResponseResponseInterface,
+  PDD_GOODS_OPT_GET_LIMITERS,
 } from './shangPin/PddGoodsOptGet';
 import {
   PDD_GOODS_OUT_PROPERTY_MAPPING_GET,
@@ -401,6 +440,7 @@ import {
   PddGoodsOuterCatMappingGetRequestInterface,
   PddGoodsOuterCatMappingGetResponseInterface,
   PddGoodsOuterCatMappingGetOuterCatMappingGetResponseResponseInterface,
+  PDD_GOODS_OUTER_CAT_MAPPING_GET_LIMITERS,
 } from './shangPin/PddGoodsOuterCatMappingGet';
 import {
   PDD_GOODS_QUANTITY_UPDATE,
@@ -408,6 +448,7 @@ import {
   PddGoodsQuantityUpdateRequestInterface,
   PddGoodsQuantityUpdateResponseInterface,
   PddGoodsQuantityUpdateGoodsQuantityUpdateResponseResponseInterface,
+  PDD_GOODS_QUANTITY_UPDATE_LIMITERS,
 } from './shangPin/PddGoodsQuantityUpdate';
 import {
   PDD_GOODS_SALE_STATUS_SET,
@@ -415,6 +456,7 @@ import {
   PddGoodsSaleStatusSetRequestInterface,
   PddGoodsSaleStatusSetResponseInterface,
   PddGoodsSaleStatusSetGoodsSaleStatusSetResponseResponseInterface,
+  PDD_GOODS_SALE_STATUS_SET_LIMITERS,
 } from './shangPin/PddGoodsSaleStatusSet';
 import {
   PDD_GOODS_SIZESPEC_CLASS_GET,
@@ -457,6 +499,7 @@ import {
   PddGoodsSkuPriceUpdateRequestInterface,
   PddGoodsSkuPriceUpdateResponseInterface,
   PddGoodsSkuPriceUpdateGoodsUpdateSkuPriceResponseResponseInterface,
+  PDD_GOODS_SKU_PRICE_UPDATE_LIMITERS,
 } from './shangPin/PddGoodsSkuPriceUpdate';
 import {
   PDD_GOODS_SPEC_GET,
@@ -464,6 +507,7 @@ import {
   PddGoodsSpecGetRequestInterface,
   PddGoodsSpecGetResponseInterface,
   PddGoodsSpecGetGoodsSpecGetResponseResponseInterface,
+  PDD_GOODS_SPEC_GET_LIMITERS,
 } from './shangPin/PddGoodsSpecGet';
 import {
   PDD_GOODS_SPEC_ID_GET,
@@ -471,6 +515,7 @@ import {
   PddGoodsSpecIdGetRequestInterface,
   PddGoodsSpecIdGetResponseInterface,
   PddGoodsSpecIdGetGoodsSpecIdGetResponseResponseInterface,
+  PDD_GOODS_SPEC_ID_GET_LIMITERS,
 } from './shangPin/PddGoodsSpecIdGet';
 import {
   PDD_GOODS_SUBMIT_GOODS_COMMIT,
@@ -478,6 +523,7 @@ import {
   PddGoodsSubmitGoodsCommitRequestInterface,
   PddGoodsSubmitGoodsCommitResponseInterface,
   PddGoodsSubmitGoodsCommitGoodsUpdateResponseResponseInterface,
+  PDD_GOODS_SUBMIT_GOODS_COMMIT_LIMITERS,
 } from './shangPin/PddGoodsSubmitGoodsCommit';
 import {
   PDD_GOODS_TEMPLATE_PROPERTY_VALUE_SEARCH,
@@ -507,6 +553,7 @@ import {
   PddDdkCmsPromUrlGenerateRequestInterface,
   PddDdkCmsPromUrlGenerateResponseInterface,
   PddDdkCmsPromUrlGenerateCmsPromotionUrlGenerateResponseResponseInterface,
+  PDD_DDK_CMS_PROM_URL_GENERATE_LIMITERS,
 } from './duoDuoKe/PddDdkCmsPromUrlGenerate';
 import {
   PDD_DDK_COUPON_INFO_QUERY,
@@ -514,6 +561,7 @@ import {
   PddDdkCouponInfoQueryRequestInterface,
   PddDdkCouponInfoQueryResponseInterface,
   PddDdkCouponInfoQueryDdkCouponInfoQueryResponseResponseInterface,
+  PDD_DDK_COUPON_INFO_QUERY_LIMITERS,
 } from './duoDuoKe/PddDdkCouponInfoQuery';
 import {
   PDD_DDK_FINANCE_CPA_QUERY,
@@ -521,6 +569,7 @@ import {
   PddDdkFinanceCpaQueryRequestInterface,
   PddDdkFinanceCpaQueryResponseInterface,
   PddDdkFinanceCpaQueryFinanceCpaQueryResponseResponseInterface,
+  PDD_DDK_FINANCE_CPA_QUERY_LIMITERS,
 } from './duoDuoKe/PddDdkFinanceCpaQuery';
 import {
   PDD_DDK_GOODS_BASIC_INFO_GET,
@@ -528,6 +577,7 @@ import {
   PddDdkGoodsBasicInfoGetRequestInterface,
   PddDdkGoodsBasicInfoGetResponseInterface,
   PddDdkGoodsBasicInfoGetGoodsBasicDetailResponseResponseInterface,
+  PDD_DDK_GOODS_BASIC_INFO_GET_LIMITERS,
 } from './duoDuoKe/PddDdkGoodsBasicInfoGet';
 import {
   PDD_DDK_GOODS_DETAIL,
@@ -535,6 +585,7 @@ import {
   PddDdkGoodsDetailRequestInterface,
   PddDdkGoodsDetailResponseInterface,
   PddDdkGoodsDetailGoodsDetailResponseResponseInterface,
+  PDD_DDK_GOODS_DETAIL_LIMITERS,
 } from './duoDuoKe/PddDdkGoodsDetail';
 import {
   PDD_DDK_GOODS_PID_GENERATE,
@@ -542,6 +593,7 @@ import {
   PddDdkGoodsPidGenerateRequestInterface,
   PddDdkGoodsPidGenerateResponseInterface,
   PddDdkGoodsPidGeneratePIdGenerateResponseResponseInterface,
+  PDD_DDK_GOODS_PID_GENERATE_LIMITERS,
 } from './duoDuoKe/PddDdkGoodsPidGenerate';
 import {
   PDD_DDK_GOODS_PID_QUERY,
@@ -549,6 +601,7 @@ import {
   PddDdkGoodsPidQueryRequestInterface,
   PddDdkGoodsPidQueryResponseInterface,
   PddDdkGoodsPidQueryPIdQueryResponseResponseInterface,
+  PDD_DDK_GOODS_PID_QUERY_LIMITERS,
 } from './duoDuoKe/PddDdkGoodsPidQuery';
 import {
   PDD_DDK_GOODS_PROMOTION_URL_GENERATE,
@@ -556,6 +609,7 @@ import {
   PddDdkGoodsPromotionUrlGenerateRequestInterface,
   PddDdkGoodsPromotionUrlGenerateResponseInterface,
   PddDdkGoodsPromotionUrlGenerateGoodsPromotionUrlGenerateResponseResponseInterface,
+  PDD_DDK_GOODS_PROMOTION_URL_GENERATE_LIMITERS,
 } from './duoDuoKe/PddDdkGoodsPromotionUrlGenerate';
 import {
   PDD_DDK_GOODS_RECOMMEND_GET,
@@ -563,6 +617,7 @@ import {
   PddDdkGoodsRecommendGetRequestInterface,
   PddDdkGoodsRecommendGetResponseInterface,
   PddDdkGoodsRecommendGetGoodsBasicDetailResponseResponseInterface,
+  PDD_DDK_GOODS_RECOMMEND_GET_LIMITERS,
 } from './duoDuoKe/PddDdkGoodsRecommendGet';
 import {
   PDD_DDK_GOODS_SEARCH,
@@ -570,6 +625,7 @@ import {
   PddDdkGoodsSearchRequestInterface,
   PddDdkGoodsSearchResponseInterface,
   PddDdkGoodsSearchGoodsSearchResponseResponseInterface,
+  PDD_DDK_GOODS_SEARCH_LIMITERS,
 } from './duoDuoKe/PddDdkGoodsSearch';
 import {
   PDD_DDK_GOODS_UNIT_QUERY,
@@ -577,6 +633,7 @@ import {
   PddDdkGoodsUnitQueryRequestInterface,
   PddDdkGoodsUnitQueryResponseInterface,
   PddDdkGoodsUnitQueryDdkGoodsUnitQueryResponseResponseInterface,
+  PDD_DDK_GOODS_UNIT_QUERY_LIMITERS,
 } from './duoDuoKe/PddDdkGoodsUnitQuery';
 import {
   PDD_DDK_GOODS_ZS_UNIT_URL_GEN,
@@ -584,6 +641,7 @@ import {
   PddDdkGoodsZsUnitUrlGenRequestInterface,
   PddDdkGoodsZsUnitUrlGenResponseInterface,
   PddDdkGoodsZsUnitUrlGenGoodsZsUnitGenerateResponseResponseInterface,
+  PDD_DDK_GOODS_ZS_UNIT_URL_GEN_LIMITERS,
 } from './duoDuoKe/PddDdkGoodsZsUnitUrlGen';
 import {
   PDD_DDK_LIVE_DETAIL,
@@ -605,6 +663,7 @@ import {
   PddDdkLotteryUrlGenRequestInterface,
   PddDdkLotteryUrlGenResponseInterface,
   PddDdkLotteryUrlGenLotteryUrlResponseResponseInterface,
+  PDD_DDK_LOTTERY_URL_GEN_LIMITERS,
 } from './duoDuoKe/PddDdkLotteryUrlGen';
 import {
   PDD_DDK_MALL_GOODS_LIST_GET,
@@ -612,6 +671,7 @@ import {
   PddDdkMallGoodsListGetRequestInterface,
   PddDdkMallGoodsListGetResponseInterface,
   PddDdkMallGoodsListGetGoodsInfoListResponseResponseInterface,
+  PDD_DDK_MALL_GOODS_LIST_GET_LIMITERS,
 } from './duoDuoKe/PddDdkMallGoodsListGet';
 import {
   PDD_DDK_MALL_URL_GEN,
@@ -626,6 +686,7 @@ import {
   PddDdkMerchantListGetRequestInterface,
   PddDdkMerchantListGetResponseInterface,
   PddDdkMerchantListGetMerchantListResponseResponseInterface,
+  PDD_DDK_MERCHANT_LIST_GET_LIMITERS,
 } from './duoDuoKe/PddDdkMerchantListGet';
 import {
   PDD_DDK_ORDER_DETAIL_GET,
@@ -633,6 +694,7 @@ import {
   PddDdkOrderDetailGetRequestInterface,
   PddDdkOrderDetailGetResponseInterface,
   PddDdkOrderDetailGetOrderDetailResponseResponseInterface,
+  PDD_DDK_ORDER_DETAIL_GET_LIMITERS,
 } from './duoDuoKe/PddDdkOrderDetailGet';
 import {
   PDD_DDK_ORDER_LIST_INCREMENT_GET,
@@ -640,6 +702,7 @@ import {
   PddDdkOrderListIncrementGetRequestInterface,
   PddDdkOrderListIncrementGetResponseInterface,
   PddDdkOrderListIncrementGetOrderListGetResponseResponseInterface,
+  PDD_DDK_ORDER_LIST_INCREMENT_GET_LIMITERS,
 } from './duoDuoKe/PddDdkOrderListIncrementGet';
 import {
   PDD_DDK_ORDER_LIST_RANGE_GET,
@@ -647,6 +710,7 @@ import {
   PddDdkOrderListRangeGetRequestInterface,
   PddDdkOrderListRangeGetResponseInterface,
   PddDdkOrderListRangeGetOrderListGetResponseResponseInterface,
+  PDD_DDK_ORDER_LIST_RANGE_GET_LIMITERS,
 } from './duoDuoKe/PddDdkOrderListRangeGet';
 import {
   PDD_DDK_RESOURCE_URL_GEN,
@@ -654,6 +718,7 @@ import {
   PddDdkResourceUrlGenRequestInterface,
   PddDdkResourceUrlGenResponseInterface,
   PddDdkResourceUrlGenResourceUrlResponseResponseInterface,
+  PDD_DDK_RESOURCE_URL_GEN_LIMITERS,
 } from './duoDuoKe/PddDdkResourceUrlGen';
 import {
   PDD_DDK_RP_PROM_URL_GENERATE,
@@ -661,6 +726,7 @@ import {
   PddDdkRpPromUrlGenerateRequestInterface,
   PddDdkRpPromUrlGenerateResponseInterface,
   PddDdkRpPromUrlGenerateRpPromotionUrlGenerateResponseResponseInterface,
+  PDD_DDK_RP_PROM_URL_GENERATE_LIMITERS,
 } from './duoDuoKe/PddDdkRpPromUrlGenerate';
 import {
   PDD_DDK_THEME_GOODS_SEARCH,
@@ -668,6 +734,7 @@ import {
   PddDdkThemeGoodsSearchRequestInterface,
   PddDdkThemeGoodsSearchResponseInterface,
   PddDdkThemeGoodsSearchThemeListGetResponseResponseInterface,
+  PDD_DDK_THEME_GOODS_SEARCH_LIMITERS,
 } from './duoDuoKe/PddDdkThemeGoodsSearch';
 import {
   PDD_DDK_THEME_LIST_GET,
@@ -675,6 +742,7 @@ import {
   PddDdkThemeListGetRequestInterface,
   PddDdkThemeListGetResponseInterface,
   PddDdkThemeListGetThemeListGetResponseResponseInterface,
+  PDD_DDK_THEME_LIST_GET_LIMITERS,
 } from './duoDuoKe/PddDdkThemeListGet';
 import {
   PDD_DDK_THEME_PROM_URL_GENERATE,
@@ -682,6 +750,7 @@ import {
   PddDdkThemePromUrlGenerateRequestInterface,
   PddDdkThemePromUrlGenerateResponseInterface,
   PddDdkThemePromUrlGenerateThemePromotionUrlGenerateResponseResponseInterface,
+  PDD_DDK_THEME_PROM_URL_GENERATE_LIMITERS,
 } from './duoDuoKe/PddDdkThemePromUrlGenerate';
 import {
   PDD_DDK_TOP_GOODS_LIST_QUERY,
@@ -689,6 +758,7 @@ import {
   PddDdkTopGoodsListQueryRequestInterface,
   PddDdkTopGoodsListQueryResponseInterface,
   PddDdkTopGoodsListQueryTopGoodsListGetResponseResponseInterface,
+  PDD_DDK_TOP_GOODS_LIST_QUERY_LIMITERS,
 } from './duoDuoKe/PddDdkTopGoodsListQuery';
 import {
   PDD_DDK_WEAPP_QRCODE_URL_GEN,
@@ -696,6 +766,7 @@ import {
   PddDdkWeappQrcodeUrlGenRequestInterface,
   PddDdkWeappQrcodeUrlGenResponseInterface,
   PddDdkWeappQrcodeUrlGenWeappQrcodeGenerateResponseResponseInterface,
+  PDD_DDK_WEAPP_QRCODE_URL_GEN_LIMITERS,
 } from './duoDuoKe/PddDdkWeappQrcodeUrlGen';
 // 多多客工具API
 import {
@@ -704,6 +775,7 @@ import {
   PddDdkAllOrderListIncrementGetRequestInterface,
   PddDdkAllOrderListIncrementGetResponseInterface,
   PddDdkAllOrderListIncrementGetOrderListGetResponseResponseInterface,
+  PDD_DDK_ALL_ORDER_LIST_INCREMENT_GET_LIMITERS,
 } from './duoDuoKeGongJu/PddDdkAllOrderListIncrementGet';
 import {
   PDD_DDK_OAUTH_CMS_PROM_URL_GENERATE,
@@ -711,6 +783,7 @@ import {
   PddDdkOauthCmsPromUrlGenerateRequestInterface,
   PddDdkOauthCmsPromUrlGenerateResponseInterface,
   PddDdkOauthCmsPromUrlGenerateCmsPromotionUrlGenerateResponseResponseInterface,
+  PDD_DDK_OAUTH_CMS_PROM_URL_GENERATE_LIMITERS,
 } from './duoDuoKeGongJu/PddDdkOauthCmsPromUrlGenerate';
 import {
   PDD_DDK_OAUTH_GOODS_PID_GENERATE,
@@ -718,6 +791,7 @@ import {
   PddDdkOauthGoodsPidGenerateRequestInterface,
   PddDdkOauthGoodsPidGenerateResponseInterface,
   PddDdkOauthGoodsPidGeneratePIdGenerateResponseResponseInterface,
+  PDD_DDK_OAUTH_GOODS_PID_GENERATE_LIMITERS,
 } from './duoDuoKeGongJu/PddDdkOauthGoodsPidGenerate';
 import {
   PDD_DDK_OAUTH_GOODS_PID_QUERY,
@@ -725,6 +799,7 @@ import {
   PddDdkOauthGoodsPidQueryRequestInterface,
   PddDdkOauthGoodsPidQueryResponseInterface,
   PddDdkOauthGoodsPidQueryPIdQueryResponseResponseInterface,
+  PDD_DDK_OAUTH_GOODS_PID_QUERY_LIMITERS,
 } from './duoDuoKeGongJu/PddDdkOauthGoodsPidQuery';
 import {
   PDD_DDK_OAUTH_GOODS_PROM_URL_GENERATE,
@@ -732,6 +807,7 @@ import {
   PddDdkOauthGoodsPromUrlGenerateRequestInterface,
   PddDdkOauthGoodsPromUrlGenerateResponseInterface,
   PddDdkOauthGoodsPromUrlGenerateGoodsPromotionUrlGenerateResponseResponseInterface,
+  PDD_DDK_OAUTH_GOODS_PROM_URL_GENERATE_LIMITERS,
 } from './duoDuoKeGongJu/PddDdkOauthGoodsPromUrlGenerate';
 import {
   PDD_DDK_OAUTH_GOODS_RECOMMEND_GET,
@@ -739,6 +815,7 @@ import {
   PddDdkOauthGoodsRecommendGetRequestInterface,
   PddDdkOauthGoodsRecommendGetResponseInterface,
   PddDdkOauthGoodsRecommendGetGoodsBasicDetailResponseResponseInterface,
+  PDD_DDK_OAUTH_GOODS_RECOMMEND_GET_LIMITERS,
 } from './duoDuoKeGongJu/PddDdkOauthGoodsRecommendGet';
 import {
   PDD_DDK_OAUTH_GOODS_ZS_UNIT_URL_GEN,
@@ -746,6 +823,7 @@ import {
   PddDdkOauthGoodsZsUnitUrlGenRequestInterface,
   PddDdkOauthGoodsZsUnitUrlGenResponseInterface,
   PddDdkOauthGoodsZsUnitUrlGenGoodsZsUnitGenerateResponseResponseInterface,
+  PDD_DDK_OAUTH_GOODS_ZS_UNIT_URL_GEN_LIMITERS,
 } from './duoDuoKeGongJu/PddDdkOauthGoodsZsUnitUrlGen';
 import {
   PDD_DDK_OAUTH_LOTTERY_URL_GEN,
@@ -753,6 +831,7 @@ import {
   PddDdkOauthLotteryUrlGenRequestInterface,
   PddDdkOauthLotteryUrlGenResponseInterface,
   PddDdkOauthLotteryUrlGenLotteryUrlResponseResponseInterface,
+  PDD_DDK_OAUTH_LOTTERY_URL_GEN_LIMITERS,
 } from './duoDuoKeGongJu/PddDdkOauthLotteryUrlGen';
 import {
   PDD_DDK_OAUTH_MALL_URL_GEN,
@@ -760,6 +839,7 @@ import {
   PddDdkOauthMallUrlGenRequestInterface,
   PddDdkOauthMallUrlGenResponseInterface,
   PddDdkOauthMallUrlGenMallCouponGenerateUrlResponseResponseInterface,
+  PDD_DDK_OAUTH_MALL_URL_GEN_LIMITERS,
 } from './duoDuoKeGongJu/PddDdkOauthMallUrlGen';
 import {
   PDD_DDK_OAUTH_ORDER_DETAIL_GET,
@@ -767,6 +847,7 @@ import {
   PddDdkOauthOrderDetailGetRequestInterface,
   PddDdkOauthOrderDetailGetResponseInterface,
   PddDdkOauthOrderDetailGetOrderDetailResponseResponseInterface,
+  PDD_DDK_OAUTH_ORDER_DETAIL_GET_LIMITERS,
 } from './duoDuoKeGongJu/PddDdkOauthOrderDetailGet';
 import {
   PDD_DDK_OAUTH_RESOURCE_URL_GEN,
@@ -774,6 +855,7 @@ import {
   PddDdkOauthResourceUrlGenRequestInterface,
   PddDdkOauthResourceUrlGenResponseInterface,
   PddDdkOauthResourceUrlGenResourceUrlResponseResponseInterface,
+  PDD_DDK_OAUTH_RESOURCE_URL_GEN_LIMITERS,
 } from './duoDuoKeGongJu/PddDdkOauthResourceUrlGen';
 import {
   PDD_DDK_OAUTH_RP_PROM_URL_GENERATE,
@@ -781,6 +863,7 @@ import {
   PddDdkOauthRpPromUrlGenerateRequestInterface,
   PddDdkOauthRpPromUrlGenerateResponseInterface,
   PddDdkOauthRpPromUrlGenerateRpPromotionUrlGenerateResponseResponseInterface,
+  PDD_DDK_OAUTH_RP_PROM_URL_GENERATE_LIMITERS,
 } from './duoDuoKeGongJu/PddDdkOauthRpPromUrlGenerate';
 import {
   PDD_DDK_OAUTH_THEME_PROM_URL_GENERATE,
@@ -788,6 +871,7 @@ import {
   PddDdkOauthThemePromUrlGenerateRequestInterface,
   PddDdkOauthThemePromUrlGenerateResponseInterface,
   PddDdkOauthThemePromUrlGenerateThemePromotionUrlGenerateResponseResponseInterface,
+  PDD_DDK_OAUTH_THEME_PROM_URL_GENERATE_LIMITERS,
 } from './duoDuoKeGongJu/PddDdkOauthThemePromUrlGenerate';
 import {
   PDD_DDK_OAUTH_TOP_GOODS_LIST_QUERY,
@@ -795,6 +879,7 @@ import {
   PddDdkOauthTopGoodsListQueryRequestInterface,
   PddDdkOauthTopGoodsListQueryResponseInterface,
   PddDdkOauthTopGoodsListQueryTopGoodsListGetResponseResponseInterface,
+  PDD_DDK_OAUTH_TOP_GOODS_LIST_QUERY_LIMITERS,
 } from './duoDuoKeGongJu/PddDdkOauthTopGoodsListQuery';
 // 方舟物流服务商API
 import {
@@ -831,6 +916,7 @@ import {
   PddLogisticsTicketGetRequestInterface,
   PddLogisticsTicketGetResponseInterface,
   PddLogisticsTicketGetLogisticsTicketGetResponseResponseInterface,
+  PDD_LOGISTICS_TICKET_GET_LIMITERS,
 } from './fangZhouWuLiuFuWuShang/PddLogisticsTicketGet';
 import {
   PDD_LOGISTICS_TICKET_IMAGE_UPLOAD,
@@ -838,6 +924,7 @@ import {
   PddLogisticsTicketImageUploadRequestInterface,
   PddLogisticsTicketImageUploadResponseInterface,
   PddLogisticsTicketImageUploadLogisticsTicketImageUploadResponseResponseInterface,
+  PDD_LOGISTICS_TICKET_IMAGE_UPLOAD_LIMITERS,
 } from './fangZhouWuLiuFuWuShang/PddLogisticsTicketImageUpload';
 import {
   PDD_LOGISTICS_TICKET_NOTIFY,
@@ -845,6 +932,7 @@ import {
   PddLogisticsTicketNotifyRequestInterface,
   PddLogisticsTicketNotifyResponseInterface,
   PddLogisticsTicketNotifyLogisticsTicketNotifyResponseResponseInterface,
+  PDD_LOGISTICS_TICKET_NOTIFY_LIMITERS,
 } from './fangZhouWuLiuFuWuShang/PddLogisticsTicketNotify';
 import {
   PDD_LOGISTICS_TICKET_PROBLEM_TYPE_GET,
@@ -852,6 +940,7 @@ import {
   PddLogisticsTicketProblemTypeGetRequestInterface,
   PddLogisticsTicketProblemTypeGetResponseInterface,
   PddLogisticsTicketProblemTypeGetLogisticsProblemTypeGetResponseResponseInterface,
+  PDD_LOGISTICS_TICKET_PROBLEM_TYPE_GET_LIMITERS,
 } from './fangZhouWuLiuFuWuShang/PddLogisticsTicketProblemTypeGet';
 // 营销API
 import {
@@ -860,6 +949,7 @@ import {
   PddPromotionCouponCloseRequestInterface,
   PddPromotionCouponCloseResponseInterface,
   PddPromotionCouponClosePromotionCouponBatchCloseResponseResponseInterface,
+  PDD_PROMOTION_COUPON_CLOSE_LIMITERS,
 } from './yingXiao/PddPromotionCouponClose';
 import {
   PDD_PROMOTION_COUPON_QUANTITY_ADD,
@@ -867,6 +957,7 @@ import {
   PddPromotionCouponQuantityAddRequestInterface,
   PddPromotionCouponQuantityAddResponseInterface,
   PddPromotionCouponQuantityAddCouponQuantityAddResponseResponseInterface,
+  PDD_PROMOTION_COUPON_QUANTITY_ADD_LIMITERS,
 } from './yingXiao/PddPromotionCouponQuantityAdd';
 import {
   PDD_PROMOTION_GOODS_COUPON_CREATE,
@@ -874,6 +965,7 @@ import {
   PddPromotionGoodsCouponCreateRequestInterface,
   PddPromotionGoodsCouponCreateResponseInterface,
   PddPromotionGoodsCouponCreateGoodsCouponBatchCreateResponseResponseInterface,
+  PDD_PROMOTION_GOODS_COUPON_CREATE_LIMITERS,
 } from './yingXiao/PddPromotionGoodsCouponCreate';
 import {
   PDD_PROMOTION_GOODS_COUPON_LIST_GET,
@@ -881,6 +973,7 @@ import {
   PddPromotionGoodsCouponListGetRequestInterface,
   PddPromotionGoodsCouponListGetResponseInterface,
   PddPromotionGoodsCouponListGetGoodsCouponBatchListResponseResponseInterface,
+  PDD_PROMOTION_GOODS_COUPON_LIST_GET_LIMITERS,
 } from './yingXiao/PddPromotionGoodsCouponListGet';
 import {
   PDD_PROMOTION_HOME_COUPON_CREATE,
@@ -888,6 +981,7 @@ import {
   PddPromotionHomeCouponCreateRequestInterface,
   PddPromotionHomeCouponCreateResponseInterface,
   PddPromotionHomeCouponCreateHomeCouponBatchCreateResponseResponseInterface,
+  PDD_PROMOTION_HOME_COUPON_CREATE_LIMITERS,
 } from './yingXiao/PddPromotionHomeCouponCreate';
 import {
   PDD_PROMOTION_MERCHANT_COUPON_LIST_GET,
@@ -895,6 +989,7 @@ import {
   PddPromotionMerchantCouponListGetRequestInterface,
   PddPromotionMerchantCouponListGetResponseInterface,
   PddPromotionMerchantCouponListGetMerchantCouponBatchListResponseResponseInterface,
+  PDD_PROMOTION_MERCHANT_COUPON_LIST_GET_LIMITERS,
 } from './yingXiao/PddPromotionMerchantCouponListGet';
 // 卡券API
 import {
@@ -903,6 +998,7 @@ import {
   PddVoucherAppointmentInfoSendRequestInterface,
   PddVoucherAppointmentInfoSendResponseInterface,
   PddVoucherAppointmentInfoSendVoucherAppointmentInfoSendResponseResponseInterface,
+  PDD_VOUCHER_APPOINTMENT_INFO_SEND_LIMITERS,
 } from './kaQuan/PddVoucherAppointmentInfoSend';
 import {
   PDD_VOUCHER_OTA_CARD_VERIFICATION,
@@ -910,6 +1006,7 @@ import {
   PddVoucherOtaCardVerificationRequestInterface,
   PddVoucherOtaCardVerificationResponseInterface,
   PddVoucherOtaCardVerificationVoucherOtaCardVerificationResponseResponseInterface,
+  PDD_VOUCHER_OTA_CARD_VERIFICATION_LIMITERS,
 } from './kaQuan/PddVoucherOtaCardVerification';
 import {
   PDD_VOUCHER_PHYSICAL_GOODS_SEND,
@@ -917,6 +1014,7 @@ import {
   PddVoucherPhysicalGoodsSendRequestInterface,
   PddVoucherPhysicalGoodsSendResponseInterface,
   PddVoucherPhysicalGoodsSendVoucherPhysicalVoucherSendResponseResponseInterface,
+  PDD_VOUCHER_PHYSICAL_GOODS_SEND_LIMITERS,
 } from './kaQuan/PddVoucherPhysicalGoodsSend';
 import {
   PDD_VOUCHER_VIRTUAL_CARD_VERIFICATION,
@@ -924,6 +1022,7 @@ import {
   PddVoucherVirtualCardVerificationRequestInterface,
   PddVoucherVirtualCardVerificationResponseInterface,
   PddVoucherVirtualCardVerificationVoucherVoucherInfoVerifyResponseResponseInterface,
+  PDD_VOUCHER_VIRTUAL_CARD_VERIFICATION_LIMITERS,
 } from './kaQuan/PddVoucherVirtualCardVerification';
 import {
   PDD_VOUCHER_VOUCHER_COMPLAIN,
@@ -931,6 +1030,7 @@ import {
   PddVoucherVoucherComplainRequestInterface,
   PddVoucherVoucherComplainResponseInterface,
   PddVoucherVoucherComplainVoucherVoucherComplainResponseResponseInterface,
+  PDD_VOUCHER_VOUCHER_COMPLAIN_LIMITERS,
 } from './kaQuan/PddVoucherVoucherComplain';
 import {
   PDD_VOUCHER_VOUCHER_INFO_SEND,
@@ -938,6 +1038,7 @@ import {
   PddVoucherVoucherInfoSendRequestInterface,
   PddVoucherVoucherInfoSendResponseInterface,
   PddVoucherVoucherInfoSendVoucherVoucherInfoSendResponseResponseInterface,
+  PDD_VOUCHER_VOUCHER_INFO_SEND_LIMITERS,
 } from './kaQuan/PddVoucherVoucherInfoSend';
 // 发票服务API
 import {
@@ -946,6 +1047,7 @@ import {
   PddInvoiceApplicationQueryRequestInterface,
   PddInvoiceApplicationQueryResponseInterface,
   PddInvoiceApplicationQueryInvoiceApplicationQueryResponseResponseInterface,
+  PDD_INVOICE_APPLICATION_QUERY_LIMITERS,
 } from './faPiaoFuWu/PddInvoiceApplicationQuery';
 import {
   PDD_INVOICE_APPLICATION_UPDATE,
@@ -953,6 +1055,7 @@ import {
   PddInvoiceApplicationUpdateRequestInterface,
   PddInvoiceApplicationUpdateResponseInterface,
   PddInvoiceApplicationUpdateInvoiceApplicationUpdateResponseResponseInterface,
+  PDD_INVOICE_APPLICATION_UPDATE_LIMITERS,
 } from './faPiaoFuWu/PddInvoiceApplicationUpdate';
 import {
   PDD_INVOICE_DETAIL_INVALID,
@@ -960,6 +1063,7 @@ import {
   PddInvoiceDetailInvalidRequestInterface,
   PddInvoiceDetailInvalidResponseInterface,
   PddInvoiceDetailInvalidInvoiceDetailInvalidResponseResponseInterface,
+  PDD_INVOICE_DETAIL_INVALID_LIMITERS,
 } from './faPiaoFuWu/PddInvoiceDetailInvalid';
 import {
   PDD_INVOICE_DETAIL_QUERY,
@@ -989,6 +1093,7 @@ import {
   PddMallInfoGetRequestInterface,
   PddMallInfoGetResponseInterface,
   PddMallInfoGetMallInfoGetResponseResponseInterface,
+  PDD_MALL_INFO_GET_LIMITERS,
 } from './dianPu/PddMallInfoGet';
 // 店铺短信API
 import {
@@ -1312,6 +1417,7 @@ import {
   PddCloudprintStdtemplatesGetRequestInterface,
   PddCloudprintStdtemplatesGetResponseInterface,
   PddCloudprintStdtemplatesGetPddCloudprintStdtemplatesGetResponseResponseInterface,
+  PDD_CLOUDPRINT_STDTEMPLATES_GET_LIMITERS,
 } from './dianZiMianDan/PddCloudprintStdtemplatesGet';
 import {
   PDD_WAYBILL_CANCEL,
@@ -1326,6 +1432,7 @@ import {
   PddWaybillGetRequestInterface,
   PddWaybillGetResponseInterface,
   PddWaybillGetPddWaybillGetResponseResponseInterface,
+  PDD_WAYBILL_GET_LIMITERS,
 } from './dianZiMianDan/PddWaybillGet';
 import {
   PDD_WAYBILL_QUERY_BY_WAYBILLCODE,
@@ -1340,6 +1447,7 @@ import {
   PddWaybillSearchRequestInterface,
   PddWaybillSearchResponseInterface,
   PddWaybillSearchPddWaybillSearchResponseResponseInterface,
+  PDD_WAYBILL_SEARCH_LIMITERS,
 } from './dianZiMianDan/PddWaybillSearch';
 import {
   PDD_WAYBILL_UPDATE,
@@ -1355,6 +1463,7 @@ import {
   PddFinanceBalanceDailyBillUrlGetRequestInterface,
   PddFinanceBalanceDailyBillUrlGetResponseInterface,
   PddFinanceBalanceDailyBillUrlGetFinanceBalanceDailyBillUrlGetResponseResponseInterface,
+  PDD_FINANCE_BALANCE_DAILY_BILL_URL_GET_LIMITERS,
 } from './caiWu/PddFinanceBalanceDailyBillUrlGet';
 // 短信服务API
 import {
@@ -1403,6 +1512,7 @@ import {
   PddVasOrderSearchRequestInterface,
   PddVasOrderSearchResponseInterface,
   PddVasOrderSearchVasOrderSearchResponseResponseInterface,
+  PDD_VAS_ORDER_SEARCH_LIMITERS,
 } from './fuWuShiChang/PddVasOrderSearch';
 // 短信供应商API
 import {
@@ -1415,6 +1525,356 @@ import {
   PddSmsVendorComplaintCreateRequestInterface,
   PddSmsVendorComplaintCreateResponseInterface,
 } from './duanXinGongYingShang/PddSmsVendorComplaintCreate';
+// 多多推广API
+import {
+  PDD_AD_API_ADVERTISER_OPEN_ACCOUNT,
+  PddAdApiAdvertiserOpenAccountRequestInterface,
+  PddAdApiAdvertiserOpenAccountResponseInterface,
+  PDD_AD_API_ADVERTISER_OPEN_ACCOUNT_LIMITERS,
+} from './duoDuoTuiGuang/PddAdApiAdvertiserOpenAccount';
+import {
+  PDD_AD_API_ADVERTISER_QUERY_ACCOUNT_BALANCE,
+  PddAdApiAdvertiserQueryAccountBalanceRequestInterface,
+  PddAdApiAdvertiserQueryAccountBalanceResponseInterface,
+  PDD_AD_API_ADVERTISER_QUERY_ACCOUNT_BALANCE_LIMITERS,
+} from './duoDuoTuiGuang/PddAdApiAdvertiserQueryAccountBalance';
+import {
+  PDD_AD_API_ADVERTISER_QUERY_ACCOUNT_INFO,
+  PddAdApiAdvertiserQueryAccountInfoRequestInterface,
+  PddAdApiAdvertiserQueryAccountInfoResponseInterface,
+  PDD_AD_API_ADVERTISER_QUERY_ACCOUNT_INFO_LIMITERS,
+} from './duoDuoTuiGuang/PddAdApiAdvertiserQueryAccountInfo';
+import {
+  PDD_AD_API_ADVERTISER_QUERY_DETAIL,
+  PddAdApiAdvertiserQueryDetailRequestInterface,
+  PddAdApiAdvertiserQueryDetailResponseInterface,
+  PDD_AD_API_ADVERTISER_QUERY_DETAIL_LIMITERS,
+} from './duoDuoTuiGuang/PddAdApiAdvertiserQueryDetail';
+import {
+  PDD_AD_API_GOODS_QUERY_GALLERY_IMAGES,
+  PddAdApiGoodsQueryGalleryImagesRequestInterface,
+  PddAdApiGoodsQueryGalleryImagesResponseInterface,
+  PDD_AD_API_GOODS_QUERY_GALLERY_IMAGES_LIMITERS,
+} from './duoDuoTuiGuang/PddAdApiGoodsQueryGalleryImages';
+import {
+  PDD_AD_API_GOODS_QUERY_LONG_IMAGES,
+  PddAdApiGoodsQueryLongImagesRequestInterface,
+  PddAdApiGoodsQueryLongImagesResponseInterface,
+  PDD_AD_API_GOODS_QUERY_LONG_IMAGES_LIMITERS,
+} from './duoDuoTuiGuang/PddAdApiGoodsQueryLongImages';
+import {
+  PDD_AD_API_GOODS_QUERY_PAGE,
+  PddAdApiGoodsQueryPageRequestInterface,
+  PddAdApiGoodsQueryPageResponseInterface,
+  PDD_AD_API_GOODS_QUERY_PAGE_LIMITERS,
+} from './duoDuoTuiGuang/PddAdApiGoodsQueryPage';
+import {
+  PDD_AD_API_KEYWORD_CREATE,
+  PddAdApiKeywordCreateRequestInterface,
+  PddAdApiKeywordCreateResponseInterface,
+  PDD_AD_API_KEYWORD_CREATE_LIMITERS,
+} from './duoDuoTuiGuang/PddAdApiKeywordCreate';
+import {
+  PDD_AD_API_KEYWORD_DELETE,
+  PddAdApiKeywordDeleteRequestInterface,
+  PddAdApiKeywordDeleteResponseInterface,
+  PDD_AD_API_KEYWORD_DELETE_LIMITERS,
+} from './duoDuoTuiGuang/PddAdApiKeywordDelete';
+import {
+  PDD_AD_API_KEYWORD_QUERY_LIST,
+  PddAdApiKeywordQueryListRequestInterface,
+  PddAdApiKeywordQueryListResponseInterface,
+  PDD_AD_API_KEYWORD_QUERY_LIST_LIMITERS,
+} from './duoDuoTuiGuang/PddAdApiKeywordQueryList';
+import {
+  PDD_AD_API_KEYWORD_RECOMMEND_GET,
+  PddAdApiKeywordRecommendGetRequestInterface,
+  PddAdApiKeywordRecommendGetResponseInterface,
+  PDD_AD_API_KEYWORD_RECOMMEND_GET_LIMITERS,
+} from './duoDuoTuiGuang/PddAdApiKeywordRecommendGet';
+import {
+  PDD_AD_API_KEYWORD_RELEVANCE_GET,
+  PddAdApiKeywordRelevanceGetRequestInterface,
+  PddAdApiKeywordRelevanceGetResponseInterface,
+  PDD_AD_API_KEYWORD_RELEVANCE_GET_LIMITERS,
+} from './duoDuoTuiGuang/PddAdApiKeywordRelevanceGet';
+import {
+  PDD_AD_API_KEYWORD_UPDATE,
+  PddAdApiKeywordUpdateRequestInterface,
+  PddAdApiKeywordUpdateResponseInterface,
+  PDD_AD_API_KEYWORD_UPDATE_LIMITERS,
+} from './duoDuoTuiGuang/PddAdApiKeywordUpdate';
+import {
+  PDD_AD_API_PLAN_CREATE,
+  PddAdApiPlanCreateRequestInterface,
+  PddAdApiPlanCreateResponseInterface,
+  PDD_AD_API_PLAN_CREATE_LIMITERS,
+} from './duoDuoTuiGuang/PddAdApiPlanCreate';
+import {
+  PDD_AD_API_PLAN_DELETE,
+  PddAdApiPlanDeleteRequestInterface,
+  PddAdApiPlanDeleteResponseInterface,
+  PDD_AD_API_PLAN_DELETE_LIMITERS,
+} from './duoDuoTuiGuang/PddAdApiPlanDelete';
+import {
+  PDD_AD_API_PLAN_QUERY_CAN_CREATE_AD_PLAN,
+  PddAdApiPlanQueryCanCreateAdPlanRequestInterface,
+  PddAdApiPlanQueryCanCreateAdPlanResponseInterface,
+  PDD_AD_API_PLAN_QUERY_CAN_CREATE_AD_PLAN_LIMITERS,
+} from './duoDuoTuiGuang/PddAdApiPlanQueryCanCreateAdPlan';
+import {
+  PDD_AD_API_PLAN_QUERY_CAN_UPDATE_MAX_COST,
+  PddAdApiPlanQueryCanUpdateMaxCostRequestInterface,
+  PddAdApiPlanQueryCanUpdateMaxCostResponseInterface,
+  PDD_AD_API_PLAN_QUERY_CAN_UPDATE_MAX_COST_LIMITERS,
+} from './duoDuoTuiGuang/PddAdApiPlanQueryCanUpdateMaxCost';
+import {
+  PDD_AD_API_PLAN_QUERY_LIST,
+  PddAdApiPlanQueryListRequestInterface,
+  PddAdApiPlanQueryListResponseInterface,
+  PDD_AD_API_PLAN_QUERY_LIST_LIMITERS,
+} from './duoDuoTuiGuang/PddAdApiPlanQueryList';
+import {
+  PDD_AD_API_PLAN_UPDATE_DATA_OPERATE_STATUS,
+  PddAdApiPlanUpdateDataOperateStatusRequestInterface,
+  PddAdApiPlanUpdateDataOperateStatusResponseInterface,
+  PDD_AD_API_PLAN_UPDATE_DATA_OPERATE_STATUS_LIMITERS,
+} from './duoDuoTuiGuang/PddAdApiPlanUpdateDataOperateStatus';
+import {
+  PDD_AD_API_PLAN_UPDATE_MAX_COST,
+  PddAdApiPlanUpdateMaxCostRequestInterface,
+  PddAdApiPlanUpdateMaxCostResponseInterface,
+  PDD_AD_API_PLAN_UPDATE_MAX_COST_LIMITERS,
+} from './duoDuoTuiGuang/PddAdApiPlanUpdateMaxCost';
+import {
+  PDD_AD_API_PLAN_UPDATE_PLAN_DISCOUNT,
+  PddAdApiPlanUpdatePlanDiscountRequestInterface,
+  PddAdApiPlanUpdatePlanDiscountResponseInterface,
+  PDD_AD_API_PLAN_UPDATE_PLAN_DISCOUNT_LIMITERS,
+} from './duoDuoTuiGuang/PddAdApiPlanUpdatePlanDiscount';
+import {
+  PDD_AD_API_PLAN_UPDATE_PLAN_NAME,
+  PddAdApiPlanUpdatePlanNameRequestInterface,
+  PddAdApiPlanUpdatePlanNameResponseInterface,
+  PDD_AD_API_PLAN_UPDATE_PLAN_NAME_LIMITERS,
+} from './duoDuoTuiGuang/PddAdApiPlanUpdatePlanName';
+import {
+  PDD_AD_API_REPORT_DAILY_REPORT_QUERY,
+  PddAdApiReportDailyReportQueryRequestInterface,
+  PddAdApiReportDailyReportQueryResponseInterface,
+  PDD_AD_API_REPORT_DAILY_REPORT_QUERY_LIMITERS,
+} from './duoDuoTuiGuang/PddAdApiReportDailyReportQuery';
+import {
+  PDD_AD_API_REPORT_ENTITY_REPORT_QUERY,
+  PddAdApiReportEntityReportQueryRequestInterface,
+  PddAdApiReportEntityReportQueryResponseInterface,
+  PDD_AD_API_REPORT_ENTITY_REPORT_QUERY_LIMITERS,
+} from './duoDuoTuiGuang/PddAdApiReportEntityReportQuery';
+import {
+  PDD_AD_API_REPORT_HOURLY_REPORT_QUERY,
+  PddAdApiReportHourlyReportQueryRequestInterface,
+  PddAdApiReportHourlyReportQueryResponseInterface,
+  PDD_AD_API_REPORT_HOURLY_REPORT_QUERY_LIMITERS,
+} from './duoDuoTuiGuang/PddAdApiReportHourlyReportQuery';
+import {
+  PDD_AD_API_UNIT_BID_DELETE,
+  PddAdApiUnitBidDeleteRequestInterface,
+  PddAdApiUnitBidDeleteResponseInterface,
+  PDD_AD_API_UNIT_BID_DELETE_LIMITERS,
+} from './duoDuoTuiGuang/PddAdApiUnitBidDelete';
+import {
+  PDD_AD_API_UNIT_BID_QUERY_AUDIENCE_PROFILE,
+  PddAdApiUnitBidQueryAudienceProfileRequestInterface,
+  PddAdApiUnitBidQueryAudienceProfileResponseInterface,
+  PDD_AD_API_UNIT_BID_QUERY_AUDIENCE_PROFILE_LIMITERS,
+} from './duoDuoTuiGuang/PddAdApiUnitBidQueryAudienceProfile';
+import {
+  PDD_AD_API_UNIT_BID_QUERY_BASE_LOCATION_PROFILE,
+  PddAdApiUnitBidQueryBaseLocationProfileRequestInterface,
+  PddAdApiUnitBidQueryBaseLocationProfileResponseInterface,
+  PDD_AD_API_UNIT_BID_QUERY_BASE_LOCATION_PROFILE_LIMITERS,
+} from './duoDuoTuiGuang/PddAdApiUnitBidQueryBaseLocationProfile';
+import {
+  PDD_AD_API_UNIT_BID_QUERY_BASE_TARGET_PROFILE,
+  PddAdApiUnitBidQueryBaseTargetProfileRequestInterface,
+  PddAdApiUnitBidQueryBaseTargetProfileResponseInterface,
+  PDD_AD_API_UNIT_BID_QUERY_BASE_TARGET_PROFILE_LIMITERS,
+} from './duoDuoTuiGuang/PddAdApiUnitBidQueryBaseTargetProfile';
+import {
+  PDD_AD_API_UNIT_BID_QUERY_INTEREST_PROFILE,
+  PddAdApiUnitBidQueryInterestProfileRequestInterface,
+  PddAdApiUnitBidQueryInterestProfileResponseInterface,
+  PDD_AD_API_UNIT_BID_QUERY_INTEREST_PROFILE_LIMITERS,
+} from './duoDuoTuiGuang/PddAdApiUnitBidQueryInterestProfile';
+import {
+  PDD_AD_API_UNIT_BID_QUERY_LIST,
+  PddAdApiUnitBidQueryListRequestInterface,
+  PddAdApiUnitBidQueryListResponseInterface,
+  PDD_AD_API_UNIT_BID_QUERY_LIST_LIMITERS,
+} from './duoDuoTuiGuang/PddAdApiUnitBidQueryList';
+import {
+  PDD_AD_API_UNIT_BID_QUERY_TARGETING_TAG_LIST,
+  PddAdApiUnitBidQueryTargetingTagListRequestInterface,
+  PddAdApiUnitBidQueryTargetingTagListResponseInterface,
+  PDD_AD_API_UNIT_BID_QUERY_TARGETING_TAG_LIST_LIMITERS,
+} from './duoDuoTuiGuang/PddAdApiUnitBidQueryTargetingTagList';
+import {
+  PDD_AD_API_UNIT_BID_SYNC,
+  PddAdApiUnitBidSyncRequestInterface,
+  PddAdApiUnitBidSyncResponseInterface,
+  PDD_AD_API_UNIT_BID_SYNC_LIMITERS,
+} from './duoDuoTuiGuang/PddAdApiUnitBidSync';
+import {
+  PDD_AD_API_UNIT_BID_UPDATE,
+  PddAdApiUnitBidUpdateRequestInterface,
+  PddAdApiUnitBidUpdateResponseInterface,
+  PDD_AD_API_UNIT_BID_UPDATE_LIMITERS,
+} from './duoDuoTuiGuang/PddAdApiUnitBidUpdate';
+import {
+  PDD_AD_API_UNIT_CREATE,
+  PddAdApiUnitCreateRequestInterface,
+  PddAdApiUnitCreateResponseInterface,
+  PDD_AD_API_UNIT_CREATE_LIMITERS,
+} from './duoDuoTuiGuang/PddAdApiUnitCreate';
+import {
+  PDD_AD_API_UNIT_CREATIVE_CHECK_TITLE,
+  PddAdApiUnitCreativeCheckTitleRequestInterface,
+  PddAdApiUnitCreativeCheckTitleResponseInterface,
+  PDD_AD_API_UNIT_CREATIVE_CHECK_TITLE_LIMITERS,
+} from './duoDuoTuiGuang/PddAdApiUnitCreativeCheckTitle';
+import {
+  PDD_AD_API_UNIT_CREATIVE_CREATE,
+  PddAdApiUnitCreativeCreateRequestInterface,
+  PddAdApiUnitCreativeCreateResponseInterface,
+  PDD_AD_API_UNIT_CREATIVE_CREATE_LIMITERS,
+} from './duoDuoTuiGuang/PddAdApiUnitCreativeCreate';
+import {
+  PDD_AD_API_UNIT_CREATIVE_DELETE,
+  PddAdApiUnitCreativeDeleteRequestInterface,
+  PddAdApiUnitCreativeDeleteResponseInterface,
+  PDD_AD_API_UNIT_CREATIVE_DELETE_LIMITERS,
+} from './duoDuoTuiGuang/PddAdApiUnitCreativeDelete';
+import {
+  PDD_AD_API_UNIT_CREATIVE_DISTRIBUTE_FLOW_RATE,
+  PddAdApiUnitCreativeDistributeFlowRateRequestInterface,
+  PddAdApiUnitCreativeDistributeFlowRateResponseInterface,
+  PDD_AD_API_UNIT_CREATIVE_DISTRIBUTE_FLOW_RATE_LIMITERS,
+} from './duoDuoTuiGuang/PddAdApiUnitCreativeDistributeFlowRate';
+import {
+  PDD_AD_API_UNIT_CREATIVE_QUERY_FLOW_RATE,
+  PddAdApiUnitCreativeQueryFlowRateRequestInterface,
+  PddAdApiUnitCreativeQueryFlowRateResponseInterface,
+  PDD_AD_API_UNIT_CREATIVE_QUERY_FLOW_RATE_LIMITERS,
+} from './duoDuoTuiGuang/PddAdApiUnitCreativeQueryFlowRate';
+import {
+  PDD_AD_API_UNIT_CREATIVE_QUERY_LIST,
+  PddAdApiUnitCreativeQueryListRequestInterface,
+  PddAdApiUnitCreativeQueryListResponseInterface,
+  PDD_AD_API_UNIT_CREATIVE_QUERY_LIST_LIMITERS,
+} from './duoDuoTuiGuang/PddAdApiUnitCreativeQueryList';
+import {
+  PDD_AD_API_UNIT_CREATIVE_UPDATE_CONTENT,
+  PddAdApiUnitCreativeUpdateContentRequestInterface,
+  PddAdApiUnitCreativeUpdateContentResponseInterface,
+  PDD_AD_API_UNIT_CREATIVE_UPDATE_CONTENT_LIMITERS,
+} from './duoDuoTuiGuang/PddAdApiUnitCreativeUpdateContent';
+import {
+  PDD_AD_API_UNIT_CREATIVE_UPDATE_DATA_OPERATE_STATUS,
+  PddAdApiUnitCreativeUpdateDataOperateStatusRequestInterface,
+  PddAdApiUnitCreativeUpdateDataOperateStatusResponseInterface,
+  PDD_AD_API_UNIT_CREATIVE_UPDATE_DATA_OPERATE_STATUS_LIMITERS,
+} from './duoDuoTuiGuang/PddAdApiUnitCreativeUpdateDataOperateStatus';
+import {
+  PDD_AD_API_UNIT_CREATIVE_UPDATE_SMART_CREATIVE,
+  PddAdApiUnitCreativeUpdateSmartCreativeRequestInterface,
+  PddAdApiUnitCreativeUpdateSmartCreativeResponseInterface,
+  PDD_AD_API_UNIT_CREATIVE_UPDATE_SMART_CREATIVE_LIMITERS,
+} from './duoDuoTuiGuang/PddAdApiUnitCreativeUpdateSmartCreative';
+import {
+  PDD_AD_API_UNIT_DELETE,
+  PddAdApiUnitDeleteRequestInterface,
+  PddAdApiUnitDeleteResponseInterface,
+  PDD_AD_API_UNIT_DELETE_LIMITERS,
+} from './duoDuoTuiGuang/PddAdApiUnitDelete';
+import {
+  PDD_AD_API_UNIT_QUERY_LIST,
+  PddAdApiUnitQueryListRequestInterface,
+  PddAdApiUnitQueryListResponseInterface,
+  PDD_AD_API_UNIT_QUERY_LIST_LIMITERS,
+} from './duoDuoTuiGuang/PddAdApiUnitQueryList';
+import {
+  PDD_AD_API_UNIT_UPDATE_DATA_OPERATE_STATUS,
+  PddAdApiUnitUpdateDataOperateStatusRequestInterface,
+  PddAdApiUnitUpdateDataOperateStatusResponseInterface,
+  PDD_AD_API_UNIT_UPDATE_DATA_OPERATE_STATUS_LIMITERS,
+} from './duoDuoTuiGuang/PddAdApiUnitUpdateDataOperateStatus';
+import {
+  PDD_AD_API_UNIT_UPDATE_OPTIMIZATION_MESSAGE,
+  PddAdApiUnitUpdateOptimizationMessageRequestInterface,
+  PddAdApiUnitUpdateOptimizationMessageResponseInterface,
+  PDD_AD_API_UNIT_UPDATE_OPTIMIZATION_MESSAGE_LIMITERS,
+} from './duoDuoTuiGuang/PddAdApiUnitUpdateOptimizationMessage';
+import {
+  PDD_AD_API_UNIT_UPDATE_UNIT_BID,
+  PddAdApiUnitUpdateUnitBidRequestInterface,
+  PddAdApiUnitUpdateUnitBidResponseInterface,
+  PDD_AD_API_UNIT_UPDATE_UNIT_BID_LIMITERS,
+} from './duoDuoTuiGuang/PddAdApiUnitUpdateUnitBid';
+import {
+  PDD_AD_API_UNIT_UPDATE_UNIT_NAME,
+  PddAdApiUnitUpdateUnitNameRequestInterface,
+  PddAdApiUnitUpdateUnitNameResponseInterface,
+  PDD_AD_API_UNIT_UPDATE_UNIT_NAME_LIMITERS,
+} from './duoDuoTuiGuang/PddAdApiUnitUpdateUnitName';
+// 电子面单代打API
+import {
+  PDD_FDS_ORDER_GET,
+  PDD_FDS_ORDER_GET_RESPONSE_KEY,
+  PddFdsOrderGetRequestInterface,
+  PddFdsOrderGetResponseInterface,
+  PddFdsOrderGetPddFdsOrderGetResponseResponseInterface,
+  PDD_FDS_ORDER_GET_LIMITERS,
+} from './dianZiMianDanDaiDa/PddFdsOrderGet';
+import {
+  PDD_FDS_ORDER_LIST_GET,
+  PDD_FDS_ORDER_LIST_GET_RESPONSE_KEY,
+  PddFdsOrderListGetRequestInterface,
+  PddFdsOrderListGetResponseInterface,
+  PddFdsOrderListGetPddFdsOrderListGetResponseResponseInterface,
+  PDD_FDS_ORDER_LIST_GET_LIMITERS,
+} from './dianZiMianDanDaiDa/PddFdsOrderListGet';
+import {
+  PDD_FDS_ROLE_GET,
+  PDD_FDS_ROLE_GET_RESPONSE_KEY,
+  PddFdsRoleGetRequestInterface,
+  PddFdsRoleGetResponseInterface,
+  PddFdsRoleGetPddFdsRoleGetResponseResponseInterface,
+  PDD_FDS_ROLE_GET_LIMITERS,
+} from './dianZiMianDanDaiDa/PddFdsRoleGet';
+import {
+  PDD_FDS_WAYBILL_CANCEL,
+  PDD_FDS_WAYBILL_CANCEL_RESPONSE_KEY,
+  PddFdsWaybillCancelRequestInterface,
+  PddFdsWaybillCancelResponseInterface,
+  PddFdsWaybillCancelPddFdsWaybillCancelResponseResponseInterface,
+  PDD_FDS_WAYBILL_CANCEL_LIMITERS,
+} from './dianZiMianDanDaiDa/PddFdsWaybillCancel';
+import {
+  PDD_FDS_WAYBILL_GET,
+  PDD_FDS_WAYBILL_GET_RESPONSE_KEY,
+  PddFdsWaybillGetRequestInterface,
+  PddFdsWaybillGetResponseInterface,
+  PddFdsWaybillGetPddFdsWaybillGetResponseResponseInterface,
+  PDD_FDS_WAYBILL_GET_LIMITERS,
+} from './dianZiMianDanDaiDa/PddFdsWaybillGet';
+import {
+  PDD_FDS_WAYBILL_RETURN,
+  PDD_FDS_WAYBILL_RETURN_RESPONSE_KEY,
+  PddFdsWaybillReturnRequestInterface,
+  PddFdsWaybillReturnResponseInterface,
+  PddFdsWaybillReturnPddFdsWaybillReturnResponseResponseInterface,
+  PDD_FDS_WAYBILL_RETURN_LIMITERS,
+} from './dianZiMianDanDaiDa/PddFdsWaybillReturn';
 // 门店API
 import {
   PDD_MALL_INFO_GROUP_ADD_STORE_POST,
@@ -1479,301 +1939,8 @@ import {
   PddQrpayPayeeRegisterRequestInterface,
   PddQrpayPayeeRegisterResponseInterface,
   PddQrpayPayeeRegisterQrpayPayeeRegisterResponseResponseInterface,
+  PDD_QRPAY_PAYEE_REGISTER_LIMITERS,
 } from './menDian/PddQrpayPayeeRegister';
-// 多多推广API
-import {
-  PDD_AD_API_ADVERTISER_OPEN_ACCOUNT,
-  PddAdApiAdvertiserOpenAccountRequestInterface,
-  PddAdApiAdvertiserOpenAccountResponseInterface,
-} from './duoDuoTuiGuang/PddAdApiAdvertiserOpenAccount';
-import {
-  PDD_AD_API_ADVERTISER_QUERY_ACCOUNT_BALANCE,
-  PddAdApiAdvertiserQueryAccountBalanceRequestInterface,
-  PddAdApiAdvertiserQueryAccountBalanceResponseInterface,
-} from './duoDuoTuiGuang/PddAdApiAdvertiserQueryAccountBalance';
-import {
-  PDD_AD_API_ADVERTISER_QUERY_ACCOUNT_INFO,
-  PddAdApiAdvertiserQueryAccountInfoRequestInterface,
-  PddAdApiAdvertiserQueryAccountInfoResponseInterface,
-} from './duoDuoTuiGuang/PddAdApiAdvertiserQueryAccountInfo';
-import {
-  PDD_AD_API_ADVERTISER_QUERY_DETAIL,
-  PddAdApiAdvertiserQueryDetailRequestInterface,
-  PddAdApiAdvertiserQueryDetailResponseInterface,
-} from './duoDuoTuiGuang/PddAdApiAdvertiserQueryDetail';
-import {
-  PDD_AD_API_GOODS_QUERY_GALLERY_IMAGES,
-  PddAdApiGoodsQueryGalleryImagesRequestInterface,
-  PddAdApiGoodsQueryGalleryImagesResponseInterface,
-} from './duoDuoTuiGuang/PddAdApiGoodsQueryGalleryImages';
-import {
-  PDD_AD_API_GOODS_QUERY_LONG_IMAGES,
-  PddAdApiGoodsQueryLongImagesRequestInterface,
-  PddAdApiGoodsQueryLongImagesResponseInterface,
-} from './duoDuoTuiGuang/PddAdApiGoodsQueryLongImages';
-import {
-  PDD_AD_API_GOODS_QUERY_PAGE,
-  PddAdApiGoodsQueryPageRequestInterface,
-  PddAdApiGoodsQueryPageResponseInterface,
-} from './duoDuoTuiGuang/PddAdApiGoodsQueryPage';
-import {
-  PDD_AD_API_KEYWORD_CREATE,
-  PddAdApiKeywordCreateRequestInterface,
-  PddAdApiKeywordCreateResponseInterface,
-} from './duoDuoTuiGuang/PddAdApiKeywordCreate';
-import {
-  PDD_AD_API_KEYWORD_DELETE,
-  PddAdApiKeywordDeleteRequestInterface,
-  PddAdApiKeywordDeleteResponseInterface,
-} from './duoDuoTuiGuang/PddAdApiKeywordDelete';
-import {
-  PDD_AD_API_KEYWORD_QUERY_LIST,
-  PddAdApiKeywordQueryListRequestInterface,
-  PddAdApiKeywordQueryListResponseInterface,
-} from './duoDuoTuiGuang/PddAdApiKeywordQueryList';
-import {
-  PDD_AD_API_KEYWORD_RECOMMEND_GET,
-  PddAdApiKeywordRecommendGetRequestInterface,
-  PddAdApiKeywordRecommendGetResponseInterface,
-} from './duoDuoTuiGuang/PddAdApiKeywordRecommendGet';
-import {
-  PDD_AD_API_KEYWORD_RELEVANCE_GET,
-  PddAdApiKeywordRelevanceGetRequestInterface,
-  PddAdApiKeywordRelevanceGetResponseInterface,
-} from './duoDuoTuiGuang/PddAdApiKeywordRelevanceGet';
-import {
-  PDD_AD_API_KEYWORD_UPDATE,
-  PddAdApiKeywordUpdateRequestInterface,
-  PddAdApiKeywordUpdateResponseInterface,
-} from './duoDuoTuiGuang/PddAdApiKeywordUpdate';
-import {
-  PDD_AD_API_PLAN_CREATE,
-  PddAdApiPlanCreateRequestInterface,
-  PddAdApiPlanCreateResponseInterface,
-} from './duoDuoTuiGuang/PddAdApiPlanCreate';
-import {
-  PDD_AD_API_PLAN_DELETE,
-  PddAdApiPlanDeleteRequestInterface,
-  PddAdApiPlanDeleteResponseInterface,
-} from './duoDuoTuiGuang/PddAdApiPlanDelete';
-import {
-  PDD_AD_API_PLAN_QUERY_CAN_CREATE_AD_PLAN,
-  PddAdApiPlanQueryCanCreateAdPlanRequestInterface,
-  PddAdApiPlanQueryCanCreateAdPlanResponseInterface,
-} from './duoDuoTuiGuang/PddAdApiPlanQueryCanCreateAdPlan';
-import {
-  PDD_AD_API_PLAN_QUERY_CAN_UPDATE_MAX_COST,
-  PddAdApiPlanQueryCanUpdateMaxCostRequestInterface,
-  PddAdApiPlanQueryCanUpdateMaxCostResponseInterface,
-} from './duoDuoTuiGuang/PddAdApiPlanQueryCanUpdateMaxCost';
-import {
-  PDD_AD_API_PLAN_QUERY_LIST,
-  PddAdApiPlanQueryListRequestInterface,
-  PddAdApiPlanQueryListResponseInterface,
-} from './duoDuoTuiGuang/PddAdApiPlanQueryList';
-import {
-  PDD_AD_API_PLAN_UPDATE_DATA_OPERATE_STATUS,
-  PddAdApiPlanUpdateDataOperateStatusRequestInterface,
-  PddAdApiPlanUpdateDataOperateStatusResponseInterface,
-} from './duoDuoTuiGuang/PddAdApiPlanUpdateDataOperateStatus';
-import {
-  PDD_AD_API_PLAN_UPDATE_MAX_COST,
-  PddAdApiPlanUpdateMaxCostRequestInterface,
-  PddAdApiPlanUpdateMaxCostResponseInterface,
-} from './duoDuoTuiGuang/PddAdApiPlanUpdateMaxCost';
-import {
-  PDD_AD_API_PLAN_UPDATE_PLAN_DISCOUNT,
-  PddAdApiPlanUpdatePlanDiscountRequestInterface,
-  PddAdApiPlanUpdatePlanDiscountResponseInterface,
-} from './duoDuoTuiGuang/PddAdApiPlanUpdatePlanDiscount';
-import {
-  PDD_AD_API_PLAN_UPDATE_PLAN_NAME,
-  PddAdApiPlanUpdatePlanNameRequestInterface,
-  PddAdApiPlanUpdatePlanNameResponseInterface,
-} from './duoDuoTuiGuang/PddAdApiPlanUpdatePlanName';
-import {
-  PDD_AD_API_REPORT_DAILY_REPORT_QUERY,
-  PddAdApiReportDailyReportQueryRequestInterface,
-  PddAdApiReportDailyReportQueryResponseInterface,
-} from './duoDuoTuiGuang/PddAdApiReportDailyReportQuery';
-import {
-  PDD_AD_API_REPORT_ENTITY_REPORT_QUERY,
-  PddAdApiReportEntityReportQueryRequestInterface,
-  PddAdApiReportEntityReportQueryResponseInterface,
-} from './duoDuoTuiGuang/PddAdApiReportEntityReportQuery';
-import {
-  PDD_AD_API_REPORT_HOURLY_REPORT_QUERY,
-  PddAdApiReportHourlyReportQueryRequestInterface,
-  PddAdApiReportHourlyReportQueryResponseInterface,
-} from './duoDuoTuiGuang/PddAdApiReportHourlyReportQuery';
-import {
-  PDD_AD_API_UNIT_BID_DELETE,
-  PddAdApiUnitBidDeleteRequestInterface,
-  PddAdApiUnitBidDeleteResponseInterface,
-} from './duoDuoTuiGuang/PddAdApiUnitBidDelete';
-import {
-  PDD_AD_API_UNIT_BID_QUERY_AUDIENCE_PROFILE,
-  PddAdApiUnitBidQueryAudienceProfileRequestInterface,
-  PddAdApiUnitBidQueryAudienceProfileResponseInterface,
-} from './duoDuoTuiGuang/PddAdApiUnitBidQueryAudienceProfile';
-import {
-  PDD_AD_API_UNIT_BID_QUERY_BASE_LOCATION_PROFILE,
-  PddAdApiUnitBidQueryBaseLocationProfileRequestInterface,
-  PddAdApiUnitBidQueryBaseLocationProfileResponseInterface,
-} from './duoDuoTuiGuang/PddAdApiUnitBidQueryBaseLocationProfile';
-import {
-  PDD_AD_API_UNIT_BID_QUERY_BASE_TARGET_PROFILE,
-  PddAdApiUnitBidQueryBaseTargetProfileRequestInterface,
-  PddAdApiUnitBidQueryBaseTargetProfileResponseInterface,
-} from './duoDuoTuiGuang/PddAdApiUnitBidQueryBaseTargetProfile';
-import {
-  PDD_AD_API_UNIT_BID_QUERY_INTEREST_PROFILE,
-  PddAdApiUnitBidQueryInterestProfileRequestInterface,
-  PddAdApiUnitBidQueryInterestProfileResponseInterface,
-} from './duoDuoTuiGuang/PddAdApiUnitBidQueryInterestProfile';
-import {
-  PDD_AD_API_UNIT_BID_QUERY_LIST,
-  PddAdApiUnitBidQueryListRequestInterface,
-  PddAdApiUnitBidQueryListResponseInterface,
-} from './duoDuoTuiGuang/PddAdApiUnitBidQueryList';
-import {
-  PDD_AD_API_UNIT_BID_QUERY_TARGETING_TAG_LIST,
-  PddAdApiUnitBidQueryTargetingTagListRequestInterface,
-  PddAdApiUnitBidQueryTargetingTagListResponseInterface,
-} from './duoDuoTuiGuang/PddAdApiUnitBidQueryTargetingTagList';
-import {
-  PDD_AD_API_UNIT_BID_SYNC,
-  PddAdApiUnitBidSyncRequestInterface,
-  PddAdApiUnitBidSyncResponseInterface,
-} from './duoDuoTuiGuang/PddAdApiUnitBidSync';
-import {
-  PDD_AD_API_UNIT_BID_UPDATE,
-  PddAdApiUnitBidUpdateRequestInterface,
-  PddAdApiUnitBidUpdateResponseInterface,
-} from './duoDuoTuiGuang/PddAdApiUnitBidUpdate';
-import {
-  PDD_AD_API_UNIT_CREATE,
-  PddAdApiUnitCreateRequestInterface,
-  PddAdApiUnitCreateResponseInterface,
-} from './duoDuoTuiGuang/PddAdApiUnitCreate';
-import {
-  PDD_AD_API_UNIT_CREATIVE_CHECK_TITLE,
-  PddAdApiUnitCreativeCheckTitleRequestInterface,
-  PddAdApiUnitCreativeCheckTitleResponseInterface,
-} from './duoDuoTuiGuang/PddAdApiUnitCreativeCheckTitle';
-import {
-  PDD_AD_API_UNIT_CREATIVE_CREATE,
-  PddAdApiUnitCreativeCreateRequestInterface,
-  PddAdApiUnitCreativeCreateResponseInterface,
-} from './duoDuoTuiGuang/PddAdApiUnitCreativeCreate';
-import {
-  PDD_AD_API_UNIT_CREATIVE_DELETE,
-  PddAdApiUnitCreativeDeleteRequestInterface,
-  PddAdApiUnitCreativeDeleteResponseInterface,
-} from './duoDuoTuiGuang/PddAdApiUnitCreativeDelete';
-import {
-  PDD_AD_API_UNIT_CREATIVE_DISTRIBUTE_FLOW_RATE,
-  PddAdApiUnitCreativeDistributeFlowRateRequestInterface,
-  PddAdApiUnitCreativeDistributeFlowRateResponseInterface,
-} from './duoDuoTuiGuang/PddAdApiUnitCreativeDistributeFlowRate';
-import {
-  PDD_AD_API_UNIT_CREATIVE_QUERY_FLOW_RATE,
-  PddAdApiUnitCreativeQueryFlowRateRequestInterface,
-  PddAdApiUnitCreativeQueryFlowRateResponseInterface,
-} from './duoDuoTuiGuang/PddAdApiUnitCreativeQueryFlowRate';
-import {
-  PDD_AD_API_UNIT_CREATIVE_QUERY_LIST,
-  PddAdApiUnitCreativeQueryListRequestInterface,
-  PddAdApiUnitCreativeQueryListResponseInterface,
-} from './duoDuoTuiGuang/PddAdApiUnitCreativeQueryList';
-import {
-  PDD_AD_API_UNIT_CREATIVE_UPDATE_CONTENT,
-  PddAdApiUnitCreativeUpdateContentRequestInterface,
-  PddAdApiUnitCreativeUpdateContentResponseInterface,
-} from './duoDuoTuiGuang/PddAdApiUnitCreativeUpdateContent';
-import {
-  PDD_AD_API_UNIT_CREATIVE_UPDATE_DATA_OPERATE_STATUS,
-  PddAdApiUnitCreativeUpdateDataOperateStatusRequestInterface,
-  PddAdApiUnitCreativeUpdateDataOperateStatusResponseInterface,
-} from './duoDuoTuiGuang/PddAdApiUnitCreativeUpdateDataOperateStatus';
-import {
-  PDD_AD_API_UNIT_CREATIVE_UPDATE_SMART_CREATIVE,
-  PddAdApiUnitCreativeUpdateSmartCreativeRequestInterface,
-  PddAdApiUnitCreativeUpdateSmartCreativeResponseInterface,
-} from './duoDuoTuiGuang/PddAdApiUnitCreativeUpdateSmartCreative';
-import {
-  PDD_AD_API_UNIT_DELETE,
-  PddAdApiUnitDeleteRequestInterface,
-  PddAdApiUnitDeleteResponseInterface,
-} from './duoDuoTuiGuang/PddAdApiUnitDelete';
-import {
-  PDD_AD_API_UNIT_QUERY_LIST,
-  PddAdApiUnitQueryListRequestInterface,
-  PddAdApiUnitQueryListResponseInterface,
-} from './duoDuoTuiGuang/PddAdApiUnitQueryList';
-import {
-  PDD_AD_API_UNIT_UPDATE_DATA_OPERATE_STATUS,
-  PddAdApiUnitUpdateDataOperateStatusRequestInterface,
-  PddAdApiUnitUpdateDataOperateStatusResponseInterface,
-} from './duoDuoTuiGuang/PddAdApiUnitUpdateDataOperateStatus';
-import {
-  PDD_AD_API_UNIT_UPDATE_OPTIMIZATION_MESSAGE,
-  PddAdApiUnitUpdateOptimizationMessageRequestInterface,
-  PddAdApiUnitUpdateOptimizationMessageResponseInterface,
-} from './duoDuoTuiGuang/PddAdApiUnitUpdateOptimizationMessage';
-import {
-  PDD_AD_API_UNIT_UPDATE_UNIT_BID,
-  PddAdApiUnitUpdateUnitBidRequestInterface,
-  PddAdApiUnitUpdateUnitBidResponseInterface,
-} from './duoDuoTuiGuang/PddAdApiUnitUpdateUnitBid';
-import {
-  PDD_AD_API_UNIT_UPDATE_UNIT_NAME,
-  PddAdApiUnitUpdateUnitNameRequestInterface,
-  PddAdApiUnitUpdateUnitNameResponseInterface,
-} from './duoDuoTuiGuang/PddAdApiUnitUpdateUnitName';
-// 电子面单代打API
-import {
-  PDD_FDS_ORDER_GET,
-  PDD_FDS_ORDER_GET_RESPONSE_KEY,
-  PddFdsOrderGetRequestInterface,
-  PddFdsOrderGetResponseInterface,
-  PddFdsOrderGetPddFdsOrderGetResponseResponseInterface,
-} from './dianZiMianDanDaiDa/PddFdsOrderGet';
-import {
-  PDD_FDS_ORDER_LIST_GET,
-  PDD_FDS_ORDER_LIST_GET_RESPONSE_KEY,
-  PddFdsOrderListGetRequestInterface,
-  PddFdsOrderListGetResponseInterface,
-  PddFdsOrderListGetPddFdsOrderListGetResponseResponseInterface,
-} from './dianZiMianDanDaiDa/PddFdsOrderListGet';
-import {
-  PDD_FDS_ROLE_GET,
-  PDD_FDS_ROLE_GET_RESPONSE_KEY,
-  PddFdsRoleGetRequestInterface,
-  PddFdsRoleGetResponseInterface,
-  PddFdsRoleGetPddFdsRoleGetResponseResponseInterface,
-} from './dianZiMianDanDaiDa/PddFdsRoleGet';
-import {
-  PDD_FDS_WAYBILL_CANCEL,
-  PDD_FDS_WAYBILL_CANCEL_RESPONSE_KEY,
-  PddFdsWaybillCancelRequestInterface,
-  PddFdsWaybillCancelResponseInterface,
-  PddFdsWaybillCancelPddFdsWaybillCancelResponseResponseInterface,
-} from './dianZiMianDanDaiDa/PddFdsWaybillCancel';
-import {
-  PDD_FDS_WAYBILL_GET,
-  PDD_FDS_WAYBILL_GET_RESPONSE_KEY,
-  PddFdsWaybillGetRequestInterface,
-  PddFdsWaybillGetResponseInterface,
-  PddFdsWaybillGetPddFdsWaybillGetResponseResponseInterface,
-} from './dianZiMianDanDaiDa/PddFdsWaybillGet';
-import {
-  PDD_FDS_WAYBILL_RETURN,
-  PDD_FDS_WAYBILL_RETURN_RESPONSE_KEY,
-  PddFdsWaybillReturnRequestInterface,
-  PddFdsWaybillReturnResponseInterface,
-  PddFdsWaybillReturnPddFdsWaybillReturnResponseResponseInterface,
-} from './dianZiMianDanDaiDa/PddFdsWaybillReturn';
 // 多多国际API
 import {
   PDD_MALL_INFO_BONDED_WAREHOUSE_GET,
@@ -1781,6 +1948,7 @@ import {
   PddMallInfoBondedWarehouseGetRequestInterface,
   PddMallInfoBondedWarehouseGetResponseInterface,
   PddMallInfoBondedWarehouseGetMallInfoBondedWarehouseGetResponseResponseInterface,
+  PDD_MALL_INFO_BONDED_WAREHOUSE_GET_LIMITERS,
 } from './duoDuoGuoJi/PddMallInfoBondedWarehouseGet';
 import {
   PDD_OVERSEA_CLEARANCE_GET,
@@ -1790,16 +1958,16 @@ import {
   PddOverseaClearanceGetClearanceResponseResponseInterface,
 } from './duoDuoGuoJi/PddOverseaClearanceGet';
 const PddResponseTypeAndRequestTypeMapping = {
-  [PDD_ORDER_BASIC_LIST_GET]: PDD_ORDER_BASIC_LIST_GET_RESPONSE_KEY,
-  [PDD_ORDER_INFORMATION_GET]: PDD_ORDER_INFORMATION_GET_RESPONSE_KEY,
-  [PDD_ORDER_LIST_GET]: PDD_ORDER_LIST_GET_RESPONSE_KEY,
-  [PDD_ORDER_NUMBER_LIST_INCREMENT_GET]: PDD_ORDER_NUMBER_LIST_INCREMENT_GET_RESPONSE_KEY,
-  [PDD_ORDER_STATUS_GET]: PDD_ORDER_STATUS_GET_RESPONSE_KEY,
   [PDD_LOGISTICS_ADDRESS_GET]: PDD_LOGISTICS_ADDRESS_GET_RESPONSE_KEY,
   [PDD_LOGISTICS_COMPANIES_GET]: PDD_LOGISTICS_COMPANIES_GET_RESPONSE_KEY,
   [PDD_LOGISTICS_ONLINE_CREATE]: PDD_LOGISTICS_ONLINE_CREATE_RESPONSE_KEY,
   [PDD_LOGISTICS_ONLINE_SEND]: PDD_LOGISTICS_ONLINE_SEND_RESPONSE_KEY,
   [PDD_LOGISTICS_ONLINE_STATUS_QUERY]: PDD_LOGISTICS_ONLINE_STATUS_QUERY_RESPONSE_KEY,
+  [PDD_ORDER_BASIC_LIST_GET]: PDD_ORDER_BASIC_LIST_GET_RESPONSE_KEY,
+  [PDD_ORDER_INFORMATION_GET]: PDD_ORDER_INFORMATION_GET_RESPONSE_KEY,
+  [PDD_ORDER_LIST_GET]: PDD_ORDER_LIST_GET_RESPONSE_KEY,
+  [PDD_ORDER_NUMBER_LIST_INCREMENT_GET]: PDD_ORDER_NUMBER_LIST_INCREMENT_GET_RESPONSE_KEY,
+  [PDD_ORDER_STATUS_GET]: PDD_ORDER_STATUS_GET_RESPONSE_KEY,
   [PDD_RDC_PDDGENIUS_SENDGOODS_CANCEL]: PDD_RDC_PDDGENIUS_SENDGOODS_CANCEL_RESPONSE_KEY,
   [PDD_REFUND_ADDRESS_LIST_GET]: PDD_REFUND_ADDRESS_LIST_GET_RESPONSE_KEY,
   [PDD_REFUND_LIST_INCREMENT_GET]: PDD_REFUND_LIST_INCREMENT_GET_RESPONSE_KEY,
@@ -1963,6 +2131,12 @@ const PddResponseTypeAndRequestTypeMapping = {
   [PDD_SERVICEMARKET_SETTLEMENTBILL_GET]: PDD_SERVICEMARKET_SETTLEMENTBILL_GET_RESPONSE_KEY,
   [PDD_SERVICEMARKET_TRADELIST_GET]: PDD_SERVICEMARKET_TRADELIST_GET_RESPONSE_KEY,
   [PDD_VAS_ORDER_SEARCH]: PDD_VAS_ORDER_SEARCH_RESPONSE_KEY,
+  [PDD_FDS_ORDER_GET]: PDD_FDS_ORDER_GET_RESPONSE_KEY,
+  [PDD_FDS_ORDER_LIST_GET]: PDD_FDS_ORDER_LIST_GET_RESPONSE_KEY,
+  [PDD_FDS_ROLE_GET]: PDD_FDS_ROLE_GET_RESPONSE_KEY,
+  [PDD_FDS_WAYBILL_CANCEL]: PDD_FDS_WAYBILL_CANCEL_RESPONSE_KEY,
+  [PDD_FDS_WAYBILL_GET]: PDD_FDS_WAYBILL_GET_RESPONSE_KEY,
+  [PDD_FDS_WAYBILL_RETURN]: PDD_FDS_WAYBILL_RETURN_RESPONSE_KEY,
   [PDD_MALL_INFO_GROUP_ADD_STORE_POST]: PDD_MALL_INFO_GROUP_ADD_STORE_POST_RESPONSE_KEY,
   [PDD_MALL_INFO_GROUP_LIST_STORE_GET]: PDD_MALL_INFO_GROUP_LIST_STORE_GET_RESPONSE_KEY,
   [PDD_MALL_INFO_GROUP_REMOVE_STORE_GET]: PDD_MALL_INFO_GROUP_REMOVE_STORE_GET_RESPONSE_KEY,
@@ -1970,25 +2144,19 @@ const PddResponseTypeAndRequestTypeMapping = {
   [PDD_MALL_INFO_STORE_DELETE_POST]: PDD_MALL_INFO_STORE_DELETE_POST_RESPONSE_KEY,
   [PDD_MALL_INFO_STORE_UPDATE_POST]: PDD_MALL_INFO_STORE_UPDATE_POST_RESPONSE_KEY,
   [PDD_QRPAY_PAYEE_REGISTER]: PDD_QRPAY_PAYEE_REGISTER_RESPONSE_KEY,
-  [PDD_FDS_ORDER_GET]: PDD_FDS_ORDER_GET_RESPONSE_KEY,
-  [PDD_FDS_ORDER_LIST_GET]: PDD_FDS_ORDER_LIST_GET_RESPONSE_KEY,
-  [PDD_FDS_ROLE_GET]: PDD_FDS_ROLE_GET_RESPONSE_KEY,
-  [PDD_FDS_WAYBILL_CANCEL]: PDD_FDS_WAYBILL_CANCEL_RESPONSE_KEY,
-  [PDD_FDS_WAYBILL_GET]: PDD_FDS_WAYBILL_GET_RESPONSE_KEY,
-  [PDD_FDS_WAYBILL_RETURN]: PDD_FDS_WAYBILL_RETURN_RESPONSE_KEY,
   [PDD_MALL_INFO_BONDED_WAREHOUSE_GET]: PDD_MALL_INFO_BONDED_WAREHOUSE_GET_RESPONSE_KEY,
   [PDD_OVERSEA_CLEARANCE_GET]: PDD_OVERSEA_CLEARANCE_GET_RESPONSE_KEY,
 };
 const PddNeedAccessTokenTypeCollections = [
+  PDD_LOGISTICS_ONLINE_CREATE,
+  PDD_LOGISTICS_ONLINE_SEND,
+  PDD_LOGISTICS_ONLINE_STATUS_QUERY,
   PDD_ERP_ORDER_SYNC,
   PDD_ORDER_BASIC_LIST_GET,
   PDD_ORDER_INFORMATION_GET,
   PDD_ORDER_LIST_GET,
   PDD_ORDER_NUMBER_LIST_INCREMENT_GET,
   PDD_ORDER_STATUS_GET,
-  PDD_LOGISTICS_ONLINE_CREATE,
-  PDD_LOGISTICS_ONLINE_SEND,
-  PDD_LOGISTICS_ONLINE_STATUS_QUERY,
   PDD_NEXTONE_LOGISTICS_WAREHOUSE_UPDATE,
   PDD_RDC_PDDGENIUS_SENDGOODS_CANCEL,
   PDD_REFUND_ADDRESS_LIST_GET,
@@ -2128,16 +2296,6 @@ const PddNeedAccessTokenTypeCollections = [
   PDD_WAYBILL_SEARCH,
   PDD_WAYBILL_UPDATE,
   PDD_FINANCE_BALANCE_DAILY_BILL_URL_GET,
-  PDD_MALL_INFO_GROUP_ADD_STORE_POST,
-  PDD_MALL_INFO_GROUP_LIST_STORE_GET,
-  PDD_MALL_INFO_GROUP_REMOVE_STORE_GET,
-  PDD_MALL_INFO_STORE_CREATE_POST,
-  PDD_MALL_INFO_STORE_CREATE_POST_NOPOI,
-  PDD_MALL_INFO_STORE_DELETE_POST,
-  PDD_MALL_INFO_STORE_GET,
-  PDD_MALL_INFO_STORE_UPDATE_POST,
-  PDD_MALL_INFO_STORE_UPDATE_POST_NOPOI,
-  PDD_QRPAY_PAYEE_REGISTER,
   PDD_AD_API_ADVERTISER_OPEN_ACCOUNT,
   PDD_AD_API_ADVERTISER_QUERY_ACCOUNT_BALANCE,
   PDD_AD_API_ADVERTISER_QUERY_ACCOUNT_INFO,
@@ -2194,38 +2352,190 @@ const PddNeedAccessTokenTypeCollections = [
   PDD_FDS_WAYBILL_CANCEL,
   PDD_FDS_WAYBILL_GET,
   PDD_FDS_WAYBILL_RETURN,
+  PDD_MALL_INFO_GROUP_ADD_STORE_POST,
+  PDD_MALL_INFO_GROUP_LIST_STORE_GET,
+  PDD_MALL_INFO_GROUP_REMOVE_STORE_GET,
+  PDD_MALL_INFO_STORE_CREATE_POST,
+  PDD_MALL_INFO_STORE_CREATE_POST_NOPOI,
+  PDD_MALL_INFO_STORE_DELETE_POST,
+  PDD_MALL_INFO_STORE_GET,
+  PDD_MALL_INFO_STORE_UPDATE_POST,
+  PDD_MALL_INFO_STORE_UPDATE_POST_NOPOI,
+  PDD_QRPAY_PAYEE_REGISTER,
   PDD_MALL_INFO_BONDED_WAREHOUSE_GET,
   PDD_OVERSEA_CLEARANCE_GET,
 ];
+const PddApiLimiterMapping = {
+  [PDD_LOGISTICS_ADDRESS_GET]: PDD_LOGISTICS_ADDRESS_GET_LIMITERS,
+  [PDD_LOGISTICS_COMPANIES_GET]: PDD_LOGISTICS_COMPANIES_GET_LIMITERS,
+  [PDD_LOGISTICS_ISV_TRACE_NOTIFY_SUB]: PDD_LOGISTICS_ISV_TRACE_NOTIFY_SUB_LIMITERS,
+  [PDD_LOGISTICS_ONLINE_SEND]: PDD_LOGISTICS_ONLINE_SEND_LIMITERS,
+  [PDD_LOGISTICS_ORDERTRACE_GET]: PDD_LOGISTICS_ORDERTRACE_GET_LIMITERS,
+  [PDD_ERP_ORDER_SYNC]: PDD_ERP_ORDER_SYNC_LIMITERS,
+  [PDD_ORDER_INFORMATION_GET]: PDD_ORDER_INFORMATION_GET_LIMITERS,
+  [PDD_ORDER_LIST_GET]: PDD_ORDER_LIST_GET_LIMITERS,
+  [PDD_ORDER_NUMBER_LIST_INCREMENT_GET]: PDD_ORDER_NUMBER_LIST_INCREMENT_GET_LIMITERS,
+  [PDD_ORDER_STATUS_GET]: PDD_ORDER_STATUS_GET_LIMITERS,
+  [PDD_RDC_PDDGENIUS_SENDGOODS_CANCEL]: PDD_RDC_PDDGENIUS_SENDGOODS_CANCEL_LIMITERS,
+  [PDD_REFUND_ADDRESS_LIST_GET]: PDD_REFUND_ADDRESS_LIST_GET_LIMITERS,
+  [PDD_REFUND_INFORMATION_GET]: PDD_REFUND_INFORMATION_GET_LIMITERS,
+  [PDD_REFUND_LIST_INCREMENT_GET]: PDD_REFUND_LIST_INCREMENT_GET_LIMITERS,
+  [PDD_REFUND_STATUS_CHECK]: PDD_REFUND_STATUS_CHECK_LIMITERS,
+  [PDD_VIRTUAL_MOBILE_CHARGE_NOTIFY]: PDD_VIRTUAL_MOBILE_CHARGE_NOTIFY_LIMITERS,
+  [PDD_DELETE_DRAFT_COMMIT]: PDD_DELETE_DRAFT_COMMIT_LIMITERS,
+  [PDD_DELETE_GOODS_COMMIT]: PDD_DELETE_GOODS_COMMIT_LIMITERS,
+  [PDD_GOODS_ADD]: PDD_GOODS_ADD_LIMITERS,
+  [PDD_GOODS_AUTHORIZATION_CATS]: PDD_GOODS_AUTHORIZATION_CATS_LIMITERS,
+  [PDD_GOODS_CAT_TEMPLATE_GET]: PDD_GOODS_CAT_TEMPLATE_GET_LIMITERS,
+  [PDD_GOODS_CATS_GET]: PDD_GOODS_CATS_GET_LIMITERS,
+  [PDD_GOODS_COMMIT_DETAIL_GET]: PDD_GOODS_COMMIT_DETAIL_GET_LIMITERS,
+  [PDD_GOODS_COUNTRY_GET]: PDD_GOODS_COUNTRY_GET_LIMITERS,
+  [PDD_GOODS_CPS_MALL_UNIT_CREATE]: PDD_GOODS_CPS_MALL_UNIT_CREATE_LIMITERS,
+  [PDD_GOODS_CPS_MALL_UNIT_RESUME]: PDD_GOODS_CPS_MALL_UNIT_RESUME_LIMITERS,
+  [PDD_GOODS_CPS_UNIT_CHANGE]: PDD_GOODS_CPS_UNIT_CHANGE_LIMITERS,
+  [PDD_GOODS_CPS_UNIT_CREATE]: PDD_GOODS_CPS_UNIT_CREATE_LIMITERS,
+  [PDD_GOODS_CPS_UNIT_DELETE]: PDD_GOODS_CPS_UNIT_DELETE_LIMITERS,
+  [PDD_GOODS_CPS_UNIT_QUERY]: PDD_GOODS_CPS_UNIT_QUERY_LIMITERS,
+  [PDD_GOODS_DETAIL_GET]: PDD_GOODS_DETAIL_GET_LIMITERS,
+  [PDD_GOODS_EDIT_GOODS_COMMIT]: PDD_GOODS_EDIT_GOODS_COMMIT_LIMITERS,
+  [PDD_GOODS_IMAGE_UPLOAD]: PDD_GOODS_IMAGE_UPLOAD_LIMITERS,
+  [PDD_GOODS_INFORMATION_GET]: PDD_GOODS_INFORMATION_GET_LIMITERS,
+  [PDD_GOODS_INFORMATION_UPDATE]: PDD_GOODS_INFORMATION_UPDATE_LIMITERS,
+  [PDD_GOODS_LIST_GET]: PDD_GOODS_LIST_GET_LIMITERS,
+  [PDD_GOODS_LOGISTICS_TEMPLATE_CREATE]: PDD_GOODS_LOGISTICS_TEMPLATE_CREATE_LIMITERS,
+  [PDD_GOODS_LOGISTICS_TEMPLATE_GET]: PDD_GOODS_LOGISTICS_TEMPLATE_GET_LIMITERS,
+  [PDD_GOODS_OPT_GET]: PDD_GOODS_OPT_GET_LIMITERS,
+  [PDD_GOODS_OUTER_CAT_MAPPING_GET]: PDD_GOODS_OUTER_CAT_MAPPING_GET_LIMITERS,
+  [PDD_GOODS_QUANTITY_UPDATE]: PDD_GOODS_QUANTITY_UPDATE_LIMITERS,
+  [PDD_GOODS_SALE_STATUS_SET]: PDD_GOODS_SALE_STATUS_SET_LIMITERS,
+  [PDD_GOODS_SKU_PRICE_UPDATE]: PDD_GOODS_SKU_PRICE_UPDATE_LIMITERS,
+  [PDD_GOODS_SPEC_GET]: PDD_GOODS_SPEC_GET_LIMITERS,
+  [PDD_GOODS_SPEC_ID_GET]: PDD_GOODS_SPEC_ID_GET_LIMITERS,
+  [PDD_GOODS_SUBMIT_GOODS_COMMIT]: PDD_GOODS_SUBMIT_GOODS_COMMIT_LIMITERS,
+  [PDD_DDK_CMS_PROM_URL_GENERATE]: PDD_DDK_CMS_PROM_URL_GENERATE_LIMITERS,
+  [PDD_DDK_COUPON_INFO_QUERY]: PDD_DDK_COUPON_INFO_QUERY_LIMITERS,
+  [PDD_DDK_FINANCE_CPA_QUERY]: PDD_DDK_FINANCE_CPA_QUERY_LIMITERS,
+  [PDD_DDK_GOODS_BASIC_INFO_GET]: PDD_DDK_GOODS_BASIC_INFO_GET_LIMITERS,
+  [PDD_DDK_GOODS_DETAIL]: PDD_DDK_GOODS_DETAIL_LIMITERS,
+  [PDD_DDK_GOODS_PID_GENERATE]: PDD_DDK_GOODS_PID_GENERATE_LIMITERS,
+  [PDD_DDK_GOODS_PID_QUERY]: PDD_DDK_GOODS_PID_QUERY_LIMITERS,
+  [PDD_DDK_GOODS_PROMOTION_URL_GENERATE]: PDD_DDK_GOODS_PROMOTION_URL_GENERATE_LIMITERS,
+  [PDD_DDK_GOODS_RECOMMEND_GET]: PDD_DDK_GOODS_RECOMMEND_GET_LIMITERS,
+  [PDD_DDK_GOODS_SEARCH]: PDD_DDK_GOODS_SEARCH_LIMITERS,
+  [PDD_DDK_GOODS_UNIT_QUERY]: PDD_DDK_GOODS_UNIT_QUERY_LIMITERS,
+  [PDD_DDK_GOODS_ZS_UNIT_URL_GEN]: PDD_DDK_GOODS_ZS_UNIT_URL_GEN_LIMITERS,
+  [PDD_DDK_LOTTERY_URL_GEN]: PDD_DDK_LOTTERY_URL_GEN_LIMITERS,
+  [PDD_DDK_MALL_GOODS_LIST_GET]: PDD_DDK_MALL_GOODS_LIST_GET_LIMITERS,
+  [PDD_DDK_MERCHANT_LIST_GET]: PDD_DDK_MERCHANT_LIST_GET_LIMITERS,
+  [PDD_DDK_ORDER_DETAIL_GET]: PDD_DDK_ORDER_DETAIL_GET_LIMITERS,
+  [PDD_DDK_ORDER_LIST_INCREMENT_GET]: PDD_DDK_ORDER_LIST_INCREMENT_GET_LIMITERS,
+  [PDD_DDK_ORDER_LIST_RANGE_GET]: PDD_DDK_ORDER_LIST_RANGE_GET_LIMITERS,
+  [PDD_DDK_RESOURCE_URL_GEN]: PDD_DDK_RESOURCE_URL_GEN_LIMITERS,
+  [PDD_DDK_RP_PROM_URL_GENERATE]: PDD_DDK_RP_PROM_URL_GENERATE_LIMITERS,
+  [PDD_DDK_THEME_GOODS_SEARCH]: PDD_DDK_THEME_GOODS_SEARCH_LIMITERS,
+  [PDD_DDK_THEME_LIST_GET]: PDD_DDK_THEME_LIST_GET_LIMITERS,
+  [PDD_DDK_THEME_PROM_URL_GENERATE]: PDD_DDK_THEME_PROM_URL_GENERATE_LIMITERS,
+  [PDD_DDK_TOP_GOODS_LIST_QUERY]: PDD_DDK_TOP_GOODS_LIST_QUERY_LIMITERS,
+  [PDD_DDK_WEAPP_QRCODE_URL_GEN]: PDD_DDK_WEAPP_QRCODE_URL_GEN_LIMITERS,
+  [PDD_DDK_ALL_ORDER_LIST_INCREMENT_GET]: PDD_DDK_ALL_ORDER_LIST_INCREMENT_GET_LIMITERS,
+  [PDD_DDK_OAUTH_CMS_PROM_URL_GENERATE]: PDD_DDK_OAUTH_CMS_PROM_URL_GENERATE_LIMITERS,
+  [PDD_DDK_OAUTH_GOODS_PID_GENERATE]: PDD_DDK_OAUTH_GOODS_PID_GENERATE_LIMITERS,
+  [PDD_DDK_OAUTH_GOODS_PID_QUERY]: PDD_DDK_OAUTH_GOODS_PID_QUERY_LIMITERS,
+  [PDD_DDK_OAUTH_GOODS_PROM_URL_GENERATE]: PDD_DDK_OAUTH_GOODS_PROM_URL_GENERATE_LIMITERS,
+  [PDD_DDK_OAUTH_GOODS_RECOMMEND_GET]: PDD_DDK_OAUTH_GOODS_RECOMMEND_GET_LIMITERS,
+  [PDD_DDK_OAUTH_GOODS_ZS_UNIT_URL_GEN]: PDD_DDK_OAUTH_GOODS_ZS_UNIT_URL_GEN_LIMITERS,
+  [PDD_DDK_OAUTH_LOTTERY_URL_GEN]: PDD_DDK_OAUTH_LOTTERY_URL_GEN_LIMITERS,
+  [PDD_DDK_OAUTH_MALL_URL_GEN]: PDD_DDK_OAUTH_MALL_URL_GEN_LIMITERS,
+  [PDD_DDK_OAUTH_ORDER_DETAIL_GET]: PDD_DDK_OAUTH_ORDER_DETAIL_GET_LIMITERS,
+  [PDD_DDK_OAUTH_RESOURCE_URL_GEN]: PDD_DDK_OAUTH_RESOURCE_URL_GEN_LIMITERS,
+  [PDD_DDK_OAUTH_RP_PROM_URL_GENERATE]: PDD_DDK_OAUTH_RP_PROM_URL_GENERATE_LIMITERS,
+  [PDD_DDK_OAUTH_THEME_PROM_URL_GENERATE]: PDD_DDK_OAUTH_THEME_PROM_URL_GENERATE_LIMITERS,
+  [PDD_DDK_OAUTH_TOP_GOODS_LIST_QUERY]: PDD_DDK_OAUTH_TOP_GOODS_LIST_QUERY_LIMITERS,
+  [PDD_LOGISTICS_TICKET_GET]: PDD_LOGISTICS_TICKET_GET_LIMITERS,
+  [PDD_LOGISTICS_TICKET_IMAGE_UPLOAD]: PDD_LOGISTICS_TICKET_IMAGE_UPLOAD_LIMITERS,
+  [PDD_LOGISTICS_TICKET_NOTIFY]: PDD_LOGISTICS_TICKET_NOTIFY_LIMITERS,
+  [PDD_LOGISTICS_TICKET_PROBLEM_TYPE_GET]: PDD_LOGISTICS_TICKET_PROBLEM_TYPE_GET_LIMITERS,
+  [PDD_PROMOTION_COUPON_CLOSE]: PDD_PROMOTION_COUPON_CLOSE_LIMITERS,
+  [PDD_PROMOTION_COUPON_QUANTITY_ADD]: PDD_PROMOTION_COUPON_QUANTITY_ADD_LIMITERS,
+  [PDD_PROMOTION_GOODS_COUPON_CREATE]: PDD_PROMOTION_GOODS_COUPON_CREATE_LIMITERS,
+  [PDD_PROMOTION_GOODS_COUPON_LIST_GET]: PDD_PROMOTION_GOODS_COUPON_LIST_GET_LIMITERS,
+  [PDD_PROMOTION_HOME_COUPON_CREATE]: PDD_PROMOTION_HOME_COUPON_CREATE_LIMITERS,
+  [PDD_PROMOTION_MERCHANT_COUPON_LIST_GET]: PDD_PROMOTION_MERCHANT_COUPON_LIST_GET_LIMITERS,
+  [PDD_VOUCHER_APPOINTMENT_INFO_SEND]: PDD_VOUCHER_APPOINTMENT_INFO_SEND_LIMITERS,
+  [PDD_VOUCHER_OTA_CARD_VERIFICATION]: PDD_VOUCHER_OTA_CARD_VERIFICATION_LIMITERS,
+  [PDD_VOUCHER_PHYSICAL_GOODS_SEND]: PDD_VOUCHER_PHYSICAL_GOODS_SEND_LIMITERS,
+  [PDD_VOUCHER_VIRTUAL_CARD_VERIFICATION]: PDD_VOUCHER_VIRTUAL_CARD_VERIFICATION_LIMITERS,
+  [PDD_VOUCHER_VOUCHER_COMPLAIN]: PDD_VOUCHER_VOUCHER_COMPLAIN_LIMITERS,
+  [PDD_VOUCHER_VOUCHER_INFO_SEND]: PDD_VOUCHER_VOUCHER_INFO_SEND_LIMITERS,
+  [PDD_INVOICE_APPLICATION_QUERY]: PDD_INVOICE_APPLICATION_QUERY_LIMITERS,
+  [PDD_INVOICE_APPLICATION_UPDATE]: PDD_INVOICE_APPLICATION_UPDATE_LIMITERS,
+  [PDD_INVOICE_DETAIL_INVALID]: PDD_INVOICE_DETAIL_INVALID_LIMITERS,
+  [PDD_MALL_INFO_GET]: PDD_MALL_INFO_GET_LIMITERS,
+  [PDD_CLOUDPRINT_STDTEMPLATES_GET]: PDD_CLOUDPRINT_STDTEMPLATES_GET_LIMITERS,
+  [PDD_WAYBILL_GET]: PDD_WAYBILL_GET_LIMITERS,
+  [PDD_WAYBILL_SEARCH]: PDD_WAYBILL_SEARCH_LIMITERS,
+  [PDD_FINANCE_BALANCE_DAILY_BILL_URL_GET]: PDD_FINANCE_BALANCE_DAILY_BILL_URL_GET_LIMITERS,
+  [PDD_VAS_ORDER_SEARCH]: PDD_VAS_ORDER_SEARCH_LIMITERS,
+  [PDD_AD_API_ADVERTISER_OPEN_ACCOUNT]: PDD_AD_API_ADVERTISER_OPEN_ACCOUNT_LIMITERS,
+  [PDD_AD_API_ADVERTISER_QUERY_ACCOUNT_BALANCE]: PDD_AD_API_ADVERTISER_QUERY_ACCOUNT_BALANCE_LIMITERS,
+  [PDD_AD_API_ADVERTISER_QUERY_ACCOUNT_INFO]: PDD_AD_API_ADVERTISER_QUERY_ACCOUNT_INFO_LIMITERS,
+  [PDD_AD_API_ADVERTISER_QUERY_DETAIL]: PDD_AD_API_ADVERTISER_QUERY_DETAIL_LIMITERS,
+  [PDD_AD_API_GOODS_QUERY_GALLERY_IMAGES]: PDD_AD_API_GOODS_QUERY_GALLERY_IMAGES_LIMITERS,
+  [PDD_AD_API_GOODS_QUERY_LONG_IMAGES]: PDD_AD_API_GOODS_QUERY_LONG_IMAGES_LIMITERS,
+  [PDD_AD_API_GOODS_QUERY_PAGE]: PDD_AD_API_GOODS_QUERY_PAGE_LIMITERS,
+  [PDD_AD_API_KEYWORD_CREATE]: PDD_AD_API_KEYWORD_CREATE_LIMITERS,
+  [PDD_AD_API_KEYWORD_DELETE]: PDD_AD_API_KEYWORD_DELETE_LIMITERS,
+  [PDD_AD_API_KEYWORD_QUERY_LIST]: PDD_AD_API_KEYWORD_QUERY_LIST_LIMITERS,
+  [PDD_AD_API_KEYWORD_RECOMMEND_GET]: PDD_AD_API_KEYWORD_RECOMMEND_GET_LIMITERS,
+  [PDD_AD_API_KEYWORD_RELEVANCE_GET]: PDD_AD_API_KEYWORD_RELEVANCE_GET_LIMITERS,
+  [PDD_AD_API_KEYWORD_UPDATE]: PDD_AD_API_KEYWORD_UPDATE_LIMITERS,
+  [PDD_AD_API_PLAN_CREATE]: PDD_AD_API_PLAN_CREATE_LIMITERS,
+  [PDD_AD_API_PLAN_DELETE]: PDD_AD_API_PLAN_DELETE_LIMITERS,
+  [PDD_AD_API_PLAN_QUERY_CAN_CREATE_AD_PLAN]: PDD_AD_API_PLAN_QUERY_CAN_CREATE_AD_PLAN_LIMITERS,
+  [PDD_AD_API_PLAN_QUERY_CAN_UPDATE_MAX_COST]: PDD_AD_API_PLAN_QUERY_CAN_UPDATE_MAX_COST_LIMITERS,
+  [PDD_AD_API_PLAN_QUERY_LIST]: PDD_AD_API_PLAN_QUERY_LIST_LIMITERS,
+  [PDD_AD_API_PLAN_UPDATE_DATA_OPERATE_STATUS]: PDD_AD_API_PLAN_UPDATE_DATA_OPERATE_STATUS_LIMITERS,
+  [PDD_AD_API_PLAN_UPDATE_MAX_COST]: PDD_AD_API_PLAN_UPDATE_MAX_COST_LIMITERS,
+  [PDD_AD_API_PLAN_UPDATE_PLAN_DISCOUNT]: PDD_AD_API_PLAN_UPDATE_PLAN_DISCOUNT_LIMITERS,
+  [PDD_AD_API_PLAN_UPDATE_PLAN_NAME]: PDD_AD_API_PLAN_UPDATE_PLAN_NAME_LIMITERS,
+  [PDD_AD_API_REPORT_DAILY_REPORT_QUERY]: PDD_AD_API_REPORT_DAILY_REPORT_QUERY_LIMITERS,
+  [PDD_AD_API_REPORT_ENTITY_REPORT_QUERY]: PDD_AD_API_REPORT_ENTITY_REPORT_QUERY_LIMITERS,
+  [PDD_AD_API_REPORT_HOURLY_REPORT_QUERY]: PDD_AD_API_REPORT_HOURLY_REPORT_QUERY_LIMITERS,
+  [PDD_AD_API_UNIT_BID_DELETE]: PDD_AD_API_UNIT_BID_DELETE_LIMITERS,
+  [PDD_AD_API_UNIT_BID_QUERY_AUDIENCE_PROFILE]: PDD_AD_API_UNIT_BID_QUERY_AUDIENCE_PROFILE_LIMITERS,
+  [PDD_AD_API_UNIT_BID_QUERY_BASE_LOCATION_PROFILE]: PDD_AD_API_UNIT_BID_QUERY_BASE_LOCATION_PROFILE_LIMITERS,
+  [PDD_AD_API_UNIT_BID_QUERY_BASE_TARGET_PROFILE]: PDD_AD_API_UNIT_BID_QUERY_BASE_TARGET_PROFILE_LIMITERS,
+  [PDD_AD_API_UNIT_BID_QUERY_INTEREST_PROFILE]: PDD_AD_API_UNIT_BID_QUERY_INTEREST_PROFILE_LIMITERS,
+  [PDD_AD_API_UNIT_BID_QUERY_LIST]: PDD_AD_API_UNIT_BID_QUERY_LIST_LIMITERS,
+  [PDD_AD_API_UNIT_BID_QUERY_TARGETING_TAG_LIST]: PDD_AD_API_UNIT_BID_QUERY_TARGETING_TAG_LIST_LIMITERS,
+  [PDD_AD_API_UNIT_BID_SYNC]: PDD_AD_API_UNIT_BID_SYNC_LIMITERS,
+  [PDD_AD_API_UNIT_BID_UPDATE]: PDD_AD_API_UNIT_BID_UPDATE_LIMITERS,
+  [PDD_AD_API_UNIT_CREATE]: PDD_AD_API_UNIT_CREATE_LIMITERS,
+  [PDD_AD_API_UNIT_CREATIVE_CHECK_TITLE]: PDD_AD_API_UNIT_CREATIVE_CHECK_TITLE_LIMITERS,
+  [PDD_AD_API_UNIT_CREATIVE_CREATE]: PDD_AD_API_UNIT_CREATIVE_CREATE_LIMITERS,
+  [PDD_AD_API_UNIT_CREATIVE_DELETE]: PDD_AD_API_UNIT_CREATIVE_DELETE_LIMITERS,
+  [PDD_AD_API_UNIT_CREATIVE_DISTRIBUTE_FLOW_RATE]: PDD_AD_API_UNIT_CREATIVE_DISTRIBUTE_FLOW_RATE_LIMITERS,
+  [PDD_AD_API_UNIT_CREATIVE_QUERY_FLOW_RATE]: PDD_AD_API_UNIT_CREATIVE_QUERY_FLOW_RATE_LIMITERS,
+  [PDD_AD_API_UNIT_CREATIVE_QUERY_LIST]: PDD_AD_API_UNIT_CREATIVE_QUERY_LIST_LIMITERS,
+  [PDD_AD_API_UNIT_CREATIVE_UPDATE_CONTENT]: PDD_AD_API_UNIT_CREATIVE_UPDATE_CONTENT_LIMITERS,
+  [PDD_AD_API_UNIT_CREATIVE_UPDATE_DATA_OPERATE_STATUS]: PDD_AD_API_UNIT_CREATIVE_UPDATE_DATA_OPERATE_STATUS_LIMITERS,
+  [PDD_AD_API_UNIT_CREATIVE_UPDATE_SMART_CREATIVE]: PDD_AD_API_UNIT_CREATIVE_UPDATE_SMART_CREATIVE_LIMITERS,
+  [PDD_AD_API_UNIT_DELETE]: PDD_AD_API_UNIT_DELETE_LIMITERS,
+  [PDD_AD_API_UNIT_QUERY_LIST]: PDD_AD_API_UNIT_QUERY_LIST_LIMITERS,
+  [PDD_AD_API_UNIT_UPDATE_DATA_OPERATE_STATUS]: PDD_AD_API_UNIT_UPDATE_DATA_OPERATE_STATUS_LIMITERS,
+  [PDD_AD_API_UNIT_UPDATE_OPTIMIZATION_MESSAGE]: PDD_AD_API_UNIT_UPDATE_OPTIMIZATION_MESSAGE_LIMITERS,
+  [PDD_AD_API_UNIT_UPDATE_UNIT_BID]: PDD_AD_API_UNIT_UPDATE_UNIT_BID_LIMITERS,
+  [PDD_AD_API_UNIT_UPDATE_UNIT_NAME]: PDD_AD_API_UNIT_UPDATE_UNIT_NAME_LIMITERS,
+  [PDD_FDS_ORDER_GET]: PDD_FDS_ORDER_GET_LIMITERS,
+  [PDD_FDS_ORDER_LIST_GET]: PDD_FDS_ORDER_LIST_GET_LIMITERS,
+  [PDD_FDS_ROLE_GET]: PDD_FDS_ROLE_GET_LIMITERS,
+  [PDD_FDS_WAYBILL_CANCEL]: PDD_FDS_WAYBILL_CANCEL_LIMITERS,
+  [PDD_FDS_WAYBILL_GET]: PDD_FDS_WAYBILL_GET_LIMITERS,
+  [PDD_FDS_WAYBILL_RETURN]: PDD_FDS_WAYBILL_RETURN_LIMITERS,
+  [PDD_QRPAY_PAYEE_REGISTER]: PDD_QRPAY_PAYEE_REGISTER_LIMITERS,
+  [PDD_MALL_INFO_BONDED_WAREHOUSE_GET]: PDD_MALL_INFO_BONDED_WAREHOUSE_GET_LIMITERS,
+};
 export {
-  PDD_ERP_ORDER_SYNC,
-  PddErpOrderSyncRequestInterface,
-  PddErpOrderSyncResponseInterface,
-  PDD_ORDER_BASIC_LIST_GET,
-  PDD_ORDER_BASIC_LIST_GET_RESPONSE_KEY,
-  PddOrderBasicListGetRequestInterface,
-  PddOrderBasicListGetResponseInterface,
-  PddOrderBasicListGetOrderBasicListGetResponseResponseInterface,
-  PDD_ORDER_INFORMATION_GET,
-  PDD_ORDER_INFORMATION_GET_RESPONSE_KEY,
-  PddOrderInformationGetRequestInterface,
-  PddOrderInformationGetResponseInterface,
-  PddOrderInformationGetOrderInfoGetResponseResponseInterface,
-  PDD_ORDER_LIST_GET,
-  PDD_ORDER_LIST_GET_RESPONSE_KEY,
-  PddOrderListGetRequestInterface,
-  PddOrderListGetResponseInterface,
-  PddOrderListGetOrderListGetResponseResponseInterface,
-  PDD_ORDER_NUMBER_LIST_INCREMENT_GET,
-  PDD_ORDER_NUMBER_LIST_INCREMENT_GET_RESPONSE_KEY,
-  PddOrderNumberListIncrementGetRequestInterface,
-  PddOrderNumberListIncrementGetResponseInterface,
-  PddOrderNumberListIncrementGetOrderSnIncrementGetResponseResponseInterface,
-  PDD_ORDER_STATUS_GET,
-  PDD_ORDER_STATUS_GET_RESPONSE_KEY,
-  PddOrderStatusGetRequestInterface,
-  PddOrderStatusGetResponseInterface,
-  PddOrderStatusGetOrderStatusGetResponseResponseInterface,
   PDD_LOGISTICS_ADDRESS_GET,
   PDD_LOGISTICS_ADDRESS_GET_RESPONSE_KEY,
   PddLogisticsAddressGetRequestInterface,
@@ -2257,6 +2567,34 @@ export {
   PDD_LOGISTICS_ORDERTRACE_GET,
   PddLogisticsOrdertraceGetRequestInterface,
   PddLogisticsOrdertraceGetResponseInterface,
+  PDD_ERP_ORDER_SYNC,
+  PddErpOrderSyncRequestInterface,
+  PddErpOrderSyncResponseInterface,
+  PDD_ORDER_BASIC_LIST_GET,
+  PDD_ORDER_BASIC_LIST_GET_RESPONSE_KEY,
+  PddOrderBasicListGetRequestInterface,
+  PddOrderBasicListGetResponseInterface,
+  PddOrderBasicListGetOrderBasicListGetResponseResponseInterface,
+  PDD_ORDER_INFORMATION_GET,
+  PDD_ORDER_INFORMATION_GET_RESPONSE_KEY,
+  PddOrderInformationGetRequestInterface,
+  PddOrderInformationGetResponseInterface,
+  PddOrderInformationGetOrderInfoGetResponseResponseInterface,
+  PDD_ORDER_LIST_GET,
+  PDD_ORDER_LIST_GET_RESPONSE_KEY,
+  PddOrderListGetRequestInterface,
+  PddOrderListGetResponseInterface,
+  PddOrderListGetOrderListGetResponseResponseInterface,
+  PDD_ORDER_NUMBER_LIST_INCREMENT_GET,
+  PDD_ORDER_NUMBER_LIST_INCREMENT_GET_RESPONSE_KEY,
+  PddOrderNumberListIncrementGetRequestInterface,
+  PddOrderNumberListIncrementGetResponseInterface,
+  PddOrderNumberListIncrementGetOrderSnIncrementGetResponseResponseInterface,
+  PDD_ORDER_STATUS_GET,
+  PDD_ORDER_STATUS_GET_RESPONSE_KEY,
+  PddOrderStatusGetRequestInterface,
+  PddOrderStatusGetResponseInterface,
+  PddOrderStatusGetOrderStatusGetResponseResponseInterface,
   PDD_NEXTONE_LOGISTICS_WAREHOUSE_UPDATE,
   PddNextoneLogisticsWarehouseUpdateRequestInterface,
   PddNextoneLogisticsWarehouseUpdateResponseInterface,
@@ -3174,50 +3512,6 @@ export {
   PDD_SMS_VENDOR_COMPLAINT_CREATE,
   PddSmsVendorComplaintCreateRequestInterface,
   PddSmsVendorComplaintCreateResponseInterface,
-  PDD_MALL_INFO_GROUP_ADD_STORE_POST,
-  PDD_MALL_INFO_GROUP_ADD_STORE_POST_RESPONSE_KEY,
-  PddMallInfoGroupAddStorePostRequestInterface,
-  PddMallInfoGroupAddStorePostResponseInterface,
-  PddMallInfoGroupAddStorePostMallInfoGroupAddStorePostResponseResponseInterface,
-  PDD_MALL_INFO_GROUP_LIST_STORE_GET,
-  PDD_MALL_INFO_GROUP_LIST_STORE_GET_RESPONSE_KEY,
-  PddMallInfoGroupListStoreGetRequestInterface,
-  PddMallInfoGroupListStoreGetResponseInterface,
-  PddMallInfoGroupListStoreGetMallInfoGroupListStoreGetResponseResponseInterface,
-  PDD_MALL_INFO_GROUP_REMOVE_STORE_GET,
-  PDD_MALL_INFO_GROUP_REMOVE_STORE_GET_RESPONSE_KEY,
-  PddMallInfoGroupRemoveStoreGetRequestInterface,
-  PddMallInfoGroupRemoveStoreGetResponseInterface,
-  PddMallInfoGroupRemoveStoreGetMallInfoGroupRemoveStoreGetResponseResponseInterface,
-  PDD_MALL_INFO_STORE_CREATE_POST,
-  PDD_MALL_INFO_STORE_CREATE_POST_RESPONSE_KEY,
-  PddMallInfoStoreCreatePostRequestInterface,
-  PddMallInfoStoreCreatePostResponseInterface,
-  PddMallInfoStoreCreatePostMallInfoStoreCreatePostResponseResponseInterface,
-  PDD_MALL_INFO_STORE_CREATE_POST_NOPOI,
-  PddMallInfoStoreCreatePostNopoiRequestInterface,
-  PddMallInfoStoreCreatePostNopoiResponseInterface,
-  PDD_MALL_INFO_STORE_DELETE_POST,
-  PDD_MALL_INFO_STORE_DELETE_POST_RESPONSE_KEY,
-  PddMallInfoStoreDeletePostRequestInterface,
-  PddMallInfoStoreDeletePostResponseInterface,
-  PddMallInfoStoreDeletePostMallInfoStoreDeletePostResponseResponseInterface,
-  PDD_MALL_INFO_STORE_GET,
-  PddMallInfoStoreGetRequestInterface,
-  PddMallInfoStoreGetResponseInterface,
-  PDD_MALL_INFO_STORE_UPDATE_POST,
-  PDD_MALL_INFO_STORE_UPDATE_POST_RESPONSE_KEY,
-  PddMallInfoStoreUpdatePostRequestInterface,
-  PddMallInfoStoreUpdatePostResponseInterface,
-  PddMallInfoStoreUpdatePostMallInfoStoreUpdatePostResponseResponseInterface,
-  PDD_MALL_INFO_STORE_UPDATE_POST_NOPOI,
-  PddMallInfoStoreUpdatePostNopoiRequestInterface,
-  PddMallInfoStoreUpdatePostNopoiResponseInterface,
-  PDD_QRPAY_PAYEE_REGISTER,
-  PDD_QRPAY_PAYEE_REGISTER_RESPONSE_KEY,
-  PddQrpayPayeeRegisterRequestInterface,
-  PddQrpayPayeeRegisterResponseInterface,
-  PddQrpayPayeeRegisterQrpayPayeeRegisterResponseResponseInterface,
   PDD_AD_API_ADVERTISER_OPEN_ACCOUNT,
   PddAdApiAdvertiserOpenAccountRequestInterface,
   PddAdApiAdvertiserOpenAccountResponseInterface,
@@ -3398,6 +3692,50 @@ export {
   PddFdsWaybillReturnRequestInterface,
   PddFdsWaybillReturnResponseInterface,
   PddFdsWaybillReturnPddFdsWaybillReturnResponseResponseInterface,
+  PDD_MALL_INFO_GROUP_ADD_STORE_POST,
+  PDD_MALL_INFO_GROUP_ADD_STORE_POST_RESPONSE_KEY,
+  PddMallInfoGroupAddStorePostRequestInterface,
+  PddMallInfoGroupAddStorePostResponseInterface,
+  PddMallInfoGroupAddStorePostMallInfoGroupAddStorePostResponseResponseInterface,
+  PDD_MALL_INFO_GROUP_LIST_STORE_GET,
+  PDD_MALL_INFO_GROUP_LIST_STORE_GET_RESPONSE_KEY,
+  PddMallInfoGroupListStoreGetRequestInterface,
+  PddMallInfoGroupListStoreGetResponseInterface,
+  PddMallInfoGroupListStoreGetMallInfoGroupListStoreGetResponseResponseInterface,
+  PDD_MALL_INFO_GROUP_REMOVE_STORE_GET,
+  PDD_MALL_INFO_GROUP_REMOVE_STORE_GET_RESPONSE_KEY,
+  PddMallInfoGroupRemoveStoreGetRequestInterface,
+  PddMallInfoGroupRemoveStoreGetResponseInterface,
+  PddMallInfoGroupRemoveStoreGetMallInfoGroupRemoveStoreGetResponseResponseInterface,
+  PDD_MALL_INFO_STORE_CREATE_POST,
+  PDD_MALL_INFO_STORE_CREATE_POST_RESPONSE_KEY,
+  PddMallInfoStoreCreatePostRequestInterface,
+  PddMallInfoStoreCreatePostResponseInterface,
+  PddMallInfoStoreCreatePostMallInfoStoreCreatePostResponseResponseInterface,
+  PDD_MALL_INFO_STORE_CREATE_POST_NOPOI,
+  PddMallInfoStoreCreatePostNopoiRequestInterface,
+  PddMallInfoStoreCreatePostNopoiResponseInterface,
+  PDD_MALL_INFO_STORE_DELETE_POST,
+  PDD_MALL_INFO_STORE_DELETE_POST_RESPONSE_KEY,
+  PddMallInfoStoreDeletePostRequestInterface,
+  PddMallInfoStoreDeletePostResponseInterface,
+  PddMallInfoStoreDeletePostMallInfoStoreDeletePostResponseResponseInterface,
+  PDD_MALL_INFO_STORE_GET,
+  PddMallInfoStoreGetRequestInterface,
+  PddMallInfoStoreGetResponseInterface,
+  PDD_MALL_INFO_STORE_UPDATE_POST,
+  PDD_MALL_INFO_STORE_UPDATE_POST_RESPONSE_KEY,
+  PddMallInfoStoreUpdatePostRequestInterface,
+  PddMallInfoStoreUpdatePostResponseInterface,
+  PddMallInfoStoreUpdatePostMallInfoStoreUpdatePostResponseResponseInterface,
+  PDD_MALL_INFO_STORE_UPDATE_POST_NOPOI,
+  PddMallInfoStoreUpdatePostNopoiRequestInterface,
+  PddMallInfoStoreUpdatePostNopoiResponseInterface,
+  PDD_QRPAY_PAYEE_REGISTER,
+  PDD_QRPAY_PAYEE_REGISTER_RESPONSE_KEY,
+  PddQrpayPayeeRegisterRequestInterface,
+  PddQrpayPayeeRegisterResponseInterface,
+  PddQrpayPayeeRegisterQrpayPayeeRegisterResponseResponseInterface,
   PDD_MALL_INFO_BONDED_WAREHOUSE_GET,
   PDD_MALL_INFO_BONDED_WAREHOUSE_GET_RESPONSE_KEY,
   PddMallInfoBondedWarehouseGetRequestInterface,
@@ -3410,14 +3748,9 @@ export {
   PddOverseaClearanceGetClearanceResponseResponseInterface,
   PddResponseTypeAndRequestTypeMapping,
   PddNeedAccessTokenTypeCollections,
+  PddApiLimiterMapping,
 };
 export interface PddCollectRequestInterface {
-  [PDD_ERP_ORDER_SYNC]: PddErpOrderSyncRequestInterface;
-  [PDD_ORDER_BASIC_LIST_GET]: PddOrderBasicListGetRequestInterface;
-  [PDD_ORDER_INFORMATION_GET]: PddOrderInformationGetRequestInterface;
-  [PDD_ORDER_LIST_GET]: PddOrderListGetRequestInterface;
-  [PDD_ORDER_NUMBER_LIST_INCREMENT_GET]: PddOrderNumberListIncrementGetRequestInterface;
-  [PDD_ORDER_STATUS_GET]: PddOrderStatusGetRequestInterface;
   [PDD_LOGISTICS_ADDRESS_GET]: PddLogisticsAddressGetRequestInterface;
   [PDD_LOGISTICS_COMPANIES_GET]: PddLogisticsCompaniesGetRequestInterface;
   [PDD_LOGISTICS_ISV_TRACE_NOTIFY_SUB]: PddLogisticsIsvTraceNotifySubRequestInterface;
@@ -3425,6 +3758,12 @@ export interface PddCollectRequestInterface {
   [PDD_LOGISTICS_ONLINE_SEND]: PddLogisticsOnlineSendRequestInterface;
   [PDD_LOGISTICS_ONLINE_STATUS_QUERY]: PddLogisticsOnlineStatusQueryRequestInterface;
   [PDD_LOGISTICS_ORDERTRACE_GET]: PddLogisticsOrdertraceGetRequestInterface;
+  [PDD_ERP_ORDER_SYNC]: PddErpOrderSyncRequestInterface;
+  [PDD_ORDER_BASIC_LIST_GET]: PddOrderBasicListGetRequestInterface;
+  [PDD_ORDER_INFORMATION_GET]: PddOrderInformationGetRequestInterface;
+  [PDD_ORDER_LIST_GET]: PddOrderListGetRequestInterface;
+  [PDD_ORDER_NUMBER_LIST_INCREMENT_GET]: PddOrderNumberListIncrementGetRequestInterface;
+  [PDD_ORDER_STATUS_GET]: PddOrderStatusGetRequestInterface;
   [PDD_NEXTONE_LOGISTICS_WAREHOUSE_UPDATE]: PddNextoneLogisticsWarehouseUpdateRequestInterface;
   [PDD_RDC_PDDGENIUS_SENDGOODS_CANCEL]: PddRdcPddgeniusSendgoodsCancelRequestInterface;
   [PDD_REFUND_ADDRESS_LIST_GET]: PddRefundAddressListGetRequestInterface;
@@ -3622,16 +3961,6 @@ export interface PddCollectRequestInterface {
   [PDD_VAS_ORDER_SEARCH]: PddVasOrderSearchRequestInterface;
   [PDD_SMS_DETAILBILL_PUSH]: PddSmsDetailbillPushRequestInterface;
   [PDD_SMS_VENDOR_COMPLAINT_CREATE]: PddSmsVendorComplaintCreateRequestInterface;
-  [PDD_MALL_INFO_GROUP_ADD_STORE_POST]: PddMallInfoGroupAddStorePostRequestInterface;
-  [PDD_MALL_INFO_GROUP_LIST_STORE_GET]: PddMallInfoGroupListStoreGetRequestInterface;
-  [PDD_MALL_INFO_GROUP_REMOVE_STORE_GET]: PddMallInfoGroupRemoveStoreGetRequestInterface;
-  [PDD_MALL_INFO_STORE_CREATE_POST]: PddMallInfoStoreCreatePostRequestInterface;
-  [PDD_MALL_INFO_STORE_CREATE_POST_NOPOI]: PddMallInfoStoreCreatePostNopoiRequestInterface;
-  [PDD_MALL_INFO_STORE_DELETE_POST]: PddMallInfoStoreDeletePostRequestInterface;
-  [PDD_MALL_INFO_STORE_GET]: PddMallInfoStoreGetRequestInterface;
-  [PDD_MALL_INFO_STORE_UPDATE_POST]: PddMallInfoStoreUpdatePostRequestInterface;
-  [PDD_MALL_INFO_STORE_UPDATE_POST_NOPOI]: PddMallInfoStoreUpdatePostNopoiRequestInterface;
-  [PDD_QRPAY_PAYEE_REGISTER]: PddQrpayPayeeRegisterRequestInterface;
   [PDD_AD_API_ADVERTISER_OPEN_ACCOUNT]: PddAdApiAdvertiserOpenAccountRequestInterface;
   [PDD_AD_API_ADVERTISER_QUERY_ACCOUNT_BALANCE]: PddAdApiAdvertiserQueryAccountBalanceRequestInterface;
   [PDD_AD_API_ADVERTISER_QUERY_ACCOUNT_INFO]: PddAdApiAdvertiserQueryAccountInfoRequestInterface;
@@ -3688,16 +4017,20 @@ export interface PddCollectRequestInterface {
   [PDD_FDS_WAYBILL_CANCEL]: PddFdsWaybillCancelRequestInterface;
   [PDD_FDS_WAYBILL_GET]: PddFdsWaybillGetRequestInterface;
   [PDD_FDS_WAYBILL_RETURN]: PddFdsWaybillReturnRequestInterface;
+  [PDD_MALL_INFO_GROUP_ADD_STORE_POST]: PddMallInfoGroupAddStorePostRequestInterface;
+  [PDD_MALL_INFO_GROUP_LIST_STORE_GET]: PddMallInfoGroupListStoreGetRequestInterface;
+  [PDD_MALL_INFO_GROUP_REMOVE_STORE_GET]: PddMallInfoGroupRemoveStoreGetRequestInterface;
+  [PDD_MALL_INFO_STORE_CREATE_POST]: PddMallInfoStoreCreatePostRequestInterface;
+  [PDD_MALL_INFO_STORE_CREATE_POST_NOPOI]: PddMallInfoStoreCreatePostNopoiRequestInterface;
+  [PDD_MALL_INFO_STORE_DELETE_POST]: PddMallInfoStoreDeletePostRequestInterface;
+  [PDD_MALL_INFO_STORE_GET]: PddMallInfoStoreGetRequestInterface;
+  [PDD_MALL_INFO_STORE_UPDATE_POST]: PddMallInfoStoreUpdatePostRequestInterface;
+  [PDD_MALL_INFO_STORE_UPDATE_POST_NOPOI]: PddMallInfoStoreUpdatePostNopoiRequestInterface;
+  [PDD_QRPAY_PAYEE_REGISTER]: PddQrpayPayeeRegisterRequestInterface;
   [PDD_MALL_INFO_BONDED_WAREHOUSE_GET]: PddMallInfoBondedWarehouseGetRequestInterface;
   [PDD_OVERSEA_CLEARANCE_GET]: PddOverseaClearanceGetRequestInterface;
 }
 export interface PddCollectRootResponseInterface {
-  [PDD_ERP_ORDER_SYNC]: PddErpOrderSyncResponseInterface;
-  [PDD_ORDER_BASIC_LIST_GET]: PddOrderBasicListGetResponseInterface;
-  [PDD_ORDER_INFORMATION_GET]: PddOrderInformationGetResponseInterface;
-  [PDD_ORDER_LIST_GET]: PddOrderListGetResponseInterface;
-  [PDD_ORDER_NUMBER_LIST_INCREMENT_GET]: PddOrderNumberListIncrementGetResponseInterface;
-  [PDD_ORDER_STATUS_GET]: PddOrderStatusGetResponseInterface;
   [PDD_LOGISTICS_ADDRESS_GET]: PddLogisticsAddressGetResponseInterface;
   [PDD_LOGISTICS_COMPANIES_GET]: PddLogisticsCompaniesGetResponseInterface;
   [PDD_LOGISTICS_ISV_TRACE_NOTIFY_SUB]: PddLogisticsIsvTraceNotifySubResponseInterface;
@@ -3705,6 +4038,12 @@ export interface PddCollectRootResponseInterface {
   [PDD_LOGISTICS_ONLINE_SEND]: PddLogisticsOnlineSendResponseInterface;
   [PDD_LOGISTICS_ONLINE_STATUS_QUERY]: PddLogisticsOnlineStatusQueryResponseInterface;
   [PDD_LOGISTICS_ORDERTRACE_GET]: PddLogisticsOrdertraceGetResponseInterface;
+  [PDD_ERP_ORDER_SYNC]: PddErpOrderSyncResponseInterface;
+  [PDD_ORDER_BASIC_LIST_GET]: PddOrderBasicListGetResponseInterface;
+  [PDD_ORDER_INFORMATION_GET]: PddOrderInformationGetResponseInterface;
+  [PDD_ORDER_LIST_GET]: PddOrderListGetResponseInterface;
+  [PDD_ORDER_NUMBER_LIST_INCREMENT_GET]: PddOrderNumberListIncrementGetResponseInterface;
+  [PDD_ORDER_STATUS_GET]: PddOrderStatusGetResponseInterface;
   [PDD_NEXTONE_LOGISTICS_WAREHOUSE_UPDATE]: PddNextoneLogisticsWarehouseUpdateResponseInterface;
   [PDD_RDC_PDDGENIUS_SENDGOODS_CANCEL]: PddRdcPddgeniusSendgoodsCancelResponseInterface;
   [PDD_REFUND_ADDRESS_LIST_GET]: PddRefundAddressListGetResponseInterface;
@@ -3902,16 +4241,6 @@ export interface PddCollectRootResponseInterface {
   [PDD_VAS_ORDER_SEARCH]: PddVasOrderSearchResponseInterface;
   [PDD_SMS_DETAILBILL_PUSH]: PddSmsDetailbillPushResponseInterface;
   [PDD_SMS_VENDOR_COMPLAINT_CREATE]: PddSmsVendorComplaintCreateResponseInterface;
-  [PDD_MALL_INFO_GROUP_ADD_STORE_POST]: PddMallInfoGroupAddStorePostResponseInterface;
-  [PDD_MALL_INFO_GROUP_LIST_STORE_GET]: PddMallInfoGroupListStoreGetResponseInterface;
-  [PDD_MALL_INFO_GROUP_REMOVE_STORE_GET]: PddMallInfoGroupRemoveStoreGetResponseInterface;
-  [PDD_MALL_INFO_STORE_CREATE_POST]: PddMallInfoStoreCreatePostResponseInterface;
-  [PDD_MALL_INFO_STORE_CREATE_POST_NOPOI]: PddMallInfoStoreCreatePostNopoiResponseInterface;
-  [PDD_MALL_INFO_STORE_DELETE_POST]: PddMallInfoStoreDeletePostResponseInterface;
-  [PDD_MALL_INFO_STORE_GET]: PddMallInfoStoreGetResponseInterface;
-  [PDD_MALL_INFO_STORE_UPDATE_POST]: PddMallInfoStoreUpdatePostResponseInterface;
-  [PDD_MALL_INFO_STORE_UPDATE_POST_NOPOI]: PddMallInfoStoreUpdatePostNopoiResponseInterface;
-  [PDD_QRPAY_PAYEE_REGISTER]: PddQrpayPayeeRegisterResponseInterface;
   [PDD_AD_API_ADVERTISER_OPEN_ACCOUNT]: PddAdApiAdvertiserOpenAccountResponseInterface;
   [PDD_AD_API_ADVERTISER_QUERY_ACCOUNT_BALANCE]: PddAdApiAdvertiserQueryAccountBalanceResponseInterface;
   [PDD_AD_API_ADVERTISER_QUERY_ACCOUNT_INFO]: PddAdApiAdvertiserQueryAccountInfoResponseInterface;
@@ -3968,16 +4297,20 @@ export interface PddCollectRootResponseInterface {
   [PDD_FDS_WAYBILL_CANCEL]: PddFdsWaybillCancelResponseInterface;
   [PDD_FDS_WAYBILL_GET]: PddFdsWaybillGetResponseInterface;
   [PDD_FDS_WAYBILL_RETURN]: PddFdsWaybillReturnResponseInterface;
+  [PDD_MALL_INFO_GROUP_ADD_STORE_POST]: PddMallInfoGroupAddStorePostResponseInterface;
+  [PDD_MALL_INFO_GROUP_LIST_STORE_GET]: PddMallInfoGroupListStoreGetResponseInterface;
+  [PDD_MALL_INFO_GROUP_REMOVE_STORE_GET]: PddMallInfoGroupRemoveStoreGetResponseInterface;
+  [PDD_MALL_INFO_STORE_CREATE_POST]: PddMallInfoStoreCreatePostResponseInterface;
+  [PDD_MALL_INFO_STORE_CREATE_POST_NOPOI]: PddMallInfoStoreCreatePostNopoiResponseInterface;
+  [PDD_MALL_INFO_STORE_DELETE_POST]: PddMallInfoStoreDeletePostResponseInterface;
+  [PDD_MALL_INFO_STORE_GET]: PddMallInfoStoreGetResponseInterface;
+  [PDD_MALL_INFO_STORE_UPDATE_POST]: PddMallInfoStoreUpdatePostResponseInterface;
+  [PDD_MALL_INFO_STORE_UPDATE_POST_NOPOI]: PddMallInfoStoreUpdatePostNopoiResponseInterface;
+  [PDD_QRPAY_PAYEE_REGISTER]: PddQrpayPayeeRegisterResponseInterface;
   [PDD_MALL_INFO_BONDED_WAREHOUSE_GET]: PddMallInfoBondedWarehouseGetResponseInterface;
   [PDD_OVERSEA_CLEARANCE_GET]: PddOverseaClearanceGetResponseInterface;
 }
 export interface PddCollectShortResponseInterface {
-  [PDD_ERP_ORDER_SYNC]: PddErpOrderSyncResponseInterface;
-  [PDD_ORDER_BASIC_LIST_GET]: PddOrderBasicListGetOrderBasicListGetResponseResponseInterface;
-  [PDD_ORDER_INFORMATION_GET]: PddOrderInformationGetOrderInfoGetResponseResponseInterface;
-  [PDD_ORDER_LIST_GET]: PddOrderListGetOrderListGetResponseResponseInterface;
-  [PDD_ORDER_NUMBER_LIST_INCREMENT_GET]: PddOrderNumberListIncrementGetOrderSnIncrementGetResponseResponseInterface;
-  [PDD_ORDER_STATUS_GET]: PddOrderStatusGetOrderStatusGetResponseResponseInterface;
   [PDD_LOGISTICS_ADDRESS_GET]: PddLogisticsAddressGetLogisticsAddressGetResponseResponseInterface;
   [PDD_LOGISTICS_COMPANIES_GET]: PddLogisticsCompaniesGetLogisticsCompaniesGetResponseResponseInterface;
   [PDD_LOGISTICS_ISV_TRACE_NOTIFY_SUB]: PddLogisticsIsvTraceNotifySubResponseInterface;
@@ -3985,6 +4318,12 @@ export interface PddCollectShortResponseInterface {
   [PDD_LOGISTICS_ONLINE_SEND]: PddLogisticsOnlineSendLogisticsOnlineSendResponseResponseInterface;
   [PDD_LOGISTICS_ONLINE_STATUS_QUERY]: PddLogisticsOnlineStatusQueryLogisticsOnlineStatusQueryResponseResponseInterface;
   [PDD_LOGISTICS_ORDERTRACE_GET]: PddLogisticsOrdertraceGetResponseInterface;
+  [PDD_ERP_ORDER_SYNC]: PddErpOrderSyncResponseInterface;
+  [PDD_ORDER_BASIC_LIST_GET]: PddOrderBasicListGetOrderBasicListGetResponseResponseInterface;
+  [PDD_ORDER_INFORMATION_GET]: PddOrderInformationGetOrderInfoGetResponseResponseInterface;
+  [PDD_ORDER_LIST_GET]: PddOrderListGetOrderListGetResponseResponseInterface;
+  [PDD_ORDER_NUMBER_LIST_INCREMENT_GET]: PddOrderNumberListIncrementGetOrderSnIncrementGetResponseResponseInterface;
+  [PDD_ORDER_STATUS_GET]: PddOrderStatusGetOrderStatusGetResponseResponseInterface;
   [PDD_NEXTONE_LOGISTICS_WAREHOUSE_UPDATE]: PddNextoneLogisticsWarehouseUpdateResponseInterface;
   [PDD_RDC_PDDGENIUS_SENDGOODS_CANCEL]: PddRdcPddgeniusSendgoodsCancelRdcPddgeniusSendgoodsCancelResponseResponseInterface;
   [PDD_REFUND_ADDRESS_LIST_GET]: PddRefundAddressListGetRefundAddressListGetResponseResponseInterface;
@@ -4182,16 +4521,6 @@ export interface PddCollectShortResponseInterface {
   [PDD_VAS_ORDER_SEARCH]: PddVasOrderSearchVasOrderSearchResponseResponseInterface;
   [PDD_SMS_DETAILBILL_PUSH]: PddSmsDetailbillPushResponseInterface;
   [PDD_SMS_VENDOR_COMPLAINT_CREATE]: PddSmsVendorComplaintCreateResponseInterface;
-  [PDD_MALL_INFO_GROUP_ADD_STORE_POST]: PddMallInfoGroupAddStorePostMallInfoGroupAddStorePostResponseResponseInterface;
-  [PDD_MALL_INFO_GROUP_LIST_STORE_GET]: PddMallInfoGroupListStoreGetMallInfoGroupListStoreGetResponseResponseInterface;
-  [PDD_MALL_INFO_GROUP_REMOVE_STORE_GET]: PddMallInfoGroupRemoveStoreGetMallInfoGroupRemoveStoreGetResponseResponseInterface;
-  [PDD_MALL_INFO_STORE_CREATE_POST]: PddMallInfoStoreCreatePostMallInfoStoreCreatePostResponseResponseInterface;
-  [PDD_MALL_INFO_STORE_CREATE_POST_NOPOI]: PddMallInfoStoreCreatePostNopoiResponseInterface;
-  [PDD_MALL_INFO_STORE_DELETE_POST]: PddMallInfoStoreDeletePostMallInfoStoreDeletePostResponseResponseInterface;
-  [PDD_MALL_INFO_STORE_GET]: PddMallInfoStoreGetResponseInterface;
-  [PDD_MALL_INFO_STORE_UPDATE_POST]: PddMallInfoStoreUpdatePostMallInfoStoreUpdatePostResponseResponseInterface;
-  [PDD_MALL_INFO_STORE_UPDATE_POST_NOPOI]: PddMallInfoStoreUpdatePostNopoiResponseInterface;
-  [PDD_QRPAY_PAYEE_REGISTER]: PddQrpayPayeeRegisterQrpayPayeeRegisterResponseResponseInterface;
   [PDD_AD_API_ADVERTISER_OPEN_ACCOUNT]: PddAdApiAdvertiserOpenAccountResponseInterface;
   [PDD_AD_API_ADVERTISER_QUERY_ACCOUNT_BALANCE]: PddAdApiAdvertiserQueryAccountBalanceResponseInterface;
   [PDD_AD_API_ADVERTISER_QUERY_ACCOUNT_INFO]: PddAdApiAdvertiserQueryAccountInfoResponseInterface;
@@ -4248,6 +4577,16 @@ export interface PddCollectShortResponseInterface {
   [PDD_FDS_WAYBILL_CANCEL]: PddFdsWaybillCancelPddFdsWaybillCancelResponseResponseInterface;
   [PDD_FDS_WAYBILL_GET]: PddFdsWaybillGetPddFdsWaybillGetResponseResponseInterface;
   [PDD_FDS_WAYBILL_RETURN]: PddFdsWaybillReturnPddFdsWaybillReturnResponseResponseInterface;
+  [PDD_MALL_INFO_GROUP_ADD_STORE_POST]: PddMallInfoGroupAddStorePostMallInfoGroupAddStorePostResponseResponseInterface;
+  [PDD_MALL_INFO_GROUP_LIST_STORE_GET]: PddMallInfoGroupListStoreGetMallInfoGroupListStoreGetResponseResponseInterface;
+  [PDD_MALL_INFO_GROUP_REMOVE_STORE_GET]: PddMallInfoGroupRemoveStoreGetMallInfoGroupRemoveStoreGetResponseResponseInterface;
+  [PDD_MALL_INFO_STORE_CREATE_POST]: PddMallInfoStoreCreatePostMallInfoStoreCreatePostResponseResponseInterface;
+  [PDD_MALL_INFO_STORE_CREATE_POST_NOPOI]: PddMallInfoStoreCreatePostNopoiResponseInterface;
+  [PDD_MALL_INFO_STORE_DELETE_POST]: PddMallInfoStoreDeletePostMallInfoStoreDeletePostResponseResponseInterface;
+  [PDD_MALL_INFO_STORE_GET]: PddMallInfoStoreGetResponseInterface;
+  [PDD_MALL_INFO_STORE_UPDATE_POST]: PddMallInfoStoreUpdatePostMallInfoStoreUpdatePostResponseResponseInterface;
+  [PDD_MALL_INFO_STORE_UPDATE_POST_NOPOI]: PddMallInfoStoreUpdatePostNopoiResponseInterface;
+  [PDD_QRPAY_PAYEE_REGISTER]: PddQrpayPayeeRegisterQrpayPayeeRegisterResponseResponseInterface;
   [PDD_MALL_INFO_BONDED_WAREHOUSE_GET]: PddMallInfoBondedWarehouseGetMallInfoBondedWarehouseGetResponseResponseInterface;
   [PDD_OVERSEA_CLEARANCE_GET]: PddOverseaClearanceGetClearanceResponseResponseInterface;
 }

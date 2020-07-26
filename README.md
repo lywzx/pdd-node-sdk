@@ -53,7 +53,7 @@ async function getGoodsTemplate(catId, assessToken) {
 
 # 关于打印日志
 
-`pdd-node-sdk`是依赖于[debug](https://github.com/visionmedia/debug)包打印日志，所以你可以在启动时，在环境变量中添加：
+`@pin-duo-duo/core`是依赖于[debug](https://github.com/visionmedia/debug)包打印日志，所以你可以在启动时，在环境变量中添加：
 
 ```bash
 set DEBUG=pdd:log && ...

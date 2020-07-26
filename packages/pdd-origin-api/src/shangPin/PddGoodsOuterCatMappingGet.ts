@@ -1,5 +1,12 @@
 export const PDD_GOODS_OUTER_CAT_MAPPING_GET = 'pdd.goods.outer.cat.mapping.get';
 export const PDD_GOODS_OUTER_CAT_MAPPING_GET_RESPONSE_KEY = 'outer_cat_mapping_get_response';
+export const PDD_GOODS_OUTER_CAT_MAPPING_GET_LIMITERS = [
+  {
+    limiterLevel: 3,
+    timeRange: 1,
+    times: 2000,
+  },
+];
 
 /**
  * 接口名称：类目预测接口

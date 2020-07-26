@@ -1,5 +1,17 @@
 export const PDD_GOODS_CAT_TEMPLATE_GET = 'pdd.goods.cat.template.get';
 export const PDD_GOODS_CAT_TEMPLATE_GET_RESPONSE_KEY = 'open_api_response';
+export const PDD_GOODS_CAT_TEMPLATE_GET_LIMITERS = [
+  {
+    limiterLevel: 1,
+    timeRange: 10,
+    times: 1000,
+  },
+  {
+    limiterLevel: 3,
+    timeRange: 10,
+    times: 10000,
+  },
+];
 
 /**
  * 接口名称：获取商品类目属性

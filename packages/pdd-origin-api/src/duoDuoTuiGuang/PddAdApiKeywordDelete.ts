@@ -1,5 +1,13 @@
 export const PDD_AD_API_KEYWORD_DELETE = 'pdd.ad.api.keyword.delete';
 
+export const PDD_AD_API_KEYWORD_DELETE_LIMITERS = [
+  {
+    limiterLevel: 1,
+    timeRange: 10,
+    times: 20,
+  },
+];
+
 /**
  * 接口名称：批量删除关键词
  * 接口标识：pdd.ad.api.keyword.delete

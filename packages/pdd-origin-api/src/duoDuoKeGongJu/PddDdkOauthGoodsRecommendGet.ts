@@ -1,5 +1,12 @@
 export const PDD_DDK_OAUTH_GOODS_RECOMMEND_GET = 'pdd.ddk.oauth.goods.recommend.get';
 export const PDD_DDK_OAUTH_GOODS_RECOMMEND_GET_RESPONSE_KEY = 'goods_basic_detail_response';
+export const PDD_DDK_OAUTH_GOODS_RECOMMEND_GET_LIMITERS = [
+  {
+    limiterLevel: 3,
+    timeRange: 3600,
+    times: 3000000,
+  },
+];
 
 /**
  * 接口名称：运营频道商品查询API

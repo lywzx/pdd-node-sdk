@@ -1,5 +1,12 @@
 export const PDD_DDK_MERCHANT_LIST_GET = 'pdd.ddk.merchant.list.get';
 export const PDD_DDK_MERCHANT_LIST_GET_RESPONSE_KEY = 'merchant_list_response';
+export const PDD_DDK_MERCHANT_LIST_GET_LIMITERS = [
+  {
+    limiterLevel: 3,
+    timeRange: 3600,
+    times: 3000000,
+  },
+];
 
 /**
  * 接口名称：多多客查店铺列表接口

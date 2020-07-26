@@ -1,5 +1,17 @@
 export const PDD_GOODS_AUTHORIZATION_CATS = 'pdd.goods.authorization.cats';
 export const PDD_GOODS_AUTHORIZATION_CATS_RESPONSE_KEY = 'goods_auth_cats_get_response';
+export const PDD_GOODS_AUTHORIZATION_CATS_LIMITERS = [
+  {
+    limiterLevel: 1,
+    timeRange: 60,
+    times: 2500,
+  },
+  {
+    limiterLevel: 3,
+    timeRange: 1,
+    times: 625,
+  },
+];
 
 /**
  * 接口名称：获取当前授权商家可发布的商品类目信息

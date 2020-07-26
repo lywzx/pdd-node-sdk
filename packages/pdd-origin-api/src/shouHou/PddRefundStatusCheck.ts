@@ -1,5 +1,12 @@
 export const PDD_REFUND_STATUS_CHECK = 'pdd.refund.status.check';
 export const PDD_REFUND_STATUS_CHECK_RESPONSE_KEY = 'refund_status_check_response';
+export const PDD_REFUND_STATUS_CHECK_LIMITERS = [
+  {
+    limiterLevel: 1,
+    timeRange: 60,
+    times: 2500,
+  },
+];
 
 /**
  * 接口名称：售后校验接口

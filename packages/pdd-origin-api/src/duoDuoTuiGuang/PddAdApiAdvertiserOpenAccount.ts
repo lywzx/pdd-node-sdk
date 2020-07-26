@@ -1,5 +1,13 @@
 export const PDD_AD_API_ADVERTISER_OPEN_ACCOUNT = 'pdd.ad.api.advertiser.open.account';
 
+export const PDD_AD_API_ADVERTISER_OPEN_ACCOUNT_LIMITERS = [
+  {
+    limiterLevel: 1,
+    timeRange: 10,
+    times: 20,
+  },
+];
+
 /**
  * 接口名称：广告主开户
  * 接口标识：pdd.ad.api.advertiser.open.account

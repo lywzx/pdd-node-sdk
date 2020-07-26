@@ -1,5 +1,13 @@
 export const PDD_AD_API_KEYWORD_UPDATE = 'pdd.ad.api.keyword.update';
 
+export const PDD_AD_API_KEYWORD_UPDATE_LIMITERS = [
+  {
+    limiterLevel: 1,
+    timeRange: 10,
+    times: 20,
+  },
+];
+
 /**
  * 接口名称：批量修改关键词
  * 接口标识：pdd.ad.api.keyword.update

@@ -1,5 +1,12 @@
 export const PDD_GOODS_SUBMIT_GOODS_COMMIT = 'pdd.goods.submit.goods.commit';
 export const PDD_GOODS_SUBMIT_GOODS_COMMIT_RESPONSE_KEY = 'goods_update_response';
+export const PDD_GOODS_SUBMIT_GOODS_COMMIT_LIMITERS = [
+  {
+    limiterLevel: 3,
+    timeRange: 10,
+    times: 5000,
+  },
+];
 
 /**
  * 接口名称：编辑并提交草稿接口

@@ -1,5 +1,12 @@
 export const PDD_GOODS_CPS_MALL_UNIT_RESUME = 'pdd.goods.cps.mall.unit.resume';
 export const PDD_GOODS_CPS_MALL_UNIT_RESUME_RESPONSE_KEY = 'goods_cps_mall_unit_resume_response';
+export const PDD_GOODS_CPS_MALL_UNIT_RESUME_LIMITERS = [
+  {
+    limiterLevel: 1,
+    timeRange: 60,
+    times: 60,
+  },
+];
 
 /**
  * 接口名称：恢复全店推广API

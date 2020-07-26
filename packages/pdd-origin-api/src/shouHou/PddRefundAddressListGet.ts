@@ -1,5 +1,17 @@
 export const PDD_REFUND_ADDRESS_LIST_GET = 'pdd.refund.address.list.get';
 export const PDD_REFUND_ADDRESS_LIST_GET_RESPONSE_KEY = 'refund_address_list_get_response';
+export const PDD_REFUND_ADDRESS_LIST_GET_LIMITERS = [
+  {
+    limiterLevel: 1,
+    timeRange: 60,
+    times: 2500,
+  },
+  {
+    limiterLevel: 3,
+    timeRange: 1,
+    times: 1040,
+  },
+];
 
 /**
  * 接口名称：获取商家退货地址库

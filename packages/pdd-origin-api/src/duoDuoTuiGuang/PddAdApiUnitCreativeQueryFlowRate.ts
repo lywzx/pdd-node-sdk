@@ -1,5 +1,13 @@
 export const PDD_AD_API_UNIT_CREATIVE_QUERY_FLOW_RATE = 'pdd.ad.api.unit.creative.query.flow.rate';
 
+export const PDD_AD_API_UNIT_CREATIVE_QUERY_FLOW_RATE_LIMITERS = [
+  {
+    limiterLevel: 1,
+    timeRange: 10,
+    times: 20,
+  },
+];
+
 /**
  * 接口名称：查询智能创意流量分配比例,万分比
  * 接口标识：pdd.ad.api.unit.creative.query.flow.rate

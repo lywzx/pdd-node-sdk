@@ -1,5 +1,17 @@
 export const PDD_GOODS_SALE_STATUS_SET = 'pdd.goods.sale.status.set';
 export const PDD_GOODS_SALE_STATUS_SET_RESPONSE_KEY = 'goods_sale_status_set_response';
+export const PDD_GOODS_SALE_STATUS_SET_LIMITERS = [
+  {
+    limiterLevel: 4,
+    timeRange: 20,
+    times: 2000,
+  },
+  {
+    limiterLevel: 3,
+    timeRange: 10,
+    times: 8000,
+  },
+];
 
 /**
  * 接口名称：商品上架状态设置

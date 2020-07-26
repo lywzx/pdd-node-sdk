@@ -1,5 +1,13 @@
 export const PDD_AD_API_PLAN_DELETE = 'pdd.ad.api.plan.delete';
 
+export const PDD_AD_API_PLAN_DELETE_LIMITERS = [
+  {
+    limiterLevel: 1,
+    timeRange: 10,
+    times: 5,
+  },
+];
+
 /**
  * 接口名称：删除计划
  * 接口标识：pdd.ad.api.plan.delete

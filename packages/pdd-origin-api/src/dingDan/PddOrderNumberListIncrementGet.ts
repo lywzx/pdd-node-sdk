@@ -1,5 +1,17 @@
 export const PDD_ORDER_NUMBER_LIST_INCREMENT_GET = 'pdd.order.number.list.increment.get';
 export const PDD_ORDER_NUMBER_LIST_INCREMENT_GET_RESPONSE_KEY = 'order_sn_increment_get_response';
+export const PDD_ORDER_NUMBER_LIST_INCREMENT_GET_LIMITERS = [
+  {
+    limiterLevel: 1,
+    timeRange: 60,
+    times: 2500,
+  },
+  {
+    limiterLevel: 3,
+    timeRange: 1,
+    times: 12500,
+  },
+];
 
 /**
  * 接口名称：订单增量接口

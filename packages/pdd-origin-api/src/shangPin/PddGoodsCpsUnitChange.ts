@@ -1,5 +1,13 @@
 export const PDD_GOODS_CPS_UNIT_CHANGE = 'pdd.goods.cps.unit.change';
 
+export const PDD_GOODS_CPS_UNIT_CHANGE_LIMITERS = [
+  {
+    limiterLevel: 1,
+    timeRange: 60,
+    times: 60,
+  },
+];
+
 /**
  * 接口名称：修改商品推广API
  * 接口标识：pdd.goods.cps.unit.change

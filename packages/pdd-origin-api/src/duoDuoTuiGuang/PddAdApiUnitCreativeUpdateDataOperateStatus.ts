@@ -1,6 +1,14 @@
 export const PDD_AD_API_UNIT_CREATIVE_UPDATE_DATA_OPERATE_STATUS =
   'pdd.ad.api.unit.creative.update.data.operate.status';
 
+export const PDD_AD_API_UNIT_CREATIVE_UPDATE_DATA_OPERATE_STATUS_LIMITERS = [
+  {
+    limiterLevel: 1,
+    timeRange: 10,
+    times: 20,
+  },
+];
+
 /**
  * 接口名称：批量启动或暂停创意
  * 接口标识：pdd.ad.api.unit.creative.update.data.operate.status

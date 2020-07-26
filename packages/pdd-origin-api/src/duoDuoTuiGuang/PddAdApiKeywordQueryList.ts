@@ -1,5 +1,13 @@
 export const PDD_AD_API_KEYWORD_QUERY_LIST = 'pdd.ad.api.keyword.query.list';
 
+export const PDD_AD_API_KEYWORD_QUERY_LIST_LIMITERS = [
+  {
+    limiterLevel: 1,
+    timeRange: 10,
+    times: 20,
+  },
+];
+
 /**
  * 接口名称：查询关键词列表
  * 接口标识：pdd.ad.api.keyword.query.list

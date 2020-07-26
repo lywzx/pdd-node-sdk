@@ -1,5 +1,13 @@
 export const PDD_AD_API_UNIT_BID_DELETE = 'pdd.ad.api.unit.bid.delete';
 
+export const PDD_AD_API_UNIT_BID_DELETE_LIMITERS = [
+  {
+    limiterLevel: 1,
+    timeRange: 10,
+    times: 20,
+  },
+];
+
 /**
  * 接口名称：删除定向/资源位
  * 接口标识：pdd.ad.api.unit.bid.delete

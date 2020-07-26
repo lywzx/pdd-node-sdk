@@ -1,5 +1,12 @@
 export const PDD_ORDER_STATUS_GET = 'pdd.order.status.get';
 export const PDD_ORDER_STATUS_GET_RESPONSE_KEY = 'order_status_get_response';
+export const PDD_ORDER_STATUS_GET_LIMITERS = [
+  {
+    limiterLevel: 1,
+    timeRange: 60,
+    times: 2500,
+  },
+];
 
 /**
  * 接口名称：订单状态

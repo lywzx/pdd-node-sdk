@@ -1,5 +1,17 @@
 export const PDD_GOODS_CATS_GET = 'pdd.goods.cats.get';
 export const PDD_GOODS_CATS_GET_RESPONSE_KEY = 'goods_cats_get_response';
+export const PDD_GOODS_CATS_GET_LIMITERS = [
+  {
+    limiterLevel: 4,
+    timeRange: 60,
+    times: 2500,
+  },
+  {
+    limiterLevel: 3,
+    timeRange: 2,
+    times: 2000,
+  },
+];
 
 /**
  * 接口名称：商品标准类目接口

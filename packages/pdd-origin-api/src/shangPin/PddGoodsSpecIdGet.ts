@@ -1,5 +1,17 @@
 export const PDD_GOODS_SPEC_ID_GET = 'pdd.goods.spec.id.get';
 export const PDD_GOODS_SPEC_ID_GET_RESPONSE_KEY = 'goods_spec_id_get_response';
+export const PDD_GOODS_SPEC_ID_GET_LIMITERS = [
+  {
+    limiterLevel: 1,
+    timeRange: 60,
+    times: 3000,
+  },
+  {
+    limiterLevel: 3,
+    timeRange: 1,
+    times: 10000,
+  },
+];
 
 /**
  * 接口名称：生成商家自定义的规格

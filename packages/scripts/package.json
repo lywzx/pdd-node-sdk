@@ -28,9 +28,12 @@
     "url": "https://github.com/lywzx/pdd-node-sdk/issues"
   },
   "dependencies": {
-    "lodash": "^4.17.19"
+    "lodash": "^4.17.19",
+    "async": "^3.2.0",
+    "debug": "^4.2.0"
   },
   "devDependencies": {
-    "@types/lodash": "^4.14.158"
+    "@types/lodash": "^4.14.158",
+    "@types/async": "^3.2.0"
   }
 }

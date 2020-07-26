@@ -1,5 +1,12 @@
 export const PDD_GOODS_CPS_UNIT_DELETE = 'pdd.goods.cps.unit.delete';
 export const PDD_GOODS_CPS_UNIT_DELETE_RESPONSE_KEY = 'goods_cps_unit_delete_response';
+export const PDD_GOODS_CPS_UNIT_DELETE_LIMITERS = [
+  {
+    limiterLevel: 1,
+    timeRange: 60,
+    times: 60,
+  },
+];
 
 /**
  * 接口名称：删除单品计划接口

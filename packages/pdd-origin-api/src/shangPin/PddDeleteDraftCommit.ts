@@ -1,5 +1,13 @@
 export const PDD_DELETE_DRAFT_COMMIT = 'pdd.delete.draft.commit';
 
+export const PDD_DELETE_DRAFT_COMMIT_LIMITERS = [
+  {
+    limiterLevel: 3,
+    timeRange: 1,
+    times: 100,
+  },
+];
+
 /**
  * 接口名称：删除草稿接口
  * 接口标识：pdd.delete.draft.commit

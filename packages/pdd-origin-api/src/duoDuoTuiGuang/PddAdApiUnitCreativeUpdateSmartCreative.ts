@@ -1,5 +1,13 @@
 export const PDD_AD_API_UNIT_CREATIVE_UPDATE_SMART_CREATIVE = 'pdd.ad.api.unit.creative.update.smart.creative';
 
+export const PDD_AD_API_UNIT_CREATIVE_UPDATE_SMART_CREATIVE_LIMITERS = [
+  {
+    limiterLevel: 1,
+    timeRange: 10,
+    times: 20,
+  },
+];
+
 /**
  * 接口名称：更新智能创意
  * 接口标识：pdd.ad.api.unit.creative.update.smart.creative

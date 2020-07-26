@@ -1,5 +1,12 @@
 export const PDD_WAYBILL_GET = 'pdd.waybill.get';
 export const PDD_WAYBILL_GET_RESPONSE_KEY = 'pdd_waybill_get_response';
+export const PDD_WAYBILL_GET_LIMITERS = [
+  {
+    limiterLevel: 3,
+    timeRange: 1,
+    times: 10000,
+  },
+];
 
 /**
  * 接口名称：电子面单云打印接口

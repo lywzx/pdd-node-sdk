@@ -1,5 +1,17 @@
 export const PDD_GOODS_LOGISTICS_TEMPLATE_GET = 'pdd.goods.logistics.template.get';
 export const PDD_GOODS_LOGISTICS_TEMPLATE_GET_RESPONSE_KEY = 'goods_logistics_template_get_response';
+export const PDD_GOODS_LOGISTICS_TEMPLATE_GET_LIMITERS = [
+  {
+    limiterLevel: 1,
+    timeRange: 60,
+    times: 2400,
+  },
+  {
+    limiterLevel: 3,
+    timeRange: 1,
+    times: 200,
+  },
+];
 
 /**
  * 接口名称：商品运费模版接口

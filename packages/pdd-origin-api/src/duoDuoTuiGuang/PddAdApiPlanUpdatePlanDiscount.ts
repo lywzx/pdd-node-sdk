@@ -1,5 +1,13 @@
 export const PDD_AD_API_PLAN_UPDATE_PLAN_DISCOUNT = 'pdd.ad.api.plan.update.plan.discount';
 
+export const PDD_AD_API_PLAN_UPDATE_PLAN_DISCOUNT_LIMITERS = [
+  {
+    limiterLevel: 1,
+    timeRange: 10,
+    times: 20,
+  },
+];
+
 /**
  * 接口名称：更新分时折扣
  * 接口标识：pdd.ad.api.plan.update.plan.discount

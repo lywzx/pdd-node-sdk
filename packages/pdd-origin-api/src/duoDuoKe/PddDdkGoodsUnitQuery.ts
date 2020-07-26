@@ -1,5 +1,12 @@
 export const PDD_DDK_GOODS_UNIT_QUERY = 'pdd.ddk.goods.unit.query';
 export const PDD_DDK_GOODS_UNIT_QUERY_RESPONSE_KEY = 'ddk_goods_unit_query_response';
+export const PDD_DDK_GOODS_UNIT_QUERY_LIMITERS = [
+  {
+    limiterLevel: 3,
+    timeRange: 3600,
+    times: 3000000,
+  },
+];
 
 /**
  * 接口名称：查询商品的推广计划

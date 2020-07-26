@@ -1,5 +1,17 @@
 export const PDD_GOODS_DETAIL_GET = 'pdd.goods.detail.get';
 export const PDD_GOODS_DETAIL_GET_RESPONSE_KEY = 'goods_detail_get_response';
+export const PDD_GOODS_DETAIL_GET_LIMITERS = [
+  {
+    limiterLevel: 1,
+    timeRange: 60,
+    times: 2500,
+  },
+  {
+    limiterLevel: 3,
+    timeRange: 1,
+    times: 2500,
+  },
+];
 
 /**
  * 接口名称：商品明细

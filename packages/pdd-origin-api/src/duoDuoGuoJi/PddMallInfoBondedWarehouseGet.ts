@@ -1,5 +1,12 @@
 export const PDD_MALL_INFO_BONDED_WAREHOUSE_GET = 'pdd.mall.info.bonded.warehouse.get';
 export const PDD_MALL_INFO_BONDED_WAREHOUSE_GET_RESPONSE_KEY = 'mall_info_bonded_warehouse_get_response';
+export const PDD_MALL_INFO_BONDED_WAREHOUSE_GET_LIMITERS = [
+  {
+    limiterLevel: 3,
+    timeRange: 3600,
+    times: 10000,
+  },
+];
 
 /**
  * 接口名称：保税仓信息查询接口

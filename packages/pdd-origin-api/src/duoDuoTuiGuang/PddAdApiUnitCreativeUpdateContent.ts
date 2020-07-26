@@ -1,5 +1,13 @@
 export const PDD_AD_API_UNIT_CREATIVE_UPDATE_CONTENT = 'pdd.ad.api.unit.creative.update.content';
 
+export const PDD_AD_API_UNIT_CREATIVE_UPDATE_CONTENT_LIMITERS = [
+  {
+    limiterLevel: 1,
+    timeRange: 10,
+    times: 20,
+  },
+];
+
 /**
  * 接口名称：更新创意内容
  * 接口标识：pdd.ad.api.unit.creative.update.content

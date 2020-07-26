@@ -1,5 +1,13 @@
 export const PDD_AD_API_PLAN_UPDATE_MAX_COST = 'pdd.ad.api.plan.update.max.cost';
 
+export const PDD_AD_API_PLAN_UPDATE_MAX_COST_LIMITERS = [
+  {
+    limiterLevel: 1,
+    timeRange: 10,
+    times: 20,
+  },
+];
+
 /**
  * 接口名称：更新日消耗上限
  * 接口标识：pdd.ad.api.plan.update.max.cost

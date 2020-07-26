@@ -1,5 +1,13 @@
 export const PDD_AD_API_KEYWORD_RELEVANCE_GET = 'pdd.ad.api.keyword.relevance.get';
 
+export const PDD_AD_API_KEYWORD_RELEVANCE_GET_LIMITERS = [
+  {
+    limiterLevel: 1,
+    timeRange: 10,
+    times: 20,
+  },
+];
+
 /**
  * 接口名称：关键词相关性查询
  * 接口标识：pdd.ad.api.keyword.relevance.get

@@ -1,5 +1,13 @@
 export const PDD_AD_API_UNIT_CREATIVE_CREATE = 'pdd.ad.api.unit.creative.create';
 
+export const PDD_AD_API_UNIT_CREATIVE_CREATE_LIMITERS = [
+  {
+    limiterLevel: 1,
+    timeRange: 10,
+    times: 20,
+  },
+];
+
 /**
  * 接口名称：创建创意
  * 接口标识：pdd.ad.api.unit.creative.create

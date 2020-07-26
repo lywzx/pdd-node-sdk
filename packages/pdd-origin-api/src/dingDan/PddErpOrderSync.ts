@@ -1,5 +1,13 @@
 export const PDD_ERP_ORDER_SYNC = 'pdd.erp.order.sync';
 
+export const PDD_ERP_ORDER_SYNC_LIMITERS = [
+  {
+    limiterLevel: 3,
+    timeRange: 1,
+    times: 1500,
+  },
+];
+
 /**
  * 接口名称：erp打单信息同步
  * 接口标识：pdd.erp.order.sync

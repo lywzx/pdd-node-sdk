@@ -1,5 +1,12 @@
 export const PDD_DDK_ORDER_DETAIL_GET = 'pdd.ddk.order.detail.get';
 export const PDD_DDK_ORDER_DETAIL_GET_RESPONSE_KEY = 'order_detail_response';
+export const PDD_DDK_ORDER_DETAIL_GET_LIMITERS = [
+  {
+    limiterLevel: 3,
+    timeRange: 10,
+    times: 22250,
+  },
+];
 
 /**
  * 接口名称：查询订单详情

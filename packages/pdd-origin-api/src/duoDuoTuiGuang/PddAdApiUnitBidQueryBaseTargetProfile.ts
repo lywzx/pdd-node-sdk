@@ -1,5 +1,13 @@
 export const PDD_AD_API_UNIT_BID_QUERY_BASE_TARGET_PROFILE = 'pdd.ad.api.unit.bid.query.base.target.profile';
 
+export const PDD_AD_API_UNIT_BID_QUERY_BASE_TARGET_PROFILE_LIMITERS = [
+  {
+    limiterLevel: 1,
+    timeRange: 10,
+    times: 20,
+  },
+];
+
 /**
  * 接口名称：获取可用基础定向
  * 接口标识：pdd.ad.api.unit.bid.query.base.target.profile

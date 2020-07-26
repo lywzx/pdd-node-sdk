@@ -1,5 +1,13 @@
 export const PDD_AD_API_PLAN_QUERY_CAN_UPDATE_MAX_COST = 'pdd.ad.api.plan.query.can.update.max.cost';
 
+export const PDD_AD_API_PLAN_QUERY_CAN_UPDATE_MAX_COST_LIMITERS = [
+  {
+    limiterLevel: 1,
+    timeRange: 10,
+    times: 20,
+  },
+];
+
 /**
  * 接口名称：当天是否允许计划的推广预算
  * 接口标识：pdd.ad.api.plan.query.can.update.max.cost

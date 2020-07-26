@@ -1,5 +1,18 @@
 export const PDD_AD_API_REPORT_ENTITY_REPORT_QUERY = 'pdd.ad.api.report.entity.report.query';
 
+export const PDD_AD_API_REPORT_ENTITY_REPORT_QUERY_LIMITERS = [
+  {
+    limiterLevel: 1,
+    timeRange: 10,
+    times: 20,
+  },
+  {
+    limiterLevel: 4,
+    timeRange: 1,
+    times: 50,
+  },
+];
+
 /**
  * 接口名称：广告主报表分级查询接口
  * 接口标识：pdd.ad.api.report.entity.report.query

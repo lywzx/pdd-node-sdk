@@ -1,5 +1,13 @@
 export const PDD_LOGISTICS_ISV_TRACE_NOTIFY_SUB = 'pdd.logistics.isv.trace.notify.sub';
 
+export const PDD_LOGISTICS_ISV_TRACE_NOTIFY_SUB_LIMITERS = [
+  {
+    limiterLevel: 4,
+    timeRange: 86400,
+    times: 1000000,
+  },
+];
+
 /**
  * 接口名称：ISV物流轨迹推送消息订阅接口
  * 接口标识：pdd.logistics.isv.trace.notify.sub

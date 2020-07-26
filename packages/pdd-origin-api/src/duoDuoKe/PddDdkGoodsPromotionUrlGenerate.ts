@@ -1,5 +1,12 @@
 export const PDD_DDK_GOODS_PROMOTION_URL_GENERATE = 'pdd.ddk.goods.promotion.url.generate';
 export const PDD_DDK_GOODS_PROMOTION_URL_GENERATE_RESPONSE_KEY = 'goods_promotion_url_generate_response';
+export const PDD_DDK_GOODS_PROMOTION_URL_GENERATE_LIMITERS = [
+  {
+    limiterLevel: 3,
+    timeRange: 10,
+    times: 27875,
+  },
+];
 
 /**
  * 接口名称：多多进宝推广链接生成

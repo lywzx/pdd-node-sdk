@@ -1,3 +1,4 @@
+import { SOURCE_ROOT_DIR } from '../constant';
 import {
   createRequestClassName,
   createResponseClassName,
@@ -15,8 +16,14 @@ import { CodeColumnInterface, CodeInterface } from '../interface/code.interface'
 import { TreeType } from '../interface/tree.interface';
 import { RunStateFileInterface, RunStateInterface } from '../interface/run-state.interface';
 import { map, flattenDeep, filter } from 'lodash';
+import { join } from 'path';
+import { generateLimiterName } from './key-name';
 
-// 创建代码
+/**
+ * 根据每个api的信息，创建对应的代码内容
+ * @param apiId
+ * @param detail
+ */
 export function generateCode(apiId: string, detail: ApiDetailInterface) {
   const apiIdConstant = generateConstant(apiId);
 
@@ -24,6 +31,12 @@ export function generateCode(apiId: string, detail: ApiDetailInterface) {
   let exportResponseShortKey = '';
   if (apiResponseValue) {
     exportResponseShortKey = `export const ${apiIdConstant}_RESPONSE_KEY = '${apiResponseValue}';`;
+  }
+
+  if (detail && detail.limiters && detail.limiters.length) {
+    exportResponseShortKey += `
+export const ${generateLimiterName(apiIdConstant)} = ${JSON.stringify(detail.limiters, null, 2)};
+`;
   }
 
   const requestClassCode = buildParamsToCodeArr(detail.requestParamList, detail, 'request');
@@ -208,7 +221,8 @@ export async function generatorIndexCode(state: RunStateInterface) {
           fl.responseKey,
           fl.requestInterface,
           fl.responseInterface,
-          fl.secoundResponseInterface,
+          fl.secondResponseInterface,
+          fl.apiLimiters,
         ]
           .filter(it => !!it)
           .join(',\n  ');
@@ -246,13 +260,22 @@ export async function generatorIndexCode(state: RunStateInterface) {
   ${PddNeedAccessTokenTypeCollectionsInnerCodes}
 ];`;
 
+  // 这里生成一个对象，包含了应用限频信息
+  const PddApiNeedLimiter = 'PddApiLimiterMapping';
+  const PddApiNeedLimiterInnerCode = filter(flattenResolvedFiles, 'apiLimiters')
+    .map((it: RunStateFileInterface) => {
+      return `[${it.constVariable}]: ${it.apiLimiters}`;
+    })
+    .join(',\n');
+  const PddApiLimiterMappingCodes = `const ${PddApiNeedLimiter} = \{${PddApiNeedLimiterInnerCode}\};`;
+
   // 导出的变量信息
   const exportVariables = map(flattenResolvedFiles, (fl: RunStateFileInterface) => {
-    return [fl.constVariable, fl.responseKey, fl.requestInterface, fl.responseInterface, fl.secoundResponseInterface]
+    return [fl.constVariable, fl.responseKey, fl.requestInterface, fl.responseInterface, fl.secondResponseInterface]
       .filter(it => !!it)
       .join(',\n  ');
   })
-    .concat([PddResponseTypeAndRequestTypeMapping, PddNeedAccessTokenTypeCollections])
+    .concat([PddResponseTypeAndRequestTypeMapping, PddNeedAccessTokenTypeCollections, PddApiNeedLimiter])
     .join(',\n  ');
 
   const exportVariablesCode = `export {
@@ -275,22 +298,20 @@ export async function generatorIndexCode(state: RunStateInterface) {
 
   const pddCollectResponseSecondInterfaceInnerCode = map(flattenResolvedFiles, (fl: RunStateFileInterface) => {
     return `[${fl.constVariable}]: ${
-      !!fl.secoundResponseInterface ? fl.secoundResponseInterface : fl.responseInterface
+      !!fl.secondResponseInterface ? fl.secondResponseInterface : fl.responseInterface
     };`;
   }).join('\n  ');
   const pddCollectResponseSecondInterfaceCode = `export interface PddCollectShortResponseInterface {
   ${pddCollectResponseSecondInterfaceInnerCode}
 }`;
 
-  /*const apiTypesString = map(flattenResolvedFiles, (fl: RunStateFileInterface) => {
-    return fl.constVariable;
-  }).join(' | ');*/
   return saveCode(
-    'packages/pdd-origin-api/src/index.ts',
+    join(SOURCE_ROOT_DIR, 'index.ts'),
     [
       ...importCodes,
       typeAndResponseKeyMappingCode,
       PddNeedAccessTokenTypeCollectionsCodes,
+      PddApiLimiterMappingCodes,
       exportVariablesCode,
       exportPddRequestInterfaceCode,
       exportPddResponseInterfaceCode,
@@ -300,6 +321,9 @@ export async function generatorIndexCode(state: RunStateInterface) {
   );
 }
 
+/**
+ * 生成通用请求的interface
+ */
 function generateCommonRequestInterfaceCode(type: string) {
   return `export interface PddCommonRequestInterface {
   /**

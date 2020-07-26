@@ -1,5 +1,13 @@
 export const PDD_AD_API_UNIT_UPDATE_OPTIMIZATION_MESSAGE = 'pdd.ad.api.unit.update.optimization.message';
 
+export const PDD_AD_API_UNIT_UPDATE_OPTIMIZATION_MESSAGE_LIMITERS = [
+  {
+    limiterLevel: 1,
+    timeRange: 10,
+    times: 20,
+  },
+];
+
 /**
  * 接口名称：更新优化信息
  * 接口标识：pdd.ad.api.unit.update.optimization.message

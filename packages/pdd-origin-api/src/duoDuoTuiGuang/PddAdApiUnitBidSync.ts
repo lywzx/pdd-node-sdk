@@ -1,5 +1,13 @@
 export const PDD_AD_API_UNIT_BID_SYNC = 'pdd.ad.api.unit.bid.sync';
 
+export const PDD_AD_API_UNIT_BID_SYNC_LIMITERS = [
+  {
+    limiterLevel: 1,
+    timeRange: 10,
+    times: 20,
+  },
+];
+
 /**
  * 接口名称：同步定向/资源位
  * 接口标识：pdd.ad.api.unit.bid.sync

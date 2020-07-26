@@ -1,5 +1,12 @@
 export const PDD_LOGISTICS_ADDRESS_GET = 'pdd.logistics.address.get';
 export const PDD_LOGISTICS_ADDRESS_GET_RESPONSE_KEY = 'logistics_address_get_response';
+export const PDD_LOGISTICS_ADDRESS_GET_LIMITERS = [
+  {
+    limiterLevel: 3,
+    timeRange: 10,
+    times: 1000,
+  },
+];
 
 /**
  * 接口名称：获取拼多多标准国家地址库

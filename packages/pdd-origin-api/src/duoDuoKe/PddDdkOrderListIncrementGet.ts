@@ -1,5 +1,12 @@
 export const PDD_DDK_ORDER_LIST_INCREMENT_GET = 'pdd.ddk.order.list.increment.get';
 export const PDD_DDK_ORDER_LIST_INCREMENT_GET_RESPONSE_KEY = 'order_list_get_response';
+export const PDD_DDK_ORDER_LIST_INCREMENT_GET_LIMITERS = [
+  {
+    limiterLevel: 3,
+    timeRange: 10,
+    times: 22250,
+  },
+];
 
 /**
  * 接口名称：最后更新时间段增量同步推广订单信息

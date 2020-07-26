@@ -1,5 +1,22 @@
 export const PDD_GOODS_ADD = 'pdd.goods.add';
 export const PDD_GOODS_ADD_RESPONSE_KEY = 'goods_add_response';
+export const PDD_GOODS_ADD_LIMITERS = [
+  {
+    limiterLevel: 1,
+    timeRange: 1,
+    times: 20,
+  },
+  {
+    limiterLevel: 3,
+    timeRange: 5,
+    times: 4000,
+  },
+  {
+    limiterLevel: 4,
+    timeRange: 10,
+    times: 2000,
+  },
+];
 
 /**
  * 接口名称：商品新增接口

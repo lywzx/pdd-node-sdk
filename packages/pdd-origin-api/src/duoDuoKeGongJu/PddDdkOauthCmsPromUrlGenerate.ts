@@ -1,5 +1,12 @@
 export const PDD_DDK_OAUTH_CMS_PROM_URL_GENERATE = 'pdd.ddk.oauth.cms.prom.url.generate';
 export const PDD_DDK_OAUTH_CMS_PROM_URL_GENERATE_RESPONSE_KEY = 'cms_promotion_url_generate_response';
+export const PDD_DDK_OAUTH_CMS_PROM_URL_GENERATE_LIMITERS = [
+  {
+    limiterLevel: 3,
+    timeRange: 3600,
+    times: 3000000,
+  },
+];
 
 /**
  * 接口名称：生成商城推广链接接口

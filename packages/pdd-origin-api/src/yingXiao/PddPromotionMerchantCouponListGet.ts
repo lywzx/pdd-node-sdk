@@ -1,5 +1,12 @@
 export const PDD_PROMOTION_MERCHANT_COUPON_LIST_GET = 'pdd.promotion.merchant.coupon.list.get';
 export const PDD_PROMOTION_MERCHANT_COUPON_LIST_GET_RESPONSE_KEY = 'merchant_coupon_batch_list_response';
+export const PDD_PROMOTION_MERCHANT_COUPON_LIST_GET_LIMITERS = [
+  {
+    limiterLevel: 1,
+    timeRange: 60,
+    times: 2500,
+  },
+];
 
 /**
  * 接口名称：店铺优惠券批次列表接口

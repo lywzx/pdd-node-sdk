@@ -1,5 +1,12 @@
 export const PDD_LOGISTICS_TICKET_GET = 'pdd.logistics.ticket.get';
 export const PDD_LOGISTICS_TICKET_GET_RESPONSE_KEY = 'logistics_ticket_get_response';
+export const PDD_LOGISTICS_TICKET_GET_LIMITERS = [
+  {
+    limiterLevel: 1,
+    timeRange: 60,
+    times: 4000,
+  },
+];
 
 /**
  * 接口名称：快递公司工单查询接口

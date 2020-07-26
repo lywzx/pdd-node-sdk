@@ -1,5 +1,12 @@
 export const PDD_LOGISTICS_COMPANIES_GET = 'pdd.logistics.companies.get';
 export const PDD_LOGISTICS_COMPANIES_GET_RESPONSE_KEY = 'logistics_companies_get_response';
+export const PDD_LOGISTICS_COMPANIES_GET_LIMITERS = [
+  {
+    limiterLevel: 3,
+    timeRange: 10,
+    times: 1000,
+  },
+];
 
 /**
  * 接口名称：快递公司查看接口

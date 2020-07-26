@@ -1,5 +1,12 @@
 export const PDD_VOUCHER_VOUCHER_INFO_SEND = 'pdd.voucher.voucher.info.send';
 export const PDD_VOUCHER_VOUCHER_INFO_SEND_RESPONSE_KEY = 'voucher_voucher_info_send_response';
+export const PDD_VOUCHER_VOUCHER_INFO_SEND_LIMITERS = [
+  {
+    limiterLevel: 1,
+    timeRange: 60,
+    times: 2500,
+  },
+];
 
 /**
  * 接口名称：卡券信息发送接口

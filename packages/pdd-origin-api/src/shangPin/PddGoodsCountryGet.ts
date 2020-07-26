@@ -1,5 +1,12 @@
 export const PDD_GOODS_COUNTRY_GET = 'pdd.goods.country.get';
 export const PDD_GOODS_COUNTRY_GET_RESPONSE_KEY = 'goods_country_get_response';
+export const PDD_GOODS_COUNTRY_GET_LIMITERS = [
+  {
+    limiterLevel: 3,
+    timeRange: 10,
+    times: 1000,
+  },
+];
 
 /**
  * 接口名称：商品国家接口

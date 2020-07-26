@@ -1,5 +1,13 @@
 export const PDD_GOODS_CPS_MALL_UNIT_CREATE = 'pdd.goods.cps.mall.unit.create';
 
+export const PDD_GOODS_CPS_MALL_UNIT_CREATE_LIMITERS = [
+  {
+    limiterLevel: 1,
+    timeRange: 60,
+    times: 60,
+  },
+];
+
 /**
  * 接口名称：设置全店推广API
  * 接口标识：pdd.goods.cps.mall.unit.create

@@ -1,5 +1,12 @@
 export const PDD_VOUCHER_VIRTUAL_CARD_VERIFICATION = 'pdd.voucher.virtual.card.verification';
 export const PDD_VOUCHER_VIRTUAL_CARD_VERIFICATION_RESPONSE_KEY = 'voucher_voucher_info_verify_response';
+export const PDD_VOUCHER_VIRTUAL_CARD_VERIFICATION_LIMITERS = [
+  {
+    limiterLevel: 1,
+    timeRange: 60,
+    times: 2500,
+  },
+];
 
 /**
  * 接口名称：卡券（电子）核销接口

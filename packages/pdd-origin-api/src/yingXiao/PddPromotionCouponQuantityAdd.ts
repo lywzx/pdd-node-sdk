@@ -1,5 +1,12 @@
 export const PDD_PROMOTION_COUPON_QUANTITY_ADD = 'pdd.promotion.coupon.quantity.add';
 export const PDD_PROMOTION_COUPON_QUANTITY_ADD_RESPONSE_KEY = 'coupon_quantity_add_response';
+export const PDD_PROMOTION_COUPON_QUANTITY_ADD_LIMITERS = [
+  {
+    limiterLevel: 1,
+    timeRange: 60,
+    times: 2500,
+  },
+];
 
 /**
  * 接口名称：增加优惠券发行数量接口

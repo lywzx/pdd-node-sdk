@@ -1,5 +1,12 @@
 export const PDD_DDK_GOODS_SEARCH = 'pdd.ddk.goods.search';
 export const PDD_DDK_GOODS_SEARCH_RESPONSE_KEY = 'goods_search_response';
+export const PDD_DDK_GOODS_SEARCH_LIMITERS = [
+  {
+    limiterLevel: 3,
+    timeRange: 10,
+    times: 29125,
+  },
+];
 
 /**
  * 接口名称：多多进宝商品查询

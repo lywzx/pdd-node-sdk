@@ -1,5 +1,12 @@
 export const PDD_MALL_INFO_GET = 'pdd.mall.info.get';
 export const PDD_MALL_INFO_GET_RESPONSE_KEY = 'mall_info_get_response';
+export const PDD_MALL_INFO_GET_LIMITERS = [
+  {
+    limiterLevel: 1,
+    timeRange: 1,
+    times: 375,
+  },
+];
 
 /**
  * 接口名称：店铺信息接口

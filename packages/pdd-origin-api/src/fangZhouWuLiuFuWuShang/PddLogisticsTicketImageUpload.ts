@@ -1,5 +1,12 @@
 export const PDD_LOGISTICS_TICKET_IMAGE_UPLOAD = 'pdd.logistics.ticket.image.upload';
 export const PDD_LOGISTICS_TICKET_IMAGE_UPLOAD_RESPONSE_KEY = 'logistics_ticket_image_upload_response';
+export const PDD_LOGISTICS_TICKET_IMAGE_UPLOAD_LIMITERS = [
+  {
+    limiterLevel: 1,
+    timeRange: 60,
+    times: 2500,
+  },
+];
 
 /**
  * 接口名称：工单图片上传接口

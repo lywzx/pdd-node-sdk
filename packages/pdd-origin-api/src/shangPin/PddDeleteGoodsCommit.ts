@@ -1,5 +1,18 @@
 export const PDD_DELETE_GOODS_COMMIT = 'pdd.delete.goods.commit';
 
+export const PDD_DELETE_GOODS_COMMIT_LIMITERS = [
+  {
+    limiterLevel: 4,
+    timeRange: 2,
+    times: 2000,
+  },
+  {
+    limiterLevel: 3,
+    timeRange: 10,
+    times: 2500,
+  },
+];
+
 /**
  * 接口名称：删除商品接口
  * 接口标识：pdd.delete.goods.commit

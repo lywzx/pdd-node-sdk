@@ -1,5 +1,12 @@
 export const PDD_CLOUDPRINT_STDTEMPLATES_GET = 'pdd.cloudprint.stdtemplates.get';
 export const PDD_CLOUDPRINT_STDTEMPLATES_GET_RESPONSE_KEY = 'pdd_cloudprint_stdtemplates_get_response';
+export const PDD_CLOUDPRINT_STDTEMPLATES_GET_LIMITERS = [
+  {
+    limiterLevel: 3,
+    timeRange: 1,
+    times: 5000,
+  },
+];
 
 /**
  * 接口名称：获取所有标准电子面单模板

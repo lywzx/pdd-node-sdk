@@ -1,5 +1,13 @@
 export const PDD_AD_API_UNIT_CREATIVE_CHECK_TITLE = 'pdd.ad.api.unit.creative.check.title';
 
+export const PDD_AD_API_UNIT_CREATIVE_CHECK_TITLE_LIMITERS = [
+  {
+    limiterLevel: 1,
+    timeRange: 10,
+    times: 20,
+  },
+];
+
 /**
  * 接口名称：检查创意标题是否合法
  * 接口标识：pdd.ad.api.unit.creative.check.title

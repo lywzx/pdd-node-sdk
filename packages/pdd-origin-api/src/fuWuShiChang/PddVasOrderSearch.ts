@@ -1,5 +1,12 @@
 export const PDD_VAS_ORDER_SEARCH = 'pdd.vas.order.search';
 export const PDD_VAS_ORDER_SEARCH_RESPONSE_KEY = 'vas_order_search_response';
+export const PDD_VAS_ORDER_SEARCH_LIMITERS = [
+  {
+    limiterLevel: 4,
+    timeRange: 1,
+    times: 5,
+  },
+];
 
 /**
  * 接口名称：线上服务市场订单查询接口

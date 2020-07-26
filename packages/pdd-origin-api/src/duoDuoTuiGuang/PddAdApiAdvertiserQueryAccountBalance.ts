@@ -1,5 +1,13 @@
 export const PDD_AD_API_ADVERTISER_QUERY_ACCOUNT_BALANCE = 'pdd.ad.api.advertiser.query.account.balance';
 
+export const PDD_AD_API_ADVERTISER_QUERY_ACCOUNT_BALANCE_LIMITERS = [
+  {
+    limiterLevel: 1,
+    timeRange: 10,
+    times: 20,
+  },
+];
+
 /**
  * 接口名称：查询广告主账户余额
  * 接口标识：pdd.ad.api.advertiser.query.account.balance
