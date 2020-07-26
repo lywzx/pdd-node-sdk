@@ -40,10 +40,10 @@
     "lodash": "^4.17.19",
     "crypto-js": "^4.0.0",
     "axios": "^0.19.2",
-    "debug": "^4.2.0",
     "async": "^3.2.0"
   },
   "devDependencies": {
+    "debug": "^4.2.0",
     "@types/lodash": "^4.14.158",
     "@types/crypto-js": "^3.1.44",
     "@types/debug": "^4.1.5",

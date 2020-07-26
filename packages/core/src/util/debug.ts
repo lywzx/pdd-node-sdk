@@ -1,12 +1,22 @@
-import debug, { Debugger } from 'debug';
+import { Debugger } from 'debug';
+import { isDevModel } from './dev';
 
 /**
  * get pdd log client
  */
-let pddLogClient: Debugger;
+let pddLogClient: Debugger | null;
 export function getPddLogClient() {
-  if (!pddLogClient) {
-    pddLogClient = debug('pdd:log');
+  if (typeof pddLogClient === 'undefined') {
+    try {
+      // eslint-disable-next-line @typescript-eslint/no-var-requires
+      const debug = require('debug');
+      pddLogClient = debug('pdd:log');
+    } catch (e) {
+      if (isDevModel()) {
+        console.log('can not find debug package, please run "npm run debug --save or yarn add debug"');
+      }
+      pddLogClient = null;
+    }
   }
   return pddLogClient;
 }
@@ -18,5 +28,7 @@ export function getPddLogClient() {
  */
 export function pddLog(formatter: any, ...args: any[]) {
   const logClient = getPddLogClient();
-  logClient(formatter, ...args);
+  if (logClient) {
+    logClient.log(formatter, ...args);
+  }
 }

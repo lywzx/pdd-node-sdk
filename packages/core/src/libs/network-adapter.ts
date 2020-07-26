@@ -1,12 +1,23 @@
 import axios, { AxiosInstance } from 'axios';
-import { PddClientOptionsInterface } from '../interfaces/pdd-client-options.interface';
+import { PddClientOptionsInterface } from '../interfaces';
 import { stringify } from 'querystring';
 import { PddException } from '../exceptions';
 import { isObject, once } from 'lodash';
 import { APPLICATION_FORM, APPLICATION_JSON } from '../constant/content-type';
 import { get, extend } from 'lodash';
+import { Agent as HttpAgent } from 'http';
+import { Agent as HttpsAgent } from 'https';
 
-const axiosInstance: AxiosInstance = axios.create();
+const axiosInstance: AxiosInstance = axios.create({
+  httpsAgent: new HttpsAgent({
+    keepAlive: true,
+    keepAliveMsecs: 10000,
+  }),
+  httpAgent: new HttpAgent({
+    keepAlive: true,
+    keepAliveMsecs: 10000,
+  }),
+});
 
 axiosInstance.defaults.headers.post['Content-Type'] = APPLICATION_FORM;
 axiosInstance.defaults.headers.post.Accept = 'application/json';
@@ -57,13 +68,4 @@ export class NetworkAdapter {
       return data;
     });
   });
-}
-
-type requestFnType = (...arg: any) => Promise<any>;
-export interface NetworkAdapterInterface {
-  get: requestFnType;
-  post: requestFnType;
-  delete: requestFnType;
-  put: requestFnType;
-  set?: (options: any) => void;
 }

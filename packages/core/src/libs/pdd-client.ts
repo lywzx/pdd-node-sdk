@@ -4,10 +4,10 @@ import {
   PddCommonRequestInterface,
   PddResponseTypeAndRequestTypeMapping,
 } from '@pin-duo-duo/pdd-origin-api';
-import { PddClientOptionsInterface } from '../interfaces';
+import { DefaultRequestType, NetworkAdapterInterface, PddClientOptionsInterface } from '../interfaces';
 import { md5, timestamp, promiseToCallback, defer, checkRequired } from '../util';
 import { AsyncResultCallbackInterface } from '../interfaces';
-import { NetworkAdapter, NetworkAdapterInterface } from './network-adapter';
+import { NetworkAdapter } from './network-adapter';
 import { PDD_END_POINTS, PDD_OAUTH_TEMPLATE, OAuthType, PDD_OAUTH_TOKEN_URL } from '../constant';
 import { extend, castArray, omit } from 'lodash';
 import {
@@ -25,12 +25,6 @@ import { APPLICATION_JSON } from '../constant/content-type';
 import { pddLog, getPddLogClient } from '../util/debug';
 import { PddException } from '../exceptions';
 
-const defaultRequestParam: Pick<PddCommonRequestInterface, 'data_type' | 'version'> = {
-  // eslint-disable-next-line @typescript-eslint/camelcase
-  data_type: 'JSON',
-  version: 'V1',
-};
-
 // 限制拼多多接口的响应等待时间
 type PddAxiosClientOptions = { timeout?: number };
 type RetryOptionsType = (RetryOptionsInterface & PddAxiosClientOptions) | number;
@@ -46,6 +40,9 @@ type PddClientGenerateType =
     };
 type PddCommonRequestExcludeSomeAttr = Pick<PddCommonRequestInterface, 'access_token'>;
 
+/**
+ * pdd client
+ */
 export class PddClient {
   constructor(public options: PddClientOptionsInterface, protected adapter: NetworkAdapterInterface = NetworkAdapter) {
     if (!options.clientId || !options.clientSecret) {
@@ -84,7 +81,7 @@ export class PddClient {
       axiosOptions = undefined;
     }
     const retDefer = defer<R>();
-    const defaultArgs: Partial<RequestParamsFullType> = extend({}, defaultRequestParam, {
+    const defaultArgs: Partial<RequestParamsFullType> = extend({}, PddClient.defaultRequestParam, {
       // eslint-disable-next-line @typescript-eslint/camelcase
       client_id: this.options.clientId,
       timestamp: timestamp(),
@@ -116,8 +113,9 @@ export class PddClient {
     pddLog('start run pdd client request, type: %s, params: %o', params.type, params);
     let requestPromise = this.adapter.post(this.options.endpoint, defaultArgs, axiosOptions || {});
 
+    const pddLoggerClient = getPddLogClient();
     // debug
-    if (getPddLogClient().enabled) {
+    if (pddLoggerClient && pddLoggerClient.enabled) {
       requestPromise = requestPromise.then(
         response => {
           pddLog('end run pdd client request, type: %s, result: %o', params.type, response);
@@ -181,8 +179,10 @@ export class PddClient {
       }
     }
 
+    const pddLogClient = getPddLogClient();
+    const enabled = pddLogClient && pddLogClient.enabled;
     let retryCount: number;
-    if (getPddLogClient().enabled) {
+    if (enabled) {
       retryCount = 0;
     }
 
@@ -200,7 +200,7 @@ export class PddClient {
 
       let result = this.request<T, R>(params, axiosClientOptions);
 
-      if (getPddLogClient().enabled) {
+      if (enabled) {
         result = result.then(
           response => {
             if (retryCount) {
@@ -412,5 +412,36 @@ export class PddClient {
       callback as any
     );
     /* eslint-enable @typescript-eslint/camelcase */
+  }
+
+  /**
+   * @var DefaultRequestType 默认请求参数类型
+   */
+  protected static defaultRequestParam: DefaultRequestType = {
+    // eslint-disable-next-line @typescript-eslint/camelcase
+    data_type: 'JSON',
+    version: 'V1',
+  };
+
+  /**
+   * 设置默认的请求参数及类型
+   * @param param
+   */
+  public static setDefaultRequestParam(param: DefaultRequestType) {
+    this.defaultRequestParam = param;
+  }
+
+  /**
+   * 默认重试逻辑
+   * @param RetryOptionsInterface
+   */
+  protected static retryOptions: RetryOptionsInterface = { times: 0 };
+
+  /**
+   * 设置重试逻辑
+   * @param option {RetryOptionsInterface}
+   */
+  public static setRetryOptions(option: RetryOptionsInterface) {
+    this.retryOptions = option;
   }
 }
