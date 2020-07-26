@@ -20,7 +20,7 @@ export interface ApiDetailInterface {
   permissionsPkgs: ApiDetailPermissionInterface[];
   sdkDemos: ApiDetailSdkDemoInterface[];
   apiAccessSourceLimitType: number;
-  limiters: any[];
+  limiters?: any[];
 }
 
 export interface ApiDetailRequestParamInterface {

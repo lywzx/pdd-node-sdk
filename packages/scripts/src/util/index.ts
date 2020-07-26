@@ -1,5 +1,5 @@
 import tinyPinYin from 'tiny-pinyin';
-import { camelCase, startCase, keys } from 'lodash';
+import { camelCase, startCase } from 'lodash';
 import * as fs from 'fs';
 import { normalize, sep } from 'path';
 import { promisify } from 'util';
@@ -37,7 +37,7 @@ export function createResponseClassName(apiId: string) {
 export function isDir(dir: string) {
   return promisify(fs.lstat)(dir).then(
     stat => stat.isDirectory(),
-    err => false
+    () => false
   );
 }
 

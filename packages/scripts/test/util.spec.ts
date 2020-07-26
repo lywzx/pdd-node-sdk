@@ -350,11 +350,12 @@ const testJson: ApiDetailInterface = {
     },
     {
       name: 'CURL',
-      description:
-        "curl -X POST 'http://host:port/api/router' \\\n-H 'Content-Type:application/x-www-form-urlencoded;charset=utf-8' \\\n-d access_token=your+access+token \\\n-d request=%7B%22after_sales_id%22%3A0%2C%22operate_time%22%3Anull%2C%22order_sn%22%3A%22str%22%2C%22reverse_logistics_id%22%3A0%2C%22reverse_tracking_number%22%3A%22str%22%2C%22warehouse_status%22%3A0%7D \\\n-d data_type=JSON \\\n-d sign=your+sign \\\n-d type=pdd.nextone.logistics.warehouse.update \\\n-d client_id=your+client+id \\\n-d timestamp=1527065024",
-      url: '',
+      description: 'any',
+      url: 'any',
     },
   ],
+  apiAccessSourceLimitType: 1,
+  limiters: [],
 };
 
 describe('script util test', function() {

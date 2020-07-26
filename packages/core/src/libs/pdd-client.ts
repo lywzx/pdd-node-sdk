@@ -377,7 +377,8 @@ export class PddClient {
     }
 
     if (!(callOptions as any).grant_type) {
-      throw new Error("grant type can't be empty!");
+      const msg = `grant type can't be empty${'!'}`;
+      throw new Error(msg);
     }
     const resPromise = this.adapter.post(PDD_OAUTH_TOKEN_URL, callOptions, {
       headers: {

@@ -1,5 +1,5 @@
 import CryptoJS from 'crypto-js';
-import { PddRequestParamsMissingException } from '../exceptions/pdd-request-params-missing-exception';
+import { PddRequestParamsMissingException } from '../exceptions';
 import { AsyncResultCallbackInterface, PromiseDefer } from '../interfaces';
 
 /**
@@ -107,8 +107,10 @@ export function defer<T>(): PromiseDefer<T> {
   });
   return {
     promise,
+    // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
     // @ts-ignore
     resolve,
+    // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
     // @ts-ignore
     reject,
   };
