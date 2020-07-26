@@ -10,11 +10,10 @@ node_js:
   - '8'
 
 install:
+  - npm install lerna -g
   - lerna bootstrap
   - npm run build
 
 script:
   - npm install snyk
-  - npm install nyc -g
-  - npm test
   - npm run coverage:report
