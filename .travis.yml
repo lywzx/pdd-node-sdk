@@ -16,9 +16,12 @@ node_js:
 
 install:
   - npm install lerna -g
+  - npm install codecov -g
   - lerna bootstrap --hoist=false
   - npm install snyk
 
 script:
   - npm run build
-  - npm run coverage:report
+  - npm run coverage -- --reporter=text-lcov > coverage.lcov
+  - codecov
+
