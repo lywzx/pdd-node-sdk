@@ -15,6 +15,6 @@ install:
 
 script:
   - npm install snyk
-  - npm install codecov -g
+  - npm install nyc -g
   - npm test
-  - codecov -f coverage/*.json
+  - npm run coverage
