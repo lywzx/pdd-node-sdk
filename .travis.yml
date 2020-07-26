@@ -17,8 +17,7 @@ node_js:
 install:
   - npm install codecov -g
   - npm install
-  - npx lerna bootstrap
-  - npm install snyk -g
+  - npx lerna bootstrap --hoist=false
 
 script:
   - npm run build
