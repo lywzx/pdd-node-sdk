@@ -22,5 +22,5 @@ install:
 script:
   - npm run build
   - npm run coverage -- --reporter=text-lcov > coverage.lcov
-  - codecov
+  - codecov -f .nyc_output/*.json
 
