@@ -45,8 +45,12 @@ function createMethods(method: methodTypes) {
   };
 }
 
+/**
+ * 系统默认的网络请求库
+ */
 export class NetworkAdapter {
   public static axiosInstance = axiosInstance;
+
   static get = createMethods('get');
   static post = createMethods('post');
   static delete = createMethods('delete');

@@ -3,6 +3,10 @@ import { get } from 'lodash';
 export class PddException extends Error {
   constructor(public errObj: PddErrorResponse) {
     super(JSON.stringify(errObj));
+    if (Error.captureStackTrace) {
+      Error.captureStackTrace(this, this.constructor);
+    }
+    this.name = this.constructor.name;
   }
 
   /**
