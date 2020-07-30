@@ -18,14 +18,16 @@ const config = [
     minify: true,
     env: 'production',
   },
-  // { input: 'src/index.ts', file: 'lib/index.esm.js', format: 'es', env: 'development' },
-  // { input: 'src/index.ts', file: 'lib/index.js', format: 'umd', env: 'development' },
-  { input: 'src/index.ts', file: 'lib/index.min.js', format: 'umd', minify: true, env: 'production' },
-  { input: 'src/index.ts', file: 'lib/index.common.js', format: 'cjs', env: 'development' },
+  // todo remove transpile
+  { input: 'src/index.ts', file: 'lib/index.esm.js', format: 'es', transpile: false, env: 'development' },
+  { input: 'src/index.ts', file: 'lib/index.js', format: 'umd', transpile: false, env: 'development' },
+  { input: 'src/index.ts', file: 'lib/index.min.js', format: 'umd', transpile: false, minify: true, env: 'production' },
+  { input: 'src/index.ts', file: 'lib/index.common.js', format: 'cjs', transpile: false, env: 'development' },
 ];
 const dirs = [
   'scripts',
   'pdd-origin-api',
   'core',
+  'nestjs'
 ];
 export default dirs.map(dir => createEntries(config, dir, '')).flat();

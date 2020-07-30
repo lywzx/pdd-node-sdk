@@ -7,8 +7,8 @@
   ],
   "private": true,
   "scripts": {
-    "aaa": "rollup -c build/rollup-dev.config.js",
-    "build": "tsc --build packages/pdd-origin-api/tsconfig.json && tsc --build packages/core/tsconfig.json && tsc --build packages/scripts/tsconfig.json && tsc --build packages/nestjs/tsconfig.json",
+    "start": "rollup -w -c build/rollup.config.js",
+    "build": "node build/build-pkg.js",
     "lint": "eslint packages --ext .ts --fix",
     "format": "prettier --write \"+(packages)/**/*.ts\"",
     "test": "mocha --require ts-node/register --require tsconfig-paths/register packages/**/*.spec.ts --colors",

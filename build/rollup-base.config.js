@@ -19,6 +19,13 @@ function createEntry(config, pkgName, banner) {
     plugins: [
       rollupTypescript({
         tsconfig: join(__dirname, '../packages', pkgName, 'tsconfig.json'),
+        tsconfigOverride: {
+          include: ["src"],
+          exclude: ["test"],
+          compilerOptions: {
+            "module": "ES6",
+          }
+        }
       }),
       json(),
     ],
@@ -51,20 +58,18 @@ function createEntry(config, pkgName, banner) {
   if (config.transpile !== false) {
     c.plugins.push(
       buble({
-        transforms: { generator: false },
-        exclude: ['node_modules'],
+        transforms: { generator: false }
       })
     );
   }
 
   c.plugins.push(
-    resolve({
-      mainFields: ['main'],
-    })
+    resolve({extensions: ['.ts', '.tsx', '.js', '.mjs']})
   );
   c.plugins.push(
     commonjs({
-      extensions: ['.js', '.ts', '.tsx', '.mjs'],
+      transformMixedEsModules: true,
+      extensions: ['.ts', '.tsx', '.js'],
     })
   );
 

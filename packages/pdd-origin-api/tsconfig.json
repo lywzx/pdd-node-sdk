@@ -5,6 +5,6 @@
     "outDir": "./lib",
     "declarationDir": "./types"
   },
-  "include": ["src"],
+  "include": ["src", "test"],
   "exclude": ["node_modules"]
 }

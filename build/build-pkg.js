@@ -9,4 +9,4 @@ const files = [
   'lib/index.common.js',
 ];
 
-run('rollup-dev.config.js', files);
+run('rollup.config.js', files);

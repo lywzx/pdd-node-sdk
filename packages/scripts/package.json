@@ -9,6 +9,7 @@
   "module": "lib/index.esm.js",
   "unpkg": "lib/index.js",
   "jsdelivr": "lib/index.js",
+  "types": "lib/index.d.ts",
   "directories": {
     "lib": "lib",
     "test": "test"
