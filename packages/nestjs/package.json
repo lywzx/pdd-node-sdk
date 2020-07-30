@@ -5,7 +5,10 @@
   "author": "lywzx <liuyang@lyblog.net>",
   "homepage": "https://github.com/lywzx/pdd-node-sdk/tree/master/packages/nestjs#readme",
   "license": "MIT",
-  "main": "lib/index.js",
+  "main": "lib/index.common.js",
+  "module": "lib/index.esm.js",
+  "unpkg": "lib/index.js",
+  "jsdelivr": "lib/index.js",
   "directories": {
     "lib": "lib",
     "test": "test"
