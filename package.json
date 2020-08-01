@@ -7,7 +7,7 @@
   ],
   "private": true,
   "scripts": {
-    "start": "rollup -w -c build/rollup.config.js",
+    "dev": "rollup -w -c build/rollup.config.js",
     "build": "node build/build-pkg.js",
     "lint": "eslint packages --ext .ts --fix",
     "format": "prettier --write \"+(packages)/**/*.ts\"",

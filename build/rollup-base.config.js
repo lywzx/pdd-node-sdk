@@ -8,14 +8,14 @@ import { terser } from 'rollup-plugin-terser';
 import { readJsonSync } from 'fs-extra';
 import { join } from 'path';
 
-export function createEntries(configs, pkgName, banner) {
-  return configs.map(c => createEntry(c, pkgName, banner));
+export function createEntries(configs, pkg) {
+  return configs.map(c => createEntry(c, pkg));
 }
 
-function createEntry(config, pkgName, banner) {
-  const pkg = readJsonSync(join(__dirname, '../packages', pkgName, 'package.json'));
+function createEntry(config, pakg, banner) {
+  const pkg = readJsonSync(join(__dirname, '../packages', pakg.dri, 'package.json'));
   const c = {
-    input: join(__dirname, '../packages', pkgName, config.input),
+    input: join(__dirname, '../packages', pakg.dir, config.input),
     plugins: [
       rollupTypescript({
         tsconfig: join(__dirname, '../packages', pkgName, 'tsconfig.json'),
@@ -33,12 +33,16 @@ function createEntry(config, pkgName, banner) {
       banner,
       file: join(__dirname, '../packages', pkgName, config.file),
       format: config.format,
+      globals: {
+        lodash: '_'
+      }
     },
     onwarn: (msg, warn) => {
       if (!/Circular/.test(msg)) {
         warn(msg);
       }
     },
+    external: ['async', 'axios', 'lodash']
   };
 
   if (config.format === 'umd') {
@@ -64,7 +68,9 @@ function createEntry(config, pkgName, banner) {
   }
 
   c.plugins.push(
-    resolve({extensions: ['.ts', '.tsx', '.js', '.mjs']})
+    resolve({
+      extensions: ['.ts', '.tsx', '.js', '.mjs']
+    })
   );
   c.plugins.push(
     commonjs({

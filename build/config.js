@@ -24,10 +24,22 @@ const entries = [
 ];
 
 const packages = [
-  'scripts',
-  'pdd-origin-api',
-  'core',
-  'nestjs'
+  {
+    dir: 'scripts',
+    outputName: 'PddGenerateUtil'
+  },
+  {
+    dir: 'pdd-origin-api',
+    outputName: 'PddOriginUtil'
+  },
+  {
+    dir: 'core',
+    outputName: 'PddNodeSdk'
+  },
+  {
+    dir: 'nestjs',
+    outputName: 'PddNestJsModule'
+  }
 ];
 
 module.exports = {
