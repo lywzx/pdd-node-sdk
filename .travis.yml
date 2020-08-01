@@ -15,9 +15,9 @@ node_js:
   - '8'
 
 install:
+  - npm install yarn -g
   - npm install codecov -g
-  - npm install
-  - npx lerna bootstrap --hoist=false
+  - yarn
 
 script:
   - npm run build

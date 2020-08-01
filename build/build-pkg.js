@@ -1,12 +1,11 @@
 const { run } = require('./build');
+const { entries, packages } = require('./config');
+const lodash = require('lodash');
+const path = require('path');
 
-const files = [
-  'lib/index.esm.browser.js',
-  'lib/index.esm.browser.min.js',
-  'lib/index.esm.js',
-  'lib/index.js',
-  'lib/index.min.js',
-  'lib/index.common.js',
-];
+const files = lodash.map(entries, 'file');
 
-run('rollup.config.js', files);
+run(
+  'rollup.config.js',
+  lodash.flatten(packages.map((pkg) => files.map((f) => path.join(__dirname, '../packages', pkg, f))))
+);
