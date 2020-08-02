@@ -2,8 +2,10 @@
 
 module.exports = {
   '*.{ts,tsx}': [
-    './node_modules/.bin/prettier --write',
-    './node_modules/.bin/eslint --fix',
-    './node_modules/.bin/mocha --require ts-node/register --require tsconfig-paths/register packages/**/*.spec.ts --colors'
+    'prettier --write',
+    'eslint --fix'
   ],
+  '*.spec.ts': [
+    'mocha --require ts-node/register --require tsconfig-paths/register packages/**/*.spec.ts --colors'
+  ]
 };

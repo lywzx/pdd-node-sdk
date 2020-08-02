@@ -17,7 +17,7 @@ node_js:
 install:
   - npm install yarn -g
   - npm install codecov -g
-  - yarn
+  - yarn --ignore-engines
 
 script:
   - npm run build

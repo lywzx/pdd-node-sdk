@@ -31,6 +31,10 @@
     "url": "https://github.com/lywzx/pdd-node-sdk/issues"
   },
   "dependencies": {
+    "@nestjs/common": "^7.4.2",
     "@pin-duo-duo/core": "^0.0.0"
+  },
+  "devDependencies": {
+    "reflect-metadata": "^0.1.13"
   }
 }

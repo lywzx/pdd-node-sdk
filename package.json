@@ -18,7 +18,7 @@
     "lint-staged": "lint-staged"
   },
   "engines": {
-    "node": ">=8.9.0"
+    "node": ">=8.0.0"
   },
   "repository": {
     "type": "git",
