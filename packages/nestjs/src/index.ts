@@ -1,1 +1,3 @@
-export * from '@pin-duo-duo/core';
+export const t = 'temp';
+export const b = 'bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb';
+export const c = 'ccccccccccccccccccccccccccccccccccccc';

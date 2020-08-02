@@ -1,3 +1,8 @@
+const fs = require('fs');
+const path = require('path');
+
+const lernaPackage = JSON.parse(fs.readFileSync(path.join(__dirname, '../lerna.json')).toString());
+
 const entries = [
   {
     input: 'src/index.ts',
@@ -26,19 +31,59 @@ const entries = [
 const packages = [
   {
     dir: 'scripts',
-    outputName: 'PddGenerateUtil'
+    outputName: 'PddGenerateUtil',
+    banner: `/*!
+ * @pin-duo-duo/scripts v${lernaPackage.version}
+ * (c) ${new Date().getFullYear()} LiuYang
+ * @license MIT
+ */`,
+    external: ['lodash', 'async', 'axios'],
   },
   {
     dir: 'pdd-origin-api',
-    outputName: 'PddOriginUtil'
+    outputName: 'PddOriginUtil',
+    banner: `/*!
+ * @pin-duo-duo/pdd-origin-api v${lernaPackage.version}
+ * (c) ${new Date().getFullYear()} LiuYang
+ * @license MIT
+ */`,
   },
   {
     dir: 'core',
-    outputName: 'PddNodeSdk'
+    outputName: 'PddNodeSdk',
+    banner: `/*!
+ * @pin-duo-duo/core v${lernaPackage.version}
+ * (c) ${new Date().getFullYear()} LiuYang
+ * @license MIT
+ */`,
+    external: ['debug', 'axios', 'lodash'],
+    es: {
+      external(browser) {
+        if (browser) {
+          return [];
+        }
+        return ['crypto-js', '@pin-duo-duo/pdd-origin-api' ,'async'];
+      }
+    },
+    umd: {
+      external: []
+    },
+    cjs: {
+      external: [ 'crypto-js', '@pin-duo-duo/pdd-origin-api', 'async']
+    },
+    globals: {
+      'lodash': '_',
+      '@pin-duo-duo/pdd-origin-api': 'PddOriginUtil'
+    }
   },
   {
     dir: 'nestjs',
-    outputName: 'PddNestJsModule'
+    outputName: 'PddNestJsModule',
+    banner: `/*!
+ * @pin-duo-duo/nestjs v${lernaPackage.version}
+ * (c) ${new Date().getFullYear()} LiuYang
+ * @license MIT
+ */`,
   }
 ];
 
