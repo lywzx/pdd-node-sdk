@@ -3,7 +3,9 @@ import {
   PddCollectShortResponseInterface,
   PddCommonRequestInterface,
 } from '@pin-duo-duo/pdd-origin-api';
-import { mapValues, template, extend } from 'lodash';
+import mapValues from 'lodash/mapValues';
+import template from 'lodash/template';
+import extend from 'lodash/extend';
 import { PddException } from '../exceptions';
 import { PddAccessTokenResponseInterface, PddClientAuthInterface, RetryOptionsInterface } from '../interfaces';
 import { checkTypeIsNeedAccessToken } from './pdd-api-check.tools';

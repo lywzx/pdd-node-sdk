@@ -9,7 +9,9 @@ import { md5, timestamp, promiseToCallback, defer, checkRequired } from '../util
 import { AsyncResultCallbackInterface } from '../interfaces';
 import { NetworkAdapter } from './network-adapter';
 import { PDD_END_POINTS, PDD_OAUTH_TEMPLATE, OAuthType, PDD_OAUTH_TOKEN_URL } from '../constant';
-import { extend, castArray, omit } from 'lodash';
+import extend from 'lodash/extend';
+import castArray from 'lodash/castArray';
+import omit from 'lodash/omit';
 import {
   RequestParamsType,
   RequestParamsFullType,
@@ -20,7 +22,8 @@ import {
 import { retry } from 'async';
 import { RetryOptionsInterface } from '../interfaces';
 import { defaultRetryOptions } from './pdd-client-default';
-import { isString, isObject } from 'lodash';
+import isString from 'lodash/isString';
+import isObject from 'lodash/isObject';
 import { APPLICATION_JSON } from '../constant/content-type';
 import { pddLog, getPddLogClient } from '../util/debug';
 import { PddException } from '../exceptions';

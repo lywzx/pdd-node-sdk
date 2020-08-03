@@ -15,7 +15,9 @@ import { tree } from './index';
 import { CodeColumnInterface, CodeInterface } from '../interface/code.interface';
 import { TreeType } from '../interface/tree.interface';
 import { RunStateFileInterface, RunStateInterface } from '../interface/run-state.interface';
-import { map, flattenDeep, filter } from 'lodash';
+import map from 'lodash/map';
+import flattenDeep from 'lodash/flattenDeep';
+import filter from 'lodash/filter';
 import { join } from 'path';
 import { generateLimiterName } from './key-name';
 

@@ -1,5 +1,6 @@
 import { PddNeedAccessTokenTypeCollections, PddApiLimiterMapping } from '@pin-duo-duo/pdd-origin-api';
-import { memoize, keyBy } from 'lodash';
+import memoize from 'lodash/memoize';
+import keyBy from 'lodash/keyBy';
 import { PddApiLimiterInterface } from '../interfaces';
 
 /**

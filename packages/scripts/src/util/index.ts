@@ -1,5 +1,6 @@
 import tinyPinYin from 'tiny-pinyin';
-import { camelCase, startCase } from 'lodash';
+import camelCase from 'lodash/camelCase';
+import startCase from 'lodash/startCase';
 import * as fs from 'fs';
 import { normalize, sep } from 'path';
 import { promisify } from 'util';

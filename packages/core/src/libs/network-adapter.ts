@@ -2,9 +2,11 @@ import axios, { AxiosInstance } from 'axios';
 import { PddClientOptionsInterface } from '../interfaces';
 import { stringify } from 'querystring';
 import { PddException } from '../exceptions';
-import { isObject, once } from 'lodash';
+import isObject from 'lodash/isObject';
+import once from 'lodash/once';
+import get from 'lodash/get';
+import extend from 'lodash/extend';
 import { APPLICATION_FORM, APPLICATION_JSON } from '../constant/content-type';
-import { get, extend } from 'lodash';
 import { Agent as HttpAgent } from 'http';
 import { Agent as HttpsAgent } from 'https';
 

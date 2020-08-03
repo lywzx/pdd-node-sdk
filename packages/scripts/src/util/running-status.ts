@@ -1,7 +1,7 @@
 import * as fs from 'fs';
 import { join } from 'path';
 import { RunStateFileInterface, RunStateInterface } from '../interface/run-state.interface';
-import { findIndex } from 'lodash';
+import findIndex from 'lodash/findIndex';
 
 const runState: RunStateInterface = {
   resolved: [],
