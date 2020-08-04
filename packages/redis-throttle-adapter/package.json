@@ -1,12 +1,11 @@
 {
-  "name": "@pin-duo-duo/nestjs",
+  "name": "@pin-duo-duo/redis-throttle-adapter",
   "version": "0.0.0",
   "description": "> TODO: description",
   "author": "lywzx <liuyang@lyblog.net>",
-  "homepage": "https://github.com/lywzx/pdd-node-sdk/tree/master/packages/nestjs#readme",
+  "homepage": "https://github.com/lywzx/pdd-node-sdk/tree/master/packages/redis-throttle-adapter#readme",
   "license": "MIT",
-  "main": "lib/index.common.js",
-  "types": "lib/index.d.ts",
+  "main": "lib/index.js",
   "directories": {
     "lib": "lib",
     "test": "test"
@@ -26,12 +25,5 @@
   },
   "bugs": {
     "url": "https://github.com/lywzx/pdd-node-sdk/issues"
-  },
-  "dependencies": {
-    "@nestjs/common": "^7.4.2",
-    "@pin-duo-duo/core": "^0.0.0"
-  },
-  "devDependencies": {
-    "reflect-metadata": "^0.1.13"
   }
 }

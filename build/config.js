@@ -38,6 +38,10 @@ const packages = [
  * @license MIT
  */`,
     external: ['lodash', 'async', 'axios'],
+    onlyModule: {
+      only: ['cjs', 'es'],
+      browser: true
+    }
   },
   {
     dir: 'pdd-origin-api',
@@ -84,7 +88,26 @@ const packages = [
  * (c) ${new Date().getFullYear()} LiuYang
  * @license MIT
  */`,
-  }
+    external: ['@nestjs/common', 'zlib'],
+    onlyModule: {
+      only: ['cjs'],
+      browser: false
+    },
+  },
+  {
+    dir: 'redis-throttle-adapter',
+    outputName: 'PddRedisThrottleAdapter',
+    banner: `/*!
+ * @pin-duo-duo/redis-throttle-adapter v${lernaPackage.version}
+ * (c) ${new Date().getFullYear()} LiuYang
+ * @license MIT
+ */`,
+    onlyModule: {
+      only: ['cjs', 'es'],
+      browser: false
+    },
+    external: ['@pin-duo-duo/core']
+  },
 ];
 
 module.exports = {
