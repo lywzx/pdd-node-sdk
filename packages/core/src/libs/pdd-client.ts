@@ -21,6 +21,9 @@ import {
 } from '../interfaces';
 import { retry } from 'async';
 import { RetryOptionsInterface } from '../interfaces';
+import { PddApiThrottle } from './pdd-api-throttle';
+import { PddApiThrottleAdapter } from './pdd-api-throttle-adapter';
+import { PddApiWithoutThrottleAdapter } from './pdd-api-without-throttle-adapter';
 import { defaultRetryOptions } from './pdd-client-default';
 import isString from 'lodash/isString';
 import isObject from 'lodash/isObject';
@@ -47,16 +50,27 @@ type PddCommonRequestExcludeSomeAttr = Pick<PddCommonRequestInterface, 'access_t
  * pdd client
  */
 export class PddClient {
-  constructor(public options: PddClientOptionsInterface, protected adapter: NetworkAdapterInterface = NetworkAdapter) {
+  /**
+   * 客户端限制调用频率
+   * @protected
+   */
+  protected apiThrottle: PddApiThrottle;
+
+  constructor(
+    public options: PddClientOptionsInterface,
+    protected throttleAdapter: PddApiThrottleAdapter = new PddApiWithoutThrottleAdapter(),
+    protected networkAdapter: NetworkAdapterInterface = NetworkAdapter
+  ) {
     if (!options.clientId || !options.clientSecret) {
       throw new Error('clientId and clientSecret are necessary!');
     }
-    if (this.adapter.set) {
-      this.adapter.set(this.options);
+    if (this.networkAdapter.set) {
+      this.networkAdapter.set(this.options);
     }
     if (!this.options.endpoint) {
       this.options.endpoint = PDD_END_POINTS;
     }
+    this.apiThrottle = new PddApiThrottle(this.throttleAdapter);
   }
 
   /**
@@ -114,7 +128,9 @@ export class PddClient {
     defaultArgs.sign = this.sign((defaultArgs as any) as { [s: string]: string | number });
 
     pddLog('start run pdd client request, type: %s, params: %o', params.type, params);
-    let requestPromise = this.adapter.post(this.options.endpoint, defaultArgs, axiosOptions || {});
+    let requestPromise = this.apiThrottle.checkApiThrottle(params.type as string).then(() => {
+      return this.networkAdapter.post(this.options.endpoint, defaultArgs, axiosOptions || {});
+    });
 
     const pddLoggerClient = getPddLogClient();
     // debug
@@ -383,7 +399,7 @@ export class PddClient {
       const msg = `grant type can't be empty${'!'}`;
       throw new Error(msg);
     }
-    const resPromise = this.adapter.post(PDD_OAUTH_TOKEN_URL, callOptions, {
+    const resPromise = this.networkAdapter.post(PDD_OAUTH_TOKEN_URL, callOptions, {
       headers: {
         'Content-Type': APPLICATION_JSON,
       },
