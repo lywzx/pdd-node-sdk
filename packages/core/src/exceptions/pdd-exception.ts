@@ -1,4 +1,4 @@
-import { get } from 'lodash';
+import get from 'lodash/get';
 
 export class PddException extends Error {
   constructor(public errObj: PddErrorResponse) {

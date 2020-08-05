@@ -1,3 +1,5 @@
+import { PddApiLimiterLevel } from '../constant/enum';
+
 export interface PddApiLimiterInterface {
   /**
    * 限频率的level
@@ -5,7 +7,7 @@ export interface PddApiLimiterInterface {
    * 3: 接口总限流频次
    * 4: 应用限流频次
    */
-  limiterLevel: number;
+  limiterLevel: PddApiLimiterLevel;
   /**
    * 时长限制
    */

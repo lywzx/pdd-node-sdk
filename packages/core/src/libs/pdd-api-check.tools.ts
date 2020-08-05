@@ -20,7 +20,7 @@ export const getTypeApiLimiter = memoize(function apiLimiter(
   type: string
 ): void | { [s: string]: PddApiLimiterInterface | undefined } {
   const limiter = PddApiLimiterMapping[type as PddApiLimiterMappingKeys];
-  if (limiter) {
+  if (limiter && limiter.length) {
     return keyBy(limiter, 'limiterLevel');
   }
   return undefined;

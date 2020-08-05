@@ -1,4 +1,4 @@
-import { template } from 'lodash';
+import template from 'lodash/template';
 
 // 处理成OAuth的Type类型
 export enum OAuthType {
@@ -28,3 +28,6 @@ export const PDD_END_POINTS = 'https://gw-api.pinduoduo.com/api/router';
 
 // 拼多多OAuth认证时，换取token信息
 export const PDD_OAUTH_TOKEN_URL = 'https://open-api.pinduoduo.com/oauth/token';
+
+// 相关类型
+export * from './enum';

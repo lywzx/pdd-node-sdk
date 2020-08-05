@@ -46,3 +46,16 @@ export function promiseToCallback<R, E = never>(
     return promise;
   }
 }
+
+/**
+ * 前端等待时长
+ * @param time
+ * @param value
+ */
+export function sleep<T>(time?: number): Promise<undefined>;
+export function sleep<T>(time: number, value: T): Promise<T>;
+export function sleep<T>(time = 0, value?: T): Promise<undefined> | Promise<T> {
+  const df = defer<T>();
+  setTimeout(df.resolve, time, value);
+  return df.promise;
+}
