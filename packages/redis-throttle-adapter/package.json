@@ -25,5 +25,9 @@
   },
   "bugs": {
     "url": "https://github.com/lywzx/pdd-node-sdk/issues"
+  },
+  "devDependencies": {
+    "@types/redis": "^2.8.25",
+    "redis": "^3.0.2"
   }
 }
