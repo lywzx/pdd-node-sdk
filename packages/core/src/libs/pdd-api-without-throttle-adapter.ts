@@ -10,11 +10,15 @@ export class PddApiWithoutThrottleAdapter extends PddApiThrottleAdapter {
    */
   protected cacheMap = new Map<string, any>();
 
-  get<T>(key: string): Promise<T | undefined> {
-    return Promise.resolve(undefined);
+  get<T>(key: string): Promise<T | null> {
+    return Promise.resolve(null);
   }
 
   set(key: string, value: any, ttl?: number): Promise<boolean> {
+    return Promise.resolve(false);
+  }
+
+  delete(key: string): Promise<boolean> {
     return Promise.resolve(false);
   }
 }

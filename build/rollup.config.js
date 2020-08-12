@@ -7,7 +7,6 @@ export default flatten(packages.map((pkg) => {
     return checkEnterIsGenerate(pkg, entery);
   });
 
-
   return createEntries(newEntries, pkg)
 }));
 

@@ -8,11 +8,17 @@ export abstract class PddApiThrottleAdapter {
    * @param value
    * @param ttl
    */
-  public abstract set(key: string, value: any, ttl?: number): Promise<boolean>;
+  public abstract set(key: string, value: string, ttl?: number): Promise<boolean>;
 
   /**
    * 从缓存中读取某个值
    * @param key
    */
-  public abstract get<T>(key: string): Promise<T | undefined>;
+  public abstract get(key: string): Promise<string | null>;
+
+  /**
+   * 删除某
+   * @param key
+   */
+  public abstract delete(key: string): Promise<boolean>;
 }

@@ -1,25 +1,63 @@
 import { PddApiThrottleAdapter } from '@pin-duo-duo/core';
-import { RedisClient } from 'redis';
-import { promisify } from 'util';
+import { Callback, RedisClient } from 'redis';
 
 export class PddRedisThrottleAdapter extends PddApiThrottleAdapter {
   constructor(protected redis: RedisClient) {
     super();
   }
 
-  public async set(key: string, value: any, ttl?: number | undefined): Promise<boolean> {
-    try {
+  /**
+   * 设置某个key值
+   * @param key
+   * @param value
+   * @param ttl
+   */
+  public set(key: string, value: string, ttl?: number | undefined): Promise<boolean> {
+    return new Promise<boolean>((resolve, reject) => {
+      const callback: Callback<'OK' | undefined> = (err, reply) => {
+        if (err) {
+          reject(err);
+        } else {
+          resolve(reply === 'OK');
+        }
+      };
       if (typeof ttl === 'number') {
-        await promisify(this.redis.setex).call(this.redis, key, ttl as number, value);
+        this.redis.set(key, value, 'px', ttl, 'nx', callback);
       } else {
-        await promisify(this.redis.set).call(this.redis, key, value);
+        this.redis.set(key, value, 'nx', callback);
       }
-      return true;
-    } catch (e) {
-      return false;
-    }
+    });
   }
-  get<T>(key: string): Promise<T | undefined> {
-    throw new Error('Method not implemented.');
+
+  /**
+   * 读取某个key存的值
+   * @param key
+   */
+  public get(key: string): Promise<string | null> {
+    return new Promise<string | null>((resolve, reject) => {
+      this.redis.get(key, (err, reply) => {
+        if (err) {
+          reject(err);
+        } else {
+          resolve(reply);
+        }
+      });
+    });
+  }
+
+  /**
+   * 删除某个key
+   * @param key
+   */
+  public delete(key: string): Promise<boolean> {
+    return new Promise<boolean>((resolve, reject) => {
+      this.redis.del(key, (err, result) => {
+        if (err) {
+          reject(err);
+        } else {
+          resolve(!!result);
+        }
+      });
+    });
   }
 }

@@ -106,7 +106,10 @@ const packages = [
       only: ['cjs', 'es'],
       browser: false
     },
-    external: ['@pin-duo-duo/core']
+    external: ['@pin-duo-duo/core'],
+    globals: {
+      '@pin-duo-duo/core': 'PddNodeSdk',
+    }
   },
 ];
 
