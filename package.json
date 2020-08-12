@@ -11,7 +11,7 @@
     "build": "node build/build-pkg.js",
     "lint": "eslint packages --ext .ts --fix",
     "format": "prettier --write \"+(packages)/**/*.ts\"",
-    "test": "mocha --require ts-node/register --require tsconfig-paths/register packages/**/*.spec.ts --colors",
+    "test": "mocha --require ts-node/register --require tsconfig-paths/register --project tsconfig.json packages/**/*.spec.ts --colors",
     "coverage": "nyc npm run test",
     "coverage:report": "nyc npm run test --reporter=lcov --reporter=text-summary",
     "generate-code": "cross-env NODE_ICU_DATA=node_modules/full-icu ts-node -r tsconfig-paths/register packages/scripts/src/index.ts",

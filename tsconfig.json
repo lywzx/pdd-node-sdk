@@ -7,7 +7,9 @@
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
     "sourceMap": true,
-    "lib": ["es6"]
+    "lib": ["es6"],
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true
   },
   "include": ["packages", "examples", "scripts"],
   "exclude": [
