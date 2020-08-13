@@ -7,3 +7,4 @@ lib/
 .nyc_output/
 coverage.lcov
 coverage/
+/report.*.json
