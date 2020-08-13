@@ -1,24 +1,19 @@
+import { ILock } from '../interfaces';
+
 /**
  * 拼多多限拼处理类
  */
 export abstract class PddApiThrottleAdapter {
   /**
-   * 设置某个值
-   * @param key
-   * @param value
-   * @param ttl
+   * 生成一个锁，默认会自增一位数
+   * @param key 生成的key
+   * @param ttl 毫秒为单位
    */
-  public abstract set(key: string, value: string, ttl?: number): Promise<boolean>;
+  public abstract lock(key: string, ttl?: number): Promise<ILock>;
 
   /**
-   * 从缓存中读取某个值
+   * 如果锁并未触发逻辑，则此时需要释放锁资源，减少数字
    * @param key
    */
-  public abstract get(key: string): Promise<string | null>;
-
-  /**
-   * 删除某
-   * @param key
-   */
-  public abstract delete(key: string): Promise<boolean>;
+  public abstract unLock(key: string): Promise<boolean>;
 }

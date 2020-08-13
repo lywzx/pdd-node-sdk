@@ -1,6 +1,4 @@
 import { PddNeedAccessTokenTypeCollections, PddApiLimiterMapping } from '@pin-duo-duo/pdd-origin-api';
-import memoize from 'lodash/memoize';
-import keyBy from 'lodash/keyBy';
 import { PddApiLimiterInterface } from '../interfaces';
 
 /**
@@ -11,17 +9,11 @@ export function checkTypeIsNeedAccessToken(type: string): boolean {
   return PddNeedAccessTokenTypeCollections.includes(type);
 }
 
+type PddApiLimiterMappingKeys = keyof typeof PddApiLimiterMapping;
 /**
  * 获取当前接口是否有限流信息
- * @param type {string}
+ * @param api
  */
-type PddApiLimiterMappingKeys = keyof typeof PddApiLimiterMapping;
-export const getTypeApiLimiter = memoize(function apiLimiter(
-  type: string
-): void | { [s: string]: PddApiLimiterInterface | undefined } {
-  const limiter = PddApiLimiterMapping[type as PddApiLimiterMappingKeys];
-  if (limiter && limiter.length) {
-    return keyBy(limiter, 'limiterLevel');
-  }
-  return undefined;
-});
+export function getTypeApiLimiter(api: string): PddApiLimiterInterface[] | void {
+  return PddApiLimiterMapping[api as PddApiLimiterMappingKeys];
+}
