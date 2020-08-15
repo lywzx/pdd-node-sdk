@@ -1,11 +1,11 @@
 # `@pin-duo-duo/redis-throttle-adapter`
 
-> TODO: description
+> 基于Redis实现的限频器
 
-## Usage
+## 使用方法
 
-```
-const redisThrottleAdapter = require('@pin-duo-duo/redis-throttle-adapter');
+```typescript
+import { RedisThrottleAdapter } from '@pin-duo-duo/redis-throttle-adapter';
 
-// TODO: DEMONSTRATE API
+const adapter = new RedisThrottleAdapter(redisClient);
 ```

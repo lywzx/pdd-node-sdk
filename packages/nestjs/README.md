@@ -1,11 +1,11 @@
 # `@pin-duo-duo/nestjs`
 
-> TODO: description
+> 在NestJs中，也可以很容易接入`@pin-duo-duo/core`的接口
 
-## Usage
+## 安装
 
+```bash
+npm install @pin-duo-duo/core @pin-duo-duo/nestjs --save # or：yarn add @pin-duo-duo/core @pin-duo-duo/nestjs
 ```
-const nestjs = require('@pin-duo-duo/nestjs');
 
-// TODO: DEMONSTRATE API
-```
+## 使用
