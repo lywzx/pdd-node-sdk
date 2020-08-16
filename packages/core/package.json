@@ -41,16 +41,17 @@
   },
   "dependencies": {
     "@pin-duo-duo/pdd-origin-api": "^0.0.0",
-    "lodash": "^4.17.19",
-    "crypto-js": "^4.0.0",
+    "async": "^3.2.0",
     "axios": "^0.19.2",
-    "async": "^3.2.0"
+    "crypto-js": "^4.0.0",
+    "fast-json-stable-stringify": "^2.1.0",
+    "lodash": "^4.17.19"
   },
   "devDependencies": {
-    "debug": "^4.2.0",
-    "@types/lodash": "^4.14.158",
+    "@types/async": "^3.2.0",
     "@types/crypto-js": "^3.1.44",
     "@types/debug": "^4.1.5",
-    "@types/async": "^3.2.0"
+    "@types/lodash": "^4.14.158",
+    "debug": "^4.2.0"
   }
 }

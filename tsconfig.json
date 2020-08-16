@@ -9,7 +9,7 @@
     "sourceMap": true,
     "lib": ["es6"],
     "experimentalDecorators": true,
-    "emitDecoratorMetadata": true
+    "emitDecoratorMetadata": true,
   },
   "include": ["packages", "examples", "scripts"],
   "exclude": [

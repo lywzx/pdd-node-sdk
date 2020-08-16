@@ -4,14 +4,27 @@ import {
   PddCommonRequestInterface,
   PddResponseTypeAndRequestTypeMapping,
 } from '@pin-duo-duo/pdd-origin-api';
-import { DefaultRequestType, NetworkAdapterInterface, PddClientOptionsInterface } from '../interfaces';
+import {
+  DefaultRequestType,
+  NetworkAdapterInterface,
+  PddAxiosClientOptions,
+  PddCacheOptions,
+  PddClientOptionsInterface,
+  PddDefaultCacheOptionsType,
+  RetryOptionsType,
+} from '../interfaces';
 import { md5, timestamp, promiseToCallback, defer, checkRequired } from '../util';
 import { AsyncResultCallbackInterface } from '../interfaces';
+import { isDevModel } from '../util/dev';
+import { guessPddClientExecuteParams } from '../util/guess-params.util';
 import { NetworkAdapter } from './network-adapter';
 import { PDD_END_POINTS, PDD_OAUTH_TEMPLATE, OAuthType, PDD_OAUTH_TOKEN_URL } from '../constant';
 import extend from 'lodash/extend';
 import castArray from 'lodash/castArray';
 import omit from 'lodash/omit';
+import pick from 'lodash/pick';
+import isString from 'lodash/isString';
+import isObject from 'lodash/isObject';
 import {
   RequestParamsType,
   RequestParamsFullType,
@@ -21,19 +34,17 @@ import {
 } from '../interfaces';
 import { retry } from 'async';
 import { RetryOptionsInterface } from '../interfaces';
+import { PddApiCacheAbstract } from './pdd-api-cache.abstract';
+import { checkTypeIsNeedAccessToken } from './pdd-api-check.tools';
 import { PddApiThrottle } from './pdd-api-throttle';
 import { PddApiThrottleAdapter } from './pdd-api-throttle-adapter';
 import { PddApiWithoutThrottleAdapter } from './pdd-api-without-throttle-adapter';
+import { PddClientAccessAuth } from './pdd-client-access-auth.abstract';
 import { defaultRetryOptions } from './pdd-client-default';
-import isString from 'lodash/isString';
-import isObject from 'lodash/isObject';
 import { APPLICATION_JSON } from '../constant/content-type';
 import { pddLog, getPddLogClient } from '../util/debug';
-import { PddException } from '../exceptions';
+import { PddAccessTokenMissingException, PddException } from '../exceptions';
 
-// 限制拼多多接口的响应等待时间
-type PddAxiosClientOptions = { timeout?: number };
-type RetryOptionsType = (RetryOptionsInterface & PddAxiosClientOptions) | number;
 type PddClientGenerateType =
   | string
   | {
@@ -49,16 +60,12 @@ type PddCommonRequestExcludeSomeAttr = Pick<PddCommonRequestInterface, 'access_t
 /**
  * pdd client
  */
-export class PddClient {
-  /**
-   * 客户端限制调用频率
-   * @protected
-   */
-  protected apiThrottle: PddApiThrottle;
-
+export class PddClient<T = any> {
   constructor(
     public options: PddClientOptionsInterface,
-    protected throttleAdapter: PddApiThrottleAdapter = new PddApiWithoutThrottleAdapter(),
+    public pddClientAuth?: PddClientAccessAuth<T>,
+    protected pddApiCache?: PddApiCacheAbstract,
+    protected apiThrottle: PddApiThrottle = new PddApiThrottle(new PddApiWithoutThrottleAdapter()),
     protected networkAdapter: NetworkAdapterInterface = NetworkAdapter
   ) {
     if (!options.clientId || !options.clientSecret) {
@@ -70,12 +77,12 @@ export class PddClient {
     if (!this.options.endpoint) {
       this.options.endpoint = PDD_END_POINTS;
     }
-    this.apiThrottle = new PddApiThrottle(this.throttleAdapter);
   }
 
   /**
    * 发起一个普通request请求
    * @param params
+   * @param axiosOptions
    * @param callback
    */
   public request<T extends {}, R>(params: T & RequestParamsType, axiosOptions?: PddAxiosClientOptions): Promise<R>;
@@ -128,7 +135,7 @@ export class PddClient {
     defaultArgs.sign = this.sign((defaultArgs as any) as { [s: string]: string | number });
 
     let requestPromise = this.apiThrottle.checkApiThrottle(params.type as string).then(() => {
-      pddLog('start run pdd client request, type: %s, params: %o', params.type, params);
+      pddLog('start run pdd client request, type: %s, params: %o', undefined, params.type, params);
       return this.networkAdapter.post(this.options.endpoint, defaultArgs, axiosOptions || {});
     });
 
@@ -137,7 +144,7 @@ export class PddClient {
     if (pddLoggerClient && pddLoggerClient.enabled) {
       requestPromise = requestPromise.then(
         response => {
-          pddLog('end run pdd client request, type: %s, result: %o', params.type, response);
+          pddLog('end run pdd client request, type: %s, result: %o', undefined, params.type, response);
           return response;
         },
         err => {
@@ -145,6 +152,7 @@ export class PddClient {
             (err && (err as PddException).errObj) || (err && (err as Error).stack) || (err as Error).message || err;
           pddLog(
             'end run pdd client request with error, type: %s,  params: %o, error msg: %o',
+            undefined,
             params.type,
             params,
             errObj
@@ -190,11 +198,9 @@ export class PddClient {
     } else if (typeof retryOptions === 'number') {
       tryOptions = extend({}, defaultRetryOptions, { times: retryOptions });
     } else if (typeof retryOptions === 'object') {
-      tryOptions = extend({}, defaultRetryOptions, omit(retryOptions, ['timeout']));
-      if (retryOptions.timeout) {
-        axiosClientOptions = {
-          timeout: retryOptions.timeout,
-        };
+      tryOptions = extend({}, defaultRetryOptions, omit(retryOptions, ['timeout', 'proxy']));
+      if (retryOptions.timeout || retryOptions.proxy) {
+        axiosClientOptions = pick(retryOptions, ['timeout', 'proxy']);
       }
     }
 
@@ -210,6 +216,7 @@ export class PddClient {
       if (retryCount) {
         pddLog(
           'start retry pdd client request, retry %d th, max retry count: %d, type: %s, params: %o',
+          undefined,
           tryOptions?.times,
           retryCount,
           params.type,
@@ -225,6 +232,7 @@ export class PddClient {
             if (retryCount) {
               pddLog(
                 'success retry pdd client request, retry %d th, type: %s, result: %o',
+                undefined,
                 retryCount,
                 params.type,
                 response
@@ -238,6 +246,7 @@ export class PddClient {
                 (err && (err as PddException).errObj) || (err && (err as Error).stack) || (err as Error).message || err;
               pddLog(
                 'error retry pdd client request, retry %d th, type: %s, error msg: %o',
+                undefined,
                 retryCount,
                 params.type,
                 errObj
@@ -258,19 +267,46 @@ export class PddClient {
    * 自动处理响应中带前缀的数据
    * @param type
    * @param params
+   * @param [accessOptions]
    * @param [retryOptions]
+   * @param [cacheOptions]
    * @param [callback]
    */
   public execute<
     K extends keyof PddCollectRequestInterface,
     Req = PddCollectRequestInterface[K],
     Res = PddCollectShortResponseInterface[K]
-  >(type: K, params: Req & PddCommonRequestExcludeSomeAttr): Promise<Res>;
+  >(
+    type: K,
+    params: Req & PddCommonRequestExcludeSomeAttr,
+    accessOptions?: T | RetryOptionsType | PddCacheOptions
+  ): Promise<Res>;
   public execute<
     K extends keyof PddCollectRequestInterface,
     Req = PddCollectRequestInterface[K] & PddCommonRequestExcludeSomeAttr,
     Res = PddCollectShortResponseInterface[K]
-  >(type: K, params: Req & PddCommonRequestExcludeSomeAttr, retryOptions: RetryOptionsType): Promise<Res>;
+  >(
+    type: K,
+    params: Req & PddCommonRequestExcludeSomeAttr,
+    accessOptions: T,
+    retryOptions?: RetryOptionsType | PddCacheOptions
+  ): Promise<Res>;
+  public execute<
+    K extends keyof PddCollectRequestInterface,
+    Req = PddCollectRequestInterface[K] & PddCommonRequestExcludeSomeAttr,
+    Res = PddCollectShortResponseInterface[K]
+  >(
+    type: K,
+    params: Req & PddCommonRequestExcludeSomeAttr,
+    accessOptions: T,
+    retryOptions: RetryOptionsType,
+    cacheOptions?: PddCacheOptions
+  ): Promise<Res>;
+  public execute<
+    K extends keyof PddCollectRequestInterface,
+    Req = PddCollectRequestInterface[K],
+    Res = PddCollectShortResponseInterface[K]
+  >(type: K, params: Req & PddCommonRequestExcludeSomeAttr, callback: AsyncResultCallbackInterface<Res, never>): void;
   public execute<
     K extends keyof PddCollectRequestInterface,
     Req = PddCollectRequestInterface[K],
@@ -278,16 +314,7 @@ export class PddClient {
   >(
     type: K,
     params: Req & PddCommonRequestExcludeSomeAttr,
-    retryOptions: AsyncResultCallbackInterface<Res, never>
-  ): void;
-  public execute<
-    K extends keyof PddCollectRequestInterface,
-    Req = PddCollectRequestInterface[K] & PddCommonRequestExcludeSomeAttr,
-    Res = PddCollectShortResponseInterface[K]
-  >(
-    type: K,
-    params: Req & PddCommonRequestExcludeSomeAttr,
-    retryOptions: RetryOptionsType,
+    accessOptions: T | RetryOptionsType | PddCacheOptions,
     callback: AsyncResultCallbackInterface<Res, never>
   ): void;
   public execute<
@@ -297,26 +324,117 @@ export class PddClient {
   >(
     type: K,
     params: Req & PddCommonRequestExcludeSomeAttr,
-    retryOptions?: RetryOptionsType | AsyncResultCallbackInterface<Res, never>,
+    accessOptions: T,
+    retryOptions: RetryOptionsType | PddCacheOptions,
+    callback: AsyncResultCallbackInterface<Res, never>
+  ): void;
+  public execute<
+    K extends keyof PddCollectRequestInterface,
+    Req = PddCollectRequestInterface[K],
+    Res = PddCollectShortResponseInterface[K]
+  >(
+    type: K,
+    params: Req & PddCommonRequestExcludeSomeAttr,
+    accessOptions: T,
+    retryOptions: RetryOptionsType,
+    cacheOptions: PddCacheOptions,
+    callback: AsyncResultCallbackInterface<Res, never>
+  ): void;
+  public execute<
+    K extends keyof PddCollectRequestInterface,
+    Req = PddCollectRequestInterface[K],
+    Res = PddCollectShortResponseInterface[K]
+  >(
+    type: K,
+    params: Req & PddCommonRequestExcludeSomeAttr,
+    accessOptions?: T | RetryOptionsType | PddCacheOptions | AsyncResultCallbackInterface<Res, never>,
+    retryOptions?: RetryOptionsType | PddCacheOptions | AsyncResultCallbackInterface<Res, never>,
+    cacheOptions?: PddCacheOptions | AsyncResultCallbackInterface<Res, never>,
     callback?: AsyncResultCallbackInterface<Res, never>
   ): Promise<Res> | void {
-    const reqParams = extend({}, params, { type: type }) as any;
-    if (typeof retryOptions === 'function') {
-      callback = retryOptions;
-      retryOptions = {};
-    }
-    const result = this.requestWithRetry<
-      Req & Omit<PddCommonRequestInterface, 'sign' | 'timestamp' | 'client_id'>,
-      any
-    >(reqParams, retryOptions as RetryOptionsType).then(response => {
-      if (type in PddResponseTypeAndRequestTypeMapping) {
-        const responseKey = (PddResponseTypeAndRequestTypeMapping as any)[type] as string;
-        return response[responseKey];
-      }
-      return response;
-    });
+    const [apiAccessOptions, apiRetryOptions, apiCacheOptions, apiCallback] = guessPddClientExecuteParams<T>([
+      callback,
+      cacheOptions,
+      retryOptions,
+      accessOptions,
+    ]);
 
-    return promiseToCallback(result, callback as any);
+    // 是否需要传入access token信息
+    const needAccessToken = checkTypeIsNeedAccessToken(type);
+    if (isDevModel()) {
+      if (PddClient.pddDefaultCacheOptions.alwaysWork && typeof cacheOptions !== 'undefined' && !this.pddApiCache) {
+        pddLog('cache options not work! please assign variable: pddApiCache.', '#ff0000');
+      }
+      if (typeof accessOptions !== 'undefined' && needAccessToken && !this.pddClientAuth) {
+        pddLog('access_token will not auto file. assign variable: pddClientAuth.', '#ffff00');
+      }
+    }
+
+    const runningFn = () => {
+      // 这里需要从access token 中获取数据
+      const nParams = extend({}, params);
+      let result = Promise.resolve(nParams);
+      if (this.pddClientAuth && needAccessToken) {
+        result = result.then((param: Req & PddCommonRequestExcludeSomeAttr) => {
+          if (!apiAccessOptions) {
+            throw new PddAccessTokenMissingException('params access options is required!');
+          }
+          return (this.pddClientAuth as PddClientAccessAuth<T>)
+            .getAccessTokenFromCache(apiAccessOptions)
+            .then((access: PddAccessTokenResponseInterface | null) => {
+              if (access) {
+                return extend({}, param, {
+                  // eslint-disable-next-line @typescript-eslint/camelcase
+                  access_token: access.access_token,
+                });
+              }
+              throw new PddAccessTokenMissingException('cat"t find pdd access token from cache!');
+            });
+        });
+      }
+      return result.then((params: Req & PddCommonRequestExcludeSomeAttr) => {
+        return this.requestWithRetry<Req & Omit<PddCommonRequestInterface, 'sign' | 'timestamp' | 'client_id'>, any>(
+          params as Req & Omit<PddCommonRequestInterface, 'sign' | 'timestamp' | 'client_id'>,
+          apiRetryOptions
+        ).then(response => {
+          if (type in PddResponseTypeAndRequestTypeMapping) {
+            const responseKey = (PddResponseTypeAndRequestTypeMapping as any)[type] as string;
+            return response[responseKey];
+          }
+          return response;
+        });
+      }) as Promise<Res>;
+    };
+
+    // api 接口缓存逻辑
+    let ret;
+    if (
+      apiCacheOptions === false ||
+      (typeof apiCacheOptions === 'undefined' && !PddClient.pddDefaultCacheOptions.alwaysWork) ||
+      !this.pddApiCache
+    ) {
+      ret = runningFn();
+    } else {
+      let cachedKey: string | undefined;
+      let ttl: number = PddClient.pddDefaultCacheOptions.ttl;
+
+      if (typeof apiCacheOptions === 'number') {
+        ttl = apiCacheOptions;
+      } else if (typeof apiCacheOptions === 'object') {
+        if (typeof apiCacheOptions.ttl === 'number') {
+          ttl = apiCacheOptions.ttl;
+        }
+        if (apiCacheOptions.cacheKey) {
+          cachedKey = isString(apiCacheOptions.cacheKey) ? apiCacheOptions.cacheKey : apiCacheOptions.cacheKey(params);
+        }
+      }
+      if (!cachedKey) {
+        cachedKey = this.pddApiCache.cacheKey(params);
+      }
+      ret = this.pddApiCache.cached(cachedKey, runningFn, ttl);
+    }
+
+    return promiseToCallback(ret, apiCallback!);
   }
 
   /**
@@ -462,5 +580,22 @@ export class PddClient {
    */
   public static setRetryOptions(option: RetryOptionsInterface) {
     this.retryOptions = option;
+  }
+
+  /**
+   * 拼多多默认缓存时间
+   * @protected
+   */
+  protected static pddDefaultCacheOptions: PddDefaultCacheOptionsType = {
+    ttl: 60 * 60 * 2,
+    alwaysWork: false,
+  };
+
+  /**
+   * 设置拼多多默认缓存配置
+   * @param options
+   */
+  public static setPddDefaultCacheOptions(options: PddDefaultCacheOptionsType) {
+    this.pddDefaultCacheOptions = options;
   }
 }

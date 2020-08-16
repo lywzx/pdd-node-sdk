@@ -88,7 +88,7 @@ const packages = [
  * (c) ${new Date().getFullYear()} LiuYang
  * @license MIT
  */`,
-    external: ['@nestjs/common', 'zlib'],
+    external: ['@nestjs/common', 'zlib', '@nestjs/core'],
     onlyModule: {
       only: ['cjs'],
       browser: false

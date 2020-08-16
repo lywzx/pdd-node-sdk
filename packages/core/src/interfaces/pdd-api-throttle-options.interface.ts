@@ -3,7 +3,7 @@
  */
 export interface PddApiThrottleOptionsInterface {
   /**
-   * 默认等待时长
+   * 默认等待时长，以毫秒为单位
    */
   timeout: number;
 

@@ -24,11 +24,17 @@ export function getPddLogClient() {
 /**
  * pdd print logs
  * @param formatter
+ * @param color
  * @param args
  */
-export function pddLog(formatter: any, ...args: any[]) {
+export function pddLog(formatter: any, color?: string, ...args: any[]) {
   const logClient = getPddLogClient();
   if (logClient) {
+    const lastColor = logClient.color;
+    if (color) {
+      logClient.color = color.toString();
+    }
     logClient.log(formatter, ...args);
+    logClient.color = lastColor;
   }
 }

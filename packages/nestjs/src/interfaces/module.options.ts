@@ -1,16 +1,35 @@
 import { ModuleMetadata, Provider, Type } from '@nestjs/common';
-import { PddClientOptionsInterface } from '@pin-duo-duo/core';
+import { PddClientOptionsInterface, PddApiCacheAbstract, PddClientAccessAuth, PddApiThrottle } from '@pin-duo-duo/core';
 
-export type NestJsPddModuleOptions = NestJsPddModuleAsyncOptionsInterface | PddClientOptionsInterface;
+/**
+ * 拼多多后台客户端配置
+ */
+export interface NestJsPddClientOptions<T = any> extends PddClientOptionsInterface {
+  /**
+   * 拼多多默认认证类信息
+   */
+  clientAccessAuth?: PddClientAccessAuth<T>;
 
-export type NestJsPddModuleAsyncOptions = NestJsPddModuleOptionsInterface;
+  // 默认限频率配置
+  apiThrottle?: PddApiThrottle;
+
+  /**
+   * 拼多多模块缓存功能
+   */
+  apiCached?: PddApiCacheAbstract;
+}
+
+/**
+ * 当前模块配置信息
+ */
+export type NestJsPddModuleOptions = NestJsPddModuleAsyncOptionsInterface | NestJsPddClientOptions;
 
 export interface NestJsPddModuleAsyncOptionsInterface {
   // 默认的channel的频道
   defaultChannel: string;
 
   // 处理PddClient的内容
-  [s: string]: PddClientOptionsInterface | string;
+  [s: string]: NestJsPddClientOptions | string;
 }
 
 export interface NestJsPddModuleOptionsInterface extends Pick<ModuleMetadata, 'imports'> {
