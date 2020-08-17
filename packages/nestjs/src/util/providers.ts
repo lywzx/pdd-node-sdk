@@ -1,13 +1,7 @@
 import { Provider } from '@nestjs/common';
 import { PddClient, PddClientOptionsInterface } from '@pin-duo-duo/core';
-import {
-  NEST_PDD_MODULE_OPTIONS,
-  NEST_PDD_MODULE_PDD_CLIENTS,
-  NEST_PDD_MODULE_PDD_CLIENTS_ALL,
-  NEST_PDD_MODULE_PDD_CLIENTS_DEFAULT,
-} from '../constant';
+import { NEST_PDD_MODULE_OPTIONS, NEST_PDD_MODULE_PDD_CLIENTS, NEST_PDD_MODULE_PDD_CLIENTS_DEFAULT } from '../constant';
 import { NestJsPddClientOptions, NestJsPddModuleAsyncOptionsInterface, NestJsPddModuleOptions } from '../interfaces';
-import each from 'lodash/each';
 import omit from 'lodash/omit';
 import map from 'lodash/map';
 import flatten from 'lodash/flatten';
