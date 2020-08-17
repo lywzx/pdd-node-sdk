@@ -1,6 +1,6 @@
 import { DynamicModule, Module, Provider } from '@nestjs/common';
 import { PddClient } from '@pin-duo-duo/core';
-import { NEST_PDD_MODULE_OPTIONS } from '../constant';
+import { NEST_PDD_MODULE_OPTIONS, NEST_PDD_MODULE_PDD_CLIENTS_ALL } from '../constant';
 import {
   NestJsPddClientOptions,
   NestJsPddModuleAsyncOptionsInterface,
@@ -11,15 +11,24 @@ import {
 import { PddClientService } from '../services/pdd-client/pdd-client.service';
 import { generateClientByClientOptions, transformOptionsToMultiple } from '../util/providers';
 
-const DefaultProvider: Provider = {
-  provide: PddClient,
-  useFactory: (options: NestJsPddModuleAsyncOptionsInterface) => {
-    const defaultChannel = options.defaultChannel;
-    const clientOption = options[defaultChannel] as NestJsPddClientOptions;
-    return generateClientByClientOptions(clientOption);
+const DefaultProvider: Provider[] = [
+  {
+    provide: PddClient,
+    useFactory: (options: NestJsPddModuleAsyncOptionsInterface) => {
+      const defaultChannel = options.defaultChannel;
+      const clientOption = options[defaultChannel] as NestJsPddClientOptions;
+      return generateClientByClientOptions(clientOption);
+    },
+    inject: [NEST_PDD_MODULE_OPTIONS],
   },
-  inject: [NEST_PDD_MODULE_OPTIONS],
-};
+  {
+    provide: NEST_PDD_MODULE_PDD_CLIENTS_ALL,
+    useFactory(pddClientService: PddClientService) {
+      return pddClientService.get();
+    },
+    inject: [PddClientService],
+  },
+];
 
 @Module({
   providers: [PddClientService],
@@ -35,9 +44,9 @@ export class NestJsPddModule {
           provide: NEST_PDD_MODULE_OPTIONS,
           useValue: newOptions,
         },
-        DefaultProvider,
+        ...DefaultProvider,
       ],
-      exports: [DefaultProvider],
+      exports: [...DefaultProvider],
     };
   }
 
@@ -53,13 +62,13 @@ export class NestJsPddModule {
     return {
       module: this,
       imports: options.imports,
-      providers: [...this.createAsyncProviders(options), ...(options.extraProviders || []), DefaultProvider],
-      exports: [DefaultProvider],
+      providers: [...this.createAsyncProviders(options), ...(options.extraProviders || [])],
+      exports: [...DefaultProvider],
     };
   }
 
   public static createAsyncProviders(options: NestJsPddModuleOptionsInterface): Provider[] {
-    const result: Provider[] = [DefaultProvider];
+    const result: Provider[] = [...DefaultProvider];
     const asyncOptionsProvider = this.createAsyncOptionsProvider(options);
     if (asyncOptionsProvider) {
       result.push(asyncOptionsProvider);

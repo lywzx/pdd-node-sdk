@@ -103,7 +103,7 @@ const packages = [
  * @license MIT
  */`,
     onlyModule: {
-      only: ['cjs', 'es'],
+      only: ['cjs'],
       browser: false
     },
     external: ['@pin-duo-duo/core'],

@@ -5,7 +5,8 @@
   "author": "lywzx <liuyang@lyblog.net>",
   "homepage": "https://github.com/lywzx/pdd-node-sdk/tree/master/packages/redis-throttle-adapter#readme",
   "license": "MIT",
-  "main": "lib/index.js",
+  "main": "lib/index.common.js",
+  "types": "lib/index.d.ts",
   "directories": {
     "lib": "lib",
     "test": "test"
