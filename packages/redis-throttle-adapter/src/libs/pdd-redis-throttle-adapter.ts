@@ -21,7 +21,7 @@ export class PddRedisThrottleAdapter extends PddApiThrottleAdapter {
     const resultNum = typeof result === 'string' ? parseInt(result, 10) : result;
     let timeout = ttl;
     if (resultNum === 1 && typeof ttl === 'number') {
-      await this.callRedisMethod('expire', key, ttl);
+      await this.callRedisMethod('pexpire', key, ttl);
     } else {
       timeout = await this.callRedisMethod('pttl', key);
     }
