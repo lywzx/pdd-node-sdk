@@ -9,10 +9,13 @@
         "**/test/**",
         "**/tsconfig.json"
       ],
-      "allowBranch": ["master", "v2"]
+      "allowBranch": [
+        "master",
+        "v2"
+      ]
     }
   },
-  "version": "0.0.0",
+  "version": "0.0.1-alpha.0",
   "useWorkspaces": true,
   "npmClient": "yarn"
 }
