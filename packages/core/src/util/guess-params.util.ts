@@ -58,21 +58,21 @@ export function guessPddClientExecuteParams<T>(
       continue;
     }
 
-    if (i > 0) {
+    if (i < 1) {
       continue;
     }
     if (typeof result[2] === 'undefined' && isCacheOptionConfig(current)) {
       result[2] = current;
       continue;
     }
-    if (i > 1) {
+    if (i < 2) {
       continue;
     }
     if (typeof result[1] === 'undefined' && isRetryOptionConfig(current)) {
       result[1] = current;
       continue;
     }
-    if (i > 2) {
+    if (i < 3) {
       continue;
     }
     result[0] = current;

@@ -51,7 +51,8 @@ function createEntry(config, pakg) {
       banner: pakg.banner,
       file: join(__dirname, '../packages', pkgDir, config.file),
       format: config.format,
-      globals: pakg.globals || {}
+      globals: pakg.globals || {},
+      sourcemap: true,
     },
     onwarn: (msg, warn) => {
       if (!/Circular/.test(msg)) {

@@ -37,7 +37,6 @@ import { RetryOptionsInterface } from '../interfaces';
 import { PddApiCacheAbstract } from './pdd-api-cache.abstract';
 import { checkTypeIsNeedAccessToken } from './pdd-api-check.tools';
 import { PddApiThrottle } from './pdd-api-throttle';
-import { PddApiThrottleAdapter } from './pdd-api-throttle-adapter';
 import { PddApiWithoutThrottleAdapter } from './pdd-api-without-throttle-adapter';
 import { PddClientAccessAuth } from './pdd-client-access-auth.abstract';
 import { defaultRetryOptions } from './pdd-client-default';
@@ -372,10 +371,10 @@ export class PddClient<T = any> {
 
     const runningFn = () => {
       // 这里需要从access token 中获取数据
-      const nParams = extend({}, params);
+      const nParams: Req & RequestParamsType = extend({}, params, { type });
       let result = Promise.resolve(nParams);
       if (this.pddClientAuth && needAccessToken) {
-        result = result.then((param: Req & PddCommonRequestExcludeSomeAttr) => {
+        result = result.then(param => {
           if (!apiAccessOptions) {
             throw new PddAccessTokenMissingException('params access options is required!');
           }

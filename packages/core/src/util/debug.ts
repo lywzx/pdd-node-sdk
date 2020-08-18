@@ -34,7 +34,7 @@ export function pddLog(formatter: any, color?: string, ...args: any[]) {
     if (color) {
       logClient.color = color.toString();
     }
-    logClient.log(formatter, ...args);
+    logClient(formatter, ...args);
     logClient.color = lastColor;
   }
 }
