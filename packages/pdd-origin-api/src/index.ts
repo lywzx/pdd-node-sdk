@@ -42,6 +42,57 @@ import {
   PddRefundStatusCheckRefundStatusCheckResponseResponseInterface,
   PDD_REFUND_STATUS_CHECK_LIMITERS,
 } from './shouHou/PddRefundStatusCheck';
+// 物流API
+import {
+  PDD_LOGISTICS_ADDRESS_GET,
+  PDD_LOGISTICS_ADDRESS_GET_RESPONSE_KEY,
+  PddLogisticsAddressGetRequestInterface,
+  PddLogisticsAddressGetResponseInterface,
+  PddLogisticsAddressGetLogisticsAddressGetResponseResponseInterface,
+  PDD_LOGISTICS_ADDRESS_GET_LIMITERS,
+} from './wuLiu/PddLogisticsAddressGet';
+import {
+  PDD_LOGISTICS_COMPANIES_GET,
+  PDD_LOGISTICS_COMPANIES_GET_RESPONSE_KEY,
+  PddLogisticsCompaniesGetRequestInterface,
+  PddLogisticsCompaniesGetResponseInterface,
+  PddLogisticsCompaniesGetLogisticsCompaniesGetResponseResponseInterface,
+  PDD_LOGISTICS_COMPANIES_GET_LIMITERS,
+} from './wuLiu/PddLogisticsCompaniesGet';
+import {
+  PDD_LOGISTICS_ISV_TRACE_NOTIFY_SUB,
+  PddLogisticsIsvTraceNotifySubRequestInterface,
+  PddLogisticsIsvTraceNotifySubResponseInterface,
+  PDD_LOGISTICS_ISV_TRACE_NOTIFY_SUB_LIMITERS,
+} from './wuLiu/PddLogisticsIsvTraceNotifySub';
+import {
+  PDD_LOGISTICS_ONLINE_CREATE,
+  PDD_LOGISTICS_ONLINE_CREATE_RESPONSE_KEY,
+  PddLogisticsOnlineCreateRequestInterface,
+  PddLogisticsOnlineCreateResponseInterface,
+  PddLogisticsOnlineCreateLogisticsOnlineCreateResponseResponseInterface,
+} from './wuLiu/PddLogisticsOnlineCreate';
+import {
+  PDD_LOGISTICS_ONLINE_SEND,
+  PDD_LOGISTICS_ONLINE_SEND_RESPONSE_KEY,
+  PddLogisticsOnlineSendRequestInterface,
+  PddLogisticsOnlineSendResponseInterface,
+  PddLogisticsOnlineSendLogisticsOnlineSendResponseResponseInterface,
+  PDD_LOGISTICS_ONLINE_SEND_LIMITERS,
+} from './wuLiu/PddLogisticsOnlineSend';
+import {
+  PDD_LOGISTICS_ONLINE_STATUS_QUERY,
+  PDD_LOGISTICS_ONLINE_STATUS_QUERY_RESPONSE_KEY,
+  PddLogisticsOnlineStatusQueryRequestInterface,
+  PddLogisticsOnlineStatusQueryResponseInterface,
+  PddLogisticsOnlineStatusQueryLogisticsOnlineStatusQueryResponseResponseInterface,
+} from './wuLiu/PddLogisticsOnlineStatusQuery';
+import {
+  PDD_LOGISTICS_ORDERTRACE_GET,
+  PddLogisticsOrdertraceGetRequestInterface,
+  PddLogisticsOrdertraceGetResponseInterface,
+  PDD_LOGISTICS_ORDERTRACE_GET_LIMITERS,
+} from './wuLiu/PddLogisticsOrdertraceGet';
 // 订单API
 import {
   PDD_CHAT_PROMISE_INFO_GET,
@@ -95,57 +146,6 @@ import {
   PddOrderStatusGetOrderStatusGetResponseResponseInterface,
   PDD_ORDER_STATUS_GET_LIMITERS,
 } from './dingDan/PddOrderStatusGet';
-// 物流API
-import {
-  PDD_LOGISTICS_ADDRESS_GET,
-  PDD_LOGISTICS_ADDRESS_GET_RESPONSE_KEY,
-  PddLogisticsAddressGetRequestInterface,
-  PddLogisticsAddressGetResponseInterface,
-  PddLogisticsAddressGetLogisticsAddressGetResponseResponseInterface,
-  PDD_LOGISTICS_ADDRESS_GET_LIMITERS,
-} from './wuLiu/PddLogisticsAddressGet';
-import {
-  PDD_LOGISTICS_COMPANIES_GET,
-  PDD_LOGISTICS_COMPANIES_GET_RESPONSE_KEY,
-  PddLogisticsCompaniesGetRequestInterface,
-  PddLogisticsCompaniesGetResponseInterface,
-  PddLogisticsCompaniesGetLogisticsCompaniesGetResponseResponseInterface,
-  PDD_LOGISTICS_COMPANIES_GET_LIMITERS,
-} from './wuLiu/PddLogisticsCompaniesGet';
-import {
-  PDD_LOGISTICS_ISV_TRACE_NOTIFY_SUB,
-  PddLogisticsIsvTraceNotifySubRequestInterface,
-  PddLogisticsIsvTraceNotifySubResponseInterface,
-  PDD_LOGISTICS_ISV_TRACE_NOTIFY_SUB_LIMITERS,
-} from './wuLiu/PddLogisticsIsvTraceNotifySub';
-import {
-  PDD_LOGISTICS_ONLINE_CREATE,
-  PDD_LOGISTICS_ONLINE_CREATE_RESPONSE_KEY,
-  PddLogisticsOnlineCreateRequestInterface,
-  PddLogisticsOnlineCreateResponseInterface,
-  PddLogisticsOnlineCreateLogisticsOnlineCreateResponseResponseInterface,
-} from './wuLiu/PddLogisticsOnlineCreate';
-import {
-  PDD_LOGISTICS_ONLINE_SEND,
-  PDD_LOGISTICS_ONLINE_SEND_RESPONSE_KEY,
-  PddLogisticsOnlineSendRequestInterface,
-  PddLogisticsOnlineSendResponseInterface,
-  PddLogisticsOnlineSendLogisticsOnlineSendResponseResponseInterface,
-  PDD_LOGISTICS_ONLINE_SEND_LIMITERS,
-} from './wuLiu/PddLogisticsOnlineSend';
-import {
-  PDD_LOGISTICS_ONLINE_STATUS_QUERY,
-  PDD_LOGISTICS_ONLINE_STATUS_QUERY_RESPONSE_KEY,
-  PddLogisticsOnlineStatusQueryRequestInterface,
-  PddLogisticsOnlineStatusQueryResponseInterface,
-  PddLogisticsOnlineStatusQueryLogisticsOnlineStatusQueryResponseResponseInterface,
-} from './wuLiu/PddLogisticsOnlineStatusQuery';
-import {
-  PDD_LOGISTICS_ORDERTRACE_GET,
-  PddLogisticsOrdertraceGetRequestInterface,
-  PddLogisticsOrdertraceGetResponseInterface,
-  PDD_LOGISTICS_ORDERTRACE_GET_LIMITERS,
-} from './wuLiu/PddLogisticsOrdertraceGet';
 // 虚拟类目API
 import {
   PDD_VIRTUAL_GAME_SERVER_QUERY,
@@ -1906,17 +1906,17 @@ const PddResponseTypeAndRequestTypeMapping = {
   [PDD_REFUND_ADDRESS_LIST_GET]: PDD_REFUND_ADDRESS_LIST_GET_RESPONSE_KEY,
   [PDD_REFUND_LIST_INCREMENT_GET]: PDD_REFUND_LIST_INCREMENT_GET_RESPONSE_KEY,
   [PDD_REFUND_STATUS_CHECK]: PDD_REFUND_STATUS_CHECK_RESPONSE_KEY,
+  [PDD_LOGISTICS_ADDRESS_GET]: PDD_LOGISTICS_ADDRESS_GET_RESPONSE_KEY,
+  [PDD_LOGISTICS_COMPANIES_GET]: PDD_LOGISTICS_COMPANIES_GET_RESPONSE_KEY,
+  [PDD_LOGISTICS_ONLINE_CREATE]: PDD_LOGISTICS_ONLINE_CREATE_RESPONSE_KEY,
+  [PDD_LOGISTICS_ONLINE_SEND]: PDD_LOGISTICS_ONLINE_SEND_RESPONSE_KEY,
+  [PDD_LOGISTICS_ONLINE_STATUS_QUERY]: PDD_LOGISTICS_ONLINE_STATUS_QUERY_RESPONSE_KEY,
   [PDD_CHAT_PROMISE_INFO_GET]: PDD_CHAT_PROMISE_INFO_GET_RESPONSE_KEY,
   [PDD_ORDER_BASIC_LIST_GET]: PDD_ORDER_BASIC_LIST_GET_RESPONSE_KEY,
   [PDD_ORDER_INFORMATION_GET]: PDD_ORDER_INFORMATION_GET_RESPONSE_KEY,
   [PDD_ORDER_LIST_GET]: PDD_ORDER_LIST_GET_RESPONSE_KEY,
   [PDD_ORDER_NUMBER_LIST_INCREMENT_GET]: PDD_ORDER_NUMBER_LIST_INCREMENT_GET_RESPONSE_KEY,
   [PDD_ORDER_STATUS_GET]: PDD_ORDER_STATUS_GET_RESPONSE_KEY,
-  [PDD_LOGISTICS_ADDRESS_GET]: PDD_LOGISTICS_ADDRESS_GET_RESPONSE_KEY,
-  [PDD_LOGISTICS_COMPANIES_GET]: PDD_LOGISTICS_COMPANIES_GET_RESPONSE_KEY,
-  [PDD_LOGISTICS_ONLINE_CREATE]: PDD_LOGISTICS_ONLINE_CREATE_RESPONSE_KEY,
-  [PDD_LOGISTICS_ONLINE_SEND]: PDD_LOGISTICS_ONLINE_SEND_RESPONSE_KEY,
-  [PDD_LOGISTICS_ONLINE_STATUS_QUERY]: PDD_LOGISTICS_ONLINE_STATUS_QUERY_RESPONSE_KEY,
   [PDD_VIRTUAL_GAME_SERVER_QUERY]: PDD_VIRTUAL_GAME_SERVER_QUERY_RESPONSE_KEY,
   [PDD_VIRTUAL_MOBILE_CHARGE_NOTIFY]: PDD_VIRTUAL_MOBILE_CHARGE_NOTIFY_RESPONSE_KEY,
   [PDD_GOODS_ADD]: PDD_GOODS_ADD_RESPONSE_KEY,
@@ -2085,6 +2085,9 @@ const PddNeedAccessTokenTypeCollections = [
   PDD_REFUND_INFORMATION_GET,
   PDD_REFUND_LIST_INCREMENT_GET,
   PDD_REFUND_STATUS_CHECK,
+  PDD_LOGISTICS_ONLINE_CREATE,
+  PDD_LOGISTICS_ONLINE_SEND,
+  PDD_LOGISTICS_ONLINE_STATUS_QUERY,
   PDD_CHAT_PROMISE_INFO_GET,
   PDD_ERP_ORDER_SYNC,
   PDD_ORDER_BASIC_LIST_GET,
@@ -2092,9 +2095,6 @@ const PddNeedAccessTokenTypeCollections = [
   PDD_ORDER_LIST_GET,
   PDD_ORDER_NUMBER_LIST_INCREMENT_GET,
   PDD_ORDER_STATUS_GET,
-  PDD_LOGISTICS_ONLINE_CREATE,
-  PDD_LOGISTICS_ONLINE_SEND,
-  PDD_LOGISTICS_ONLINE_STATUS_QUERY,
   PDD_VIRTUAL_MOBILE_CHARGE_NOTIFY,
   PDD_DELETE_DRAFT_COMMIT,
   PDD_DELETE_GOODS_COMMIT,
@@ -2293,16 +2293,16 @@ const PddApiLimiterMapping = {
   [PDD_REFUND_INFORMATION_GET]: PDD_REFUND_INFORMATION_GET_LIMITERS,
   [PDD_REFUND_LIST_INCREMENT_GET]: PDD_REFUND_LIST_INCREMENT_GET_LIMITERS,
   [PDD_REFUND_STATUS_CHECK]: PDD_REFUND_STATUS_CHECK_LIMITERS,
-  [PDD_ERP_ORDER_SYNC]: PDD_ERP_ORDER_SYNC_LIMITERS,
-  [PDD_ORDER_INFORMATION_GET]: PDD_ORDER_INFORMATION_GET_LIMITERS,
-  [PDD_ORDER_LIST_GET]: PDD_ORDER_LIST_GET_LIMITERS,
-  [PDD_ORDER_NUMBER_LIST_INCREMENT_GET]: PDD_ORDER_NUMBER_LIST_INCREMENT_GET_LIMITERS,
-  [PDD_ORDER_STATUS_GET]: PDD_ORDER_STATUS_GET_LIMITERS,
   [PDD_LOGISTICS_ADDRESS_GET]: PDD_LOGISTICS_ADDRESS_GET_LIMITERS,
   [PDD_LOGISTICS_COMPANIES_GET]: PDD_LOGISTICS_COMPANIES_GET_LIMITERS,
   [PDD_LOGISTICS_ISV_TRACE_NOTIFY_SUB]: PDD_LOGISTICS_ISV_TRACE_NOTIFY_SUB_LIMITERS,
   [PDD_LOGISTICS_ONLINE_SEND]: PDD_LOGISTICS_ONLINE_SEND_LIMITERS,
   [PDD_LOGISTICS_ORDERTRACE_GET]: PDD_LOGISTICS_ORDERTRACE_GET_LIMITERS,
+  [PDD_ERP_ORDER_SYNC]: PDD_ERP_ORDER_SYNC_LIMITERS,
+  [PDD_ORDER_INFORMATION_GET]: PDD_ORDER_INFORMATION_GET_LIMITERS,
+  [PDD_ORDER_LIST_GET]: PDD_ORDER_LIST_GET_LIMITERS,
+  [PDD_ORDER_NUMBER_LIST_INCREMENT_GET]: PDD_ORDER_NUMBER_LIST_INCREMENT_GET_LIMITERS,
+  [PDD_ORDER_STATUS_GET]: PDD_ORDER_STATUS_GET_LIMITERS,
   [PDD_VIRTUAL_MOBILE_CHARGE_NOTIFY]: PDD_VIRTUAL_MOBILE_CHARGE_NOTIFY_LIMITERS,
   [PDD_DELETE_DRAFT_COMMIT]: PDD_DELETE_DRAFT_COMMIT_LIMITERS,
   [PDD_DELETE_GOODS_COMMIT]: PDD_DELETE_GOODS_COMMIT_LIMITERS,
@@ -2484,6 +2484,37 @@ export {
   PddRefundStatusCheckRequestInterface,
   PddRefundStatusCheckResponseInterface,
   PddRefundStatusCheckRefundStatusCheckResponseResponseInterface,
+  PDD_LOGISTICS_ADDRESS_GET,
+  PDD_LOGISTICS_ADDRESS_GET_RESPONSE_KEY,
+  PddLogisticsAddressGetRequestInterface,
+  PddLogisticsAddressGetResponseInterface,
+  PddLogisticsAddressGetLogisticsAddressGetResponseResponseInterface,
+  PDD_LOGISTICS_COMPANIES_GET,
+  PDD_LOGISTICS_COMPANIES_GET_RESPONSE_KEY,
+  PddLogisticsCompaniesGetRequestInterface,
+  PddLogisticsCompaniesGetResponseInterface,
+  PddLogisticsCompaniesGetLogisticsCompaniesGetResponseResponseInterface,
+  PDD_LOGISTICS_ISV_TRACE_NOTIFY_SUB,
+  PddLogisticsIsvTraceNotifySubRequestInterface,
+  PddLogisticsIsvTraceNotifySubResponseInterface,
+  PDD_LOGISTICS_ONLINE_CREATE,
+  PDD_LOGISTICS_ONLINE_CREATE_RESPONSE_KEY,
+  PddLogisticsOnlineCreateRequestInterface,
+  PddLogisticsOnlineCreateResponseInterface,
+  PddLogisticsOnlineCreateLogisticsOnlineCreateResponseResponseInterface,
+  PDD_LOGISTICS_ONLINE_SEND,
+  PDD_LOGISTICS_ONLINE_SEND_RESPONSE_KEY,
+  PddLogisticsOnlineSendRequestInterface,
+  PddLogisticsOnlineSendResponseInterface,
+  PddLogisticsOnlineSendLogisticsOnlineSendResponseResponseInterface,
+  PDD_LOGISTICS_ONLINE_STATUS_QUERY,
+  PDD_LOGISTICS_ONLINE_STATUS_QUERY_RESPONSE_KEY,
+  PddLogisticsOnlineStatusQueryRequestInterface,
+  PddLogisticsOnlineStatusQueryResponseInterface,
+  PddLogisticsOnlineStatusQueryLogisticsOnlineStatusQueryResponseResponseInterface,
+  PDD_LOGISTICS_ORDERTRACE_GET,
+  PddLogisticsOrdertraceGetRequestInterface,
+  PddLogisticsOrdertraceGetResponseInterface,
   PDD_CHAT_PROMISE_INFO_GET,
   PDD_CHAT_PROMISE_INFO_GET_RESPONSE_KEY,
   PddChatPromiseInfoGetRequestInterface,
@@ -2517,37 +2548,6 @@ export {
   PddOrderStatusGetRequestInterface,
   PddOrderStatusGetResponseInterface,
   PddOrderStatusGetOrderStatusGetResponseResponseInterface,
-  PDD_LOGISTICS_ADDRESS_GET,
-  PDD_LOGISTICS_ADDRESS_GET_RESPONSE_KEY,
-  PddLogisticsAddressGetRequestInterface,
-  PddLogisticsAddressGetResponseInterface,
-  PddLogisticsAddressGetLogisticsAddressGetResponseResponseInterface,
-  PDD_LOGISTICS_COMPANIES_GET,
-  PDD_LOGISTICS_COMPANIES_GET_RESPONSE_KEY,
-  PddLogisticsCompaniesGetRequestInterface,
-  PddLogisticsCompaniesGetResponseInterface,
-  PddLogisticsCompaniesGetLogisticsCompaniesGetResponseResponseInterface,
-  PDD_LOGISTICS_ISV_TRACE_NOTIFY_SUB,
-  PddLogisticsIsvTraceNotifySubRequestInterface,
-  PddLogisticsIsvTraceNotifySubResponseInterface,
-  PDD_LOGISTICS_ONLINE_CREATE,
-  PDD_LOGISTICS_ONLINE_CREATE_RESPONSE_KEY,
-  PddLogisticsOnlineCreateRequestInterface,
-  PddLogisticsOnlineCreateResponseInterface,
-  PddLogisticsOnlineCreateLogisticsOnlineCreateResponseResponseInterface,
-  PDD_LOGISTICS_ONLINE_SEND,
-  PDD_LOGISTICS_ONLINE_SEND_RESPONSE_KEY,
-  PddLogisticsOnlineSendRequestInterface,
-  PddLogisticsOnlineSendResponseInterface,
-  PddLogisticsOnlineSendLogisticsOnlineSendResponseResponseInterface,
-  PDD_LOGISTICS_ONLINE_STATUS_QUERY,
-  PDD_LOGISTICS_ONLINE_STATUS_QUERY_RESPONSE_KEY,
-  PddLogisticsOnlineStatusQueryRequestInterface,
-  PddLogisticsOnlineStatusQueryResponseInterface,
-  PddLogisticsOnlineStatusQueryLogisticsOnlineStatusQueryResponseResponseInterface,
-  PDD_LOGISTICS_ORDERTRACE_GET,
-  PddLogisticsOrdertraceGetRequestInterface,
-  PddLogisticsOrdertraceGetResponseInterface,
   PDD_VIRTUAL_GAME_SERVER_QUERY,
   PDD_VIRTUAL_GAME_SERVER_QUERY_RESPONSE_KEY,
   PddVirtualGameServerQueryRequestInterface,
@@ -3635,13 +3635,6 @@ export interface PddCollectRequestInterface {
   [PDD_REFUND_INFORMATION_GET]: PddRefundInformationGetRequestInterface;
   [PDD_REFUND_LIST_INCREMENT_GET]: PddRefundListIncrementGetRequestInterface;
   [PDD_REFUND_STATUS_CHECK]: PddRefundStatusCheckRequestInterface;
-  [PDD_CHAT_PROMISE_INFO_GET]: PddChatPromiseInfoGetRequestInterface;
-  [PDD_ERP_ORDER_SYNC]: PddErpOrderSyncRequestInterface;
-  [PDD_ORDER_BASIC_LIST_GET]: PddOrderBasicListGetRequestInterface;
-  [PDD_ORDER_INFORMATION_GET]: PddOrderInformationGetRequestInterface;
-  [PDD_ORDER_LIST_GET]: PddOrderListGetRequestInterface;
-  [PDD_ORDER_NUMBER_LIST_INCREMENT_GET]: PddOrderNumberListIncrementGetRequestInterface;
-  [PDD_ORDER_STATUS_GET]: PddOrderStatusGetRequestInterface;
   [PDD_LOGISTICS_ADDRESS_GET]: PddLogisticsAddressGetRequestInterface;
   [PDD_LOGISTICS_COMPANIES_GET]: PddLogisticsCompaniesGetRequestInterface;
   [PDD_LOGISTICS_ISV_TRACE_NOTIFY_SUB]: PddLogisticsIsvTraceNotifySubRequestInterface;
@@ -3649,6 +3642,13 @@ export interface PddCollectRequestInterface {
   [PDD_LOGISTICS_ONLINE_SEND]: PddLogisticsOnlineSendRequestInterface;
   [PDD_LOGISTICS_ONLINE_STATUS_QUERY]: PddLogisticsOnlineStatusQueryRequestInterface;
   [PDD_LOGISTICS_ORDERTRACE_GET]: PddLogisticsOrdertraceGetRequestInterface;
+  [PDD_CHAT_PROMISE_INFO_GET]: PddChatPromiseInfoGetRequestInterface;
+  [PDD_ERP_ORDER_SYNC]: PddErpOrderSyncRequestInterface;
+  [PDD_ORDER_BASIC_LIST_GET]: PddOrderBasicListGetRequestInterface;
+  [PDD_ORDER_INFORMATION_GET]: PddOrderInformationGetRequestInterface;
+  [PDD_ORDER_LIST_GET]: PddOrderListGetRequestInterface;
+  [PDD_ORDER_NUMBER_LIST_INCREMENT_GET]: PddOrderNumberListIncrementGetRequestInterface;
+  [PDD_ORDER_STATUS_GET]: PddOrderStatusGetRequestInterface;
   [PDD_VIRTUAL_GAME_SERVER_QUERY]: PddVirtualGameServerQueryRequestInterface;
   [PDD_VIRTUAL_MOBILE_CHARGE_NOTIFY]: PddVirtualMobileChargeNotifyRequestInterface;
   [PDD_DELETE_DRAFT_COMMIT]: PddDeleteDraftCommitRequestInterface;
@@ -3909,13 +3909,6 @@ export interface PddCollectRootResponseInterface {
   [PDD_REFUND_INFORMATION_GET]: PddRefundInformationGetResponseInterface;
   [PDD_REFUND_LIST_INCREMENT_GET]: PddRefundListIncrementGetResponseInterface;
   [PDD_REFUND_STATUS_CHECK]: PddRefundStatusCheckResponseInterface;
-  [PDD_CHAT_PROMISE_INFO_GET]: PddChatPromiseInfoGetResponseInterface;
-  [PDD_ERP_ORDER_SYNC]: PddErpOrderSyncResponseInterface;
-  [PDD_ORDER_BASIC_LIST_GET]: PddOrderBasicListGetResponseInterface;
-  [PDD_ORDER_INFORMATION_GET]: PddOrderInformationGetResponseInterface;
-  [PDD_ORDER_LIST_GET]: PddOrderListGetResponseInterface;
-  [PDD_ORDER_NUMBER_LIST_INCREMENT_GET]: PddOrderNumberListIncrementGetResponseInterface;
-  [PDD_ORDER_STATUS_GET]: PddOrderStatusGetResponseInterface;
   [PDD_LOGISTICS_ADDRESS_GET]: PddLogisticsAddressGetResponseInterface;
   [PDD_LOGISTICS_COMPANIES_GET]: PddLogisticsCompaniesGetResponseInterface;
   [PDD_LOGISTICS_ISV_TRACE_NOTIFY_SUB]: PddLogisticsIsvTraceNotifySubResponseInterface;
@@ -3923,6 +3916,13 @@ export interface PddCollectRootResponseInterface {
   [PDD_LOGISTICS_ONLINE_SEND]: PddLogisticsOnlineSendResponseInterface;
   [PDD_LOGISTICS_ONLINE_STATUS_QUERY]: PddLogisticsOnlineStatusQueryResponseInterface;
   [PDD_LOGISTICS_ORDERTRACE_GET]: PddLogisticsOrdertraceGetResponseInterface;
+  [PDD_CHAT_PROMISE_INFO_GET]: PddChatPromiseInfoGetResponseInterface;
+  [PDD_ERP_ORDER_SYNC]: PddErpOrderSyncResponseInterface;
+  [PDD_ORDER_BASIC_LIST_GET]: PddOrderBasicListGetResponseInterface;
+  [PDD_ORDER_INFORMATION_GET]: PddOrderInformationGetResponseInterface;
+  [PDD_ORDER_LIST_GET]: PddOrderListGetResponseInterface;
+  [PDD_ORDER_NUMBER_LIST_INCREMENT_GET]: PddOrderNumberListIncrementGetResponseInterface;
+  [PDD_ORDER_STATUS_GET]: PddOrderStatusGetResponseInterface;
   [PDD_VIRTUAL_GAME_SERVER_QUERY]: PddVirtualGameServerQueryResponseInterface;
   [PDD_VIRTUAL_MOBILE_CHARGE_NOTIFY]: PddVirtualMobileChargeNotifyResponseInterface;
   [PDD_DELETE_DRAFT_COMMIT]: PddDeleteDraftCommitResponseInterface;
@@ -4183,13 +4183,6 @@ export interface PddCollectShortResponseInterface {
   [PDD_REFUND_INFORMATION_GET]: PddRefundInformationGetResponseInterface;
   [PDD_REFUND_LIST_INCREMENT_GET]: PddRefundListIncrementGetRefundIncrementGetResponseResponseInterface;
   [PDD_REFUND_STATUS_CHECK]: PddRefundStatusCheckRefundStatusCheckResponseResponseInterface;
-  [PDD_CHAT_PROMISE_INFO_GET]: PddChatPromiseInfoGetPromiseInfoGetResponseResponseInterface;
-  [PDD_ERP_ORDER_SYNC]: PddErpOrderSyncResponseInterface;
-  [PDD_ORDER_BASIC_LIST_GET]: PddOrderBasicListGetOrderBasicListGetResponseResponseInterface;
-  [PDD_ORDER_INFORMATION_GET]: PddOrderInformationGetOrderInfoGetResponseResponseInterface;
-  [PDD_ORDER_LIST_GET]: PddOrderListGetOrderListGetResponseResponseInterface;
-  [PDD_ORDER_NUMBER_LIST_INCREMENT_GET]: PddOrderNumberListIncrementGetOrderSnIncrementGetResponseResponseInterface;
-  [PDD_ORDER_STATUS_GET]: PddOrderStatusGetOrderStatusGetResponseResponseInterface;
   [PDD_LOGISTICS_ADDRESS_GET]: PddLogisticsAddressGetLogisticsAddressGetResponseResponseInterface;
   [PDD_LOGISTICS_COMPANIES_GET]: PddLogisticsCompaniesGetLogisticsCompaniesGetResponseResponseInterface;
   [PDD_LOGISTICS_ISV_TRACE_NOTIFY_SUB]: PddLogisticsIsvTraceNotifySubResponseInterface;
@@ -4197,6 +4190,13 @@ export interface PddCollectShortResponseInterface {
   [PDD_LOGISTICS_ONLINE_SEND]: PddLogisticsOnlineSendLogisticsOnlineSendResponseResponseInterface;
   [PDD_LOGISTICS_ONLINE_STATUS_QUERY]: PddLogisticsOnlineStatusQueryLogisticsOnlineStatusQueryResponseResponseInterface;
   [PDD_LOGISTICS_ORDERTRACE_GET]: PddLogisticsOrdertraceGetResponseInterface;
+  [PDD_CHAT_PROMISE_INFO_GET]: PddChatPromiseInfoGetPromiseInfoGetResponseResponseInterface;
+  [PDD_ERP_ORDER_SYNC]: PddErpOrderSyncResponseInterface;
+  [PDD_ORDER_BASIC_LIST_GET]: PddOrderBasicListGetOrderBasicListGetResponseResponseInterface;
+  [PDD_ORDER_INFORMATION_GET]: PddOrderInformationGetOrderInfoGetResponseResponseInterface;
+  [PDD_ORDER_LIST_GET]: PddOrderListGetOrderListGetResponseResponseInterface;
+  [PDD_ORDER_NUMBER_LIST_INCREMENT_GET]: PddOrderNumberListIncrementGetOrderSnIncrementGetResponseResponseInterface;
+  [PDD_ORDER_STATUS_GET]: PddOrderStatusGetOrderStatusGetResponseResponseInterface;
   [PDD_VIRTUAL_GAME_SERVER_QUERY]: PddVirtualGameServerQueryGameServerQueryResponseResponseInterface;
   [PDD_VIRTUAL_MOBILE_CHARGE_NOTIFY]: PddVirtualMobileChargeNotifyMobileChargeNotifyResponseResponseInterface;
   [PDD_DELETE_DRAFT_COMMIT]: PddDeleteDraftCommitResponseInterface;
