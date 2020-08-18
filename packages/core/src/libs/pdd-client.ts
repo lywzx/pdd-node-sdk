@@ -133,7 +133,7 @@ export class PddClient<T = any> {
 
     defaultArgs.sign = this.sign((defaultArgs as any) as { [s: string]: string | number });
 
-    let requestPromise = this.apiThrottle.checkApiThrottle(params.type as string).then(() => {
+    let requestPromise = this.apiThrottle.checkApiThrottle(params.type as string, params.access_token).then(() => {
       pddLog('start run pdd client request, type: %s, params: %o', undefined, params.type, params);
       return this.networkAdapter.post(this.options.endpoint, defaultArgs, axiosOptions || {});
     });
