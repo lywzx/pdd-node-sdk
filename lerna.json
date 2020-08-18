@@ -2,6 +2,16 @@
   "packages": [
     "packages/*"
   ],
+  "command": {
+    "publish": {
+      "ignoreChanges": [
+        "**/src/**",
+        "**/test/**",
+        "**/tsconfig.json"
+      ],
+      "allowBranch": ["master", "v2"]
+    }
+  },
   "version": "0.0.0",
   "useWorkspaces": true,
   "npmClient": "yarn"
