@@ -74,6 +74,13 @@ export interface PddOpenKmsSearchBatchOpenKmsSearchBatchResponseResponseInterfac
  **/
 export interface PddOpenKmsSearchBatchOpenKmsSearchBatchResponseSearchTextListResponseInterface {
   /**
+   * @description: 输入的搜索内容
+   * @type: string
+   * @default:
+   **/
+  input: string;
+
+  /**
    * @description: search_text
    * @type: string
    * @default:
@@ -86,4 +93,11 @@ export interface PddOpenKmsSearchBatchOpenKmsSearchBatchResponseSearchTextListRe
    * @default:
    **/
   success: boolean;
+
+  /**
+   * @description: 敏感信息类型. id: 身份证号, phone: 手机号码, simple: 昵称, 地址等
+   * @type: string
+   * @default:
+   **/
+  type: string;
 }

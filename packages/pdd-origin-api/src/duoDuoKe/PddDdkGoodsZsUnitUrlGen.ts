@@ -22,7 +22,7 @@ export interface PddDdkGoodsZsUnitUrlGenRequestInterface {
   pid: string;
 
   /**
-   * @description: 需转链的链接
+   * @description: 需转链的链接，仅支持短链链接
    * @type: string
    * @default:
    **/

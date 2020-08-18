@@ -210,4 +210,25 @@ export interface PddFdsOrderListGetPddFdsOrderListGetResponseOrderListResponseIn
    * @default:
    **/
   receiver_id: string;
+
+  /**
+   * @description: 商家配置的sku编码
+   * @type: string
+   * @default:
+   **/
+  out_sku_sn: string;
+
+  /**
+   * @description: 加价发顺丰状态 0：不是 1：是
+   * @type: number
+   * @default:
+   **/
+  sf_only: number;
+
+  /**
+   * @description: 运单回传状态 0：未回传 1：已回传
+   * @type: number
+   * @default:
+   **/
+  return_status: number;
 }

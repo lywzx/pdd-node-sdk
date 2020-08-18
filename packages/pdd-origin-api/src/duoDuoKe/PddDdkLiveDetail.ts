@@ -192,6 +192,13 @@ export interface PddDdkLiveDetailLiveDetailGetResponseRoomInfoGoodsInfoListRespo
    * @default:
    **/
   zs_duo_id: string | number;
+
+  /**
+   * @description: 商品主图
+   * @type: string
+   * @default:
+   **/
+  goods_image_url: string;
 }
 
 /**

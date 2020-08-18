@@ -227,13 +227,6 @@ export interface PddDdkGoodsRecommendGetGoodsBasicDetailResponseListResponseInte
   goods_desc: string;
 
   /**
-   * @description: 商品实际价格
-   * @type: string | number
-   * @default:
-   **/
-  goods_fact_price: string | number;
-
-  /**
    * @description: 商品详情图列表
    * @type: string
    * @default:
@@ -253,13 +246,6 @@ export interface PddDdkGoodsRecommendGetGoodsBasicDetailResponseListResponseInte
    * @default:
    **/
   goods_image_url: string;
-
-  /**
-   * @description: 商品标准价格
-   * @type: string | number
-   * @default:
-   **/
-  goods_mark_price: string | number;
 
   /**
    * @description: 商品名称
@@ -407,4 +393,11 @@ export interface PddDdkGoodsRecommendGetGoodsBasicDetailResponseListResponseInte
    * @default:
    **/
   share_desc: string;
+
+  /**
+   * @description: 比价行为预判定佣金，需要用户备案
+   * @type: string | number
+   * @default:
+   **/
+  predict_promotion_rate: string | number;
 }

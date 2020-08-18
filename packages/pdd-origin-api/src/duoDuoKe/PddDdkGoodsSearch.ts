@@ -36,7 +36,7 @@ export interface PddDdkGoodsSearchRequestInterface {
   custom_parameters?: string;
 
   /**
-   * @description: 商品ID列表。例如：[123456,123]，当入参带有goods_id_list字段，将不会以opt_id、 cat_id、keyword维度筛选商品
+   * @description: 已经废弃，不再支持该功能
    * @type: Array<string | number>
    * @default:
    **/
@@ -50,7 +50,7 @@ export interface PddDdkGoodsSearchRequestInterface {
   is_brand_goods?: boolean;
 
   /**
-   * @description: 商品关键词，与opt_id字段选填一个或全部填写
+   * @description: 商品关键词，与opt_id字段选填一个或全部填写，不支持纯数字(goods_id)搜索
    * @type: string
    * @default:
    **/
@@ -361,13 +361,6 @@ export interface PddDdkGoodsSearchGoodsSearchResponseGoodsListResponseInterface 
   goods_desc: string;
 
   /**
-   * @description: 商品轮播图
-   * @type: string[]
-   * @default:
-   **/
-  goods_gallery_urls: string[];
-
-  /**
    * @description: 商品id
    * @type: string | number
    * @default:
@@ -590,4 +583,11 @@ export interface PddDdkGoodsSearchGoodsSearchResponseGoodsListResponseInterface 
    * @default:
    **/
   zs_duo_id: string | number;
+
+  /**
+   * @description: 比价行为预判定佣金，需要用户备案
+   * @type: string | number
+   * @default:
+   **/
+  predict_promotion_rate: string | number;
 }

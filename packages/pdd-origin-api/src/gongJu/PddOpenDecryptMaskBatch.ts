@@ -1,5 +1,5 @@
 export const PDD_OPEN_DECRYPT_MASK_BATCH = 'pdd.open.decrypt.mask.batch';
-export const PDD_OPEN_DECRYPT_MASK_BATCH_RESPONSE_KEY = 'open_kms_decrypt_batch_response';
+export const PDD_OPEN_DECRYPT_MASK_BATCH_RESPONSE_KEY = 'open_decrypt_mask_batch_response';
 
 /**
  * 接口名称：批量数据解密脱敏接口
@@ -45,11 +45,11 @@ export interface PddOpenDecryptMaskBatchDataListRequestInterface {
 export interface PddOpenDecryptMaskBatchResponseInterface {
   /**
    * @description: response
-   * @type: PddOpenDecryptMaskBatchOpenKmsDecryptBatchResponseResponseInterface
+   * @type: PddOpenDecryptMaskBatchOpenDecryptMaskBatchResponseResponseInterface
    * @default:
    *
    **/
-  open_kms_decrypt_batch_response: PddOpenDecryptMaskBatchOpenKmsDecryptBatchResponseResponseInterface;
+  open_decrypt_mask_batch_response: PddOpenDecryptMaskBatchOpenDecryptMaskBatchResponseResponseInterface;
 }
 
 /**
@@ -57,14 +57,14 @@ export interface PddOpenDecryptMaskBatchResponseInterface {
  * @default
  * @example
  **/
-export interface PddOpenDecryptMaskBatchOpenKmsDecryptBatchResponseResponseInterface {
+export interface PddOpenDecryptMaskBatchOpenDecryptMaskBatchResponseResponseInterface {
   /**
    * @description: list
-   * @type: PddOpenDecryptMaskBatchOpenKmsDecryptBatchResponseDataDecryptListResponseInterface[]
+   * @type: PddOpenDecryptMaskBatchOpenDecryptMaskBatchResponseDataDecryptListResponseInterface[]
    * @default:
    *
    **/
-  data_decrypt_list: PddOpenDecryptMaskBatchOpenKmsDecryptBatchResponseDataDecryptListResponseInterface[];
+  data_decrypt_list: PddOpenDecryptMaskBatchOpenDecryptMaskBatchResponseDataDecryptListResponseInterface[];
 }
 
 /**
@@ -72,7 +72,21 @@ export interface PddOpenDecryptMaskBatchOpenKmsDecryptBatchResponseResponseInter
  * @default
  * @example
  **/
-export interface PddOpenDecryptMaskBatchOpenKmsDecryptBatchResponseDataDecryptListResponseInterface {
+export interface PddOpenDecryptMaskBatchOpenDecryptMaskBatchResponseDataDecryptListResponseInterface {
+  /**
+   * @description: 解密tag，对于订单数据是订单号
+   * @type: string
+   * @default:
+   **/
+  data_tag: string;
+
+  /**
+   * @description: 1、虚拟卡密;2、虚拟卡号;3、支付商品编码;4、支付单号;5、收件人;6、收件人手机号;7、收件人完整地址;8、收件人详细地址;9、快递单号;10、身份证号;11、身份证姓名
+   * @type: number
+   * @default:
+   **/
+  data_type: number;
+
   /**
    * @description: 解密结果
    * @type: string

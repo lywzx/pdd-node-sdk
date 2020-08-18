@@ -456,4 +456,18 @@ export interface PddDdkGoodsDetailGoodsDetailResponseGoodsDetailsResponseInterfa
    * @default:
    **/
   video_urls: string[];
+
+  /**
+   * @description: 比价行为预判定佣金，需要用户备案
+   * @type: string | number
+   * @default:
+   **/
+  predict_promotion_rate: string | number;
+
+  /**
+   * @description: 优惠标签列表
+   * @type: string[]
+   * @default:
+   **/
+  unified_tags: string[];
 }

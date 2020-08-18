@@ -93,4 +93,25 @@ export interface PddOpenKmsEncryptBatchOpenKmsEncryptBatchResponseDataEncryptLis
    * @default:
    **/
   success: boolean;
+
+  /**
+   * @description: 明文数据
+   * @type: string
+   * @default:
+   **/
+  data: string;
+
+  /**
+   * @description: 是否支持搜索
+   * @type: boolean
+   * @default:
+   **/
+  search: boolean;
+
+  /**
+   * @description: 敏感信息类型. id: 身份证号, phone: 手机号码, simple: 昵称, 地址等
+   * @type: string
+   * @default:
+   **/
+  type: string;
 }

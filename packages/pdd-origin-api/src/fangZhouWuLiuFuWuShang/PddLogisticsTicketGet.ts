@@ -15,13 +15,6 @@ export const PDD_LOGISTICS_TICKET_GET_LIMITERS = [
  **/
 export interface PddLogisticsTicketGetRequestInterface {
   /**
-   * @description: 必填，最后更新时间开始时间的时间戳，指格林威治时间 1970 年 01 月 01 日 00 时 00 分 00 秒(北京时间 1970 年 01 月 01 日 08 时 00 分 00 秒)起至现在的总秒数。示例：1523762012。
-   * @type: string | number
-   * @default:
-   **/
-  start_updated_at: string | number;
-
-  /**
    * @description: 必填，最后更新时间结束时间的时间戳，指格林威治时间 1970 年 01 月 01 日 00 时 00 分 00 秒(北京时间 1970 年 01 月 01 日 08 时 00 分 00 秒)起至现在的总秒数 PS：开始时间结束时间间距不超过 30 分钟。示例：1523763012。
    * @type: string | number
    * @default:
@@ -31,16 +24,23 @@ export interface PddLogisticsTicketGetRequestInterface {
   /**
    * @description: 返回页码 默认 1，页码从 1 开始 PS：当前采用分页返回，数量和页数会一起传，如果不传，则采用 默认值。注：必须采用倒序的分页方式（从最后一页往回取）才能避免漏单问题
    * @type: number
-   * @default:
+   * @default: 1
    **/
   page?: number;
 
   /**
    * @description: 返回数量，默认 100。最大 100
    * @type: number
-   * @default:
+   * @default: 1
    **/
   page_size?: number;
+
+  /**
+   * @description: 必填，最后更新时间开始时间的时间戳，指格林威治时间 1970 年 01 月 01 日 00 时 00 分 00 秒(北京时间 1970 年 01 月 01 日 08 时 00 分 00 秒)起至现在的总秒数。示例：1523762012。
+   * @type: string | number
+   * @default:
+   **/
+  start_updated_at: string | number;
 }
 
 /**
@@ -92,6 +92,13 @@ export interface PddLogisticsTicketGetLogisticsTicketGetResponseLogisticsTicketL
    * @default:
    **/
   attach_url: string[];
+
+  /**
+   * @description: 末端品牌代码
+   * @type: string
+   * @default:
+   **/
+  cabinet_code: string;
 
   /**
    * @description: 赔付金额(单位:分)
@@ -171,6 +178,13 @@ export interface PddLogisticsTicketGetLogisticsTicketGetResponseLogisticsTicketL
   handle_result: string;
 
   /**
+   * @description: 寄件单号
+   * @type: number
+   * @default:
+   **/
+  mail_order_sn: number;
+
+  /**
    * @description: 订单金额
    * @type: string | number
    * @default:
@@ -239,6 +253,13 @@ export interface PddLogisticsTicketGetLogisticsTicketGetResponseLogisticsTicketL
    * @default:
    **/
   status: number;
+
+  /**
+   * @description: 物流投诉标签
+   * @type: number[]
+   * @default:
+   **/
+  sub_type_ids: number[];
 
   /**
    * @description: 工单id

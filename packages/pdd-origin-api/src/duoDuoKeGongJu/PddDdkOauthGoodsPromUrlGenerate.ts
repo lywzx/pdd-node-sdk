@@ -111,6 +111,13 @@ export interface PddDdkOauthGoodsPromUrlGenerateRequestInterface {
    * @default:
    **/
   force_duo_id?: boolean;
+
+  /**
+   * @description: 是否生成带授权的单品链接。如果未授权，则会走授权流程
+   * @type: boolean
+   * @default:
+   **/
+  generate_authority_url?: boolean;
 }
 
 /**
