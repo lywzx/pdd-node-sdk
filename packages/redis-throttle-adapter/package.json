@@ -31,5 +31,6 @@
     "@pin-duo-duo/core": "^0.0.1-alpha.0",
     "@types/redis": "^2.8.25",
     "redis": "^3.0.2"
-  }
+  },
+  "gitHead": "23089d0926fe7014d086ab9831410f644c085ad0"
 }

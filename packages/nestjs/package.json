@@ -36,5 +36,6 @@
     "@nestjs/core": "^7.4.2",
     "@types/lodash": "^4.14.159",
     "reflect-metadata": "^0.1.13"
-  }
+  },
+  "gitHead": "23089d0926fe7014d086ab9831410f644c085ad0"
 }
