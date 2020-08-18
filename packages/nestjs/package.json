@@ -30,13 +30,13 @@
   },
   "dependencies": {
     "@nestjs/common": "^7.4.2",
-    "@pin-duo-duo/core": "^0.0.1-alpha.0",
     "lodash": "^4.17.20"
   },
   "devDependencies": {
     "@nestjs/core": "^7.4.2",
     "@types/lodash": "^4.14.159",
-    "reflect-metadata": "^0.1.13"
+    "reflect-metadata": "^0.1.13",
+    "@pin-duo-duo/core": "^0.0.1-alpha.0"
   },
   "gitHead": "211b14d8c045925f68f393873ac0ecc51370d023"
 }
