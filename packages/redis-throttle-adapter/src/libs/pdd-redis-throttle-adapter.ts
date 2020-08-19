@@ -16,11 +16,11 @@ export class PddRedisThrottleAdapter extends PddApiThrottleAdapter {
    * @param key
    * @param ttl
    */
-  public async lock(key: string, ttl?: number): Promise<ILock> {
+  public async lock(key: string, ttl = 1000): Promise<ILock> {
     const result = await this.callRedisMethod('incr', key);
     const resultNum = typeof result === 'string' ? parseInt(result, 10) : result;
     let timeout = ttl;
-    if (resultNum === 1 && typeof ttl === 'number') {
+    if (resultNum === 1) {
       await this.callRedisMethod('pexpire', key, ttl);
     } else {
       timeout = await this.callRedisMethod('pttl', key);

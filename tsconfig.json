@@ -10,6 +10,7 @@
     "lib": ["es6"],
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
+    "downlevelIteration": true
   },
   "include": ["packages", "examples", "scripts"],
   "exclude": [

@@ -37,7 +37,7 @@ import { RetryOptionsInterface } from '../interfaces';
 import { PddApiCacheAbstract } from './pdd-api-cache.abstract';
 import { checkTypeIsNeedAccessToken } from './pdd-api-check.tools';
 import { PddApiThrottle } from './pdd-api-throttle';
-import { PddApiWithoutThrottleAdapter } from './pdd-api-without-throttle-adapter';
+import { PddApiMemoryThrottleAdapter } from './pdd-api-memory-throttle-adapter';
 import { PddClientAccessAuth } from './pdd-client-access-auth.abstract';
 import { defaultRetryOptions } from './pdd-client-default';
 import { APPLICATION_JSON } from '../constant/content-type';
@@ -64,7 +64,7 @@ export class PddClient<T = any> {
     public options: PddClientOptionsInterface,
     public pddClientAuth?: PddClientAccessAuth<T>,
     protected pddApiCache?: PddApiCacheAbstract,
-    protected apiThrottle: PddApiThrottle = new PddApiThrottle(new PddApiWithoutThrottleAdapter()),
+    protected apiThrottle: PddApiThrottle = new PddApiThrottle(new PddApiMemoryThrottleAdapter()),
     protected networkAdapter: NetworkAdapterInterface = NetworkAdapter
   ) {
     if (!options.clientId || !options.clientSecret) {

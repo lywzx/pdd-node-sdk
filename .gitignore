@@ -8,3 +8,4 @@ lib/
 coverage.lcov
 coverage/
 /report.*.json
+/lerna-*.log

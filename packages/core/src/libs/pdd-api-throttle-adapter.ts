@@ -9,7 +9,7 @@ export abstract class PddApiThrottleAdapter {
    * @param key 生成的key
    * @param ttl 毫秒为单位
    */
-  public abstract lock(key: string, ttl?: number): Promise<ILock>;
+  public abstract lock(key: string, ttl: number): Promise<ILock>;
 
   /**
    * 如果锁并未触发逻辑，则此时需要释放锁资源，减少数字
