@@ -31,23 +31,25 @@ export class PddApiMemoryThrottleAdapter extends PddApiThrottleAdapter {
    */
   public lock(key: string, ttl = 1000): Promise<ILock> {
     let saved: cachedType = {
-      triggerTotal: 0,
+      triggerTotal: 1,
       timeoutAt: Date.now() + ttl,
     };
-    let timeout;
+    let timeout = ttl;
     if (this.memoryCached.has(key)) {
       const readFromCached = this.memoryCached.get(key) as cachedType;
       timeout = readFromCached.timeoutAt - Date.now();
       if (timeout >= 0) {
         saved = readFromCached;
         saved.triggerTotal += 1;
+      } else {
+        timeout = ttl;
       }
     }
 
     this.memoryCached.set(key, saved);
 
     clearTimeout(this.timer);
-    setTimeout(this.clean, timeout || ttl);
+    this.timer = setTimeout(this.clean, Math.max(timeout, 0));
     return Promise.resolve({
       triggerTotal: saved.triggerTotal,
       timeout: timeout || ttl,
