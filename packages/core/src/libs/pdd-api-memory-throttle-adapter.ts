@@ -47,6 +47,7 @@ export class PddApiMemoryThrottleAdapter extends PddApiThrottleAdapter {
     }
 
     this.memoryCached.set(key, saved);
+    this.clearList.add(key);
 
     clearTimeout(this.timer);
     this.timer = setTimeout(this.clean, Math.max(timeout, 0));
@@ -56,14 +57,18 @@ export class PddApiMemoryThrottleAdapter extends PddApiThrottleAdapter {
     });
   }
 
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  /**
+   * 解锁
+   * @param {string} key
+   */
   unLock(key: string): Promise<boolean> {
     if (this.memoryCached.has(key)) {
       const saved = this.memoryCached.get(key) as cachedType;
-      saved.triggerTotal--;
+      saved.triggerTotal = Math.max(saved.triggerTotal - 1, 0);
       this.memoryCached.set(key, saved);
+      return Promise.resolve(true);
     }
-    return Promise.resolve(true);
+    return Promise.resolve(false);
   }
 
   /**

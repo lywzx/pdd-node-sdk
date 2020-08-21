@@ -1,6 +1,7 @@
 import get from 'lodash/get';
+import { PddBaseException } from './pdd-base.exception';
 
-export class PddException extends Error {
+export class PddException extends PddBaseException {
   constructor(public errObj: PddErrorResponse) {
     super(JSON.stringify(errObj));
     if (Error.captureStackTrace) {

@@ -1,30 +1,17 @@
 import { PDD_CHAT_PROMISE_INFO_GET, PDD_ERP_ORDER_SYNC } from '../../src/index';
 import { expect } from 'chai';
-import { ILock } from '../../src/interfaces';
 import { PddApiThrottle } from '../../src/libs';
 import * as util from '../../src/libs/pdd-api-check.tools';
 import { replace, fake, restore, stub } from 'sinon';
 import { times } from 'lodash';
+import { PddApiMemoryThrottleAdapter } from '../../src/libs/pdd-api-memory-throttle-adapter';
 
 describe('pdd-api-throttle test', function() {
   let pddApiThrottleInstance: PddApiThrottle;
   before(function() {
-    pddApiThrottleInstance = new PddApiThrottle(
-      {
-        lock(key: string, ttl?: number): Promise<ILock> {
-          return Promise.resolve({
-            triggerTotal: 0,
-            timeout: 0,
-          });
-        },
-        unLock(key: string): Promise<boolean> {
-          return Promise.resolve(true);
-        },
-      },
-      {
-        timeout: 3,
-      }
-    );
+    pddApiThrottleInstance = new PddApiThrottle(new PddApiMemoryThrottleAdapter(), {
+      timeout: 3,
+    });
   });
 
   it('#constructor', function() {
@@ -42,7 +29,7 @@ describe('pdd-api-throttle test', function() {
         {
           limiterLevel: 3,
           timeRange: 10,
-          times: 1,
+          times: 3,
         },
       ]);
       replace(util, 'getTypeApiLimiter', fk);

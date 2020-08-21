@@ -1,20 +1,22 @@
 {
   "extends": "@istanbuljs/nyc-config-typescript",
-  "all": true,
-  "check-coverage": false,
   "include": [
     "packages/**/*.ts"
+  ],
+  "exclude":[
+    "packages/**/*.d.ts",
+    "packages/**/*.spec.ts"
   ],
   "extension": [
     ".ts"
   ],
-  "require": [
-    "ts-node/register",
-    "tsconfig-paths/register"
-  ],
   "reporter": [
+    "lcov",
     "text-summary",
     "html"
   ],
-  "sourceMap": false
+  "check-coverage": true,
+  "sourceMap": true,
+  "instrument": true,
+  "all": true
 }
