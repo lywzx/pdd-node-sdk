@@ -7,7 +7,7 @@ export class PddException extends PddBaseException {
     if (Error.captureStackTrace) {
       Error.captureStackTrace(this, this.constructor);
     }
-    this.name = this.constructor.name;
+    Object.setPrototypeOf(this, PddException.prototype);
   }
 
   /**

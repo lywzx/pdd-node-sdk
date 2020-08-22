@@ -9,6 +9,6 @@ export class PddRequestWaitingTimeoutException extends PddBaseException {
     if (Error.captureStackTrace) {
       Error.captureStackTrace(this, this.constructor);
     }
-    this.name = this.constructor.name;
+    Object.setPrototypeOf(this, PddRequestWaitingTimeoutException.prototype);
   }
 }
