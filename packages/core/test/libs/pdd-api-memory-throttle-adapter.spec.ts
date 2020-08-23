@@ -64,9 +64,8 @@ describe('pdd-api-memory-throttle-adapter test util', function() {
     });
 
     it('lock timeout should auto clean', async function() {
-      const key2 = uniqueId('random_');
       await instance.lock(key, 100);
-      await instance.lock(key2, 200);
+      await instance.lock(key, 200);
       await sleep(101);
       const result = await instance.lock(key, 100);
       expect(result.timeout).to.be.eq(100);

@@ -12,11 +12,7 @@ export function checkRequired(params: object, keys: string | string[]) {
   for (let i = 0, l = keys.length; i < l; i++) {
     const k = keys[i];
     if (!params.hasOwnProperty(k)) {
-      try {
-        throw new PddRequestParamsMissingException('ParameterMissingError', '`' + k + '` required');
-      } catch (e) {
-        return e;
-      }
+      return new PddRequestParamsMissingException('ParameterMissingError', '`' + k + '` required');
     }
   }
 }

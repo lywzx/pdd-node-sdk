@@ -4,10 +4,10 @@ import { PddBaseException } from './pdd-base.exception';
 export class PddException extends PddBaseException {
   constructor(public errObj: PddErrorResponse) {
     super(JSON.stringify(errObj));
+    Object.setPrototypeOf(this, PddException.prototype);
     if (Error.captureStackTrace) {
       Error.captureStackTrace(this, this.constructor);
     }
-    Object.setPrototypeOf(this, PddException.prototype);
   }
 
   /**

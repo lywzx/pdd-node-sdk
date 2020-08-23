@@ -5,6 +5,7 @@ import { isDevModel } from './dev';
  * get pdd log client
  */
 let pddLogClient: Debugger | null;
+/* istanbul ignore next */
 export function getPddLogClient() {
   if (typeof pddLogClient === 'undefined') {
     try {
@@ -27,6 +28,7 @@ export function getPddLogClient() {
  * @param color
  * @param args
  */
+/* istanbul ignore next */
 export function pddLog(formatter: any, color?: string, ...args: any[]) {
   const logClient = getPddLogClient();
   if (logClient) {

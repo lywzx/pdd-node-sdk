@@ -1,16 +1,12 @@
-import {
-  PDD_NEXTONE_LOGISTICS_WAREHOUSE_UPDATE,
-  PDD_ERP_ORDER_SYNC,
-  PDD_CHAT_PROMISE_INFO_GET,
-} from '@pin-duo-duo/pdd-origin-api';
 import { ILock, PddApiLimiterLevel, PddBaseException, PddRequestWaitingTimeoutException } from '../../src/index';
 import { expect } from 'chai';
 import { PddApiThrottle } from '../../src/libs';
 import * as util from '../../src/libs/pdd-api-check.tools';
 import { replace, fake, restore, stub } from 'sinon';
-import { times } from 'lodash';
+import { times, max, map } from 'lodash';
 import { PddApiMemoryThrottleAdapter } from '../../src/libs/pdd-api-memory-throttle-adapter';
 import { uniqueId } from 'lodash';
+import { sleep } from '../../src/util';
 
 /**
  * 生成api的key，保证不重复
@@ -158,7 +154,7 @@ describe('pdd-api-throttle test', function() {
 
     it('should throw error when waiting timeout', async function() {
       const instance = new PddApiThrottle(new PddApiMemoryThrottleAdapter(), {
-        timeout: 50,
+        timeout: 49,
       });
       const fk = fake.returns([
         {
@@ -178,7 +174,7 @@ describe('pdd-api-throttle test', function() {
         await instance.checkApiThrottle(apiKey, apiAccessToken);
         throw new Error('unknown error');
       } catch (e) {
-        expect(fk.callCount).to.be.eq(4);
+        expect(fk.callCount).to.be.eq(3);
         expect(e).to.be.instanceOf(PddRequestWaitingTimeoutException);
         expect(e).to.be.instanceOf(PddBaseException);
       }

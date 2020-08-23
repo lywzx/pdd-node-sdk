@@ -43,40 +43,29 @@ export function guessPddClientExecuteParams<T>(
 ] {
   const result: [any, any, any, any] = [undefined, undefined, undefined, undefined];
 
-  let startIndex = -1;
   for (let i = 0, j = args.length; i < j; i++) {
     const current = args[i];
     const currentType = typeof current;
-    if (startIndex === -1 && currentType === 'undefined') {
-      continue;
-    }
-    // 挑出了callback
-    if (startIndex === -1 && currentType === 'function') {
-      startIndex = i;
-      result.splice(i, 4 - i);
-      result[3] = current as AsyncResultCallbackInterface<any, never>;
-      continue;
+
+    if (currentType === 'function') {
+      result[3] = current;
+      break;
     }
 
-    if (i < 1) {
-      continue;
-    }
-    if (typeof result[2] === 'undefined' && isCacheOptionConfig(current)) {
-      result[2] = current;
-      continue;
-    }
-    if (i < 2) {
-      continue;
-    }
-    if (typeof result[1] === 'undefined' && isRetryOptionConfig(current)) {
+    if (typeof result[1] === 'undefined' && i < 1 && isRetryOptionConfig(current)) {
       result[1] = current;
       continue;
     }
-    if (i < 3) {
+
+    if (typeof result[2] === 'undefined' && i < 2 && isCacheOptionConfig(current)) {
+      result[2] = current;
       continue;
     }
-    result[0] = current;
+
+    if (typeof result[0] === 'undefined' && i === 0) {
+      result[0] = current;
+    }
   }
 
-  return result!;
+  return result;
 }

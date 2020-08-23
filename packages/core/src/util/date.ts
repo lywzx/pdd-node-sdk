@@ -13,7 +13,7 @@ export function formatDate(d: Date, mask: string): string {
     }
     return zeros + value;
   };
-  return mask.replace(/"[^"]*"|'[^']*'|\b(?:d{1,4}|m{1,4}|yy(?:yy)?|([hHMstT])\1?|[lLZ])\b/g, ($0: any) => {
+  return mask.replace(/"[^"]*"|'[^']*'|\b(?:d{1,4}|m{1,4}|M{1,4}|yy(?:yy)?|([hHMstT])\1?|[lLZ])\b/g, ($0: any) => {
     switch ($0) {
       case 'd':
         return d.getDate();
@@ -89,5 +89,5 @@ export function formatDate(d: Date, mask: string): string {
  * @param dt
  */
 export function timestamp(dt = new Date()) {
-  return parseInt((dt.getTime() / 1000).toString(), 10);
+  return Date.parse(dt.toString()) / 1000;
 }

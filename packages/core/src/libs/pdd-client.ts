@@ -42,7 +42,7 @@ import { PddClientAccessAuth } from './pdd-client-access-auth.abstract';
 import { defaultRetryOptions } from './pdd-client-default';
 import { APPLICATION_JSON } from '../constant/content-type';
 import { pddLog, getPddLogClient } from '../util/debug';
-import { PddAccessTokenMissingException, PddException } from '../exceptions';
+import { PddAccessTokenMissingException, PddException, PddRequestParamsMissingException } from '../exceptions';
 
 type PddClientGenerateType =
   | string
@@ -352,10 +352,10 @@ export class PddClient<T = any> {
     callback?: AsyncResultCallbackInterface<Res, never>
   ): Promise<Res> | void {
     const [apiAccessOptions, apiRetryOptions, apiCacheOptions, apiCallback] = guessPddClientExecuteParams<T>([
-      callback,
-      cacheOptions,
-      retryOptions,
       accessOptions,
+      retryOptions,
+      cacheOptions,
+      callback,
     ]);
 
     // 是否需要传入access token信息

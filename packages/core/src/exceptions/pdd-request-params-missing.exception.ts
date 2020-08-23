@@ -6,9 +6,9 @@ import { PddBaseException } from './pdd-base.exception';
 export class PddRequestParamsMissingException extends PddBaseException {
   constructor(public field: string, message: string) {
     super(`${field} ${message}`);
+    Object.setPrototypeOf(this, PddRequestParamsMissingException.prototype);
     if (Error.captureStackTrace) {
       Error.captureStackTrace(this, this.constructor);
     }
-    Object.setPrototypeOf(this, PddRequestParamsMissingException.prototype);
   }
 }
