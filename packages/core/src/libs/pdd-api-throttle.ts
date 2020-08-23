@@ -26,7 +26,6 @@ export class PddApiThrottle {
     if (!apiRateLimit) {
       return null;
     }
-    const startNow = Date.now();
     const result = await Promise.all(
       map(apiRateLimit, limiter => {
         const saveKey = this.getSaveKey(api, limiter.limiterLevel, ak);
@@ -38,6 +37,7 @@ export class PddApiThrottle {
       })
     );
 
+    const startNow = Date.now();
     let maxTimeout: number | undefined;
     const unLockKey: string[] = [];
     for (let i = 0, j = result.length; i < j; i++) {
@@ -51,22 +51,25 @@ export class PddApiThrottle {
       }
     }
 
-    if (typeof maxTimeout === 'number' && maxTimeout >= 0 && unLockKey.length) {
+    const willWait = typeof maxTimeout === 'number' && maxTimeout >= 0;
+    if (willWait && unLockKey.length) {
       await Promise.all(map(unLockKey, lock => this.adapter.unLock(lock)));
     }
 
     const waitingTime = Date.now() - startAt + (maxTimeout || 0);
-    if (waitingTime >= this.options.timeout) {
+    if (willWait && waitingTime >= this.options.timeout) {
       throw new PddRequestWaitingTimeoutException(api, waitingTime);
     }
 
-    if (typeof maxTimeout !== 'undefined') {
+    if (willWait) {
       const now = Date.now();
-      const waitingTime = now - startAt;
-
-      const realTimeout = Math.min(maxTimeout - (now - startNow), this.options.timeout - waitingTime);
-      if (realTimeout > 0) {
-        await sleep(realTimeout);
+      const realWaitTimeout = Math.min(
+        (maxTimeout as number) - (now - startNow),
+        this.options.timeout - (now - startAt)
+      );
+      if (realWaitTimeout >= 0) {
+        // 时间绝对相等时，可能会多一次无效的重试，暂时默认再加1ms
+        await sleep(realWaitTimeout + 1);
       }
       return this.checkApiThrottle(api, ak, startAt);
     }

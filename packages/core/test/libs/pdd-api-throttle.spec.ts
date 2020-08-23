@@ -26,13 +26,11 @@ describe('pdd-api-throttle test', function() {
   let pddApiThrottleInstance: PddApiThrottle;
   let apiKey: string;
   let apiAccessToken: string;
-  before(function() {
+
+  beforeEach(function() {
     pddApiThrottleInstance = new PddApiThrottle(new PddApiMemoryThrottleAdapter(), {
       timeout: 1000,
     });
-  });
-
-  beforeEach(function() {
     apiKey = generateApiKey();
     apiAccessToken = generateAccessToken();
   });
@@ -83,17 +81,19 @@ describe('pdd-api-throttle test', function() {
           return pddApiThrottleInstance.checkApiThrottle(apiKey, apiAccessToken);
         })
       );
-      expect(fk.callCount).to.be.eq(2);
+      const callCount = fk.callCount;
       const reBegin = Date.now();
-      expect(reBegin - startTime).to.be.lessThan(51);
       await Promise.all(
         times(1).map(() => {
           return pddApiThrottleInstance.checkApiThrottle(apiKey, apiAccessToken);
         })
       );
-      expect(fk.callCount).to.be.eq(4);
-      expect(Date.now() - startTime).to.be.greaterThan(49);
+      const reCallCount = fk.callCount;
       restore();
+      expect(callCount).to.be.eq(2);
+      expect(reBegin - startTime).to.be.lessThan(51);
+      expect(reCallCount).to.be.eq(4);
+      expect(Date.now() - startTime).to.be.greaterThan(49);
     });
 
     it('with api mix throttle should get min throttle', async function() {
@@ -116,12 +116,13 @@ describe('pdd-api-throttle test', function() {
           return pddApiThrottleInstance.checkApiThrottle(apiKey, apiAccessToken);
         })
       );
+      const runTotal = fk.callCount;
+      restore();
       expect(result).to.be.eqls([null, null, null, null]);
-      expect(fk.callCount).to.be.eq(5);
+      expect(runTotal).to.be.eq(5);
       const runningTime = Date.now() - start;
       expect(runningTime).to.be.greaterThan(99);
       expect(runningTime).to.be.lessThan(201);
-      restore();
     });
 
     it('should api throttle should get mix throttle', async function() {
@@ -144,12 +145,14 @@ describe('pdd-api-throttle test', function() {
           return pddApiThrottleInstance.checkApiThrottle(apiKey, apiAccessToken);
         })
       );
-      expect(fk.callCount).to.be.eq(2);
+      const lastRunTotal = fk.callCount;
       await pddApiThrottleInstance.checkApiThrottle(apiKey, apiAccessToken);
+      const endRunTotal = fk.callCount;
+      restore();
+      expect(lastRunTotal).to.be.eq(2);
       const runningTime = Date.now() - start;
       expect(runningTime).to.be.greaterThan(99);
-      expect(fk.callCount).to.be.eq(4);
-      restore();
+      expect(endRunTotal).to.be.eq(4);
     });
 
     it('should throw error when waiting timeout', async function() {
@@ -169,16 +172,26 @@ describe('pdd-api-throttle test', function() {
           return instance.checkApiThrottle(apiKey, apiAccessToken);
         })
       );
-      expect(fk.callCount).to.be.eq(2);
+      const total = fk.callCount;
+      let running = false;
       try {
         await instance.checkApiThrottle(apiKey, apiAccessToken);
+        if (!running) {
+          running = true;
+          restore();
+        }
         throw new Error('unknown error');
       } catch (e) {
-        expect(fk.callCount).to.be.eq(3);
+        const callTotal = fk.callCount;
+        if (!running) {
+          running = true;
+          restore();
+        }
+        expect(callTotal).to.be.eq(3);
         expect(e).to.be.instanceOf(PddRequestWaitingTimeoutException);
         expect(e).to.be.instanceOf(PddBaseException);
       }
-      restore();
+      expect(total).to.be.eq(2);
     });
   });
 });
