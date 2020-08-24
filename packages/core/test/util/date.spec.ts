@@ -36,11 +36,12 @@ describe('#formatDate test util', function() {
   });
 
   it('should get hours', function() {
+    const timeZone = new Date().getTimezoneOffset() / 60;
     for (const [f, r] of [
-      ['h', '9'],
-      ['hh', '09'],
-      ['H', '21'],
-      ['HH', '21'],
+      ['h', (1 - timeZone).toString()],
+      ['hh', (1 - timeZone).toString().padStart(2, '0')],
+      ['H', (13 - timeZone).toString()],
+      ['HH', (13 - timeZone).toString().padStart(2, '0')],
     ]) {
       expect(formatDate(date, f)).to.be.eq(r);
     }
