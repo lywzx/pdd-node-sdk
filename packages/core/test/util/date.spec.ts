@@ -5,7 +5,7 @@ import { times, unzip } from 'lodash';
 describe('#formatDate test util', function() {
   let date: Date;
   before(function() {
-    date = new Date('Sun Aug 02 2020 21:01:34 GMT+0800');
+    date = new Date(1596373294000);
   });
 
   it('should get date', function() {
