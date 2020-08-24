@@ -10,5 +10,6 @@ export class PddRequestParamsMissingException extends PddBaseException {
     if (Error.captureStackTrace) {
       Error.captureStackTrace(this, this.constructor);
     }
+    this.name = PddRequestParamsMissingException.name;
   }
 }

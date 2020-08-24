@@ -1,13 +1,17 @@
 import get from 'lodash/get';
 import { PddBaseException } from './pdd-base.exception';
 
-export class PddException extends PddBaseException {
+/**
+ * 拼多多后台响应错误
+ */
+export class PddResponseException extends PddBaseException {
   constructor(public errObj: PddErrorResponse) {
     super(JSON.stringify(errObj));
-    Object.setPrototypeOf(this, PddException.prototype);
+    Object.setPrototypeOf(this, PddResponseException.prototype);
     if (Error.captureStackTrace) {
       Error.captureStackTrace(this, this.constructor);
     }
+    this.name = PddResponseException.name;
   }
 
   /**

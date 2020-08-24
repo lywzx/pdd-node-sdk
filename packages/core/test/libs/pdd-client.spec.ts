@@ -1,8 +1,11 @@
 import { PDD_GOODS_ADD, PDD_GOODS_CATS_GET } from '@pin-duo-duo/pdd-origin-api';
 import { expect } from 'chai';
 import { PddRequestParamsMissingException } from '../../src/exceptions';
+import { PddResponseException } from '../../src/exceptions/pdd-response.exception';
 import { getTypeApiLimiter, NetworkAdapter, PddClient } from '../../src/libs';
-import { replace, fake, restore } from 'sinon';
+import { replace, fake, restore, stub } from 'sinon';
+import * as debug from '../../src/util/debug';
+import { last } from 'lodash';
 
 describe('pdd-client test util', function() {
   let pddClient: PddClient;
@@ -54,15 +57,73 @@ describe('pdd-client test util', function() {
       });
     });
 
-    it('should ', async function() {
+    it('pdd request with value', async function() {
       const fk = fake.returns(1);
       replace(NetworkAdapter, 'post', fk);
       // eslint-disable-next-line @typescript-eslint/camelcase
       const result = await pddClient.request({ type: PDD_GOODS_CATS_GET, parent_cat_id: 1, c: { a: 1 } });
-
-      expect(result).to.be.eq(1);
-
       restore();
+      expect(result).to.be.eq(1);
+    });
+
+    it('pdd request with value when debug is enabled', async function() {
+      const fkResult = fake.returns(1);
+      replace(NetworkAdapter, 'post', fkResult);
+      const fkGetClientFn = fake.returns({
+        enabled: true,
+        color: '',
+      });
+      const fkLog = fake.returns(null);
+      replace(debug, 'getPddLogClient', fkGetClientFn);
+      replace(debug, 'pddLog', fkLog);
+      // eslint-disable-next-line @typescript-eslint/camelcase
+      const result = await pddClient.request({ type: PDD_GOODS_CATS_GET, parent_cat_id: 1, c: { a: 1 } });
+      restore();
+      expect(fkLog.callCount).to.be.eq(2);
+      expect(result).to.be.eq(1);
+    });
+
+    it('pdd request with exception when debug is enabled', async function() {
+      const fkResult = fake.throws(new Error('unknown'));
+      replace(NetworkAdapter, 'post', fkResult);
+      const fkGetClientFn = fake.returns({
+        enabled: true,
+        color: '',
+      });
+      const fkLog = fake.returns(null);
+      replace(debug, 'getPddLogClient', fkGetClientFn);
+      replace(debug, 'pddLog', fkLog);
+      let isRestore = false;
+      try {
+        // eslint-disable-next-line @typescript-eslint/camelcase
+        await pddClient.request({ type: PDD_GOODS_CATS_GET, parent_cat_id: 1, c: { a: 1 } });
+        if (!isRestore) {
+          isRestore = true;
+          restore();
+        }
+        throw new Error('app');
+      } catch (e) {
+        if (!isRestore) {
+          isRestore = true;
+          restore();
+        }
+        expect(e.message).to.be.eq('unknown');
+      }
+    });
+  });
+
+  describe('#requestWithRetry method', function() {
+    it('with retry will not reject', async function() {
+      const mkRequest = stub()
+        .onCall(0)
+        // eslint-disable-next-line @typescript-eslint/camelcase
+        .rejects(new PddResponseException({ error_msg: 'error message', error_code: 70031 }))
+        .onCall(1)
+        .resolves(1);
+      replace(pddClient, 'request', mkRequest);
+      const result = await pddClient.requestWithRetry({ type: PDD_GOODS_CATS_GET, a: 1 }, 2);
+      restore();
+      expect(result).to.be.eq(1);
     });
   });
 });

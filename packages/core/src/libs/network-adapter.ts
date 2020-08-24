@@ -1,7 +1,7 @@
 import axios, { AxiosInstance } from 'axios';
 import { PddClientOptionsInterface } from '../interfaces';
 import { stringify } from 'querystring';
-import { PddException } from '../exceptions';
+import { PddResponseException } from '../exceptions';
 import isObject from 'lodash/isObject';
 import once from 'lodash/once';
 import get from 'lodash/get';
@@ -68,7 +68,7 @@ export class NetworkAdapter {
       const data = response.data;
 
       if (isObject(data) && 'error_response' in data) {
-        throw new PddException((data as any).error_response as any);
+        throw new PddResponseException((data as any).error_response as any);
       }
 
       return data;

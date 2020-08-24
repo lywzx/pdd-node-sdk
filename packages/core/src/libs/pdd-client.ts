@@ -42,7 +42,7 @@ import { PddClientAccessAuth } from './pdd-client-access-auth.abstract';
 import { defaultRetryOptions } from './pdd-client-default';
 import { APPLICATION_JSON } from '../constant/content-type';
 import { pddLog, getPddLogClient } from '../util/debug';
-import { PddAccessTokenMissingException, PddException, PddRequestParamsMissingException } from '../exceptions';
+import { PddAccessTokenMissingException, PddResponseException } from '../exceptions';
 
 type PddClientGenerateType =
   | string
@@ -148,7 +148,10 @@ export class PddClient<T = any> {
         },
         err => {
           const errObj =
-            (err && (err as PddException).errObj) || (err && (err as Error).stack) || (err as Error).message || err;
+            (err && (err as PddResponseException).errObj) ||
+            (err && (err as Error).stack) ||
+            (err as Error).message ||
+            err;
           pddLog(
             'end run pdd client request with error, type: %s,  params: %o, error msg: %o',
             undefined,
@@ -242,7 +245,10 @@ export class PddClient<T = any> {
           err => {
             if (retryCount) {
               const errObj =
-                (err && (err as PddException).errObj) || (err && (err as Error).stack) || (err as Error).message || err;
+                (err && (err as PddResponseException).errObj) ||
+                (err && (err as Error).stack) ||
+                (err as Error).message ||
+                err;
               pddLog(
                 'error retry pdd client request, retry %d th, type: %s, error msg: %o',
                 undefined,

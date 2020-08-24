@@ -1,5 +1,5 @@
 import { RetryOptionsInterface } from '../interfaces';
-import { PddException } from '../exceptions';
+import { PddResponseException } from '../exceptions';
 import { pddLog } from '../util/debug';
 
 export const defaultRetryOptions: RetryOptionsInterface = {
@@ -8,7 +8,7 @@ export const defaultRetryOptions: RetryOptionsInterface = {
   errorFilter: (error: Error) => {
     pddLog('retry filter error: %s', undefined, error);
 
-    if (error instanceof PddException) {
+    if (error instanceof PddResponseException) {
       const retryAble = error.retryAble();
 
       pddLog('pdd client default request error, retryAble: %s, error: %s', undefined, retryAble, error);

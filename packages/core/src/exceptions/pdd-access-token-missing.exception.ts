@@ -7,5 +7,6 @@ export class PddAccessTokenMissingException extends PddBaseException {
     if (Error.captureStackTrace) {
       Error.captureStackTrace(this, this.constructor);
     }
+    this.name = PddAccessTokenMissingException.name;
   }
 }

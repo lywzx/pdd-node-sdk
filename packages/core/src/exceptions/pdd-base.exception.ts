@@ -8,5 +8,6 @@ export class PddBaseException extends Error {
     if (Error.captureStackTrace) {
       Error.captureStackTrace(this, this.constructor);
     }
+    this.name = PddBaseException.name;
   }
 }
