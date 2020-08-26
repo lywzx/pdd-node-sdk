@@ -18,14 +18,21 @@ export class PddResponseException extends PddBaseException {
    * 当前请求，是否有必要进行重试
    */
   public retryAble(): boolean {
-    return [70031, 70032, 70033, 70034].includes(this.getErrorCode());
+    /**
+     * 52101 当前接口被限流，请稍后重试
+     * 52102 当前接口暂时不可用，请稍后重试
+     * 52103 服务暂时不可用，请稍后重试
+     * 70031 调用过于频繁，请调整调用频率
+     */
+    return [52101, 52102, 52103, 70031].includes(this.getErrorCode());
   }
 
   /**
    * access token 已经过期
    */
   public accessTokenNeedRefresh() {
-    return [10019, 10035].includes(this.getErrorCode());
+    // 10019 access_token已过期
+    return [10019].includes(this.getErrorCode());
   }
 
   /**
