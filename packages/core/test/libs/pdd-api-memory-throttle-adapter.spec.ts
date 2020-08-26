@@ -87,20 +87,21 @@ describe('pdd-api-memory-throttle-adapter test util', function() {
     });
 
     it('should unLock will won,t return < -1 when any', async function() {
-      await Promise.all(times(99).map(() => instance.lock(key, 100)));
+      const defaultTtl = 99;
+      await Promise.all(times(99).map(() => instance.lock(key, defaultTtl)));
       await sleep(20);
-      let result = await instance.lock(key, 100);
-      expect(result.timeout).to.be.lessThan(100);
+      let result = await instance.lock(key, defaultTtl);
+      expect(result.timeout).to.be.lessThan(defaultTtl + 1);
       expect(result.triggerTotal).to.be.eq(100);
 
       await Promise.all(times(50).map(() => instance.unLock(key)));
-      result = await instance.lock(key, 100);
+      result = await instance.lock(key, defaultTtl);
       expect(result.triggerTotal).to.be.eq(51);
 
       await Promise.all(times(100).map(() => instance.unLock(key)));
-      result = await instance.lock(key, 100);
+      result = await instance.lock(key, defaultTtl);
       expect(result.triggerTotal).to.be.eq(1);
-      expect(result.timeout).to.be.lessThan(100);
+      expect(result.timeout).to.be.lessThan(defaultTtl + 1);
     });
   });
 });
