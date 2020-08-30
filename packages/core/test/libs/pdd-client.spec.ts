@@ -1,14 +1,19 @@
-import { PDD_GOODS_ADD, PDD_GOODS_CATS_GET } from '@pin-duo-duo/pdd-origin-api';
+import { PDD_GOODS_CATS_GET } from '@pin-duo-duo/pdd-origin-api';
 import { expect } from 'chai';
 import { PddRequestParamsMissingException } from '../../src/exceptions';
 import { PddResponseException } from '../../src/exceptions/pdd-response.exception';
-import { getTypeApiLimiter, NetworkAdapter, PddClient } from '../../src/libs';
+import { NetworkAdapter, PddClient } from '../../src/libs';
 import { replace, fake, restore, stub } from 'sinon';
 import * as debug from '../../src/util/debug';
-import { last } from 'lodash';
+import { once } from 'lodash';
 
 describe('pdd-client test util', function() {
   let pddClient: PddClient;
+  let restored: (...args: any) => any;
+
+  beforeEach(function() {
+    restored = once(restore);
+  });
 
   before(function() {
     pddClient = new PddClient<{ userId: number; shopId: number }>({
@@ -62,7 +67,7 @@ describe('pdd-client test util', function() {
       replace(NetworkAdapter, 'post', fk);
       // eslint-disable-next-line @typescript-eslint/camelcase
       const result = await pddClient.request({ type: PDD_GOODS_CATS_GET, parent_cat_id: 1, c: { a: 1 } });
-      restore();
+      restored();
       expect(result).to.be.eq(1);
     });
 
@@ -78,7 +83,7 @@ describe('pdd-client test util', function() {
       replace(debug, 'pddLog', fkLog);
       // eslint-disable-next-line @typescript-eslint/camelcase
       const result = await pddClient.request({ type: PDD_GOODS_CATS_GET, parent_cat_id: 1, c: { a: 1 } });
-      restore();
+      restored();
       expect(fkLog.callCount).to.be.eq(2);
       expect(result).to.be.eq(1);
     });
@@ -93,20 +98,13 @@ describe('pdd-client test util', function() {
       const fkLog = fake.returns(null);
       replace(debug, 'getPddLogClient', fkGetClientFn);
       replace(debug, 'pddLog', fkLog);
-      let isRestore = false;
       try {
         // eslint-disable-next-line @typescript-eslint/camelcase
         await pddClient.request({ type: PDD_GOODS_CATS_GET, parent_cat_id: 1, c: { a: 1 } });
-        if (!isRestore) {
-          isRestore = true;
-          restore();
-        }
+        restored();
         throw new Error('app');
       } catch (e) {
-        if (!isRestore) {
-          isRestore = true;
-          restore();
-        }
+        restored();
         expect(e.message).to.be.eq('unknown');
       }
     });
@@ -122,8 +120,28 @@ describe('pdd-client test util', function() {
         .resolves(1);
       replace(pddClient, 'request', mkRequest);
       const result = await pddClient.requestWithRetry({ type: PDD_GOODS_CATS_GET, a: 1 }, 2);
-      restore();
+      restored();
       expect(result).to.be.eq(1);
+    });
+
+    it('with retry will reject', async function() {
+      const errMsg = 'test retry exception';
+      const mkRequest = stub()
+        .onCall(0)
+        // eslint-disable-next-line @typescript-eslint/camelcase
+        .rejects(new PddResponseException({ error_msg: 'error message', error_code: 70031 }))
+        .onCall(1)
+        .rejects(new Error(errMsg));
+      replace(pddClient, 'request', mkRequest);
+      try {
+        await pddClient.requestWithRetry({ type: PDD_GOODS_CATS_GET, a: 1 }, 2);
+        restored();
+        throw new Error('unknown error');
+      } catch (e) {
+        restored();
+        expect(e.message).to.be.eq(errMsg);
+      }
+      expect(mkRequest.callCount).to.be.eq(2);
     });
   });
 });

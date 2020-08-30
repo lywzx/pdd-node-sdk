@@ -16,13 +16,11 @@ import {
 import { md5, timestamp, promiseToCallback, defer, checkRequired } from '../util';
 import { AsyncResultCallbackInterface } from '../interfaces';
 import { isDevModel } from '../util/dev';
-import { guessPddClientExecuteParams } from '../util/guess-params.util';
+import { guessPddClientExecuteParams, guessPddClientRequestWithRetryParams } from '../util/guess-params.util';
 import { NetworkAdapter } from './network-adapter';
 import { PDD_END_POINTS, PDD_OAUTH_TEMPLATE, OAuthType, PDD_OAUTH_TOKEN_URL } from '../constant';
 import extend from 'lodash/extend';
 import castArray from 'lodash/castArray';
-import omit from 'lodash/omit';
-import pick from 'lodash/pick';
 import isString from 'lodash/isString';
 import isObject from 'lodash/isObject';
 import {
@@ -39,7 +37,6 @@ import { checkTypeIsNeedAccessToken } from './pdd-api-check.tools';
 import { PddApiThrottle } from './pdd-api-throttle';
 import { PddApiMemoryThrottleAdapter } from './pdd-api-memory-throttle-adapter';
 import { PddClientAccessAuth } from './pdd-client-access-auth.abstract';
-import { defaultRetryOptions } from './pdd-client-default';
 import { APPLICATION_JSON } from '../constant/content-type';
 import { pddLog, getPddLogClient } from '../util/debug';
 import { PddAccessTokenMissingException, PddResponseException } from '../exceptions';
@@ -190,21 +187,7 @@ export class PddClient<T = any> {
     retryOptions?: RetryOptionsType | AsyncResultCallbackInterface<R, never>,
     callback?: AsyncResultCallbackInterface<R, never>
   ): Promise<R> | void {
-    let tryOptions: RetryOptionsInterface | undefined;
-    let axiosClientOptions: PddAxiosClientOptions;
-    if (typeof retryOptions === 'function') {
-      tryOptions = defaultRetryOptions;
-      callback = (retryOptions as any) as AsyncResultCallbackInterface<R, never>;
-    } else if (typeof retryOptions === 'undefined') {
-      tryOptions = defaultRetryOptions;
-    } else if (typeof retryOptions === 'number') {
-      tryOptions = extend({}, defaultRetryOptions, { times: retryOptions });
-    } else if (typeof retryOptions === 'object') {
-      tryOptions = extend({}, defaultRetryOptions, omit(retryOptions, ['timeout', 'proxy']));
-      if (retryOptions.timeout || retryOptions.proxy) {
-        axiosClientOptions = pick(retryOptions, ['timeout', 'proxy']);
-      }
-    }
+    const [tryOptions, axiosClientOptions, cbk] = guessPddClientRequestWithRetryParams(retryOptions, callback);
 
     const pddLogClient = getPddLogClient();
     const enabled = pddLogClient && pddLogClient.enabled;
@@ -265,7 +248,7 @@ export class PddClient<T = any> {
       return promiseToCallback<R>(result, clbk as any);
     }) as any) as Promise<R>;
 
-    return promiseToCallback<R>(retryResult, callback as any);
+    return promiseToCallback<R>(retryResult, cbk as any);
   }
 
   /**
@@ -418,6 +401,9 @@ export class PddClient<T = any> {
       (typeof apiCacheOptions === 'undefined' && !PddClient.pddDefaultCacheOptions.alwaysWork) ||
       !this.pddApiCache
     ) {
+      if (apiCacheOptions && isDevModel()) {
+        pddLog('cache won"t work, because you don"t assign `pddApiCache`', 'red');
+      }
       ret = runningFn();
     } else {
       let cachedKey: string | undefined;

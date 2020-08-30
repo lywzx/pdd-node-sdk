@@ -1,12 +1,11 @@
-import { ILock, PddApiLimiterLevel, PddBaseException, PddRequestWaitingTimeoutException } from '../../src/index';
+import { PddApiLimiterLevel, PddBaseException, PddRequestWaitingTimeoutException } from '../../src/index';
 import { expect } from 'chai';
 import { PddApiThrottle } from '../../src/libs';
 import * as util from '../../src/libs/pdd-api-check.tools';
-import { replace, fake, restore, stub } from 'sinon';
-import { times, max, map } from 'lodash';
+import { replace, fake, restore } from 'sinon';
+import { times, once } from 'lodash';
 import { PddApiMemoryThrottleAdapter } from '../../src/libs/pdd-api-memory-throttle-adapter';
 import { uniqueId } from 'lodash';
-import { sleep } from '../../src/util';
 
 /**
  * 生成api的key，保证不重复
@@ -26,6 +25,7 @@ describe('pdd-api-throttle test', function() {
   let pddApiThrottleInstance: PddApiThrottle;
   let apiKey: string;
   let apiAccessToken: string;
+  let restored: (...args: any) => any;
 
   beforeEach(function() {
     pddApiThrottleInstance = new PddApiThrottle(new PddApiMemoryThrottleAdapter(), {
@@ -33,6 +33,7 @@ describe('pdd-api-throttle test', function() {
     });
     apiKey = generateApiKey();
     apiAccessToken = generateAccessToken();
+    restored = once(restore);
   });
 
   it('#constructor', function() {
@@ -60,10 +61,10 @@ describe('pdd-api-throttle test', function() {
           return pddApiThrottleInstance.checkApiThrottle(apiKey, apiAccessToken);
         })
       );
+      restored();
       expect(result).to.be.eqls([null, null, null]);
       expect(fk.callCount).to.be.eq(3);
       expect(Date.now() - startTime).to.be.lessThan(49);
-      restore();
     });
 
     it('with api more than limiter, time will delay', async function() {
@@ -89,7 +90,7 @@ describe('pdd-api-throttle test', function() {
         })
       );
       const reCallCount = fk.callCount;
-      restore();
+      restored();
       expect(callCount).to.be.eq(2);
       expect(reBegin - startTime).to.be.lessThan(51);
       expect(reCallCount).to.be.eq(4);
@@ -117,7 +118,7 @@ describe('pdd-api-throttle test', function() {
         })
       );
       const runTotal = fk.callCount;
-      restore();
+      restored();
       expect(result).to.be.eqls([null, null, null, null]);
       expect(runTotal).to.be.eq(5);
       const runningTime = Date.now() - start;
@@ -148,7 +149,7 @@ describe('pdd-api-throttle test', function() {
       const lastRunTotal = fk.callCount;
       await pddApiThrottleInstance.checkApiThrottle(apiKey, apiAccessToken);
       const endRunTotal = fk.callCount;
-      restore();
+      restored();
       expect(lastRunTotal).to.be.eq(2);
       const runningTime = Date.now() - start;
       expect(runningTime).to.be.greaterThan(99);
@@ -173,20 +174,13 @@ describe('pdd-api-throttle test', function() {
         })
       );
       const total = fk.callCount;
-      let running = false;
       try {
         await instance.checkApiThrottle(apiKey, apiAccessToken);
-        if (!running) {
-          running = true;
-          restore();
-        }
+        restored();
         throw new Error('unknown error');
       } catch (e) {
         const callTotal = fk.callCount;
-        if (!running) {
-          running = true;
-          restore();
-        }
+        restored();
         expect(callTotal).to.be.eq(3);
         expect(e).to.be.instanceOf(PddRequestWaitingTimeoutException);
         expect(e).to.be.instanceOf(PddBaseException);

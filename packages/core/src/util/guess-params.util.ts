@@ -6,6 +6,10 @@ import {
   RetryOptionsType,
 } from '../interfaces';
 import { PddApiCacheInterface } from '../interfaces/pdd-api-cache.interface';
+import { defaultRetryOptions } from '../libs';
+import extend from 'lodash/extend';
+import pick from 'lodash/pick';
+import omit from 'lodash/omit';
 
 const retryOptionKeys: Array<keyof (RetryOptionsInterface & PddAxiosClientOptions)> = [
   'timeout',
@@ -68,4 +72,36 @@ export function guessPddClientExecuteParams<T>(
   }
 
   return result;
+}
+
+/**
+ * 构建重试的参数
+ * @param retryOptions
+ * @param callback
+ */
+export function guessPddClientRequestWithRetryParams(
+  retryOptions?: RetryOptionsType | AsyncResultCallbackInterface<any, never>,
+  callback?: AsyncResultCallbackInterface<any, never>
+): [
+  RetryOptionsInterface | undefined,
+  PddAxiosClientOptions | undefined,
+  AsyncResultCallbackInterface<any, never> | undefined
+] {
+  let tryOptions: RetryOptionsInterface | undefined;
+  let axiosClientOptions: PddAxiosClientOptions | undefined;
+  let cbk: AsyncResultCallbackInterface<any, never> | undefined = callback;
+  if (typeof retryOptions === 'function') {
+    tryOptions = defaultRetryOptions;
+    cbk = (retryOptions as any) as AsyncResultCallbackInterface<any, never>;
+  } else if (typeof retryOptions === 'undefined') {
+    tryOptions = defaultRetryOptions;
+  } else if (typeof retryOptions === 'number') {
+    tryOptions = extend({}, defaultRetryOptions, { times: retryOptions });
+  } else if (typeof retryOptions === 'object') {
+    tryOptions = extend({}, defaultRetryOptions, omit(retryOptions, ['timeout', 'proxy']));
+    if (retryOptions.timeout || retryOptions.proxy) {
+      axiosClientOptions = pick(retryOptions, ['timeout', 'proxy']);
+    }
+  }
+  return [tryOptions, axiosClientOptions, cbk];
 }
