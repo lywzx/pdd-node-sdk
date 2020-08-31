@@ -143,5 +143,31 @@ describe('pdd-client test util', function() {
       }
       expect(mkRequest.callCount).to.be.eq(2);
     });
+
+    it('test retry with log enabled', async function() {
+      const fkGetClientFn = fake.returns({
+        enabled: true,
+        color: '',
+      });
+      // eslint-disable-next-line @typescript-eslint/camelcase
+      const err = new PddResponseException({ error_msg: 'error message', error_code: 70031 });
+      const fkLog = fake.returns(null);
+      replace(debug, 'getPddLogClient', fkGetClientFn);
+      replace(debug, 'pddLog', fkLog);
+      const mkRequest = stub()
+        .onCall(0)
+        .rejects(err)
+        .onCall(1)
+        .rejects(err)
+        .onCall(2)
+        .resolves(1);
+      replace(pddClient, 'request', mkRequest);
+      const result = await pddClient.requestWithRetry({ type: PDD_GOODS_CATS_GET, a: 1 }, { times: 3, interval: 0 });
+      restored();
+      expect(fkGetClientFn.callCount).to.be.eq(1);
+      expect(mkRequest.callCount).to.be.eq(3);
+      expect(result).to.be.eq(1);
+      expect(fkLog.callCount).to.be.eq(8);
+    });
   });
 });

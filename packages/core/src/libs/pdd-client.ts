@@ -218,7 +218,7 @@ export class PddClient<T = any> {
               pddLog(
                 'success retry pdd client request, retry %d th, type: %s, result: %o',
                 undefined,
-                retryCount,
+                retryCount + 1,
                 params.type,
                 response
               );
@@ -240,6 +240,7 @@ export class PddClient<T = any> {
                 errObj
               );
             }
+            retryCount++;
             throw err;
           }
         );
