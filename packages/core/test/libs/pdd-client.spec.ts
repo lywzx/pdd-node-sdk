@@ -1,7 +1,7 @@
 import { PDD_GOODS_CATS_GET } from '@pin-duo-duo/pdd-origin-api';
 import { expect } from 'chai';
-import { PddRequestParamsMissingException } from '../../src/exceptions';
-import { PddResponseException } from '../../src/exceptions/pdd-response.exception';
+import { OAuthType } from '../../src/constant';
+import { PddRequestParamsMissingException, PddResponseException } from '../../src/exceptions';
 import { NetworkAdapter, PddClient } from '../../src/libs';
 import { replace, fake, restore, stub } from 'sinon';
 import * as debug from '../../src/util/debug';
@@ -19,6 +19,7 @@ describe('pdd-client test util', function() {
     pddClient = new PddClient<{ userId: number; shopId: number }>({
       clientId: 'aaa',
       clientSecret: 'bbb',
+      oAuthType: OAuthType.mms,
     });
   });
 
@@ -168,6 +169,25 @@ describe('pdd-client test util', function() {
       expect(mkRequest.callCount).to.be.eq(3);
       expect(result).to.be.eq(1);
       expect(fkLog.callCount).to.be.eq(8);
+    });
+  });
+
+  describe('#createOAuthLink method', function() {
+    it('should throw exception', function() {
+      expect(() => {
+        return pddClient.createOAuthLink();
+      }).to.be.throw();
+    });
+
+    it('should get url', function() {
+      const urls = pddClient.createOAuthLink({ redirectUri: 'http://www.lyblog.net' });
+      expect(urls.length).to.be.eq(1);
+    });
+  });
+
+  describe('#execute method', function() {
+    it('should get result without any exception', function() {
+      expect(1).to.be.eq(1);
     });
   });
 });
