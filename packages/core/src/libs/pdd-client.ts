@@ -363,23 +363,27 @@ export class PddClient<T = any> {
       // 这里需要从access token 中获取数据
       const nParams: Req & RequestParamsType = extend({}, params, { type });
       let result = Promise.resolve(nParams);
-      if (this.pddClientAuth && needAccessToken) {
-        result = result.then(param => {
-          if (!apiAccessOptions) {
-            throw new PddAccessTokenMissingException('params access options is required!');
-          }
-          return (this.pddClientAuth as PddClientAccessAuth<T>)
-            .getAccessTokenFromCache(apiAccessOptions)
-            .then((access: PddAccessTokenResponseInterface | null) => {
-              if (access) {
-                return extend({}, param, {
-                  // eslint-disable-next-line @typescript-eslint/camelcase
-                  access_token: access.access_token,
-                });
-              }
-              throw new PddAccessTokenMissingException('cat"t find pdd access token from cache!');
-            });
-        });
+      if (needAccessToken) {
+        if (this.pddClientAuth) {
+          result = result.then(param => {
+            if (!apiAccessOptions) {
+              throw new PddAccessTokenMissingException('params access options is required!');
+            }
+            return (this.pddClientAuth as PddClientAccessAuth<T>)
+              .getAccessTokenFromCache(apiAccessOptions)
+              .then((access: PddAccessTokenResponseInterface | null) => {
+                if (access) {
+                  return extend({}, param, {
+                    // eslint-disable-next-line @typescript-eslint/camelcase
+                    access_token: access.access_token,
+                  });
+                }
+                throw new PddAccessTokenMissingException('cat"t find pdd access token from cache!');
+              });
+          });
+        } else {
+          result = Promise.reject(new PddAccessTokenMissingException('can"t find pdd access token from params'));
+        }
       }
       return result.then((params: Req & PddCommonRequestExcludeSomeAttr) => {
         return this.requestWithRetry<Req & Omit<PddCommonRequestInterface, 'sign' | 'timestamp' | 'client_id'>, any>(

@@ -1,7 +1,11 @@
-import { PDD_GOODS_CATS_GET } from '@pin-duo-duo/pdd-origin-api';
+import { PDD_GOODS_CATS_GET, PDD_GOODS_DETAIL_GET } from '@pin-duo-duo/pdd-origin-api';
 import { expect } from 'chai';
 import { OAuthType } from '../../src/constant';
-import { PddRequestParamsMissingException, PddResponseException } from '../../src/exceptions';
+import {
+  PddAccessTokenMissingException,
+  PddRequestParamsMissingException,
+  PddResponseException,
+} from '../../src/exceptions';
 import { NetworkAdapter, PddClient } from '../../src/libs';
 import { replace, fake, restore, stub } from 'sinon';
 import * as debug from '../../src/util/debug';
@@ -10,17 +14,18 @@ import { once } from 'lodash';
 describe('pdd-client test util', function() {
   let pddClient: PddClient;
   let restored: (...args: any) => any;
+  const pddOptions = {
+    clientId: 'aaa',
+    clientSecret: 'bbb',
+    oAuthType: OAuthType.mms,
+  };
 
   beforeEach(function() {
     restored = once(restore);
   });
 
   before(function() {
-    pddClient = new PddClient<{ userId: number; shopId: number }>({
-      clientId: 'aaa',
-      clientSecret: 'bbb',
-      oAuthType: OAuthType.mms,
-    });
+    pddClient = new PddClient<{ userId: number; shopId: number }>(pddOptions);
   });
 
   it('when without clientId or clientSecret should throw error', function() {
@@ -186,8 +191,49 @@ describe('pdd-client test util', function() {
   });
 
   describe('#execute method', function() {
-    it('should get result without any exception', function() {
-      expect(1).to.be.eq(1);
+    it('should throw exception when access token required, but clientAuth not exists', async function() {
+      try {
+        await pddClient.execute(PDD_GOODS_DETAIL_GET, {});
+        throw new Error('unknown exception');
+      } catch (e) {
+        expect(e).to.be.instanceOf(PddAccessTokenMissingException);
+      }
+    });
+
+    it('should throw exception when access token required, clientAuth exists but clientOptions not exists', async function() {
+      const pddClientAuth = stub().resolves();
+      pddClient.pddClientAuth = {} as any;
+      replace(pddClient, 'pddClientAuth', {
+        getAccessTokenFromCache: pddClientAuth,
+      } as any);
+      try {
+        await pddClient.execute(PDD_GOODS_DETAIL_GET, {});
+        throw new Error('unknown exception');
+      } catch (e) {
+        restored();
+        pddClient.pddClientAuth = undefined;
+        expect(e).to.be.instanceOf(PddAccessTokenMissingException);
+        expect(e.message).to.be.eq('params access options is required!');
+      }
+      expect(pddClientAuth.callCount).to.be.eq(0);
+    });
+
+    it('should throw exception when access token required, clientAuth exists and clientOptions exists', async function() {
+      const pddClientAuth = stub().resolves();
+      pddClient.pddClientAuth = {} as any;
+      replace(pddClient, 'pddClientAuth', {
+        getAccessTokenFromCache: pddClientAuth,
+      } as any);
+      try {
+        await pddClient.execute(PDD_GOODS_DETAIL_GET, {}, {});
+        throw new Error('unknown exception');
+      } catch (e) {
+        restored();
+        pddClient.pddClientAuth = undefined;
+        expect(e).to.be.instanceOf(PddAccessTokenMissingException);
+        expect(e.message).to.be.eq('cat"t find pdd access token from cache!');
+      }
+      expect(pddClientAuth.callCount).to.be.eq(1);
     });
   });
 });
