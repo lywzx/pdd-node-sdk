@@ -10,6 +10,7 @@ import { defaultRetryOptions } from '../libs';
 import extend from 'lodash/extend';
 import pick from 'lodash/pick';
 import omit from 'lodash/omit';
+import isString from 'lodash/isString';
 
 const retryOptionKeys: Array<keyof (RetryOptionsInterface & PddAxiosClientOptions)> = [
   'timeout',
@@ -104,4 +105,35 @@ export function guessPddClientRequestWithRetryParams(
     }
   }
   return [tryOptions, axiosClientOptions, cbk];
+}
+
+/**
+ * 根据传入的参数，自动组装出缓存的参数信息
+ * @param cacheOptions 默认配置信息
+ * @param defaultTtl 默认的过期时间
+ * @param cachedKey 动态构建缓存key信息
+ */
+export function guessPddClientCachedParams(
+  cacheOptions: PddCacheOptions | number | boolean | undefined,
+  defaultTtl: number,
+  cachedKey: () => string | undefined
+): [string | undefined, number] {
+  let ttl = defaultTtl;
+  let realCachedKey: string | undefined;
+
+  if (typeof cacheOptions === 'number') {
+    ttl = cacheOptions;
+  } else if (typeof cacheOptions === 'object') {
+    if (typeof cacheOptions.ttl === 'number') {
+      ttl = cacheOptions.ttl;
+    }
+    if (cacheOptions.cacheKey && isString(cacheOptions.cacheKey)) {
+      realCachedKey = cacheOptions.cacheKey;
+    }
+  }
+  if (!realCachedKey) {
+    realCachedKey = cachedKey();
+  }
+
+  return [realCachedKey, ttl];
 }

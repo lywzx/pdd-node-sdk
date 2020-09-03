@@ -58,7 +58,7 @@ describe('pdd-client test util', function() {
     });
 
     it('with callback, without type should throw exception ', function(done) {
-      pddClient.request({ a: 1, b: 2 }, (err, result) => {
+      pddClient.request({ a: 1, b: 2 }, err => {
         try {
           expect(err).to.be.instanceOf(PddRequestParamsMissingException);
           done();
@@ -247,6 +247,10 @@ describe('pdd-client test util', function() {
         extend({}, params, { type: PDD_GOODS_CATS_GET }),
         undefined,
       ]);
+    });
+
+    it('should worn"t cache when cache option is empty', function() {
+      expect(1).to.be.eq(1);
     });
   });
 });

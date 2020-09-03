@@ -16,13 +16,19 @@ import {
 import { md5, timestamp, promiseToCallback, defer, checkRequired } from '../util';
 import { AsyncResultCallbackInterface } from '../interfaces';
 import { isDevModel } from '../util/dev';
-import { guessPddClientExecuteParams, guessPddClientRequestWithRetryParams } from '../util/guess-params.util';
+import {
+  guessPddClientCachedParams,
+  guessPddClientExecuteParams,
+  guessPddClientRequestWithRetryParams,
+} from '../util/guess-params.util';
 import { NetworkAdapter } from './network-adapter';
 import { PDD_END_POINTS, PDD_OAUTH_TEMPLATE, OAuthType, PDD_OAUTH_TOKEN_URL } from '../constant';
 import extend from 'lodash/extend';
 import castArray from 'lodash/castArray';
 import isString from 'lodash/isString';
 import isObject from 'lodash/isObject';
+import isFunction from 'lodash/isFunction';
+import includes from 'lodash/includes';
 import {
   RequestParamsType,
   RequestParamsFullType,
@@ -402,35 +408,31 @@ export class PddClient<T = any> {
     // api 接口缓存逻辑
     let ret;
     if (
-      apiCacheOptions === false ||
-      (typeof apiCacheOptions === 'undefined' && !PddClient.pddDefaultCacheOptions.alwaysWork) ||
-      !this.pddApiCache
+      !includes([false, undefined], apiCacheOptions) ||
+      (apiCacheOptions === undefined && PddClient.pddDefaultCacheOptions.alwaysWork)
     ) {
-      if (apiCacheOptions && isDevModel()) {
-        pddLog('cache won"t work, because you don"t assign `pddApiCache`', 'red');
-      }
-      ret = runningFn();
-    } else {
-      let cachedKey: string | undefined;
-      let ttl: number = PddClient.pddDefaultCacheOptions.ttl;
-
-      if (typeof apiCacheOptions === 'number') {
-        ttl = apiCacheOptions;
-      } else if (typeof apiCacheOptions === 'object') {
-        if (typeof apiCacheOptions.ttl === 'number') {
-          ttl = apiCacheOptions.ttl;
+      if (this.pddApiCache) {
+        const [cachedKey, ttl] = guessPddClientCachedParams(
+          apiCacheOptions,
+          PddClient.pddDefaultCacheOptions.ttl,
+          () => {
+            if (typeof apiCacheOptions === 'object' && isFunction(apiCacheOptions.cacheKey)) {
+              return apiCacheOptions.cacheKey(params);
+            }
+            if (this.pddApiCache) {
+              return this.pddApiCache.cacheKey(params);
+            }
+          }
+        );
+        if (cachedKey && ttl > 0) {
+          ret = this.pddApiCache.cached(cachedKey, runningFn, ttl);
         }
-        if (apiCacheOptions.cacheKey) {
-          cachedKey = isString(apiCacheOptions.cacheKey) ? apiCacheOptions.cacheKey : apiCacheOptions.cacheKey(params);
-        }
+      } else {
+        isDevModel() && pddLog('cache won"t work, because you don"t assign `pddApiCache`', 'red');
       }
-      if (!cachedKey) {
-        cachedKey = this.pddApiCache.cacheKey(params);
-      }
-      ret = this.pddApiCache.cached(cachedKey, runningFn, ttl);
     }
 
-    return promiseToCallback(ret, apiCallback!);
+    return promiseToCallback(ret || runningFn(), apiCallback!);
   }
 
   /**
