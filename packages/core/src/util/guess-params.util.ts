@@ -127,11 +127,11 @@ export function guessPddClientCachedParams(
     if (typeof cacheOptions.ttl === 'number') {
       ttl = cacheOptions.ttl;
     }
-    if (cacheOptions.cacheKey && isString(cacheOptions.cacheKey)) {
+    if (ttl > 0 && cacheOptions.cacheKey && isString(cacheOptions.cacheKey)) {
       realCachedKey = cacheOptions.cacheKey;
     }
   }
-  if (!realCachedKey) {
+  if (!realCachedKey && ttl > 0 && cacheOptions !== false) {
     realCachedKey = cachedKey();
   }
 
