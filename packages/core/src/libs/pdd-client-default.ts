@@ -2,6 +2,9 @@ import { RetryOptionsInterface } from '../interfaces';
 import { PddResponseException } from '../exceptions';
 import { pddLog } from '../util/debug';
 
+/**
+ * pdd client中默认重试机制逻辑
+ */
 export const defaultRetryOptions: RetryOptionsInterface = {
   times: 2,
   interval: (retryCount: number) => retryCount * 1500,

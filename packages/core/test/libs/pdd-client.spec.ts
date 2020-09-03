@@ -9,7 +9,7 @@ import {
 import { NetworkAdapter, PddClient } from '../../src/libs';
 import { replace, fake, restore, stub } from 'sinon';
 import * as debug from '../../src/util/debug';
-import { once } from 'lodash';
+import { once, extend } from 'lodash';
 
 describe('pdd-client test util', function() {
   let pddClient: PddClient;
@@ -234,6 +234,19 @@ describe('pdd-client test util', function() {
         expect(e.message).to.be.eq('cat"t find pdd access token from cache!');
       }
       expect(pddClientAuth.callCount).to.be.eq(1);
+    });
+
+    it('should use default retry options, when retry options is undefined', async function() {
+      const requestWithRetryOptions = stub().resolves({});
+      replace(pddClient, 'requestWithRetry', requestWithRetryOptions);
+      // eslint-disable-next-line @typescript-eslint/camelcase
+      const params = { parent_cat_id: 1 };
+      await pddClient.execute(PDD_GOODS_CATS_GET, params);
+      restored();
+      expect(requestWithRetryOptions.lastCall.args).to.be.eqls([
+        extend({}, params, { type: PDD_GOODS_CATS_GET }),
+        undefined,
+      ]);
     });
   });
 });
