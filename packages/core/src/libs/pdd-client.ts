@@ -357,11 +357,11 @@ export class PddClient<T = any> {
     // 是否需要传入access token信息
     const needAccessToken = checkTypeIsNeedAccessToken(type);
     if (isDevModel()) {
-      if (PddClient.pddDefaultCacheOptions.alwaysWork && typeof cacheOptions !== 'undefined' && !this.pddApiCache) {
+      if (PddClient.pddDefaultCacheOptions.alwaysWork && cacheOptions !== false && !this.pddApiCache) {
         pddLog('cache options not work! please assign variable: pddApiCache.', '#ff0000');
       }
       if (typeof accessOptions !== 'undefined' && needAccessToken && !this.pddClientAuth) {
-        pddLog('access_token will not auto file. assign variable: pddClientAuth.', '#ffff00');
+        pddLog('access_token will not auto fill. assign variable: pddClientAuth.', '#ffff00');
       }
     }
 
@@ -424,7 +424,7 @@ export class PddClient<T = any> {
             }
           }
         );
-        if (cachedKey && ttl > 0) {
+        if (cachedKey) {
           ret = this.pddApiCache.cached(cachedKey, runningFn, ttl);
         }
       } else {

@@ -4,17 +4,6 @@ import omit from 'lodash/omit';
 
 export abstract class PddApiCacheAbstract {
   /**
-   * 默认时间配置
-   */
-  static defaultTtl = {
-    ttl: 24 * 60 * 60,
-  };
-
-  static setPddApiDefaultTtl(ttl: number) {
-    this.defaultTtl.ttl = ttl;
-  }
-
-  /**
    * 传入参数，生成缓存的key
    * @param obj
    */

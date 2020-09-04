@@ -1,4 +1,9 @@
-import { PDD_GOODS_CATS_GET, PDD_GOODS_DETAIL_GET } from '@pin-duo-duo/pdd-origin-api';
+import {
+  PDD_GOODS_CATS_GET,
+  PDD_GOODS_DETAIL_GET,
+  PDD_LOGISTICS_ADDRESS_GET,
+  PDD_TICKET_VERIFICATION_NOTIFYCATION,
+} from '@pin-duo-duo/pdd-origin-api';
 import { expect } from 'chai';
 import { OAuthType } from '../../src/constant';
 import {
@@ -6,10 +11,17 @@ import {
   PddRequestParamsMissingException,
   PddResponseException,
 } from '../../src/exceptions';
-import { NetworkAdapter, PddClient } from '../../src/libs';
+import { NetworkAdapter, PddApiCacheAbstract, PddClient } from '../../src/libs';
 import { replace, fake, restore, stub } from 'sinon';
-import * as debug from '../../src/util/debug';
 import { once, extend } from 'lodash';
+import {
+  replaceCheckTypeIsNeedAccessToken,
+  replaceDevMode,
+  replaceGetPddLogClient,
+  replacePddClientRequest,
+  replacePddLog,
+  replaceRequestWithRetry,
+} from './pdd-client-helper';
 
 describe('pdd-client test util', function() {
   let pddClient: PddClient;
@@ -80,13 +92,8 @@ describe('pdd-client test util', function() {
     it('pdd request with value when debug is enabled', async function() {
       const fkResult = fake.returns(1);
       replace(NetworkAdapter, 'post', fkResult);
-      const fkGetClientFn = fake.returns({
-        enabled: true,
-        color: '',
-      });
-      const fkLog = fake.returns(null);
-      replace(debug, 'getPddLogClient', fkGetClientFn);
-      replace(debug, 'pddLog', fkLog);
+      replaceGetPddLogClient();
+      const fkLog = replacePddLog();
       // eslint-disable-next-line @typescript-eslint/camelcase
       const result = await pddClient.request({ type: PDD_GOODS_CATS_GET, parent_cat_id: 1, c: { a: 1 } });
       restored();
@@ -97,13 +104,8 @@ describe('pdd-client test util', function() {
     it('pdd request with exception when debug is enabled', async function() {
       const fkResult = fake.throws(new Error('unknown'));
       replace(NetworkAdapter, 'post', fkResult);
-      const fkGetClientFn = fake.returns({
-        enabled: true,
-        color: '',
-      });
-      const fkLog = fake.returns(null);
-      replace(debug, 'getPddLogClient', fkGetClientFn);
-      replace(debug, 'pddLog', fkLog);
+      replaceGetPddLogClient();
+      replacePddLog();
       try {
         // eslint-disable-next-line @typescript-eslint/camelcase
         await pddClient.request({ type: PDD_GOODS_CATS_GET, parent_cat_id: 1, c: { a: 1 } });
@@ -118,13 +120,15 @@ describe('pdd-client test util', function() {
 
   describe('#requestWithRetry method', function() {
     it('with retry will not reject', async function() {
-      const mkRequest = stub()
-        .onCall(0)
-        // eslint-disable-next-line @typescript-eslint/camelcase
-        .rejects(new PddResponseException({ error_msg: 'error message', error_code: 70031 }))
-        .onCall(1)
-        .resolves(1);
-      replace(pddClient, 'request', mkRequest);
+      replacePddClientRequest(
+        pddClient,
+        stub()
+          .onCall(0)
+          // eslint-disable-next-line @typescript-eslint/camelcase
+          .rejects(new PddResponseException({ error_msg: 'error message', error_code: 70031 }))
+          .onCall(1)
+          .resolves(1)
+      );
       const result = await pddClient.requestWithRetry({ type: PDD_GOODS_CATS_GET, a: 1 }, 2);
       restored();
       expect(result).to.be.eq(1);
@@ -132,13 +136,15 @@ describe('pdd-client test util', function() {
 
     it('with retry will reject', async function() {
       const errMsg = 'test retry exception';
-      const mkRequest = stub()
-        .onCall(0)
-        // eslint-disable-next-line @typescript-eslint/camelcase
-        .rejects(new PddResponseException({ error_msg: 'error message', error_code: 70031 }))
-        .onCall(1)
-        .rejects(new Error(errMsg));
-      replace(pddClient, 'request', mkRequest);
+      const mkRequest = replacePddClientRequest(
+        pddClient,
+        stub()
+          .onCall(0)
+          // eslint-disable-next-line @typescript-eslint/camelcase
+          .rejects(new PddResponseException({ error_msg: 'error message', error_code: 70031 }))
+          .onCall(1)
+          .rejects(new Error(errMsg))
+      );
       try {
         await pddClient.requestWithRetry({ type: PDD_GOODS_CATS_GET, a: 1 }, 2);
         restored();
@@ -151,23 +157,20 @@ describe('pdd-client test util', function() {
     });
 
     it('test retry with log enabled', async function() {
-      const fkGetClientFn = fake.returns({
-        enabled: true,
-        color: '',
-      });
       // eslint-disable-next-line @typescript-eslint/camelcase
       const err = new PddResponseException({ error_msg: 'error message', error_code: 70031 });
-      const fkLog = fake.returns(null);
-      replace(debug, 'getPddLogClient', fkGetClientFn);
-      replace(debug, 'pddLog', fkLog);
-      const mkRequest = stub()
-        .onCall(0)
-        .rejects(err)
-        .onCall(1)
-        .rejects(err)
-        .onCall(2)
-        .resolves(1);
-      replace(pddClient, 'request', mkRequest);
+      const fkLog = replacePddLog();
+      const fkGetClientFn = replaceGetPddLogClient();
+      const mkRequest = replacePddClientRequest(
+        pddClient,
+        stub()
+          .onCall(0)
+          .rejects(err)
+          .onCall(1)
+          .rejects(err)
+          .onCall(2)
+          .resolves(1)
+      );
       const result = await pddClient.requestWithRetry({ type: PDD_GOODS_CATS_GET, a: 1 }, { times: 3, interval: 0 });
       restored();
       expect(fkGetClientFn.callCount).to.be.eq(1);
@@ -192,10 +195,13 @@ describe('pdd-client test util', function() {
 
   describe('#execute method', function() {
     it('should throw exception when access token required, but clientAuth not exists', async function() {
+      replaceDevMode(true);
+      PddClient.setPddDefaultCacheOptions({ alwaysWork: true, ttl: 2 });
       try {
-        await pddClient.execute(PDD_GOODS_DETAIL_GET, {});
+        await pddClient.execute(PDD_GOODS_DETAIL_GET, {}, {});
         throw new Error('unknown exception');
       } catch (e) {
+        restored();
         expect(e).to.be.instanceOf(PddAccessTokenMissingException);
       }
     });
@@ -249,8 +255,37 @@ describe('pdd-client test util', function() {
       ]);
     });
 
-    it('should worn"t cache when cache option is empty', function() {
-      expect(1).to.be.eq(1);
+    it('should get result without access token', async function() {
+      const resultValue = {
+        // eslint-disable-next-line @typescript-eslint/camelcase
+        logistics_address_get_response: {
+          // eslint-disable-next-line @typescript-eslint/camelcase
+          logistics_address_list: [1],
+        },
+      };
+      PddClient.setPddDefaultCacheOptions({ alwaysWork: true, ttl: 2 });
+      replaceDevMode(true);
+      replaceCheckTypeIsNeedAccessToken(false);
+      replaceRequestWithRetry(pddClient, resultValue);
+      const firstResult = await pddClient.execute(PDD_LOGISTICS_ADDRESS_GET, {});
+      const secondResult = await pddClient.execute(PDD_TICKET_VERIFICATION_NOTIFYCATION, {});
+      restored();
+      expect(firstResult).to.be.equals(resultValue.logistics_address_get_response);
+      expect(secondResult).to.be.equals(resultValue);
+    });
+
+    it('should worn"t cache when cache option is empty', async function() {
+      const cachedStub = stub().resolves(1);
+      class Cache extends PddApiCacheAbstract {
+        cached = cachedStub;
+      }
+      PddClient.setPddDefaultCacheOptions({ alwaysWork: false, ttl: 2 });
+      pddClient = new PddClient<any>(pddOptions, undefined, new Cache());
+      replaceCheckTypeIsNeedAccessToken(false);
+      replaceRequestWithRetry(pddClient, { a: 1 });
+      await pddClient.execute(PDD_TICKET_VERIFICATION_NOTIFYCATION, {}, null, 0, 1);
+      restored();
+      expect(cachedStub.callCount).to.be.eq(0);
     });
   });
 });
