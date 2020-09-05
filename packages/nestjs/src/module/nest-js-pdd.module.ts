@@ -1,6 +1,10 @@
 import { DynamicModule, Module, Provider } from '@nestjs/common';
 import { PddClient } from '@pin-duo-duo/core';
-import { NEST_PDD_MODULE_OPTIONS, NEST_PDD_MODULE_PDD_CLIENTS_ALL } from '../constant';
+import {
+  NEST_PDD_MODULE_OPTIONS,
+  NEST_PDD_MODULE_PDD_CLIENTS_ALL,
+  NEST_PDD_MODULE_PDD_CLIENTS_DEFAULT,
+} from '../constant';
 import {
   NestJsPddClientOptions,
   NestJsPddModuleAsyncOptionsInterface,
@@ -27,6 +31,10 @@ const DefaultProvider: Provider[] = [
       return pddClientService.get();
     },
     inject: [PddClientService],
+  },
+  {
+    provide: NEST_PDD_MODULE_PDD_CLIENTS_DEFAULT,
+    useExisting: PddClient,
   },
 ];
 

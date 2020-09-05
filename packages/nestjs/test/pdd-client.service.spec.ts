@@ -38,6 +38,7 @@ describe('FrontRouterService', () => {
     expect(module.get(NEST_PDD_MODULE_PDD_CLIENTS_ALL)).to.be.eq(clients);
     expect(clients[NEST_PDD_MODULE_PDD_CLIENTS_DEFAULT]).to.be.eq(module.get(PddClient));
     expect(clients[NEST_PDD_MODULE_PDD_CLIENTS_DEFAULT]).to.be.eq(clients.mms);
+    expect(module.get(NEST_PDD_MODULE_PDD_CLIENTS_DEFAULT)).to.be.eq(clients.mms);
   });
 
   it('should throw exception', function() {
