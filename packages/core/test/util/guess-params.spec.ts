@@ -46,7 +46,7 @@ describe('guess params test util', function() {
   describe('#guessPddClientRequestWithRetryParams', function() {
     it('only pass callback sense', function() {
       const defaultResult = [defaultRetryOptions, undefined, callback];
-      expect(guessPddClientRequestWithRetryParams(callback)).to.be.eqls(defaultResult);
+      expect(guessPddClientRequestWithRetryParams(callback, undefined)).to.be.eqls(defaultResult);
       expect(guessPddClientRequestWithRetryParams(undefined, callback)).to.be.eqls(defaultResult);
       expect(guessPddClientRequestWithRetryParams({}, callback)).to.be.eqls(defaultResult);
     });
@@ -65,8 +65,16 @@ describe('guess params test util', function() {
         },
       ];
       for (const option of axiosOptions) {
-        expect(guessPddClientRequestWithRetryParams(option)).to.be.eqls([defaultRetryOptions, option, undefined]);
+        expect(guessPddClientRequestWithRetryParams(option, undefined)).to.be.eqls([
+          defaultRetryOptions,
+          option,
+          undefined,
+        ]);
       }
+    });
+
+    it('should be undefined when pass null', function() {
+      expect(guessPddClientRequestWithRetryParams(null, undefined)).to.be.eqls([undefined, undefined, undefined]);
     });
   });
 

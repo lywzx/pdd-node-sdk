@@ -25,7 +25,7 @@ axiosInstance.defaults.headers.post['Content-Type'] = APPLICATION_FORM;
 axiosInstance.defaults.headers.post.Accept = 'application/json';
 
 type methodTypes = 'get' | 'post' | 'delete' | 'put';
-
+/* istanbul ignore next */
 function createMethods(method: methodTypes) {
   return function f(url: string, data = {}, options = {}) {
     const requestData: any = {};
@@ -50,9 +50,9 @@ function createMethods(method: methodTypes) {
 /**
  * 系统默认的网络请求库
  */
+/* istanbul ignore next */
 export class NetworkAdapter {
   public static axiosInstance = axiosInstance;
-
   static get = createMethods('get');
   static post = createMethods('post');
   static delete = createMethods('delete');

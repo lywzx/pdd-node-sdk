@@ -17,8 +17,8 @@ export type PddCacheOptions = PddApiCacheInterface | number | boolean;
  */
 export type PddAxiosClientOptions = Pick<AxiosRequestConfig, 'timeout' | 'proxy'>;
 
-// 限制拼多多接口的响应等待时间
-export type RetryOptionsType = (RetryOptionsInterface & PddAxiosClientOptions) | number;
+// 重试机制与null合并，如果为null，则表示临时关闭重试
+export type RetryOptionsType = (RetryOptionsInterface & PddAxiosClientOptions) | number | null;
 
 /**
  * 拼多多默认缓存配置

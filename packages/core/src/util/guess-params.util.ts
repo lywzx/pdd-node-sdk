@@ -6,11 +6,11 @@ import {
   RetryOptionsType,
 } from '../interfaces';
 import { PddApiCacheInterface } from '../interfaces/pdd-api-cache.interface';
-import { defaultRetryOptions } from '../libs';
 import extend from 'lodash/extend';
 import pick from 'lodash/pick';
 import omit from 'lodash/omit';
 import isString from 'lodash/isString';
+import { defaultRetryOptions as pddClientDefaultRetryOptionsConfig } from '../libs';
 
 const retryOptionKeys: Array<keyof (RetryOptionsInterface & PddAxiosClientOptions)> = [
   'timeout',
@@ -23,7 +23,7 @@ const retryOptionKeys: Array<keyof (RetryOptionsInterface & PddAxiosClientOption
  * @param value
  */
 export function isRetryOptionConfig(value: any): value is RetryOptionsType {
-  return typeof value === 'number' || (value && retryOptionKeys.some(key => key in value));
+  return value === null || typeof value === 'number' || (value && retryOptionKeys.some(key => key in value));
 }
 
 const cacheKeys: Array<keyof PddApiCacheInterface> = ['ttl', 'cacheKey'];
@@ -79,10 +79,12 @@ export function guessPddClientExecuteParams<T>(
  * 构建重试的参数
  * @param retryOptions
  * @param callback
+ * @param defaultRetryOptions
  */
 export function guessPddClientRequestWithRetryParams(
-  retryOptions?: RetryOptionsType | AsyncResultCallbackInterface<any, never>,
-  callback?: AsyncResultCallbackInterface<any, never>
+  retryOptions: RetryOptionsType | AsyncResultCallbackInterface<any, never> | undefined,
+  callback: AsyncResultCallbackInterface<any, never> | undefined,
+  defaultRetryOptions: RetryOptionsInterface = pddClientDefaultRetryOptionsConfig
 ): [
   RetryOptionsInterface | undefined,
   PddAxiosClientOptions | undefined,
@@ -98,7 +100,7 @@ export function guessPddClientRequestWithRetryParams(
     tryOptions = defaultRetryOptions;
   } else if (typeof retryOptions === 'number') {
     tryOptions = extend({}, defaultRetryOptions, { times: retryOptions });
-  } else if (typeof retryOptions === 'object') {
+  } else if (retryOptions && typeof retryOptions === 'object') {
     tryOptions = extend({}, defaultRetryOptions, omit(retryOptions, ['timeout', 'proxy']));
     if (retryOptions.timeout || retryOptions.proxy) {
       axiosClientOptions = pick(retryOptions, ['timeout', 'proxy']);

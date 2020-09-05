@@ -11,9 +11,10 @@ import {
   PddRequestParamsMissingException,
   PddResponseException,
 } from '../../src/exceptions';
-import { NetworkAdapter, PddApiCacheAbstract, PddClient } from '../../src/libs';
+import { defaultRetryOptions, NetworkAdapter, PddApiCacheAbstract, PddClient } from '../../src/libs';
+import * as validate from '../../src/util/validate';
 import { replace, fake, restore, stub } from 'sinon';
-import { once, extend } from 'lodash';
+import { once, extend, pick, keys } from 'lodash';
 import {
   replaceCheckTypeIsNeedAccessToken,
   replaceDevMode,
@@ -40,24 +41,26 @@ describe('pdd-client test util', function() {
     pddClient = new PddClient<{ userId: number; shopId: number }>(pddOptions);
   });
 
-  it('when without clientId or clientSecret should throw error', function() {
-    expect(() => {
-      new PddClient({
-        clientId: 'clientId',
-        clientSecret: '',
-      });
-    }).to.throw('clientId and clientSecret are necessary!');
+  describe('#constructor', function() {
+    it('when without clientId or clientSecret should throw error', function() {
+      expect(() => {
+        new PddClient({
+          clientId: 'clientId',
+          clientSecret: '',
+        });
+      }).to.throw('clientId and clientSecret are necessary!');
 
-    expect(function() {
-      new PddClient({
-        clientId: '',
-        clientSecret: 'clientSecret',
-      });
-    }).to.throw('clientId and clientSecret are necessary!');
-  });
+      expect(function() {
+        new PddClient({
+          clientId: '',
+          clientSecret: 'clientSecret',
+        });
+      }).to.throw('clientId and clientSecret are necessary!');
+    });
 
-  it('client should instanceof PddClient', function() {
-    expect(pddClient).be.instanceOf(PddClient);
+    it('client should instanceof PddClient', function() {
+      expect(pddClient).be.instanceOf(PddClient);
+    });
   });
 
   describe('#request methods', function() {
@@ -251,7 +254,7 @@ describe('pdd-client test util', function() {
       restored();
       expect(requestWithRetryOptions.lastCall.args).to.be.eqls([
         extend({}, params, { type: PDD_GOODS_CATS_GET }),
-        undefined,
+        defaultRetryOptions,
       ]);
     });
 
@@ -302,6 +305,77 @@ describe('pdd-client test util', function() {
       await pddClient.execute(PDD_TICKET_VERIFICATION_NOTIFYCATION, {}, 0, 2);
       restored();
       expect(cachedStub.callCount).to.be.eq(1);
+    });
+  });
+
+  describe('#generate method', function() {
+    it('should get result', async function() {
+      const result = { testResponse: true };
+      const post = stub().resolves(result);
+      const testValues = [
+        'code',
+        {
+          code: 'code',
+          // eslint-disable-next-line @typescript-eslint/camelcase
+          grant_type: 'authorization_code',
+        },
+        {
+          code: 'code',
+          // eslint-disable-next-line @typescript-eslint/camelcase
+          grant_type: 'refresh_token',
+        },
+      ];
+      // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
+      // @ts-ignore
+      replace(pddClient.networkAdapter, 'post', post);
+      for (const value of testValues) {
+        const res = await pddClient.generate(value as any);
+        expect(res).to.be.eq(result);
+      }
+      restored();
+    });
+
+    it('should get error without grant_type', async function() {
+      let err;
+      try {
+        // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
+        // @ts-ignore
+        // eslint-disable-next-line @typescript-eslint/camelcase
+        await pddClient.generate({ code: 'any', grant_type: '' });
+      } catch (e) {
+        err = e;
+      }
+      expect(err).to.be.instanceOf(Error);
+      expect(err.message).to.be.include('grant type');
+    });
+  });
+
+  describe('#refresh method', function() {
+    it('should get result', async function() {
+      const generate = stub().resolves({});
+      const token = 'test-token';
+      replace(pddClient, 'generate', generate);
+      await pddClient.refresh(token);
+      restored();
+      expect(generate.callCount).to.be.eq(1);
+      // eslint-disable-next-line @typescript-eslint/camelcase
+      expect(generate.lastCall.args).to.be.eqls([{ refresh_token: token, grant_type: 'refresh_token' }, undefined]);
+    });
+  });
+
+  describe('#setDefaultRequestParam static method', function() {
+    it('should set default request param', async function() {
+      // eslint-disable-next-line @typescript-eslint/camelcase
+      const param = { data_type: 'XML', version: 'V2' };
+      PddClient.setDefaultRequestParam(param as any);
+      const signStub = stub().throws(new Error('unknonw error'));
+      replace(pddClient, 'sign', signStub);
+      try {
+        await pddClient.request({ type: PDD_GOODS_CATS_GET });
+      } catch (e) {}
+      restored();
+      expect(signStub.callCount).to.be.eq(1);
+      expect(pick(signStub.lastCall.args[0], keys(param))).to.be.eqls(param);
     });
   });
 });

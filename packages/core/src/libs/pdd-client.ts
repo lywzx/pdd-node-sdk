@@ -4,6 +4,7 @@ import {
   PddCommonRequestInterface,
   PddResponseTypeAndRequestTypeMapping,
 } from '@pin-duo-duo/pdd-origin-api';
+import { defaultRetryOptions } from './pdd-client-default';
 import {
   DefaultRequestType,
   NetworkAdapterInterface,
@@ -193,7 +194,11 @@ export class PddClient<T = any> {
     retryOptions?: RetryOptionsType | AsyncResultCallbackInterface<R, never>,
     callback?: AsyncResultCallbackInterface<R, never>
   ): Promise<R> | void {
-    const [tryOptions, axiosClientOptions, cbk] = guessPddClientRequestWithRetryParams(retryOptions, callback);
+    const [tryOptions = { times: 1 }, axiosClientOptions, cbk] = guessPddClientRequestWithRetryParams(
+      retryOptions,
+      callback,
+      PddClient.retryOptions
+    );
 
     const pddLogClient = getPddLogClient();
     const enabled = pddLogClient && pddLogClient.enabled;
@@ -347,12 +352,12 @@ export class PddClient<T = any> {
     cacheOptions?: PddCacheOptions | AsyncResultCallbackInterface<Res, never>,
     callback?: AsyncResultCallbackInterface<Res, never>
   ): Promise<Res> | void {
-    const [apiAccessOptions, apiRetryOptions, apiCacheOptions, apiCallback] = guessPddClientExecuteParams<T>([
-      accessOptions,
-      retryOptions,
-      cacheOptions,
-      callback,
-    ]);
+    const [
+      apiAccessOptions,
+      apiRetryOptions = PddClient.retryOptions,
+      apiCacheOptions,
+      apiCallback,
+    ] = guessPddClientExecuteParams<T>([accessOptions, retryOptions, cacheOptions, callback]);
 
     // 是否需要传入access token信息
     const needAccessToken = checkTypeIsNeedAccessToken(type);
@@ -570,14 +575,14 @@ export class PddClient<T = any> {
    * 默认重试逻辑
    * @param RetryOptionsInterface
    */
-  protected static retryOptions: RetryOptionsInterface = { times: 0 };
+  protected static retryOptions: RetryOptionsInterface = defaultRetryOptions;
 
   /**
    * 设置重试逻辑
    * @param option {RetryOptionsInterface}
    */
   public static setRetryOptions(option: RetryOptionsInterface) {
-    this.retryOptions = option;
+    extend(PddClient.retryOptions, option);
   }
 
   /**

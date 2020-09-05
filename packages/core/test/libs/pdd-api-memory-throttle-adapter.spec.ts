@@ -35,7 +35,7 @@ describe('pdd-api-memory-throttle-adapter test util', function() {
       await sleep(50);
       const result = await instance.lock(key, 50);
 
-      expect(result.timeout).to.be.lessThan(951);
+      expect(result.timeout).to.be.lessThan(955);
       expect(result.triggerTotal).to.be.eq(3);
     });
 
