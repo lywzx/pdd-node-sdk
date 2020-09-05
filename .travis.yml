@@ -1,7 +1,17 @@
 language: node_js
 
 os:
+  - linux
   - windows
+  - osx
+
+cache:
+  timeout: 60
+  npm: true
+  yarn: true
+  directories:
+    - node_modules/ # npm packages
+    - .nyc_output/
 
 node_js:
   - 'node'
@@ -22,4 +32,5 @@ script:
   - npm run coverage
 
 after_script:
+  - codecov -f .nyc_output/*.json
   - travis_terminate 0 # try to make Windows quit
