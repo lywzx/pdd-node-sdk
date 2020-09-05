@@ -12,7 +12,7 @@ import {
   PddResponseException,
 } from '../../src/exceptions';
 import { defaultRetryOptions, NetworkAdapter, PddApiCacheAbstract, PddClient } from '../../src/libs';
-import * as validate from '../../src/util/validate';
+import * as guess from '../../src/util/guess-params.util';
 import { replace, fake, restore, stub } from 'sinon';
 import { once, extend, pick, keys } from 'lodash';
 import {
@@ -376,6 +376,20 @@ describe('pdd-client test util', function() {
       restored();
       expect(signStub.callCount).to.be.eq(1);
       expect(pick(signStub.lastCall.args[0], keys(param))).to.be.eqls(param);
+    });
+  });
+
+  describe('#setRetryOptions static method', function() {
+    it('should set default request param', async function() {
+      const times = 100;
+      PddClient.setRetryOptions({ times });
+      const stubGuessPddClientRequestWithRetryParams = stub().resolves([]);
+      replace(pddClient, 'request', stub().resolves(1));
+      replace(guess, 'guessPddClientRequestWithRetryParams', stubGuessPddClientRequestWithRetryParams);
+      await pddClient.requestWithRetry({ type: PDD_GOODS_CATS_GET });
+      restored();
+      expect(stubGuessPddClientRequestWithRetryParams.callCount).to.be.eq(1);
+      expect(stubGuessPddClientRequestWithRetryParams.lastCall.args[2].times).to.be.eq(times);
     });
   });
 });
