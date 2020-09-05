@@ -279,13 +279,29 @@ describe('pdd-client test util', function() {
       class Cache extends PddApiCacheAbstract {
         cached = cachedStub;
       }
-      PddClient.setPddDefaultCacheOptions({ alwaysWork: false, ttl: 2 });
+      replaceDevMode(true);
+      PddClient.setPddDefaultCacheOptions({ alwaysWork: true, ttl: 2 });
       pddClient = new PddClient<any>(pddOptions, undefined, new Cache());
       replaceCheckTypeIsNeedAccessToken(false);
       replaceRequestWithRetry(pddClient, { a: 1 });
-      await pddClient.execute(PDD_TICKET_VERIFICATION_NOTIFYCATION, {}, null, 0, 1);
+      await pddClient.execute(PDD_TICKET_VERIFICATION_NOTIFYCATION, {}, 0, 0);
       restored();
       expect(cachedStub.callCount).to.be.eq(0);
+    });
+
+    it('should cache when cache option is work', async function() {
+      const cachedStub = stub().resolves(1);
+      class Cache extends PddApiCacheAbstract {
+        cached = cachedStub;
+      }
+      replaceDevMode(true);
+      PddClient.setPddDefaultCacheOptions({ alwaysWork: true, ttl: 2 });
+      pddClient = new PddClient<any>(pddOptions, undefined, new Cache());
+      replaceCheckTypeIsNeedAccessToken(false);
+      replaceRequestWithRetry(pddClient, { a: 1 });
+      await pddClient.execute(PDD_TICKET_VERIFICATION_NOTIFYCATION, {}, 0, 2);
+      restored();
+      expect(cachedStub.callCount).to.be.eq(1);
     });
   });
 });
