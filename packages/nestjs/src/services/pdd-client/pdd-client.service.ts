@@ -1,12 +1,17 @@
 import { Inject, Injectable } from '@nestjs/common';
 import { ModuleRef } from '@nestjs/core';
 import { PddClient } from '@pin-duo-duo/core';
-import { NEST_PDD_MODULE_OPTIONS, NEST_PDD_MODULE_PDD_CLIENTS_ALL } from '../../constant';
+import {
+  NEST_PDD_MODULE_OPTIONS,
+  NEST_PDD_MODULE_PDD_CLIENTS_ALL,
+  NEST_PDD_MODULE_PDD_CLIENTS_DEFAULT,
+} from '../../constant';
 import { NestJsPddClientOptions, NestJsPddModuleAsyncOptionsInterface, PddClientCollect } from '../../interfaces';
 import { generateClientByClientOptions } from '../../util/providers';
 import toPairs from 'lodash/toPairs';
 import fromPairs from 'lodash/fromPairs';
 import isObject from 'lodash/isObject';
+import includes from 'lodash/includes';
 
 @Injectable()
 export class PddClientService {
@@ -34,10 +39,11 @@ export class PddClientService {
         this.clients.set(
           innerKey,
           fromPairs(
-            toPairs(this.options)
+            toPairs<any>(this.options)
               .filter(([k, option]) => {
                 return isObject(option);
               })
+              .concat([[NEST_PDD_MODULE_PDD_CLIENTS_DEFAULT, undefined]])
               .map(([k]) => {
                 return [k, this.get(k)];
               })
@@ -49,7 +55,7 @@ export class PddClientService {
       return this.clients.get(innerKey) as PddClient<T>;
     }
     let client: PddClient | undefined;
-    if (innerKey === this.options.defaultChannel) {
+    if (includes([NEST_PDD_MODULE_PDD_CLIENTS_DEFAULT, this.options.defaultChannel], innerKey)) {
       client = this.moduleRef.get<PddClient>(PddClient);
     } else if (this.options[innerKey as string] && isObject(this.options[innerKey as string])) {
       const option = this.options[innerKey as string];
