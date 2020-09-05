@@ -28,6 +28,13 @@ export interface PddGoodsChildSkuEditRequestInterface {
    *
    **/
   skus: PddGoodsChildSkuEditSkusRequestInterface[];
+
+  /**
+   * @description: 提交后上下架状态，0=上架；1=保持原样。表示编辑商品并提交后商品的上下架状态，不传时默认为0，上架。
+   * @type: number
+   * @default:
+   **/
+  sync_goods_operate?: number;
 }
 
 /**

@@ -4,7 +4,7 @@ export const PDD_FDS_ORDER_LIST_GET_LIMITERS = [
   {
     limiterLevel: 1,
     timeRange: 1,
-    times: 100,
+    times: 200,
   },
   {
     limiterLevel: 3,

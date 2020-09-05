@@ -3,13 +3,13 @@ export const PDD_GOODS_SKU_PRICE_UPDATE_RESPONSE_KEY = 'goods_update_sku_price_r
 export const PDD_GOODS_SKU_PRICE_UPDATE_LIMITERS = [
   {
     limiterLevel: 4,
-    timeRange: 10,
-    times: 1000,
+    timeRange: 25,
+    times: 2625,
   },
   {
     limiterLevel: 3,
-    timeRange: 10,
-    times: 3000,
+    timeRange: 25,
+    times: 7875,
   },
 ];
 

@@ -590,4 +590,11 @@ export interface PddDdkGoodsSearchGoodsSearchResponseGoodsListResponseInterface 
    * @default:
    **/
   predict_promotion_rate: string | number;
+
+  /**
+   * @description: 优惠标签列表
+   * @type: string[]
+   * @default:
+   **/
+  unified_tags: string[];
 }

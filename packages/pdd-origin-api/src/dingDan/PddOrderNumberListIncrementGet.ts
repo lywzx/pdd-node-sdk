@@ -613,6 +613,34 @@ export interface PddOrderNumberListIncrementGetOrderSnIncrementGetResponseOrderS
    * @default:
    **/
   yyps_time: string;
+
+  /**
+   * @description: 催发货时间
+   * @type: string
+   * @default:
+   **/
+  urge_shipping_time: string;
+
+  /**
+   * @description: 是否当日发货，1-是，0-否
+   * @type: number
+   * @default:
+   **/
+  delivery_one_day: number;
+
+  /**
+   * @description: 保税仓名称
+   * @type: string
+   * @default:
+   **/
+  bonded_warehouse: string;
+
+  /**
+   * @description: 订单改价折扣金额，单位元
+   * @type: string
+   * @default:
+   **/
+  order_change_amount: string;
 }
 
 /**

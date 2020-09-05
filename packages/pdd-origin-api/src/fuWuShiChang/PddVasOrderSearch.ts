@@ -4,7 +4,7 @@ export const PDD_VAS_ORDER_SEARCH_LIMITERS = [
   {
     limiterLevel: 4,
     timeRange: 1,
-    times: 5,
+    times: 10,
   },
 ];
 

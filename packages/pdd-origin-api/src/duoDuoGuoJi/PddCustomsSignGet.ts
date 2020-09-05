@@ -7,6 +7,34 @@ export const PDD_CUSTOMS_SIGN_GET = 'pdd.customs.sign.get';
  **/
 export interface PddCustomsSignGetRequestInterface {
   /**
+   * @description: 订单申报公司全称
+   * @type: string
+   * @default:
+   **/
+  ceb311_declare_company: string;
+
+  /**
+   * @description: 订单申报公司海关备案号
+   * @type: string
+   * @default:
+   **/
+  ceb311_declare_company_code: string;
+
+  /**
+   * @description: 清单申报公司全称
+   * @type: string
+   * @default:
+   **/
+  ceb621_declare_company: string;
+
+  /**
+   * @description: 清单申报公司海关备案号
+   * @type: string
+   * @default:
+   **/
+  ceb621_declare_company_code: string;
+
+  /**
    * @description: 业务单证名称，例如：CEB311，CEB621，枚举见：CEBNameEnum
    * @type: string
    * @default:
@@ -28,6 +56,20 @@ export interface PddCustomsSignGetRequestInterface {
   data_to_sign: string;
 
   /**
+   * @description: 运单申报公司全称，例如**快递
+   * @type: string
+   * @default:
+   **/
+  express_declare_company: string;
+
+  /**
+   * @description: 运单申报公司海关备案号，比如：****W60TQ6
+   * @type: string
+   * @default:
+   **/
+  express_declare_company_code: string;
+
+  /**
    * @description: 订单号
    * @type: string
    * @default:
@@ -37,7 +79,7 @@ export interface PddCustomsSignGetRequestInterface {
   /**
    * @description: trace_id不能为空，用于请求的唯一性标示和问题排查，请在日志中打印，同时此字段也用于数据的去重，建议使用UUID.randomUUID().toString()生成，不能超过50个字符
    * @type: string
-   * @default: 1
+   * @default:
    **/
   trace_id: string;
 
@@ -49,7 +91,14 @@ export interface PddCustomsSignGetRequestInterface {
   trade_no: string;
 
   /**
-   * @description: 报关仓名称
+   * @description: 申报服务仓海关备案号，例如：****W60TQ6
+   * @type: string
+   * @default:
+   **/
+  warehouse_code: string;
+
+  /**
+   * @description: 申报服务仓名称，例如：东莞虎门保税******仓
    * @type: string
    * @default:
    **/

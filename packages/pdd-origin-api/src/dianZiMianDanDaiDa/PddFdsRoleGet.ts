@@ -4,7 +4,7 @@ export const PDD_FDS_ROLE_GET_LIMITERS = [
   {
     limiterLevel: 1,
     timeRange: 1,
-    times: 1,
+    times: 10,
   },
 ];
 

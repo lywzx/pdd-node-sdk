@@ -179,10 +179,10 @@ export interface PddLogisticsTicketGetLogisticsTicketGetResponseLogisticsTicketL
 
   /**
    * @description: 寄件单号
-   * @type: number
+   * @type: string
    * @default:
    **/
-  mail_order_sn: number;
+  mail_order_sn: string;
 
   /**
    * @description: 订单金额

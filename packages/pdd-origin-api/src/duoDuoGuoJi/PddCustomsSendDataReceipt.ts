@@ -8,6 +8,34 @@ export const PDD_CUSTOMS_SEND_DATA_RECEIPT_RESPONSE_KEY = 'custom_receipt_respon
  **/
 export interface PddCustomsSendDataReceiptRequestInterface {
   /**
+   * @description: 订单申报公司全称
+   * @type: string
+   * @default:
+   **/
+  ceb311_declare_company: string;
+
+  /**
+   * @description: 订单申报公司海关备案号
+   * @type: string
+   * @default:
+   **/
+  ceb311_declare_company_code: string;
+
+  /**
+   * @description: 清单申报公司全称
+   * @type: string
+   * @default:
+   **/
+  ceb621_declare_company: string;
+
+  /**
+   * @description: 清单申报公司海关备案号
+   * @type: string
+   * @default:
+   **/
+  ceb621_declare_company_code: string;
+
+  /**
    * @description: 业务单证名称，例如：CEB311，CEB621，枚举见：CEBNameEnum
    * @type: string
    * @default:
@@ -15,7 +43,7 @@ export interface PddCustomsSendDataReceiptRequestInterface {
   ceb_name: string;
 
   /**
-   * @description: 回执时间的timestamp，dataType=2-报关回执数据，此字段必填
+   * @description: 回执时间13位的timestamp，dataType=2-报关回执数据，此字段必填
    * @type: string | number
    * @default:
    **/
