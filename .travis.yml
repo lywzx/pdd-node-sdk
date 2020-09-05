@@ -22,3 +22,5 @@ script:
   - npm run coverage
   - npx codecov -f .nyc_output/*.json
 
+after_success
+  - travis_terminate 0 # try to make Windows quit
