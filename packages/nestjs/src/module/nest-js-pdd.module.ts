@@ -75,7 +75,7 @@ export class NestJsPddModule {
     };
   }
 
-  public static createAsyncProviders(options: NestJsPddModuleOptionsInterface): Provider[] {
+  protected static createAsyncProviders(options: NestJsPddModuleOptionsInterface): Provider[] {
     const result: Provider[] = [...DefaultProvider];
     const asyncOptionsProvider = this.createAsyncOptionsProvider(options);
     if (asyncOptionsProvider) {
@@ -91,7 +91,7 @@ export class NestJsPddModule {
     return result;
   }
 
-  public static createAsyncOptionsProvider(options: NestJsPddModuleOptionsInterface): Provider | void {
+  protected static createAsyncOptionsProvider(options: NestJsPddModuleOptionsInterface): Provider | void {
     if (options.useFactory) {
       return {
         provide: NEST_PDD_MODULE_OPTIONS,

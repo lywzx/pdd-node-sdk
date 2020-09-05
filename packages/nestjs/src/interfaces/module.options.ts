@@ -35,12 +35,12 @@ export interface NestJsPddModuleAsyncOptionsInterface {
 export interface NestJsPddModuleOptionsInterface extends Pick<ModuleMetadata, 'imports'> {
   /**
    * Injection token resolving to an existing provider. The provider must implement
-   * the `CacheOptionsFactory` interface.
+   * the `PddOptionsFactoryInterface` interface.
    */
   useExisting?: Type<PddOptionsFactoryInterface>;
   /**
    * Injection token resolving to a class that will be instantiated as a provider.
-   * The class must implement the `CacheOptionsFactory` interface.
+   * The class must implement the `PddOptionsFactoryInterface` interface.
    */
   useClass?: Type<PddOptionsFactoryInterface>;
   /**

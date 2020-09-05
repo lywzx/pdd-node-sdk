@@ -9,7 +9,7 @@ import {
 } from '../src';
 import { clientOptions } from './config/test-config';
 
-describe('FrontRouterService', () => {
+describe('PddClientService', () => {
   let service: PddClientService;
   let module: TestingModule;
   beforeEach(async () => {
