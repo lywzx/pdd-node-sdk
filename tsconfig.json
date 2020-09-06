@@ -1,25 +1,19 @@
 {
   "compilerOptions": {
     "target": "es5",
-    "module": "commonjs",
+    "module": "CommonJS",
     "declaration": true,
-    "declarationDir": "./dist/@types",
-    "outDir": "./dist",
     "strict": true,
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
     "sourceMap": true,
-    "lib": ["es6"]
+    "lib": ["es6"],
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "downlevelIteration": true
   },
-  "include": [
-    "src/**/*"
-  ],
+  "include": ["packages", "examples", "scripts"],
   "exclude": [
-    "node_modules",
-    "**/*.spec.ts"
-  ],
-  "typedocOptions": {
-    "mode": "modules",
-    "out": "apidocs"
-  }
+    "node_modules"
+  ]
 }

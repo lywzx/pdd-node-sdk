@@ -1,0 +1,59 @@
+{
+  "name": "@pin-duo-duo/core",
+  "version": "0.0.2-alpha.1",
+  "keywords": [
+    "pdd",
+    "pinduoduo",
+    "duoduoke",
+    "pdd-sdk",
+    "sdk",
+    "拼多多",
+    "多多客",
+    "拼多多SDK"
+  ],
+  "author": "lywzx <liuyang@lyblog.net>",
+  "homepage": "https://github.com/lywzx/pdd-node-sdk/tree/master/packages/core#readme",
+  "license": "MIT",
+  "main": "lib/index.common.js",
+  "module": "lib/index.esm.js",
+  "unpkg": "lib/index.js",
+  "jsdelivr": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "directories": {
+    "lib": "lib",
+    "test": "test"
+  },
+  "files": [
+    "lib"
+  ],
+  "publishConfig": {
+    "registry": "http://registry.npmjs.org",
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lywzx/pdd-node-sdk.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: run tests from root\" && exit 1"
+  },
+  "bugs": {
+    "url": "https://github.com/lywzx/pdd-node-sdk/issues"
+  },
+  "dependencies": {
+    "@pin-duo-duo/pdd-origin-api": "^0.0.2-alpha.1",
+    "async": "^3.2.0",
+    "axios": "^0.19.2",
+    "crypto-js": "^4.0.0",
+    "fast-json-stable-stringify": "^2.1.0",
+    "lodash": "^4.17.19"
+  },
+  "devDependencies": {
+    "@types/async": "^3.2.0",
+    "@types/crypto-js": "^3.1.44",
+    "@types/debug": "^4.1.5",
+    "@types/lodash": "^4.14.158",
+    "debug": "^4.2.0"
+  },
+  "gitHead": "211b14d8c045925f68f393873ac0ecc51370d023"
+}
