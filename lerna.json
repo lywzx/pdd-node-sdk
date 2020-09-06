@@ -5,7 +5,6 @@
   "command": {
     "publish": {
       "ignoreChanges": [
-        "**/src/**",
         "**/test/**",
         "**/tsconfig.json"
       ],
