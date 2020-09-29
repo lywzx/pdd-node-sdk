@@ -6,3 +6,4 @@ export * from './pdd-api-throttle';
 export * from './pdd-api-throttle-adapter';
 export * from './pdd-api-cache.abstract';
 export * from './pdd-client-access-auth.abstract';
+export * from './pdd-api-without-throttle-adapter';

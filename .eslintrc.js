@@ -23,6 +23,7 @@ module.exports = {
     '@typescript-eslint/no-use-before-define': 'off',
     '@typescript-eslint/no-parameter-properties': 'off',
     'indent': 'off',
-    '@typescript-eslint/indent': 'off'
+    '@typescript-eslint/indent': 'off',
+    'linebreak-style': ['error', 'unix'],
   }
 };

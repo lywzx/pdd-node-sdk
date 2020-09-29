@@ -47,6 +47,7 @@ import { PddClientAccessAuth } from './pdd-client-access-auth.abstract';
 import { APPLICATION_JSON } from '../constant/content-type';
 import { pddLog, getPddLogClient } from '../util/debug';
 import { PddAccessTokenMissingException, PddResponseException } from '../exceptions';
+import { EventEmitter } from 'events';
 
 type PddClientGenerateType =
   | string
@@ -64,6 +65,12 @@ type PddCommonRequestExcludeSomeAttr = Pick<PddCommonRequestInterface, 'access_t
  * pdd client
  */
 export class PddClient<T = any> {
+  /**
+   * 自定议错误事件等
+   * @protected
+   */
+  protected event: EventEmitter;
+
   constructor(
     public options: PddClientOptionsInterface,
     public pddClientAuth?: PddClientAccessAuth<T>,
@@ -80,6 +87,7 @@ export class PddClient<T = any> {
     if (!this.options.endpoint) {
       this.options.endpoint = PDD_END_POINTS;
     }
+    this.event = new EventEmitter();
   }
 
   /**
