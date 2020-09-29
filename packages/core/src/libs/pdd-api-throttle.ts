@@ -18,17 +18,23 @@ export class PddApiThrottle {
   /**
    * 获取限频数据
    * @param api {string} 请求api名称
-   * @param ak {string} 店铺签名
-   * @param startAt
+   * @param clientId 应用ID
+   * @param mallId 店铺ID
+   * @param startAt 开始时间
    */
-  public async checkApiThrottle(api: string, ak?: string, startAt: number = Date.now()): Promise<null> {
+  public async checkApiThrottle(
+    api: string,
+    clientId: string,
+    mallId = '',
+    startAt: number = Date.now()
+  ): Promise<null> {
     const apiRateLimit = getTypeApiLimiter(api);
     if (!apiRateLimit) {
       return null;
     }
     const result = await Promise.all(
       map(apiRateLimit, limiter => {
-        const saveKey = this.getSaveKey(api, limiter.limiterLevel, ak);
+        const saveKey = this.getSaveKey(api, limiter.limiterLevel, clientId, mallId);
         return this.adapter.lock(saveKey, limiter.timeRange * 1000).then(lock => ({
           saveKey,
           lock,
@@ -71,7 +77,7 @@ export class PddApiThrottle {
         // 时间绝对相等时，可能会多一次无效的重试，暂时默认再加1ms
         await sleep(realWaitTimeout + 1);
       }
-      return this.checkApiThrottle(api, ak, startAt);
+      return this.checkApiThrottle(api, clientId, mallId, startAt);
     }
 
     // 立即执行
@@ -80,22 +86,23 @@ export class PddApiThrottle {
 
   /**
    * 获取生成的key
-   * @param api
-   * @param level
-   * @param ak
+   * @param api api名称
+   * @param level 限流类型
+   * @param clientId 应用ID
+   * @param mallId 店铺ID
    * @protected
    */
-  protected getSaveKey(api: string, level: PddApiLimiterLevel, ak?: string): string {
+  protected getSaveKey(api: string, level: PddApiLimiterLevel, clientId: string, mallId = ''): string {
     const prefix = this.options.keyPrefix || 'pdd:api:limiter';
     switch (level) {
       case PddApiLimiterLevel.API: {
         return `${prefix}:${api}:limit:total`;
       }
       case PddApiLimiterLevel.APP: {
-        return `${prefix}:app:limit:total`;
+        return `${prefix}:${api}:${clientId}:limit:total`;
       }
       case PddApiLimiterLevel.SHOP: {
-        return `${prefix}:shop:${ak}:limit:total`;
+        return `${prefix}:${api}:shop:${mallId}:limit:total`;
       }
     }
   }

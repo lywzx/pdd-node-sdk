@@ -3,6 +3,9 @@ import { AxiosRequestConfig } from 'axios';
 import { PddApiCacheInterface } from './pdd-api-cache.interface';
 import { RetryOptionsInterface } from './retry-options.interface';
 
+/**
+ * 拼多多API请求的部分数据
+ */
 export type RequestParamsType = Partial<Omit<PddCommonRequestInterface, 'sign' | 'timestamp' | 'client_id'>> & {
   [s: string]: any;
 };
