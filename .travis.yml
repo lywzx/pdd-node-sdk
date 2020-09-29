@@ -33,4 +33,3 @@ script:
 
 after_script:
   - codecov -f .nyc_output/*.json
-  - travis_terminate 0 # try to make Windows quit

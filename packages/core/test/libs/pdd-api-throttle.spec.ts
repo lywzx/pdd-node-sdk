@@ -42,7 +42,7 @@ describe('pdd-api-throttle test', function() {
 
   describe('#checkApiThrottle', async function() {
     it('without api throttle should return null ', async function() {
-      const result = await pddApiThrottleInstance.checkApiThrottle(apiKey);
+      const result = await pddApiThrottleInstance.checkApiThrottle(apiKey, '');
       expect(result).to.be.null;
     });
 

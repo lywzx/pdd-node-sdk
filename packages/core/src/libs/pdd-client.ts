@@ -83,7 +83,7 @@ type RequestParamsTypeMix = RequestParamsType & RequestParamsTypeWithAccessToken
 /**
  * pdd client
  */
-export class PddClient<T extends object> {
+export class PddClient<T extends object = any> {
   /**
    * 自定议错误事件等
    * @protected
