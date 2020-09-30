@@ -4,7 +4,7 @@ export const PDD_DDK_ORDER_DETAIL_GET_LIMITERS = [
   {
     limiterLevel: 3,
     timeRange: 10,
-    times: 22250,
+    times: 26700,
   },
 ];
 

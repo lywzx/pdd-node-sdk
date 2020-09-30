@@ -24,6 +24,9 @@ export interface NestJsPddClientOptions<T extends object = any> extends PddClien
  */
 export type NestJsPddModuleOptions = NestJsPddModuleAsyncOptionsInterface | NestJsPddClientOptions;
 
+/**
+ * Nest异步模块配置
+ */
 export interface NestJsPddModuleAsyncOptionsInterface {
   // 默认的channel的频道
   defaultChannel: string;

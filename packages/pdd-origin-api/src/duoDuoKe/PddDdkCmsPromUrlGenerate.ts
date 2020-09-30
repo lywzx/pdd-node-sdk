@@ -4,7 +4,7 @@ export const PDD_DDK_CMS_PROM_URL_GENERATE_LIMITERS = [
   {
     limiterLevel: 3,
     timeRange: 10,
-    times: 8375,
+    times: 10050,
   },
 ];
 
@@ -69,6 +69,20 @@ export interface PddDdkCmsPromUrlGenerateRequestInterface {
    * @default:
    **/
   p_id_list: string[];
+
+  /**
+   * @description: 是否生成小程序推广
+   * @type: boolean
+   * @default:
+   **/
+  generate_we_app?: boolean;
+
+  /**
+   * @description: 搜索关键词
+   * @type: string
+   * @default:
+   **/
+  keyword?: string;
 }
 
 /**
@@ -220,6 +234,14 @@ export interface PddDdkCmsPromUrlGenerateCmsPromotionUrlGenerateResponseUrlListR
    * @default:
    **/
   we_app_web_view_url: string;
+
+  /**
+   * @description: 小程序信息
+   * @type: PddDdkCmsPromUrlGenerateCmsPromotionUrlGenerateResponseUrlListWeAppInfoResponseInterface
+   * @default:
+   *
+   **/
+  we_app_info: PddDdkCmsPromUrlGenerateCmsPromotionUrlGenerateResponseUrlListWeAppInfoResponseInterface;
 }
 
 /**
@@ -332,4 +354,67 @@ export interface PddDdkCmsPromUrlGenerateCmsPromotionUrlGenerateResponseUrlListS
    * @default:
    **/
   we_app_web_view_url: string;
+}
+
+/**
+ * @description 小程序信息
+ * @default
+ * @example
+ **/
+export interface PddDdkCmsPromUrlGenerateCmsPromotionUrlGenerateResponseUrlListWeAppInfoResponseInterface {
+  /**
+   * @description: 拼多多小程序id
+   * @type: string
+   * @default:
+   **/
+  app_id: string;
+
+  /**
+   * @description: Banner图
+   * @type: string
+   * @default:
+   **/
+  banner_url: string;
+
+  /**
+   * @description: 描述
+   * @type: string
+   * @default:
+   **/
+  desc: string;
+
+  /**
+   * @description: 小程序path值
+   * @type: string
+   * @default:
+   **/
+  page_path: string;
+
+  /**
+   * @description: 来源名
+   * @type: string
+   * @default:
+   **/
+  source_display_name: string;
+
+  /**
+   * @description: 小程序标题
+   * @type: string
+   * @default:
+   **/
+  title: string;
+
+  /**
+   * @description: 用户名
+   * @type: string
+   * @default:
+   **/
+  user_name: string;
+
+  /**
+   * @description: 小程序图片
+   * @type: string
+   * @default:
+   **/
+  we_app_icon_url: string;
 }

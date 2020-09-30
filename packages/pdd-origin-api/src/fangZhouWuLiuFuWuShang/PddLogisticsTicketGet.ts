@@ -4,7 +4,7 @@ export const PDD_LOGISTICS_TICKET_GET_LIMITERS = [
   {
     limiterLevel: 1,
     timeRange: 60,
-    times: 4000,
+    times: 4800,
   },
 ];
 

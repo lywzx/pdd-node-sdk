@@ -4,7 +4,7 @@ export const PDD_GOODS_EDIT_GOODS_COMMIT_LIMITERS = [
   {
     limiterLevel: 3,
     timeRange: 10,
-    times: 5000,
+    times: 6000,
   },
 ];
 
@@ -245,6 +245,20 @@ export interface PddGoodsEditGoodsCommitRequestInterface {
    * @default:
    **/
   out_goods_id?: string;
+
+  /**
+   * @description: 第三方商品Id
+   * @type: string
+   * @default:
+   **/
+  out_source_goods_id?: string;
+
+  /**
+   * @description: 第三方商品来源
+   * @type: number
+   * @default:
+   **/
+  out_source_type?: number;
 
   /**
    * @description: {
@@ -686,6 +700,13 @@ export interface PddGoodsEditGoodsCommitSkuListRequestInterface {
    * @default:
    **/
   out_sku_sn?: string;
+
+  /**
+   * @description: 第三方sku Id
+   * @type: string
+   * @default:
+   **/
+  out_source_sku_id?: string;
 
   /**
    * @description: oversea_sku

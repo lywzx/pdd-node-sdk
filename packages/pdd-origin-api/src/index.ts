@@ -10,7 +10,6 @@ import {
   PDD_ERP_ORDER_SYNC,
   PddErpOrderSyncRequestInterface,
   PddErpOrderSyncResponseInterface,
-  PDD_ERP_ORDER_SYNC_LIMITERS,
 } from './dingDan/PddErpOrderSync';
 import {
   PDD_ORDER_BASIC_LIST_GET,
@@ -191,6 +190,13 @@ import {
   PddGoodsAuthorizationCatsGoodsAuthCatsGetResponseResponseInterface,
   PDD_GOODS_AUTHORIZATION_CATS_LIMITERS,
 } from './shangPin/PddGoodsAuthorizationCats';
+import {
+  PDD_GOODS_CAT_RULE_GET,
+  PDD_GOODS_CAT_RULE_GET_RESPONSE_KEY,
+  PddGoodsCatRuleGetRequestInterface,
+  PddGoodsCatRuleGetResponseInterface,
+  PddGoodsCatRuleGetCatRuleGetResponseResponseInterface,
+} from './shangPin/PddGoodsCatRuleGet';
 import {
   PDD_GOODS_CAT_TEMPLATE_GET,
   PDD_GOODS_CAT_TEMPLATE_GET_RESPONSE_KEY,
@@ -532,6 +538,20 @@ import {
   PDD_GOODS_SPEC_ID_GET_LIMITERS,
 } from './shangPin/PddGoodsSpecIdGet';
 import {
+  PDD_GOODS_SPU_GET,
+  PDD_GOODS_SPU_GET_RESPONSE_KEY,
+  PddGoodsSpuGetRequestInterface,
+  PddGoodsSpuGetResponseInterface,
+  PddGoodsSpuGetSpuGetResponseResponseInterface,
+} from './shangPin/PddGoodsSpuGet';
+import {
+  PDD_GOODS_SPU_SEARCH,
+  PDD_GOODS_SPU_SEARCH_RESPONSE_KEY,
+  PddGoodsSpuSearchRequestInterface,
+  PddGoodsSpuSearchResponseInterface,
+  PddGoodsSpuSearchSpuSearchResponseResponseInterface,
+} from './shangPin/PddGoodsSpuSearch';
+import {
   PDD_GOODS_SUBMIT_GOODS_COMMIT,
   PDD_GOODS_SUBMIT_GOODS_COMMIT_RESPONSE_KEY,
   PddGoodsSubmitGoodsCommitRequestInterface,
@@ -575,7 +595,6 @@ import {
   PddDdkCouponInfoQueryRequestInterface,
   PddDdkCouponInfoQueryResponseInterface,
   PddDdkCouponInfoQueryDdkCouponInfoQueryResponseResponseInterface,
-  PDD_DDK_COUPON_INFO_QUERY_LIMITERS,
 } from './duoDuoKe/PddDdkCouponInfoQuery';
 import {
   PDD_DDK_FINANCE_CPA_QUERY,
@@ -583,7 +602,6 @@ import {
   PddDdkFinanceCpaQueryRequestInterface,
   PddDdkFinanceCpaQueryResponseInterface,
   PddDdkFinanceCpaQueryFinanceCpaQueryResponseResponseInterface,
-  PDD_DDK_FINANCE_CPA_QUERY_LIMITERS,
 } from './duoDuoKe/PddDdkFinanceCpaQuery';
 import {
   PDD_DDK_GOODS_BASIC_INFO_GET,
@@ -591,7 +609,6 @@ import {
   PddDdkGoodsBasicInfoGetRequestInterface,
   PddDdkGoodsBasicInfoGetResponseInterface,
   PddDdkGoodsBasicInfoGetGoodsBasicDetailResponseResponseInterface,
-  PDD_DDK_GOODS_BASIC_INFO_GET_LIMITERS,
 } from './duoDuoKe/PddDdkGoodsBasicInfoGet';
 import {
   PDD_DDK_GOODS_DETAIL,
@@ -607,7 +624,6 @@ import {
   PddDdkGoodsPidGenerateRequestInterface,
   PddDdkGoodsPidGenerateResponseInterface,
   PddDdkGoodsPidGeneratePIdGenerateResponseResponseInterface,
-  PDD_DDK_GOODS_PID_GENERATE_LIMITERS,
 } from './duoDuoKe/PddDdkGoodsPidGenerate';
 import {
   PDD_DDK_GOODS_PID_QUERY,
@@ -615,7 +631,6 @@ import {
   PddDdkGoodsPidQueryRequestInterface,
   PddDdkGoodsPidQueryResponseInterface,
   PddDdkGoodsPidQueryPIdQueryResponseResponseInterface,
-  PDD_DDK_GOODS_PID_QUERY_LIMITERS,
 } from './duoDuoKe/PddDdkGoodsPidQuery';
 import {
   PDD_DDK_GOODS_PROMOTION_URL_GENERATE,
@@ -631,7 +646,6 @@ import {
   PddDdkGoodsRecommendGetRequestInterface,
   PddDdkGoodsRecommendGetResponseInterface,
   PddDdkGoodsRecommendGetGoodsBasicDetailResponseResponseInterface,
-  PDD_DDK_GOODS_RECOMMEND_GET_LIMITERS,
 } from './duoDuoKe/PddDdkGoodsRecommendGet';
 import {
   PDD_DDK_GOODS_SEARCH,
@@ -647,7 +661,6 @@ import {
   PddDdkGoodsUnitQueryRequestInterface,
   PddDdkGoodsUnitQueryResponseInterface,
   PddDdkGoodsUnitQueryDdkGoodsUnitQueryResponseResponseInterface,
-  PDD_DDK_GOODS_UNIT_QUERY_LIMITERS,
 } from './duoDuoKe/PddDdkGoodsUnitQuery';
 import {
   PDD_DDK_GOODS_ZS_UNIT_URL_GEN,
@@ -655,7 +668,6 @@ import {
   PddDdkGoodsZsUnitUrlGenRequestInterface,
   PddDdkGoodsZsUnitUrlGenResponseInterface,
   PddDdkGoodsZsUnitUrlGenGoodsZsUnitGenerateResponseResponseInterface,
-  PDD_DDK_GOODS_ZS_UNIT_URL_GEN_LIMITERS,
 } from './duoDuoKe/PddDdkGoodsZsUnitUrlGen';
 import {
   PDD_DDK_LIVE_DETAIL,
@@ -684,7 +696,6 @@ import {
   PddDdkLotteryUrlGenRequestInterface,
   PddDdkLotteryUrlGenResponseInterface,
   PddDdkLotteryUrlGenLotteryUrlResponseResponseInterface,
-  PDD_DDK_LOTTERY_URL_GEN_LIMITERS,
 } from './duoDuoKe/PddDdkLotteryUrlGen';
 import {
   PDD_DDK_MALL_GOODS_LIST_GET,
@@ -692,7 +703,6 @@ import {
   PddDdkMallGoodsListGetRequestInterface,
   PddDdkMallGoodsListGetResponseInterface,
   PddDdkMallGoodsListGetGoodsInfoListResponseResponseInterface,
-  PDD_DDK_MALL_GOODS_LIST_GET_LIMITERS,
 } from './duoDuoKe/PddDdkMallGoodsListGet';
 import {
   PDD_DDK_MALL_URL_GEN,
@@ -714,7 +724,6 @@ import {
   PddDdkMerchantListGetRequestInterface,
   PddDdkMerchantListGetResponseInterface,
   PddDdkMerchantListGetMerchantListResponseResponseInterface,
-  PDD_DDK_MERCHANT_LIST_GET_LIMITERS,
 } from './duoDuoKe/PddDdkMerchantListGet';
 import {
   PDD_DDK_ORDER_DETAIL_GET,
@@ -738,7 +747,6 @@ import {
   PddDdkOrderListRangeGetRequestInterface,
   PddDdkOrderListRangeGetResponseInterface,
   PddDdkOrderListRangeGetOrderListGetResponseResponseInterface,
-  PDD_DDK_ORDER_LIST_RANGE_GET_LIMITERS,
 } from './duoDuoKe/PddDdkOrderListRangeGet';
 import {
   PDD_DDK_RESOURCE_URL_GEN,
@@ -746,7 +754,6 @@ import {
   PddDdkResourceUrlGenRequestInterface,
   PddDdkResourceUrlGenResponseInterface,
   PddDdkResourceUrlGenResourceUrlResponseResponseInterface,
-  PDD_DDK_RESOURCE_URL_GEN_LIMITERS,
 } from './duoDuoKe/PddDdkResourceUrlGen';
 import {
   PDD_DDK_RP_PROM_URL_GENERATE,
@@ -754,7 +761,6 @@ import {
   PddDdkRpPromUrlGenerateRequestInterface,
   PddDdkRpPromUrlGenerateResponseInterface,
   PddDdkRpPromUrlGenerateRpPromotionUrlGenerateResponseResponseInterface,
-  PDD_DDK_RP_PROM_URL_GENERATE_LIMITERS,
 } from './duoDuoKe/PddDdkRpPromUrlGenerate';
 import {
   PDD_DDK_THEME_GOODS_SEARCH,
@@ -762,7 +768,6 @@ import {
   PddDdkThemeGoodsSearchRequestInterface,
   PddDdkThemeGoodsSearchResponseInterface,
   PddDdkThemeGoodsSearchThemeListGetResponseResponseInterface,
-  PDD_DDK_THEME_GOODS_SEARCH_LIMITERS,
 } from './duoDuoKe/PddDdkThemeGoodsSearch';
 import {
   PDD_DDK_THEME_LIST_GET,
@@ -770,7 +775,6 @@ import {
   PddDdkThemeListGetRequestInterface,
   PddDdkThemeListGetResponseInterface,
   PddDdkThemeListGetThemeListGetResponseResponseInterface,
-  PDD_DDK_THEME_LIST_GET_LIMITERS,
 } from './duoDuoKe/PddDdkThemeListGet';
 import {
   PDD_DDK_THEME_PROM_URL_GENERATE,
@@ -778,7 +782,6 @@ import {
   PddDdkThemePromUrlGenerateRequestInterface,
   PddDdkThemePromUrlGenerateResponseInterface,
   PddDdkThemePromUrlGenerateThemePromotionUrlGenerateResponseResponseInterface,
-  PDD_DDK_THEME_PROM_URL_GENERATE_LIMITERS,
 } from './duoDuoKe/PddDdkThemePromUrlGenerate';
 import {
   PDD_DDK_TOP_GOODS_LIST_QUERY,
@@ -786,7 +789,6 @@ import {
   PddDdkTopGoodsListQueryRequestInterface,
   PddDdkTopGoodsListQueryResponseInterface,
   PddDdkTopGoodsListQueryTopGoodsListGetResponseResponseInterface,
-  PDD_DDK_TOP_GOODS_LIST_QUERY_LIMITERS,
 } from './duoDuoKe/PddDdkTopGoodsListQuery';
 import {
   PDD_DDK_WEAPP_QRCODE_URL_GEN,
@@ -794,7 +796,6 @@ import {
   PddDdkWeappQrcodeUrlGenRequestInterface,
   PddDdkWeappQrcodeUrlGenResponseInterface,
   PddDdkWeappQrcodeUrlGenWeappQrcodeGenerateResponseResponseInterface,
-  PDD_DDK_WEAPP_QRCODE_URL_GEN_LIMITERS,
 } from './duoDuoKe/PddDdkWeappQrcodeUrlGen';
 // 多多客工具API
 import {
@@ -803,7 +804,6 @@ import {
   PddDdkAllOrderListIncrementGetRequestInterface,
   PddDdkAllOrderListIncrementGetResponseInterface,
   PddDdkAllOrderListIncrementGetOrderListGetResponseResponseInterface,
-  PDD_DDK_ALL_ORDER_LIST_INCREMENT_GET_LIMITERS,
 } from './duoDuoKeGongJu/PddDdkAllOrderListIncrementGet';
 import {
   PDD_DDK_OAUTH_CMS_PROM_URL_GENERATE,
@@ -811,7 +811,6 @@ import {
   PddDdkOauthCmsPromUrlGenerateRequestInterface,
   PddDdkOauthCmsPromUrlGenerateResponseInterface,
   PddDdkOauthCmsPromUrlGenerateCmsPromotionUrlGenerateResponseResponseInterface,
-  PDD_DDK_OAUTH_CMS_PROM_URL_GENERATE_LIMITERS,
 } from './duoDuoKeGongJu/PddDdkOauthCmsPromUrlGenerate';
 import {
   PDD_DDK_OAUTH_GOODS_PID_GENERATE,
@@ -819,7 +818,6 @@ import {
   PddDdkOauthGoodsPidGenerateRequestInterface,
   PddDdkOauthGoodsPidGenerateResponseInterface,
   PddDdkOauthGoodsPidGeneratePIdGenerateResponseResponseInterface,
-  PDD_DDK_OAUTH_GOODS_PID_GENERATE_LIMITERS,
 } from './duoDuoKeGongJu/PddDdkOauthGoodsPidGenerate';
 import {
   PDD_DDK_OAUTH_GOODS_PID_QUERY,
@@ -827,7 +825,6 @@ import {
   PddDdkOauthGoodsPidQueryRequestInterface,
   PddDdkOauthGoodsPidQueryResponseInterface,
   PddDdkOauthGoodsPidQueryPIdQueryResponseResponseInterface,
-  PDD_DDK_OAUTH_GOODS_PID_QUERY_LIMITERS,
 } from './duoDuoKeGongJu/PddDdkOauthGoodsPidQuery';
 import {
   PDD_DDK_OAUTH_GOODS_PROM_URL_GENERATE,
@@ -835,7 +832,6 @@ import {
   PddDdkOauthGoodsPromUrlGenerateRequestInterface,
   PddDdkOauthGoodsPromUrlGenerateResponseInterface,
   PddDdkOauthGoodsPromUrlGenerateGoodsPromotionUrlGenerateResponseResponseInterface,
-  PDD_DDK_OAUTH_GOODS_PROM_URL_GENERATE_LIMITERS,
 } from './duoDuoKeGongJu/PddDdkOauthGoodsPromUrlGenerate';
 import {
   PDD_DDK_OAUTH_GOODS_RECOMMEND_GET,
@@ -843,7 +839,6 @@ import {
   PddDdkOauthGoodsRecommendGetRequestInterface,
   PddDdkOauthGoodsRecommendGetResponseInterface,
   PddDdkOauthGoodsRecommendGetGoodsBasicDetailResponseResponseInterface,
-  PDD_DDK_OAUTH_GOODS_RECOMMEND_GET_LIMITERS,
 } from './duoDuoKeGongJu/PddDdkOauthGoodsRecommendGet';
 import {
   PDD_DDK_OAUTH_GOODS_ZS_UNIT_URL_GEN,
@@ -851,7 +846,6 @@ import {
   PddDdkOauthGoodsZsUnitUrlGenRequestInterface,
   PddDdkOauthGoodsZsUnitUrlGenResponseInterface,
   PddDdkOauthGoodsZsUnitUrlGenGoodsZsUnitGenerateResponseResponseInterface,
-  PDD_DDK_OAUTH_GOODS_ZS_UNIT_URL_GEN_LIMITERS,
 } from './duoDuoKeGongJu/PddDdkOauthGoodsZsUnitUrlGen';
 import {
   PDD_DDK_OAUTH_LOTTERY_URL_GEN,
@@ -859,7 +853,6 @@ import {
   PddDdkOauthLotteryUrlGenRequestInterface,
   PddDdkOauthLotteryUrlGenResponseInterface,
   PddDdkOauthLotteryUrlGenLotteryUrlResponseResponseInterface,
-  PDD_DDK_OAUTH_LOTTERY_URL_GEN_LIMITERS,
 } from './duoDuoKeGongJu/PddDdkOauthLotteryUrlGen';
 import {
   PDD_DDK_OAUTH_MALL_URL_GEN,
@@ -867,7 +860,6 @@ import {
   PddDdkOauthMallUrlGenRequestInterface,
   PddDdkOauthMallUrlGenResponseInterface,
   PddDdkOauthMallUrlGenMallCouponGenerateUrlResponseResponseInterface,
-  PDD_DDK_OAUTH_MALL_URL_GEN_LIMITERS,
 } from './duoDuoKeGongJu/PddDdkOauthMallUrlGen';
 import {
   PDD_DDK_OAUTH_MEMBER_AUTHORITY_QUERY,
@@ -882,7 +874,6 @@ import {
   PddDdkOauthOrderDetailGetRequestInterface,
   PddDdkOauthOrderDetailGetResponseInterface,
   PddDdkOauthOrderDetailGetOrderDetailResponseResponseInterface,
-  PDD_DDK_OAUTH_ORDER_DETAIL_GET_LIMITERS,
 } from './duoDuoKeGongJu/PddDdkOauthOrderDetailGet';
 import {
   PDD_DDK_OAUTH_RESOURCE_URL_GEN,
@@ -890,7 +881,6 @@ import {
   PddDdkOauthResourceUrlGenRequestInterface,
   PddDdkOauthResourceUrlGenResponseInterface,
   PddDdkOauthResourceUrlGenResourceUrlResponseResponseInterface,
-  PDD_DDK_OAUTH_RESOURCE_URL_GEN_LIMITERS,
 } from './duoDuoKeGongJu/PddDdkOauthResourceUrlGen';
 import {
   PDD_DDK_OAUTH_RP_PROM_URL_GENERATE,
@@ -898,7 +888,6 @@ import {
   PddDdkOauthRpPromUrlGenerateRequestInterface,
   PddDdkOauthRpPromUrlGenerateResponseInterface,
   PddDdkOauthRpPromUrlGenerateRpPromotionUrlGenerateResponseResponseInterface,
-  PDD_DDK_OAUTH_RP_PROM_URL_GENERATE_LIMITERS,
 } from './duoDuoKeGongJu/PddDdkOauthRpPromUrlGenerate';
 import {
   PDD_DDK_OAUTH_THEME_PROM_URL_GENERATE,
@@ -906,7 +895,6 @@ import {
   PddDdkOauthThemePromUrlGenerateRequestInterface,
   PddDdkOauthThemePromUrlGenerateResponseInterface,
   PddDdkOauthThemePromUrlGenerateThemePromotionUrlGenerateResponseResponseInterface,
-  PDD_DDK_OAUTH_THEME_PROM_URL_GENERATE_LIMITERS,
 } from './duoDuoKeGongJu/PddDdkOauthThemePromUrlGenerate';
 import {
   PDD_DDK_OAUTH_TOP_GOODS_LIST_QUERY,
@@ -914,7 +902,6 @@ import {
   PddDdkOauthTopGoodsListQueryRequestInterface,
   PddDdkOauthTopGoodsListQueryResponseInterface,
   PddDdkOauthTopGoodsListQueryTopGoodsListGetResponseResponseInterface,
-  PDD_DDK_OAUTH_TOP_GOODS_LIST_QUERY_LIMITERS,
 } from './duoDuoKeGongJu/PddDdkOauthTopGoodsListQuery';
 // 方舟物流服务商API
 import {
@@ -1019,6 +1006,31 @@ import {
   PDD_PROMOTION_HOME_COUPON_CREATE_LIMITERS,
 } from './yingXiao/PddPromotionHomeCouponCreate';
 import {
+  PDD_PROMOTION_LIMITED_ACTIVITY_CANCEL,
+  PddPromotionLimitedActivityCancelRequestInterface,
+  PddPromotionLimitedActivityCancelResponseInterface,
+} from './yingXiao/PddPromotionLimitedActivityCancel';
+import {
+  PDD_PROMOTION_LIMITED_ACTIVITY_CREATE,
+  PddPromotionLimitedActivityCreateRequestInterface,
+  PddPromotionLimitedActivityCreateResponseInterface,
+} from './yingXiao/PddPromotionLimitedActivityCreate';
+import {
+  PDD_PROMOTION_LIMITED_DISCOUNT_LIST_GET,
+  PddPromotionLimitedDiscountListGetRequestInterface,
+  PddPromotionLimitedDiscountListGetResponseInterface,
+} from './yingXiao/PddPromotionLimitedDiscountListGet';
+import {
+  PDD_PROMOTION_LIMITED_QUALIFIED_GOODS_GET,
+  PddPromotionLimitedQualifiedGoodsGetRequestInterface,
+  PddPromotionLimitedQualifiedGoodsGetResponseInterface,
+} from './yingXiao/PddPromotionLimitedQualifiedGoodsGet';
+import {
+  PDD_PROMOTION_LIMITED_QUALIFIED_SKU_GET,
+  PddPromotionLimitedQualifiedSkuGetRequestInterface,
+  PddPromotionLimitedQualifiedSkuGetResponseInterface,
+} from './yingXiao/PddPromotionLimitedQualifiedSkuGet';
+import {
   PDD_PROMOTION_MERCHANT_COUPON_LIST_GET,
   PDD_PROMOTION_MERCHANT_COUPON_LIST_GET_RESPONSE_KEY,
   PddPromotionMerchantCouponListGetRequestInterface,
@@ -1051,6 +1063,12 @@ import {
   PddVoucherPhysicalGoodsSendVoucherPhysicalVoucherSendResponseResponseInterface,
   PDD_VOUCHER_PHYSICAL_GOODS_SEND_LIMITERS,
 } from './kaQuan/PddVoucherPhysicalGoodsSend';
+import {
+  PDD_VOUCHER_REALTIME_ORDERNO_GET,
+  PddVoucherRealtimeOrdernoGetRequestInterface,
+  PddVoucherRealtimeOrdernoGetResponseInterface,
+  PDD_VOUCHER_REALTIME_ORDERNO_GET_LIMITERS,
+} from './kaQuan/PddVoucherRealtimeOrdernoGet';
 import {
   PDD_VOUCHER_VIRTUAL_CARD_VERIFICATION,
   PDD_VOUCHER_VIRTUAL_CARD_VERIFICATION_RESPONSE_KEY,
@@ -1130,6 +1148,7 @@ import {
   PddOpenDecryptMaskBatchRequestInterface,
   PddOpenDecryptMaskBatchResponseInterface,
   PddOpenDecryptMaskBatchOpenDecryptMaskBatchResponseResponseInterface,
+  PDD_OPEN_DECRYPT_MASK_BATCH_LIMITERS,
 } from './gongJu/PddOpenDecryptMaskBatch';
 import {
   PDD_OPEN_KMS_ENCRYPT_BATCH,
@@ -1137,6 +1156,7 @@ import {
   PddOpenKmsEncryptBatchRequestInterface,
   PddOpenKmsEncryptBatchResponseInterface,
   PddOpenKmsEncryptBatchOpenKmsEncryptBatchResponseResponseInterface,
+  PDD_OPEN_KMS_ENCRYPT_BATCH_LIMITERS,
 } from './gongJu/PddOpenKmsEncryptBatch';
 import {
   PDD_OPEN_KMS_SEARCH_BATCH,
@@ -1144,6 +1164,7 @@ import {
   PddOpenKmsSearchBatchRequestInterface,
   PddOpenKmsSearchBatchResponseInterface,
   PddOpenKmsSearchBatchOpenKmsSearchBatchResponseResponseInterface,
+  PDD_OPEN_KMS_SEARCH_BATCH_LIMITERS,
 } from './gongJu/PddOpenKmsSearchBatch';
 import {
   PDD_POP_AUTH_TOKEN_CREATE,
@@ -1837,18 +1858,6 @@ import {
 } from './menDian/PddQrpayPayeeRegister';
 // 多多国际API
 import {
-  PDD_CUSTOMS_SEND_DATA_RECEIPT,
-  PDD_CUSTOMS_SEND_DATA_RECEIPT_RESPONSE_KEY,
-  PddCustomsSendDataReceiptRequestInterface,
-  PddCustomsSendDataReceiptResponseInterface,
-  PddCustomsSendDataReceiptCustomReceiptResponseResponseInterface,
-} from './duoDuoGuoJi/PddCustomsSendDataReceipt';
-import {
-  PDD_CUSTOMS_SIGN_GET,
-  PddCustomsSignGetRequestInterface,
-  PddCustomsSignGetResponseInterface,
-} from './duoDuoGuoJi/PddCustomsSignGet';
-import {
   PDD_MALL_INFO_BONDED_WAREHOUSE_GET,
   PDD_MALL_INFO_BONDED_WAREHOUSE_GET_RESPONSE_KEY,
   PddMallInfoBondedWarehouseGetRequestInterface,
@@ -1928,6 +1937,7 @@ const PddResponseTypeAndRequestTypeMapping = {
   [PDD_VIRTUAL_MOBILE_CHARGE_NOTIFY]: PDD_VIRTUAL_MOBILE_CHARGE_NOTIFY_RESPONSE_KEY,
   [PDD_GOODS_ADD]: PDD_GOODS_ADD_RESPONSE_KEY,
   [PDD_GOODS_AUTHORIZATION_CATS]: PDD_GOODS_AUTHORIZATION_CATS_RESPONSE_KEY,
+  [PDD_GOODS_CAT_RULE_GET]: PDD_GOODS_CAT_RULE_GET_RESPONSE_KEY,
   [PDD_GOODS_CAT_TEMPLATE_GET]: PDD_GOODS_CAT_TEMPLATE_GET_RESPONSE_KEY,
   [PDD_GOODS_CATS_GET]: PDD_GOODS_CATS_GET_RESPONSE_KEY,
   [PDD_GOODS_CHILD_SKU_EDIT]: PDD_GOODS_CHILD_SKU_EDIT_RESPONSE_KEY,
@@ -1963,6 +1973,8 @@ const PddResponseTypeAndRequestTypeMapping = {
   [PDD_GOODS_SKU_PRICE_UPDATE]: PDD_GOODS_SKU_PRICE_UPDATE_RESPONSE_KEY,
   [PDD_GOODS_SPEC_GET]: PDD_GOODS_SPEC_GET_RESPONSE_KEY,
   [PDD_GOODS_SPEC_ID_GET]: PDD_GOODS_SPEC_ID_GET_RESPONSE_KEY,
+  [PDD_GOODS_SPU_GET]: PDD_GOODS_SPU_GET_RESPONSE_KEY,
+  [PDD_GOODS_SPU_SEARCH]: PDD_GOODS_SPU_SEARCH_RESPONSE_KEY,
   [PDD_GOODS_SUBMIT_GOODS_COMMIT]: PDD_GOODS_SUBMIT_GOODS_COMMIT_RESPONSE_KEY,
   [PDD_GOODS_TEMPLATE_PROPERTY_VALUE_SEARCH]: PDD_GOODS_TEMPLATE_PROPERTY_VALUE_SEARCH_RESPONSE_KEY,
   [PDD_GOOODS_SKU_MEASUREMENT_LIST]: PDD_GOOODS_SKU_MEASUREMENT_LIST_RESPONSE_KEY,
@@ -2080,7 +2092,6 @@ const PddResponseTypeAndRequestTypeMapping = {
   [PDD_MALL_INFO_STORE_DELETE_POST]: PDD_MALL_INFO_STORE_DELETE_POST_RESPONSE_KEY,
   [PDD_MALL_INFO_STORE_UPDATE_POST]: PDD_MALL_INFO_STORE_UPDATE_POST_RESPONSE_KEY,
   [PDD_QRPAY_PAYEE_REGISTER]: PDD_QRPAY_PAYEE_REGISTER_RESPONSE_KEY,
-  [PDD_CUSTOMS_SEND_DATA_RECEIPT]: PDD_CUSTOMS_SEND_DATA_RECEIPT_RESPONSE_KEY,
   [PDD_MALL_INFO_BONDED_WAREHOUSE_GET]: PDD_MALL_INFO_BONDED_WAREHOUSE_GET_RESPONSE_KEY,
   [PDD_OVERSEA_CLEARANCE_GET]: PDD_OVERSEA_CLEARANCE_GET_RESPONSE_KEY,
   [PDD_TICKET_GOODS_QUERY]: PDD_TICKET_GOODS_QUERY_RESPONSE_KEY,
@@ -2108,6 +2119,7 @@ const PddNeedAccessTokenTypeCollections = [
   PDD_DELETE_GOODS_COMMIT,
   PDD_GOODS_ADD,
   PDD_GOODS_AUTHORIZATION_CATS,
+  PDD_GOODS_CAT_RULE_GET,
   PDD_GOODS_CAT_TEMPLATE_GET,
   PDD_GOODS_CHILD_SKU_EDIT,
   PDD_GOODS_COMMIT_DETAIL_GET,
@@ -2155,6 +2167,8 @@ const PddNeedAccessTokenTypeCollections = [
   PDD_GOODS_SKU_PRICE_UPDATE,
   PDD_GOODS_SPEC_GET,
   PDD_GOODS_SPEC_ID_GET,
+  PDD_GOODS_SPU_GET,
+  PDD_GOODS_SPU_SEARCH,
   PDD_GOODS_SUBMIT_GOODS_COMMIT,
   PDD_GOODS_TEMPLATE_PROPERTY_VALUE_SEARCH,
   PDD_ONE_EXPRESS_COST_TEMPLATE,
@@ -2177,10 +2191,16 @@ const PddNeedAccessTokenTypeCollections = [
   PDD_PROMOTION_GOODS_COUPON_CREATE,
   PDD_PROMOTION_GOODS_COUPON_LIST_GET,
   PDD_PROMOTION_HOME_COUPON_CREATE,
+  PDD_PROMOTION_LIMITED_ACTIVITY_CANCEL,
+  PDD_PROMOTION_LIMITED_ACTIVITY_CREATE,
+  PDD_PROMOTION_LIMITED_DISCOUNT_LIST_GET,
+  PDD_PROMOTION_LIMITED_QUALIFIED_GOODS_GET,
+  PDD_PROMOTION_LIMITED_QUALIFIED_SKU_GET,
   PDD_PROMOTION_MERCHANT_COUPON_LIST_GET,
   PDD_VOUCHER_APPOINTMENT_INFO_SEND,
   PDD_VOUCHER_OTA_CARD_VERIFICATION,
   PDD_VOUCHER_PHYSICAL_GOODS_SEND,
+  PDD_VOUCHER_REALTIME_ORDERNO_GET,
   PDD_VOUCHER_VIRTUAL_CARD_VERIFICATION,
   PDD_VOUCHER_VOUCHER_COMPLAIN,
   PDD_VOUCHER_VOUCHER_INFO_SEND,
@@ -2296,7 +2316,6 @@ const PddNeedAccessTokenTypeCollections = [
   PDD_TICKET_VERIFICATION_NOTIFYCATION,
 ];
 const PddApiLimiterMapping = {
-  [PDD_ERP_ORDER_SYNC]: PDD_ERP_ORDER_SYNC_LIMITERS,
   [PDD_ORDER_INFORMATION_GET]: PDD_ORDER_INFORMATION_GET_LIMITERS,
   [PDD_ORDER_LIST_GET]: PDD_ORDER_LIST_GET_LIMITERS,
   [PDD_ORDER_NUMBER_LIST_INCREMENT_GET]: PDD_ORDER_NUMBER_LIST_INCREMENT_GET_LIMITERS,
@@ -2343,44 +2362,11 @@ const PddApiLimiterMapping = {
   [PDD_GOODS_SPEC_ID_GET]: PDD_GOODS_SPEC_ID_GET_LIMITERS,
   [PDD_GOODS_SUBMIT_GOODS_COMMIT]: PDD_GOODS_SUBMIT_GOODS_COMMIT_LIMITERS,
   [PDD_DDK_CMS_PROM_URL_GENERATE]: PDD_DDK_CMS_PROM_URL_GENERATE_LIMITERS,
-  [PDD_DDK_COUPON_INFO_QUERY]: PDD_DDK_COUPON_INFO_QUERY_LIMITERS,
-  [PDD_DDK_FINANCE_CPA_QUERY]: PDD_DDK_FINANCE_CPA_QUERY_LIMITERS,
-  [PDD_DDK_GOODS_BASIC_INFO_GET]: PDD_DDK_GOODS_BASIC_INFO_GET_LIMITERS,
   [PDD_DDK_GOODS_DETAIL]: PDD_DDK_GOODS_DETAIL_LIMITERS,
-  [PDD_DDK_GOODS_PID_GENERATE]: PDD_DDK_GOODS_PID_GENERATE_LIMITERS,
-  [PDD_DDK_GOODS_PID_QUERY]: PDD_DDK_GOODS_PID_QUERY_LIMITERS,
   [PDD_DDK_GOODS_PROMOTION_URL_GENERATE]: PDD_DDK_GOODS_PROMOTION_URL_GENERATE_LIMITERS,
-  [PDD_DDK_GOODS_RECOMMEND_GET]: PDD_DDK_GOODS_RECOMMEND_GET_LIMITERS,
   [PDD_DDK_GOODS_SEARCH]: PDD_DDK_GOODS_SEARCH_LIMITERS,
-  [PDD_DDK_GOODS_UNIT_QUERY]: PDD_DDK_GOODS_UNIT_QUERY_LIMITERS,
-  [PDD_DDK_GOODS_ZS_UNIT_URL_GEN]: PDD_DDK_GOODS_ZS_UNIT_URL_GEN_LIMITERS,
-  [PDD_DDK_LOTTERY_URL_GEN]: PDD_DDK_LOTTERY_URL_GEN_LIMITERS,
-  [PDD_DDK_MALL_GOODS_LIST_GET]: PDD_DDK_MALL_GOODS_LIST_GET_LIMITERS,
-  [PDD_DDK_MERCHANT_LIST_GET]: PDD_DDK_MERCHANT_LIST_GET_LIMITERS,
   [PDD_DDK_ORDER_DETAIL_GET]: PDD_DDK_ORDER_DETAIL_GET_LIMITERS,
   [PDD_DDK_ORDER_LIST_INCREMENT_GET]: PDD_DDK_ORDER_LIST_INCREMENT_GET_LIMITERS,
-  [PDD_DDK_ORDER_LIST_RANGE_GET]: PDD_DDK_ORDER_LIST_RANGE_GET_LIMITERS,
-  [PDD_DDK_RESOURCE_URL_GEN]: PDD_DDK_RESOURCE_URL_GEN_LIMITERS,
-  [PDD_DDK_RP_PROM_URL_GENERATE]: PDD_DDK_RP_PROM_URL_GENERATE_LIMITERS,
-  [PDD_DDK_THEME_GOODS_SEARCH]: PDD_DDK_THEME_GOODS_SEARCH_LIMITERS,
-  [PDD_DDK_THEME_LIST_GET]: PDD_DDK_THEME_LIST_GET_LIMITERS,
-  [PDD_DDK_THEME_PROM_URL_GENERATE]: PDD_DDK_THEME_PROM_URL_GENERATE_LIMITERS,
-  [PDD_DDK_TOP_GOODS_LIST_QUERY]: PDD_DDK_TOP_GOODS_LIST_QUERY_LIMITERS,
-  [PDD_DDK_WEAPP_QRCODE_URL_GEN]: PDD_DDK_WEAPP_QRCODE_URL_GEN_LIMITERS,
-  [PDD_DDK_ALL_ORDER_LIST_INCREMENT_GET]: PDD_DDK_ALL_ORDER_LIST_INCREMENT_GET_LIMITERS,
-  [PDD_DDK_OAUTH_CMS_PROM_URL_GENERATE]: PDD_DDK_OAUTH_CMS_PROM_URL_GENERATE_LIMITERS,
-  [PDD_DDK_OAUTH_GOODS_PID_GENERATE]: PDD_DDK_OAUTH_GOODS_PID_GENERATE_LIMITERS,
-  [PDD_DDK_OAUTH_GOODS_PID_QUERY]: PDD_DDK_OAUTH_GOODS_PID_QUERY_LIMITERS,
-  [PDD_DDK_OAUTH_GOODS_PROM_URL_GENERATE]: PDD_DDK_OAUTH_GOODS_PROM_URL_GENERATE_LIMITERS,
-  [PDD_DDK_OAUTH_GOODS_RECOMMEND_GET]: PDD_DDK_OAUTH_GOODS_RECOMMEND_GET_LIMITERS,
-  [PDD_DDK_OAUTH_GOODS_ZS_UNIT_URL_GEN]: PDD_DDK_OAUTH_GOODS_ZS_UNIT_URL_GEN_LIMITERS,
-  [PDD_DDK_OAUTH_LOTTERY_URL_GEN]: PDD_DDK_OAUTH_LOTTERY_URL_GEN_LIMITERS,
-  [PDD_DDK_OAUTH_MALL_URL_GEN]: PDD_DDK_OAUTH_MALL_URL_GEN_LIMITERS,
-  [PDD_DDK_OAUTH_ORDER_DETAIL_GET]: PDD_DDK_OAUTH_ORDER_DETAIL_GET_LIMITERS,
-  [PDD_DDK_OAUTH_RESOURCE_URL_GEN]: PDD_DDK_OAUTH_RESOURCE_URL_GEN_LIMITERS,
-  [PDD_DDK_OAUTH_RP_PROM_URL_GENERATE]: PDD_DDK_OAUTH_RP_PROM_URL_GENERATE_LIMITERS,
-  [PDD_DDK_OAUTH_THEME_PROM_URL_GENERATE]: PDD_DDK_OAUTH_THEME_PROM_URL_GENERATE_LIMITERS,
-  [PDD_DDK_OAUTH_TOP_GOODS_LIST_QUERY]: PDD_DDK_OAUTH_TOP_GOODS_LIST_QUERY_LIMITERS,
   [PDD_LOGISTICS_TICKET_GET]: PDD_LOGISTICS_TICKET_GET_LIMITERS,
   [PDD_LOGISTICS_TICKET_IMAGE_UPLOAD]: PDD_LOGISTICS_TICKET_IMAGE_UPLOAD_LIMITERS,
   [PDD_LOGISTICS_TICKET_NOTIFY]: PDD_LOGISTICS_TICKET_NOTIFY_LIMITERS,
@@ -2394,6 +2380,7 @@ const PddApiLimiterMapping = {
   [PDD_VOUCHER_APPOINTMENT_INFO_SEND]: PDD_VOUCHER_APPOINTMENT_INFO_SEND_LIMITERS,
   [PDD_VOUCHER_OTA_CARD_VERIFICATION]: PDD_VOUCHER_OTA_CARD_VERIFICATION_LIMITERS,
   [PDD_VOUCHER_PHYSICAL_GOODS_SEND]: PDD_VOUCHER_PHYSICAL_GOODS_SEND_LIMITERS,
+  [PDD_VOUCHER_REALTIME_ORDERNO_GET]: PDD_VOUCHER_REALTIME_ORDERNO_GET_LIMITERS,
   [PDD_VOUCHER_VIRTUAL_CARD_VERIFICATION]: PDD_VOUCHER_VIRTUAL_CARD_VERIFICATION_LIMITERS,
   [PDD_VOUCHER_VOUCHER_COMPLAIN]: PDD_VOUCHER_VOUCHER_COMPLAIN_LIMITERS,
   [PDD_VOUCHER_VOUCHER_INFO_SEND]: PDD_VOUCHER_VOUCHER_INFO_SEND_LIMITERS,
@@ -2401,6 +2388,9 @@ const PddApiLimiterMapping = {
   [PDD_INVOICE_DETAIL_INVALID]: PDD_INVOICE_DETAIL_INVALID_LIMITERS,
   [PDD_MALL_INFO_GET]: PDD_MALL_INFO_GET_LIMITERS,
   [PDD_OPEN_DECRYPT_BATCH]: PDD_OPEN_DECRYPT_BATCH_LIMITERS,
+  [PDD_OPEN_DECRYPT_MASK_BATCH]: PDD_OPEN_DECRYPT_MASK_BATCH_LIMITERS,
+  [PDD_OPEN_KMS_ENCRYPT_BATCH]: PDD_OPEN_KMS_ENCRYPT_BATCH_LIMITERS,
+  [PDD_OPEN_KMS_SEARCH_BATCH]: PDD_OPEN_KMS_SEARCH_BATCH_LIMITERS,
   [PDD_CLOUDPRINT_STDTEMPLATES_GET]: PDD_CLOUDPRINT_STDTEMPLATES_GET_LIMITERS,
   [PDD_WAYBILL_GET]: PDD_WAYBILL_GET_LIMITERS,
   [PDD_WAYBILL_SEARCH]: PDD_WAYBILL_SEARCH_LIMITERS,
@@ -2582,6 +2572,11 @@ export {
   PddGoodsAuthorizationCatsRequestInterface,
   PddGoodsAuthorizationCatsResponseInterface,
   PddGoodsAuthorizationCatsGoodsAuthCatsGetResponseResponseInterface,
+  PDD_GOODS_CAT_RULE_GET,
+  PDD_GOODS_CAT_RULE_GET_RESPONSE_KEY,
+  PddGoodsCatRuleGetRequestInterface,
+  PddGoodsCatRuleGetResponseInterface,
+  PddGoodsCatRuleGetCatRuleGetResponseResponseInterface,
   PDD_GOODS_CAT_TEMPLATE_GET,
   PDD_GOODS_CAT_TEMPLATE_GET_RESPONSE_KEY,
   PddGoodsCatTemplateGetRequestInterface,
@@ -2799,6 +2794,16 @@ export {
   PddGoodsSpecIdGetRequestInterface,
   PddGoodsSpecIdGetResponseInterface,
   PddGoodsSpecIdGetGoodsSpecIdGetResponseResponseInterface,
+  PDD_GOODS_SPU_GET,
+  PDD_GOODS_SPU_GET_RESPONSE_KEY,
+  PddGoodsSpuGetRequestInterface,
+  PddGoodsSpuGetResponseInterface,
+  PddGoodsSpuGetSpuGetResponseResponseInterface,
+  PDD_GOODS_SPU_SEARCH,
+  PDD_GOODS_SPU_SEARCH_RESPONSE_KEY,
+  PddGoodsSpuSearchRequestInterface,
+  PddGoodsSpuSearchResponseInterface,
+  PddGoodsSpuSearchSpuSearchResponseResponseInterface,
   PDD_GOODS_SUBMIT_GOODS_COMMIT,
   PDD_GOODS_SUBMIT_GOODS_COMMIT_RESPONSE_KEY,
   PddGoodsSubmitGoodsCommitRequestInterface,
@@ -3109,6 +3114,21 @@ export {
   PddPromotionHomeCouponCreateRequestInterface,
   PddPromotionHomeCouponCreateResponseInterface,
   PddPromotionHomeCouponCreateHomeCouponBatchCreateResponseResponseInterface,
+  PDD_PROMOTION_LIMITED_ACTIVITY_CANCEL,
+  PddPromotionLimitedActivityCancelRequestInterface,
+  PddPromotionLimitedActivityCancelResponseInterface,
+  PDD_PROMOTION_LIMITED_ACTIVITY_CREATE,
+  PddPromotionLimitedActivityCreateRequestInterface,
+  PddPromotionLimitedActivityCreateResponseInterface,
+  PDD_PROMOTION_LIMITED_DISCOUNT_LIST_GET,
+  PddPromotionLimitedDiscountListGetRequestInterface,
+  PddPromotionLimitedDiscountListGetResponseInterface,
+  PDD_PROMOTION_LIMITED_QUALIFIED_GOODS_GET,
+  PddPromotionLimitedQualifiedGoodsGetRequestInterface,
+  PddPromotionLimitedQualifiedGoodsGetResponseInterface,
+  PDD_PROMOTION_LIMITED_QUALIFIED_SKU_GET,
+  PddPromotionLimitedQualifiedSkuGetRequestInterface,
+  PddPromotionLimitedQualifiedSkuGetResponseInterface,
   PDD_PROMOTION_MERCHANT_COUPON_LIST_GET,
   PDD_PROMOTION_MERCHANT_COUPON_LIST_GET_RESPONSE_KEY,
   PddPromotionMerchantCouponListGetRequestInterface,
@@ -3129,6 +3149,9 @@ export {
   PddVoucherPhysicalGoodsSendRequestInterface,
   PddVoucherPhysicalGoodsSendResponseInterface,
   PddVoucherPhysicalGoodsSendVoucherPhysicalVoucherSendResponseResponseInterface,
+  PDD_VOUCHER_REALTIME_ORDERNO_GET,
+  PddVoucherRealtimeOrdernoGetRequestInterface,
+  PddVoucherRealtimeOrdernoGetResponseInterface,
   PDD_VOUCHER_VIRTUAL_CARD_VERIFICATION,
   PDD_VOUCHER_VIRTUAL_CARD_VERIFICATION_RESPONSE_KEY,
   PddVoucherVirtualCardVerificationRequestInterface,
@@ -3591,14 +3614,6 @@ export {
   PddQrpayPayeeRegisterRequestInterface,
   PddQrpayPayeeRegisterResponseInterface,
   PddQrpayPayeeRegisterQrpayPayeeRegisterResponseResponseInterface,
-  PDD_CUSTOMS_SEND_DATA_RECEIPT,
-  PDD_CUSTOMS_SEND_DATA_RECEIPT_RESPONSE_KEY,
-  PddCustomsSendDataReceiptRequestInterface,
-  PddCustomsSendDataReceiptResponseInterface,
-  PddCustomsSendDataReceiptCustomReceiptResponseResponseInterface,
-  PDD_CUSTOMS_SIGN_GET,
-  PddCustomsSignGetRequestInterface,
-  PddCustomsSignGetResponseInterface,
   PDD_MALL_INFO_BONDED_WAREHOUSE_GET,
   PDD_MALL_INFO_BONDED_WAREHOUSE_GET_RESPONSE_KEY,
   PddMallInfoBondedWarehouseGetRequestInterface,
@@ -3668,6 +3683,7 @@ export interface PddCollectRequestInterface {
   [PDD_DELETE_GOODS_COMMIT]: PddDeleteGoodsCommitRequestInterface;
   [PDD_GOODS_ADD]: PddGoodsAddRequestInterface;
   [PDD_GOODS_AUTHORIZATION_CATS]: PddGoodsAuthorizationCatsRequestInterface;
+  [PDD_GOODS_CAT_RULE_GET]: PddGoodsCatRuleGetRequestInterface;
   [PDD_GOODS_CAT_TEMPLATE_GET]: PddGoodsCatTemplateGetRequestInterface;
   [PDD_GOODS_CATS_GET]: PddGoodsCatsGetRequestInterface;
   [PDD_GOODS_CHILD_SKU_EDIT]: PddGoodsChildSkuEditRequestInterface;
@@ -3717,6 +3733,8 @@ export interface PddCollectRequestInterface {
   [PDD_GOODS_SKU_PRICE_UPDATE]: PddGoodsSkuPriceUpdateRequestInterface;
   [PDD_GOODS_SPEC_GET]: PddGoodsSpecGetRequestInterface;
   [PDD_GOODS_SPEC_ID_GET]: PddGoodsSpecIdGetRequestInterface;
+  [PDD_GOODS_SPU_GET]: PddGoodsSpuGetRequestInterface;
+  [PDD_GOODS_SPU_SEARCH]: PddGoodsSpuSearchRequestInterface;
   [PDD_GOODS_SUBMIT_GOODS_COMMIT]: PddGoodsSubmitGoodsCommitRequestInterface;
   [PDD_GOODS_TEMPLATE_PROPERTY_VALUE_SEARCH]: PddGoodsTemplatePropertyValueSearchRequestInterface;
   [PDD_GOOODS_SKU_MEASUREMENT_LIST]: PddGooodsSkuMeasurementListRequestInterface;
@@ -3779,10 +3797,16 @@ export interface PddCollectRequestInterface {
   [PDD_PROMOTION_GOODS_COUPON_CREATE]: PddPromotionGoodsCouponCreateRequestInterface;
   [PDD_PROMOTION_GOODS_COUPON_LIST_GET]: PddPromotionGoodsCouponListGetRequestInterface;
   [PDD_PROMOTION_HOME_COUPON_CREATE]: PddPromotionHomeCouponCreateRequestInterface;
+  [PDD_PROMOTION_LIMITED_ACTIVITY_CANCEL]: PddPromotionLimitedActivityCancelRequestInterface;
+  [PDD_PROMOTION_LIMITED_ACTIVITY_CREATE]: PddPromotionLimitedActivityCreateRequestInterface;
+  [PDD_PROMOTION_LIMITED_DISCOUNT_LIST_GET]: PddPromotionLimitedDiscountListGetRequestInterface;
+  [PDD_PROMOTION_LIMITED_QUALIFIED_GOODS_GET]: PddPromotionLimitedQualifiedGoodsGetRequestInterface;
+  [PDD_PROMOTION_LIMITED_QUALIFIED_SKU_GET]: PddPromotionLimitedQualifiedSkuGetRequestInterface;
   [PDD_PROMOTION_MERCHANT_COUPON_LIST_GET]: PddPromotionMerchantCouponListGetRequestInterface;
   [PDD_VOUCHER_APPOINTMENT_INFO_SEND]: PddVoucherAppointmentInfoSendRequestInterface;
   [PDD_VOUCHER_OTA_CARD_VERIFICATION]: PddVoucherOtaCardVerificationRequestInterface;
   [PDD_VOUCHER_PHYSICAL_GOODS_SEND]: PddVoucherPhysicalGoodsSendRequestInterface;
+  [PDD_VOUCHER_REALTIME_ORDERNO_GET]: PddVoucherRealtimeOrdernoGetRequestInterface;
   [PDD_VOUCHER_VIRTUAL_CARD_VERIFICATION]: PddVoucherVirtualCardVerificationRequestInterface;
   [PDD_VOUCHER_VOUCHER_COMPLAIN]: PddVoucherVoucherComplainRequestInterface;
   [PDD_VOUCHER_VOUCHER_INFO_SEND]: PddVoucherVoucherInfoSendRequestInterface;
@@ -3903,8 +3927,6 @@ export interface PddCollectRequestInterface {
   [PDD_MALL_INFO_STORE_UPDATE_POST]: PddMallInfoStoreUpdatePostRequestInterface;
   [PDD_MALL_INFO_STORE_UPDATE_POST_NOPOI]: PddMallInfoStoreUpdatePostNopoiRequestInterface;
   [PDD_QRPAY_PAYEE_REGISTER]: PddQrpayPayeeRegisterRequestInterface;
-  [PDD_CUSTOMS_SEND_DATA_RECEIPT]: PddCustomsSendDataReceiptRequestInterface;
-  [PDD_CUSTOMS_SIGN_GET]: PddCustomsSignGetRequestInterface;
   [PDD_MALL_INFO_BONDED_WAREHOUSE_GET]: PddMallInfoBondedWarehouseGetRequestInterface;
   [PDD_OVERSEA_CLEARANCE_GET]: PddOverseaClearanceGetRequestInterface;
   [PDD_TICKET_GOODS_QUERY]: PddTicketGoodsQueryRequestInterface;
@@ -3943,6 +3965,7 @@ export interface PddCollectRootResponseInterface {
   [PDD_DELETE_GOODS_COMMIT]: PddDeleteGoodsCommitResponseInterface;
   [PDD_GOODS_ADD]: PddGoodsAddResponseInterface;
   [PDD_GOODS_AUTHORIZATION_CATS]: PddGoodsAuthorizationCatsResponseInterface;
+  [PDD_GOODS_CAT_RULE_GET]: PddGoodsCatRuleGetResponseInterface;
   [PDD_GOODS_CAT_TEMPLATE_GET]: PddGoodsCatTemplateGetResponseInterface;
   [PDD_GOODS_CATS_GET]: PddGoodsCatsGetResponseInterface;
   [PDD_GOODS_CHILD_SKU_EDIT]: PddGoodsChildSkuEditResponseInterface;
@@ -3992,6 +4015,8 @@ export interface PddCollectRootResponseInterface {
   [PDD_GOODS_SKU_PRICE_UPDATE]: PddGoodsSkuPriceUpdateResponseInterface;
   [PDD_GOODS_SPEC_GET]: PddGoodsSpecGetResponseInterface;
   [PDD_GOODS_SPEC_ID_GET]: PddGoodsSpecIdGetResponseInterface;
+  [PDD_GOODS_SPU_GET]: PddGoodsSpuGetResponseInterface;
+  [PDD_GOODS_SPU_SEARCH]: PddGoodsSpuSearchResponseInterface;
   [PDD_GOODS_SUBMIT_GOODS_COMMIT]: PddGoodsSubmitGoodsCommitResponseInterface;
   [PDD_GOODS_TEMPLATE_PROPERTY_VALUE_SEARCH]: PddGoodsTemplatePropertyValueSearchResponseInterface;
   [PDD_GOOODS_SKU_MEASUREMENT_LIST]: PddGooodsSkuMeasurementListResponseInterface;
@@ -4054,10 +4079,16 @@ export interface PddCollectRootResponseInterface {
   [PDD_PROMOTION_GOODS_COUPON_CREATE]: PddPromotionGoodsCouponCreateResponseInterface;
   [PDD_PROMOTION_GOODS_COUPON_LIST_GET]: PddPromotionGoodsCouponListGetResponseInterface;
   [PDD_PROMOTION_HOME_COUPON_CREATE]: PddPromotionHomeCouponCreateResponseInterface;
+  [PDD_PROMOTION_LIMITED_ACTIVITY_CANCEL]: PddPromotionLimitedActivityCancelResponseInterface;
+  [PDD_PROMOTION_LIMITED_ACTIVITY_CREATE]: PddPromotionLimitedActivityCreateResponseInterface;
+  [PDD_PROMOTION_LIMITED_DISCOUNT_LIST_GET]: PddPromotionLimitedDiscountListGetResponseInterface;
+  [PDD_PROMOTION_LIMITED_QUALIFIED_GOODS_GET]: PddPromotionLimitedQualifiedGoodsGetResponseInterface;
+  [PDD_PROMOTION_LIMITED_QUALIFIED_SKU_GET]: PddPromotionLimitedQualifiedSkuGetResponseInterface;
   [PDD_PROMOTION_MERCHANT_COUPON_LIST_GET]: PddPromotionMerchantCouponListGetResponseInterface;
   [PDD_VOUCHER_APPOINTMENT_INFO_SEND]: PddVoucherAppointmentInfoSendResponseInterface;
   [PDD_VOUCHER_OTA_CARD_VERIFICATION]: PddVoucherOtaCardVerificationResponseInterface;
   [PDD_VOUCHER_PHYSICAL_GOODS_SEND]: PddVoucherPhysicalGoodsSendResponseInterface;
+  [PDD_VOUCHER_REALTIME_ORDERNO_GET]: PddVoucherRealtimeOrdernoGetResponseInterface;
   [PDD_VOUCHER_VIRTUAL_CARD_VERIFICATION]: PddVoucherVirtualCardVerificationResponseInterface;
   [PDD_VOUCHER_VOUCHER_COMPLAIN]: PddVoucherVoucherComplainResponseInterface;
   [PDD_VOUCHER_VOUCHER_INFO_SEND]: PddVoucherVoucherInfoSendResponseInterface;
@@ -4178,8 +4209,6 @@ export interface PddCollectRootResponseInterface {
   [PDD_MALL_INFO_STORE_UPDATE_POST]: PddMallInfoStoreUpdatePostResponseInterface;
   [PDD_MALL_INFO_STORE_UPDATE_POST_NOPOI]: PddMallInfoStoreUpdatePostNopoiResponseInterface;
   [PDD_QRPAY_PAYEE_REGISTER]: PddQrpayPayeeRegisterResponseInterface;
-  [PDD_CUSTOMS_SEND_DATA_RECEIPT]: PddCustomsSendDataReceiptResponseInterface;
-  [PDD_CUSTOMS_SIGN_GET]: PddCustomsSignGetResponseInterface;
   [PDD_MALL_INFO_BONDED_WAREHOUSE_GET]: PddMallInfoBondedWarehouseGetResponseInterface;
   [PDD_OVERSEA_CLEARANCE_GET]: PddOverseaClearanceGetResponseInterface;
   [PDD_TICKET_GOODS_QUERY]: PddTicketGoodsQueryResponseInterface;
@@ -4218,6 +4247,7 @@ export interface PddCollectShortResponseInterface {
   [PDD_DELETE_GOODS_COMMIT]: PddDeleteGoodsCommitResponseInterface;
   [PDD_GOODS_ADD]: PddGoodsAddGoodsAddResponseResponseInterface;
   [PDD_GOODS_AUTHORIZATION_CATS]: PddGoodsAuthorizationCatsGoodsAuthCatsGetResponseResponseInterface;
+  [PDD_GOODS_CAT_RULE_GET]: PddGoodsCatRuleGetCatRuleGetResponseResponseInterface;
   [PDD_GOODS_CAT_TEMPLATE_GET]: PddGoodsCatTemplateGetOpenApiResponseResponseInterface;
   [PDD_GOODS_CATS_GET]: PddGoodsCatsGetGoodsCatsGetResponseResponseInterface;
   [PDD_GOODS_CHILD_SKU_EDIT]: PddGoodsChildSkuEditChildSkuEditResponseResponseInterface;
@@ -4267,6 +4297,8 @@ export interface PddCollectShortResponseInterface {
   [PDD_GOODS_SKU_PRICE_UPDATE]: PddGoodsSkuPriceUpdateGoodsUpdateSkuPriceResponseResponseInterface;
   [PDD_GOODS_SPEC_GET]: PddGoodsSpecGetGoodsSpecGetResponseResponseInterface;
   [PDD_GOODS_SPEC_ID_GET]: PddGoodsSpecIdGetGoodsSpecIdGetResponseResponseInterface;
+  [PDD_GOODS_SPU_GET]: PddGoodsSpuGetSpuGetResponseResponseInterface;
+  [PDD_GOODS_SPU_SEARCH]: PddGoodsSpuSearchSpuSearchResponseResponseInterface;
   [PDD_GOODS_SUBMIT_GOODS_COMMIT]: PddGoodsSubmitGoodsCommitGoodsUpdateResponseResponseInterface;
   [PDD_GOODS_TEMPLATE_PROPERTY_VALUE_SEARCH]: PddGoodsTemplatePropertyValueSearchGoodsTemplatePropValSearchResponseResponseInterface;
   [PDD_GOOODS_SKU_MEASUREMENT_LIST]: PddGooodsSkuMeasurementListGooodsSkuMeasurementListResponseResponseInterface;
@@ -4329,10 +4361,16 @@ export interface PddCollectShortResponseInterface {
   [PDD_PROMOTION_GOODS_COUPON_CREATE]: PddPromotionGoodsCouponCreateGoodsCouponBatchCreateResponseResponseInterface;
   [PDD_PROMOTION_GOODS_COUPON_LIST_GET]: PddPromotionGoodsCouponListGetGoodsCouponBatchListResponseResponseInterface;
   [PDD_PROMOTION_HOME_COUPON_CREATE]: PddPromotionHomeCouponCreateHomeCouponBatchCreateResponseResponseInterface;
+  [PDD_PROMOTION_LIMITED_ACTIVITY_CANCEL]: PddPromotionLimitedActivityCancelResponseInterface;
+  [PDD_PROMOTION_LIMITED_ACTIVITY_CREATE]: PddPromotionLimitedActivityCreateResponseInterface;
+  [PDD_PROMOTION_LIMITED_DISCOUNT_LIST_GET]: PddPromotionLimitedDiscountListGetResponseInterface;
+  [PDD_PROMOTION_LIMITED_QUALIFIED_GOODS_GET]: PddPromotionLimitedQualifiedGoodsGetResponseInterface;
+  [PDD_PROMOTION_LIMITED_QUALIFIED_SKU_GET]: PddPromotionLimitedQualifiedSkuGetResponseInterface;
   [PDD_PROMOTION_MERCHANT_COUPON_LIST_GET]: PddPromotionMerchantCouponListGetMerchantCouponBatchListResponseResponseInterface;
   [PDD_VOUCHER_APPOINTMENT_INFO_SEND]: PddVoucherAppointmentInfoSendVoucherAppointmentInfoSendResponseResponseInterface;
   [PDD_VOUCHER_OTA_CARD_VERIFICATION]: PddVoucherOtaCardVerificationVoucherOtaCardVerificationResponseResponseInterface;
   [PDD_VOUCHER_PHYSICAL_GOODS_SEND]: PddVoucherPhysicalGoodsSendVoucherPhysicalVoucherSendResponseResponseInterface;
+  [PDD_VOUCHER_REALTIME_ORDERNO_GET]: PddVoucherRealtimeOrdernoGetResponseInterface;
   [PDD_VOUCHER_VIRTUAL_CARD_VERIFICATION]: PddVoucherVirtualCardVerificationVoucherVoucherInfoVerifyResponseResponseInterface;
   [PDD_VOUCHER_VOUCHER_COMPLAIN]: PddVoucherVoucherComplainVoucherVoucherComplainResponseResponseInterface;
   [PDD_VOUCHER_VOUCHER_INFO_SEND]: PddVoucherVoucherInfoSendVoucherVoucherInfoSendResponseResponseInterface;
@@ -4453,8 +4491,6 @@ export interface PddCollectShortResponseInterface {
   [PDD_MALL_INFO_STORE_UPDATE_POST]: PddMallInfoStoreUpdatePostMallInfoStoreUpdatePostResponseResponseInterface;
   [PDD_MALL_INFO_STORE_UPDATE_POST_NOPOI]: PddMallInfoStoreUpdatePostNopoiResponseInterface;
   [PDD_QRPAY_PAYEE_REGISTER]: PddQrpayPayeeRegisterQrpayPayeeRegisterResponseResponseInterface;
-  [PDD_CUSTOMS_SEND_DATA_RECEIPT]: PddCustomsSendDataReceiptCustomReceiptResponseResponseInterface;
-  [PDD_CUSTOMS_SIGN_GET]: PddCustomsSignGetResponseInterface;
   [PDD_MALL_INFO_BONDED_WAREHOUSE_GET]: PddMallInfoBondedWarehouseGetMallInfoBondedWarehouseGetResponseResponseInterface;
   [PDD_OVERSEA_CLEARANCE_GET]: PddOverseaClearanceGetClearanceResponseResponseInterface;
   [PDD_TICKET_GOODS_QUERY]: PddTicketGoodsQueryGoodsDetailGetResponseResponseInterface;

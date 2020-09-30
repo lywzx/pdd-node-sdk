@@ -4,7 +4,7 @@ export const PDD_VIRTUAL_MOBILE_CHARGE_NOTIFY_LIMITERS = [
   {
     limiterLevel: 1,
     timeRange: 60,
-    times: 25000,
+    times: 30000,
   },
 ];
 

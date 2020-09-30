@@ -3,3 +3,4 @@ export * from './exceptions';
 export * from './interfaces';
 export * from './constant';
 export * from './services/pdd-client/pdd-client.service';
+export * from './decorator';

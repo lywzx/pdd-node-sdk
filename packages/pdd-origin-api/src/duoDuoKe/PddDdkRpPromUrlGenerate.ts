@@ -1,12 +1,5 @@
 export const PDD_DDK_RP_PROM_URL_GENERATE = 'pdd.ddk.rp.prom.url.generate';
 export const PDD_DDK_RP_PROM_URL_GENERATE_RESPONSE_KEY = 'rp_promotion_url_generate_response';
-export const PDD_DDK_RP_PROM_URL_GENERATE_LIMITERS = [
-  {
-    limiterLevel: 3,
-    timeRange: 3600,
-    times: 3000000,
-  },
-];
 
 /**
  * 接口名称：生成营销工具推广链接
@@ -78,6 +71,13 @@ export interface PddDdkRpPromUrlGenerateRequestInterface {
    * @default:
    **/
   p_id_list: string[];
+
+  /**
+   * @description: 初始金额（单位分），有效金额枚举值：300、500、700、1100和1600，默认300
+   * @type: string | number
+   * @default:
+   **/
+  amount?: string | number;
 }
 
 /**

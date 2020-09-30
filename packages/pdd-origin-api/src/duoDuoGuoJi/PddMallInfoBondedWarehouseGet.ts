@@ -4,7 +4,7 @@ export const PDD_MALL_INFO_BONDED_WAREHOUSE_GET_LIMITERS = [
   {
     limiterLevel: 3,
     timeRange: 3600,
-    times: 10000,
+    times: 12000,
   },
 ];
 

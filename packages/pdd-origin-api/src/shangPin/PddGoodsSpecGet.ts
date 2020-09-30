@@ -4,7 +4,7 @@ export const PDD_GOODS_SPEC_GET_LIMITERS = [
   {
     limiterLevel: 1,
     timeRange: 60,
-    times: 3000,
+    times: 3600,
   },
 ];
 

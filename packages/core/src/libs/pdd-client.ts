@@ -5,6 +5,7 @@ import {
   PddResponseTypeAndRequestTypeMapping,
 } from '@pin-duo-duo/pdd-origin-api';
 import { PDD_CLIENT_PASS_ACCESS_TOKEN_KEY } from '../constant/pdd-client-pass-access-token';
+import { PddClientErrorListener } from '../interfaces/pdd-client-listeners.interface';
 import { defaultRetryOptions } from './pdd-client-default';
 import {
   DefaultRequestType,
@@ -31,7 +32,6 @@ import isString from 'lodash/isString';
 import isObject from 'lodash/isObject';
 import isFunction from 'lodash/isFunction';
 import includes from 'lodash/includes';
-import omit from 'lodash/omit';
 import {
   RequestParamsType,
   RequestParamsFullType,
@@ -66,7 +66,6 @@ type PddClientGenerateType =
       refresh_token: string;
       grant_type: 'refresh_token';
     };
-type PddCommonRequestExcludeSomeAttr = Pick<PddCommonRequestInterface, 'access_token'>;
 
 /**
  * 附带AccessToken的数据
@@ -80,6 +79,10 @@ type RequestParamsTypeWithAccessToken = {
  */
 type RequestParamsTypeMix = RequestParamsType & RequestParamsTypeWithAccessToken;
 
+/**
+ * 带access_token的请求数
+ */
+type PddCommonRequestExcludeSomeAttr = Pick<PddCommonRequestInterface, 'access_token'>;
 /**
  * pdd client
  */
@@ -144,18 +147,7 @@ export class PddClient<T extends object = any> {
 
     const newParams = extend({}, params);
 
-    let err: PddBaseException | undefined = checkRequired(newParams, 'type');
-
-    // 获取到AccessToken相关信息
-    const accessTokenInfo: PddAccessTokenResponseInterface | undefined = params[PDD_CLIENT_PASS_ACCESS_TOKEN_KEY];
-    const ownerId = accessTokenInfo && (accessTokenInfo.owner_id as string);
-    const scope = accessTokenInfo && accessTokenInfo.scope;
-    // 验证是否有当前接口权限
-    if (!err && scope && scope.length) {
-      if ((scope as string[]).indexOf(params.type as string) === -1) {
-        err = new PddApiPermissionDenyException(ownerId || 'unknown mall id', params.type as string);
-      }
-    }
+    const err: PddBaseException | undefined = checkRequired(newParams, 'type');
 
     if (err) {
       retDefer.reject(err);
@@ -175,6 +167,10 @@ export class PddClient<T extends object = any> {
     }
 
     defaultArgs.sign = this.sign((defaultArgs as any) as { [s: string]: string | number });
+
+    // 获取到AccessToken相关信息
+    const accessTokenInfo: PddAccessTokenResponseInterface | undefined = params[PDD_CLIENT_PASS_ACCESS_TOKEN_KEY];
+    const ownerId = accessTokenInfo && (accessTokenInfo.owner_id as string);
 
     let requestPromise = this.apiThrottle
       .checkApiThrottle(params.type as string, clientId, ownerId || params.access_token)
@@ -409,7 +405,7 @@ export class PddClient<T extends object = any> {
       if (PddClient.pddDefaultCacheOptions.alwaysWork && cacheOptions !== false && !this.pddApiCache) {
         pddLog('cache options not work! please assign variable: pddApiCache.', '#ff0000');
       }
-      if (typeof accessOptions !== 'undefined' && needAccessToken && !this.pddClientAuth) {
+      if (typeof apiAccessOptions !== 'undefined' && needAccessToken && !this.pddClientAuth) {
         pddLog('access_token will not auto fill. assign variable: pddClientAuth.', '#ffff00');
       }
     }
@@ -428,9 +424,18 @@ export class PddClient<T extends object = any> {
               .getAccessTokenFromCache(apiAccessOptions)
               .then((access: PddAccessTokenResponseInterface | null) => {
                 if (access) {
+                  const scope = access.scope;
+                  // 验证是否有当前接口权限
+                  if (scope && scope.length) {
+                    if ((scope as string[]).indexOf(type) === -1) {
+                      throw new PddApiPermissionDenyException(access.owner_id || 'unknown mall id', type);
+                    }
+                  }
+
                   return extend({}, param, {
                     // eslint-disable-next-line @typescript-eslint/camelcase
                     access_token: access.access_token,
+                    [PDD_CLIENT_PASS_ACCESS_TOKEN_KEY]: access,
                   });
                 }
                 throw new PddAccessTokenMissingException('cat"t find pdd access token from cache!');
@@ -481,7 +486,16 @@ export class PddClient<T extends object = any> {
       }
     }
 
-    return promiseToCallback(ret || runningFn(), apiCallback!);
+    return promiseToCallback(
+      (ret || runningFn()).catch(err => {
+        if (err) {
+          this.event.emit('error', err, apiAccessOptions);
+          throw err;
+        }
+        throw new Error('unknown error');
+      }),
+      apiCallback!
+    );
   }
 
   /**
@@ -644,5 +658,39 @@ export class PddClient<T extends object = any> {
    */
   public static setPddDefaultCacheOptions(options: PddDefaultCacheOptionsType) {
     this.pddDefaultCacheOptions = options;
+  }
+
+  /**
+   * 捕获client发出的错误信息
+   * @param event
+   * @param listener
+   */
+  public on(event: 'error', listener: PddClientErrorListener<T>) {
+    this.event.on(event, listener);
+    return this;
+  }
+
+  /**
+   * 取消事件绑定
+   * @param event
+   * @param listener
+   */
+  public off(event: 'error', listener?: PddClientErrorListener<T>) {
+    if (listener) {
+      this.event.off(event, listener);
+    } else {
+      this.event.removeAllListeners(event);
+    }
+    return this;
+  }
+
+  /**
+   * 只执行一次绑定事件
+   * @param event
+   * @param listener
+   */
+  public once(event: 'error', listener: PddClientErrorListener<T>) {
+    this.event.on(event, listener);
+    return this;
   }
 }

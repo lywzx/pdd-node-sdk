@@ -1,12 +1,5 @@
 export const PDD_DDK_OAUTH_RESOURCE_URL_GEN = 'pdd.ddk.oauth.resource.url.gen';
 export const PDD_DDK_OAUTH_RESOURCE_URL_GEN_RESPONSE_KEY = 'resource_url_response';
-export const PDD_DDK_OAUTH_RESOURCE_URL_GEN_LIMITERS = [
-  {
-    limiterLevel: 3,
-    timeRange: 3600,
-    times: 3000000,
-  },
-];
 
 /**
  * 接口名称：拼多多主站频道推广接口

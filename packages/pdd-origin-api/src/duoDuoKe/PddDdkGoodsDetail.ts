@@ -4,7 +4,7 @@ export const PDD_DDK_GOODS_DETAIL_LIMITERS = [
   {
     limiterLevel: 3,
     timeRange: 10,
-    times: 27875,
+    times: 33450,
   },
 ];
 

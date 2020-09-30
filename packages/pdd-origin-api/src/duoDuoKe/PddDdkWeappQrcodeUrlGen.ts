@@ -1,12 +1,5 @@
 export const PDD_DDK_WEAPP_QRCODE_URL_GEN = 'pdd.ddk.weapp.qrcode.url.gen';
 export const PDD_DDK_WEAPP_QRCODE_URL_GEN_RESPONSE_KEY = 'weapp_qrcode_generate_response';
-export const PDD_DDK_WEAPP_QRCODE_URL_GEN_LIMITERS = [
-  {
-    limiterLevel: 3,
-    timeRange: 3600,
-    times: 3000000,
-  },
-];
 
 /**
  * 接口名称：多多客生成单品推广小程序二维码url

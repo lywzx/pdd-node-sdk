@@ -2,11 +2,6 @@ export const PDD_FDS_WAYBILL_CANCEL = 'pdd.fds.waybill.cancel';
 export const PDD_FDS_WAYBILL_CANCEL_RESPONSE_KEY = 'pdd_fds_waybill_cancel_response';
 export const PDD_FDS_WAYBILL_CANCEL_LIMITERS = [
   {
-    limiterLevel: 1,
-    timeRange: 60,
-    times: 2000,
-  },
-  {
     limiterLevel: 3,
     timeRange: 1,
     times: 1000,

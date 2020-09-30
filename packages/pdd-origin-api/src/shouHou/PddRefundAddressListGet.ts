@@ -4,7 +4,7 @@ export const PDD_REFUND_ADDRESS_LIST_GET_LIMITERS = [
   {
     limiterLevel: 1,
     timeRange: 60,
-    times: 2500,
+    times: 3000,
   },
   {
     limiterLevel: 3,

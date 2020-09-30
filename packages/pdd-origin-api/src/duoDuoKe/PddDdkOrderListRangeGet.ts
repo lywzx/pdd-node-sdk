@@ -1,12 +1,5 @@
 export const PDD_DDK_ORDER_LIST_RANGE_GET = 'pdd.ddk.order.list.range.get';
 export const PDD_DDK_ORDER_LIST_RANGE_GET_RESPONSE_KEY = 'order_list_get_response';
-export const PDD_DDK_ORDER_LIST_RANGE_GET_LIMITERS = [
-  {
-    limiterLevel: 3,
-    timeRange: 3600,
-    times: 8000000,
-  },
-];
 
 /**
  * 接口名称：用时间段查询推广订单接口

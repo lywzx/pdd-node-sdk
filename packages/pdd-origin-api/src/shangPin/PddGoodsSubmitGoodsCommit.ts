@@ -4,7 +4,7 @@ export const PDD_GOODS_SUBMIT_GOODS_COMMIT_LIMITERS = [
   {
     limiterLevel: 3,
     timeRange: 10,
-    times: 5000,
+    times: 6000,
   },
 ];
 
@@ -268,6 +268,20 @@ export interface PddGoodsSubmitGoodsCommitRequestInterface {
   out_goods_id?: string;
 
   /**
+   * @description: 第三方商品Id
+   * @type: string
+   * @default:
+   **/
+  out_source_goods_id?: string;
+
+  /**
+   * @description: 第三方商品来源
+   * @type: number
+   * @default:
+   **/
+  out_source_type?: number;
+
+  /**
    * @description: {
    * 	"consumption_tax_rate": 1,
    * 	"value_added_tax_rate": 9,
@@ -496,7 +510,7 @@ export interface PddGoodsSubmitGoodsCommitGoodsPropertiesRequestInterface {
   parent_spec_id?: string | number;
 
   /**
-   * @description: 引用属性id
+   * @description: ref_pid
    * @type: string | number
    * @default:
    **/
@@ -707,6 +721,13 @@ export interface PddGoodsSubmitGoodsCommitSkuListRequestInterface {
    * @default:
    **/
   out_sku_sn?: string;
+
+  /**
+   * @description: 第三方sku Id
+   * @type: string
+   * @default:
+   **/
+  out_source_sku_id?: string;
 
   /**
    * @description: oversea_sku

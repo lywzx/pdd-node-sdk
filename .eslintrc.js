@@ -25,5 +25,6 @@ module.exports = {
     'indent': 'off',
     '@typescript-eslint/indent': 'off',
     'linebreak-style': ['error', 'unix'],
+    'no-unused-vars': ['error', { "args": "none" }]
   }
 };

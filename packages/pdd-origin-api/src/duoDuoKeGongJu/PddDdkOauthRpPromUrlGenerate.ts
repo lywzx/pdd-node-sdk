@@ -1,12 +1,5 @@
 export const PDD_DDK_OAUTH_RP_PROM_URL_GENERATE = 'pdd.ddk.oauth.rp.prom.url.generate';
 export const PDD_DDK_OAUTH_RP_PROM_URL_GENERATE_RESPONSE_KEY = 'rp_promotion_url_generate_response';
-export const PDD_DDK_OAUTH_RP_PROM_URL_GENERATE_LIMITERS = [
-  {
-    limiterLevel: 3,
-    timeRange: 3600,
-    times: 3000000,
-  },
-];
 
 /**
  * 接口名称：生成营销工具推广链接
@@ -15,7 +8,7 @@ export const PDD_DDK_OAUTH_RP_PROM_URL_GENERATE_LIMITERS = [
  **/
 export interface PddDdkOauthRpPromUrlGenerateRequestInterface {
   /**
-   * @description: -1-活动列表，0-默认红包，2–新人红包，3-刮刮卡，4-转盘 ，5-员工内购，6-购物车，7-大促会场
+   * @description: -1-活动列表，0-默认红包，2–新人红包，3-刮刮卡，5-员工内购，6-购物车，7-大促会场，8-直播间列表集合页，10-生成绑定备案链接
    * @type: number
    * @default:
    **/
@@ -78,6 +71,13 @@ export interface PddDdkOauthRpPromUrlGenerateRequestInterface {
    * @default:
    **/
   p_id_list: string[];
+
+  /**
+   * @description: 初始金额（单位分），有效金额枚举值：300、500、700、1100和1600，默认300
+   * @type: string | number
+   * @default:
+   **/
+  amount?: string | number;
 }
 
 /**

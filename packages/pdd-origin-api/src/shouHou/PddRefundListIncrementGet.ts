@@ -9,7 +9,7 @@ export const PDD_REFUND_LIST_INCREMENT_GET_LIMITERS = [
   {
     limiterLevel: 3,
     timeRange: 1,
-    times: 10000,
+    times: 12000,
   },
 ];
 

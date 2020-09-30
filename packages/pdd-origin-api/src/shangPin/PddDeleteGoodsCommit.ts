@@ -3,13 +3,13 @@ export const PDD_DELETE_GOODS_COMMIT = 'pdd.delete.goods.commit';
 export const PDD_DELETE_GOODS_COMMIT_LIMITERS = [
   {
     limiterLevel: 4,
-    timeRange: 2,
-    times: 2000,
+    timeRange: 20,
+    times: 1200,
   },
   {
     limiterLevel: 3,
     timeRange: 10,
-    times: 2500,
+    times: 3000,
   },
 ];
 

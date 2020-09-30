@@ -1,12 +1,5 @@
 export const PDD_DDK_OAUTH_CMS_PROM_URL_GENERATE = 'pdd.ddk.oauth.cms.prom.url.generate';
 export const PDD_DDK_OAUTH_CMS_PROM_URL_GENERATE_RESPONSE_KEY = 'cms_promotion_url_generate_response';
-export const PDD_DDK_OAUTH_CMS_PROM_URL_GENERATE_LIMITERS = [
-  {
-    limiterLevel: 3,
-    timeRange: 3600,
-    times: 3000000,
-  },
-];
 
 /**
  * 接口名称：生成商城推广链接接口
@@ -69,6 +62,20 @@ export interface PddDdkOauthCmsPromUrlGenerateRequestInterface {
    * @default:
    **/
   p_id_list: string[];
+
+  /**
+   * @description: 是否生成小程序推广
+   * @type: boolean
+   * @default:
+   **/
+  generate_we_app?: boolean;
+
+  /**
+   * @description: 搜索关键词
+   * @type: string
+   * @default:
+   **/
+  keyword?: string;
 }
 
 /**
@@ -220,6 +227,14 @@ export interface PddDdkOauthCmsPromUrlGenerateCmsPromotionUrlGenerateResponseUrl
    * @default:
    **/
   we_app_web_view_url: string;
+
+  /**
+   * @description: 小程序信息
+   * @type: PddDdkOauthCmsPromUrlGenerateCmsPromotionUrlGenerateResponseUrlListWeAppInfoResponseInterface
+   * @default:
+   *
+   **/
+  we_app_info: PddDdkOauthCmsPromUrlGenerateCmsPromotionUrlGenerateResponseUrlListWeAppInfoResponseInterface;
 }
 
 /**
@@ -332,4 +347,67 @@ export interface PddDdkOauthCmsPromUrlGenerateCmsPromotionUrlGenerateResponseUrl
    * @default:
    **/
   we_app_web_view_url: string;
+}
+
+/**
+ * @description 小程序信息
+ * @default
+ * @example
+ **/
+export interface PddDdkOauthCmsPromUrlGenerateCmsPromotionUrlGenerateResponseUrlListWeAppInfoResponseInterface {
+  /**
+   * @description: 拼多多小程序id
+   * @type: string
+   * @default:
+   **/
+  app_id: string;
+
+  /**
+   * @description: Banner图
+   * @type: string
+   * @default:
+   **/
+  banner_url: string;
+
+  /**
+   * @description: 描述
+   * @type: string
+   * @default:
+   **/
+  desc: string;
+
+  /**
+   * @description: 小程序path值
+   * @type: string
+   * @default:
+   **/
+  page_path: string;
+
+  /**
+   * @description: 来源名
+   * @type: string
+   * @default:
+   **/
+  source_display_name: string;
+
+  /**
+   * @description: 小程序标题
+   * @type: string
+   * @default:
+   **/
+  title: string;
+
+  /**
+   * @description: 用户名
+   * @type: string
+   * @default:
+   **/
+  user_name: string;
+
+  /**
+   * @description: 小程序图片
+   * @type: string
+   * @default:
+   **/
+  we_app_icon_url: string;
 }
