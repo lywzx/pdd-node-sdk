@@ -5,7 +5,7 @@ import {
   PddResponseTypeAndRequestTypeMapping,
 } from '@pin-duo-duo/pdd-origin-api';
 import { PDD_CLIENT_PASS_ACCESS_TOKEN_KEY } from '../constant/pdd-client-pass-access-token';
-import { PddClientErrorListener } from '../interfaces/pdd-client-listeners.interface';
+import { PddClientErrorListener } from '../interfaces/pdd-client-error-listeners.interface';
 import { defaultRetryOptions } from './pdd-client-default';
 import {
   DefaultRequestType,

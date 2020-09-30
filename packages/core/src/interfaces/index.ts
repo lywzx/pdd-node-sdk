@@ -11,3 +11,4 @@ export * from './pdd-api-limiter.interface';
 export * from './pdd-client-auth.interface';
 export * from './pdd-api-throttle-options.interface';
 export * from './ilock.interface';
+export * from './pdd-client-error-listeners.interface';
