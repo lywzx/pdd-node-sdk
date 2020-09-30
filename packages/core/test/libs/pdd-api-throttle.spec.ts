@@ -21,13 +21,13 @@ function generateAccessToken(): string {
   return uniqueId('__access_token__');
 }
 
-describe('pdd-api-throttle test', function() {
+describe('pdd-api-throttle test', function () {
   let pddApiThrottleInstance: PddApiThrottle;
   let apiKey: string;
   let apiAccessToken: string;
   let restored: (...args: any) => any;
 
-  beforeEach(function() {
+  beforeEach(function () {
     pddApiThrottleInstance = new PddApiThrottle(new PddApiMemoryThrottleAdapter(), {
       timeout: 1000,
     });
@@ -36,17 +36,17 @@ describe('pdd-api-throttle test', function() {
     restored = once(restore);
   });
 
-  it('#constructor', function() {
+  it('#constructor', function () {
     expect(pddApiThrottleInstance).to.be.instanceOf(PddApiThrottle);
   });
 
-  describe('#checkApiThrottle', async function() {
-    it('without api throttle should return null ', async function() {
+  describe('#checkApiThrottle', async function () {
+    it('without api throttle should return null ', async function () {
       const result = await pddApiThrottleInstance.checkApiThrottle(apiKey, '');
       expect(result).to.be.null;
     });
 
-    it('with api in limiter will quick running', async function() {
+    it('with api in limiter will quick running', async function () {
       const fk = fake.returns([
         {
           limiterLevel: PddApiLimiterLevel.API,
@@ -67,7 +67,7 @@ describe('pdd-api-throttle test', function() {
       expect(Date.now() - startTime).to.be.lessThan(49);
     });
 
-    it('with api more than limiter, time will delay', async function() {
+    it('with api more than limiter, time will delay', async function () {
       const fk = fake.returns([
         {
           limiterLevel: PddApiLimiterLevel.API,
@@ -97,7 +97,7 @@ describe('pdd-api-throttle test', function() {
       expect(Date.now() - startTime).to.be.greaterThan(49);
     });
 
-    it('with api mix throttle should get min throttle', async function() {
+    it('with api mix throttle should get min throttle', async function () {
       const fk = fake.returns([
         {
           limiterLevel: PddApiLimiterLevel.API,
@@ -126,7 +126,7 @@ describe('pdd-api-throttle test', function() {
       expect(runningTime).to.be.lessThan(201);
     });
 
-    it('should api throttle should get mix throttle', async function() {
+    it('should api throttle should get mix throttle', async function () {
       const fk = fake.returns([
         {
           limiterLevel: PddApiLimiterLevel.API,
@@ -156,7 +156,7 @@ describe('pdd-api-throttle test', function() {
       expect(endRunTotal).to.be.eq(4);
     });
 
-    it('should throw error when waiting timeout', async function() {
+    it('should throw error when waiting timeout', async function () {
       const instance = new PddApiThrottle(new PddApiMemoryThrottleAdapter(), {
         timeout: 49,
       });

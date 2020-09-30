@@ -1,7 +1,7 @@
 /**
  * 绑定事件的所有方法
  */
-export const bindEventArray: object[] = [];
+export const bindEventArray: Record<string, any>[] = [];
 
 /**
  * 获取绑定事件的token

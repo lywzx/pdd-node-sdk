@@ -64,7 +64,7 @@ export class NetworkAdapter {
     axiosInstance.defaults.baseURL = options.endpoint;
     axiosInstance.defaults.url = '';
 
-    axiosInstance.interceptors.response.use(response => {
+    axiosInstance.interceptors.response.use((response) => {
       const data = response.data;
 
       if (isObject(data) && 'error_response' in data) {

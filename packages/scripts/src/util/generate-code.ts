@@ -149,7 +149,7 @@ export function buildInterfaceColumn(
 function codeToString(arr: CodeInterface[]): string {
   const buildComment = (comment: string, indent = 0) => {
     const commentArr = comment.split(/\n/g);
-    const commentArrWithComment = commentArr.map(it => {
+    const commentArrWithComment = commentArr.map((it) => {
       return ` * ${it}`;
     });
     return ['/**', ...commentArrWithComment, ' **/']
@@ -214,7 +214,7 @@ function pddTypeToTypescriptType(type: string) {
  */
 export async function generatorIndexCode(state: RunStateInterface) {
   // 导入变量信息
-  const importCodes = map(state.resolvedFiles, resolved => {
+  const importCodes = map(state.resolvedFiles, (resolved) => {
     return [
       `// ${resolved.name}`,
       ...map(resolved.files, (fl: RunStateFileInterface) => {
@@ -226,7 +226,7 @@ export async function generatorIndexCode(state: RunStateInterface) {
           fl.secondResponseInterface,
           fl.apiLimiters,
         ]
-          .filter(it => !!it)
+          .filter((it) => !!it)
           .join(',\n  ');
         return `import {
   ${variables}
@@ -245,7 +245,7 @@ export async function generatorIndexCode(state: RunStateInterface) {
     }
     return undefined;
   })
-    .filter(it => !!it)
+    .filter((it) => !!it)
     .join(',\n  ');
   const typeAndResponseKeyMappingCode = `const ${PddResponseTypeAndRequestTypeMapping} = {
   ${typeAndResponseKeyMappingInnerCode}
@@ -274,7 +274,7 @@ export async function generatorIndexCode(state: RunStateInterface) {
   // 导出的变量信息
   const exportVariables = map(flattenResolvedFiles, (fl: RunStateFileInterface) => {
     return [fl.constVariable, fl.responseKey, fl.requestInterface, fl.responseInterface, fl.secondResponseInterface]
-      .filter(it => !!it)
+      .filter((it) => !!it)
       .join(',\n  ');
   })
     .concat([PddResponseTypeAndRequestTypeMapping, PddNeedAccessTokenTypeCollections, PddApiNeedLimiter])

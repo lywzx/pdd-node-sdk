@@ -3,33 +3,33 @@ import { expect } from 'chai';
 import { PddApiMemoryThrottleAdapter } from '../../src/libs/pdd-api-memory-throttle-adapter';
 import { sleep } from '../../src/util';
 
-describe('pdd-api-memory-throttle-adapter test util', function() {
+describe('pdd-api-memory-throttle-adapter test util', function () {
   let instance: PddApiMemoryThrottleAdapter;
 
-  before(function() {
+  before(function () {
     instance = new PddApiMemoryThrottleAdapter();
   });
 
   let key: string;
-  beforeEach(function() {
+  beforeEach(function () {
     key = uniqueId('random_');
   });
 
   describe('#constructor', () => {
-    it('should instance of self', function() {
+    it('should instance of self', function () {
       expect(instance).instanceOf(PddApiMemoryThrottleAdapter);
     });
   });
 
-  describe('#lock', function() {
-    it('lock init trigger', async function() {
+  describe('#lock', function () {
+    it('lock init trigger', async function () {
       const result = await instance.lock(key, 1000);
 
       expect(result.timeout).to.be.eq(1000);
       expect(result.triggerTotal).to.be.eq(1);
     });
 
-    it('lock trigger twice', async function() {
+    it('lock trigger twice', async function () {
       await instance.lock(key, 1000);
       await instance.lock(key, 1000);
       await sleep(50);
@@ -39,7 +39,7 @@ describe('pdd-api-memory-throttle-adapter test util', function() {
       expect(result.triggerTotal).to.be.eq(3);
     });
 
-    it('lock timeout should not be reset', async function() {
+    it('lock timeout should not be reset', async function () {
       await instance.lock(key, 200);
       const result = await instance.lock(key, 50);
       expect(result.triggerTotal).to.be.eq(2);
@@ -47,7 +47,7 @@ describe('pdd-api-memory-throttle-adapter test util', function() {
       expect(result.timeout).to.be.lessThan(201);
     });
 
-    it('lock timeout should be reset when timeout', async function() {
+    it('lock timeout should be reset when timeout', async function () {
       await Promise.all(times(99).map(() => instance.lock(key, 100)));
 
       let result = await instance.lock(key, 100);
@@ -63,7 +63,7 @@ describe('pdd-api-memory-throttle-adapter test util', function() {
       expect(result.timeout).eq(1000);
     });
 
-    it('lock timeout should auto clean', async function() {
+    it('lock timeout should auto clean', async function () {
       await instance.lock(key, 100);
       await instance.lock(key, 200);
       await sleep(101);
@@ -73,20 +73,20 @@ describe('pdd-api-memory-throttle-adapter test util', function() {
     });
   });
 
-  describe('#unLock', function() {
-    it('should unLock will return false when call without exsts', async function() {
+  describe('#unLock', function () {
+    it('should unLock will return false when call without exsts', async function () {
       const result = await instance.unLock(key);
       expect(result).to.be.eq(false);
     });
 
-    it('should unLock will won,t return < -1 when unLock first trigger', async function() {
+    it('should unLock will won,t return < -1 when unLock first trigger', async function () {
       await Promise.all(times(100).map(() => instance.unLock(key)));
       const result = await instance.lock(key, 100);
       expect(result.timeout).to.be.eq(100);
       expect(result.triggerTotal).to.be.eq(1);
     });
 
-    it('should unLock will won,t return < -1 when any', async function() {
+    it('should unLock will won,t return < -1 when any', async function () {
       const defaultTtl = 99;
       await Promise.all(times(99).map(() => instance.lock(key, defaultTtl)));
       await sleep(20);

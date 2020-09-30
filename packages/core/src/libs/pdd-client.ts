@@ -5,7 +5,6 @@ import {
   PddResponseTypeAndRequestTypeMapping,
 } from '@pin-duo-duo/pdd-origin-api';
 import { PDD_CLIENT_PASS_ACCESS_TOKEN_KEY } from '../constant/pdd-client-pass-access-token';
-import { PddClientErrorListener } from '../interfaces/pdd-client-error-listeners.interface';
 import { defaultRetryOptions } from './pdd-client-default';
 import {
   DefaultRequestType,
@@ -15,9 +14,11 @@ import {
   PddClientOptionsInterface,
   PddDefaultCacheOptionsType,
   RetryOptionsType,
+  PddClientErrorListener,
+  AsyncResultCallbackInterface,
+  RetryOptionsInterface,
 } from '../interfaces';
 import { md5, timestamp, promiseToCallback, defer, checkRequired } from '../util';
-import { AsyncResultCallbackInterface } from '../interfaces';
 import { isDevModel } from '../util/dev';
 import {
   guessPddClientCachedParams,
@@ -40,7 +41,6 @@ import {
   PddAccessTokenResponseInterface,
 } from '../interfaces';
 import { retry } from 'async';
-import { RetryOptionsInterface } from '../interfaces';
 import { PddApiCacheAbstract } from './pdd-api-cache.abstract';
 import { checkTypeIsNeedAccessToken } from './pdd-api-check.tools';
 import { PddApiThrottle } from './pdd-api-throttle';
@@ -86,7 +86,7 @@ type PddCommonRequestExcludeSomeAttr = Pick<PddCommonRequestInterface, 'access_t
 /**
  * pdd client
  */
-export class PddClient<T extends object = any> {
+export class PddClient<T extends Record<string, unknown> = any> {
   /**
    * 自定议错误事件等
    * @protected
@@ -118,17 +118,20 @@ export class PddClient<T extends object = any> {
    * @param axiosOptions
    * @param callback
    */
-  public request<T extends {}, R>(params: T & RequestParamsTypeMix, axiosOptions?: PddAxiosClientOptions): Promise<R>;
-  public request<T extends {}, R>(
+  public request<T extends Record<string, unknown>, R>(
+    params: T & RequestParamsTypeMix,
+    axiosOptions?: PddAxiosClientOptions
+  ): Promise<R>;
+  public request<T extends Record<string, unknown>, R>(
     params: T & RequestParamsTypeMix,
     callback: AsyncResultCallbackInterface<R, never>
   ): void;
-  public request<T extends {}, R>(
+  public request<T extends Record<string, unknown>, R>(
     params: T & RequestParamsTypeMix,
     axiosOptions: PddAxiosClientOptions,
     callback: AsyncResultCallbackInterface<R, never>
   ): void;
-  public request<T extends {}, R>(
+  public request<T extends Record<string, unknown>, R>(
     params: T & RequestParamsTypeMix,
     axiosOptions?: AsyncResultCallbackInterface<R, never> | PddAxiosClientOptions,
     callback?: AsyncResultCallbackInterface<R, never>
@@ -140,14 +143,13 @@ export class PddClient<T extends object = any> {
     const retDefer = defer<R>();
     const clientId = this.options.clientId;
     const defaultArgs: Partial<RequestParamsFullType> = extend({}, PddClient.defaultRequestParam, {
-      // eslint-disable-next-line @typescript-eslint/camelcase
       client_id: clientId,
       timestamp: timestamp(),
     });
 
     const newParams = extend({}, params);
 
-    const err: PddBaseException | undefined = checkRequired(newParams, 'type');
+    const err: PddBaseException | void = checkRequired(newParams, 'type');
 
     if (err) {
       retDefer.reject(err);
@@ -183,11 +185,11 @@ export class PddClient<T extends object = any> {
     // debug
     if (pddLoggerClient && pddLoggerClient.enabled) {
       requestPromise = requestPromise.then(
-        response => {
+        (response) => {
           pddLog('end run pdd client request, type: %s, result: %o', undefined, params.type, response);
           return response;
         },
-        err => {
+        (err) => {
           const errObj =
             (err && (err as PddResponseException).errObj) ||
             (err && (err as Error).stack) ||
@@ -216,20 +218,20 @@ export class PddClient<T extends object = any> {
    * @param retryOptions
    * @param callback
    */
-  public requestWithRetry<T extends {}, R>(
+  public requestWithRetry<T extends Record<string, unknown>, R>(
     params: T & RequestParamsTypeMix,
     retryOptions?: RetryOptionsType
   ): Promise<R>;
-  public requestWithRetry<T extends {}, R>(
+  public requestWithRetry<T extends Record<string, unknown>, R>(
     params: T & RequestParamsTypeMix,
     callback: AsyncResultCallbackInterface<R, never>
   ): void;
-  public requestWithRetry<T extends {}, R>(
+  public requestWithRetry<T extends Record<string, unknown>, R>(
     params: T & RequestParamsTypeMix,
     retryOptions: RetryOptionsType,
     callback: AsyncResultCallbackInterface<R, never>
   ): void;
-  public requestWithRetry<T extends {}, R>(
+  public requestWithRetry<T extends Record<string, unknown>, R>(
     params: T & RequestParamsTypeMix,
     retryOptions?: RetryOptionsType | AsyncResultCallbackInterface<R, never>,
     callback?: AsyncResultCallbackInterface<R, never>
@@ -247,7 +249,7 @@ export class PddClient<T extends object = any> {
       retryCount = 0;
     }
 
-    const retryResult = (retry<R>(tryOptions, clbk => {
+    const retryResult = (retry<R>(tryOptions, (clbk) => {
       // first run not print out message
       if (retryCount) {
         pddLog(
@@ -264,7 +266,7 @@ export class PddClient<T extends object = any> {
 
       if (enabled) {
         result = result.then(
-          response => {
+          (response) => {
             if (retryCount) {
               pddLog(
                 'success retry pdd client request, retry %d th, type: %s, result: %o',
@@ -276,7 +278,7 @@ export class PddClient<T extends object = any> {
             }
             return response;
           },
-          err => {
+          (err) => {
             if (retryCount) {
               const errObj =
                 (err && (err as PddResponseException).errObj) ||
@@ -416,7 +418,7 @@ export class PddClient<T extends object = any> {
       let result = Promise.resolve(nParams);
       if (needAccessToken) {
         if (this.pddClientAuth) {
-          result = result.then(param => {
+          result = result.then((param) => {
             if (!apiAccessOptions) {
               throw new PddAccessTokenMissingException('params access options is required!');
             }
@@ -433,7 +435,6 @@ export class PddClient<T extends object = any> {
                   }
 
                   return extend({}, param, {
-                    // eslint-disable-next-line @typescript-eslint/camelcase
                     access_token: access.access_token,
                     [PDD_CLIENT_PASS_ACCESS_TOKEN_KEY]: access,
                   });
@@ -449,7 +450,7 @@ export class PddClient<T extends object = any> {
         return this.requestWithRetry<Req & Omit<PddCommonRequestInterface, 'sign' | 'timestamp' | 'client_id'>, any>(
           params as Req & Omit<PddCommonRequestInterface, 'sign' | 'timestamp' | 'client_id'>,
           apiRetryOptions
-        ).then(response => {
+        ).then((response) => {
           if (type in PddResponseTypeAndRequestTypeMapping) {
             const responseKey = (PddResponseTypeAndRequestTypeMapping as any)[type] as string;
             return response[responseKey];
@@ -487,7 +488,7 @@ export class PddClient<T extends object = any> {
     }
 
     return promiseToCallback(
-      (ret || runningFn()).catch(err => {
+      (ret || runningFn()).catch((err) => {
         if (err) {
           this.event.emit('error', err, apiAccessOptions);
           throw err;
@@ -559,7 +560,6 @@ export class PddClient<T extends object = any> {
     code: PddClientGenerateType,
     callback?: AsyncResultCallbackInterface<PddAccessTokenResponseInterface, never>
   ): Promise<PddAccessTokenResponseInterface> | void {
-    /* eslint-disable @typescript-eslint/camelcase */
     const clientOptions = this.options;
     const callOptions = {
       client_id: clientOptions.clientId,
@@ -584,7 +584,6 @@ export class PddClient<T extends object = any> {
       },
     });
     return promiseToCallback(resPromise, callback as any);
-    /* eslint-enable @typescript-eslint/camelcase */
   }
 
   /**
@@ -601,7 +600,6 @@ export class PddClient<T extends object = any> {
     freshToken: string,
     callback?: AsyncResultCallbackInterface<PddAccessTokenResponseInterface, never>
   ): Promise<PddAccessTokenResponseInterface> | void {
-    /* eslint-disable @typescript-eslint/camelcase */
     return this.generate(
       {
         refresh_token: freshToken,
@@ -609,14 +607,12 @@ export class PddClient<T extends object = any> {
       },
       callback as any
     );
-    /* eslint-enable @typescript-eslint/camelcase */
   }
 
   /**
    * @var DefaultRequestType 默认请求参数类型
    */
   protected static defaultRequestParam: DefaultRequestType = {
-    // eslint-disable-next-line @typescript-eslint/camelcase
     data_type: 'JSON',
     version: 'V1',
   };

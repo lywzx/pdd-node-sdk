@@ -23,7 +23,7 @@ const retryOptionKeys: Array<keyof (RetryOptionsInterface & PddAxiosClientOption
  * @param value
  */
 export function isRetryOptionConfig(value: any): value is RetryOptionsType {
-  return value === null || typeof value === 'number' || (value && retryOptionKeys.some(key => key in value));
+  return value === null || typeof value === 'number' || (value && retryOptionKeys.some((key) => key in value));
 }
 
 const cacheKeys: Array<keyof PddApiCacheInterface> = ['ttl', 'cacheKey'];
@@ -32,7 +32,7 @@ const cacheKeys: Array<keyof PddApiCacheInterface> = ['ttl', 'cacheKey'];
  * @param value
  */
 export function isCacheOptionConfig(value: any): value is PddCacheOptions {
-  return typeof value === 'boolean' || typeof value === 'number' || (value && cacheKeys.some(key => key in value));
+  return typeof value === 'boolean' || typeof value === 'number' || (value && cacheKeys.some((key) => key in value));
 }
 
 /**

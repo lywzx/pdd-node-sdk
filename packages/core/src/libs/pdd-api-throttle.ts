@@ -33,9 +33,9 @@ export class PddApiThrottle {
       return null;
     }
     const result = await Promise.all(
-      map(apiRateLimit, limiter => {
+      map(apiRateLimit, (limiter) => {
         const saveKey = this.getSaveKey(api, limiter.limiterLevel, clientId, mallId);
-        return this.adapter.lock(saveKey, limiter.timeRange * 1000).then(lock => ({
+        return this.adapter.lock(saveKey, limiter.timeRange * 1000).then((lock) => ({
           saveKey,
           lock,
           limiter,
@@ -59,7 +59,7 @@ export class PddApiThrottle {
 
     const willWait = typeof maxTimeout === 'number' && maxTimeout >= 0;
     if (willWait && unLockKey.length) {
-      await Promise.all(map(unLockKey, lock => this.adapter.unLock(lock)));
+      await Promise.all(map(unLockKey, (lock) => this.adapter.unLock(lock)));
     }
 
     const waitingTime = Date.now() - startAt + (maxTimeout || 0);

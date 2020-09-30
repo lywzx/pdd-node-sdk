@@ -1,13 +1,13 @@
 import { PddBaseException } from '../../src/exceptions';
 import { expect } from 'chai';
 
-describe('pdd-base-exception test util', function() {
-  it('should true when instanceof Error', function() {
+describe('pdd-base-exception test util', function () {
+  it('should true when instanceof Error', function () {
     const n = new PddBaseException('unknown error');
     expect(n).to.be.instanceOf(Error);
   });
 
-  it('should true when with try catch', function() {
+  it('should true when with try catch', function () {
     let err;
     try {
       throw new PddBaseException('unknown error');

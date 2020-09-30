@@ -1,4 +1,3 @@
-import { Module } from '@nestjs/common';
 import { Test } from '@nestjs/testing';
 import { PddClient } from '@pin-duo-duo/core';
 import { expect } from 'chai';
@@ -11,8 +10,8 @@ import {
 } from '../src';
 import { clientOptions } from './config/test-config';
 
-describe('nest js pdd module test util', function() {
-  it('#register static method', async function() {
+describe('nest js pdd module test util', function () {
+  it('#register static method', async function () {
     const module = await Test.createTestingModule({
       imports: [NestJsPddModule.register(clientOptions)],
       providers: [],
@@ -20,7 +19,7 @@ describe('nest js pdd module test util', function() {
     expect(module.get(PddClient)).to.be.instanceOf(PddClient);
   });
 
-  it('#registerAsync method', async function() {
+  it('#registerAsync method', async function () {
     const dfOptions = {
       defaultChannel: 'mms',
       mms: clientOptions,
