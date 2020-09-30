@@ -1,4 +1,5 @@
 import { DynamicModule, Module, Provider } from '@nestjs/common';
+import { ModuleRef } from '@nestjs/core';
 import { PddClient } from '@pin-duo-duo/core';
 import {
   NEST_PDD_MODULE_OPTIONS,
@@ -13,17 +14,19 @@ import {
   PddOptionsFactoryInterface,
 } from '../interfaces';
 import { PddClientService } from '../services/pdd-client/pdd-client.service';
-import { generateClientByClientOptions, transformOptionsToMultiple } from '../util/providers';
+import { bindPddClientEvents, generateClientByClientOptions, transformOptionsToMultiple } from '../util/providers';
 
 const DefaultProvider: Provider[] = [
   {
     provide: PddClient,
-    useFactory: (options: NestJsPddModuleAsyncOptionsInterface) => {
+    useFactory: (options: NestJsPddModuleAsyncOptionsInterface, moduleRef: ModuleRef) => {
       const defaultChannel = options.defaultChannel;
       const clientOption = options[defaultChannel] as NestJsPddClientOptions;
-      return generateClientByClientOptions(clientOption);
+      const client = generateClientByClientOptions(clientOption);
+      bindPddClientEvents(client, moduleRef, NEST_PDD_MODULE_PDD_CLIENTS_DEFAULT);
+      return client;
     },
-    inject: [NEST_PDD_MODULE_OPTIONS],
+    inject: [NEST_PDD_MODULE_OPTIONS, ModuleRef],
   },
   {
     provide: NEST_PDD_MODULE_PDD_CLIENTS_ALL,

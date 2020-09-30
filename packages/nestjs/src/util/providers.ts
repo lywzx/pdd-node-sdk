@@ -1,10 +1,13 @@
-import { Provider } from '@nestjs/common';
+import { Provider, Type } from '@nestjs/common';
+import { ModuleRef } from '@nestjs/core';
 import { PddClient, PddClientOptionsInterface } from '@pin-duo-duo/core';
 import { NEST_PDD_MODULE_OPTIONS, NEST_PDD_MODULE_PDD_CLIENTS_DEFAULT } from '../constant';
+import { bindEventArray, PDD_CLIENT_BIND_EVENTS_TOKEN } from '../constant/constant-decorator';
 import { NestJsPddClientOptions, NestJsPddModuleAsyncOptionsInterface, NestJsPddModuleOptions } from '../interfaces';
 import omit from 'lodash/omit';
 import map from 'lodash/map';
 import flatten from 'lodash/flatten';
+import includes from 'lodash/includes';
 
 /**
  * 是否单模块配置
@@ -70,4 +73,25 @@ export function generateOptionsProviders(options: NestJsPddModuleAsyncOptionsInt
     }
   );
   return flatten(providers);
+}
+
+type AllBindMethods = ['error', string, (string | symbol)[]];
+/**
+ * 绑定Pdd client中的事件
+ * @param client
+ * @param moduleRef
+ * @param clientName
+ */
+export function bindPddClientEvents(client: PddClient<any>, moduleRef: ModuleRef, clientName: string | symbol) {
+  bindEventArray.forEach(function (target) {
+    const allBindMethods: AllBindMethods[] | undefined = Reflect.getMetadata(PDD_CLIENT_BIND_EVENTS_TOKEN, target);
+    if (allBindMethods && allBindMethods.length) {
+      allBindMethods.forEach(([errorName, propertyKey, cNames]) => {
+        if (includes(cNames, clientName)) {
+          const service = moduleRef.get(target as Type<any>);
+          client.on(errorName, service[propertyKey]);
+        }
+      });
+    }
+  });
 }
