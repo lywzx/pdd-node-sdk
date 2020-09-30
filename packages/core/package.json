@@ -46,13 +46,13 @@
     "axios": "^0.19.2",
     "crypto-js": "^4.0.0",
     "fast-json-stable-stringify": "^2.1.0",
-    "lodash": "^4.17.19"
+    "lodash": "^4.17.20"
   },
   "devDependencies": {
     "@types/async": "^3.2.0",
     "@types/crypto-js": "^3.1.44",
     "@types/debug": "^4.1.5",
-    "@types/lodash": "^4.14.158",
+    "@types/lodash": "^4.14.159",
     "debug": "^4.2.0"
   },
   "gitHead": "211b14d8c045925f68f393873ac0ecc51370d023"
