@@ -1,7 +1,6 @@
+import { SetMetadata } from '@nestjs/common';
 import { NEST_PDD_MODULE_PDD_CLIENTS_DEFAULT } from '../constant';
-import { bindEventArray, PDD_CLIENT_BIND_EVENTS_TOKEN } from '../constant/constant-decorator';
-import isFunction from 'lodash/isFunction';
-import castArray from 'lodash/castArray';
+import { PDD_CLIENT_BIND_EVENTS_TOKEN } from '../constant/constant-decorator';
 
 /**
  * 绑定出错时的信息
@@ -9,7 +8,8 @@ import castArray from 'lodash/castArray';
 export function catchError(
   clientName: string | string[] = NEST_PDD_MODULE_PDD_CLIENTS_DEFAULT
 ): MethodDecorator | PropertyDecorator {
-  return function <T>(
+  return SetMetadata(PDD_CLIENT_BIND_EVENTS_TOKEN, clientName);
+  /*return function <T>(
     target: Record<string, any>,
     propertyKey: string | symbol,
     descriptor?: TypedPropertyDescriptor<T>
@@ -27,5 +27,5 @@ export function catchError(
       target
     );
     return descriptor;
-  };
+  };*/
 }

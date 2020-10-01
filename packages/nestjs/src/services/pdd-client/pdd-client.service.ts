@@ -12,6 +12,7 @@ import toPairs from 'lodash/toPairs';
 import fromPairs from 'lodash/fromPairs';
 import isObject from 'lodash/isObject';
 import includes from 'lodash/includes';
+import { PddExplorerService } from '../pdd-explorer/pdd-explorer.service';
 
 @Injectable()
 export class PddClientService {
@@ -23,7 +24,8 @@ export class PddClientService {
 
   constructor(
     @Inject(NEST_PDD_MODULE_OPTIONS) protected options: NestJsPddModuleAsyncOptionsInterface,
-    private moduleRef: ModuleRef
+    private moduleRef: ModuleRef,
+    private pddExplorerService: PddExplorerService
   ) {}
 
   /**

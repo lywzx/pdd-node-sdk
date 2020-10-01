@@ -1,5 +1,5 @@
 import { DynamicModule, Module, Provider } from '@nestjs/common';
-import { ModuleRef } from '@nestjs/core';
+import { DiscoveryModule, ModuleRef } from '@nestjs/core';
 import { PddClient } from '@pin-duo-duo/core';
 import {
   NEST_PDD_MODULE_OPTIONS,
@@ -14,19 +14,20 @@ import {
   PddOptionsFactoryInterface,
 } from '../interfaces';
 import { PddClientService } from '../services/pdd-client/pdd-client.service';
-import { bindPddClientEvents, generateClientByClientOptions, transformOptionsToMultiple } from '../util/providers';
+import { PddExplorerService } from '../services/pdd-explorer/pdd-explorer.service';
+import { generateClientByClientOptions, transformOptionsToMultiple } from '../util/providers';
 
 const DefaultProvider: Provider[] = [
   {
     provide: PddClient,
-    useFactory: (options: NestJsPddModuleAsyncOptionsInterface, moduleRef: ModuleRef) => {
+    useFactory: (options: NestJsPddModuleAsyncOptionsInterface, pddExplorer: PddExplorerService) => {
       const defaultChannel = options.defaultChannel;
       const clientOption = options[defaultChannel] as NestJsPddClientOptions;
       const client = generateClientByClientOptions(clientOption);
-      bindPddClientEvents(client, moduleRef, NEST_PDD_MODULE_PDD_CLIENTS_DEFAULT);
+      pddExplorer.lookupListeners(client, defaultChannel);
       return client;
     },
-    inject: [NEST_PDD_MODULE_OPTIONS, ModuleRef],
+    inject: [NEST_PDD_MODULE_OPTIONS, PddExplorerService],
   },
   {
     provide: NEST_PDD_MODULE_PDD_CLIENTS_ALL,
@@ -50,6 +51,7 @@ export class NestJsPddModule {
     const newOptions = transformOptionsToMultiple(options);
     return {
       module: this,
+      imports: [NestJsPddModule.registryCore()],
       providers: [
         {
           provide: NEST_PDD_MODULE_OPTIONS,
@@ -72,7 +74,7 @@ export class NestJsPddModule {
   static registerAsync(options: NestJsPddModuleOptionsInterface): DynamicModule {
     return {
       module: this,
-      imports: options.imports,
+      imports: [...(options.imports || []), NestJsPddModule.registryCore()],
       providers: [...this.createAsyncProviders(options), ...(options.extraProviders || [])],
       exports: [...DefaultProvider],
     };
@@ -109,5 +111,14 @@ export class NestJsPddModule {
         inject: [options.useExisting || options.useClass],
       };
     }
+  }
+
+  private static registryCore() {
+    return {
+      global: true,
+      module: NestJsPddModule,
+      imports: [DiscoveryModule],
+      providers: [PddExplorerService],
+    };
   }
 }

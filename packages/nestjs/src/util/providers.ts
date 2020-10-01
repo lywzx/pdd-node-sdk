@@ -1,13 +1,19 @@
 import { Provider, Type } from '@nestjs/common';
 import { ModuleRef } from '@nestjs/core';
 import { PddClient, PddClientOptionsInterface } from '@pin-duo-duo/core';
-import { NEST_PDD_MODULE_OPTIONS, NEST_PDD_MODULE_PDD_CLIENTS_DEFAULT } from '../constant';
+import { PddClientService } from '..';
+import {
+  NEST_PDD_MODULE_OPTIONS,
+  NEST_PDD_MODULE_PDD_CLIENTS_ALL,
+  NEST_PDD_MODULE_PDD_CLIENTS_DEFAULT,
+} from '../constant';
 import { bindEventArray, PDD_CLIENT_BIND_EVENTS_TOKEN } from '../constant/constant-decorator';
 import { NestJsPddClientOptions, NestJsPddModuleAsyncOptionsInterface, NestJsPddModuleOptions } from '../interfaces';
 import omit from 'lodash/omit';
 import map from 'lodash/map';
 import flatten from 'lodash/flatten';
 import includes from 'lodash/includes';
+import { createConditionalDepHolder } from './create-conditional-dep-holder.helper';
 
 /**
  * 是否单模块配置
@@ -42,6 +48,37 @@ export function transformOptionsToMultiple(options: NestJsPddModuleOptions): Nes
  */
 export function generateClientByClientOptions(clientOption: NestJsPddClientOptions) {
   return new PddClient(clientOption, clientOption.clientAccessAuth, clientOption.apiCached, clientOption.apiThrottle);
+}
+
+/**
+ * 创建默认的Providers的内容
+ */
+export function generateProviders(): Provider[] {
+  const optionalSharedConfigHolder = createConditionalDepHolder(NEST_PDD_MODULE_OPTIONS);
+  return [
+    {
+      provide: PddClient,
+      useFactory: (options: NestJsPddModuleAsyncOptionsInterface, moduleRef: ModuleRef) => {
+        const defaultChannel = options.defaultChannel;
+        const clientOption = options[defaultChannel] as NestJsPddClientOptions;
+        const client = generateClientByClientOptions(clientOption);
+        bindPddClientEvents(client, moduleRef, NEST_PDD_MODULE_PDD_CLIENTS_DEFAULT);
+        return client;
+      },
+      inject: [NEST_PDD_MODULE_OPTIONS, ModuleRef],
+    },
+    {
+      provide: NEST_PDD_MODULE_PDD_CLIENTS_ALL,
+      useFactory(pddClientService: PddClientService) {
+        return pddClientService.get();
+      },
+      inject: [PddClientService],
+    },
+    {
+      provide: NEST_PDD_MODULE_PDD_CLIENTS_DEFAULT,
+      useExisting: PddClient,
+    },
+  ];
 }
 
 /**
