@@ -88,8 +88,10 @@ export function bindPddClientEvents(client: PddClient<any>, moduleRef: ModuleRef
     if (allBindMethods && allBindMethods.length) {
       allBindMethods.forEach(([errorName, propertyKey, cNames]) => {
         if (includes(cNames, clientName)) {
-          const service = moduleRef.get(target as Type<any>);
-          client.on(errorName, service[propertyKey]);
+          try {
+            const service = moduleRef.get(target.constructor as Type<any>);
+            client.on(errorName, service[propertyKey]);
+          } catch (e) {}
         }
       });
     }
