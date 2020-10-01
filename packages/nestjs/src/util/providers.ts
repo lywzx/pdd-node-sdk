@@ -1,25 +1,16 @@
-import { Provider, Type } from '@nestjs/common';
-import { ModuleRef } from '@nestjs/core';
+import { Provider } from '@nestjs/common';
 import { PddClient, PddClientOptionsInterface } from '@pin-duo-duo/core';
-import { PddClientService } from '..';
-import {
-  NEST_PDD_MODULE_OPTIONS,
-  NEST_PDD_MODULE_PDD_CLIENTS_ALL,
-  NEST_PDD_MODULE_PDD_CLIENTS_DEFAULT,
-} from '../constant';
-import { bindEventArray, PDD_CLIENT_BIND_EVENTS_TOKEN } from '../constant/constant-decorator';
+import { NEST_PDD_MODULE_OPTIONS, NEST_PDD_MODULE_PDD_CLIENTS_DEFAULT } from '../constant';
 import { NestJsPddClientOptions, NestJsPddModuleAsyncOptionsInterface, NestJsPddModuleOptions } from '../interfaces';
 import omit from 'lodash/omit';
 import map from 'lodash/map';
 import flatten from 'lodash/flatten';
-import includes from 'lodash/includes';
-import { createConditionalDepHolder } from './create-conditional-dep-holder.helper';
 
 /**
  * 是否单模块配置
  * @param options
  */
-function isSingleModel(options: NestJsPddModuleOptions): options is PddClientOptionsInterface {
+function isSingleModel(options: NestJsPddModuleOptions): options is NestJsPddClientOptions {
   return (
     'clientId' in options &&
     'clientSecret' in options &&
@@ -51,37 +42,6 @@ export function generateClientByClientOptions(clientOption: NestJsPddClientOptio
 }
 
 /**
- * 创建默认的Providers的内容
- */
-export function generateProviders(): Provider[] {
-  const optionalSharedConfigHolder = createConditionalDepHolder(NEST_PDD_MODULE_OPTIONS);
-  return [
-    {
-      provide: PddClient,
-      useFactory: (options: NestJsPddModuleAsyncOptionsInterface, moduleRef: ModuleRef) => {
-        const defaultChannel = options.defaultChannel;
-        const clientOption = options[defaultChannel] as NestJsPddClientOptions;
-        const client = generateClientByClientOptions(clientOption);
-        bindPddClientEvents(client, moduleRef, NEST_PDD_MODULE_PDD_CLIENTS_DEFAULT);
-        return client;
-      },
-      inject: [NEST_PDD_MODULE_OPTIONS, ModuleRef],
-    },
-    {
-      provide: NEST_PDD_MODULE_PDD_CLIENTS_ALL,
-      useFactory(pddClientService: PddClientService) {
-        return pddClientService.get();
-      },
-      inject: [PddClientService],
-    },
-    {
-      provide: NEST_PDD_MODULE_PDD_CLIENTS_DEFAULT,
-      useExisting: PddClient,
-    },
-  ];
-}
-
-/**
  * 生成多个providers
  * @param options
  */
@@ -110,27 +70,4 @@ export function generateOptionsProviders(options: NestJsPddModuleAsyncOptionsInt
     }
   );
   return flatten(providers);
-}
-
-type AllBindMethods = ['error', string, (string | symbol)[]];
-/**
- * 绑定Pdd client中的事件
- * @param client
- * @param moduleRef
- * @param clientName
- */
-export function bindPddClientEvents(client: PddClient<any>, moduleRef: ModuleRef, clientName: string | symbol) {
-  bindEventArray.forEach(function (target) {
-    const allBindMethods: AllBindMethods[] | undefined = Reflect.getMetadata(PDD_CLIENT_BIND_EVENTS_TOKEN, target);
-    if (allBindMethods && allBindMethods.length) {
-      allBindMethods.forEach(([errorName, propertyKey, cNames]) => {
-        if (includes(cNames, clientName)) {
-          try {
-            const service = moduleRef.get(target.constructor as Type<any>);
-            client.on(errorName, service[propertyKey]);
-          } catch (e) {}
-        }
-      });
-    }
-  });
 }

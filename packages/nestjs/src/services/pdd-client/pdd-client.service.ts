@@ -7,7 +7,7 @@ import {
   NEST_PDD_MODULE_PDD_CLIENTS_DEFAULT,
 } from '../../constant';
 import { NestJsPddClientOptions, NestJsPddModuleAsyncOptionsInterface, PddClientCollect } from '../../interfaces';
-import { bindPddClientEvents, generateClientByClientOptions } from '../../util/providers';
+import { generateClientByClientOptions } from '../../util/providers';
 import toPairs from 'lodash/toPairs';
 import fromPairs from 'lodash/fromPairs';
 import isObject from 'lodash/isObject';
@@ -62,7 +62,7 @@ export class PddClientService {
     } else if (this.options[innerKey as string] && isObject(this.options[innerKey as string])) {
       const option = this.options[innerKey as string];
       client = generateClientByClientOptions(option as NestJsPddClientOptions);
-      bindPddClientEvents(client, this.moduleRef, innerKey);
+      this.pddExplorerService.lookupListeners(client, innerKey);
     }
     if (client) {
       this.clients.set(innerKey, client);

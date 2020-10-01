@@ -1,5 +1,5 @@
 import { DynamicModule, Module, Provider } from '@nestjs/common';
-import { DiscoveryModule, ModuleRef } from '@nestjs/core';
+import { DiscoveryModule } from '@nestjs/core';
 import { PddClient } from '@pin-duo-duo/core';
 import {
   NEST_PDD_MODULE_OPTIONS,
@@ -16,6 +16,7 @@ import {
 import { PddClientService } from '../services/pdd-client/pdd-client.service';
 import { PddExplorerService } from '../services/pdd-explorer/pdd-explorer.service';
 import { generateClientByClientOptions, transformOptionsToMultiple } from '../util/providers';
+import { NestJsPddPlaceholderModule } from './nest-js-pdd-placeholder.module';
 
 const DefaultProvider: Provider[] = [
   {
@@ -24,7 +25,7 @@ const DefaultProvider: Provider[] = [
       const defaultChannel = options.defaultChannel;
       const clientOption = options[defaultChannel] as NestJsPddClientOptions;
       const client = generateClientByClientOptions(clientOption);
-      pddExplorer.lookupListeners(client, defaultChannel);
+      pddExplorer.lookupListeners(client, NEST_PDD_MODULE_PDD_CLIENTS_DEFAULT);
       return client;
     },
     inject: [NEST_PDD_MODULE_OPTIONS, PddExplorerService],
@@ -116,9 +117,10 @@ export class NestJsPddModule {
   private static registryCore() {
     return {
       global: true,
-      module: NestJsPddModule,
+      module: NestJsPddPlaceholderModule,
       imports: [DiscoveryModule],
       providers: [PddExplorerService],
+      exports: [PddExplorerService],
     };
   }
 }
