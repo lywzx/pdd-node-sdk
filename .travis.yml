@@ -28,6 +28,7 @@ services:
   - redis-server
 
 before_install:
+  - if [ "$TRAVIS_OS_NAME" = "osx" ]; then brew services start redis; fi
   - npm install yarn -g
   - npm install codecov -g
 
