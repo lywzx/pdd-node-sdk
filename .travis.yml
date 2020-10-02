@@ -20,6 +20,9 @@ node_js:
   - '11'
   - '10'
 
+services:
+  - redis-server
+
 before_install:
   - npm install yarn -g
   - npm install codecov -g

@@ -86,7 +86,7 @@ type PddCommonRequestExcludeSomeAttr = Pick<PddCommonRequestInterface, 'access_t
 /**
  * pdd client
  */
-export class PddClient<T extends Record<string, unknown> = any> {
+export class PddClient<T extends Record<string, any> = any> {
   /**
    * 自定议错误事件等
    * @protected
@@ -118,20 +118,20 @@ export class PddClient<T extends Record<string, unknown> = any> {
    * @param axiosOptions
    * @param callback
    */
-  public request<T extends Record<string, unknown>, R>(
+  public request<T extends Record<string, any>, R>(
     params: T & RequestParamsTypeMix,
     axiosOptions?: PddAxiosClientOptions
   ): Promise<R>;
-  public request<T extends Record<string, unknown>, R>(
+  public request<T extends Record<string, any>, R>(
     params: T & RequestParamsTypeMix,
     callback: AsyncResultCallbackInterface<R, never>
   ): void;
-  public request<T extends Record<string, unknown>, R>(
+  public request<T extends Record<string, any>, R>(
     params: T & RequestParamsTypeMix,
     axiosOptions: PddAxiosClientOptions,
     callback: AsyncResultCallbackInterface<R, never>
   ): void;
-  public request<T extends Record<string, unknown>, R>(
+  public request<T extends Record<string, any>, R>(
     params: T & RequestParamsTypeMix,
     axiosOptions?: AsyncResultCallbackInterface<R, never> | PddAxiosClientOptions,
     callback?: AsyncResultCallbackInterface<R, never>
@@ -218,20 +218,20 @@ export class PddClient<T extends Record<string, unknown> = any> {
    * @param retryOptions
    * @param callback
    */
-  public requestWithRetry<T extends Record<string, unknown>, R>(
+  public requestWithRetry<T extends Record<string, any>, R>(
     params: T & RequestParamsTypeMix,
     retryOptions?: RetryOptionsType
   ): Promise<R>;
-  public requestWithRetry<T extends Record<string, unknown>, R>(
+  public requestWithRetry<T extends Record<string, any>, R>(
     params: T & RequestParamsTypeMix,
     callback: AsyncResultCallbackInterface<R, never>
   ): void;
-  public requestWithRetry<T extends Record<string, unknown>, R>(
+  public requestWithRetry<T extends Record<string, any>, R>(
     params: T & RequestParamsTypeMix,
     retryOptions: RetryOptionsType,
     callback: AsyncResultCallbackInterface<R, never>
   ): void;
-  public requestWithRetry<T extends Record<string, unknown>, R>(
+  public requestWithRetry<T extends Record<string, any>, R>(
     params: T & RequestParamsTypeMix,
     retryOptions?: RetryOptionsType | AsyncResultCallbackInterface<R, never>,
     callback?: AsyncResultCallbackInterface<R, never>

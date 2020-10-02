@@ -1,8 +1,9 @@
-import { times, uniqueId } from 'lodash';
-import { expect } from 'chai';
 import { PddApiMemoryThrottleAdapter } from '../../src/libs/pdd-api-memory-throttle-adapter';
-import { sleep } from '../../src/util';
+import { testThrottleAdapterUtil } from '../test-util';
 
+testThrottleAdapterUtil(PddApiMemoryThrottleAdapter, 'pdd-api-memory-throttle-adapter');
+
+/*
 describe('pdd-api-memory-throttle-adapter test util', function () {
   let instance: PddApiMemoryThrottleAdapter;
 
@@ -105,3 +106,4 @@ describe('pdd-api-memory-throttle-adapter test util', function () {
     });
   });
 });
+*/

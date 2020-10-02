@@ -4,7 +4,7 @@ import { PddClientOptionsInterface, PddApiCacheAbstract, PddClientAccessAuth, Pd
 /**
  * 拼多多后台客户端配置
  */
-export interface NestJsPddClientOptions<T extends Record<string, unknown> = any> extends PddClientOptionsInterface {
+export interface NestJsPddClientOptions<T extends Record<string, any> = any> extends PddClientOptionsInterface {
   /**
    * 拼多多默认认证类信息
    */

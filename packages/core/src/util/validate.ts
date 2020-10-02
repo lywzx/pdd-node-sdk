@@ -6,7 +6,7 @@ import { PddRequestParamsMissingException } from '../exceptions';
  * @param keys
  */
 export function checkRequired(
-  params: Record<string, unknown>,
+  params: Record<string, any>,
   keys: string | string[]
 ): void | PddRequestParamsMissingException {
   if (!Array.isArray(keys)) {
