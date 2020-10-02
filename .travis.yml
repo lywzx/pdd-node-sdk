@@ -13,6 +13,10 @@ cache:
     - node_modules/ # npm packages
     - .nyc_output/
 
+addons:
+  homebrew:
+    packages: redis
+
 node_js:
   - 'node'
   - '13'
