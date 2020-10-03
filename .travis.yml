@@ -1,7 +1,7 @@
 language: node_js
 
 os:
-  - linux
+  # - linux
   # - windows
   - osx
 
@@ -27,10 +27,10 @@ node_js:
   - '10'
 
 services:
-  - redis-server
+  - redis
 
 before_install:
-  - sh -c "if [ '$TRAVIS_OS_NAME' = 'osx' ]; then redis-server; fi"
+  - sh -c "if [ '$TRAVIS_OS_NAME' = 'osx' ]; then brew services start redis; fi"
   - npm install yarn -g
   - npm install codecov -g
 

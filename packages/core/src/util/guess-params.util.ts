@@ -1,5 +1,6 @@
 import {
   AsyncResultCallbackInterface,
+  PddAccessTokenResponseInterface,
   PddAxiosClientOptions,
   PddCacheOptions,
   RetryOptionsInterface,
@@ -138,4 +139,16 @@ export function guessPddClientCachedParams(
   }
 
   return [realCachedKey, ttl];
+}
+
+/**
+ * 根据传入参数，自动组装拼多多认证服务接口
+ * @param accessOptions
+ * @param callback
+ */
+export function guessPddClientGenerateParams<T>(
+  accessOptions?: T | AsyncResultCallbackInterface<PddAccessTokenResponseInterface, never>,
+  callback?: AsyncResultCallbackInterface<PddAccessTokenResponseInterface, never>
+): [T | undefined, AsyncResultCallbackInterface<PddAccessTokenResponseInterface, never> | undefined] {
+  return [undefined, undefined];
 }

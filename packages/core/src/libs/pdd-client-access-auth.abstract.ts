@@ -32,7 +32,7 @@ export abstract class PddClientAccessAuth<T> {
    * 设置当前用户的access token
    * @param obj
    * @param token
-   * @param expired
+   * @param expired 过期时间(毫秒)
    */
   public abstract setAccessTokenToCache(
     obj: T,

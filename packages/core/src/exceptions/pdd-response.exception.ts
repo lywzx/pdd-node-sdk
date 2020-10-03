@@ -5,6 +5,15 @@ import { PddBaseException } from './pdd-base.exception';
  * 拼多多后台响应错误
  */
 export class PddResponseException extends PddBaseException {
+  /**
+   * 是否忽略自动刷新token
+   * null 初始状态
+   * true: 表示被忽略
+   * false： 表示更新了token信息
+   * @protected
+   */
+  protected $ignoreTokenRefresh: boolean | null = null;
+
   constructor(public errObj: PddErrorResponse) {
     super(JSON.stringify(errObj));
     Object.setPrototypeOf(this, PddResponseException.prototype);
@@ -40,6 +49,14 @@ export class PddResponseException extends PddBaseException {
    */
   public getErrorCode(): number {
     return get(this, 'errObj.error_code', -1);
+  }
+
+  /**
+   * 是否忽略token刷新
+   * @param ignored
+   */
+  public ignoreTokenRefresh(ignored = true): void {
+    this.$ignoreTokenRefresh = ignored;
   }
 }
 

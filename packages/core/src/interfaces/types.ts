@@ -1,4 +1,8 @@
-import { PddCommonRequestInterface } from '@pin-duo-duo/pdd-origin-api';
+import {
+  PddCommonRequestInterface,
+  PddPopAuthTokenCreatePopAuthTokenCreateResponseResponseInterface,
+  PddPopAuthTokenRefreshPopAuthTokenRefreshResponseResponseInterface,
+} from '@pin-duo-duo/pdd-origin-api';
 import { AxiosRequestConfig } from 'axios';
 import { PddApiCacheInterface } from './pdd-api-cache.interface';
 import { RetryOptionsInterface } from './retry-options.interface';
@@ -30,3 +34,10 @@ export type PddDefaultCacheOptionsType = {
   ttl: number;
   alwaysWork: boolean;
 };
+
+/**
+ * 拼多多认证响应的数据
+ */
+export type PddAccessTokenResponseInterface =
+  | PddPopAuthTokenCreatePopAuthTokenCreateResponseResponseInterface
+  | PddPopAuthTokenRefreshPopAuthTokenRefreshResponseResponseInterface;
