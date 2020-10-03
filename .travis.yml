@@ -15,7 +15,9 @@ cache:
 
 addons:
   homebrew:
-    packages: redis
+    packages:
+    - redis
+    update: true
 
 node_js:
   - 'node'
