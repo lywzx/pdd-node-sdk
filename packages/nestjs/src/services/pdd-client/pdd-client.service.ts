@@ -34,7 +34,7 @@ export class PddClientService {
    */
   public get<T extends Record<string, any> = any>(): PddClientCollect<T>;
   public get<T extends Record<string, any> = any>(key: string): PddClient<T>;
-  public get<T extends Record<string, any> = any>(key?: string): PddClient | PddClientCollect<T> {
+  public get<T extends Record<string, any> = any>(key?: string): PddClient<T> | PddClientCollect<T> {
     const innerKey: symbol | string = typeof key === 'undefined' ? NEST_PDD_MODULE_PDD_CLIENTS_ALL : key;
     if (innerKey === NEST_PDD_MODULE_PDD_CLIENTS_ALL) {
       if (!this.clients.has(innerKey)) {

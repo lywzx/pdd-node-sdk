@@ -5,6 +5,7 @@ import {
   PddCollectShortResponseInterface,
   PddCommonRequestInterface,
   PddPopAuthTokenCreateRequestInterface,
+  PddPopAuthTokenCreateResponseInterface,
   PddPopAuthTokenRefreshRequestInterface,
   PddPopAuthTokenRefreshResponseInterface,
 } from '@pin-duo-duo/pdd-origin-api';
@@ -430,8 +431,9 @@ export class PddClient<T extends Record<string, any> = any> {
                   const scope = access.scope;
                   // 验证是否有当前接口权限
                   if (scope && scope.length) {
+                    // 有些场景，拼多多官方会合并两个应用接口，这里所以不会存在
                     if ((scope as string[]).indexOf(type) === -1) {
-                      throw new PddApiPermissionDenyException(access.owner_id || 'unknown mall id', type);
+                      pddLog(`shop id:${access.owner_id || 'unknown mall id'} visit ${type} permission deny!`);
                     }
                   }
 
@@ -472,9 +474,9 @@ export class PddClient<T extends Record<string, any> = any> {
             if (err.accessTokenNeedRefresh()) {
               // 如果access token还有2分钟过期
               if (
-                parseInt(accessTokenInfo.expires_at.toString(), 10) <=
+                parseInt(accessTokenInfo.expires_at.toString(), 10) * 1000 <=
                   Date.now() + PDD_CLIENT_ACCESS_TOKEN_CLEAR_TIMEOUT &&
-                parseInt(accessTokenInfo.refresh_token_expires_at.toString(), 10) <=
+                parseInt(accessTokenInfo.refresh_token_expires_at.toString(), 10) * 1000 <=
                   Date.now() + PDD_CLIENT_ACCESS_TOKEN_CLEAR_TIMEOUT
               ) {
                 // 清理access token
@@ -648,17 +650,22 @@ export class PddClient<T extends Record<string, any> = any> {
     const result = paramsPromise
       .then<PddAccessTokenResponseInterface>((param) => {
         const type = 'code' in param ? PDD_POP_AUTH_TOKEN_CREATE : PDD_POP_AUTH_TOKEN_REFRESH;
-        return this.request({
+        return this.request<
+          PddClientGenerateType,
+          PddPopAuthTokenCreateResponseInterface | PddPopAuthTokenRefreshResponseInterface
+        >({
           type,
           ...param,
+        }).then<PddAccessTokenResponseInterface>((result) => {
+          return getShortResponse(result, type);
         });
       })
-      .then(async (result) => {
+      .then(async (res) => {
         // 保存access token至缓存数据当中
         if (this.pddClientAuth && access) {
-          await this.pddClientAuth.setAccessTokenToCache(access, result);
+          await this.pddClientAuth.setAccessTokenToCache(access, res);
         }
-        return result;
+        return res;
       });
 
     return promiseToCallback(result, cbk as AsyncResultCallbackInterface<PddAccessTokenResponseInterface, never>);

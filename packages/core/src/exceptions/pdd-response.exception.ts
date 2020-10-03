@@ -55,7 +55,12 @@ export class PddResponseException extends PddBaseException {
    * 是否忽略token刷新
    * @param ignored
    */
-  public ignoreTokenRefresh(ignored = true): void {
+  public ignoreTokenRefresh(): null | boolean;
+  public ignoreTokenRefresh(ignored: boolean): void;
+  public ignoreTokenRefresh(ignored?: boolean): void | null | boolean {
+    if (typeof ignored === 'undefined') {
+      return this.$ignoreTokenRefresh;
+    }
     this.$ignoreTokenRefresh = ignored;
   }
 }
