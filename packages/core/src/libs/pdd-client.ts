@@ -500,6 +500,7 @@ export class PddClient<T extends Record<string, any> = any> {
                   // 释放锁
                   await pddClientAuth.unLock(lockKey);
                   accessTokenInfo = null;
+                  // todo 后续有必要加入重试逻辑
                 } else {
                   err.ignoreTokenRefresh(true);
                   // hack sleep 3s, 假定刷新token信息，能够在3s内完成
