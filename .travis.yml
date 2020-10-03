@@ -28,7 +28,7 @@ services:
   - redis-server
 
 before_install:
-  - if [ "$TRAVIS_OS_NAME" = "osx" ]; then redis-server & ; fi
+  - sh -c "if [ '$TRAVIS_OS_NAME' = 'osx' ]; then redis-server; fi"
   - npm install yarn -g
   - npm install codecov -g
 
