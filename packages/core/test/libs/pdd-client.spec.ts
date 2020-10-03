@@ -8,6 +8,7 @@ import { expect } from 'chai';
 import { OAuthType } from '../../src/constant';
 import {
   PddAccessTokenMissingException,
+  PddBaseException,
   PddRequestParamsMissingException,
   PddResponseException,
 } from '../../src/exceptions';
@@ -296,21 +297,17 @@ describe('pdd-client test util', function () {
   describe('#generate method', function () {
     it('should get result', async function () {
       const result = { testResponse: true };
-      const post = stub().resolves(result);
+      const methods = stub().resolves(result);
       const testValues = [
         'code',
         {
           code: 'code',
-          grant_type: 'authorization_code',
         },
         {
-          code: 'code',
-          grant_type: 'refresh_token',
+          refresh_token: 'code',
         },
       ];
-      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-      // @ts-ignore
-      replace(pddClient.networkAdapter, 'post', post);
+      replace(pddClient, 'request', methods);
       for (const value of testValues) {
         const res = await pddClient.generate(value as any);
         expect(res).to.be.eq(result);
@@ -318,27 +315,27 @@ describe('pdd-client test util', function () {
       restored();
     });
 
-    it('should get error without grant_type', async function () {
+    it('should get error when access is empty', async function () {
       let err;
       try {
-        await pddClient.generate({ code: 'any', grant_type: '' } as any);
+        await pddClient.generate({ userId: 1, shopId: 1 });
       } catch (e) {
         err = e;
       }
-      expect(err).to.be.instanceOf(Error);
-      expect(err.message).to.be.include('grant type');
+      expect(err).to.be.instanceOf(PddBaseException);
+      expect(err.message).to.be.include('pdd client auth is undefined!');
     });
   });
 
   describe('#refresh method', function () {
-    it('should get result', async function () {
+    it('when string should guess to refresh param', async function () {
       const generate = stub().resolves({});
       const token = 'test-token';
       replace(pddClient, 'generate', generate);
       await pddClient.refresh(token);
       restored();
       expect(generate.callCount).to.be.eq(1);
-      expect(generate.lastCall.args).to.be.eqls([{ refresh_token: token, grant_type: 'refresh_token' }, undefined]);
+      expect(generate.lastCall.args[0]).to.be.eqls({ refresh_token: token });
     });
   });
 

@@ -1,7 +1,7 @@
 language: node_js
 
 os:
-  # - linux
+  - linux
   # - windows
   - osx
 
@@ -17,7 +17,7 @@ addons:
   homebrew:
     packages:
     - redis
-    update: true
+    update: false
 
 node_js:
   - 'node'

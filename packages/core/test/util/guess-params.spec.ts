@@ -2,6 +2,7 @@ import { defaultRetryOptions } from '../../src/libs';
 import {
   guessPddClientCachedParams,
   guessPddClientExecuteParams,
+  guessPddClientGenerateParams,
   guessPddClientRequestWithRetryParams,
 } from '../../src/util/guess-params.util';
 import { expect } from 'chai';
@@ -116,6 +117,61 @@ describe('guess params test util', function () {
     it('should ignore cache key when ttl blew 0, or cacheOptions false', function () {
       expect(guessPddClientCachedParams(-1, 1, () => 'key')).to.be.eqls([undefined, -1]);
       expect(guessPddClientCachedParams(false, 1, () => 'key')).to.be.eqls([undefined, 1]);
+    });
+  });
+
+  describe('#guessPddClientGenerateParams', function () {
+    it('when code is string, will be transformer to object', function () {
+      expect(guessPddClientGenerateParams('code')).to.be.eql([{ code: 'code' }, undefined, undefined]);
+    });
+
+    it('will guess param is correct', function () {
+      const params = [
+        {
+          code: 'code',
+        },
+        {
+          refresh_token: 'code',
+        },
+      ];
+
+      for (const param of params) {
+        expect(guessPddClientGenerateParams(param)).to.be.eql([param, undefined, undefined]);
+      }
+
+      for (const param of params) {
+        expect(guessPddClientGenerateParams(param, callback)).to.be.eql([param, undefined, callback]);
+      }
+    });
+
+    it('will guess param as user access', function () {
+      const access = { a: 1, b: 2 };
+      expect(guessPddClientGenerateParams(access)).to.be.eql([undefined, access, undefined]);
+      expect(guessPddClientGenerateParams(access, callback)).to.be.eql([undefined, access, callback]);
+    });
+
+    it('will guess all param ok', function () {
+      const params = [
+        {
+          code: 'code',
+        },
+        {
+          refresh_token: 'code',
+        },
+      ];
+      const access = { a: 1, b: 2 };
+      for (const param of params) {
+        expect(guessPddClientGenerateParams<{ a: number; b: number }>(param, access)).to.be.eql([
+          param,
+          access,
+          undefined,
+        ]);
+        expect(guessPddClientGenerateParams<{ a: number; b: number }>(param, access, callback)).to.be.eql([
+          param,
+          access,
+          callback,
+        ]);
+      }
     });
   });
 });
