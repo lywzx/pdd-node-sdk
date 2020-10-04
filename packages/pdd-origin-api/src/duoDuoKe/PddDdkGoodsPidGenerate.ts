@@ -1,12 +1,5 @@
 export const PDD_DDK_GOODS_PID_GENERATE = 'pdd.ddk.goods.pid.generate';
 export const PDD_DDK_GOODS_PID_GENERATE_RESPONSE_KEY = 'p_id_generate_response';
-export const PDD_DDK_GOODS_PID_GENERATE_LIMITERS = [
-  {
-    limiterLevel: 3,
-    timeRange: 3600,
-    times: 3000000,
-  },
-];
 
 /**
  * 接口名称：创建多多进宝推广位

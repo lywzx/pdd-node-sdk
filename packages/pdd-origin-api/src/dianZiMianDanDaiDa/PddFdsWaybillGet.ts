@@ -2,11 +2,6 @@ export const PDD_FDS_WAYBILL_GET = 'pdd.fds.waybill.get';
 export const PDD_FDS_WAYBILL_GET_RESPONSE_KEY = 'pdd_fds_waybill_get_response';
 export const PDD_FDS_WAYBILL_GET_LIMITERS = [
   {
-    limiterLevel: 1,
-    timeRange: 60,
-    times: 2000,
-  },
-  {
     limiterLevel: 3,
     timeRange: 1,
     times: 1000,

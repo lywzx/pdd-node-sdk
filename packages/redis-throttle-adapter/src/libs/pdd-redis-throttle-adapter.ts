@@ -39,6 +39,7 @@ export class PddRedisThrottleAdapter extends PddApiThrottleAdapter {
     const result = await this.callRedisMethod('decr', key);
     if (result < 0) {
       await this.callRedisMethod('set', key, 0);
+      return false;
     }
     return true;
   }

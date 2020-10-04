@@ -4,12 +4,12 @@ export const PDD_GOODS_SPEC_ID_GET_LIMITERS = [
   {
     limiterLevel: 1,
     timeRange: 60,
-    times: 3000,
+    times: 3600,
   },
   {
     limiterLevel: 3,
     timeRange: 1,
-    times: 10000,
+    times: 12000,
   },
 ];
 

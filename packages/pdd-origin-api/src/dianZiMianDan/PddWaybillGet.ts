@@ -4,7 +4,7 @@ export const PDD_WAYBILL_GET_LIMITERS = [
   {
     limiterLevel: 3,
     timeRange: 1,
-    times: 10000,
+    times: 12000,
   },
 ];
 

@@ -9,12 +9,12 @@ export const PDD_GOODS_ADD_LIMITERS = [
   {
     limiterLevel: 3,
     timeRange: 5,
-    times: 4000,
+    times: 4800,
   },
   {
     limiterLevel: 4,
     timeRange: 10,
-    times: 2000,
+    times: 2400,
   },
 ];
 
@@ -255,6 +255,20 @@ export interface PddGoodsAddRequestInterface {
    * @default:
    **/
   out_goods_id?: string;
+
+  /**
+   * @description: 第三方商品Id
+   * @type: string
+   * @default:
+   **/
+  out_source_goods_id?: string;
+
+  /**
+   * @description: 第三方商品来源
+   * @type: number
+   * @default:
+   **/
+  out_source_type?: number;
 
   /**
    * @description: {
@@ -692,6 +706,13 @@ export interface PddGoodsAddSkuListRequestInterface {
    * @default:
    **/
   out_sku_sn?: string;
+
+  /**
+   * @description: 第三方sku Id
+   * @type: string
+   * @default:
+   **/
+  out_source_sku_id?: string;
 
   /**
    * @description: oversea_sku

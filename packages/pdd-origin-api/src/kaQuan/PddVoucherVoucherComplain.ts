@@ -4,7 +4,7 @@ export const PDD_VOUCHER_VOUCHER_COMPLAIN_LIMITERS = [
   {
     limiterLevel: 1,
     timeRange: 60,
-    times: 2500,
+    times: 3000,
   },
 ];
 

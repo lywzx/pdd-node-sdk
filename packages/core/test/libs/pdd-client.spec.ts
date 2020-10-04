@@ -8,11 +8,13 @@ import { expect } from 'chai';
 import { OAuthType } from '../../src/constant';
 import {
   PddAccessTokenMissingException,
+  PddBaseException,
   PddRequestParamsMissingException,
   PddResponseException,
 } from '../../src/exceptions';
 import { defaultRetryOptions, NetworkAdapter, PddApiCacheAbstract, PddClient } from '../../src/libs';
 import * as guess from '../../src/util/guess-params.util';
+import * as util from '../../src/util';
 import { replace, fake, restore, stub } from 'sinon';
 import { once, extend, pick, keys } from 'lodash';
 import {
@@ -24,7 +26,7 @@ import {
   replaceRequestWithRetry,
 } from './pdd-client-helper';
 
-describe('pdd-client test util', function() {
+describe('pdd-client test util', function () {
   let pddClient: PddClient;
   let restored: (...args: any) => any;
   const pddOptions = {
@@ -33,16 +35,16 @@ describe('pdd-client test util', function() {
     oAuthType: OAuthType.mms,
   };
 
-  beforeEach(function() {
+  beforeEach(function () {
     restored = once(restore);
   });
 
-  before(function() {
+  before(function () {
     pddClient = new PddClient<{ userId: number; shopId: number }>(pddOptions);
   });
 
-  describe('#constructor', function() {
-    it('when without clientId or clientSecret should throw error', function() {
+  describe('#constructor', function () {
+    it('when without clientId or clientSecret should throw error', function () {
       expect(() => {
         new PddClient({
           clientId: 'clientId',
@@ -50,7 +52,7 @@ describe('pdd-client test util', function() {
         });
       }).to.throw('clientId and clientSecret are necessary!');
 
-      expect(function() {
+      expect(function () {
         new PddClient({
           clientId: '',
           clientSecret: 'clientSecret',
@@ -58,13 +60,13 @@ describe('pdd-client test util', function() {
       }).to.throw('clientId and clientSecret are necessary!');
     });
 
-    it('client should instanceof PddClient', function() {
+    it('client should instanceof PddClient', function () {
       expect(pddClient).be.instanceOf(PddClient);
     });
   });
 
-  describe('#request methods', function() {
-    it('without type should throw exception ', async function() {
+  describe('#request methods', function () {
+    it('without type should throw exception ', async function () {
       try {
         await pddClient.request({ a: 1, b: 2 });
       } catch (e) {
@@ -72,8 +74,8 @@ describe('pdd-client test util', function() {
       }
     });
 
-    it('with callback, without type should throw exception ', function(done) {
-      pddClient.request({ a: 1, b: 2 }, err => {
+    it('with callback, without type should throw exception ', function (done) {
+      pddClient.request({ a: 1, b: 2 }, (err) => {
         try {
           expect(err).to.be.instanceOf(PddRequestParamsMissingException);
           done();
@@ -83,34 +85,31 @@ describe('pdd-client test util', function() {
       });
     });
 
-    it('pdd request with value', async function() {
+    it('pdd request with value', async function () {
       const fk = fake.returns(1);
       replace(NetworkAdapter, 'post', fk);
-      // eslint-disable-next-line @typescript-eslint/camelcase
       const result = await pddClient.request({ type: PDD_GOODS_CATS_GET, parent_cat_id: 1, c: { a: 1 } });
       restored();
       expect(result).to.be.eq(1);
     });
 
-    it('pdd request with value when debug is enabled', async function() {
+    it('pdd request with value when debug is enabled', async function () {
       const fkResult = fake.returns(1);
       replace(NetworkAdapter, 'post', fkResult);
       replaceGetPddLogClient();
       const fkLog = replacePddLog();
-      // eslint-disable-next-line @typescript-eslint/camelcase
       const result = await pddClient.request({ type: PDD_GOODS_CATS_GET, parent_cat_id: 1, c: { a: 1 } });
       restored();
       expect(fkLog.callCount).to.be.eq(2);
       expect(result).to.be.eq(1);
     });
 
-    it('pdd request with exception when debug is enabled', async function() {
+    it('pdd request with exception when debug is enabled', async function () {
       const fkResult = fake.throws(new Error('unknown'));
       replace(NetworkAdapter, 'post', fkResult);
       replaceGetPddLogClient();
       replacePddLog();
       try {
-        // eslint-disable-next-line @typescript-eslint/camelcase
         await pddClient.request({ type: PDD_GOODS_CATS_GET, parent_cat_id: 1, c: { a: 1 } });
         restored();
         throw new Error('app');
@@ -121,13 +120,12 @@ describe('pdd-client test util', function() {
     });
   });
 
-  describe('#requestWithRetry method', function() {
-    it('with retry will not reject', async function() {
+  describe('#requestWithRetry method', function () {
+    it('with retry will not reject', async function () {
       replacePddClientRequest(
         pddClient,
         stub()
           .onCall(0)
-          // eslint-disable-next-line @typescript-eslint/camelcase
           .rejects(new PddResponseException({ error_msg: 'error message', error_code: 70031 }))
           .onCall(1)
           .resolves(1)
@@ -137,13 +135,12 @@ describe('pdd-client test util', function() {
       expect(result).to.be.eq(1);
     });
 
-    it('with retry will reject', async function() {
+    it('with retry will reject', async function () {
       const errMsg = 'test retry exception';
       const mkRequest = replacePddClientRequest(
         pddClient,
         stub()
           .onCall(0)
-          // eslint-disable-next-line @typescript-eslint/camelcase
           .rejects(new PddResponseException({ error_msg: 'error message', error_code: 70031 }))
           .onCall(1)
           .rejects(new Error(errMsg))
@@ -159,20 +156,13 @@ describe('pdd-client test util', function() {
       expect(mkRequest.callCount).to.be.eq(2);
     });
 
-    it('test retry with log enabled', async function() {
-      // eslint-disable-next-line @typescript-eslint/camelcase
+    it('test retry with log enabled', async function () {
       const err = new PddResponseException({ error_msg: 'error message', error_code: 70031 });
       const fkLog = replacePddLog();
       const fkGetClientFn = replaceGetPddLogClient();
       const mkRequest = replacePddClientRequest(
         pddClient,
-        stub()
-          .onCall(0)
-          .rejects(err)
-          .onCall(1)
-          .rejects(err)
-          .onCall(2)
-          .resolves(1)
+        stub().onCall(0).rejects(err).onCall(1).rejects(err).onCall(2).resolves(1)
       );
       const result = await pddClient.requestWithRetry({ type: PDD_GOODS_CATS_GET, a: 1 }, { times: 3, interval: 0 });
       restored();
@@ -183,21 +173,21 @@ describe('pdd-client test util', function() {
     });
   });
 
-  describe('#createOAuthLink method', function() {
-    it('should throw exception', function() {
+  describe('#createOAuthLink method', function () {
+    it('should throw exception', function () {
       expect(() => {
         return pddClient.createOAuthLink();
       }).to.be.throw();
     });
 
-    it('should get url', function() {
+    it('should get url', function () {
       const urls = pddClient.createOAuthLink({ redirectUri: 'http://www.lyblog.net' });
       expect(urls.length).to.be.eq(1);
     });
   });
 
-  describe('#execute method', function() {
-    it('should throw exception when access token required, but clientAuth not exists', async function() {
+  describe('#execute method', function () {
+    it('should throw exception when access token required, but clientAuth not exists', async function () {
       replaceDevMode(true);
       PddClient.setPddDefaultCacheOptions({ alwaysWork: true, ttl: 2 });
       try {
@@ -209,7 +199,7 @@ describe('pdd-client test util', function() {
       }
     });
 
-    it('should throw exception when access token required, clientAuth exists but clientOptions not exists', async function() {
+    it('should throw exception when access token required, clientAuth exists but clientOptions not exists', async function () {
       const pddClientAuth = stub().resolves();
       pddClient.pddClientAuth = {} as any;
       replace(pddClient, 'pddClientAuth', {
@@ -227,7 +217,7 @@ describe('pdd-client test util', function() {
       expect(pddClientAuth.callCount).to.be.eq(0);
     });
 
-    it('should throw exception when access token required, clientAuth exists and clientOptions exists', async function() {
+    it('should throw exception when access token required, clientAuth exists and clientOptions exists', async function () {
       const pddClientAuth = stub().resolves();
       pddClient.pddClientAuth = {} as any;
       replace(pddClient, 'pddClientAuth', {
@@ -245,10 +235,9 @@ describe('pdd-client test util', function() {
       expect(pddClientAuth.callCount).to.be.eq(1);
     });
 
-    it('should use default retry options, when retry options is undefined', async function() {
+    it('should use default retry options, when retry options is undefined', async function () {
       const requestWithRetryOptions = stub().resolves({});
       replace(pddClient, 'requestWithRetry', requestWithRetryOptions);
-      // eslint-disable-next-line @typescript-eslint/camelcase
       const params = { parent_cat_id: 1 };
       await pddClient.execute(PDD_GOODS_CATS_GET, params);
       restored();
@@ -258,11 +247,9 @@ describe('pdd-client test util', function() {
       ]);
     });
 
-    it('should get result without access token', async function() {
+    it('should get result without access token', async function () {
       const resultValue = {
-        // eslint-disable-next-line @typescript-eslint/camelcase
         logistics_address_get_response: {
-          // eslint-disable-next-line @typescript-eslint/camelcase
           logistics_address_list: [1],
         },
       };
@@ -277,7 +264,7 @@ describe('pdd-client test util', function() {
       expect(secondResult).to.be.equals(resultValue);
     });
 
-    it('should worn"t cache when cache option is empty', async function() {
+    it('should worn"t cache when cache option is empty', async function () {
       const cachedStub = stub().resolves(1);
       class Cache extends PddApiCacheAbstract {
         cached = cachedStub;
@@ -292,7 +279,7 @@ describe('pdd-client test util', function() {
       expect(cachedStub.callCount).to.be.eq(0);
     });
 
-    it('should cache when cache option is work', async function() {
+    it('should cache when cache option is work', async function () {
       const cachedStub = stub().resolves(1);
       class Cache extends PddApiCacheAbstract {
         cached = cachedStub;
@@ -308,64 +295,55 @@ describe('pdd-client test util', function() {
     });
   });
 
-  describe('#generate method', function() {
-    it('should get result', async function() {
+  describe('#generate method', function () {
+    it('should get result', async function () {
       const result = { testResponse: true };
-      const post = stub().resolves(result);
+      const methods = stub().resolves(result);
+      const getShortResponse = stub().resolves(result);
       const testValues = [
         'code',
         {
           code: 'code',
-          // eslint-disable-next-line @typescript-eslint/camelcase
-          grant_type: 'authorization_code',
         },
         {
-          code: 'code',
-          // eslint-disable-next-line @typescript-eslint/camelcase
-          grant_type: 'refresh_token',
+          refresh_token: 'code',
         },
       ];
-      // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
-      // @ts-ignore
-      replace(pddClient.networkAdapter, 'post', post);
+      replace(pddClient, 'request', methods);
+      replace(util, 'getShortResponse', getShortResponse);
       for (const value of testValues) {
         const res = await pddClient.generate(value as any);
-        expect(res).to.be.eq(result);
+        expect(res).to.be.eql(result);
       }
       restored();
     });
 
-    it('should get error without grant_type', async function() {
+    it('should get error when access is empty', async function () {
       let err;
       try {
-        // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
-        // @ts-ignore
-        // eslint-disable-next-line @typescript-eslint/camelcase
-        await pddClient.generate({ code: 'any', grant_type: '' });
+        await pddClient.generate({ userId: 1, shopId: 1 });
       } catch (e) {
         err = e;
       }
-      expect(err).to.be.instanceOf(Error);
-      expect(err.message).to.be.include('grant type');
+      expect(err).to.be.instanceOf(PddBaseException);
+      expect(err.message).to.be.include('pdd client auth is undefined!');
     });
   });
 
-  describe('#refresh method', function() {
-    it('should get result', async function() {
+  describe('#refresh method', function () {
+    it('when string should guess to refresh param', async function () {
       const generate = stub().resolves({});
       const token = 'test-token';
       replace(pddClient, 'generate', generate);
       await pddClient.refresh(token);
       restored();
       expect(generate.callCount).to.be.eq(1);
-      // eslint-disable-next-line @typescript-eslint/camelcase
-      expect(generate.lastCall.args).to.be.eqls([{ refresh_token: token, grant_type: 'refresh_token' }, undefined]);
+      expect(generate.lastCall.args[0]).to.be.eqls({ refresh_token: token });
     });
   });
 
-  describe('#setDefaultRequestParam static method', function() {
-    it('should set default request param', async function() {
-      // eslint-disable-next-line @typescript-eslint/camelcase
+  describe('#setDefaultRequestParam static method', function () {
+    it('should set default request param', async function () {
       const param = { data_type: 'XML', version: 'V2' };
       PddClient.setDefaultRequestParam(param as any);
       const signStub = stub().throws(new Error('unknonw error'));
@@ -379,8 +357,8 @@ describe('pdd-client test util', function() {
     });
   });
 
-  describe('#setRetryOptions static method', function() {
-    it('should set default request param', async function() {
+  describe('#setRetryOptions static method', function () {
+    it('should set default request param', async function () {
       const times = 100;
       PddClient.setRetryOptions({ times });
       const stubGuessPddClientRequestWithRetryParams = stub().resolves([]);

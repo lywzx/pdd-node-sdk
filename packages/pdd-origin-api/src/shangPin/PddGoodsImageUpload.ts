@@ -9,12 +9,12 @@ export const PDD_GOODS_IMAGE_UPLOAD_LIMITERS = [
   {
     limiterLevel: 3,
     timeRange: 10,
-    times: 125000,
+    times: 127500,
   },
   {
     limiterLevel: 4,
     timeRange: 10,
-    times: 5000,
+    times: 5100,
   },
 ];
 

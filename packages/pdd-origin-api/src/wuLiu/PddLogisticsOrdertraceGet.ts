@@ -4,7 +4,7 @@ export const PDD_LOGISTICS_ORDERTRACE_GET_LIMITERS = [
   {
     limiterLevel: 4,
     timeRange: 20,
-    times: 4000,
+    times: 4800,
   },
 ];
 

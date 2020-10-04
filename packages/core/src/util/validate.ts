@@ -5,7 +5,10 @@ import { PddRequestParamsMissingException } from '../exceptions';
  * @param params
  * @param keys
  */
-export function checkRequired(params: object, keys: string | string[]) {
+export function checkRequired(
+  params: Record<string, any>,
+  keys: string | string[]
+): void | PddRequestParamsMissingException {
   if (!Array.isArray(keys)) {
     keys = [keys];
   }

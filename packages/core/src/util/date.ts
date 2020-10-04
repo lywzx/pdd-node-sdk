@@ -4,7 +4,7 @@
  * @param mask string
  */
 export function formatDate(d: Date, mask: string): string {
-  const zeroize = function(value: string | number, length = 2) {
+  const zeroize = function (value: string | number, length = 2) {
     value = String(value);
     let i = 0;
     let zeros = '';

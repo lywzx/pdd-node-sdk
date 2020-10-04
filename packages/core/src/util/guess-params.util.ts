@@ -1,5 +1,10 @@
 import {
+  PddPopAuthTokenCreateRequestInterface,
+  PddPopAuthTokenRefreshRequestInterface,
+} from '@pin-duo-duo/pdd-origin-api';
+import {
   AsyncResultCallbackInterface,
+  PddAccessTokenResponseInterface,
   PddAxiosClientOptions,
   PddCacheOptions,
   RetryOptionsInterface,
@@ -10,6 +15,8 @@ import extend from 'lodash/extend';
 import pick from 'lodash/pick';
 import omit from 'lodash/omit';
 import isString from 'lodash/isString';
+import isObject from 'lodash/isObject';
+import isFunction from 'lodash/isFunction';
 import { defaultRetryOptions as pddClientDefaultRetryOptionsConfig } from '../libs';
 
 const retryOptionKeys: Array<keyof (RetryOptionsInterface & PddAxiosClientOptions)> = [
@@ -23,7 +30,7 @@ const retryOptionKeys: Array<keyof (RetryOptionsInterface & PddAxiosClientOption
  * @param value
  */
 export function isRetryOptionConfig(value: any): value is RetryOptionsType {
-  return value === null || typeof value === 'number' || (value && retryOptionKeys.some(key => key in value));
+  return value === null || typeof value === 'number' || (value && retryOptionKeys.some((key) => key in value));
 }
 
 const cacheKeys: Array<keyof PddApiCacheInterface> = ['ttl', 'cacheKey'];
@@ -32,7 +39,7 @@ const cacheKeys: Array<keyof PddApiCacheInterface> = ['ttl', 'cacheKey'];
  * @param value
  */
 export function isCacheOptionConfig(value: any): value is PddCacheOptions {
-  return typeof value === 'boolean' || typeof value === 'number' || (value && cacheKeys.some(key => key in value));
+  return typeof value === 'boolean' || typeof value === 'number' || (value && cacheKeys.some((key) => key in value));
 }
 
 /**
@@ -138,4 +145,45 @@ export function guessPddClientCachedParams(
   }
 
   return [realCachedKey, ttl];
+}
+
+/**
+ * 根据传入参数，自动组装拼多多认证服务接口
+ * @param code
+ * @param accessOptions
+ * @param callback
+ */
+export function guessPddClientGenerateParams<T extends Record<string, any>>(
+  code: T | string | PddPopAuthTokenRefreshRequestInterface | PddPopAuthTokenCreateRequestInterface,
+  accessOptions?: T | AsyncResultCallbackInterface<PddAccessTokenResponseInterface, never>,
+  callback?: AsyncResultCallbackInterface<PddAccessTokenResponseInterface, never>
+): [
+  undefined | PddPopAuthTokenRefreshRequestInterface | PddPopAuthTokenCreateRequestInterface,
+  T | undefined,
+  AsyncResultCallbackInterface<PddAccessTokenResponseInterface, never> | undefined
+] {
+  let param: PddPopAuthTokenRefreshRequestInterface | PddPopAuthTokenCreateRequestInterface | undefined;
+  let access: T | undefined;
+  let cbk: AsyncResultCallbackInterface<PddAccessTokenResponseInterface, never> | undefined;
+  if (isString(code)) {
+    param = {
+      code,
+    };
+  } else if (isObject(code)) {
+    if ('code' in code || 'refresh_token' in code) {
+      param = code as PddPopAuthTokenRefreshRequestInterface | PddPopAuthTokenCreateRequestInterface;
+    } else {
+      access = code;
+    }
+  }
+  if (isFunction(accessOptions)) {
+    cbk = accessOptions;
+  } else if (!access && isObject(accessOptions)) {
+    access = accessOptions as T;
+  }
+  if (!cbk && isFunction(callback)) {
+    cbk = callback;
+  }
+
+  return [param, access, cbk];
 }

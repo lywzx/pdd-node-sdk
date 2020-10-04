@@ -4,7 +4,7 @@ export const PDD_GOODS_QUANTITY_UPDATE_LIMITERS = [
   {
     limiterLevel: 3,
     timeRange: 10,
-    times: 25000,
+    times: 36000,
   },
 ];
 

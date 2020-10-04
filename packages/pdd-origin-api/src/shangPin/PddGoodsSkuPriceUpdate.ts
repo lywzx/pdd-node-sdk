@@ -4,12 +4,12 @@ export const PDD_GOODS_SKU_PRICE_UPDATE_LIMITERS = [
   {
     limiterLevel: 4,
     timeRange: 25,
-    times: 2625,
+    times: 3150,
   },
   {
     limiterLevel: 3,
     timeRange: 25,
-    times: 7875,
+    times: 9450,
   },
 ];
 

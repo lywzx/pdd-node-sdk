@@ -1,5 +1,17 @@
 export const PDD_OPEN_DECRYPT_MASK_BATCH = 'pdd.open.decrypt.mask.batch';
 export const PDD_OPEN_DECRYPT_MASK_BATCH_RESPONSE_KEY = 'open_decrypt_mask_batch_response';
+export const PDD_OPEN_DECRYPT_MASK_BATCH_LIMITERS = [
+  {
+    limiterLevel: 4,
+    timeRange: 10,
+    times: 15000,
+  },
+  {
+    limiterLevel: 3,
+    timeRange: 10,
+    times: 51000,
+  },
+];
 
 /**
  * 接口名称：批量数据解密脱敏接口

@@ -4,7 +4,7 @@ import { PddClientOptionsInterface, PddApiCacheAbstract, PddClientAccessAuth, Pd
 /**
  * 拼多多后台客户端配置
  */
-export interface NestJsPddClientOptions<T = any> extends PddClientOptionsInterface {
+export interface NestJsPddClientOptions<T extends Record<string, any> = any> extends PddClientOptionsInterface {
   /**
    * 拼多多默认认证类信息
    */
@@ -24,6 +24,9 @@ export interface NestJsPddClientOptions<T = any> extends PddClientOptionsInterfa
  */
 export type NestJsPddModuleOptions = NestJsPddModuleAsyncOptionsInterface | NestJsPddClientOptions;
 
+/**
+ * Nest异步模块配置
+ */
 export interface NestJsPddModuleAsyncOptionsInterface {
   // 默认的channel的频道
   defaultChannel: string;

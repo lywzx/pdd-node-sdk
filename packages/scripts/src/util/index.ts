@@ -37,7 +37,7 @@ export function createResponseClassName(apiId: string) {
  */
 export function isDir(dir: string) {
   return promisify(fs.lstat)(dir).then(
-    stat => stat.isDirectory(),
+    (stat) => stat.isDirectory(),
     () => false
   );
 }
@@ -81,7 +81,7 @@ export async function saveCode(file: string, code: string) {
  * @param childKey 默认子级的key
  * @param transform 转换数据
  */
-export function tree<T extends {}, K extends keyof T>(
+export function tree<T extends Record<string, any>, K extends keyof T>(
   arr: T[],
   {
     pid,
@@ -145,7 +145,7 @@ export function getPddResponseRootKey(apiInfo: ApiDetailInterface): string | voi
  * @param promise
  * @param callback
  */
-export function promseToCallback<R, E = never>(promise: Promise<R>): Promise<R>;
+export function promseToCallback<R>(promise: Promise<R>): Promise<R>;
 export function promseToCallback<R, E = never>(promise: Promise<R>, callback: AsyncResultCallback<R, E>): void;
 export function promseToCallback<R, E = never>(
   promise: Promise<R>,
@@ -153,10 +153,10 @@ export function promseToCallback<R, E = never>(
 ): Promise<R> | void {
   if (typeof callback === 'function') {
     promise.then(
-      response => {
+      (response) => {
         callback(null, response);
       },
-      err => {
+      (err) => {
         callback(err);
       }
     );

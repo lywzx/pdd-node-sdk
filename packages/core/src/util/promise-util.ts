@@ -11,10 +11,10 @@ export function defer<T>(): PromiseDefer<T> {
   });
   return {
     promise,
-    // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-ignore
     resolve,
-    // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-ignore
     reject,
   };
@@ -24,7 +24,7 @@ export function defer<T>(): PromiseDefer<T> {
  * 将promise转成callback形式
  * @param promise
  */
-export function promiseToCallback<R, E = never>(promise: Promise<R>): Promise<R>;
+export function promiseToCallback<R>(promise: Promise<R>): Promise<R>;
 export function promiseToCallback<R, E = never>(
   promise: Promise<R>,
   callback: AsyncResultCallbackInterface<R, E>
@@ -35,10 +35,10 @@ export function promiseToCallback<R, E = never>(
 ): Promise<R> | void {
   if (typeof callback === 'function') {
     promise.then(
-      response => {
+      (response) => {
         callback(null, response);
       },
-      err => {
+      (err) => {
         callback(err);
       }
     );
@@ -52,7 +52,7 @@ export function promiseToCallback<R, E = never>(
  * @param time
  * @param value
  */
-export function sleep<T>(time?: number): Promise<undefined>;
+export function sleep(time?: number): Promise<undefined>;
 export function sleep<T>(time: number, value: T): Promise<T>;
 export function sleep<T>(time = 0, value?: T): Promise<undefined> | Promise<T> {
   const df = defer<T>();

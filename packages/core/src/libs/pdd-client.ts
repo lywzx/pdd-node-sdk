@@ -1,69 +1,93 @@
 import {
+  PDD_POP_AUTH_TOKEN_CREATE,
+  PDD_POP_AUTH_TOKEN_REFRESH,
   PddCollectRequestInterface,
   PddCollectShortResponseInterface,
   PddCommonRequestInterface,
-  PddResponseTypeAndRequestTypeMapping,
+  PddPopAuthTokenCreateRequestInterface,
+  PddPopAuthTokenCreateResponseInterface,
+  PddPopAuthTokenRefreshRequestInterface,
+  PddPopAuthTokenRefreshResponseInterface,
 } from '@pin-duo-duo/pdd-origin-api';
-import { defaultRetryOptions } from './pdd-client-default';
+import { retry } from 'async';
+import { EventEmitter } from 'events';
+import castArray from 'lodash/castArray';
+import extend from 'lodash/extend';
+import includes from 'lodash/includes';
+import isFunction from 'lodash/isFunction';
+import isString from 'lodash/isString';
+import { OAuthType, PDD_END_POINTS, PDD_OAUTH_TEMPLATE } from '../constant';
 import {
+  PDD_CLIENT_ACCESS_TOKEN_CLEAR_TIMEOUT,
+  PDD_CLIENT_PASS_ACCESS_TOKEN_KEY,
+} from '../constant/pdd-client-pass-access-token';
+import { PddAccessTokenMissingException, PddBaseException, PddResponseException } from '../exceptions';
+import {
+  AsyncResultCallbackInterface,
   DefaultRequestType,
   NetworkAdapterInterface,
+  PddAccessTokenResponseInterface,
+  PddApiClientAccessAuthLock,
   PddAxiosClientOptions,
   PddCacheOptions,
+  PddClientErrorListener,
+  PddClientOAuthOptionsInterface,
   PddClientOptionsInterface,
   PddDefaultCacheOptionsType,
+  PddOAuthLinkInterface,
+  RequestParamsFullType,
+  RequestParamsType,
+  RetryOptionsInterface,
   RetryOptionsType,
 } from '../interfaces';
-import { md5, timestamp, promiseToCallback, defer, checkRequired } from '../util';
-import { AsyncResultCallbackInterface } from '../interfaces';
+import { checkRequired, defer, getShortResponse, md5, promiseToCallback, sleep, timestamp } from '../util';
+import { getPddLogClient, pddLog } from '../util/debug';
 import { isDevModel } from '../util/dev';
 import {
   guessPddClientCachedParams,
   guessPddClientExecuteParams,
+  guessPddClientGenerateParams,
   guessPddClientRequestWithRetryParams,
 } from '../util/guess-params.util';
 import { NetworkAdapter } from './network-adapter';
-import { PDD_END_POINTS, PDD_OAUTH_TEMPLATE, OAuthType, PDD_OAUTH_TOKEN_URL } from '../constant';
-import extend from 'lodash/extend';
-import castArray from 'lodash/castArray';
-import isString from 'lodash/isString';
-import isObject from 'lodash/isObject';
-import isFunction from 'lodash/isFunction';
-import includes from 'lodash/includes';
-import {
-  RequestParamsType,
-  RequestParamsFullType,
-  PddClientOAuthOptionsInterface,
-  PddOAuthLinkInterface,
-  PddAccessTokenResponseInterface,
-} from '../interfaces';
-import { retry } from 'async';
-import { RetryOptionsInterface } from '../interfaces';
 import { PddApiCacheAbstract } from './pdd-api-cache.abstract';
 import { checkTypeIsNeedAccessToken } from './pdd-api-check.tools';
-import { PddApiThrottle } from './pdd-api-throttle';
 import { PddApiMemoryThrottleAdapter } from './pdd-api-memory-throttle-adapter';
+import { PddApiThrottle } from './pdd-api-throttle';
 import { PddClientAccessAuth } from './pdd-client-access-auth.abstract';
-import { APPLICATION_JSON } from '../constant/content-type';
-import { pddLog, getPddLogClient } from '../util/debug';
-import { PddAccessTokenMissingException, PddResponseException } from '../exceptions';
+import { defaultRetryOptions } from './pdd-client-default';
 
-type PddClientGenerateType =
-  | string
-  | {
-      code: string;
-      grant_type: 'authorization_code';
-    }
-  | {
-      refresh_token: string;
-      grant_type: 'refresh_token';
-    };
+/**
+ * 生成access token，请求参数
+ */
+type PddClientGenerateType = PddPopAuthTokenRefreshRequestInterface | PddPopAuthTokenCreateRequestInterface;
+
+/**
+ * 附带AccessToken的数据
+ */
+type RequestParamsTypeWithAccessToken = {
+  [PDD_CLIENT_PASS_ACCESS_TOKEN_KEY]?: PddAccessTokenResponseInterface;
+};
+
+/**
+ * 请求时的联合数据
+ */
+type RequestParamsTypeMix = RequestParamsType & RequestParamsTypeWithAccessToken;
+
+/**
+ * 带access_token的请求数
+ */
 type PddCommonRequestExcludeSomeAttr = Pick<PddCommonRequestInterface, 'access_token'>;
-
 /**
  * pdd client
  */
-export class PddClient<T = any> {
+export class PddClient<T extends Record<string, any> = any> {
+  /**
+   * 自定议错误事件等
+   * @protected
+   */
+  protected event: EventEmitter;
+
   constructor(
     public options: PddClientOptionsInterface,
     public pddClientAuth?: PddClientAccessAuth<T>,
@@ -80,6 +104,7 @@ export class PddClient<T = any> {
     if (!this.options.endpoint) {
       this.options.endpoint = PDD_END_POINTS;
     }
+    this.event = new EventEmitter();
   }
 
   /**
@@ -88,18 +113,21 @@ export class PddClient<T = any> {
    * @param axiosOptions
    * @param callback
    */
-  public request<T extends {}, R>(params: T & RequestParamsType, axiosOptions?: PddAxiosClientOptions): Promise<R>;
-  public request<T extends {}, R>(
-    params: T & RequestParamsType,
+  public request<T extends Record<string, any>, R>(
+    params: T & RequestParamsTypeMix,
+    axiosOptions?: PddAxiosClientOptions
+  ): Promise<R>;
+  public request<T extends Record<string, any>, R>(
+    params: T & RequestParamsTypeMix,
     callback: AsyncResultCallbackInterface<R, never>
   ): void;
-  public request<T extends {}, R>(
-    params: T & RequestParamsType,
+  public request<T extends Record<string, any>, R>(
+    params: T & RequestParamsTypeMix,
     axiosOptions: PddAxiosClientOptions,
     callback: AsyncResultCallbackInterface<R, never>
   ): void;
-  public request<T extends {}, R>(
-    params: T & RequestParamsType,
+  public request<T extends Record<string, any>, R>(
+    params: T & RequestParamsTypeMix,
     axiosOptions?: AsyncResultCallbackInterface<R, never> | PddAxiosClientOptions,
     callback?: AsyncResultCallbackInterface<R, never>
   ): Promise<R> | void {
@@ -108,15 +136,15 @@ export class PddClient<T = any> {
       axiosOptions = undefined;
     }
     const retDefer = defer<R>();
+    const clientId = this.options.clientId;
     const defaultArgs: Partial<RequestParamsFullType> = extend({}, PddClient.defaultRequestParam, {
-      // eslint-disable-next-line @typescript-eslint/camelcase
-      client_id: this.options.clientId,
+      client_id: clientId,
       timestamp: timestamp(),
     });
 
     const newParams = extend({}, params);
 
-    const err = checkRequired(newParams, 'type');
+    const err: PddBaseException | void = checkRequired(newParams, 'type');
 
     if (err) {
       retDefer.reject(err);
@@ -125,7 +153,7 @@ export class PddClient<T = any> {
     }
 
     for (const k in newParams) {
-      if (newParams.hasOwnProperty(k)) {
+      if (k !== PDD_CLIENT_PASS_ACCESS_TOKEN_KEY && newParams.hasOwnProperty(k)) {
         const value: any = newParams[k];
         if (typeof value === 'object') {
           defaultArgs[k] = JSON.stringify(value);
@@ -137,20 +165,26 @@ export class PddClient<T = any> {
 
     defaultArgs.sign = this.sign((defaultArgs as any) as { [s: string]: string | number });
 
-    let requestPromise = this.apiThrottle.checkApiThrottle(params.type as string, params.access_token).then(() => {
-      pddLog('start run pdd client request, type: %s, params: %o', undefined, params.type, params);
-      return this.networkAdapter.post(this.options.endpoint, defaultArgs, axiosOptions || {});
-    });
+    // 获取到AccessToken相关信息
+    const accessTokenInfo = params[PDD_CLIENT_PASS_ACCESS_TOKEN_KEY];
+    const ownerId = accessTokenInfo && (accessTokenInfo.owner_id as string);
+
+    let requestPromise = this.apiThrottle
+      .checkApiThrottle(params.type as string, clientId, ownerId || params.access_token)
+      .then(() => {
+        pddLog('start run pdd client request, type: %s, params: %o', undefined, params.type, params);
+        return this.networkAdapter.post(this.options.endpoint, defaultArgs, axiosOptions || {});
+      });
 
     const pddLoggerClient = getPddLogClient();
     // debug
     if (pddLoggerClient && pddLoggerClient.enabled) {
       requestPromise = requestPromise.then(
-        response => {
+        (response) => {
           pddLog('end run pdd client request, type: %s, result: %o', undefined, params.type, response);
           return response;
         },
-        err => {
+        (err) => {
           const errObj =
             (err && (err as PddResponseException).errObj) ||
             (err && (err as Error).stack) ||
@@ -179,18 +213,21 @@ export class PddClient<T = any> {
    * @param retryOptions
    * @param callback
    */
-  public requestWithRetry<T extends {}, R>(params: T & RequestParamsType, retryOptions?: RetryOptionsType): Promise<R>;
-  public requestWithRetry<T extends {}, R>(
-    params: T & RequestParamsType,
+  public requestWithRetry<T extends Record<string, any>, R>(
+    params: T & RequestParamsTypeMix,
+    retryOptions?: RetryOptionsType
+  ): Promise<R>;
+  public requestWithRetry<T extends Record<string, any>, R>(
+    params: T & RequestParamsTypeMix,
     callback: AsyncResultCallbackInterface<R, never>
   ): void;
-  public requestWithRetry<T extends {}, R>(
-    params: T & RequestParamsType,
+  public requestWithRetry<T extends Record<string, any>, R>(
+    params: T & RequestParamsTypeMix,
     retryOptions: RetryOptionsType,
     callback: AsyncResultCallbackInterface<R, never>
   ): void;
-  public requestWithRetry<T extends {}, R>(
-    params: T & RequestParamsType,
+  public requestWithRetry<T extends Record<string, any>, R>(
+    params: T & RequestParamsTypeMix,
     retryOptions?: RetryOptionsType | AsyncResultCallbackInterface<R, never>,
     callback?: AsyncResultCallbackInterface<R, never>
   ): Promise<R> | void {
@@ -207,7 +244,7 @@ export class PddClient<T = any> {
       retryCount = 0;
     }
 
-    const retryResult = (retry<R>(tryOptions, clbk => {
+    const retryResult = (retry<R>(tryOptions, (clbk) => {
       // first run not print out message
       if (retryCount) {
         pddLog(
@@ -224,7 +261,7 @@ export class PddClient<T = any> {
 
       if (enabled) {
         result = result.then(
-          response => {
+          (response) => {
             if (retryCount) {
               pddLog(
                 'success retry pdd client request, retry %d th, type: %s, result: %o',
@@ -236,7 +273,7 @@ export class PddClient<T = any> {
             }
             return response;
           },
-          err => {
+          (err) => {
             if (retryCount) {
               const errObj =
                 (err && (err as PddResponseException).errObj) ||
@@ -365,18 +402,19 @@ export class PddClient<T = any> {
       if (PddClient.pddDefaultCacheOptions.alwaysWork && cacheOptions !== false && !this.pddApiCache) {
         pddLog('cache options not work! please assign variable: pddApiCache.', '#ff0000');
       }
-      if (typeof accessOptions !== 'undefined' && needAccessToken && !this.pddClientAuth) {
+      if (typeof apiAccessOptions !== 'undefined' && needAccessToken && !this.pddClientAuth) {
         pddLog('access_token will not auto fill. assign variable: pddClientAuth.', '#ffff00');
       }
     }
 
     const runningFn = () => {
       // 这里需要从access token 中获取数据
-      const nParams: Req & RequestParamsType = extend({}, params, { type });
+      const nParams: Req & RequestParamsTypeMix = extend({}, params, { type });
+      let accessTokenInfo: PddAccessTokenResponseInterface | null | undefined;
       let result = Promise.resolve(nParams);
       if (needAccessToken) {
         if (this.pddClientAuth) {
-          result = result.then(param => {
+          result = result.then((param) => {
             if (!apiAccessOptions) {
               throw new PddAccessTokenMissingException('params access options is required!');
             }
@@ -384,9 +422,19 @@ export class PddClient<T = any> {
               .getAccessTokenFromCache(apiAccessOptions)
               .then((access: PddAccessTokenResponseInterface | null) => {
                 if (access) {
+                  accessTokenInfo = access;
+                  const scope = access.scope;
+                  // 验证是否有当前接口权限
+                  if (scope && scope.length) {
+                    // 有些场景，拼多多官方会合并两个应用接口，这里所以不会存在
+                    if ((scope as string[]).indexOf(type) === -1) {
+                      pddLog(`shop id:${access.owner_id || 'unknown mall id'} visit ${type} permission deny!`);
+                    }
+                  }
+
                   return extend({}, param, {
-                    // eslint-disable-next-line @typescript-eslint/camelcase
                     access_token: access.access_token,
+                    [PDD_CLIENT_PASS_ACCESS_TOKEN_KEY]: access,
                   });
                 }
                 throw new PddAccessTokenMissingException('cat"t find pdd access token from cache!');
@@ -396,18 +444,72 @@ export class PddClient<T = any> {
           result = Promise.reject(new PddAccessTokenMissingException('can"t find pdd access token from params'));
         }
       }
-      return result.then((params: Req & PddCommonRequestExcludeSomeAttr) => {
+      let retResult = result.then((params: Req & PddCommonRequestExcludeSomeAttr) => {
         return this.requestWithRetry<Req & Omit<PddCommonRequestInterface, 'sign' | 'timestamp' | 'client_id'>, any>(
           params as Req & Omit<PddCommonRequestInterface, 'sign' | 'timestamp' | 'client_id'>,
           apiRetryOptions
-        ).then(response => {
-          if (type in PddResponseTypeAndRequestTypeMapping) {
-            const responseKey = (PddResponseTypeAndRequestTypeMapping as any)[type] as string;
-            return response[responseKey];
-          }
-          return response;
+        ).then((response) => {
+          return getShortResponse(response, type);
         });
       }) as Promise<Res>;
+
+      // 自动维护access token信息
+      const pddClientAuth = this.pddClientAuth as
+        | undefined
+        | (PddClientAccessAuth<T> & Partial<PddApiClientAccessAuthLock>);
+      if (
+        pddClientAuth &&
+        isFunction(pddClientAuth.lock) &&
+        isFunction(pddClientAuth.unLock) &&
+        apiAccessOptions &&
+        accessTokenInfo
+      ) {
+        retResult = retResult.catch(async (err) => {
+          if (accessTokenInfo && err && err instanceof PddResponseException) {
+            if (err.accessTokenNeedRefresh()) {
+              // 如果access token还有2分钟过期
+              if (
+                parseInt(accessTokenInfo.expires_at.toString(), 10) * 1000 <=
+                  Date.now() + PDD_CLIENT_ACCESS_TOKEN_CLEAR_TIMEOUT &&
+                parseInt(accessTokenInfo.refresh_token_expires_at.toString(), 10) * 1000 <=
+                  Date.now() + PDD_CLIENT_ACCESS_TOKEN_CLEAR_TIMEOUT
+              ) {
+                // 清理access token
+                await pddClientAuth.clearAccessTokenFromCache(apiAccessOptions);
+              } else {
+                const lockKey = `${pddClientAuth.generateAccessTokenKey(apiAccessOptions)}:access:${
+                  accessTokenInfo.owner_id
+                }:lock`;
+                if (pddClientAuth.lock && pddClientAuth.unLock && (await pddClientAuth.lock(lockKey, 10000))) {
+                  err.ignoreTokenRefresh(false);
+                  try {
+                    // 刷新access token
+                    const result = await this.request<
+                      PddPopAuthTokenRefreshRequestInterface,
+                      PddPopAuthTokenRefreshResponseInterface
+                    >({
+                      type: PDD_POP_AUTH_TOKEN_REFRESH,
+                      refresh_token: accessTokenInfo.refresh_token,
+                    });
+                    const freshTokenInfo = getShortResponse(result, PDD_POP_AUTH_TOKEN_REFRESH);
+                    await pddClientAuth.setAccessTokenToCache(apiAccessOptions, freshTokenInfo);
+                  } catch (e) {}
+                  // 释放锁
+                  await pddClientAuth.unLock(lockKey);
+                  accessTokenInfo = null;
+                  // todo 后续有必要加入重试逻辑
+                } else {
+                  err.ignoreTokenRefresh(true);
+                  // hack sleep 3s, 假定刷新token信息，能够在3s内完成
+                  await sleep(3000);
+                }
+              }
+            }
+          }
+          return Promise.reject(err);
+        });
+      }
+      return retResult;
     };
 
     // api 接口缓存逻辑
@@ -437,7 +539,15 @@ export class PddClient<T = any> {
       }
     }
 
-    return promiseToCallback(ret || runningFn(), apiCallback!);
+    return promiseToCallback(
+      (ret || runningFn()).catch((err) => {
+        if (err) {
+          this.event.emit('error', err, apiAccessOptions);
+        }
+        return Promise.reject(err);
+      }),
+      apiCallback!
+    );
   }
 
   /**
@@ -490,75 +600,105 @@ export class PddClient<T = any> {
   /**
    * 生成access token
    * @param code
+   * @param accessOptions
    * @param callback
    */
-  public generate(code: PddClientGenerateType): Promise<PddAccessTokenResponseInterface>;
+  public generate(code: T | PddClientGenerateType | string): Promise<PddAccessTokenResponseInterface>;
+  public generate(code: PddClientGenerateType | string, accessOptions: T): Promise<PddAccessTokenResponseInterface>;
   public generate(
-    code: PddClientGenerateType,
+    code: T | PddClientGenerateType | string,
     callback: AsyncResultCallbackInterface<PddAccessTokenResponseInterface, never>
   ): void;
   public generate(
-    code: PddClientGenerateType,
+    code: PddClientGenerateType | string,
+    accessOptions: T,
+    callback: AsyncResultCallbackInterface<PddAccessTokenResponseInterface, never>
+  ): void;
+  public generate(
+    code: T | PddClientGenerateType | string,
+    accessOptions?: T | AsyncResultCallbackInterface<PddAccessTokenResponseInterface, never>,
     callback?: AsyncResultCallbackInterface<PddAccessTokenResponseInterface, never>
   ): Promise<PddAccessTokenResponseInterface> | void {
-    /* eslint-disable @typescript-eslint/camelcase */
-    const clientOptions = this.options;
-    const callOptions = {
-      client_id: clientOptions.clientId,
-      client_secret: clientOptions.clientSecret,
-    };
-    if (isString(code)) {
-      extend(callOptions, {
-        code,
-        grant_type: 'authorization_code',
+    const [params, access, cbk] = guessPddClientGenerateParams<T>(code, accessOptions, callback);
+
+    let paramsPromise: Promise<PddPopAuthTokenRefreshRequestInterface | PddPopAuthTokenCreateRequestInterface>;
+
+    if (params) {
+      paramsPromise = Promise.resolve(params);
+    } else {
+      /*if (!access) {
+        throw new PddBaseException('if you want refresh access token, you should pass access token or params');
+      }*/
+      if (!this.pddClientAuth) {
+        throw new PddBaseException('refresh access token failed, because pdd client auth is undefined!');
+      }
+      paramsPromise = this.pddClientAuth.getAccessTokenFromCache(access as T).then((result) => {
+        if (result) {
+          return {
+            refresh_token: result.refresh_token,
+          } as PddPopAuthTokenRefreshRequestInterface;
+        }
+        throw new PddBaseException('refresh access token can not find.');
       });
-    } else if (isObject(code)) {
-      extend(callOptions, code);
     }
 
-    if (!(callOptions as any).grant_type) {
-      const msg = `grant type can't be empty${'!'}`;
-      throw new Error(msg);
-    }
-    const resPromise = this.networkAdapter.post(PDD_OAUTH_TOKEN_URL, callOptions, {
-      headers: {
-        'Content-Type': APPLICATION_JSON,
-      },
-    });
-    return promiseToCallback(resPromise, callback as any);
-    /* eslint-enable @typescript-eslint/camelcase */
+    const result = paramsPromise
+      .then<PddAccessTokenResponseInterface>((param) => {
+        const type = 'code' in param ? PDD_POP_AUTH_TOKEN_CREATE : PDD_POP_AUTH_TOKEN_REFRESH;
+        return this.request<
+          PddClientGenerateType,
+          PddPopAuthTokenCreateResponseInterface | PddPopAuthTokenRefreshResponseInterface
+        >({
+          type,
+          ...param,
+        }).then<PddAccessTokenResponseInterface>((result) => {
+          return getShortResponse(result, type);
+        });
+      })
+      .then(async (res) => {
+        // 保存access token至缓存数据当中
+        if (this.pddClientAuth && access) {
+          await this.pddClientAuth.setAccessTokenToCache(access, res);
+        }
+        return res;
+      });
+
+    return promiseToCallback(result, cbk as AsyncResultCallbackInterface<PddAccessTokenResponseInterface, never>);
   }
 
   /**
    * 刷新freshToken的内容
    * @param freshToken
+   * @param accessOptions
    * @param callback
    */
-  public refresh(freshToken: string): Promise<PddAccessTokenResponseInterface>;
+  public refresh(freshToken: string | T | PddClientGenerateType): Promise<PddAccessTokenResponseInterface>;
   public refresh(
-    freshToken: string,
+    freshToken: string | T | PddClientGenerateType,
     callback: AsyncResultCallbackInterface<PddAccessTokenResponseInterface, never>
   ): void;
   public refresh(
-    freshToken: string,
+    freshToken: string | T | PddClientGenerateType,
     callback?: AsyncResultCallbackInterface<PddAccessTokenResponseInterface, never>
   ): Promise<PddAccessTokenResponseInterface> | void {
-    /* eslint-disable @typescript-eslint/camelcase */
-    return this.generate(
-      {
+    let token: T | PddClientGenerateType;
+    if (isString(freshToken)) {
+      token = {
         refresh_token: freshToken,
-        grant_type: 'refresh_token',
-      },
-      callback as any
+      };
+    } else {
+      token = freshToken;
+    }
+    return this.generate(
+      token as T | PddClientGenerateType,
+      callback as AsyncResultCallbackInterface<PddAccessTokenResponseInterface, never>
     );
-    /* eslint-enable @typescript-eslint/camelcase */
   }
 
   /**
    * @var DefaultRequestType 默认请求参数类型
    */
   protected static defaultRequestParam: DefaultRequestType = {
-    // eslint-disable-next-line @typescript-eslint/camelcase
     data_type: 'JSON',
     version: 'V1',
   };
@@ -600,5 +740,39 @@ export class PddClient<T = any> {
    */
   public static setPddDefaultCacheOptions(options: PddDefaultCacheOptionsType) {
     this.pddDefaultCacheOptions = options;
+  }
+
+  /**
+   * 捕获client发出的错误信息
+   * @param event
+   * @param listener
+   */
+  public on(event: 'error', listener: PddClientErrorListener<T>) {
+    this.event.on(event, listener);
+    return this;
+  }
+
+  /**
+   * 取消事件绑定
+   * @param event
+   * @param listener
+   */
+  public off(event: 'error', listener?: PddClientErrorListener<T>) {
+    if (listener) {
+      this.event.off(event, listener);
+    } else {
+      this.event.removeAllListeners(event);
+    }
+    return this;
+  }
+
+  /**
+   * 只执行一次绑定事件
+   * @param event
+   * @param listener
+   */
+  public once(event: 'error', listener: PddClientErrorListener<T>) {
+    this.event.on(event, listener);
+    return this;
   }
 }

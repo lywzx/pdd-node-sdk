@@ -4,7 +4,7 @@ export const PDD_ORDER_LIST_GET_LIMITERS = [
   {
     limiterLevel: 1,
     timeRange: 60,
-    times: 5000,
+    times: 6000,
   },
   {
     limiterLevel: 3,
@@ -626,6 +626,34 @@ export interface PddOrderListGetOrderListGetResponseOrderListResponseInterface {
    * @default:
    **/
   order_change_amount: string;
+
+  /**
+   * @description: 订单备注标记，1-红色，2-黄色，3-绿色，4-蓝色，5-紫色
+   * @type: number
+   * @default:
+   **/
+  remark_tag: number;
+
+  /**
+   * @description: 订单备注标记名称
+   * @type: string
+   * @default:
+   **/
+  remark_tag_name: string;
+
+  /**
+   * @description: 是否多多批发，1-是，0-否
+   * @type: number
+   * @default:
+   **/
+  duoduo_wholesale: number;
+
+  /**
+   * @description: 市场业务类型，0-普通订单，1-拼内购订单
+   * @type: number
+   * @default:
+   **/
+  mkt_biz_type: number;
 }
 
 /**

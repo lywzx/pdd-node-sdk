@@ -4,7 +4,7 @@ export const PDD_GOODS_LOGISTICS_TEMPLATE_CREATE_LIMITERS = [
   {
     limiterLevel: 1,
     timeRange: 60,
-    times: 2500,
+    times: 3000,
   },
 ];
 

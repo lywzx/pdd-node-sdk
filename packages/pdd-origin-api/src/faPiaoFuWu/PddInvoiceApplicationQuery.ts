@@ -4,12 +4,12 @@ export const PDD_INVOICE_APPLICATION_QUERY_LIMITERS = [
   {
     limiterLevel: 3,
     timeRange: 5,
-    times: 10000,
+    times: 12000,
   },
   {
     limiterLevel: 1,
     timeRange: 60,
-    times: 3000,
+    times: 3600,
   },
 ];
 

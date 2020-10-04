@@ -13,6 +13,12 @@ cache:
     - node_modules/ # npm packages
     - .nyc_output/
 
+addons:
+  homebrew:
+    packages:
+    - redis
+    update: true
+
 node_js:
   - 'node'
   - '13'
@@ -20,12 +26,16 @@ node_js:
   - '11'
   - '10'
 
+services:
+  - redis
+
 before_install:
+  - sh -c "if [ '$TRAVIS_OS_NAME' = 'osx' ]; then brew services start redis; fi"
   - npm install yarn -g
   - npm install codecov -g
 
 install:
-  - yarn
+  - yarn install --ignore-engines
 
 script:
   - npm run build
@@ -33,4 +43,3 @@ script:
 
 after_script:
   - codecov -f .nyc_output/*.json
-  - travis_terminate 0 # try to make Windows quit

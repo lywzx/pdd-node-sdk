@@ -1,10 +1,6 @@
-import { PddCommonRequestInterface } from '@pin-duo-duo/pdd-origin-api';
 import mapValues from 'lodash/mapValues';
 import template from 'lodash/template';
-import { PddAccessTokenResponseInterface, PddClientAuthInterface, RetryOptionsInterface } from '../interfaces';
-
-type RetryOptionsType = RetryOptionsInterface | number;
-type PddCommonRequestExcludeSomeAttr = Pick<PddCommonRequestInterface, 'access_token'>;
+import { PddAccessTokenResponseInterface, PddClientAuthInterface } from '../interfaces';
 
 /**
  * 拼多多自动附带access token的类
@@ -36,7 +32,7 @@ export abstract class PddClientAccessAuth<T> {
    * 设置当前用户的access token
    * @param obj
    * @param token
-   * @param expired
+   * @param expired 过期时间(毫秒)
    */
   public abstract setAccessTokenToCache(
     obj: T,

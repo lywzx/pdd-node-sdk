@@ -2,14 +2,9 @@ export const PDD_FDS_WAYBILL_RETURN = 'pdd.fds.waybill.return';
 export const PDD_FDS_WAYBILL_RETURN_RESPONSE_KEY = 'pdd_fds_waybill_return_response';
 export const PDD_FDS_WAYBILL_RETURN_LIMITERS = [
   {
-    limiterLevel: 1,
-    timeRange: 60,
-    times: 2000,
-  },
-  {
     limiterLevel: 3,
     timeRange: 1,
-    times: 1000,
+    times: 1200,
   },
 ];
 

@@ -4,12 +4,12 @@ export const PDD_GOODS_CAT_TEMPLATE_GET_LIMITERS = [
   {
     limiterLevel: 1,
     timeRange: 10,
-    times: 1000,
+    times: 1200,
   },
   {
     limiterLevel: 3,
     timeRange: 10,
-    times: 10000,
+    times: 12000,
   },
 ];
 

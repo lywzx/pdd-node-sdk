@@ -32,7 +32,7 @@ describe('PddClientService', () => {
     expect(service).to.be.instanceOf(PddClientService);
   });
 
-  it('should get all Clients', function() {
+  it('should get all Clients', function () {
     const clients = service.get();
     expect(clients[NEST_PDD_MODULE_PDD_CLIENTS_DEFAULT]).to.be.instanceOf(PddClient);
     expect(module.get(NEST_PDD_MODULE_PDD_CLIENTS_ALL)).to.be.eq(clients);
@@ -41,7 +41,7 @@ describe('PddClientService', () => {
     expect(module.get(NEST_PDD_MODULE_PDD_CLIENTS_DEFAULT)).to.be.eq(clients.mms);
   });
 
-  it('should throw exception', function() {
+  it('should throw exception', function () {
     expect(() => {
       service.get('any-not-exists');
     }).to.be.throw();

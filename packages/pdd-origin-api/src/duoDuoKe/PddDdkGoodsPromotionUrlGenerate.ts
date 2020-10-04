@@ -4,7 +4,7 @@ export const PDD_DDK_GOODS_PROMOTION_URL_GENERATE_LIMITERS = [
   {
     limiterLevel: 3,
     timeRange: 10,
-    times: 27875,
+    times: 33450,
   },
 ];
 

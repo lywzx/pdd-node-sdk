@@ -4,12 +4,12 @@ export const PDD_GOODS_INFORMATION_UPDATE_LIMITERS = [
   {
     limiterLevel: 1,
     timeRange: 60,
-    times: 2500,
+    times: 3000,
   },
   {
     limiterLevel: 3,
     timeRange: 5,
-    times: 3000,
+    times: 3600,
   },
 ];
 
@@ -264,6 +264,20 @@ export interface PddGoodsInformationUpdateRequestInterface {
    * @default:
    **/
   out_goods_id?: string;
+
+  /**
+   * @description: 第三方商品Id
+   * @type: string
+   * @default:
+   **/
+  out_source_goods_id?: string;
+
+  /**
+   * @description: 第三方商品来源
+   * @type: number
+   * @default:
+   **/
+  out_source_type?: number;
 
   /**
    * @description: 实例：{
@@ -712,6 +726,13 @@ export interface PddGoodsInformationUpdateSkuListRequestInterface {
    * @default:
    **/
   out_sku_sn?: string;
+
+  /**
+   * @description: 第三方sku Id
+   * @type: string
+   * @default:
+   **/
+  out_source_sku_id?: string;
 
   /**
    * @description: oversea_sku

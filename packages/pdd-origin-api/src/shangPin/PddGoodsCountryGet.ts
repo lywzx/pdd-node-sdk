@@ -4,7 +4,7 @@ export const PDD_GOODS_COUNTRY_GET_LIMITERS = [
   {
     limiterLevel: 3,
     timeRange: 10,
-    times: 1000,
+    times: 1200,
   },
 ];
 

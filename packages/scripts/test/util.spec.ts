@@ -358,8 +358,8 @@ const testJson: ApiDetailInterface = {
   limiters: [],
 };
 
-describe('script util test', function() {
-  it('should test generate code', function() {
+describe('script util test', function () {
+  it('should test generate code', function () {
     const result = buildParamsToCodeArr(testJson.requestParamList, testJson, 'request');
 
     expect(result.length).to.be.eq(2);

@@ -1,5 +1,17 @@
 export const PDD_OPEN_KMS_SEARCH_BATCH = 'pdd.open.kms.search.batch';
 export const PDD_OPEN_KMS_SEARCH_BATCH_RESPONSE_KEY = 'open_kms_search_batch_response';
+export const PDD_OPEN_KMS_SEARCH_BATCH_LIMITERS = [
+  {
+    limiterLevel: 4,
+    timeRange: 10,
+    times: 10050,
+  },
+  {
+    limiterLevel: 3,
+    timeRange: 10,
+    times: 19500,
+  },
+];
 
 /**
  * 接口名称：获取搜索索引
