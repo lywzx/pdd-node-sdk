@@ -55,5 +55,5 @@
     "@types/lodash": "^4.14.159",
     "debug": "^4.2.0"
   },
-  "gitHead": "211b14d8c045925f68f393873ac0ecc51370d023"
+  "gitHead": "ce5d112127a486bd2ed752aaeb0adf7710c1f0bd"
 }
