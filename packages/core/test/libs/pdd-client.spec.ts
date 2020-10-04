@@ -14,6 +14,7 @@ import {
 } from '../../src/exceptions';
 import { defaultRetryOptions, NetworkAdapter, PddApiCacheAbstract, PddClient } from '../../src/libs';
 import * as guess from '../../src/util/guess-params.util';
+import * as util from '../../src/util';
 import { replace, fake, restore, stub } from 'sinon';
 import { once, extend, pick, keys } from 'lodash';
 import {
@@ -298,6 +299,7 @@ describe('pdd-client test util', function () {
     it('should get result', async function () {
       const result = { testResponse: true };
       const methods = stub().resolves(result);
+      const getShortResponse = stub().resolves(result);
       const testValues = [
         'code',
         {
@@ -308,9 +310,10 @@ describe('pdd-client test util', function () {
         },
       ];
       replace(pddClient, 'request', methods);
+      replace(util, 'getShortResponse', getShortResponse);
       for (const value of testValues) {
         const res = await pddClient.generate(value as any);
-        expect(res).to.be.eq(result);
+        expect(res).to.be.eql(result);
       }
       restored();
     });

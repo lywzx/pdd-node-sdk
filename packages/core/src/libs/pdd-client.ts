@@ -21,12 +21,7 @@ import {
   PDD_CLIENT_ACCESS_TOKEN_CLEAR_TIMEOUT,
   PDD_CLIENT_PASS_ACCESS_TOKEN_KEY,
 } from '../constant/pdd-client-pass-access-token';
-import {
-  PddAccessTokenMissingException,
-  PddApiPermissionDenyException,
-  PddBaseException,
-  PddResponseException,
-} from '../exceptions';
+import { PddAccessTokenMissingException, PddBaseException, PddResponseException } from '../exceptions';
 import {
   AsyncResultCallbackInterface,
   DefaultRequestType,
