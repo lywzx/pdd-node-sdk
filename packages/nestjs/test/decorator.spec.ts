@@ -3,6 +3,7 @@ import { Injectable } from '@nestjs/common';
 import { Test, TestingModule } from '@nestjs/testing';
 import { PDD_AD_API_ADVERTISER_OPEN_ACCOUNT } from '@pin-duo-duo/pdd-origin-api';
 import { catchError, NEST_PDD_MODULE_PDD_CLIENTS_DEFAULT, NestJsPddModule, PddClientService } from '../src';
+import { PddExplorerService } from '../src/services/pdd-explorer/pdd-explorer.service';
 import { clientOptions } from './config/test-config';
 import { fake, SinonSpy } from 'sinon';
 import { expect } from 'chai';
@@ -42,6 +43,8 @@ describe('test pdd nest module decorator', () => {
       ],
       providers: [],
     }).compile();
+    const pddExplorerService = module.get(PddExplorerService);
+    pddExplorerService.onModuleInit();
     pddClientService = module.get(PddClientService);
   });
 

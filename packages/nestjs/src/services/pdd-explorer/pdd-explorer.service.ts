@@ -1,12 +1,24 @@
-import { Injectable, Logger } from '@nestjs/common';
+import { Injectable, Logger, OnModuleInit } from '@nestjs/common';
 import { DiscoveryService, MetadataScanner, ModuleRef, Reflector } from '@nestjs/core';
 import { InstanceWrapper } from '@nestjs/core/injector/instance-wrapper';
 import { PddClient } from '@pin-duo-duo/core';
 import { PDD_CLIENT_BIND_EVENTS_TOKEN } from '../../constant/constant-decorator';
 
 @Injectable()
-export class PddExplorerService {
+export class PddExplorerService implements OnModuleInit {
   private readonly logger = new Logger('PddNodeSdk');
+
+  /**
+   *
+   * @protected
+   */
+  protected isModuleInit = false;
+
+  /**
+   * 未init时，的client
+   * @protected
+   */
+  protected oldClient: Array<[PddClient<any>, string | symbol, string]> = [];
 
   constructor(
     private readonly moduleRef: ModuleRef,
@@ -15,6 +27,10 @@ export class PddExplorerService {
     private readonly reflector: Reflector
   ) {}
 
+  onModuleInit(): void {
+    this.initModuleInitLoopUpListener();
+  }
+
   /**
    * 绑定事件到clientApp
    * @param client
@@ -22,6 +38,10 @@ export class PddExplorerService {
    * @param eventName
    */
   public lookupListeners(client: PddClient<any>, clientName: string | symbol, eventName = 'error'): void {
+    if (!this.isModuleInit) {
+      this.oldClient.push([client, clientName, eventName]);
+      return;
+    }
     const instanceWrappers: InstanceWrapper[] = this.discoveryService.getProviders();
     instanceWrappers.forEach((wrapper) => {
       const { instance } = wrapper;
@@ -34,6 +54,17 @@ export class PddExplorerService {
           client.on(eventName as 'error', methodRef.bind(instance));
         }
       });
+    });
+  }
+
+  /**
+   * 初始化之后，需要绑定原始的module相关的事件
+   * @protected
+   */
+  protected initModuleInitLoopUpListener(): void {
+    this.isModuleInit = true;
+    this.oldClient.forEach((args) => {
+      this.lookupListeners(...args);
     });
   }
 }

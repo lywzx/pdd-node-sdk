@@ -437,7 +437,7 @@ export class PddClient<T extends Record<string, any> = any> {
                     [PDD_CLIENT_PASS_ACCESS_TOKEN_KEY]: access,
                   });
                 }
-                throw new PddAccessTokenMissingException('cat"t find pdd access token from cache!');
+                throw new PddAccessTokenMissingException('cat"t find pdd access token from cache!', true);
               });
           });
         } else {
@@ -542,7 +542,7 @@ export class PddClient<T extends Record<string, any> = any> {
     return promiseToCallback(
       (ret || runningFn()).catch((err) => {
         if (err) {
-          this.event.emit('error', err, apiAccessOptions);
+          this.event.emit('error', err, { type, ...params }, apiAccessOptions);
         }
         return Promise.reject(err);
       }),
