@@ -1,6 +1,6 @@
 {
   "name": "@pin-duo-duo/core",
-  "version": "0.0.2-alpha.3",
+  "version": "0.0.2-alpha.4",
   "keywords": [
     "pdd",
     "pinduoduo",
@@ -41,7 +41,7 @@
     "url": "https://github.com/lywzx/pdd-node-sdk/issues"
   },
   "dependencies": {
-    "@pin-duo-duo/pdd-origin-api": "^0.0.2-alpha.3",
+    "@pin-duo-duo/pdd-origin-api": "^0.0.2-alpha.4",
     "crypto-js": "^4.0.0",
     "fast-json-stable-stringify": "^2.1.0"
   },
@@ -49,13 +49,13 @@
     "@types/crypto-js": "^3.1.44"
   },
   "peerDependencies": {
-    "axios": "^0.19.2",
-    "async": "^3.2.0",
-    "lodash": "^4.17.20",
-    "@types/lodash": "^4.14.159",
+    "@types/async": "^3.2.0",
     "@types/debug": "^4.1.5",
+    "@types/lodash": "^4.14.159",
+    "async": "^3.2.0",
+    "axios": "^0.19.2",
     "debug": "^4.2.0",
-    "@types/async": "^3.2.0"
+    "lodash": "^4.17.20"
   },
   "gitHead": "34dfab33c7abd58bd551ea88358ab0e586902e6f"
 }

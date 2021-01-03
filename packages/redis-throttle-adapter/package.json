@@ -1,6 +1,6 @@
 {
   "name": "@pin-duo-duo/redis-throttle-adapter",
-  "version": "0.0.2-alpha.3",
+  "version": "0.0.2-alpha.4",
   "description": "> TODO: description",
   "author": "lywzx <liuyang@lyblog.net>",
   "homepage": "https://github.com/lywzx/pdd-node-sdk/tree/master/packages/redis-throttle-adapter#readme",
@@ -29,11 +29,11 @@
     "url": "https://github.com/lywzx/pdd-node-sdk/issues"
   },
   "devDependencies": {
-    "@pin-duo-duo/core": "^0.0.2-alpha.3"
+    "@pin-duo-duo/core": "^0.0.2-alpha.4"
   },
   "peerDependencies": {
-    "redis": "^3.0.2",
-    "@types/redis": "^2.8.25"
+    "@types/redis": "^2.8.25",
+    "redis": "^3.0.2"
   },
   "gitHead": "34dfab33c7abd58bd551ea88358ab0e586902e6f"
 }
