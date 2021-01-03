@@ -427,6 +427,13 @@ export interface PddGoodsCommitDetailGetGoodsCommitDetailResponseResponseInterfa
    * @default:
    **/
   zhi_huan_bu_xiu: number;
+
+  /**
+   * @description: 发货方式。0：无物流发货；1：有物流发货。
+   * @type: number
+   * @default:
+   **/
+  delivery_type: number;
 }
 
 /**

@@ -3,8 +3,8 @@ export const PDD_LOGISTICS_ONLINE_SEND_RESPONSE_KEY = 'logistics_online_send_res
 export const PDD_LOGISTICS_ONLINE_SEND_LIMITERS = [
   {
     limiterLevel: 3,
-    timeRange: 1,
-    times: 2700,
+    timeRange: 10,
+    times: 30000,
   },
 ];
 

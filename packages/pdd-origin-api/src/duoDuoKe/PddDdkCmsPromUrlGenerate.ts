@@ -50,25 +50,11 @@ export interface PddDdkCmsPromUrlGenerateRequestInterface {
   generate_short_url?: boolean;
 
   /**
-   * @description: 是否唤起微信客户端， 默认false 否，true 是
+   * @description: 已经废弃，不再支持该功能。是否唤起微信客户端， 默认false 否，true 是。
    * @type: boolean
    * @default:
    **/
   generate_weapp_webview?: boolean;
-
-  /**
-   * @description: 单人团多人团标志。true-多人团，false-单人团 默认false
-   * @type: boolean
-   * @default:
-   **/
-  multi_group?: boolean;
-
-  /**
-   * @description: 推广位列表，例如：["60005_612"]
-   * @type: string[]
-   * @default:
-   **/
-  p_id_list: string[];
 
   /**
    * @description: 是否生成小程序推广
@@ -83,6 +69,20 @@ export interface PddDdkCmsPromUrlGenerateRequestInterface {
    * @default:
    **/
   keyword?: string;
+
+  /**
+   * @description: 单人团多人团标志。true-多人团，false-单人团 默认false
+   * @type: boolean
+   * @default:
+   **/
+  multi_group?: boolean;
+
+  /**
+   * @description: 推广位列表，例如：["60005_612"]
+   * @type: string[]
+   * @default:
+   **/
+  p_id_list: string[];
 }
 
 /**
@@ -129,42 +129,42 @@ export interface PddDdkCmsPromUrlGenerateCmsPromotionUrlGenerateResponseResponse
  **/
 export interface PddDdkCmsPromUrlGenerateCmsPromotionUrlGenerateResponseUrlListResponseInterface {
   /**
-   * @description: 唤醒拼多多app短链
+   * @description: 推广移动短链接，对应出参mobile_url的短链接，与mobile_url功能一致。
    * @type: string
    * @default:
    **/
   mobile_short_url: string;
 
   /**
-   * @description: 唤醒拼多多app链接
+   * @description: 推广移动链接，用户安装拼多多APP的情况下会唤起APP，否则唤起H5页面
    * @type: string
    * @default:
    **/
   mobile_url: string;
 
   /**
-   * @description: 多人团唤醒拼多多app链接
+   * @description: 多人团推广移动短链接，对应出参multi_group_mobile_url的短链接，与multi_group_mobile_url功能一致。
    * @type: string
    * @default:
    **/
   multi_group_mobile_short_url: string;
 
   /**
-   * @description: 多人团唤醒拼多多app长链接
+   * @description: 多人团推广移动链接，用户安装拼多多APP的情况下会唤起APP，否则唤起H5页面
    * @type: string
    * @default:
    **/
   multi_group_mobile_url: string;
 
   /**
-   * @description: 多人团短链
+   * @description: 对应出参multi_group_url的短链接，与multi_group_url功能一致。
    * @type: string
    * @default:
    **/
   multi_group_short_url: string;
 
   /**
-   * @description: 多人团长链
+   * @description: 多人团长链接，唤起H5页面
    * @type: string
    * @default:
    **/
@@ -179,14 +179,14 @@ export interface PddDdkCmsPromUrlGenerateCmsPromotionUrlGenerateResponseUrlListR
   multi_url_list: PddDdkCmsPromUrlGenerateCmsPromotionUrlGenerateResponseUrlListMultiUrlListResponseInterface;
 
   /**
-   * @description: 多人团唤醒微信推广短链接
+   * @description: 多人团唤醒微信推广短链接，已弃用
    * @type: string
    * @default:
    **/
   multi_we_app_web_view_short_url: string;
 
   /**
-   * @description: 多人团唤醒微信推广长链接
+   * @description: 多人团唤醒微信推广长链接，已弃用
    * @type: string
    * @default:
    **/
@@ -215,25 +215,11 @@ export interface PddDdkCmsPromUrlGenerateCmsPromotionUrlGenerateResponseUrlListR
   single_url_list: PddDdkCmsPromUrlGenerateCmsPromotionUrlGenerateResponseUrlListSingleUrlListResponseInterface;
 
   /**
-   * @description: h5长链接
+   * @description: 推广长链接，唤起H5页面
    * @type: string
    * @default:
    **/
   url: string;
-
-  /**
-   * @description: 唤醒微信短链
-   * @type: string
-   * @default:
-   **/
-  we_app_web_view_short_url: string;
-
-  /**
-   * @description: 唤醒微信长链
-   * @type: string
-   * @default:
-   **/
-  we_app_web_view_url: string;
 
   /**
    * @description: 小程序信息
@@ -242,6 +228,20 @@ export interface PddDdkCmsPromUrlGenerateCmsPromotionUrlGenerateResponseUrlListR
    *
    **/
   we_app_info: PddDdkCmsPromUrlGenerateCmsPromotionUrlGenerateResponseUrlListWeAppInfoResponseInterface;
+
+  /**
+   * @description: 唤醒微信短链接，已废弃
+   * @type: string
+   * @default:
+   **/
+  we_app_web_view_short_url: string;
+
+  /**
+   * @description: 唤醒微信长链接，已废弃
+   * @type: string
+   * @default:
+   **/
+  we_app_web_view_url: string;
 }
 
 /**
@@ -251,49 +251,49 @@ export interface PddDdkCmsPromUrlGenerateCmsPromotionUrlGenerateResponseUrlListR
  **/
 export interface PddDdkCmsPromUrlGenerateCmsPromotionUrlGenerateResponseUrlListMultiUrlListResponseInterface {
   /**
-   * @description: 双人团唤醒拼多多app短链接
+   * @description: 双人团推广移动短链接，对应出参mobile_url的短链接，与mobile_url功能一致。
    * @type: string
    * @default:
    **/
   mobile_short_url: string;
 
   /**
-   * @description: 双人团唤醒拼多多app长链接
+   * @description: 双人团推广移动链接，用户安装拼多多APP的情况下会唤起APP，否则唤起H5页面
    * @type: string
    * @default:
    **/
   mobile_url: string;
 
   /**
-   * @description: schema的链接
+   * @description: schema链接，用户安装拼多多APP的情况下会唤起APP（需客户端支持schema跳转协议）
    * @type: string
    * @default:
    **/
   schema_url: string;
 
   /**
-   * @description: 双人团短链接
+   * @description: 双人团短链接，对应出参url的短链接，与url功能一致。
    * @type: string
    * @default:
    **/
   short_url: string;
 
   /**
-   * @description: 双人团长链接
+   * @description: 双人团长链接，唤起H5页面
    * @type: string
    * @default:
    **/
   url: string;
 
   /**
-   * @description: 双人团唤醒微信短链接
+   * @description: 双人团唤醒微信短链接，已弃用
    * @type: string
    * @default:
    **/
   we_app_web_view_short_url: string;
 
   /**
-   * @description: 双人团唤醒微信链接
+   * @description: 双人团唤醒微信长链接，已弃用
    * @type: string
    * @default:
    **/
@@ -307,49 +307,49 @@ export interface PddDdkCmsPromUrlGenerateCmsPromotionUrlGenerateResponseUrlListM
  **/
 export interface PddDdkCmsPromUrlGenerateCmsPromotionUrlGenerateResponseUrlListSingleUrlListResponseInterface {
   /**
-   * @description: 唤醒拼多多app短链接
+   * @description: 推广移动短链接，对应出参mobile_url的短链接，与mobile_url功能一致。
    * @type: string
    * @default:
    **/
   mobile_short_url: string;
 
   /**
-   * @description: 唤醒拼多多app长链接
+   * @description: 推广移动链接，用户安装拼多多APP的情况下会唤起APP，否则唤起H5页面
    * @type: string
    * @default:
    **/
   mobile_url: string;
 
   /**
-   * @description: schema的链接
+   * @description: schema链接，用户安装拼多多APP的情况下会唤起APP（需客户端支持schema跳转协议）
    * @type: string
    * @default:
    **/
   schema_url: string;
 
   /**
-   * @description: 短链接
+   * @description: 推广短链接，对应出参url的短链接，与url功能一致。
    * @type: string
    * @default:
    **/
   short_url: string;
 
   /**
-   * @description: 长链接
+   * @description: 推广长链接，唤起H5页面
    * @type: string
    * @default:
    **/
   url: string;
 
   /**
-   * @description: 唤醒微信短链接
+   * @description: 唤醒微信短链接，已弃用
    * @type: string
    * @default:
    **/
   we_app_web_view_short_url: string;
 
   /**
-   * @description: 唤醒微信链接
+   * @description: 唤醒微信链接，已弃用
    * @type: string
    * @default:
    **/

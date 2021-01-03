@@ -58,14 +58,14 @@ export interface PddDdkGoodsZsUnitUrlGenGoodsZsUnitGenerateResponseResponseInter
   mobile_short_url: string;
 
   /**
-   * @description: 推广长链接（唤起拼多多app）
+   * @description: 推广长链接（可唤起拼多多app）
    * @type: string
    * @default:
    **/
   mobile_url: string;
 
   /**
-   * @description: 推广短链接（唤起拼多多app）
+   * @description: 推广短链接（可唤起拼多多app）
    * @type: string
    * @default:
    **/
@@ -79,28 +79,28 @@ export interface PddDdkGoodsZsUnitUrlGenGoodsZsUnitGenerateResponseResponseInter
   multi_group_mobile_url: string;
 
   /**
-   * @description: 双人团推广短链接
+   * @description: 双人团推广短链接，唤起H5页面
    * @type: string
    * @default:
    **/
   multi_group_short_url: string;
 
   /**
-   * @description: 双人团推广长链接
+   * @description: 双人团推广长链接，唤起H5页面
    * @type: string
    * @default:
    **/
   multi_group_url: string;
 
   /**
-   * @description: 单人团推广短链接
+   * @description: 单人团推广短链接，唤起H5页面
    * @type: string
    * @default:
    **/
   short_url: string;
 
   /**
-   * @description: 单人团推广长链接
+   * @description: 单人团推广长链接，唤起H5页面
    * @type: string
    * @default:
    **/

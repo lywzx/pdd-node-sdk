@@ -9,7 +9,7 @@ export const PDD_AD_API_REPORT_ENTITY_REPORT_QUERY_LIMITERS = [
   {
     limiterLevel: 4,
     timeRange: 1,
-    times: 50,
+    times: 100,
   },
 ];
 

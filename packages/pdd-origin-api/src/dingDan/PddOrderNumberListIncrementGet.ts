@@ -385,7 +385,7 @@ export interface PddOrderNumberListIncrementGetOrderSnIncrementGetResponseOrderS
   confirm_time: string;
 
   /**
-   * @description: 收件人姓名
+   * @description: 收件人姓名。订单状态为待发货状态，且订单未被风控打标的情况下返回密文数据；其余情况返回空字符串。
    * @type: string
    * @default:
    **/
@@ -434,7 +434,7 @@ export interface PddOrderNumberListIncrementGetOrderSnIncrementGetResponseOrderS
   address: string;
 
   /**
-   * @description: 收件人电话，仅订单状态为待发货状态下返回明文，其他状态下返回脱敏手机号，例如“1387677****”
+   * @description: 收件人电话。订单状态为待发货状态，且订单未被风控打标的情况下返回密文数据；其余情况返回空字符串。
    * @type: string
    * @default:
    **/
@@ -568,7 +568,7 @@ export interface PddOrderNumberListIncrementGetOrderSnIncrementGetResponseOrderS
   seller_discount: string;
 
   /**
-   * @description: 收件人地址,不拼接省市区
+   * @description: 收件人地址，不拼接省市区。订单状态为待发货状态，且订单未被风控打标的情况下返回密文数据；其余情况返回空字符串。
    * @type: string
    * @default:
    **/
@@ -664,6 +664,14 @@ export interface PddOrderNumberListIncrementGetOrderSnIncrementGetResponseOrderS
    * @default:
    **/
   mkt_biz_type: number;
+
+  /**
+   * @description: 订单标签列表，no_trace_delivery=无痕发货，only_support_replace=只换不修，duoduo_wholesale=多多批发，return_freight_payer=退货包运费，free_sf=顺丰包邮，support_nationwide_warranty=全国联保，self_contained=门店自提，delivery_one_day=当日发货
+   * @type: PddOrderNumberListIncrementGetOrderSnIncrementGetResponseOrderSnListOrderTagListResponseInterface[]
+   * @default:
+   *
+   **/
+  order_tag_list: PddOrderNumberListIncrementGetOrderSnIncrementGetResponseOrderSnListOrderTagListResponseInterface[];
 }
 
 /**
@@ -896,4 +904,25 @@ export interface PddOrderNumberListIncrementGetOrderSnIncrementGetResponseOrderS
    * @default:
    **/
   goods_img: string;
+}
+
+/**
+ * @description 订单标签列表，no_trace_delivery=无痕发货，only_support_replace=只换不修，duoduo_wholesale=多多批发，return_freight_payer=退货包运费，free_sf=顺丰包邮，support_nationwide_warranty=全国联保，self_contained=门店自提，delivery_one_day=当日发货
+ * @default
+ * @example
+ **/
+export interface PddOrderNumberListIncrementGetOrderSnIncrementGetResponseOrderSnListOrderTagListResponseInterface {
+  /**
+   * @description: 标签名称
+   * @type: string
+   * @default:
+   **/
+  name: string;
+
+  /**
+   * @description: 是否有标签：0=无标签，1=有标签
+   * @type: number
+   * @default:
+   **/
+  value: number;
 }

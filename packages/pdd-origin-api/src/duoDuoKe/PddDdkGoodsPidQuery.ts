@@ -106,4 +106,11 @@ export interface PddDdkGoodsPidQueryPIdQueryResponsePIdListResponseInterface {
    * @default:
    **/
   status: number;
+
+  /**
+   * @description: 媒体id
+   * @type: string | number
+   * @default:
+   **/
+  media_id: string | number;
 }

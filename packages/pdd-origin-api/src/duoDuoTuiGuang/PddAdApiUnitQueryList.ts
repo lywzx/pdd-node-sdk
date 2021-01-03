@@ -255,13 +255,6 @@ export interface PddAdApiUnitQueryListResponseResultResponseInterface {
   minGroupPrice: string | number;
 
   /**
-   * @description: OCPC开启日期
-   * @type: string
-   * @default:
-   **/
-  ocpcStartDate: string;
-
-  /**
    * @description: 优化目标。0表示不优化。1表示优化ROI，2表示优化转化成本。
    * @type: number
    * @default:

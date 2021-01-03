@@ -1,32 +1,18 @@
-export const PDD_DDK_GOODS_DETAIL = 'pdd.ddk.goods.detail';
-export const PDD_DDK_GOODS_DETAIL_RESPONSE_KEY = 'goods_detail_response';
-export const PDD_DDK_GOODS_DETAIL_LIMITERS = [
-  {
-    limiterLevel: 3,
-    timeRange: 10,
-    times: 66900,
-  },
-];
+export const PDD_DDK_OAUTH_GOODS_DETAIL = 'pdd.ddk.oauth.goods.detail';
+export const PDD_DDK_OAUTH_GOODS_DETAIL_RESPONSE_KEY = 'goods_detail_response';
 
 /**
  * 接口名称：多多进宝商品详情查询
- * 接口标识：pdd.ddk.goods.detail
+ * 接口标识：pdd.ddk.oauth.goods.detail
  * 接口使用场景：查询多多进宝商品详情
  **/
-export interface PddDdkGoodsDetailRequestInterface {
+export interface PddDdkOauthGoodsDetailRequestInterface {
   /**
    * @description: 自定义参数
    * @type: string
    * @default:
    **/
   custom_parameters?: string;
-
-  /**
-   * @description: 商品ID，仅支持单个查询，例如：[123456]。建议使用goods_sign进行查询
-   * @type: Array<string | number>
-   * @default:
-   **/
-  goods_id_list?: Array<string | number>;
 
   /**
    * @description: 商品goodsSign，支持通过goods_sign查询商品。优先使用此字段进行查询
@@ -66,17 +52,17 @@ export interface PddDdkGoodsDetailRequestInterface {
 
 /**
  * 接口名称：多多进宝商品详情查询
- * 接口标识：pdd.ddk.goods.detail
+ * 接口标识：pdd.ddk.oauth.goods.detail
  * 接口使用场景：查询多多进宝商品详情
  **/
-export interface PddDdkGoodsDetailResponseInterface {
+export interface PddDdkOauthGoodsDetailResponseInterface {
   /**
    * @description: response
-   * @type: PddDdkGoodsDetailGoodsDetailResponseResponseInterface
+   * @type: PddDdkOauthGoodsDetailGoodsDetailResponseResponseInterface
    * @default:
    *
    **/
-  goods_detail_response: PddDdkGoodsDetailGoodsDetailResponseResponseInterface;
+  goods_detail_response: PddDdkOauthGoodsDetailGoodsDetailResponseResponseInterface;
 }
 
 /**
@@ -84,14 +70,14 @@ export interface PddDdkGoodsDetailResponseInterface {
  * @default
  * @example
  **/
-export interface PddDdkGoodsDetailGoodsDetailResponseResponseInterface {
+export interface PddDdkOauthGoodsDetailGoodsDetailResponseResponseInterface {
   /**
    * @description: 多多进宝商品对象列表
-   * @type: PddDdkGoodsDetailGoodsDetailResponseGoodsDetailsResponseInterface[]
+   * @type: PddDdkOauthGoodsDetailGoodsDetailResponseGoodsDetailsResponseInterface[]
    * @default:
    *
    **/
-  goods_details: PddDdkGoodsDetailGoodsDetailResponseGoodsDetailsResponseInterface[];
+  goods_details: PddDdkOauthGoodsDetailGoodsDetailResponseGoodsDetailsResponseInterface[];
 }
 
 /**
@@ -99,7 +85,7 @@ export interface PddDdkGoodsDetailGoodsDetailResponseResponseInterface {
  * @default
  * @example
  **/
-export interface PddDdkGoodsDetailGoodsDetailResponseGoodsDetailsResponseInterface {
+export interface PddDdkOauthGoodsDetailGoodsDetailResponseGoodsDetailsResponseInterface {
   /**
    * @description: 已废弃,使用opt_id
    * @type: string | number

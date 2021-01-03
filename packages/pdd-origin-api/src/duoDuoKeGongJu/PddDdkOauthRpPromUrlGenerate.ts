@@ -8,7 +8,14 @@ export const PDD_DDK_OAUTH_RP_PROM_URL_GENERATE_RESPONSE_KEY = 'rp_promotion_url
  **/
 export interface PddDdkOauthRpPromUrlGenerateRequestInterface {
   /**
-   * @description: -1-活动列表，0-默认红包，2–新人红包，3-刮刮卡，5-员工内购，6-购物车，7-大促会场，8-直播间列表集合页，10-生成绑定备案链接
+   * @description: 初始金额（单位分），有效金额枚举值：300、500、700、1100和1600，默认300
+   * @type: string | number
+   * @default:
+   **/
+  amount?: string | number;
+
+  /**
+   * @description: -1-活动列表，0-默认红包，2–新人红包，3-刮刮卡，5-员工内购，6-购物车，7-大促会场，8-直播间列表集合页，10-生成绑定备案链接，11-生成超级红包（仅支持微信小程序），12-砸金蛋
    * @type: number
    * @default:
    **/
@@ -73,11 +80,11 @@ export interface PddDdkOauthRpPromUrlGenerateRequestInterface {
   p_id_list: string[];
 
   /**
-   * @description: 初始金额（单位分），有效金额枚举值：300、500、700、1100和1600，默认300
+   * @description: 刮刮卡指定金额（单位分），可指定2-100元间数值，即有效区间为：[200,10000]
    * @type: string | number
    * @default:
    **/
-  amount?: string | number;
+  scratch_card_amount?: string | number;
 }
 
 /**
@@ -267,14 +274,14 @@ export interface PddDdkOauthRpPromUrlGenerateRpPromotionUrlGenerateResponseResou
  **/
 export interface PddDdkOauthRpPromUrlGenerateRpPromotionUrlGenerateResponseUrlListResponseInterface {
   /**
-   * @description: 推广移动短链接
+   * @description: 推广移动短链接，对应出参mobile_url的短链接，与mobile_url功能一致。
    * @type: string
    * @default:
    **/
   mobile_short_url: string;
 
   /**
-   * @description: 推广移动链接
+   * @description: 推广移动链接，用户安装拼多多APP的情况下会唤起APP，否则唤起H5页面
    * @type: string
    * @default:
    **/
@@ -288,7 +295,7 @@ export interface PddDdkOauthRpPromUrlGenerateRpPromotionUrlGenerateResponseUrlLi
   multi_group_mobile_short_url: string;
 
   /**
-   * @description: 推广多人团移动链接
+   * @description: 推广多人团移动链接，用户安装拼多多APP的情况下会唤起APP，否则唤起H5页面
    * @type: string
    * @default:
    **/
@@ -302,7 +309,7 @@ export interface PddDdkOauthRpPromUrlGenerateRpPromotionUrlGenerateResponseUrlLi
   multi_group_short_url: string;
 
   /**
-   * @description: 推广多人团链接
+   * @description: 推广多人团链接，唤起H5页面
    * @type: string
    * @default:
    **/
@@ -317,21 +324,21 @@ export interface PddDdkOauthRpPromUrlGenerateRpPromotionUrlGenerateResponseUrlLi
   qq_app_info: PddDdkOauthRpPromUrlGenerateRpPromotionUrlGenerateResponseUrlListQqAppInfoResponseInterface;
 
   /**
-   * @description: schema的链接
+   * @description: schema链接，用户安装拼多多APP的情况下会唤起APP（需客户端支持schema跳转协议）
    * @type: string
    * @default:
    **/
   schema_url: string;
 
   /**
-   * @description: 推广短链接
+   * @description: 推广短链接，对应出参url的短链接，与url功能一致。
    * @type: string
    * @default:
    **/
   short_url: string;
 
   /**
-   * @description: 推广链接
+   * @description: 推广长链接，唤起H5页面
    * @type: string
    * @default:
    **/

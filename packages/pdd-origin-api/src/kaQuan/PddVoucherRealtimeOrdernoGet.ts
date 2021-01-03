@@ -88,9 +88,52 @@ export interface PddVoucherRealtimeOrdernoGetResponseResponseInterface {
  **/
 export interface PddVoucherRealtimeOrdernoGetResponseResultResponseInterface {
   /**
-   * @description:
+   * @description: 外部订单号
    * @type: string
    * @default:
    **/
   external_order_no: string;
+
+  /**
+   * @description: 总可核销次数
+   * @type: number
+   * @default:
+   **/
+  total_times: number;
+
+  /**
+   * @description:
+   * @type: PddVoucherRealtimeOrdernoGetResponseResultVerifyListResponseInterface[]
+   * @default:
+   *
+   **/
+  verify_list: PddVoucherRealtimeOrdernoGetResponseResultVerifyListResponseInterface[];
+}
+
+/**
+ * @description
+ * @default
+ * @example
+ **/
+export interface PddVoucherRealtimeOrdernoGetResponseResultVerifyListResponseInterface {
+  /**
+   * @description: 核销流水号
+   * @type: string
+   * @default:
+   **/
+  verify_serial_no: string;
+
+  /**
+   * @description: 核销时间，13位时间戳
+   * @type: string | number
+   * @default:
+   **/
+  verify_time: string | number;
+
+  /**
+   * @description: 核销次数
+   * @type: number
+   * @default:
+   **/
+  verify_times: number;
 }

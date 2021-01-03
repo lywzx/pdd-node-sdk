@@ -103,28 +103,28 @@ export interface PddWaybillGetParamWaybillCloudPrintApplyNewRequestSenderRequest
  **/
 export interface PddWaybillGetParamWaybillCloudPrintApplyNewRequestSenderAddressRequestInterface {
   /**
-   * @description: 城市
+   * @description: 城市，仅支持非空值
    * @type: string
    * @default:
    **/
-  city?: string;
+  city: string;
 
   /**
-   * @description: 详细地址
+   * @description: 详细地址，仅支持非空值
    * @type: string
    * @default:
    **/
   detail: string;
 
   /**
-   * @description: 区
+   * @description: 区，仅支持非空值
    * @type: string
    * @default:
    **/
-  district?: string;
+  district: string;
 
   /**
-   * @description: 省
+   * @description: 省，仅支持非空值
    * @type: string
    * @default:
    **/
@@ -346,28 +346,28 @@ export interface PddWaybillGetParamWaybillCloudPrintApplyNewRequestTradeOrderInf
  **/
 export interface PddWaybillGetParamWaybillCloudPrintApplyNewRequestTradeOrderInfoDtosRecipientAddressRequestInterface {
   /**
-   * @description: 城市
+   * @description: 城市，仅支持非空值
    * @type: string
    * @default:
    **/
-  city?: string;
+  city: string;
 
   /**
-   * @description: 详细地址
+   * @description: 详细地址，仅支持非空值
    * @type: string
    * @default:
    **/
   detail: string;
 
   /**
-   * @description: 区
+   * @description: 区，仅支持非空值
    * @type: string
    * @default:
    **/
-  district?: string;
+  district: string;
 
   /**
-   * @description: 省
+   * @description: 省，仅支持非空值
    * @type: string
    * @default:
    **/

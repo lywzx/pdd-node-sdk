@@ -144,6 +144,14 @@ export interface PddWaybillSearchPddWaybillSearchResponseWaybillApplySubscriptio
    *
    **/
   shipp_address_cols: PddWaybillSearchPddWaybillSearchResponseWaybillApplySubscriptionColsBranchAccountColsShippAddressColsResponseInterface[];
+
+  /**
+   * @description: 增值服务账号
+   * @type: PddWaybillSearchPddWaybillSearchResponseWaybillApplySubscriptionColsBranchAccountColsVasAccountColsResponseInterface[]
+   * @default:
+   *
+   **/
+  vas_account_cols: PddWaybillSearchPddWaybillSearchResponseWaybillApplySubscriptionColsBranchAccountColsVasAccountColsResponseInterface[];
 }
 
 /**
@@ -264,4 +272,46 @@ export interface PddWaybillSearchPddWaybillSearchResponseWaybillApplySubscriptio
    * @default:
    **/
   country: string;
+}
+
+/**
+ * @description 增值服务账号
+ * @default
+ * @example
+ **/
+export interface PddWaybillSearchPddWaybillSearchResponseWaybillApplySubscriptionColsBranchAccountColsVasAccountColsResponseInterface {
+  /**
+   * @description: 账户类型描述
+   * @type: string
+   * @default:
+   **/
+  account_type_desc: string;
+
+  /**
+   * @description: 电子面单余额数量
+   * @type: string | number
+   * @default:
+   **/
+  quantity: string | number;
+
+  /**
+   * @description: 已用面单数量
+   * @type: string | number
+   * @default:
+   **/
+  allocated_quantity: string | number;
+
+  /**
+   * @description: 取消的面单总数
+   * @type: string | number
+   * @default:
+   **/
+  cancel_quantity: string | number;
+
+  /**
+   * @description: 已回收用面单数量
+   * @type: string | number
+   * @default:
+   **/
+  recycled_quantity: string | number;
 }

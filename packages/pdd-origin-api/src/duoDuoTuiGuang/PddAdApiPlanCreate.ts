@@ -279,13 +279,6 @@ export interface PddAdApiPlanCreateAdUnitCreateComplexMessageListAdKeywordSetMes
    * @default:
    **/
   keywordSetBid?: string | number;
-
-  /**
-   * @description: 优化目标。1表示优化ROI，2表示优化订单量。
-   * @type: number
-   * @default:
-   **/
-  performanceGoal?: number;
 }
 
 /**
@@ -338,14 +331,14 @@ export interface PddAdApiPlanCreateAdUnitCreateComplexMessageListAdUnitCreateMes
  **/
 export interface PddAdApiPlanCreateAdUnitCreateComplexMessageListAdUnitCreateMessageOptimizationMessageRequestInterface {
   /**
-   * @description: 数据积累期出价。当使用OCPC时对该字段赋值。
+   * @description: 数据积累期出价。当使用OCPX时对该字段赋值。
    * @type: string | number
    * @default:
    **/
   accumulationBid?: string | number;
 
   /**
-   * @description: 智能投放期出价。当使用OCPC时对该字段赋值。
+   * @description: 智能投放期出价。当使用OCPX时对该字段赋值。
    * @type: string | number
    * @default:
    **/
@@ -364,6 +357,35 @@ export interface PddAdApiPlanCreateAdUnitCreateComplexMessageListAdUnitCreateMes
    * @default:
    **/
   optimizationMethod?: number;
+
+  /**
+   * @description: 可选优化出价列表。当使用OCPX时对该字段赋值。
+   * @type: PddAdApiPlanCreateAdUnitCreateComplexMessageListAdUnitCreateMessageOptimizationMessageOptionalOptimizationBidMessageListRequestInterface[]
+   * @default:
+   *
+   **/
+  optionalOptimizationBidMessageList?: PddAdApiPlanCreateAdUnitCreateComplexMessageListAdUnitCreateMessageOptimizationMessageOptionalOptimizationBidMessageListRequestInterface[];
+}
+
+/**
+ * @description 可选优化出价列表。当使用OCPX时对该字段赋值。
+ * @default
+ * @example
+ **/
+export interface PddAdApiPlanCreateAdUnitCreateComplexMessageListAdUnitCreateMessageOptimizationMessageOptionalOptimizationBidMessageListRequestInterface {
+  /**
+   * @description: 可选优化出价价格
+   * @type: string | number
+   * @default:
+   **/
+  optimizationBid: string | number;
+
+  /**
+   * @description: 可选优化出价目标。3表示优化店铺关注，4表示优化商品收藏，5表示优化询单
+   * @type: number
+   * @default:
+   **/
+  optimizationGoal: number;
 }
 
 /**
@@ -395,7 +417,7 @@ export interface PddAdApiPlanCreateAdUnitCreateComplexMessageListAudienceBidCrea
   bidValue: string | number;
 
   /**
-   * @description: 人群定向二级Id。当人群定向为展示场景下的兴趣点或人群包时，该字段必须赋值且值不得为0。兴趣点可取值参考接口：pdd.ad.api.unit.bid.query.interest.profile。人群包可用值参考接口：pdd.ad.api.unit.bid.query.audience.profile
+   * @description: 人群定向二级Id。默认为0。
    * @type: string | number
    * @default:
    **/

@@ -8,11 +8,25 @@ export const PDD_DDK_OAUTH_RESOURCE_URL_GEN_RESPONSE_KEY = 'resource_url_respons
  **/
 export interface PddDdkOauthResourceUrlGenRequestInterface {
   /**
-   * @description: 自定义参数，为链接打上自定义标签；自定义参数最长限制64个字节；格式为：  {"uid":"11111","sid":"22222"} ，其中 uid 用户唯一标识，可自行加密后传入，每个用户仅且对应一个标识，必填； sid 上下文信息标识，例如sessionId等，非必填。该json字符串中也可以加入其他自定义的key
+   * @description: 自定义参数，为链接打上自定义标签；自定义参数最长限制64个字节；格式为： {"uid":"11111","sid":"22222"} ，其中 uid 用户唯一标识，可自行加密后传入，每个用户仅且对应一个标识，必填； sid 上下文信息标识，例如sessionId等，非必填。该json字符串中也可以加入其他自定义的key
    * @type: string
    * @default:
    **/
   custom_parameters?: string;
+
+  /**
+   * @description: 是否生成qq小程序
+   * @type: boolean
+   * @default: false
+   **/
+  generate_qq_app?: boolean;
+
+  /**
+   * @description: 是否返回 schema URL
+   * @type: boolean
+   * @default: false
+   **/
+  generate_schema_url?: boolean;
 
   /**
    * @description: 是否生成小程序
@@ -41,20 +55,6 @@ export interface PddDdkOauthResourceUrlGenRequestInterface {
    * @default:
    **/
   url?: string;
-
-  /**
-   * @description: 是否返回 schema URL
-   * @type: boolean
-   * @default: false
-   **/
-  generate_schema_url?: boolean;
-
-  /**
-   * @description: 是否生成qq小程序
-   * @type: boolean
-   * @default: false
-   **/
-  generate_qq_app?: boolean;
 }
 
 /**
@@ -87,19 +87,19 @@ export interface PddDdkOauthResourceUrlGenResourceUrlResponseResponseInterface {
   multi_url_list: PddDdkOauthResourceUrlGenResourceUrlResponseMultiUrlListResponseInterface;
 
   /**
-   * @description: sign
-   * @type: string
-   * @default:
-   **/
-  sign: string;
-
-  /**
    * @description: qq小程序信息
    * @type: PddDdkOauthResourceUrlGenResourceUrlResponseQqAppInfoResponseInterface
    * @default:
    *
    **/
   qq_app_info: PddDdkOauthResourceUrlGenResourceUrlResponseQqAppInfoResponseInterface;
+
+  /**
+   * @description: sign
+   * @type: string
+   * @default:
+   **/
+  sign: string;
 
   /**
    * @description: 单人团链接
@@ -125,28 +125,35 @@ export interface PddDdkOauthResourceUrlGenResourceUrlResponseResponseInterface {
  **/
 export interface PddDdkOauthResourceUrlGenResourceUrlResponseMultiUrlListResponseInterface {
   /**
-   * @description: 频道推广唤醒拼多多APP短链接
+   * @description: 推广移动短链接，对应出参mobile_url的短链接，与mobile_url功能一致。
    * @type: string
    * @default:
    **/
   mobile_short_url: string;
 
   /**
-   * @description: 频道推广唤醒拼多多APP长链接
+   * @description: 推广移动链接，用户安装拼多多APP的情况下会唤起APP，否则唤起H5页面
    * @type: string
    * @default:
    **/
   mobile_url: string;
 
   /**
-   * @description: 频道推广短链接
+   * @description: schema链接，用户安装拼多多APP的情况下会唤起APP（需客户端支持schema跳转协议）
+   * @type: string
+   * @default:
+   **/
+  schema_url: string;
+
+  /**
+   * @description: 频道推广短链接，对应出参url的短链接，与url功能一致。
    * @type: string
    * @default:
    **/
   short_url: string;
 
   /**
-   * @description: 频道推广长链接
+   * @description: 频道推广长链接，唤起H5页面
    * @type: string
    * @default:
    **/
@@ -160,25 +167,18 @@ export interface PddDdkOauthResourceUrlGenResourceUrlResponseMultiUrlListRespons
   we_app_page_path: string;
 
   /**
-   * @description: 频道推广唤醒微信短链接
+   * @description: 频道推广唤醒微信短链接，已弃用
    * @type: string
    * @default:
    **/
   we_app_web_view_short_url: string;
 
   /**
-   * @description: 频道推广唤醒微信长链接
+   * @description: 频道推广唤醒微信长链接，已弃用
    * @type: string
    * @default:
    **/
   we_app_web_view_url: string;
-
-  /**
-   * @description: schema的链接
-   * @type: string
-   * @default:
-   **/
-  schema_url: string;
 }
 
 /**
@@ -251,28 +251,35 @@ export interface PddDdkOauthResourceUrlGenResourceUrlResponseQqAppInfoResponseIn
  **/
 export interface PddDdkOauthResourceUrlGenResourceUrlResponseSingleUrlListResponseInterface {
   /**
-   * @description: 频道推广唤醒拼多多APP短链接
+   * @description: 推广移动短链接，对应出参mobile_url的短链接，与mobile_url功能一致。
    * @type: string
    * @default:
    **/
   mobile_short_url: string;
 
   /**
-   * @description: 频道推广唤醒拼多多APP长链接
+   * @description: 推广移动链接，用户安装拼多多APP的情况下会唤起APP，否则唤起H5页面
    * @type: string
    * @default:
    **/
   mobile_url: string;
 
   /**
-   * @description: 频道推广短链接
+   * @description: schema链接，用户安装拼多多APP的情况下会唤起APP（需客户端支持schema跳转协议）
+   * @type: string
+   * @default:
+   **/
+  schema_url: string;
+
+  /**
+   * @description: 频道推广短链接，对应出参url的短链接，与url功能一致。
    * @type: string
    * @default:
    **/
   short_url: string;
 
   /**
-   * @description: 频道推广长链接
+   * @description: 频道推广长链接，唤起H5页面
    * @type: string
    * @default:
    **/
@@ -286,25 +293,18 @@ export interface PddDdkOauthResourceUrlGenResourceUrlResponseSingleUrlListRespon
   we_app_page_path: string;
 
   /**
-   * @description: 频道推广唤醒微信短链接
+   * @description: 频道推广唤醒微信短链接，已弃用
    * @type: string
    * @default:
    **/
   we_app_web_view_short_url: string;
 
   /**
-   * @description: 频道推广唤醒微信长链接
+   * @description: 频道推广唤醒微信长链接，已弃用
    * @type: string
    * @default:
    **/
   we_app_web_view_url: string;
-
-  /**
-   * @description: schema的链接
-   * @type: string
-   * @default:
-   **/
-  schema_url: string;
 }
 
 /**

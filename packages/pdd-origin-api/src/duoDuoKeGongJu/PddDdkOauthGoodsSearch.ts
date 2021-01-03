@@ -1,19 +1,12 @@
-export const PDD_DDK_GOODS_SEARCH = 'pdd.ddk.goods.search';
-export const PDD_DDK_GOODS_SEARCH_RESPONSE_KEY = 'goods_search_response';
-export const PDD_DDK_GOODS_SEARCH_LIMITERS = [
-  {
-    limiterLevel: 3,
-    timeRange: 10,
-    times: 66900,
-  },
-];
+export const PDD_DDK_OAUTH_GOODS_SEARCH = 'pdd.ddk.oauth.goods.search';
+export const PDD_DDK_OAUTH_GOODS_SEARCH_RESPONSE_KEY = 'goods_search_response';
 
 /**
  * 接口名称：多多进宝商品查询
- * 接口标识：pdd.ddk.goods.search
+ * 接口标识：pdd.ddk.oauth.goods.search
  * 接口使用场景：多多进宝商品查询
  **/
-export interface PddDdkGoodsSearchRequestInterface {
+export interface PddDdkOauthGoodsSearchRequestInterface {
   /**
    * @description: 活动商品标记数组，例：[4,7]，4-秒杀，7-百亿补贴，31-品牌黑标，10564-精选爆品-官方直推爆款，10584-精选爆品-团长推荐，24-品牌高佣，20-行业精选，21-金牌商家，10044-潜力爆品，10475-爆品上新，其他的值请忽略
    * @type: number[]
@@ -48,13 +41,6 @@ export interface PddDdkGoodsSearchRequestInterface {
    * @default:
    **/
   custom_parameters?: string;
-
-  /**
-   * @description: 已经废弃，不再支持该功能。建议使用goods_sign_list进行商品查询
-   * @type: Array<string | number>
-   * @default:
-   **/
-  goods_id_list?: Array<string | number>;
 
   /**
    * @description: goodsSign列表，支持通过goodsSign查询商品
@@ -128,11 +114,11 @@ export interface PddDdkGoodsSearchRequestInterface {
 
   /**
    * @description: 筛选范围列表 样例：[{"range_id":0,"range_from":1,"range_to":1500},{"range_id":1,"range_from":1,"range_to":1500}]
-   * @type: PddDdkGoodsSearchRangeListRequestInterface[]
+   * @type: PddDdkOauthGoodsSearchRangeListRequestInterface[]
    * @default:
    *
    **/
-  range_list?: PddDdkGoodsSearchRangeListRequestInterface[];
+  range_list?: PddDdkOauthGoodsSearchRangeListRequestInterface[];
 
   /**
    * @description: 排序方式:0-综合排序;1-按佣金比率升序;2-按佣金比例降序;3-按价格升序;4-按价格降序;5-按销量升序;6-按销量降序;7-优惠券金额排序升序;8-优惠券金额排序降序;9-券后价升序排序;10-券后价降序排序;11-按照加入多多进宝时间升序;12-按照加入多多进宝时间降序;13-按佣金金额升序排序;14-按佣金金额降序排序;15-店铺描述评分升序;16-店铺描述评分降序;17-店铺物流评分升序;18-店铺物流评分降序;19-店铺服务评分升序;20-店铺服务评分降序;27-描述评分击败同类店铺百分比升序，28-描述评分击败同类店铺百分比降序，29-物流评分击败同类店铺百分比升序，30-物流评分击败同类店铺百分比降序，31-服务评分击败同类店铺百分比升序，32-服务评分击败同类店铺百分比降序
@@ -154,7 +140,7 @@ export interface PddDdkGoodsSearchRequestInterface {
  * @default
  * @example
  **/
-export interface PddDdkGoodsSearchRangeListRequestInterface {
+export interface PddDdkOauthGoodsSearchRangeListRequestInterface {
   /**
    * @description: 区间的开始值
    * @type: string | number
@@ -179,17 +165,17 @@ export interface PddDdkGoodsSearchRangeListRequestInterface {
 
 /**
  * 接口名称：多多进宝商品查询
- * 接口标识：pdd.ddk.goods.search
+ * 接口标识：pdd.ddk.oauth.goods.search
  * 接口使用场景：多多进宝商品查询
  **/
-export interface PddDdkGoodsSearchResponseInterface {
+export interface PddDdkOauthGoodsSearchResponseInterface {
   /**
    * @description: response
-   * @type: PddDdkGoodsSearchGoodsSearchResponseResponseInterface
+   * @type: PddDdkOauthGoodsSearchGoodsSearchResponseResponseInterface
    * @default:
    *
    **/
-  goods_search_response: PddDdkGoodsSearchGoodsSearchResponseResponseInterface;
+  goods_search_response: PddDdkOauthGoodsSearchGoodsSearchResponseResponseInterface;
 }
 
 /**
@@ -197,14 +183,14 @@ export interface PddDdkGoodsSearchResponseInterface {
  * @default
  * @example
  **/
-export interface PddDdkGoodsSearchGoodsSearchResponseResponseInterface {
+export interface PddDdkOauthGoodsSearchGoodsSearchResponseResponseInterface {
   /**
    * @description: 商品列表
-   * @type: PddDdkGoodsSearchGoodsSearchResponseGoodsListResponseInterface[]
+   * @type: PddDdkOauthGoodsSearchGoodsSearchResponseGoodsListResponseInterface[]
    * @default:
    *
    **/
-  goods_list: PddDdkGoodsSearchGoodsSearchResponseGoodsListResponseInterface[];
+  goods_list: PddDdkOauthGoodsSearchGoodsSearchResponseGoodsListResponseInterface[];
 
   /**
    * @description: 翻页时必填前页返回的list_id值
@@ -233,7 +219,7 @@ export interface PddDdkGoodsSearchGoodsSearchResponseResponseInterface {
  * @default
  * @example
  **/
-export interface PddDdkGoodsSearchGoodsSearchResponseGoodsListResponseInterface {
+export interface PddDdkOauthGoodsSearchGoodsSearchResponseGoodsListResponseInterface {
   /**
    * @description: 商品活动标记数组，例：[4,7]，4-秒杀 7-百亿补贴等
    * @type: number[]
