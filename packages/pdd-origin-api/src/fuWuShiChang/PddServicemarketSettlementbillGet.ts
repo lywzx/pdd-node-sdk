@@ -15,7 +15,7 @@ export interface PddServicemarketSettlementbillGetRequestInterface {
   page: number;
 
   /**
-   * @description: 分页大小，最大不能超过1000
+   * @description: 分页大小，最大不能超过100
    * @type: number
    * @default:
    **/

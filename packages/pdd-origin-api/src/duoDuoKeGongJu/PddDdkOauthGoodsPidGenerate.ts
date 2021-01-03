@@ -20,6 +20,13 @@ export interface PddDdkOauthGoodsPidGenerateRequestInterface {
    * @default:
    **/
   p_id_name_list?: string[];
+
+  /**
+   * @description: 媒体id
+   * @type: string | number
+   * @default:
+   **/
+  media_id?: string | number;
 }
 
 /**
@@ -85,4 +92,11 @@ export interface PddDdkOauthGoodsPidGeneratePIdGenerateResponsePIdListResponseIn
    * @default:
    **/
   p_id: string;
+
+  /**
+   * @description: 媒体id
+   * @type: string | number
+   * @default:
+   **/
+  media_id: string | number;
 }

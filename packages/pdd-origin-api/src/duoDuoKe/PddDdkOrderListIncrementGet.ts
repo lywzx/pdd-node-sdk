@@ -15,6 +15,13 @@ export const PDD_DDK_ORDER_LIST_INCREMENT_GET_LIMITERS = [
  **/
 export interface PddDdkOrderListIncrementGetRequestInterface {
   /**
+   * @description: 是否为礼金订单，查询礼金订单时，订单类型不填（默认推广订单）。
+   * @type: boolean
+   * @default:
+   **/
+  cash_gift_order?: boolean;
+
+  /**
    * @description: 查询结束时间，和开始时间相差不能超过24小时。note：此时间为时间戳，指格林威治时间 1970 年01 月 01 日 00 时 00 分 00 秒(北京时间 1970 年 01 月 01 日 08 时 00 分 00 秒)起至现在的总秒数
    * @type: string | number
    * @default:
@@ -36,6 +43,13 @@ export interface PddDdkOrderListIncrementGetRequestInterface {
   page_size?: number;
 
   /**
+   * @description: 订单类型：1-推广订单；2-直播间订单
+   * @type: number
+   * @default: 1
+   **/
+  query_order_type?: number;
+
+  /**
    * @description: 是否返回总数，默认为true，如果指定false, 则返回的结果中不包含总记录数，通过此种方式获取增量数据，效率在原有的基础上有80%的提升。
    * @type: boolean
    * @default:
@@ -48,13 +62,6 @@ export interface PddDdkOrderListIncrementGetRequestInterface {
    * @default:
    **/
   start_update_time: string | number;
-
-  /**
-   * @description: 订单类型：1-推广订单；2-直播间订单
-   * @type: number
-   * @default: 1
-   **/
-  query_order_type?: number;
 }
 
 /**
@@ -115,6 +122,13 @@ export interface PddDdkOrderListIncrementGetOrderListGetResponseOrderListRespons
   batch_no: string;
 
   /**
+   * @description: 商品一~四级类目ID列表
+   * @type: Array<string | number>
+   * @default:
+   **/
+  cat_ids: Array<string | number>;
+
+  /**
    * @description: 是否是 cpa 新用户，1表示是，0表示否
    * @type: number
    * @default:
@@ -164,6 +178,13 @@ export interface PddDdkOrderListIncrementGetOrderListGetResponseOrderListRespons
   goods_quantity: string | number;
 
   /**
+   * @description: 商品goodsSign
+   * @type: string
+   * @default:
+   **/
+  goods_sign: string;
+
+  /**
    * @description: 商品缩略图
    * @type: string
    * @default:
@@ -176,6 +197,13 @@ export interface PddDdkOrderListIncrementGetOrderListGetResponseOrderListRespons
    * @default:
    **/
   group_id: string | number;
+
+  /**
+   * @description: 是否直推 ，1表示是，0表示否
+   * @type: number
+   * @default:
+   **/
+  is_direct: number;
 
   /**
    * @description: 实际支付金额，单位为分
@@ -262,6 +290,13 @@ export interface PddDdkOrderListIncrementGetOrderListGetResponseOrderListRespons
   order_verify_time: string | number;
 
   /**
+   * @description: 比价状态：0：正常，1：比价
+   * @type: number
+   * @default:
+   **/
+  price_compare_status: number;
+
+  /**
    * @description: 佣金金额，单位为分
    * @type: string | number
    * @default:
@@ -283,34 +318,6 @@ export interface PddDdkOrderListIncrementGetOrderListGetResponseOrderListRespons
   p_id: string;
 
   /**
-   * @description: 订单推广类型
-   * @type: number
-   * @default:
-   **/
-  type: number;
-
-  /**
-   * @description: 招商多多客id
-   * @type: string | number
-   * @default:
-   **/
-  zs_duo_id: string | number;
-
-  /**
-   * @description: 商品一~四级类目ID列表
-   * @type: Array<string | number>
-   * @default:
-   **/
-  cat_ids: Array<string | number>;
-
-  /**
-   * @description: 是否直推 ，1表示是，0表示否
-   * @type: number
-   * @default:
-   **/
-  is_direct: number;
-
-  /**
    * @description: 直播间订单推广duoId
    * @type: string | number
    * @default:
@@ -323,6 +330,13 @@ export interface PddDdkOrderListIncrementGetOrderListGetResponseOrderListRespons
    * @default:
    **/
   sep_market_fee: number;
+
+  /**
+   * @description: 直播间推广自定义参数
+   * @type: string
+   * @default:
+   **/
+  sep_parameters: string;
 
   /**
    * @description: 直播间订单推广位
@@ -339,9 +353,30 @@ export interface PddDdkOrderListIncrementGetOrderListGetResponseOrderListRespons
   sep_rate: number;
 
   /**
-   * @description: 直播间推广自定义参数
-   * @type: string
+   * @description: 招商分成服务费金额，单位为分
+   * @type: number
    * @default:
    **/
-  sep_parameters: string;
+  share_amount: number;
+
+  /**
+   * @description: 招商分成服务费比例，千分比
+   * @type: number
+   * @default:
+   **/
+  share_rate: number;
+
+  /**
+   * @description: 订单推广类型
+   * @type: number
+   * @default:
+   **/
+  type: number;
+
+  /**
+   * @description: 招商多多客id
+   * @type: string | number
+   * @default:
+   **/
+  zs_duo_id: string | number;
 }

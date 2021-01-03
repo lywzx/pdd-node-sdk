@@ -9,7 +9,7 @@ export const PDD_OPEN_DECRYPT_MASK_BATCH_LIMITERS = [
   {
     limiterLevel: 3,
     timeRange: 10,
-    times: 51000,
+    times: 60000,
   },
 ];
 

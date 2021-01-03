@@ -29,9 +29,11 @@
     "url": "https://github.com/lywzx/pdd-node-sdk/issues"
   },
   "devDependencies": {
-    "@pin-duo-duo/core": "^0.0.2-alpha.3",
-    "@types/redis": "^2.8.25",
-    "redis": "^3.0.2"
+    "@pin-duo-duo/core": "^0.0.2-alpha.3"
+  },
+  "peerDependencies": {
+    "redis": "^3.0.2",
+    "@types/redis": "^2.8.25"
   },
   "gitHead": "34dfab33c7abd58bd551ea88358ab0e586902e6f"
 }

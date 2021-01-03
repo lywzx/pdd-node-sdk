@@ -8,6 +8,13 @@ export const PDD_DDK_OAUTH_TOP_GOODS_LIST_QUERY_RESPONSE_KEY = 'top_goods_list_g
  **/
 export interface PddDdkOauthTopGoodsListQueryRequestInterface {
   /**
+   * @description: 自定义参数，为链接打上自定义标签；自定义参数最长限制64个字节；格式为： {"uid":"11111","sid":"22222"} ，其中 uid 为用户唯一标识，可自行加密后传入，每个用户仅且对应一个标识，必填； sid 为上下文信息标识，例如sessionId等，非必填。该json字符串中也可以加入其他自定义的key。
+   * @type: string
+   * @default:
+   **/
+  custom_parameters?: string;
+
+  /**
    * @description: 请求数量；默认值 ： 400
    * @type: number
    * @default:
@@ -41,13 +48,6 @@ export interface PddDdkOauthTopGoodsListQueryRequestInterface {
    * @default:
    **/
   sort_type?: number;
-
-  /**
-   * @description: 自定义参数，为链接打上自定义标签；自定义参数最长限制64个字节；格式为： {"uid":"11111","sid":"22222","new":1} ，其中 uid 为用户唯一标识，可自行加密后传入，每个用户仅且对应一个标识，必填； sid 为上下文信息标识，例如sessionId等，非必填。new字段标识是否是新用户，如果为新用户，uid请传入用户唯一标识，例如小程序的openid、app的设备号等（可自行加密）。该json字符串中也可以加入其他自定义的key。
-   * @type: string
-   * @default:
-   **/
-  custom_parameters?: string;
 }
 
 /**
@@ -199,6 +199,13 @@ export interface PddDdkOauthTopGoodsListQueryTopGoodsListGetResponseListResponse
   goods_name: string;
 
   /**
+   * @description: 商品goodsSign
+   * @type: string
+   * @default:
+   **/
+  goods_sign: string;
+
+  /**
    * @description: 商品缩略图
    * @type: string
    * @default:
@@ -262,6 +269,13 @@ export interface PddDdkOauthTopGoodsListQueryTopGoodsListGetResponseListResponse
   opt_name: string;
 
   /**
+   * @description: 比价行为预判定佣金，需要用户备案
+   * @type: string | number
+   * @default:
+   **/
+  predict_promotion_rate: string | number;
+
+  /**
    * @description: 佣金比例，千分比
    * @type: string | number
    * @default:
@@ -283,16 +297,16 @@ export interface PddDdkOauthTopGoodsListQueryTopGoodsListGetResponseListResponse
   serv_txt: string;
 
   /**
+   * @description: 招商分成服务费比例，千分比
+   * @type: number
+   * @default:
+   **/
+  share_rate: number;
+
+  /**
    * @description: 已售卖件数
    * @type: string | number
    * @default:
    **/
   sold_quantity: string | number;
-
-  /**
-   * @description: 比价行为预判定佣金，需要用户备案
-   * @type: string | number
-   * @default:
-   **/
-  predict_promotion_rate: string | number;
 }

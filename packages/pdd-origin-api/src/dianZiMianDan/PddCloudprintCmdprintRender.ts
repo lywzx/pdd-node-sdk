@@ -65,6 +65,13 @@ export interface PddCloudprintCmdprintRenderRequestRequestInterface {
    * @default:
    **/
   print_command_type: string;
+
+  /**
+   * @description: 返回值编码方式，枚举值：gzip(默认值)、gzip_byte(推荐值)
+   * @type: string
+   * @default:
+   **/
+  cmd_encoding?: string;
 }
 
 /**
@@ -209,7 +216,7 @@ export interface PddCloudprintCmdprintRenderCloudprintCmdprintRenderResponseResp
   cmd_content: string;
 
   /**
-   * @description: 指令集编码方式：origin-原串；gzip-采用gzip压缩并使用base64编码
+   * @description: 指令集编码方式枚举。origin: 原串；gzip: 打印指令string(utf-8编码)采用gzip压缩后再使用base64编码；gzip_type: 打印指令字节数组采用gzip压缩后再使用base64编码。
    * @type: string
    * @default:
    **/

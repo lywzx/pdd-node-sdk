@@ -1,5 +1,12 @@
 export const PDD_DDK_OAUTH_GOODS_PROM_URL_GENERATE = 'pdd.ddk.oauth.goods.prom.url.generate';
 export const PDD_DDK_OAUTH_GOODS_PROM_URL_GENERATE_RESPONSE_KEY = 'goods_promotion_url_generate_response';
+export const PDD_DDK_OAUTH_GOODS_PROM_URL_GENERATE_LIMITERS = [
+  {
+    limiterLevel: 3,
+    timeRange: 10,
+    times: 66900,
+  },
+];
 
 /**
  * 接口名称：生成多多进宝推广链接
@@ -8,11 +15,32 @@ export const PDD_DDK_OAUTH_GOODS_PROM_URL_GENERATE_RESPONSE_KEY = 'goods_promoti
  **/
 export interface PddDdkOauthGoodsPromUrlGenerateRequestInterface {
   /**
+   * @description: 多多礼金ID
+   * @type: string | number
+   * @default:
+   **/
+  crash_gift_id?: string | number;
+
+  /**
    * @description: 自定义参数，为链接打上自定义标签；自定义参数最长限制64个字节；格式为：  {"uid":"11111","sid":"22222"} ，其中 uid 用户唯一标识，可自行加密后传入，每个用户仅且对应一个标识，必填； sid 上下文信息标识，例如sessionId等，非必填。该json字符串中也可以加入其他自定义的key
    * @type: string
    * @default:
    **/
   custom_parameters?: string;
+
+  /**
+   * @description: 是否使用多多客专属推广计划
+   * @type: boolean
+   * @default:
+   **/
+  force_duo_id?: boolean;
+
+  /**
+   * @description: 是否生成带授权的单品链接。如果未授权，则会走授权流程
+   * @type: boolean
+   * @default:
+   **/
+  generate_authority_url?: boolean;
 
   /**
    * @description: 是否生成店铺收藏券推广链接
@@ -43,7 +71,7 @@ export interface PddDdkOauthGoodsPromUrlGenerateRequestInterface {
   generate_short_url?: boolean;
 
   /**
-   * @description: 是否生成唤起微信客户端链接，true-是，false-否，默认false
+   * @description: 已经废弃，不再支持该功能。是否生成唤起微信客户端链接，true-是，false-否，默认false。
    * @type: boolean
    * @default:
    **/
@@ -64,11 +92,25 @@ export interface PddDdkOauthGoodsPromUrlGenerateRequestInterface {
   generate_we_app?: boolean;
 
   /**
-   * @description: 商品ID，仅支持单个查询
+   * @description: 商品ID，建议使用goods_sign_list代替，后续会下线。
    * @type: Array<string | number>
    * @default:
    **/
-  goods_id_list: Array<string | number>;
+  goods_id_list?: Array<string | number>;
+
+  /**
+   * @description: 商品goodsSign，仅支持单个生链。goodsId和goodsSign必须传入其中一个，建议使用goods_sign_list传入goodsSign
+   * @type: string
+   * @default:
+   **/
+  goods_sign?: string;
+
+  /**
+   * @description: 商品goodsSign列表，支持批量生链
+   * @type: string[]
+   * @default:
+   **/
+  goods_sign_list?: string[];
 
   /**
    * @description: true--生成多人团推广链接 false--生成单人团推广链接（默认false）1、单人团推广链接：用户访问单人团推广链接，可直接购买商品无需拼团。2、多人团推广链接：用户访问双人团推广链接开团，若用户分享给他人参团，则开团者和参团者的佣金均结算给推手
@@ -97,20 +139,6 @@ export interface PddDdkOauthGoodsPromUrlGenerateRequestInterface {
    * @default:
    **/
   zs_duo_id?: string | number;
-
-  /**
-   * @description: 是否使用多多客专属推广计划
-   * @type: boolean
-   * @default:
-   **/
-  force_duo_id?: boolean;
-
-  /**
-   * @description: 是否生成带授权的单品链接。如果未授权，则会走授权流程
-   * @type: boolean
-   * @default:
-   **/
-  generate_authority_url?: boolean;
 }
 
 /**
@@ -150,14 +178,14 @@ export interface PddDdkOauthGoodsPromUrlGenerateGoodsPromotionUrlGenerateRespons
  **/
 export interface PddDdkOauthGoodsPromUrlGenerateGoodsPromotionUrlGenerateResponseGoodsPromotionUrlListResponseInterface {
   /**
-   * @description: 唤醒拼多多app的推广短链接
+   * @description: 对应出参mobile_url的短链接，与mobile_url功能一致。
    * @type: string
    * @default:
    **/
   mobile_short_url: string;
 
   /**
-   * @description: 唤醒拼多多app的推广长链接
+   * @description: 使用此推广链接，用户安装拼多多APP的情况下会唤起APP，否则唤起H5页面
    * @type: string
    * @default:
    **/
@@ -172,21 +200,21 @@ export interface PddDdkOauthGoodsPromUrlGenerateGoodsPromotionUrlGenerateRespons
   qq_app_info: PddDdkOauthGoodsPromUrlGenerateGoodsPromotionUrlGenerateResponseGoodsPromotionUrlListQqAppInfoResponseInterface;
 
   /**
-   * @description: schema的链接
+   * @description: 使用此推广链接，用户安装拼多多APP的情况下会唤起APP（需客户端支持schema跳转协议）
    * @type: string
    * @default:
    **/
   schema_url: string;
 
   /**
-   * @description: 推广短链接
+   * @description: 对应出参url的短链接，与url功能一致
    * @type: string
    * @default:
    **/
   short_url: string;
 
   /**
-   * @description: 推广长链接
+   * @description: 普通推广长链接，唤起H5页面
    * @type: string
    * @default:
    **/
@@ -215,14 +243,14 @@ export interface PddDdkOauthGoodsPromUrlGenerateGoodsPromotionUrlGenerateRespons
   we_app_info: PddDdkOauthGoodsPromUrlGenerateGoodsPromotionUrlGenerateResponseGoodsPromotionUrlListWeAppInfoResponseInterface;
 
   /**
-   * @description: 唤起微信app推广短链接
+   * @description: 唤起微信app推广短链接，已弃用
    * @type: string
    * @default:
    **/
   we_app_web_view_short_url: string;
 
   /**
-   * @description: 唤起微信app推广链接
+   * @description: 唤起微信app推广链接，已弃用
    * @type: string
    * @default:
    **/

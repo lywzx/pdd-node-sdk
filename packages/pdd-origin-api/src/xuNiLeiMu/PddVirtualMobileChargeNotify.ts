@@ -3,8 +3,8 @@ export const PDD_VIRTUAL_MOBILE_CHARGE_NOTIFY_RESPONSE_KEY = 'mobile_charge_noti
 export const PDD_VIRTUAL_MOBILE_CHARGE_NOTIFY_LIMITERS = [
   {
     limiterLevel: 1,
-    timeRange: 60,
-    times: 30000,
+    timeRange: 1,
+    times: 4950,
   },
 ];
 

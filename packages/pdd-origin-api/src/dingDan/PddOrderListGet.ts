@@ -8,15 +8,16 @@ export const PDD_ORDER_LIST_GET_LIMITERS = [
   },
   {
     limiterLevel: 3,
-    timeRange: 1,
-    times: 700,
+    timeRange: 10,
+    times: 10500,
   },
 ];
 
 /**
  * 接口名称：订单列表查询接口（根据成交时间）
  * 接口标识：pdd.order.list.get
- * 接口使用场景：根据成团时间查询订单列表，注：虚拟订单充值手机号信息无法通过此接口获取，请联系虚拟类目运营人员。
+ * 接口使用场景：根据成团时间查询订单列表（只能获取到成交时间三个月以内的交易信息）
+ * 注：虚拟订单充值手机号信息无法通过此接口获取，请联系虚拟类目运营人员。
  **/
 export interface PddOrderListGetRequestInterface {
   /**
@@ -79,7 +80,8 @@ export interface PddOrderListGetRequestInterface {
 /**
  * 接口名称：订单列表查询接口（根据成交时间）
  * 接口标识：pdd.order.list.get
- * 接口使用场景：根据成团时间查询订单列表，注：虚拟订单充值手机号信息无法通过此接口获取，请联系虚拟类目运营人员。
+ * 接口使用场景：根据成团时间查询订单列表（只能获取到成交时间三个月以内的交易信息）
+ * 注：虚拟订单充值手机号信息无法通过此接口获取，请联系虚拟类目运营人员。
  **/
 export interface PddOrderListGetResponseInterface {
   /**
@@ -347,7 +349,7 @@ export interface PddOrderListGetOrderListGetResponseOrderListResponseInterface {
   pay_amount: string;
 
   /**
-   * @description: 收件人电话，仅订单状态=待发货状态下返回明文，其他状态下返回脱敏手机号，例如“1387677****”
+   * @description: 收件人电话。订单状态为待发货状态，且订单未被风控打标的情况下返回密文数据；其余情况返回空字符串。
    * @type: string
    * @default:
    **/
@@ -396,7 +398,7 @@ export interface PddOrderListGetOrderListGetResponseOrderListResponseInterface {
   created_time: string;
 
   /**
-   * @description: 收件人姓名
+   * @description: 收件人姓名。订单状态为待发货状态，且订单未被风控打标的情况下返回密文数据；其余情况返回空字符串。
    * @type: string
    * @default:
    **/
@@ -558,7 +560,7 @@ export interface PddOrderListGetOrderListGetResponseOrderListResponseInterface {
   order_depot_info: PddOrderListGetOrderListGetResponseOrderListOrderDepotInfoResponseInterface;
 
   /**
-   * @description: 收件人地址,不拼接省市区
+   * @description: 收件人地址，不拼接省市区。订单状态为待发货状态，且订单未被风控打标的情况下返回密文数据；其余情况返回空字符串。
    * @type: string
    * @default:
    **/
@@ -654,6 +656,14 @@ export interface PddOrderListGetOrderListGetResponseOrderListResponseInterface {
    * @default:
    **/
   mkt_biz_type: number;
+
+  /**
+   * @description: 订单标签列表，no_trace_delivery=无痕发货，only_support_replace=只换不修，duoduo_wholesale=多多批发，return_freight_payer=退货包运费，free_sf=顺丰包邮，support_nationwide_warranty=全国联保，self_contained=门店自提，delivery_one_day=当日发货
+   * @type: PddOrderListGetOrderListGetResponseOrderListOrderTagListResponseInterface[]
+   * @default:
+   *
+   **/
+  order_tag_list: PddOrderListGetOrderListGetResponseOrderListOrderTagListResponseInterface[];
 }
 
 /**
@@ -886,4 +896,25 @@ export interface PddOrderListGetOrderListGetResponseOrderListOrderDepotInfoWareS
    * @default:
    **/
   ware_id: string | number;
+}
+
+/**
+ * @description 订单标签列表，no_trace_delivery=无痕发货，only_support_replace=只换不修，duoduo_wholesale=多多批发，return_freight_payer=退货包运费，free_sf=顺丰包邮，support_nationwide_warranty=全国联保，self_contained=门店自提，delivery_one_day=当日发货
+ * @default
+ * @example
+ **/
+export interface PddOrderListGetOrderListGetResponseOrderListOrderTagListResponseInterface {
+  /**
+   * @description: 标签名称
+   * @type: string
+   * @default:
+   **/
+  name: string;
+
+  /**
+   * @description: 是否有标签：0=无标签，1=有标签
+   * @type: number
+   * @default:
+   **/
+  value: number;
 }

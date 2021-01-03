@@ -1,5 +1,12 @@
 export const PDD_DDK_OAUTH_MEMBER_AUTHORITY_QUERY = 'pdd.ddk.oauth.member.authority.query';
 export const PDD_DDK_OAUTH_MEMBER_AUTHORITY_QUERY_RESPONSE_KEY = 'authority_query_response';
+export const PDD_DDK_OAUTH_MEMBER_AUTHORITY_QUERY_LIMITERS = [
+  {
+    limiterLevel: 3,
+    timeRange: 50,
+    times: 33450,
+  },
+];
 
 /**
  * 接口名称：查询是否绑定备案

@@ -92,4 +92,11 @@ export interface PddDdkOauthGoodsPidQueryPIdQueryResponsePIdListResponseInterfac
    * @default:
    **/
   p_id: string;
+
+  /**
+   * @description: 媒体id
+   * @type: string | number
+   * @default:
+   **/
+  media_id: string | number;
 }

@@ -20,13 +20,6 @@ export const PDD_INVOICE_APPLICATION_QUERY_LIMITERS = [
  **/
 export interface PddInvoiceApplicationQueryRequestInterface {
   /**
-   * @description: 申请流水号
-   * @type: string | number
-   * @default:
-   **/
-  application_id?: string | number;
-
-  /**
    * @description: 订单号；订单号和申请时间必填其一
    * @type: string
    * @default:
@@ -67,6 +60,13 @@ export interface PddInvoiceApplicationQueryRequestInterface {
    * @default:
    **/
   update_start_time?: string | number;
+
+  /**
+   * @description: 是否正品发票 0=非正品发票 1=是正品发票
+   * @type: number
+   * @default:
+   **/
+  quality_goods_invoice?: number;
 }
 
 /**
@@ -106,13 +106,6 @@ export interface PddInvoiceApplicationQueryInvoiceApplicationQueryResponseRespon
  **/
 export interface PddInvoiceApplicationQueryInvoiceApplicationQueryResponseInvoiceApplicationListResponseInterface {
   /**
-   * @description: 申请流水号
-   * @type: string | number
-   * @default:
-   **/
-  application_id: string | number;
-
-  /**
    * @description: 申请状态：0-已拒绝，1-申请中，2-已同意
    * @type: number
    * @default:
@@ -125,20 +118,6 @@ export interface PddInvoiceApplicationQueryInvoiceApplicationQueryResponseInvoic
    * @default:
    **/
   business_type: number;
-
-  /**
-   * @description: 创建时间
-   * @type: string | number
-   * @default:
-   **/
-  gmt_create: string | number;
-
-  /**
-   * @description: 修改时间
-   * @type: string | number
-   * @default:
-   **/
-  gmt_modified: string | number;
 
   /**
    * @description: 开票金额，暂为null，取买家实付
@@ -258,4 +237,18 @@ export interface PddInvoiceApplicationQueryInvoiceApplicationQueryResponseInvoic
    * @default:
    **/
   trigger_status: number;
+
+  /**
+   * @description: 申请时间秒级时间戳
+   * @type: number
+   * @default:
+   **/
+  apply_time: number;
+
+  /**
+   * @description: 是否正品发票 0=非正品发票 1=是正品发票
+   * @type: number
+   * @default:
+   **/
+  quality_goods_invoice: number;
 }

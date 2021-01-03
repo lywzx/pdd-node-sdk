@@ -4,7 +4,7 @@ export const PDD_DDK_GOODS_DETAIL_LIMITERS = [
   {
     limiterLevel: 3,
     timeRange: 10,
-    times: 33450,
+    times: 66900,
   },
 ];
 
@@ -22,11 +22,18 @@ export interface PddDdkGoodsDetailRequestInterface {
   custom_parameters?: string;
 
   /**
-   * @description: 商品ID，仅支持单个查询。例如：[123456]
+   * @description: 商品ID，仅支持单个查询，例如：[123456]。建议使用goods_sign进行查询
    * @type: Array<string | number>
    * @default:
    **/
-  goods_id_list: Array<string | number>;
+  goods_id_list?: Array<string | number>;
+
+  /**
+   * @description: 商品goodsSign，支持通过goods_sign查询商品。优先使用此字段进行查询
+   * @type: string
+   * @default:
+   **/
+  goods_sign?: string;
 
   /**
    * @description: 推广位id
@@ -94,14 +101,14 @@ export interface PddDdkGoodsDetailGoodsDetailResponseResponseInterface {
  **/
 export interface PddDdkGoodsDetailGoodsDetailResponseGoodsDetailsResponseInterface {
   /**
-   * @description: 商品类目ID，使用pdd.goods.cats.get接口获取
+   * @description: 已废弃,使用opt_id
    * @type: string | number
    * @default:
    **/
   category_id: string | number;
 
   /**
-   * @description: 商品类目名
+   * @description: 已废弃,使用opt_name
    * @type: string
    * @default:
    **/
@@ -262,6 +269,13 @@ export interface PddDdkGoodsDetailGoodsDetailResponseGoodsDetailsResponseInterfa
   goods_name: string;
 
   /**
+   * @description: 商品goodsSign
+   * @type: string
+   * @default:
+   **/
+  goods_sign: string;
+
+  /**
    * @description: 商品缩略图
    * @type: string
    * @default:
@@ -416,6 +430,13 @@ export interface PddDdkGoodsDetailGoodsDetailResponseGoodsDetailsResponseInterfa
   plan_type: number;
 
   /**
+   * @description: 比价行为预判定佣金，需要用户备案
+   * @type: string | number
+   * @default:
+   **/
+  predict_promotion_rate: string | number;
+
+  /**
    * @description: 佣金比例，千分比
    * @type: string | number
    * @default:
@@ -444,11 +465,18 @@ export interface PddDdkGoodsDetailGoodsDetailResponseGoodsDetailsResponseInterfa
   serv_txt: string;
 
   /**
-   * @description: 招商团长id
-   * @type: string | number
+   * @description: 招商分成服务费比例，千分比
+   * @type: number
    * @default:
    **/
-  zs_duo_id: string | number;
+  share_rate: number;
+
+  /**
+   * @description: 优惠标签列表
+   * @type: string[]
+   * @default:
+   **/
+  unified_tags: string[];
 
   /**
    * @description: 商品视频url
@@ -458,16 +486,9 @@ export interface PddDdkGoodsDetailGoodsDetailResponseGoodsDetailsResponseInterfa
   video_urls: string[];
 
   /**
-   * @description: 比价行为预判定佣金，需要用户备案
+   * @description: 招商团长id
    * @type: string | number
    * @default:
    **/
-  predict_promotion_rate: string | number;
-
-  /**
-   * @description: 优惠标签列表
-   * @type: string[]
-   * @default:
-   **/
-  unified_tags: string[];
+  zs_duo_id: string | number;
 }

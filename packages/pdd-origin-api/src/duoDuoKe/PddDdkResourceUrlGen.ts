@@ -1,5 +1,12 @@
 export const PDD_DDK_RESOURCE_URL_GEN = 'pdd.ddk.resource.url.gen';
 export const PDD_DDK_RESOURCE_URL_GEN_RESPONSE_KEY = 'resource_url_response';
+export const PDD_DDK_RESOURCE_URL_GEN_LIMITERS = [
+  {
+    limiterLevel: 3,
+    timeRange: 50,
+    times: 33450,
+  },
+];
 
 /**
  * 接口名称：生成多多进宝频道推广
@@ -8,7 +15,7 @@ export const PDD_DDK_RESOURCE_URL_GEN_RESPONSE_KEY = 'resource_url_response';
  **/
 export interface PddDdkResourceUrlGenRequestInterface {
   /**
-   * @description: 自定义参数，为链接打上自定义标签；自定义参数最长限制64个字节；格式为：  {"uid":"11111","sid":"22222"} ，其中 uid 用户唯一标识，可自行加密后传入，每个用户仅且对应一个标识，必填； sid 上下文信息标识，例如sessionId等，非必填。该json字符串中也可以加入其他自定义的key
+   * @description: 自定义参数，为链接打上自定义标签；自定义参数最长限制64个字节；格式为： {"uid":"11111","sid":"22222"} ，其中 uid 用户唯一标识，可自行加密后传入，每个用户仅且对应一个标识，必填； sid 上下文信息标识，例如sessionId等，非必填。该json字符串中也可以加入其他自定义的key
    * @type: string
    * @default:
    **/
@@ -43,7 +50,7 @@ export interface PddDdkResourceUrlGenRequestInterface {
   pid: string;
 
   /**
-   * @description: 4-限时秒杀,39997-充值中心, 39998-转链type，39996-百亿补贴
+   * @description: 频道来源：4-限时秒杀,39997-充值中心, 39998-转链type，39999-电器城，39996-百亿补贴，40000-领券中心
    * @type: number
    * @default:
    **/
@@ -125,35 +132,35 @@ export interface PddDdkResourceUrlGenResourceUrlResponseResponseInterface {
  **/
 export interface PddDdkResourceUrlGenResourceUrlResponseMultiUrlListResponseInterface {
   /**
-   * @description: 频道推广唤醒拼多多APP短链接
+   * @description: 推广移动短链接，对应出参mobile_url的短链接，与mobile_url功能一致。
    * @type: string
    * @default:
    **/
   mobile_short_url: string;
 
   /**
-   * @description: 频道推广唤醒拼多多APP长链接
+   * @description: 推广移动链接，用户安装拼多多APP的情况下会唤起APP，否则唤起H5页面
    * @type: string
    * @default:
    **/
   mobile_url: string;
 
   /**
-   * @description: schema的链接
+   * @description: schema链接，用户安装拼多多APP的情况下会唤起APP（需客户端支持schema跳转协议）
    * @type: string
    * @default:
    **/
   schema_url: string;
 
   /**
-   * @description: 频道推广短链接
+   * @description: 对应出参url的短链接，与url功能一致。
    * @type: string
    * @default:
    **/
   short_url: string;
 
   /**
-   * @description: 频道推广长链接
+   * @description: 频道推广长链接，唤起H5页面
    * @type: string
    * @default:
    **/
@@ -167,14 +174,14 @@ export interface PddDdkResourceUrlGenResourceUrlResponseMultiUrlListResponseInte
   we_app_page_path: string;
 
   /**
-   * @description: 频道推广唤醒微信短链接
+   * @description: 频道推广唤醒微信短链接，已弃用
    * @type: string
    * @default:
    **/
   we_app_web_view_short_url: string;
 
   /**
-   * @description: 频道推广唤醒微信长链接
+   * @description: 频道推广唤醒微信长链接，已弃用
    * @type: string
    * @default:
    **/
@@ -251,35 +258,35 @@ export interface PddDdkResourceUrlGenResourceUrlResponseQqAppInfoResponseInterfa
  **/
 export interface PddDdkResourceUrlGenResourceUrlResponseSingleUrlListResponseInterface {
   /**
-   * @description: 频道推广唤醒拼多多APP短链接
+   * @description: 推广移动短链接，对应出参mobile_url的短链接，与mobile_url功能一致。
    * @type: string
    * @default:
    **/
   mobile_short_url: string;
 
   /**
-   * @description: 频道推广唤醒拼多多APP长链接
+   * @description: 推广移动链接，用户安装拼多多APP的情况下会唤起APP，否则唤起H5页面
    * @type: string
    * @default:
    **/
   mobile_url: string;
 
   /**
-   * @description: schema的链接
+   * @description: schema链接，用户安装拼多多APP的情况下会唤起APP（需客户端支持schema跳转协议）
    * @type: string
    * @default:
    **/
   schema_url: string;
 
   /**
-   * @description: 频道推广短链接
+   * @description: 对应出参url的短链接，与url功能一致。
    * @type: string
    * @default:
    **/
   short_url: string;
 
   /**
-   * @description: 频道推广长链接
+   * @description: 频道推广长链接，唤起H5页面
    * @type: string
    * @default:
    **/
@@ -293,14 +300,14 @@ export interface PddDdkResourceUrlGenResourceUrlResponseSingleUrlListResponseInt
   we_app_page_path: string;
 
   /**
-   * @description: 频道推广唤醒微信短链接
+   * @description: 频道推广唤醒微信短链接，已弃用
    * @type: string
    * @default:
    **/
   we_app_web_view_short_url: string;
 
   /**
-   * @description: 频道推广唤醒微信长链接
+   * @description: 频道推广唤醒微信长链接，已弃用
    * @type: string
    * @default:
    **/

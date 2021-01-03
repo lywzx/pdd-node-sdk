@@ -29,18 +29,18 @@ export interface PddDdkAllOrderListIncrementGetRequestInterface {
   page_size?: number;
 
   /**
-   * @description: 最近90天内多多进宝商品订单更新时间--查询时间开始。note：此时间为时间戳，指格林威治时间 1970 年01 月 01 日 00 时 00 分 00 秒(北京时间 1970 年 01 月 01 日 08 时 00 分 00 秒)起至现在的总秒数
-   * @type: string | number
-   * @default:
-   **/
-  start_update_time: string | number;
-
-  /**
    * @description: 订单类型：1-推广订单；2-直播间订单
    * @type: number
    * @default: 1
    **/
   query_order_type?: number;
+
+  /**
+   * @description: 最近90天内多多进宝商品订单更新时间--查询时间开始。note：此时间为时间戳，指格林威治时间 1970 年01 月 01 日 00 时 00 分 00 秒(北京时间 1970 年 01 月 01 日 08 时 00 分 00 秒)起至现在的总秒数
+   * @type: string | number
+   * @default:
+   **/
+  start_update_time: string | number;
 }
 
 /**
@@ -87,6 +87,27 @@ export interface PddDdkAllOrderListIncrementGetOrderListGetResponseResponseInter
  **/
 export interface PddDdkAllOrderListIncrementGetOrderListGetResponseOrderListResponseInterface {
   /**
+   * @description: 多多客工具id
+   * @type: string | number
+   * @default:
+   **/
+  auth_duo_id: string | number;
+
+  /**
+   * @description: 结算批次号
+   * @type: string
+   * @default:
+   **/
+  batch_no: string;
+
+  /**
+   * @description: 商品一~四级类目ID列表
+   * @type: Array<string | number>
+   * @default:
+   **/
+  cat_ids: Array<string | number>;
+
+  /**
    * @description: 是否是 cpa 新用户，1表示是，0表示否
    * @type: number
    * @default:
@@ -99,6 +120,13 @@ export interface PddDdkAllOrderListIncrementGetOrderListGetResponseOrderListResp
    * @default:
    **/
   custom_parameters: string;
+
+  /**
+   * @description: 订单审核失败原因
+   * @type: string
+   * @default:
+   **/
+  fail_reason: string;
 
   /**
    * @description: 商品ID
@@ -129,11 +157,32 @@ export interface PddDdkAllOrderListIncrementGetOrderListGetResponseOrderListResp
   goods_quantity: string | number;
 
   /**
+   * @description: 商品goodsSign
+   * @type: string
+   * @default:
+   **/
+  goods_sign: string;
+
+  /**
    * @description: 商品缩略图
    * @type: string
    * @default:
    **/
   goods_thumbnail_url: string;
+
+  /**
+   * @description: 成团编号
+   * @type: string | number
+   * @default:
+   **/
+  group_id: string | number;
+
+  /**
+   * @description: 是否直推 ，1表示是，0表示否
+   * @type: number
+   * @default:
+   **/
+  is_direct: number;
 
   /**
    * @description: 实际支付金额，单位为分
@@ -171,6 +220,20 @@ export interface PddDdkAllOrderListIncrementGetOrderListGetResponseOrderListResp
   order_pay_time: string | number;
 
   /**
+   * @description: 确认收货时间
+   * @type: string | number
+   * @default:
+   **/
+  order_receive_time: string | number;
+
+  /**
+   * @description: 结算时间
+   * @type: string | number
+   * @default:
+   **/
+  order_settle_time: string | number;
+
+  /**
    * @description: 推广订单编号
    * @type: string
    * @default:
@@ -197,6 +260,13 @@ export interface PddDdkAllOrderListIncrementGetOrderListGetResponseOrderListResp
    * @default:
    **/
   order_verify_time: string | number;
+
+  /**
+   * @description: 比价状态：0：正常，1：比价
+   * @type: number
+   * @default:
+   **/
+  price_compare_status: number;
 
   /**
    * @description: 佣金金额，单位为分
@@ -227,76 +297,6 @@ export interface PddDdkAllOrderListIncrementGetOrderListGetResponseOrderListResp
   scene_at_market_fee: number;
 
   /**
-   * @description: 商品一~四级类目ID列表
-   * @type: Array<string | number>
-   * @default:
-   **/
-  cat_ids: Array<string | number>;
-
-  /**
-   * @description: 结算批次号
-   * @type: string
-   * @default:
-   **/
-  batch_no: string;
-
-  /**
-   * @description: 订单审核失败原因
-   * @type: string
-   * @default:
-   **/
-  fail_reason: string;
-
-  /**
-   * @description: 确认收货时间
-   * @type: string | number
-   * @default:
-   **/
-  order_receive_time: string | number;
-
-  /**
-   * @description: 结算时间
-   * @type: string | number
-   * @default:
-   **/
-  order_settle_time: string | number;
-
-  /**
-   * @description: 订单推广类型
-   * @type: string | number
-   * @default:
-   **/
-  type: string | number;
-
-  /**
-   * @description: 成团编号
-   * @type: string | number
-   * @default:
-   **/
-  group_id: string | number;
-
-  /**
-   * @description: 多多客工具id
-   * @type: string | number
-   * @default:
-   **/
-  auth_duo_id: string | number;
-
-  /**
-   * @description: 招商多多客id
-   * @type: string | number
-   * @default:
-   **/
-  zs_duo_id: string | number;
-
-  /**
-   * @description: 是否直推 ，1表示是，0表示否
-   * @type: number
-   * @default:
-   **/
-  is_direct: number;
-
-  /**
    * @description: 直播间订单推广duoId
    * @type: string | number
    * @default:
@@ -309,6 +309,13 @@ export interface PddDdkAllOrderListIncrementGetOrderListGetResponseOrderListResp
    * @default:
    **/
   sep_market_fee: number;
+
+  /**
+   * @description: 直播间推广自定义参数
+   * @type: string
+   * @default:
+   **/
+  sep_parameters: string;
 
   /**
    * @description: 直播间订单推广位
@@ -325,9 +332,30 @@ export interface PddDdkAllOrderListIncrementGetOrderListGetResponseOrderListResp
   sep_rate: number;
 
   /**
-   * @description: 直播间推广自定义参数
-   * @type: string
+   * @description: 招商分成服务费金额，单位为分
+   * @type: number
    * @default:
    **/
-  sep_parameters: string;
+  share_amount: number;
+
+  /**
+   * @description: 招商分成服务费比例，千分比
+   * @type: number
+   * @default:
+   **/
+  share_rate: number;
+
+  /**
+   * @description: 订单推广类型
+   * @type: string | number
+   * @default:
+   **/
+  type: string | number;
+
+  /**
+   * @description: 招商多多客id
+   * @type: string | number
+   * @default:
+   **/
+  zs_duo_id: string | number;
 }

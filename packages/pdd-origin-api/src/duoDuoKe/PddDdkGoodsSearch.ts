@@ -4,7 +4,7 @@ export const PDD_DDK_GOODS_SEARCH_LIMITERS = [
   {
     limiterLevel: 3,
     timeRange: 10,
-    times: 34950,
+    times: 66900,
   },
 ];
 
@@ -15,11 +15,25 @@ export const PDD_DDK_GOODS_SEARCH_LIMITERS = [
  **/
 export interface PddDdkGoodsSearchRequestInterface {
   /**
-   * @description: 商品活动标记数组，例：[4,7]，4-秒杀 7-百亿补贴等
+   * @description: 活动商品标记数组，例：[4,7]，4-秒杀，7-百亿补贴，31-品牌黑标，10564-精选爆品-官方直推爆款，10584-精选爆品-团长推荐，24-品牌高佣，20-行业精选，21-金牌商家，10044-潜力爆品，10475-爆品上新，其他的值请忽略
    * @type: number[]
    * @default:
    **/
   activity_tags?: number[];
+
+  /**
+   * @description: 自定义屏蔽一级/二级/三级类目ID，自定义数量不超过20个;使用pdd.goods.cats.get接口获取cat_id
+   * @type: number[]
+   * @default:
+   **/
+  block_cats?: number[];
+
+  /**
+   * @description: 屏蔽商品类目包：1-拼多多小程序屏蔽的类目&关键词;2-虚拟类目;3-医疗器械;4-处方药;5-非处方药
+   * @type: number[]
+   * @default:
+   **/
+  block_cat_packages?: number[];
 
   /**
    * @description: 商品类目ID，使用pdd.goods.cats.get接口获取
@@ -29,18 +43,25 @@ export interface PddDdkGoodsSearchRequestInterface {
   cat_id?: string | number;
 
   /**
-   * @description: 自定义参数，为链接打上自定义标签；自定义参数最长限制64个字节；格式为： {"uid":"11111","sid":"22222","new":1} ，其中 uid 为用户唯一标识，可自行加密后传入，每个用户仅且对应一个标识，必填； sid 为上下文信息标识，例如sessionId等，非必填。new字段标识是否是新用户，如果为新用户，uid请传入用户唯一标识，例如小程序的openid、app的设备号等（可自行加密）。该json字符串中也可以加入其他自定义的key。
+   * @description: 自定义参数，为链接打上自定义标签；自定义参数最长限制64个字节；格式为： {"uid":"11111","sid":"22222"} ，其中 uid 为用户唯一标识，可自行加密后传入，每个用户仅且对应一个标识，必填； sid 为上下文信息标识，例如sessionId等，非必填。该json字符串中也可以加入其他自定义的key。
    * @type: string
    * @default:
    **/
   custom_parameters?: string;
 
   /**
-   * @description: 已经废弃，不再支持该功能
+   * @description: 已经废弃，不再支持该功能。建议使用goods_sign_list进行商品查询
    * @type: Array<string | number>
    * @default:
    **/
   goods_id_list?: Array<string | number>;
+
+  /**
+   * @description: goodsSign列表，支持通过goodsSign查询商品
+   * @type: string[]
+   * @default:
+   **/
+  goods_sign_list?: string[];
 
   /**
    * @description: 是否为品牌商品
@@ -228,14 +249,14 @@ export interface PddDdkGoodsSearchGoodsSearchResponseGoodsListResponseInterface 
   activity_type: number;
 
   /**
-   * @description: 商品类目ID，使用pdd.goods.cats.get接口获取
+   * @description: 已废弃,使用opt_id
    * @type: string | number
    * @default:
    **/
   category_id: string | number;
 
   /**
-   * @description: 商品类目名
+   * @description: 已废弃,使用opt_name
    * @type: string
    * @default:
    **/
@@ -380,6 +401,13 @@ export interface PddDdkGoodsSearchGoodsSearchResponseGoodsListResponseInterface 
    * @default:
    **/
   goods_name: string;
+
+  /**
+   * @description: 商品goodsSign
+   * @type: string
+   * @default:
+   **/
+  goods_sign: string;
 
   /**
    * @description: 商品缩略图
@@ -543,6 +571,13 @@ export interface PddDdkGoodsSearchGoodsSearchResponseGoodsListResponseInterface 
   plan_type: number;
 
   /**
+   * @description: 比价行为预判定佣金，需要用户备案
+   * @type: string | number
+   * @default:
+   **/
+  predict_promotion_rate: string | number;
+
+  /**
    * @description: 佣金比例，千分比
    * @type: string | number
    * @default:
@@ -578,18 +613,11 @@ export interface PddDdkGoodsSearchGoodsSearchResponseGoodsListResponseInterface 
   serv_txt: string;
 
   /**
-   * @description: 招商团长id
-   * @type: string | number
+   * @description: 招商分成服务费比例，千分比
+   * @type: number
    * @default:
    **/
-  zs_duo_id: string | number;
-
-  /**
-   * @description: 比价行为预判定佣金，需要用户备案
-   * @type: string | number
-   * @default:
-   **/
-  predict_promotion_rate: string | number;
+  share_rate: number;
 
   /**
    * @description: 优惠标签列表
@@ -597,4 +625,11 @@ export interface PddDdkGoodsSearchGoodsSearchResponseGoodsListResponseInterface 
    * @default:
    **/
   unified_tags: string[];
+
+  /**
+   * @description: 招商团长id
+   * @type: string | number
+   * @default:
+   **/
+  zs_duo_id: string | number;
 }

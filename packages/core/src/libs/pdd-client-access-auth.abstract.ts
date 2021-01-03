@@ -10,7 +10,7 @@ export abstract class PddClientAccessAuth<T> {
     [s: string]: (obj?: any) => string;
   };
 
-  constructor(options: PddClientAuthInterface = { saveAccessTokenTemplate: 'pdd:client:<% =shopId %>' }) {
+  protected constructor(options: PddClientAuthInterface = { saveAccessTokenTemplate: 'pdd:client:<% =shopId %>' }) {
     this.functionAlOptions = mapValues(options, (tpl: string) => template(tpl));
   }
 

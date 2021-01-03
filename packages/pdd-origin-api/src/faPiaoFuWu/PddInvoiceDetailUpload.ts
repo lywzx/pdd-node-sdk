@@ -8,13 +8,6 @@ export const PDD_INVOICE_DETAIL_UPLOAD_RESPONSE_KEY = 'invoice_detail_upload_res
  **/
 export interface PddInvoiceDetailUploadRequestInterface {
   /**
-   * @description: 申请流水号
-   * @type: string | number
-   * @default:
-   **/
-  application_id: string | number;
-
-  /**
    * @description: 抬头类型：0-个人，1-企业
    * @type: number
    * @default:

@@ -44,7 +44,7 @@ export interface PddAdApiUnitBidSyncRequestInterface {
  **/
 export interface PddAdApiUnitBidSyncAdUnitBidsRequestInterface {
   /**
-   * @description: 定向信息。仅支持地域定向和天气定向。
+   * @description: 定向信息。仅支持地域定向。
    * @type: PddAdApiUnitBidSyncAdUnitBidsAdTargetingVORequestInterface
    * @default:
    *
@@ -66,7 +66,7 @@ export interface PddAdApiUnitBidSyncAdUnitBidsRequestInterface {
   bidValue: string | number;
 
   /**
-   * @description: 二级定向Id。当出价资源位展示场景人群定向下的兴趣点或人群包时，该字段必须赋值且值不得为0。
+   * @description: 二级定向Id。默认为0。
    * @type: string | number
    * @default:
    **/
@@ -74,7 +74,7 @@ export interface PddAdApiUnitBidSyncAdUnitBidsRequestInterface {
 }
 
 /**
- * @description 定向信息。仅支持地域定向和天气定向。
+ * @description 定向信息。仅支持地域定向。
  * @default
  * @example
  **/

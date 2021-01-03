@@ -37,14 +37,14 @@ export interface PddAdApiUnitUpdateOptimizationMessageRequestInterface {
  **/
 export interface PddAdApiUnitUpdateOptimizationMessageOptimizationMessageRequestInterface {
   /**
-   * @description: 数据积累期出价。当使用OCPC时对该字段赋值。
+   * @description: 数据积累期出价。当使用OCPX时对该字段赋值。
    * @type: string | number
    * @default:
    **/
   accumulationBid?: string | number;
 
   /**
-   * @description: 智能投放期出价。当使用OCPC时对该字段赋值。
+   * @description: 智能投放期出价。当使用OCPX时对该字段赋值。
    * @type: string | number
    * @default:
    **/
@@ -63,6 +63,35 @@ export interface PddAdApiUnitUpdateOptimizationMessageOptimizationMessageRequest
    * @default:
    **/
   optimizationMethod?: number;
+
+  /**
+   * @description: 可选优化出价列表。当使用OCPX时对该字段赋值。
+   * @type: PddAdApiUnitUpdateOptimizationMessageOptimizationMessageOptionalOptimizationBidMessageListRequestInterface[]
+   * @default:
+   *
+   **/
+  optionalOptimizationBidMessageList?: PddAdApiUnitUpdateOptimizationMessageOptimizationMessageOptionalOptimizationBidMessageListRequestInterface[];
+}
+
+/**
+ * @description 可选优化出价列表。当使用OCPX时对该字段赋值。
+ * @default
+ * @example
+ **/
+export interface PddAdApiUnitUpdateOptimizationMessageOptimizationMessageOptionalOptimizationBidMessageListRequestInterface {
+  /**
+   * @description: 可选优化出价价格
+   * @type: string | number
+   * @default:
+   **/
+  optimizationBid: string | number;
+
+  /**
+   * @description: 可选优化出价目标。3表示优化店铺关注，4表示优化商品收藏，5表示优化询单
+   * @type: number
+   * @default:
+   **/
+  optimizationGoal: number;
 }
 
 /**

@@ -1,5 +1,12 @@
 export const PDD_DDK_OAUTH_ORDER_DETAIL_GET = 'pdd.ddk.oauth.order.detail.get';
 export const PDD_DDK_OAUTH_ORDER_DETAIL_GET_RESPONSE_KEY = 'order_detail_response';
+export const PDD_DDK_OAUTH_ORDER_DETAIL_GET_LIMITERS = [
+  {
+    limiterLevel: 3,
+    timeRange: 50,
+    times: 33450,
+  },
+];
 
 /**
  * 接口名称：获取订单详情
@@ -58,6 +65,13 @@ export interface PddDdkOauthOrderDetailGetOrderDetailResponseResponseInterface {
   batch_no: string;
 
   /**
+   * @description: 商品一~四级类目ID列表
+   * @type: Array<string | number>
+   * @default:
+   **/
+  cat_ids: Array<string | number>;
+
+  /**
    * @description: 是否是 cpa 新用户，1表示是，0表示否
    * @type: number
    * @default:
@@ -114,6 +128,13 @@ export interface PddDdkOauthOrderDetailGetOrderDetailResponseResponseInterface {
   goods_quantity: string | number;
 
   /**
+   * @description: 商品goodsSign
+   * @type: string
+   * @default:
+   **/
+  goods_sign: string;
+
+  /**
    * @description: 商品缩略图
    * @type: string
    * @default:
@@ -126,6 +147,13 @@ export interface PddDdkOauthOrderDetailGetOrderDetailResponseResponseInterface {
    * @default:
    **/
   group_id: string | number;
+
+  /**
+   * @description: 是否直推 ，1表示是，0表示否
+   * @type: number
+   * @default:
+   **/
+  is_direct: number;
 
   /**
    * @description: 订单价格（分）
@@ -219,6 +247,13 @@ export interface PddDdkOauthOrderDetailGetOrderDetailResponseResponseInterface {
   point_time: string | number;
 
   /**
+   * @description: 比价状态：0：正常，1：比价
+   * @type: number
+   * @default:
+   **/
+  price_compare_status: number;
+
+  /**
    * @description: 佣金（分）
    * @type: string | number
    * @default:
@@ -240,6 +275,55 @@ export interface PddDdkOauthOrderDetailGetOrderDetailResponseResponseInterface {
   return_status: number;
 
   /**
+   * @description: 直播间订单推广duoId
+   * @type: string | number
+   * @default:
+   **/
+  sep_duo_id: string | number;
+
+  /**
+   * @description: 直播间推广佣金
+   * @type: number
+   * @default:
+   **/
+  sep_market_fee: number;
+
+  /**
+   * @description: 直播间推广自定义参数
+   * @type: string
+   * @default:
+   **/
+  sep_parameters: string;
+
+  /**
+   * @description: 直播间订单推广位
+   * @type: string
+   * @default:
+   **/
+  sep_pid: string;
+
+  /**
+   * @description: 直播间推广佣金比例
+   * @type: number
+   * @default:
+   **/
+  sep_rate: number;
+
+  /**
+   * @description: 招商分成服务费金额，单位为分
+   * @type: number
+   * @default:
+   **/
+  share_amount: number;
+
+  /**
+   * @description: 招商分成服务费比例，千分比
+   * @type: number
+   * @default:
+   **/
+  share_rate: number;
+
+  /**
    * @description: 订单类型：0：领券页面， 1： 红包页， 2：领券页， 3： 题页
    * @type: number
    * @default:
@@ -259,53 +343,4 @@ export interface PddDdkOauthOrderDetailGetOrderDetailResponseResponseInterface {
    * @default:
    **/
   zs_duo_id: string | number;
-
-  /**
-   * @description: 商品一~四级类目ID列表
-   * @type: Array<string | number>
-   * @default:
-   **/
-  cat_ids: Array<string | number>;
-
-  /**
-   * @description: 是否直推 ，1表示是，0表示否
-   * @type: number
-   * @default:
-   **/
-  is_direct: number;
-
-  /**
-   * @description: 直播间订单推广duoId
-   * @type: string | number
-   * @default:
-   **/
-  sep_duo_id: string | number;
-
-  /**
-   * @description: 直播间推广佣金
-   * @type: number
-   * @default:
-   **/
-  sep_market_fee: number;
-
-  /**
-   * @description: 直播间订单推广位
-   * @type: string
-   * @default:
-   **/
-  sep_pid: string;
-
-  /**
-   * @description: 直播间推广佣金比例
-   * @type: number
-   * @default:
-   **/
-  sep_rate: number;
-
-  /**
-   * @description: 直播间推广自定义参数
-   * @type: string
-   * @default:
-   **/
-  sep_parameters: string;
 }

@@ -1,5 +1,12 @@
 export const PDD_DDK_GOODS_RECOMMEND_GET = 'pdd.ddk.goods.recommend.get';
 export const PDD_DDK_GOODS_RECOMMEND_GET_RESPONSE_KEY = 'goods_basic_detail_response';
+export const PDD_DDK_GOODS_RECOMMEND_GET_LIMITERS = [
+  {
+    limiterLevel: 3,
+    timeRange: 50,
+    times: 33450,
+  },
+];
 
 /**
  * 接口名称：多多进宝商品推荐API
@@ -8,21 +15,42 @@ export const PDD_DDK_GOODS_RECOMMEND_GET_RESPONSE_KEY = 'goods_basic_detail_resp
  **/
 export interface PddDdkGoodsRecommendGetRequestInterface {
   /**
-   * @description: 0-1.9包邮, 1-今日爆款, 2-品牌清仓,3-相似商品推荐,4-猜你喜欢,5-实时热销,6-实时收益,7-今日畅销,8-高佣榜单，默认1
+   * @description: 猜你喜欢场景的商品类目，20100-百货，20200-母婴，20300-食品，20400-女装，20500-电器，20600-鞋包，20700-内衣，20800-美妆，20900-男装，21000-水果，21100-家纺，21200-文具,21300-运动,21400-虚拟,21500-汽车,21600-家装,21700-家具,21800-医药;
+   * @type: string | number
+   * @default:
+   **/
+  cat_id?: string | number;
+
+  /**
+   * @description: 进宝频道推广商品，0-1.9包邮, 1-今日爆款, 2-品牌好货,3-相似商品推荐,4-猜你喜欢,5-实时热销榜,6-实时收益榜,7-今日热销榜,8-高佣榜单，默认值5
    * @type: number
    * @default:
    **/
   channel_type?: number;
 
   /**
-   * @description: 自定义参数，为链接打上自定义标签；自定义参数最长限制64个字节；格式为： {"uid":"11111","sid":"22222","new":1} ，其中 uid 为用户唯一标识，可自行加密后传入，每个用户仅且对应一个标识，必填； sid 为上下文信息标识，例如sessionId等，非必填。new字段标识是否是新用户，如果为新用户，uid请传入用户唯一标识，例如小程序的openid、app的设备号等（可自行加密）。该json字符串中也可以加入其他自定义的key。
+   * @description: 自定义参数，为链接打上自定义标签；自定义参数最长限制64个字节；格式为： {"uid":"11111","sid":"22222"} ，其中 uid 为用户唯一标识，可自行加密后传入，每个用户仅且对应一个标识，必填； sid 为上下文信息标识，例如sessionId等，非必填。该json字符串中也可以加入其他自定义的key。
    * @type: string
    * @default:
    **/
   custom_parameters?: string;
 
   /**
-   * @description: 请求数量；默认值 ： 400
+   * @description: 相似商品推荐场景时必传。商品Id，请求相似商品时，仅取数组的第一位
+   * @type: Array<string | number>
+   * @default:
+   **/
+  goods_ids?: Array<string | number>;
+
+  /**
+   * @description: 相似商品推荐场景时必传。goodsSign，请求相似商品时，仅取数组的第一位
+   * @type: string[]
+   * @default:
+   **/
+  goods_sign_list?: string[];
+
+  /**
+   * @description: 一页请求数量；默认值 ： 20
    * @type: number
    * @default:
    **/
@@ -48,20 +76,6 @@ export interface PddDdkGoodsRecommendGetRequestInterface {
    * @default:
    **/
   pid?: string;
-
-  /**
-   * @description: 猜你喜欢场景的商品类目，20100-百货，20200-母婴，20300-食品，20400-女装，20500-电器，20600-鞋包，20700-内衣，20800-美妆，20900-男装，21000-水果，21100-家纺，21200-文具,21300-运动,21400-虚拟,21500-汽车,21600-家装,21700-家具,21800-医药;
-   * @type: string | number
-   * @default:
-   **/
-  cat_id?: string | number;
-
-  /**
-   * @description: 相似商品推荐场景时必传。商品Id，请求相似商品时，仅取数组的第一位
-   * @type: Array<string | number>
-   * @default:
-   **/
-  goods_ids?: Array<string | number>;
 }
 
 /**
@@ -122,14 +136,14 @@ export interface PddDdkGoodsRecommendGetGoodsBasicDetailResponseResponseInterfac
  **/
 export interface PddDdkGoodsRecommendGetGoodsBasicDetailResponseListResponseInterface {
   /**
-   * @description: 类目id
+   * @description: 已废弃,使用opt_id
    * @type: string
    * @default:
    **/
   category_id: string;
 
   /**
-   * @description: 分类名称
+   * @description: 已废弃,使用opt_name
    * @type: string
    * @default:
    **/
@@ -255,6 +269,13 @@ export interface PddDdkGoodsRecommendGetGoodsBasicDetailResponseListResponseInte
   goods_rate: string | number;
 
   /**
+   * @description: 商品goodsSign
+   * @type: string
+   * @default:
+   **/
+  goods_sign: string;
+
+  /**
    * @description: 商品缩略图
    * @type: string
    * @default:
@@ -346,6 +367,13 @@ export interface PddDdkGoodsRecommendGetGoodsBasicDetailResponseListResponseInte
   opt_name: string;
 
   /**
+   * @description: 比价行为预判定佣金，需要用户备案
+   * @type: string | number
+   * @default:
+   **/
+  predict_promotion_rate: string | number;
+
+  /**
    * @description: 佣金比例,千分比
    * @type: string | number
    * @default:
@@ -388,9 +416,9 @@ export interface PddDdkGoodsRecommendGetGoodsBasicDetailResponseListResponseInte
   share_desc: string;
 
   /**
-   * @description: 比价行为预判定佣金，需要用户备案
-   * @type: string | number
+   * @description: 招商分成服务费比例，千分比
+   * @type: number
    * @default:
    **/
-  predict_promotion_rate: string | number;
+  share_rate: number;
 }
