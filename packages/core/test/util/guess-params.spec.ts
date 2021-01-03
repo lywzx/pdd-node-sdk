@@ -41,6 +41,7 @@ describe('guess params test util', function () {
 
     it('retry and cache options guess', function () {
       expect(guessPddClientExecuteParams([3, 2, undefined, undefined])).to.be.eqls([undefined, 3, 2, undefined]);
+      expect(guessPddClientExecuteParams([{}, 2, 3, undefined])).to.be.eqls([{}, 2, 3, undefined]);
     });
   });
 
