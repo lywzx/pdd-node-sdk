@@ -523,11 +523,16 @@ export class PddClient<T extends Record<string, any> = any> {
           apiCacheOptions,
           PddClient.pddDefaultCacheOptions.ttl,
           () => {
+            const cacheKeyObject = {
+              type,
+              ...extend({}, params),
+              ...extend({}, apiAccessOptions),
+            };
             if (typeof apiCacheOptions === 'object' && isFunction(apiCacheOptions.cacheKey)) {
-              return apiCacheOptions.cacheKey(params);
+              return apiCacheOptions.cacheKey(cacheKeyObject);
             }
             if (this.pddApiCache) {
-              return this.pddApiCache.cacheKey(params);
+              return this.pddApiCache.cacheKey(cacheKeyObject);
             }
           }
         );

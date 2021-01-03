@@ -173,7 +173,7 @@ export function guessPddClientGenerateParams<T extends Record<string, any>>(
     if ('code' in code || 'refresh_token' in code) {
       param = code as PddPopAuthTokenRefreshRequestInterface | PddPopAuthTokenCreateRequestInterface;
     } else {
-      access = code;
+      access = code as T;
     }
   }
   if (isFunction(accessOptions)) {
