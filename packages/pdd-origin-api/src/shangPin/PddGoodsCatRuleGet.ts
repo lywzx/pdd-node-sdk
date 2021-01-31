@@ -126,6 +126,13 @@ export interface PddGoodsCatRuleGetCatRuleGetResponseGoodsPropertiesRuleProperti
   input_max_num: number;
 
   /**
+   * @description: 是否重要属性。填写重要属性有更多机会获取搜索、活动等场景流量。
+   * @type: boolean
+   * @default:
+   **/
+  is_important: boolean;
+
+  /**
    * @description: 是否销售属性。销售属性需要在发商品时，商品属性上的属性值与规格中中的spec对应。
    * @type: boolean
    * @default:

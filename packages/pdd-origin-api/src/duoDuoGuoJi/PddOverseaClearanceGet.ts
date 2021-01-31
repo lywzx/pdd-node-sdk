@@ -70,4 +70,11 @@ export interface PddOverseaClearanceGetClearanceResponseResponseInterface {
    * @default:
    **/
   pay_type: string;
+
+  /**
+   * @description: 订单号
+   * @type: string
+   * @default:
+   **/
+  order_sn: string;
 }

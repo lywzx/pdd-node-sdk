@@ -101,7 +101,7 @@ export interface PddDdkOauthGoodsRecommendGetGoodsBasicDetailResponseResponseInt
   list_id: string;
 
   /**
-   * @description: 搜索id，建议生成推广链接时候填写，提高收益
+   * @description: 搜索id，建议生成推广链接时候填写，提高收益。
    * @type: string
    * @default:
    **/
@@ -239,6 +239,13 @@ export interface PddDdkOauthGoodsRecommendGetGoodsBasicDetailResponseListRespons
    * @default:
    **/
   goods_image_url: string;
+
+  /**
+   * @description: 商品特殊标签列表。例: [1]，1-APP专享
+   * @type: number[]
+   * @default:
+   **/
+  goods_labels: number[];
 
   /**
    * @description: 商品名称
@@ -381,7 +388,7 @@ export interface PddDdkOauthGoodsRecommendGetGoodsBasicDetailResponseListRespons
   sales_tip: string;
 
   /**
-   * @description: 搜索id，建议生成推广链接时候填写，提高收益
+   * @description: 搜索id，建议生成推广链接时候填写，提高收益。
    * @type: string
    * @default:
    **/
