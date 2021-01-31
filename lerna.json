@@ -15,7 +15,7 @@
       "registry": "http://registry.npmjs.org"
     }
   },
-  "version": "0.0.2-alpha.5",
+  "version": "0.0.2-alpha.6",
   "useWorkspaces": true,
   "npmClient": "yarn"
 }
