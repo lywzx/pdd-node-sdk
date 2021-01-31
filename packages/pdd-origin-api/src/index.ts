@@ -1,3 +1,47 @@
+// 售后API
+import {
+  PDD_NEXTONE_LOGISTICS_WAREHOUSE_UPDATE,
+  PddNextoneLogisticsWarehouseUpdateRequestInterface,
+  PddNextoneLogisticsWarehouseUpdateResponseInterface,
+} from './shouHou/PddNextoneLogisticsWarehouseUpdate';
+import {
+  PDD_RDC_PDDGENIUS_SENDGOODS_CANCEL,
+  PDD_RDC_PDDGENIUS_SENDGOODS_CANCEL_RESPONSE_KEY,
+  PddRdcPddgeniusSendgoodsCancelRequestInterface,
+  PddRdcPddgeniusSendgoodsCancelResponseInterface,
+  PddRdcPddgeniusSendgoodsCancelRdcPddgeniusSendgoodsCancelResponseResponseInterface,
+  PDD_RDC_PDDGENIUS_SENDGOODS_CANCEL_LIMITERS,
+} from './shouHou/PddRdcPddgeniusSendgoodsCancel';
+import {
+  PDD_REFUND_ADDRESS_LIST_GET,
+  PDD_REFUND_ADDRESS_LIST_GET_RESPONSE_KEY,
+  PddRefundAddressListGetRequestInterface,
+  PddRefundAddressListGetResponseInterface,
+  PddRefundAddressListGetRefundAddressListGetResponseResponseInterface,
+  PDD_REFUND_ADDRESS_LIST_GET_LIMITERS,
+} from './shouHou/PddRefundAddressListGet';
+import {
+  PDD_REFUND_INFORMATION_GET,
+  PddRefundInformationGetRequestInterface,
+  PddRefundInformationGetResponseInterface,
+  PDD_REFUND_INFORMATION_GET_LIMITERS,
+} from './shouHou/PddRefundInformationGet';
+import {
+  PDD_REFUND_LIST_INCREMENT_GET,
+  PDD_REFUND_LIST_INCREMENT_GET_RESPONSE_KEY,
+  PddRefundListIncrementGetRequestInterface,
+  PddRefundListIncrementGetResponseInterface,
+  PddRefundListIncrementGetRefundIncrementGetResponseResponseInterface,
+  PDD_REFUND_LIST_INCREMENT_GET_LIMITERS,
+} from './shouHou/PddRefundListIncrementGet';
+import {
+  PDD_REFUND_STATUS_CHECK,
+  PDD_REFUND_STATUS_CHECK_RESPONSE_KEY,
+  PddRefundStatusCheckRequestInterface,
+  PddRefundStatusCheckResponseInterface,
+  PddRefundStatusCheckRefundStatusCheckResponseResponseInterface,
+  PDD_REFUND_STATUS_CHECK_LIMITERS,
+} from './shouHou/PddRefundStatusCheck';
 // 物流API
 import {
   PDD_LOGISTICS_ADDRESS_GET,
@@ -49,50 +93,6 @@ import {
   PddLogisticsOrdertraceGetResponseInterface,
   PDD_LOGISTICS_ORDERTRACE_GET_LIMITERS,
 } from './wuLiu/PddLogisticsOrdertraceGet';
-// 售后API
-import {
-  PDD_NEXTONE_LOGISTICS_WAREHOUSE_UPDATE,
-  PddNextoneLogisticsWarehouseUpdateRequestInterface,
-  PddNextoneLogisticsWarehouseUpdateResponseInterface,
-} from './shouHou/PddNextoneLogisticsWarehouseUpdate';
-import {
-  PDD_RDC_PDDGENIUS_SENDGOODS_CANCEL,
-  PDD_RDC_PDDGENIUS_SENDGOODS_CANCEL_RESPONSE_KEY,
-  PddRdcPddgeniusSendgoodsCancelRequestInterface,
-  PddRdcPddgeniusSendgoodsCancelResponseInterface,
-  PddRdcPddgeniusSendgoodsCancelRdcPddgeniusSendgoodsCancelResponseResponseInterface,
-  PDD_RDC_PDDGENIUS_SENDGOODS_CANCEL_LIMITERS,
-} from './shouHou/PddRdcPddgeniusSendgoodsCancel';
-import {
-  PDD_REFUND_ADDRESS_LIST_GET,
-  PDD_REFUND_ADDRESS_LIST_GET_RESPONSE_KEY,
-  PddRefundAddressListGetRequestInterface,
-  PddRefundAddressListGetResponseInterface,
-  PddRefundAddressListGetRefundAddressListGetResponseResponseInterface,
-  PDD_REFUND_ADDRESS_LIST_GET_LIMITERS,
-} from './shouHou/PddRefundAddressListGet';
-import {
-  PDD_REFUND_INFORMATION_GET,
-  PddRefundInformationGetRequestInterface,
-  PddRefundInformationGetResponseInterface,
-  PDD_REFUND_INFORMATION_GET_LIMITERS,
-} from './shouHou/PddRefundInformationGet';
-import {
-  PDD_REFUND_LIST_INCREMENT_GET,
-  PDD_REFUND_LIST_INCREMENT_GET_RESPONSE_KEY,
-  PddRefundListIncrementGetRequestInterface,
-  PddRefundListIncrementGetResponseInterface,
-  PddRefundListIncrementGetRefundIncrementGetResponseResponseInterface,
-  PDD_REFUND_LIST_INCREMENT_GET_LIMITERS,
-} from './shouHou/PddRefundListIncrementGet';
-import {
-  PDD_REFUND_STATUS_CHECK,
-  PDD_REFUND_STATUS_CHECK_RESPONSE_KEY,
-  PddRefundStatusCheckRequestInterface,
-  PddRefundStatusCheckResponseInterface,
-  PddRefundStatusCheckRefundStatusCheckResponseResponseInterface,
-  PDD_REFUND_STATUS_CHECK_LIMITERS,
-} from './shouHou/PddRefundStatusCheck';
 // 订单API
 import {
   PDD_ERP_ORDER_SYNC,
@@ -528,6 +528,14 @@ import {
   PDD_GOODS_SKU_PRICE_UPDATE_LIMITERS,
 } from './shangPin/PddGoodsSkuPriceUpdate';
 import {
+  PDD_GOODS_SKUS_GET,
+  PDD_GOODS_SKUS_GET_RESPONSE_KEY,
+  PddGoodsSkusGetRequestInterface,
+  PddGoodsSkusGetResponseInterface,
+  PddGoodsSkusGetGoodsSkuGetResponseResponseInterface,
+  PDD_GOODS_SKUS_GET_LIMITERS,
+} from './shangPin/PddGoodsSkusGet';
+import {
   PDD_GOODS_SPEC_GET,
   PDD_GOODS_SPEC_GET_RESPONSE_KEY,
   PddGoodsSpecGetRequestInterface,
@@ -708,13 +716,6 @@ import {
   PddDdkRpPromUrlGenerateRpPromotionUrlGenerateResponseResponseInterface,
   PDD_DDK_RP_PROM_URL_GENERATE_LIMITERS,
 } from './duoDuoKe/PddDdkRpPromUrlGenerate';
-import {
-  PDD_DDK_TOP_GOODS_LIST_QUERY,
-  PDD_DDK_TOP_GOODS_LIST_QUERY_RESPONSE_KEY,
-  PddDdkTopGoodsListQueryRequestInterface,
-  PddDdkTopGoodsListQueryResponseInterface,
-  PddDdkTopGoodsListQueryTopGoodsListGetResponseResponseInterface,
-} from './duoDuoKe/PddDdkTopGoodsListQuery';
 // 多多客工具API
 import {
   PDD_DDK_ALL_ORDER_LIST_INCREMENT_GET,
@@ -817,13 +818,6 @@ import {
   PddDdkOauthRpPromUrlGenerateResponseInterface,
   PddDdkOauthRpPromUrlGenerateRpPromotionUrlGenerateResponseResponseInterface,
 } from './duoDuoKeGongJu/PddDdkOauthRpPromUrlGenerate';
-import {
-  PDD_DDK_OAUTH_TOP_GOODS_LIST_QUERY,
-  PDD_DDK_OAUTH_TOP_GOODS_LIST_QUERY_RESPONSE_KEY,
-  PddDdkOauthTopGoodsListQueryRequestInterface,
-  PddDdkOauthTopGoodsListQueryResponseInterface,
-  PddDdkOauthTopGoodsListQueryTopGoodsListGetResponseResponseInterface,
-} from './duoDuoKeGongJu/PddDdkOauthTopGoodsListQuery';
 // 方舟物流服务商API
 import {
   PDD_LOGISTICS_CS_HISTORY_MESSAGE_GET,
@@ -885,6 +879,11 @@ import {
   PddLogisticsTicketProblemTypeGetLogisticsProblemTypeGetResponseResponseInterface,
   PDD_LOGISTICS_TICKET_PROBLEM_TYPE_GET_LIMITERS,
 } from './fangZhouWuLiuFuWuShang/PddLogisticsTicketProblemTypeGet';
+import {
+  PDD_SERVICE_MAIL_SERVICE_TIME_QUERY,
+  PddServiceMailServiceTimeQueryRequestInterface,
+  PddServiceMailServiceTimeQueryResponseInterface,
+} from './fangZhouWuLiuFuWuShang/PddServiceMailServiceTimeQuery';
 // 营销API
 import {
   PDD_PROMOTION_COUPON_CLOSE,
@@ -991,6 +990,11 @@ import {
   PDD_VOUCHER_REALTIME_ORDERNO_GET_LIMITERS,
 } from './kaQuan/PddVoucherRealtimeOrdernoGet';
 import {
+  PDD_VOUCHER_REALTIME_VERIFY_SYNC,
+  PddVoucherRealtimeVerifySyncRequestInterface,
+  PddVoucherRealtimeVerifySyncResponseInterface,
+} from './kaQuan/PddVoucherRealtimeVerifySync';
+import {
   PDD_VOUCHER_VIRTUAL_CARD_BATCH_ADD,
   PddVoucherVirtualCardBatchAddRequestInterface,
   PddVoucherVirtualCardBatchAddResponseInterface,
@@ -1092,6 +1096,13 @@ import {
   PddOpenKmsSearchBatchOpenKmsSearchBatchResponseResponseInterface,
   PDD_OPEN_KMS_SEARCH_BATCH_LIMITERS,
 } from './gongJu/PddOpenKmsSearchBatch';
+import {
+  PDD_OPEN_LOGISTICS_PRE_CHECK,
+  PDD_OPEN_LOGISTICS_PRE_CHECK_RESPONSE_KEY,
+  PddOpenLogisticsPreCheckRequestInterface,
+  PddOpenLogisticsPreCheckResponseInterface,
+  PddOpenLogisticsPreCheckLogisticsPreCheckResponseResponseInterface,
+} from './gongJu/PddOpenLogisticsPreCheck';
 import {
   PDD_OPEN_VIRTUAL_NUMBER_CHECK,
   PDD_OPEN_VIRTUAL_NUMBER_CHECK_RESPONSE_KEY,
@@ -1279,6 +1290,13 @@ import {
   PddCloudprintCustomaresGetPddCloudprintCustomaresGetResponseResponseInterface,
 } from './dianZiMianDan/PddCloudprintCustomaresGet';
 import {
+  PDD_CLOUDPRINT_PORTABLEPRINTER_GET,
+  PDD_CLOUDPRINT_PORTABLEPRINTER_GET_RESPONSE_KEY,
+  PddCloudprintPortableprinterGetRequestInterface,
+  PddCloudprintPortableprinterGetResponseInterface,
+  PddCloudprintPortableprinterGetPddCloudprintPortableprinterGetResponseResponseInterface,
+} from './dianZiMianDan/PddCloudprintPortableprinterGet';
+import {
   PDD_CLOUDPRINT_STDTEMPLATES_GET,
   PDD_CLOUDPRINT_STDTEMPLATES_GET_RESPONSE_KEY,
   PddCloudprintStdtemplatesGetRequestInterface,
@@ -1399,55 +1417,6 @@ import {
   PddSmsVendorComplaintCreateRequestInterface,
   PddSmsVendorComplaintCreateResponseInterface,
 } from './duanXinGongYingShang/PddSmsVendorComplaintCreate';
-// 电子面单代打API
-import {
-  PDD_FDS_ORDER_GET,
-  PDD_FDS_ORDER_GET_RESPONSE_KEY,
-  PddFdsOrderGetRequestInterface,
-  PddFdsOrderGetResponseInterface,
-  PddFdsOrderGetPddFdsOrderGetResponseResponseInterface,
-  PDD_FDS_ORDER_GET_LIMITERS,
-} from './dianZiMianDanDaiDa/PddFdsOrderGet';
-import {
-  PDD_FDS_ORDER_LIST_GET,
-  PDD_FDS_ORDER_LIST_GET_RESPONSE_KEY,
-  PddFdsOrderListGetRequestInterface,
-  PddFdsOrderListGetResponseInterface,
-  PddFdsOrderListGetPddFdsOrderListGetResponseResponseInterface,
-  PDD_FDS_ORDER_LIST_GET_LIMITERS,
-} from './dianZiMianDanDaiDa/PddFdsOrderListGet';
-import {
-  PDD_FDS_ROLE_GET,
-  PDD_FDS_ROLE_GET_RESPONSE_KEY,
-  PddFdsRoleGetRequestInterface,
-  PddFdsRoleGetResponseInterface,
-  PddFdsRoleGetPddFdsRoleGetResponseResponseInterface,
-  PDD_FDS_ROLE_GET_LIMITERS,
-} from './dianZiMianDanDaiDa/PddFdsRoleGet';
-import {
-  PDD_FDS_WAYBILL_CANCEL,
-  PDD_FDS_WAYBILL_CANCEL_RESPONSE_KEY,
-  PddFdsWaybillCancelRequestInterface,
-  PddFdsWaybillCancelResponseInterface,
-  PddFdsWaybillCancelPddFdsWaybillCancelResponseResponseInterface,
-  PDD_FDS_WAYBILL_CANCEL_LIMITERS,
-} from './dianZiMianDanDaiDa/PddFdsWaybillCancel';
-import {
-  PDD_FDS_WAYBILL_GET,
-  PDD_FDS_WAYBILL_GET_RESPONSE_KEY,
-  PddFdsWaybillGetRequestInterface,
-  PddFdsWaybillGetResponseInterface,
-  PddFdsWaybillGetPddFdsWaybillGetResponseResponseInterface,
-  PDD_FDS_WAYBILL_GET_LIMITERS,
-} from './dianZiMianDanDaiDa/PddFdsWaybillGet';
-import {
-  PDD_FDS_WAYBILL_RETURN,
-  PDD_FDS_WAYBILL_RETURN_RESPONSE_KEY,
-  PddFdsWaybillReturnRequestInterface,
-  PddFdsWaybillReturnResponseInterface,
-  PddFdsWaybillReturnPddFdsWaybillReturnResponseResponseInterface,
-  PDD_FDS_WAYBILL_RETURN_LIMITERS,
-} from './dianZiMianDanDaiDa/PddFdsWaybillReturn';
 // 多多推广API
 import {
   PDD_AD_API_ADVERTISER_OPEN_ACCOUNT,
@@ -1737,6 +1706,55 @@ import {
   PddAdApiUnitUpdateUnitNameResponseInterface,
   PDD_AD_API_UNIT_UPDATE_UNIT_NAME_LIMITERS,
 } from './duoDuoTuiGuang/PddAdApiUnitUpdateUnitName';
+// 电子面单代打API
+import {
+  PDD_FDS_ORDER_GET,
+  PDD_FDS_ORDER_GET_RESPONSE_KEY,
+  PddFdsOrderGetRequestInterface,
+  PddFdsOrderGetResponseInterface,
+  PddFdsOrderGetPddFdsOrderGetResponseResponseInterface,
+  PDD_FDS_ORDER_GET_LIMITERS,
+} from './dianZiMianDanDaiDa/PddFdsOrderGet';
+import {
+  PDD_FDS_ORDER_LIST_GET,
+  PDD_FDS_ORDER_LIST_GET_RESPONSE_KEY,
+  PddFdsOrderListGetRequestInterface,
+  PddFdsOrderListGetResponseInterface,
+  PddFdsOrderListGetPddFdsOrderListGetResponseResponseInterface,
+  PDD_FDS_ORDER_LIST_GET_LIMITERS,
+} from './dianZiMianDanDaiDa/PddFdsOrderListGet';
+import {
+  PDD_FDS_ROLE_GET,
+  PDD_FDS_ROLE_GET_RESPONSE_KEY,
+  PddFdsRoleGetRequestInterface,
+  PddFdsRoleGetResponseInterface,
+  PddFdsRoleGetPddFdsRoleGetResponseResponseInterface,
+  PDD_FDS_ROLE_GET_LIMITERS,
+} from './dianZiMianDanDaiDa/PddFdsRoleGet';
+import {
+  PDD_FDS_WAYBILL_CANCEL,
+  PDD_FDS_WAYBILL_CANCEL_RESPONSE_KEY,
+  PddFdsWaybillCancelRequestInterface,
+  PddFdsWaybillCancelResponseInterface,
+  PddFdsWaybillCancelPddFdsWaybillCancelResponseResponseInterface,
+  PDD_FDS_WAYBILL_CANCEL_LIMITERS,
+} from './dianZiMianDanDaiDa/PddFdsWaybillCancel';
+import {
+  PDD_FDS_WAYBILL_GET,
+  PDD_FDS_WAYBILL_GET_RESPONSE_KEY,
+  PddFdsWaybillGetRequestInterface,
+  PddFdsWaybillGetResponseInterface,
+  PddFdsWaybillGetPddFdsWaybillGetResponseResponseInterface,
+  PDD_FDS_WAYBILL_GET_LIMITERS,
+} from './dianZiMianDanDaiDa/PddFdsWaybillGet';
+import {
+  PDD_FDS_WAYBILL_RETURN,
+  PDD_FDS_WAYBILL_RETURN_RESPONSE_KEY,
+  PddFdsWaybillReturnRequestInterface,
+  PddFdsWaybillReturnResponseInterface,
+  PddFdsWaybillReturnPddFdsWaybillReturnResponseResponseInterface,
+  PDD_FDS_WAYBILL_RETURN_LIMITERS,
+} from './dianZiMianDanDaiDa/PddFdsWaybillReturn';
 // 门店API
 import {
   PDD_MALL_INFO_GROUP_ADD_STORE_POST,
@@ -1872,15 +1890,15 @@ import {
   PddTicketVerificationNotifycationResponseInterface,
 } from './fangZhouLvYouMenPiao/PddTicketVerificationNotifycation';
 const PddResponseTypeAndRequestTypeMapping = {
+  [PDD_RDC_PDDGENIUS_SENDGOODS_CANCEL]: PDD_RDC_PDDGENIUS_SENDGOODS_CANCEL_RESPONSE_KEY,
+  [PDD_REFUND_ADDRESS_LIST_GET]: PDD_REFUND_ADDRESS_LIST_GET_RESPONSE_KEY,
+  [PDD_REFUND_LIST_INCREMENT_GET]: PDD_REFUND_LIST_INCREMENT_GET_RESPONSE_KEY,
+  [PDD_REFUND_STATUS_CHECK]: PDD_REFUND_STATUS_CHECK_RESPONSE_KEY,
   [PDD_LOGISTICS_ADDRESS_GET]: PDD_LOGISTICS_ADDRESS_GET_RESPONSE_KEY,
   [PDD_LOGISTICS_COMPANIES_GET]: PDD_LOGISTICS_COMPANIES_GET_RESPONSE_KEY,
   [PDD_LOGISTICS_ONLINE_CREATE]: PDD_LOGISTICS_ONLINE_CREATE_RESPONSE_KEY,
   [PDD_LOGISTICS_ONLINE_SEND]: PDD_LOGISTICS_ONLINE_SEND_RESPONSE_KEY,
   [PDD_LOGISTICS_ONLINE_STATUS_QUERY]: PDD_LOGISTICS_ONLINE_STATUS_QUERY_RESPONSE_KEY,
-  [PDD_RDC_PDDGENIUS_SENDGOODS_CANCEL]: PDD_RDC_PDDGENIUS_SENDGOODS_CANCEL_RESPONSE_KEY,
-  [PDD_REFUND_ADDRESS_LIST_GET]: PDD_REFUND_ADDRESS_LIST_GET_RESPONSE_KEY,
-  [PDD_REFUND_LIST_INCREMENT_GET]: PDD_REFUND_LIST_INCREMENT_GET_RESPONSE_KEY,
-  [PDD_REFUND_STATUS_CHECK]: PDD_REFUND_STATUS_CHECK_RESPONSE_KEY,
   [PDD_ORDER_BASIC_LIST_GET]: PDD_ORDER_BASIC_LIST_GET_RESPONSE_KEY,
   [PDD_ORDER_INFORMATION_GET]: PDD_ORDER_INFORMATION_GET_RESPONSE_KEY,
   [PDD_ORDER_LIST_GET]: PDD_ORDER_LIST_GET_RESPONSE_KEY,
@@ -1925,6 +1943,7 @@ const PddResponseTypeAndRequestTypeMapping = {
   [PDD_GOODS_QUANTITY_UPDATE]: PDD_GOODS_QUANTITY_UPDATE_RESPONSE_KEY,
   [PDD_GOODS_SALE_STATUS_SET]: PDD_GOODS_SALE_STATUS_SET_RESPONSE_KEY,
   [PDD_GOODS_SKU_PRICE_UPDATE]: PDD_GOODS_SKU_PRICE_UPDATE_RESPONSE_KEY,
+  [PDD_GOODS_SKUS_GET]: PDD_GOODS_SKUS_GET_RESPONSE_KEY,
   [PDD_GOODS_SPEC_GET]: PDD_GOODS_SPEC_GET_RESPONSE_KEY,
   [PDD_GOODS_SPEC_ID_GET]: PDD_GOODS_SPEC_ID_GET_RESPONSE_KEY,
   [PDD_GOODS_SPU_GET]: PDD_GOODS_SPU_GET_RESPONSE_KEY,
@@ -1949,7 +1968,6 @@ const PddResponseTypeAndRequestTypeMapping = {
   [PDD_DDK_PID_MEDIAID_BIND]: PDD_DDK_PID_MEDIAID_BIND_RESPONSE_KEY,
   [PDD_DDK_RESOURCE_URL_GEN]: PDD_DDK_RESOURCE_URL_GEN_RESPONSE_KEY,
   [PDD_DDK_RP_PROM_URL_GENERATE]: PDD_DDK_RP_PROM_URL_GENERATE_RESPONSE_KEY,
-  [PDD_DDK_TOP_GOODS_LIST_QUERY]: PDD_DDK_TOP_GOODS_LIST_QUERY_RESPONSE_KEY,
   [PDD_DDK_ALL_ORDER_LIST_INCREMENT_GET]: PDD_DDK_ALL_ORDER_LIST_INCREMENT_GET_RESPONSE_KEY,
   [PDD_DDK_OAUTH_CMS_PROM_URL_GENERATE]: PDD_DDK_OAUTH_CMS_PROM_URL_GENERATE_RESPONSE_KEY,
   [PDD_DDK_OAUTH_GOODS_DETAIL]: PDD_DDK_OAUTH_GOODS_DETAIL_RESPONSE_KEY,
@@ -1964,7 +1982,6 @@ const PddResponseTypeAndRequestTypeMapping = {
   [PDD_DDK_OAUTH_PID_MEDIAID_BIND]: PDD_DDK_OAUTH_PID_MEDIAID_BIND_RESPONSE_KEY,
   [PDD_DDK_OAUTH_RESOURCE_URL_GEN]: PDD_DDK_OAUTH_RESOURCE_URL_GEN_RESPONSE_KEY,
   [PDD_DDK_OAUTH_RP_PROM_URL_GENERATE]: PDD_DDK_OAUTH_RP_PROM_URL_GENERATE_RESPONSE_KEY,
-  [PDD_DDK_OAUTH_TOP_GOODS_LIST_QUERY]: PDD_DDK_OAUTH_TOP_GOODS_LIST_QUERY_RESPONSE_KEY,
   [PDD_LOGISTICS_CS_HISTORY_MESSAGE_GET]: PDD_LOGISTICS_CS_HISTORY_MESSAGE_GET_RESPONSE_KEY,
   [PDD_LOGISTICS_CS_MESSAGE_SEND]: PDD_LOGISTICS_CS_MESSAGE_SEND_RESPONSE_KEY,
   [PDD_LOGISTICS_CS_SESSION_CLOSE]: PDD_LOGISTICS_CS_SESSION_CLOSE_RESPONSE_KEY,
@@ -1994,6 +2011,7 @@ const PddResponseTypeAndRequestTypeMapping = {
   [PDD_OPEN_DECRYPT_MASK_BATCH]: PDD_OPEN_DECRYPT_MASK_BATCH_RESPONSE_KEY,
   [PDD_OPEN_KMS_ENCRYPT_BATCH]: PDD_OPEN_KMS_ENCRYPT_BATCH_RESPONSE_KEY,
   [PDD_OPEN_KMS_SEARCH_BATCH]: PDD_OPEN_KMS_SEARCH_BATCH_RESPONSE_KEY,
+  [PDD_OPEN_LOGISTICS_PRE_CHECK]: PDD_OPEN_LOGISTICS_PRE_CHECK_RESPONSE_KEY,
   [PDD_OPEN_VIRTUAL_NUMBER_CHECK]: PDD_OPEN_VIRTUAL_NUMBER_CHECK_RESPONSE_KEY,
   [PDD_OPEN_WAYBILL_TYPE_REPORT]: PDD_OPEN_WAYBILL_TYPE_REPORT_RESPONSE_KEY,
   [PDD_POP_AUTH_TOKEN_CREATE]: PDD_POP_AUTH_TOKEN_CREATE_RESPONSE_KEY,
@@ -2013,6 +2031,7 @@ const PddResponseTypeAndRequestTypeMapping = {
   [PDD_PMC_USER_PERMIT]: PDD_PMC_USER_PERMIT_RESPONSE_KEY,
   [PDD_CLOUDPRINT_CMDPRINT_RENDER]: PDD_CLOUDPRINT_CMDPRINT_RENDER_RESPONSE_KEY,
   [PDD_CLOUDPRINT_CUSTOMARES_GET]: PDD_CLOUDPRINT_CUSTOMARES_GET_RESPONSE_KEY,
+  [PDD_CLOUDPRINT_PORTABLEPRINTER_GET]: PDD_CLOUDPRINT_PORTABLEPRINTER_GET_RESPONSE_KEY,
   [PDD_CLOUDPRINT_STDTEMPLATES_GET]: PDD_CLOUDPRINT_STDTEMPLATES_GET_RESPONSE_KEY,
   [PDD_WAYBILL_CANCEL]: PDD_WAYBILL_CANCEL_RESPONSE_KEY,
   [PDD_WAYBILL_GET]: PDD_WAYBILL_GET_RESPONSE_KEY,
@@ -2044,15 +2063,15 @@ const PddResponseTypeAndRequestTypeMapping = {
   [PDD_TICKET_GOODS_UPLOAD]: PDD_TICKET_GOODS_UPLOAD_RESPONSE_KEY,
 };
 const PddNeedAccessTokenTypeCollections = [
-  PDD_LOGISTICS_ONLINE_CREATE,
-  PDD_LOGISTICS_ONLINE_SEND,
-  PDD_LOGISTICS_ONLINE_STATUS_QUERY,
   PDD_NEXTONE_LOGISTICS_WAREHOUSE_UPDATE,
   PDD_RDC_PDDGENIUS_SENDGOODS_CANCEL,
   PDD_REFUND_ADDRESS_LIST_GET,
   PDD_REFUND_INFORMATION_GET,
   PDD_REFUND_LIST_INCREMENT_GET,
   PDD_REFUND_STATUS_CHECK,
+  PDD_LOGISTICS_ONLINE_CREATE,
+  PDD_LOGISTICS_ONLINE_SEND,
+  PDD_LOGISTICS_ONLINE_STATUS_QUERY,
   PDD_ERP_ORDER_SYNC,
   PDD_ORDER_BASIC_LIST_GET,
   PDD_ORDER_INFORMATION_GET,
@@ -2112,6 +2131,7 @@ const PddNeedAccessTokenTypeCollections = [
   PDD_GOODS_SIZESPEC_TEMPLATE_UPDATE,
   PDD_GOODS_SIZESPEC_TEMPLATES_GET,
   PDD_GOODS_SKU_PRICE_UPDATE,
+  PDD_GOODS_SKUS_GET,
   PDD_GOODS_SPEC_GET,
   PDD_GOODS_SPEC_ID_GET,
   PDD_GOODS_SPU_GET,
@@ -2132,7 +2152,6 @@ const PddNeedAccessTokenTypeCollections = [
   PDD_DDK_OAUTH_PID_MEDIAID_BIND,
   PDD_DDK_OAUTH_RESOURCE_URL_GEN,
   PDD_DDK_OAUTH_RP_PROM_URL_GENERATE,
-  PDD_DDK_OAUTH_TOP_GOODS_LIST_QUERY,
   PDD_PROMOTION_COUPON_CLOSE,
   PDD_PROMOTION_COUPON_QUANTITY_ADD,
   PDD_PROMOTION_GOODS_COUPON_CREATE,
@@ -2148,6 +2167,7 @@ const PddNeedAccessTokenTypeCollections = [
   PDD_VOUCHER_OTA_CARD_VERIFICATION,
   PDD_VOUCHER_PHYSICAL_GOODS_SEND,
   PDD_VOUCHER_REALTIME_ORDERNO_GET,
+  PDD_VOUCHER_REALTIME_VERIFY_SYNC,
   PDD_VOUCHER_VIRTUAL_CARD_BATCH_ADD,
   PDD_VOUCHER_VIRTUAL_CARD_VERIFICATION,
   PDD_VOUCHER_VOUCHER_COMPLAIN,
@@ -2160,6 +2180,7 @@ const PddNeedAccessTokenTypeCollections = [
   PDD_OPEN_DECRYPT_BATCH,
   PDD_OPEN_DECRYPT_MASK_BATCH,
   PDD_OPEN_KMS_ENCRYPT_BATCH,
+  PDD_OPEN_LOGISTICS_PRE_CHECK,
   PDD_OPEN_VIRTUAL_NUMBER_CHECK,
   PDD_OPEN_WAYBILL_TYPE_REPORT,
   PDD_EXPRESS_ADD_DEPOT,
@@ -2189,12 +2210,6 @@ const PddNeedAccessTokenTypeCollections = [
   PDD_WAYBILL_SEARCH,
   PDD_WAYBILL_UPDATE,
   PDD_FINANCE_BALANCE_DAILY_BILL_URL_GET,
-  PDD_FDS_ORDER_GET,
-  PDD_FDS_ORDER_LIST_GET,
-  PDD_FDS_ROLE_GET,
-  PDD_FDS_WAYBILL_CANCEL,
-  PDD_FDS_WAYBILL_GET,
-  PDD_FDS_WAYBILL_RETURN,
   PDD_AD_API_ADVERTISER_OPEN_ACCOUNT,
   PDD_AD_API_ADVERTISER_QUERY_ACCOUNT_BALANCE,
   PDD_AD_API_ADVERTISER_QUERY_ACCOUNT_INFO,
@@ -2243,6 +2258,12 @@ const PddNeedAccessTokenTypeCollections = [
   PDD_AD_API_UNIT_UPDATE_OPTIMIZATION_MESSAGE,
   PDD_AD_API_UNIT_UPDATE_UNIT_BID,
   PDD_AD_API_UNIT_UPDATE_UNIT_NAME,
+  PDD_FDS_ORDER_GET,
+  PDD_FDS_ORDER_LIST_GET,
+  PDD_FDS_ROLE_GET,
+  PDD_FDS_WAYBILL_CANCEL,
+  PDD_FDS_WAYBILL_GET,
+  PDD_FDS_WAYBILL_RETURN,
   PDD_MALL_INFO_GROUP_ADD_STORE_POST,
   PDD_MALL_INFO_GROUP_LIST_STORE_GET,
   PDD_MALL_INFO_GROUP_REMOVE_STORE_GET,
@@ -2266,16 +2287,16 @@ const PddNeedAccessTokenTypeCollections = [
   PDD_TICKET_VERIFICATION_NOTIFYCATION,
 ];
 const PddApiLimiterMapping = {
-  [PDD_LOGISTICS_ADDRESS_GET]: PDD_LOGISTICS_ADDRESS_GET_LIMITERS,
-  [PDD_LOGISTICS_COMPANIES_GET]: PDD_LOGISTICS_COMPANIES_GET_LIMITERS,
-  [PDD_LOGISTICS_ISV_TRACE_NOTIFY_SUB]: PDD_LOGISTICS_ISV_TRACE_NOTIFY_SUB_LIMITERS,
-  [PDD_LOGISTICS_ONLINE_SEND]: PDD_LOGISTICS_ONLINE_SEND_LIMITERS,
-  [PDD_LOGISTICS_ORDERTRACE_GET]: PDD_LOGISTICS_ORDERTRACE_GET_LIMITERS,
   [PDD_RDC_PDDGENIUS_SENDGOODS_CANCEL]: PDD_RDC_PDDGENIUS_SENDGOODS_CANCEL_LIMITERS,
   [PDD_REFUND_ADDRESS_LIST_GET]: PDD_REFUND_ADDRESS_LIST_GET_LIMITERS,
   [PDD_REFUND_INFORMATION_GET]: PDD_REFUND_INFORMATION_GET_LIMITERS,
   [PDD_REFUND_LIST_INCREMENT_GET]: PDD_REFUND_LIST_INCREMENT_GET_LIMITERS,
   [PDD_REFUND_STATUS_CHECK]: PDD_REFUND_STATUS_CHECK_LIMITERS,
+  [PDD_LOGISTICS_ADDRESS_GET]: PDD_LOGISTICS_ADDRESS_GET_LIMITERS,
+  [PDD_LOGISTICS_COMPANIES_GET]: PDD_LOGISTICS_COMPANIES_GET_LIMITERS,
+  [PDD_LOGISTICS_ISV_TRACE_NOTIFY_SUB]: PDD_LOGISTICS_ISV_TRACE_NOTIFY_SUB_LIMITERS,
+  [PDD_LOGISTICS_ONLINE_SEND]: PDD_LOGISTICS_ONLINE_SEND_LIMITERS,
+  [PDD_LOGISTICS_ORDERTRACE_GET]: PDD_LOGISTICS_ORDERTRACE_GET_LIMITERS,
   [PDD_ERP_ORDER_SYNC]: PDD_ERP_ORDER_SYNC_LIMITERS,
   [PDD_ORDER_INFORMATION_GET]: PDD_ORDER_INFORMATION_GET_LIMITERS,
   [PDD_ORDER_LIST_GET]: PDD_ORDER_LIST_GET_LIMITERS,
@@ -2309,6 +2330,7 @@ const PddApiLimiterMapping = {
   [PDD_GOODS_QUANTITY_UPDATE]: PDD_GOODS_QUANTITY_UPDATE_LIMITERS,
   [PDD_GOODS_SALE_STATUS_SET]: PDD_GOODS_SALE_STATUS_SET_LIMITERS,
   [PDD_GOODS_SKU_PRICE_UPDATE]: PDD_GOODS_SKU_PRICE_UPDATE_LIMITERS,
+  [PDD_GOODS_SKUS_GET]: PDD_GOODS_SKUS_GET_LIMITERS,
   [PDD_GOODS_SPEC_GET]: PDD_GOODS_SPEC_GET_LIMITERS,
   [PDD_GOODS_SPEC_ID_GET]: PDD_GOODS_SPEC_ID_GET_LIMITERS,
   [PDD_GOODS_SUBMIT_GOODS_COMMIT]: PDD_GOODS_SUBMIT_GOODS_COMMIT_LIMITERS,
@@ -2353,12 +2375,6 @@ const PddApiLimiterMapping = {
   [PDD_WAYBILL_SEARCH]: PDD_WAYBILL_SEARCH_LIMITERS,
   [PDD_FINANCE_BALANCE_DAILY_BILL_URL_GET]: PDD_FINANCE_BALANCE_DAILY_BILL_URL_GET_LIMITERS,
   [PDD_VAS_ORDER_SEARCH]: PDD_VAS_ORDER_SEARCH_LIMITERS,
-  [PDD_FDS_ORDER_GET]: PDD_FDS_ORDER_GET_LIMITERS,
-  [PDD_FDS_ORDER_LIST_GET]: PDD_FDS_ORDER_LIST_GET_LIMITERS,
-  [PDD_FDS_ROLE_GET]: PDD_FDS_ROLE_GET_LIMITERS,
-  [PDD_FDS_WAYBILL_CANCEL]: PDD_FDS_WAYBILL_CANCEL_LIMITERS,
-  [PDD_FDS_WAYBILL_GET]: PDD_FDS_WAYBILL_GET_LIMITERS,
-  [PDD_FDS_WAYBILL_RETURN]: PDD_FDS_WAYBILL_RETURN_LIMITERS,
   [PDD_AD_API_ADVERTISER_OPEN_ACCOUNT]: PDD_AD_API_ADVERTISER_OPEN_ACCOUNT_LIMITERS,
   [PDD_AD_API_ADVERTISER_QUERY_ACCOUNT_BALANCE]: PDD_AD_API_ADVERTISER_QUERY_ACCOUNT_BALANCE_LIMITERS,
   [PDD_AD_API_ADVERTISER_QUERY_ACCOUNT_INFO]: PDD_AD_API_ADVERTISER_QUERY_ACCOUNT_INFO_LIMITERS,
@@ -2407,10 +2423,42 @@ const PddApiLimiterMapping = {
   [PDD_AD_API_UNIT_UPDATE_OPTIMIZATION_MESSAGE]: PDD_AD_API_UNIT_UPDATE_OPTIMIZATION_MESSAGE_LIMITERS,
   [PDD_AD_API_UNIT_UPDATE_UNIT_BID]: PDD_AD_API_UNIT_UPDATE_UNIT_BID_LIMITERS,
   [PDD_AD_API_UNIT_UPDATE_UNIT_NAME]: PDD_AD_API_UNIT_UPDATE_UNIT_NAME_LIMITERS,
+  [PDD_FDS_ORDER_GET]: PDD_FDS_ORDER_GET_LIMITERS,
+  [PDD_FDS_ORDER_LIST_GET]: PDD_FDS_ORDER_LIST_GET_LIMITERS,
+  [PDD_FDS_ROLE_GET]: PDD_FDS_ROLE_GET_LIMITERS,
+  [PDD_FDS_WAYBILL_CANCEL]: PDD_FDS_WAYBILL_CANCEL_LIMITERS,
+  [PDD_FDS_WAYBILL_GET]: PDD_FDS_WAYBILL_GET_LIMITERS,
+  [PDD_FDS_WAYBILL_RETURN]: PDD_FDS_WAYBILL_RETURN_LIMITERS,
   [PDD_QRPAY_PAYEE_REGISTER]: PDD_QRPAY_PAYEE_REGISTER_LIMITERS,
   [PDD_MALL_INFO_BONDED_WAREHOUSE_GET]: PDD_MALL_INFO_BONDED_WAREHOUSE_GET_LIMITERS,
 };
 export {
+  PDD_NEXTONE_LOGISTICS_WAREHOUSE_UPDATE,
+  PddNextoneLogisticsWarehouseUpdateRequestInterface,
+  PddNextoneLogisticsWarehouseUpdateResponseInterface,
+  PDD_RDC_PDDGENIUS_SENDGOODS_CANCEL,
+  PDD_RDC_PDDGENIUS_SENDGOODS_CANCEL_RESPONSE_KEY,
+  PddRdcPddgeniusSendgoodsCancelRequestInterface,
+  PddRdcPddgeniusSendgoodsCancelResponseInterface,
+  PddRdcPddgeniusSendgoodsCancelRdcPddgeniusSendgoodsCancelResponseResponseInterface,
+  PDD_REFUND_ADDRESS_LIST_GET,
+  PDD_REFUND_ADDRESS_LIST_GET_RESPONSE_KEY,
+  PddRefundAddressListGetRequestInterface,
+  PddRefundAddressListGetResponseInterface,
+  PddRefundAddressListGetRefundAddressListGetResponseResponseInterface,
+  PDD_REFUND_INFORMATION_GET,
+  PddRefundInformationGetRequestInterface,
+  PddRefundInformationGetResponseInterface,
+  PDD_REFUND_LIST_INCREMENT_GET,
+  PDD_REFUND_LIST_INCREMENT_GET_RESPONSE_KEY,
+  PddRefundListIncrementGetRequestInterface,
+  PddRefundListIncrementGetResponseInterface,
+  PddRefundListIncrementGetRefundIncrementGetResponseResponseInterface,
+  PDD_REFUND_STATUS_CHECK,
+  PDD_REFUND_STATUS_CHECK_RESPONSE_KEY,
+  PddRefundStatusCheckRequestInterface,
+  PddRefundStatusCheckResponseInterface,
+  PddRefundStatusCheckRefundStatusCheckResponseResponseInterface,
   PDD_LOGISTICS_ADDRESS_GET,
   PDD_LOGISTICS_ADDRESS_GET_RESPONSE_KEY,
   PddLogisticsAddressGetRequestInterface,
@@ -2442,32 +2490,6 @@ export {
   PDD_LOGISTICS_ORDERTRACE_GET,
   PddLogisticsOrdertraceGetRequestInterface,
   PddLogisticsOrdertraceGetResponseInterface,
-  PDD_NEXTONE_LOGISTICS_WAREHOUSE_UPDATE,
-  PddNextoneLogisticsWarehouseUpdateRequestInterface,
-  PddNextoneLogisticsWarehouseUpdateResponseInterface,
-  PDD_RDC_PDDGENIUS_SENDGOODS_CANCEL,
-  PDD_RDC_PDDGENIUS_SENDGOODS_CANCEL_RESPONSE_KEY,
-  PddRdcPddgeniusSendgoodsCancelRequestInterface,
-  PddRdcPddgeniusSendgoodsCancelResponseInterface,
-  PddRdcPddgeniusSendgoodsCancelRdcPddgeniusSendgoodsCancelResponseResponseInterface,
-  PDD_REFUND_ADDRESS_LIST_GET,
-  PDD_REFUND_ADDRESS_LIST_GET_RESPONSE_KEY,
-  PddRefundAddressListGetRequestInterface,
-  PddRefundAddressListGetResponseInterface,
-  PddRefundAddressListGetRefundAddressListGetResponseResponseInterface,
-  PDD_REFUND_INFORMATION_GET,
-  PddRefundInformationGetRequestInterface,
-  PddRefundInformationGetResponseInterface,
-  PDD_REFUND_LIST_INCREMENT_GET,
-  PDD_REFUND_LIST_INCREMENT_GET_RESPONSE_KEY,
-  PddRefundListIncrementGetRequestInterface,
-  PddRefundListIncrementGetResponseInterface,
-  PddRefundListIncrementGetRefundIncrementGetResponseResponseInterface,
-  PDD_REFUND_STATUS_CHECK,
-  PDD_REFUND_STATUS_CHECK_RESPONSE_KEY,
-  PddRefundStatusCheckRequestInterface,
-  PddRefundStatusCheckResponseInterface,
-  PddRefundStatusCheckRefundStatusCheckResponseResponseInterface,
   PDD_ERP_ORDER_SYNC,
   PddErpOrderSyncRequestInterface,
   PddErpOrderSyncResponseInterface,
@@ -2742,6 +2764,11 @@ export {
   PddGoodsSkuPriceUpdateRequestInterface,
   PddGoodsSkuPriceUpdateResponseInterface,
   PddGoodsSkuPriceUpdateGoodsUpdateSkuPriceResponseResponseInterface,
+  PDD_GOODS_SKUS_GET,
+  PDD_GOODS_SKUS_GET_RESPONSE_KEY,
+  PddGoodsSkusGetRequestInterface,
+  PddGoodsSkusGetResponseInterface,
+  PddGoodsSkusGetGoodsSkuGetResponseResponseInterface,
   PDD_GOODS_SPEC_GET,
   PDD_GOODS_SPEC_GET_RESPONSE_KEY,
   PddGoodsSpecGetRequestInterface,
@@ -2862,11 +2889,6 @@ export {
   PddDdkRpPromUrlGenerateRequestInterface,
   PddDdkRpPromUrlGenerateResponseInterface,
   PddDdkRpPromUrlGenerateRpPromotionUrlGenerateResponseResponseInterface,
-  PDD_DDK_TOP_GOODS_LIST_QUERY,
-  PDD_DDK_TOP_GOODS_LIST_QUERY_RESPONSE_KEY,
-  PddDdkTopGoodsListQueryRequestInterface,
-  PddDdkTopGoodsListQueryResponseInterface,
-  PddDdkTopGoodsListQueryTopGoodsListGetResponseResponseInterface,
   PDD_DDK_ALL_ORDER_LIST_INCREMENT_GET,
   PDD_DDK_ALL_ORDER_LIST_INCREMENT_GET_RESPONSE_KEY,
   PddDdkAllOrderListIncrementGetRequestInterface,
@@ -2937,11 +2959,6 @@ export {
   PddDdkOauthRpPromUrlGenerateRequestInterface,
   PddDdkOauthRpPromUrlGenerateResponseInterface,
   PddDdkOauthRpPromUrlGenerateRpPromotionUrlGenerateResponseResponseInterface,
-  PDD_DDK_OAUTH_TOP_GOODS_LIST_QUERY,
-  PDD_DDK_OAUTH_TOP_GOODS_LIST_QUERY_RESPONSE_KEY,
-  PddDdkOauthTopGoodsListQueryRequestInterface,
-  PddDdkOauthTopGoodsListQueryResponseInterface,
-  PddDdkOauthTopGoodsListQueryTopGoodsListGetResponseResponseInterface,
   PDD_LOGISTICS_CS_HISTORY_MESSAGE_GET,
   PDD_LOGISTICS_CS_HISTORY_MESSAGE_GET_RESPONSE_KEY,
   PddLogisticsCsHistoryMessageGetRequestInterface,
@@ -2982,6 +2999,9 @@ export {
   PddLogisticsTicketProblemTypeGetRequestInterface,
   PddLogisticsTicketProblemTypeGetResponseInterface,
   PddLogisticsTicketProblemTypeGetLogisticsProblemTypeGetResponseResponseInterface,
+  PDD_SERVICE_MAIL_SERVICE_TIME_QUERY,
+  PddServiceMailServiceTimeQueryRequestInterface,
+  PddServiceMailServiceTimeQueryResponseInterface,
   PDD_PROMOTION_COUPON_CLOSE,
   PDD_PROMOTION_COUPON_CLOSE_RESPONSE_KEY,
   PddPromotionCouponCloseRequestInterface,
@@ -3045,6 +3065,9 @@ export {
   PDD_VOUCHER_REALTIME_ORDERNO_GET,
   PddVoucherRealtimeOrdernoGetRequestInterface,
   PddVoucherRealtimeOrdernoGetResponseInterface,
+  PDD_VOUCHER_REALTIME_VERIFY_SYNC,
+  PddVoucherRealtimeVerifySyncRequestInterface,
+  PddVoucherRealtimeVerifySyncResponseInterface,
   PDD_VOUCHER_VIRTUAL_CARD_BATCH_ADD,
   PddVoucherVirtualCardBatchAddRequestInterface,
   PddVoucherVirtualCardBatchAddResponseInterface,
@@ -3108,6 +3131,11 @@ export {
   PddOpenKmsSearchBatchRequestInterface,
   PddOpenKmsSearchBatchResponseInterface,
   PddOpenKmsSearchBatchOpenKmsSearchBatchResponseResponseInterface,
+  PDD_OPEN_LOGISTICS_PRE_CHECK,
+  PDD_OPEN_LOGISTICS_PRE_CHECK_RESPONSE_KEY,
+  PddOpenLogisticsPreCheckRequestInterface,
+  PddOpenLogisticsPreCheckResponseInterface,
+  PddOpenLogisticsPreCheckLogisticsPreCheckResponseResponseInterface,
   PDD_OPEN_VIRTUAL_NUMBER_CHECK,
   PDD_OPEN_VIRTUAL_NUMBER_CHECK_RESPONSE_KEY,
   PddOpenVirtualNumberCheckRequestInterface,
@@ -3233,6 +3261,11 @@ export {
   PddCloudprintCustomaresGetRequestInterface,
   PddCloudprintCustomaresGetResponseInterface,
   PddCloudprintCustomaresGetPddCloudprintCustomaresGetResponseResponseInterface,
+  PDD_CLOUDPRINT_PORTABLEPRINTER_GET,
+  PDD_CLOUDPRINT_PORTABLEPRINTER_GET_RESPONSE_KEY,
+  PddCloudprintPortableprinterGetRequestInterface,
+  PddCloudprintPortableprinterGetResponseInterface,
+  PddCloudprintPortableprinterGetPddCloudprintPortableprinterGetResponseResponseInterface,
   PDD_CLOUDPRINT_STDTEMPLATES_GET,
   PDD_CLOUDPRINT_STDTEMPLATES_GET_RESPONSE_KEY,
   PddCloudprintStdtemplatesGetRequestInterface,
@@ -3309,36 +3342,6 @@ export {
   PDD_SMS_VENDOR_COMPLAINT_CREATE,
   PddSmsVendorComplaintCreateRequestInterface,
   PddSmsVendorComplaintCreateResponseInterface,
-  PDD_FDS_ORDER_GET,
-  PDD_FDS_ORDER_GET_RESPONSE_KEY,
-  PddFdsOrderGetRequestInterface,
-  PddFdsOrderGetResponseInterface,
-  PddFdsOrderGetPddFdsOrderGetResponseResponseInterface,
-  PDD_FDS_ORDER_LIST_GET,
-  PDD_FDS_ORDER_LIST_GET_RESPONSE_KEY,
-  PddFdsOrderListGetRequestInterface,
-  PddFdsOrderListGetResponseInterface,
-  PddFdsOrderListGetPddFdsOrderListGetResponseResponseInterface,
-  PDD_FDS_ROLE_GET,
-  PDD_FDS_ROLE_GET_RESPONSE_KEY,
-  PddFdsRoleGetRequestInterface,
-  PddFdsRoleGetResponseInterface,
-  PddFdsRoleGetPddFdsRoleGetResponseResponseInterface,
-  PDD_FDS_WAYBILL_CANCEL,
-  PDD_FDS_WAYBILL_CANCEL_RESPONSE_KEY,
-  PddFdsWaybillCancelRequestInterface,
-  PddFdsWaybillCancelResponseInterface,
-  PddFdsWaybillCancelPddFdsWaybillCancelResponseResponseInterface,
-  PDD_FDS_WAYBILL_GET,
-  PDD_FDS_WAYBILL_GET_RESPONSE_KEY,
-  PddFdsWaybillGetRequestInterface,
-  PddFdsWaybillGetResponseInterface,
-  PddFdsWaybillGetPddFdsWaybillGetResponseResponseInterface,
-  PDD_FDS_WAYBILL_RETURN,
-  PDD_FDS_WAYBILL_RETURN_RESPONSE_KEY,
-  PddFdsWaybillReturnRequestInterface,
-  PddFdsWaybillReturnResponseInterface,
-  PddFdsWaybillReturnPddFdsWaybillReturnResponseResponseInterface,
   PDD_AD_API_ADVERTISER_OPEN_ACCOUNT,
   PddAdApiAdvertiserOpenAccountRequestInterface,
   PddAdApiAdvertiserOpenAccountResponseInterface,
@@ -3483,6 +3486,36 @@ export {
   PDD_AD_API_UNIT_UPDATE_UNIT_NAME,
   PddAdApiUnitUpdateUnitNameRequestInterface,
   PddAdApiUnitUpdateUnitNameResponseInterface,
+  PDD_FDS_ORDER_GET,
+  PDD_FDS_ORDER_GET_RESPONSE_KEY,
+  PddFdsOrderGetRequestInterface,
+  PddFdsOrderGetResponseInterface,
+  PddFdsOrderGetPddFdsOrderGetResponseResponseInterface,
+  PDD_FDS_ORDER_LIST_GET,
+  PDD_FDS_ORDER_LIST_GET_RESPONSE_KEY,
+  PddFdsOrderListGetRequestInterface,
+  PddFdsOrderListGetResponseInterface,
+  PddFdsOrderListGetPddFdsOrderListGetResponseResponseInterface,
+  PDD_FDS_ROLE_GET,
+  PDD_FDS_ROLE_GET_RESPONSE_KEY,
+  PddFdsRoleGetRequestInterface,
+  PddFdsRoleGetResponseInterface,
+  PddFdsRoleGetPddFdsRoleGetResponseResponseInterface,
+  PDD_FDS_WAYBILL_CANCEL,
+  PDD_FDS_WAYBILL_CANCEL_RESPONSE_KEY,
+  PddFdsWaybillCancelRequestInterface,
+  PddFdsWaybillCancelResponseInterface,
+  PddFdsWaybillCancelPddFdsWaybillCancelResponseResponseInterface,
+  PDD_FDS_WAYBILL_GET,
+  PDD_FDS_WAYBILL_GET_RESPONSE_KEY,
+  PddFdsWaybillGetRequestInterface,
+  PddFdsWaybillGetResponseInterface,
+  PddFdsWaybillGetPddFdsWaybillGetResponseResponseInterface,
+  PDD_FDS_WAYBILL_RETURN,
+  PDD_FDS_WAYBILL_RETURN_RESPONSE_KEY,
+  PddFdsWaybillReturnRequestInterface,
+  PddFdsWaybillReturnResponseInterface,
+  PddFdsWaybillReturnPddFdsWaybillReturnResponseResponseInterface,
   PDD_MALL_INFO_GROUP_ADD_STORE_POST,
   PDD_MALL_INFO_GROUP_ADD_STORE_POST_RESPONSE_KEY,
   PddMallInfoGroupAddStorePostRequestInterface,
@@ -3575,6 +3608,12 @@ export {
   PddApiLimiterMapping,
 };
 export interface PddCollectRequestInterface {
+  [PDD_NEXTONE_LOGISTICS_WAREHOUSE_UPDATE]: PddNextoneLogisticsWarehouseUpdateRequestInterface;
+  [PDD_RDC_PDDGENIUS_SENDGOODS_CANCEL]: PddRdcPddgeniusSendgoodsCancelRequestInterface;
+  [PDD_REFUND_ADDRESS_LIST_GET]: PddRefundAddressListGetRequestInterface;
+  [PDD_REFUND_INFORMATION_GET]: PddRefundInformationGetRequestInterface;
+  [PDD_REFUND_LIST_INCREMENT_GET]: PddRefundListIncrementGetRequestInterface;
+  [PDD_REFUND_STATUS_CHECK]: PddRefundStatusCheckRequestInterface;
   [PDD_LOGISTICS_ADDRESS_GET]: PddLogisticsAddressGetRequestInterface;
   [PDD_LOGISTICS_COMPANIES_GET]: PddLogisticsCompaniesGetRequestInterface;
   [PDD_LOGISTICS_ISV_TRACE_NOTIFY_SUB]: PddLogisticsIsvTraceNotifySubRequestInterface;
@@ -3582,12 +3621,6 @@ export interface PddCollectRequestInterface {
   [PDD_LOGISTICS_ONLINE_SEND]: PddLogisticsOnlineSendRequestInterface;
   [PDD_LOGISTICS_ONLINE_STATUS_QUERY]: PddLogisticsOnlineStatusQueryRequestInterface;
   [PDD_LOGISTICS_ORDERTRACE_GET]: PddLogisticsOrdertraceGetRequestInterface;
-  [PDD_NEXTONE_LOGISTICS_WAREHOUSE_UPDATE]: PddNextoneLogisticsWarehouseUpdateRequestInterface;
-  [PDD_RDC_PDDGENIUS_SENDGOODS_CANCEL]: PddRdcPddgeniusSendgoodsCancelRequestInterface;
-  [PDD_REFUND_ADDRESS_LIST_GET]: PddRefundAddressListGetRequestInterface;
-  [PDD_REFUND_INFORMATION_GET]: PddRefundInformationGetRequestInterface;
-  [PDD_REFUND_LIST_INCREMENT_GET]: PddRefundListIncrementGetRequestInterface;
-  [PDD_REFUND_STATUS_CHECK]: PddRefundStatusCheckRequestInterface;
   [PDD_ERP_ORDER_SYNC]: PddErpOrderSyncRequestInterface;
   [PDD_ORDER_BASIC_LIST_GET]: PddOrderBasicListGetRequestInterface;
   [PDD_ORDER_INFORMATION_GET]: PddOrderInformationGetRequestInterface;
@@ -3650,6 +3683,7 @@ export interface PddCollectRequestInterface {
   [PDD_GOODS_SIZESPEC_TEMPLATE_UPDATE]: PddGoodsSizespecTemplateUpdateRequestInterface;
   [PDD_GOODS_SIZESPEC_TEMPLATES_GET]: PddGoodsSizespecTemplatesGetRequestInterface;
   [PDD_GOODS_SKU_PRICE_UPDATE]: PddGoodsSkuPriceUpdateRequestInterface;
+  [PDD_GOODS_SKUS_GET]: PddGoodsSkusGetRequestInterface;
   [PDD_GOODS_SPEC_GET]: PddGoodsSpecGetRequestInterface;
   [PDD_GOODS_SPEC_ID_GET]: PddGoodsSpecIdGetRequestInterface;
   [PDD_GOODS_SPU_GET]: PddGoodsSpuGetRequestInterface;
@@ -3674,7 +3708,6 @@ export interface PddCollectRequestInterface {
   [PDD_DDK_PID_MEDIAID_BIND]: PddDdkPidMediaidBindRequestInterface;
   [PDD_DDK_RESOURCE_URL_GEN]: PddDdkResourceUrlGenRequestInterface;
   [PDD_DDK_RP_PROM_URL_GENERATE]: PddDdkRpPromUrlGenerateRequestInterface;
-  [PDD_DDK_TOP_GOODS_LIST_QUERY]: PddDdkTopGoodsListQueryRequestInterface;
   [PDD_DDK_ALL_ORDER_LIST_INCREMENT_GET]: PddDdkAllOrderListIncrementGetRequestInterface;
   [PDD_DDK_OAUTH_CMS_PROM_URL_GENERATE]: PddDdkOauthCmsPromUrlGenerateRequestInterface;
   [PDD_DDK_OAUTH_GOODS_DETAIL]: PddDdkOauthGoodsDetailRequestInterface;
@@ -3689,7 +3722,6 @@ export interface PddCollectRequestInterface {
   [PDD_DDK_OAUTH_PID_MEDIAID_BIND]: PddDdkOauthPidMediaidBindRequestInterface;
   [PDD_DDK_OAUTH_RESOURCE_URL_GEN]: PddDdkOauthResourceUrlGenRequestInterface;
   [PDD_DDK_OAUTH_RP_PROM_URL_GENERATE]: PddDdkOauthRpPromUrlGenerateRequestInterface;
-  [PDD_DDK_OAUTH_TOP_GOODS_LIST_QUERY]: PddDdkOauthTopGoodsListQueryRequestInterface;
   [PDD_LOGISTICS_CS_HISTORY_MESSAGE_GET]: PddLogisticsCsHistoryMessageGetRequestInterface;
   [PDD_LOGISTICS_CS_MESSAGE_SEND]: PddLogisticsCsMessageSendRequestInterface;
   [PDD_LOGISTICS_CS_SESSION_CLOSE]: PddLogisticsCsSessionCloseRequestInterface;
@@ -3698,6 +3730,7 @@ export interface PddCollectRequestInterface {
   [PDD_LOGISTICS_TICKET_IMAGE_UPLOAD]: PddLogisticsTicketImageUploadRequestInterface;
   [PDD_LOGISTICS_TICKET_NOTIFY]: PddLogisticsTicketNotifyRequestInterface;
   [PDD_LOGISTICS_TICKET_PROBLEM_TYPE_GET]: PddLogisticsTicketProblemTypeGetRequestInterface;
+  [PDD_SERVICE_MAIL_SERVICE_TIME_QUERY]: PddServiceMailServiceTimeQueryRequestInterface;
   [PDD_PROMOTION_COUPON_CLOSE]: PddPromotionCouponCloseRequestInterface;
   [PDD_PROMOTION_COUPON_QUANTITY_ADD]: PddPromotionCouponQuantityAddRequestInterface;
   [PDD_PROMOTION_GOODS_COUPON_CREATE]: PddPromotionGoodsCouponCreateRequestInterface;
@@ -3713,6 +3746,7 @@ export interface PddCollectRequestInterface {
   [PDD_VOUCHER_OTA_CARD_VERIFICATION]: PddVoucherOtaCardVerificationRequestInterface;
   [PDD_VOUCHER_PHYSICAL_GOODS_SEND]: PddVoucherPhysicalGoodsSendRequestInterface;
   [PDD_VOUCHER_REALTIME_ORDERNO_GET]: PddVoucherRealtimeOrdernoGetRequestInterface;
+  [PDD_VOUCHER_REALTIME_VERIFY_SYNC]: PddVoucherRealtimeVerifySyncRequestInterface;
   [PDD_VOUCHER_VIRTUAL_CARD_BATCH_ADD]: PddVoucherVirtualCardBatchAddRequestInterface;
   [PDD_VOUCHER_VIRTUAL_CARD_VERIFICATION]: PddVoucherVirtualCardVerificationRequestInterface;
   [PDD_VOUCHER_VOUCHER_COMPLAIN]: PddVoucherVoucherComplainRequestInterface;
@@ -3726,6 +3760,7 @@ export interface PddCollectRequestInterface {
   [PDD_OPEN_DECRYPT_MASK_BATCH]: PddOpenDecryptMaskBatchRequestInterface;
   [PDD_OPEN_KMS_ENCRYPT_BATCH]: PddOpenKmsEncryptBatchRequestInterface;
   [PDD_OPEN_KMS_SEARCH_BATCH]: PddOpenKmsSearchBatchRequestInterface;
+  [PDD_OPEN_LOGISTICS_PRE_CHECK]: PddOpenLogisticsPreCheckRequestInterface;
   [PDD_OPEN_VIRTUAL_NUMBER_CHECK]: PddOpenVirtualNumberCheckRequestInterface;
   [PDD_OPEN_WAYBILL_TYPE_REPORT]: PddOpenWaybillTypeReportRequestInterface;
   [PDD_POP_AUTH_TOKEN_CREATE]: PddPopAuthTokenCreateRequestInterface;
@@ -3755,6 +3790,7 @@ export interface PddCollectRequestInterface {
   [PDD_PMC_USER_PERMIT]: PddPmcUserPermitRequestInterface;
   [PDD_CLOUDPRINT_CMDPRINT_RENDER]: PddCloudprintCmdprintRenderRequestInterface;
   [PDD_CLOUDPRINT_CUSTOMARES_GET]: PddCloudprintCustomaresGetRequestInterface;
+  [PDD_CLOUDPRINT_PORTABLEPRINTER_GET]: PddCloudprintPortableprinterGetRequestInterface;
   [PDD_CLOUDPRINT_STDTEMPLATES_GET]: PddCloudprintStdtemplatesGetRequestInterface;
   [PDD_WAYBILL_CANCEL]: PddWaybillCancelRequestInterface;
   [PDD_WAYBILL_GET]: PddWaybillGetRequestInterface;
@@ -3773,12 +3809,6 @@ export interface PddCollectRequestInterface {
   [PDD_VAS_ORDER_SEARCH]: PddVasOrderSearchRequestInterface;
   [PDD_SMS_DETAILBILL_PUSH]: PddSmsDetailbillPushRequestInterface;
   [PDD_SMS_VENDOR_COMPLAINT_CREATE]: PddSmsVendorComplaintCreateRequestInterface;
-  [PDD_FDS_ORDER_GET]: PddFdsOrderGetRequestInterface;
-  [PDD_FDS_ORDER_LIST_GET]: PddFdsOrderListGetRequestInterface;
-  [PDD_FDS_ROLE_GET]: PddFdsRoleGetRequestInterface;
-  [PDD_FDS_WAYBILL_CANCEL]: PddFdsWaybillCancelRequestInterface;
-  [PDD_FDS_WAYBILL_GET]: PddFdsWaybillGetRequestInterface;
-  [PDD_FDS_WAYBILL_RETURN]: PddFdsWaybillReturnRequestInterface;
   [PDD_AD_API_ADVERTISER_OPEN_ACCOUNT]: PddAdApiAdvertiserOpenAccountRequestInterface;
   [PDD_AD_API_ADVERTISER_QUERY_ACCOUNT_BALANCE]: PddAdApiAdvertiserQueryAccountBalanceRequestInterface;
   [PDD_AD_API_ADVERTISER_QUERY_ACCOUNT_INFO]: PddAdApiAdvertiserQueryAccountInfoRequestInterface;
@@ -3827,6 +3857,12 @@ export interface PddCollectRequestInterface {
   [PDD_AD_API_UNIT_UPDATE_OPTIMIZATION_MESSAGE]: PddAdApiUnitUpdateOptimizationMessageRequestInterface;
   [PDD_AD_API_UNIT_UPDATE_UNIT_BID]: PddAdApiUnitUpdateUnitBidRequestInterface;
   [PDD_AD_API_UNIT_UPDATE_UNIT_NAME]: PddAdApiUnitUpdateUnitNameRequestInterface;
+  [PDD_FDS_ORDER_GET]: PddFdsOrderGetRequestInterface;
+  [PDD_FDS_ORDER_LIST_GET]: PddFdsOrderListGetRequestInterface;
+  [PDD_FDS_ROLE_GET]: PddFdsRoleGetRequestInterface;
+  [PDD_FDS_WAYBILL_CANCEL]: PddFdsWaybillCancelRequestInterface;
+  [PDD_FDS_WAYBILL_GET]: PddFdsWaybillGetRequestInterface;
+  [PDD_FDS_WAYBILL_RETURN]: PddFdsWaybillReturnRequestInterface;
   [PDD_MALL_INFO_GROUP_ADD_STORE_POST]: PddMallInfoGroupAddStorePostRequestInterface;
   [PDD_MALL_INFO_GROUP_LIST_STORE_GET]: PddMallInfoGroupListStoreGetRequestInterface;
   [PDD_MALL_INFO_GROUP_REMOVE_STORE_GET]: PddMallInfoGroupRemoveStoreGetRequestInterface;
@@ -3850,6 +3886,12 @@ export interface PddCollectRequestInterface {
   [PDD_TICKET_VERIFICATION_NOTIFYCATION]: PddTicketVerificationNotifycationRequestInterface;
 }
 export interface PddCollectRootResponseInterface {
+  [PDD_NEXTONE_LOGISTICS_WAREHOUSE_UPDATE]: PddNextoneLogisticsWarehouseUpdateResponseInterface;
+  [PDD_RDC_PDDGENIUS_SENDGOODS_CANCEL]: PddRdcPddgeniusSendgoodsCancelResponseInterface;
+  [PDD_REFUND_ADDRESS_LIST_GET]: PddRefundAddressListGetResponseInterface;
+  [PDD_REFUND_INFORMATION_GET]: PddRefundInformationGetResponseInterface;
+  [PDD_REFUND_LIST_INCREMENT_GET]: PddRefundListIncrementGetResponseInterface;
+  [PDD_REFUND_STATUS_CHECK]: PddRefundStatusCheckResponseInterface;
   [PDD_LOGISTICS_ADDRESS_GET]: PddLogisticsAddressGetResponseInterface;
   [PDD_LOGISTICS_COMPANIES_GET]: PddLogisticsCompaniesGetResponseInterface;
   [PDD_LOGISTICS_ISV_TRACE_NOTIFY_SUB]: PddLogisticsIsvTraceNotifySubResponseInterface;
@@ -3857,12 +3899,6 @@ export interface PddCollectRootResponseInterface {
   [PDD_LOGISTICS_ONLINE_SEND]: PddLogisticsOnlineSendResponseInterface;
   [PDD_LOGISTICS_ONLINE_STATUS_QUERY]: PddLogisticsOnlineStatusQueryResponseInterface;
   [PDD_LOGISTICS_ORDERTRACE_GET]: PddLogisticsOrdertraceGetResponseInterface;
-  [PDD_NEXTONE_LOGISTICS_WAREHOUSE_UPDATE]: PddNextoneLogisticsWarehouseUpdateResponseInterface;
-  [PDD_RDC_PDDGENIUS_SENDGOODS_CANCEL]: PddRdcPddgeniusSendgoodsCancelResponseInterface;
-  [PDD_REFUND_ADDRESS_LIST_GET]: PddRefundAddressListGetResponseInterface;
-  [PDD_REFUND_INFORMATION_GET]: PddRefundInformationGetResponseInterface;
-  [PDD_REFUND_LIST_INCREMENT_GET]: PddRefundListIncrementGetResponseInterface;
-  [PDD_REFUND_STATUS_CHECK]: PddRefundStatusCheckResponseInterface;
   [PDD_ERP_ORDER_SYNC]: PddErpOrderSyncResponseInterface;
   [PDD_ORDER_BASIC_LIST_GET]: PddOrderBasicListGetResponseInterface;
   [PDD_ORDER_INFORMATION_GET]: PddOrderInformationGetResponseInterface;
@@ -3925,6 +3961,7 @@ export interface PddCollectRootResponseInterface {
   [PDD_GOODS_SIZESPEC_TEMPLATE_UPDATE]: PddGoodsSizespecTemplateUpdateResponseInterface;
   [PDD_GOODS_SIZESPEC_TEMPLATES_GET]: PddGoodsSizespecTemplatesGetResponseInterface;
   [PDD_GOODS_SKU_PRICE_UPDATE]: PddGoodsSkuPriceUpdateResponseInterface;
+  [PDD_GOODS_SKUS_GET]: PddGoodsSkusGetResponseInterface;
   [PDD_GOODS_SPEC_GET]: PddGoodsSpecGetResponseInterface;
   [PDD_GOODS_SPEC_ID_GET]: PddGoodsSpecIdGetResponseInterface;
   [PDD_GOODS_SPU_GET]: PddGoodsSpuGetResponseInterface;
@@ -3949,7 +3986,6 @@ export interface PddCollectRootResponseInterface {
   [PDD_DDK_PID_MEDIAID_BIND]: PddDdkPidMediaidBindResponseInterface;
   [PDD_DDK_RESOURCE_URL_GEN]: PddDdkResourceUrlGenResponseInterface;
   [PDD_DDK_RP_PROM_URL_GENERATE]: PddDdkRpPromUrlGenerateResponseInterface;
-  [PDD_DDK_TOP_GOODS_LIST_QUERY]: PddDdkTopGoodsListQueryResponseInterface;
   [PDD_DDK_ALL_ORDER_LIST_INCREMENT_GET]: PddDdkAllOrderListIncrementGetResponseInterface;
   [PDD_DDK_OAUTH_CMS_PROM_URL_GENERATE]: PddDdkOauthCmsPromUrlGenerateResponseInterface;
   [PDD_DDK_OAUTH_GOODS_DETAIL]: PddDdkOauthGoodsDetailResponseInterface;
@@ -3964,7 +4000,6 @@ export interface PddCollectRootResponseInterface {
   [PDD_DDK_OAUTH_PID_MEDIAID_BIND]: PddDdkOauthPidMediaidBindResponseInterface;
   [PDD_DDK_OAUTH_RESOURCE_URL_GEN]: PddDdkOauthResourceUrlGenResponseInterface;
   [PDD_DDK_OAUTH_RP_PROM_URL_GENERATE]: PddDdkOauthRpPromUrlGenerateResponseInterface;
-  [PDD_DDK_OAUTH_TOP_GOODS_LIST_QUERY]: PddDdkOauthTopGoodsListQueryResponseInterface;
   [PDD_LOGISTICS_CS_HISTORY_MESSAGE_GET]: PddLogisticsCsHistoryMessageGetResponseInterface;
   [PDD_LOGISTICS_CS_MESSAGE_SEND]: PddLogisticsCsMessageSendResponseInterface;
   [PDD_LOGISTICS_CS_SESSION_CLOSE]: PddLogisticsCsSessionCloseResponseInterface;
@@ -3973,6 +4008,7 @@ export interface PddCollectRootResponseInterface {
   [PDD_LOGISTICS_TICKET_IMAGE_UPLOAD]: PddLogisticsTicketImageUploadResponseInterface;
   [PDD_LOGISTICS_TICKET_NOTIFY]: PddLogisticsTicketNotifyResponseInterface;
   [PDD_LOGISTICS_TICKET_PROBLEM_TYPE_GET]: PddLogisticsTicketProblemTypeGetResponseInterface;
+  [PDD_SERVICE_MAIL_SERVICE_TIME_QUERY]: PddServiceMailServiceTimeQueryResponseInterface;
   [PDD_PROMOTION_COUPON_CLOSE]: PddPromotionCouponCloseResponseInterface;
   [PDD_PROMOTION_COUPON_QUANTITY_ADD]: PddPromotionCouponQuantityAddResponseInterface;
   [PDD_PROMOTION_GOODS_COUPON_CREATE]: PddPromotionGoodsCouponCreateResponseInterface;
@@ -3988,6 +4024,7 @@ export interface PddCollectRootResponseInterface {
   [PDD_VOUCHER_OTA_CARD_VERIFICATION]: PddVoucherOtaCardVerificationResponseInterface;
   [PDD_VOUCHER_PHYSICAL_GOODS_SEND]: PddVoucherPhysicalGoodsSendResponseInterface;
   [PDD_VOUCHER_REALTIME_ORDERNO_GET]: PddVoucherRealtimeOrdernoGetResponseInterface;
+  [PDD_VOUCHER_REALTIME_VERIFY_SYNC]: PddVoucherRealtimeVerifySyncResponseInterface;
   [PDD_VOUCHER_VIRTUAL_CARD_BATCH_ADD]: PddVoucherVirtualCardBatchAddResponseInterface;
   [PDD_VOUCHER_VIRTUAL_CARD_VERIFICATION]: PddVoucherVirtualCardVerificationResponseInterface;
   [PDD_VOUCHER_VOUCHER_COMPLAIN]: PddVoucherVoucherComplainResponseInterface;
@@ -4001,6 +4038,7 @@ export interface PddCollectRootResponseInterface {
   [PDD_OPEN_DECRYPT_MASK_BATCH]: PddOpenDecryptMaskBatchResponseInterface;
   [PDD_OPEN_KMS_ENCRYPT_BATCH]: PddOpenKmsEncryptBatchResponseInterface;
   [PDD_OPEN_KMS_SEARCH_BATCH]: PddOpenKmsSearchBatchResponseInterface;
+  [PDD_OPEN_LOGISTICS_PRE_CHECK]: PddOpenLogisticsPreCheckResponseInterface;
   [PDD_OPEN_VIRTUAL_NUMBER_CHECK]: PddOpenVirtualNumberCheckResponseInterface;
   [PDD_OPEN_WAYBILL_TYPE_REPORT]: PddOpenWaybillTypeReportResponseInterface;
   [PDD_POP_AUTH_TOKEN_CREATE]: PddPopAuthTokenCreateResponseInterface;
@@ -4030,6 +4068,7 @@ export interface PddCollectRootResponseInterface {
   [PDD_PMC_USER_PERMIT]: PddPmcUserPermitResponseInterface;
   [PDD_CLOUDPRINT_CMDPRINT_RENDER]: PddCloudprintCmdprintRenderResponseInterface;
   [PDD_CLOUDPRINT_CUSTOMARES_GET]: PddCloudprintCustomaresGetResponseInterface;
+  [PDD_CLOUDPRINT_PORTABLEPRINTER_GET]: PddCloudprintPortableprinterGetResponseInterface;
   [PDD_CLOUDPRINT_STDTEMPLATES_GET]: PddCloudprintStdtemplatesGetResponseInterface;
   [PDD_WAYBILL_CANCEL]: PddWaybillCancelResponseInterface;
   [PDD_WAYBILL_GET]: PddWaybillGetResponseInterface;
@@ -4048,12 +4087,6 @@ export interface PddCollectRootResponseInterface {
   [PDD_VAS_ORDER_SEARCH]: PddVasOrderSearchResponseInterface;
   [PDD_SMS_DETAILBILL_PUSH]: PddSmsDetailbillPushResponseInterface;
   [PDD_SMS_VENDOR_COMPLAINT_CREATE]: PddSmsVendorComplaintCreateResponseInterface;
-  [PDD_FDS_ORDER_GET]: PddFdsOrderGetResponseInterface;
-  [PDD_FDS_ORDER_LIST_GET]: PddFdsOrderListGetResponseInterface;
-  [PDD_FDS_ROLE_GET]: PddFdsRoleGetResponseInterface;
-  [PDD_FDS_WAYBILL_CANCEL]: PddFdsWaybillCancelResponseInterface;
-  [PDD_FDS_WAYBILL_GET]: PddFdsWaybillGetResponseInterface;
-  [PDD_FDS_WAYBILL_RETURN]: PddFdsWaybillReturnResponseInterface;
   [PDD_AD_API_ADVERTISER_OPEN_ACCOUNT]: PddAdApiAdvertiserOpenAccountResponseInterface;
   [PDD_AD_API_ADVERTISER_QUERY_ACCOUNT_BALANCE]: PddAdApiAdvertiserQueryAccountBalanceResponseInterface;
   [PDD_AD_API_ADVERTISER_QUERY_ACCOUNT_INFO]: PddAdApiAdvertiserQueryAccountInfoResponseInterface;
@@ -4102,6 +4135,12 @@ export interface PddCollectRootResponseInterface {
   [PDD_AD_API_UNIT_UPDATE_OPTIMIZATION_MESSAGE]: PddAdApiUnitUpdateOptimizationMessageResponseInterface;
   [PDD_AD_API_UNIT_UPDATE_UNIT_BID]: PddAdApiUnitUpdateUnitBidResponseInterface;
   [PDD_AD_API_UNIT_UPDATE_UNIT_NAME]: PddAdApiUnitUpdateUnitNameResponseInterface;
+  [PDD_FDS_ORDER_GET]: PddFdsOrderGetResponseInterface;
+  [PDD_FDS_ORDER_LIST_GET]: PddFdsOrderListGetResponseInterface;
+  [PDD_FDS_ROLE_GET]: PddFdsRoleGetResponseInterface;
+  [PDD_FDS_WAYBILL_CANCEL]: PddFdsWaybillCancelResponseInterface;
+  [PDD_FDS_WAYBILL_GET]: PddFdsWaybillGetResponseInterface;
+  [PDD_FDS_WAYBILL_RETURN]: PddFdsWaybillReturnResponseInterface;
   [PDD_MALL_INFO_GROUP_ADD_STORE_POST]: PddMallInfoGroupAddStorePostResponseInterface;
   [PDD_MALL_INFO_GROUP_LIST_STORE_GET]: PddMallInfoGroupListStoreGetResponseInterface;
   [PDD_MALL_INFO_GROUP_REMOVE_STORE_GET]: PddMallInfoGroupRemoveStoreGetResponseInterface;
@@ -4125,6 +4164,12 @@ export interface PddCollectRootResponseInterface {
   [PDD_TICKET_VERIFICATION_NOTIFYCATION]: PddTicketVerificationNotifycationResponseInterface;
 }
 export interface PddCollectShortResponseInterface {
+  [PDD_NEXTONE_LOGISTICS_WAREHOUSE_UPDATE]: PddNextoneLogisticsWarehouseUpdateResponseInterface;
+  [PDD_RDC_PDDGENIUS_SENDGOODS_CANCEL]: PddRdcPddgeniusSendgoodsCancelRdcPddgeniusSendgoodsCancelResponseResponseInterface;
+  [PDD_REFUND_ADDRESS_LIST_GET]: PddRefundAddressListGetRefundAddressListGetResponseResponseInterface;
+  [PDD_REFUND_INFORMATION_GET]: PddRefundInformationGetResponseInterface;
+  [PDD_REFUND_LIST_INCREMENT_GET]: PddRefundListIncrementGetRefundIncrementGetResponseResponseInterface;
+  [PDD_REFUND_STATUS_CHECK]: PddRefundStatusCheckRefundStatusCheckResponseResponseInterface;
   [PDD_LOGISTICS_ADDRESS_GET]: PddLogisticsAddressGetLogisticsAddressGetResponseResponseInterface;
   [PDD_LOGISTICS_COMPANIES_GET]: PddLogisticsCompaniesGetLogisticsCompaniesGetResponseResponseInterface;
   [PDD_LOGISTICS_ISV_TRACE_NOTIFY_SUB]: PddLogisticsIsvTraceNotifySubResponseInterface;
@@ -4132,12 +4177,6 @@ export interface PddCollectShortResponseInterface {
   [PDD_LOGISTICS_ONLINE_SEND]: PddLogisticsOnlineSendLogisticsOnlineSendResponseResponseInterface;
   [PDD_LOGISTICS_ONLINE_STATUS_QUERY]: PddLogisticsOnlineStatusQueryLogisticsOnlineStatusQueryResponseResponseInterface;
   [PDD_LOGISTICS_ORDERTRACE_GET]: PddLogisticsOrdertraceGetResponseInterface;
-  [PDD_NEXTONE_LOGISTICS_WAREHOUSE_UPDATE]: PddNextoneLogisticsWarehouseUpdateResponseInterface;
-  [PDD_RDC_PDDGENIUS_SENDGOODS_CANCEL]: PddRdcPddgeniusSendgoodsCancelRdcPddgeniusSendgoodsCancelResponseResponseInterface;
-  [PDD_REFUND_ADDRESS_LIST_GET]: PddRefundAddressListGetRefundAddressListGetResponseResponseInterface;
-  [PDD_REFUND_INFORMATION_GET]: PddRefundInformationGetResponseInterface;
-  [PDD_REFUND_LIST_INCREMENT_GET]: PddRefundListIncrementGetRefundIncrementGetResponseResponseInterface;
-  [PDD_REFUND_STATUS_CHECK]: PddRefundStatusCheckRefundStatusCheckResponseResponseInterface;
   [PDD_ERP_ORDER_SYNC]: PddErpOrderSyncResponseInterface;
   [PDD_ORDER_BASIC_LIST_GET]: PddOrderBasicListGetOrderBasicListGetResponseResponseInterface;
   [PDD_ORDER_INFORMATION_GET]: PddOrderInformationGetOrderInfoGetResponseResponseInterface;
@@ -4200,6 +4239,7 @@ export interface PddCollectShortResponseInterface {
   [PDD_GOODS_SIZESPEC_TEMPLATE_UPDATE]: PddGoodsSizespecTemplateUpdateResponseInterface;
   [PDD_GOODS_SIZESPEC_TEMPLATES_GET]: PddGoodsSizespecTemplatesGetResponseInterface;
   [PDD_GOODS_SKU_PRICE_UPDATE]: PddGoodsSkuPriceUpdateGoodsUpdateSkuPriceResponseResponseInterface;
+  [PDD_GOODS_SKUS_GET]: PddGoodsSkusGetGoodsSkuGetResponseResponseInterface;
   [PDD_GOODS_SPEC_GET]: PddGoodsSpecGetGoodsSpecGetResponseResponseInterface;
   [PDD_GOODS_SPEC_ID_GET]: PddGoodsSpecIdGetGoodsSpecIdGetResponseResponseInterface;
   [PDD_GOODS_SPU_GET]: PddGoodsSpuGetSpuGetResponseResponseInterface;
@@ -4224,7 +4264,6 @@ export interface PddCollectShortResponseInterface {
   [PDD_DDK_PID_MEDIAID_BIND]: PddDdkPidMediaidBindPIdBindResponseResponseInterface;
   [PDD_DDK_RESOURCE_URL_GEN]: PddDdkResourceUrlGenResourceUrlResponseResponseInterface;
   [PDD_DDK_RP_PROM_URL_GENERATE]: PddDdkRpPromUrlGenerateRpPromotionUrlGenerateResponseResponseInterface;
-  [PDD_DDK_TOP_GOODS_LIST_QUERY]: PddDdkTopGoodsListQueryTopGoodsListGetResponseResponseInterface;
   [PDD_DDK_ALL_ORDER_LIST_INCREMENT_GET]: PddDdkAllOrderListIncrementGetOrderListGetResponseResponseInterface;
   [PDD_DDK_OAUTH_CMS_PROM_URL_GENERATE]: PddDdkOauthCmsPromUrlGenerateCmsPromotionUrlGenerateResponseResponseInterface;
   [PDD_DDK_OAUTH_GOODS_DETAIL]: PddDdkOauthGoodsDetailGoodsDetailResponseResponseInterface;
@@ -4239,7 +4278,6 @@ export interface PddCollectShortResponseInterface {
   [PDD_DDK_OAUTH_PID_MEDIAID_BIND]: PddDdkOauthPidMediaidBindPIdBindResponseResponseInterface;
   [PDD_DDK_OAUTH_RESOURCE_URL_GEN]: PddDdkOauthResourceUrlGenResourceUrlResponseResponseInterface;
   [PDD_DDK_OAUTH_RP_PROM_URL_GENERATE]: PddDdkOauthRpPromUrlGenerateRpPromotionUrlGenerateResponseResponseInterface;
-  [PDD_DDK_OAUTH_TOP_GOODS_LIST_QUERY]: PddDdkOauthTopGoodsListQueryTopGoodsListGetResponseResponseInterface;
   [PDD_LOGISTICS_CS_HISTORY_MESSAGE_GET]: PddLogisticsCsHistoryMessageGetLogisticsCsHistoryMessageGetResponseResponseInterface;
   [PDD_LOGISTICS_CS_MESSAGE_SEND]: PddLogisticsCsMessageSendLogisticsCsMessageSendResponseResponseInterface;
   [PDD_LOGISTICS_CS_SESSION_CLOSE]: PddLogisticsCsSessionCloseLogisticsCsSessionCloseResponseResponseInterface;
@@ -4248,6 +4286,7 @@ export interface PddCollectShortResponseInterface {
   [PDD_LOGISTICS_TICKET_IMAGE_UPLOAD]: PddLogisticsTicketImageUploadLogisticsTicketImageUploadResponseResponseInterface;
   [PDD_LOGISTICS_TICKET_NOTIFY]: PddLogisticsTicketNotifyLogisticsTicketNotifyResponseResponseInterface;
   [PDD_LOGISTICS_TICKET_PROBLEM_TYPE_GET]: PddLogisticsTicketProblemTypeGetLogisticsProblemTypeGetResponseResponseInterface;
+  [PDD_SERVICE_MAIL_SERVICE_TIME_QUERY]: PddServiceMailServiceTimeQueryResponseInterface;
   [PDD_PROMOTION_COUPON_CLOSE]: PddPromotionCouponClosePromotionCouponBatchCloseResponseResponseInterface;
   [PDD_PROMOTION_COUPON_QUANTITY_ADD]: PddPromotionCouponQuantityAddCouponQuantityAddResponseResponseInterface;
   [PDD_PROMOTION_GOODS_COUPON_CREATE]: PddPromotionGoodsCouponCreateGoodsCouponBatchCreateResponseResponseInterface;
@@ -4263,6 +4302,7 @@ export interface PddCollectShortResponseInterface {
   [PDD_VOUCHER_OTA_CARD_VERIFICATION]: PddVoucherOtaCardVerificationVoucherOtaCardVerificationResponseResponseInterface;
   [PDD_VOUCHER_PHYSICAL_GOODS_SEND]: PddVoucherPhysicalGoodsSendVoucherPhysicalVoucherSendResponseResponseInterface;
   [PDD_VOUCHER_REALTIME_ORDERNO_GET]: PddVoucherRealtimeOrdernoGetResponseInterface;
+  [PDD_VOUCHER_REALTIME_VERIFY_SYNC]: PddVoucherRealtimeVerifySyncResponseInterface;
   [PDD_VOUCHER_VIRTUAL_CARD_BATCH_ADD]: PddVoucherVirtualCardBatchAddResponseInterface;
   [PDD_VOUCHER_VIRTUAL_CARD_VERIFICATION]: PddVoucherVirtualCardVerificationVoucherVoucherInfoVerifyResponseResponseInterface;
   [PDD_VOUCHER_VOUCHER_COMPLAIN]: PddVoucherVoucherComplainVoucherVoucherComplainResponseResponseInterface;
@@ -4276,6 +4316,7 @@ export interface PddCollectShortResponseInterface {
   [PDD_OPEN_DECRYPT_MASK_BATCH]: PddOpenDecryptMaskBatchOpenDecryptMaskBatchResponseResponseInterface;
   [PDD_OPEN_KMS_ENCRYPT_BATCH]: PddOpenKmsEncryptBatchOpenKmsEncryptBatchResponseResponseInterface;
   [PDD_OPEN_KMS_SEARCH_BATCH]: PddOpenKmsSearchBatchOpenKmsSearchBatchResponseResponseInterface;
+  [PDD_OPEN_LOGISTICS_PRE_CHECK]: PddOpenLogisticsPreCheckLogisticsPreCheckResponseResponseInterface;
   [PDD_OPEN_VIRTUAL_NUMBER_CHECK]: PddOpenVirtualNumberCheckOpenVirtualNumberCheckResponseResponseInterface;
   [PDD_OPEN_WAYBILL_TYPE_REPORT]: PddOpenWaybillTypeReportOpenWaybillTypeReportResponseResponseInterface;
   [PDD_POP_AUTH_TOKEN_CREATE]: PddPopAuthTokenCreatePopAuthTokenCreateResponseResponseInterface;
@@ -4305,6 +4346,7 @@ export interface PddCollectShortResponseInterface {
   [PDD_PMC_USER_PERMIT]: PddPmcUserPermitPmcUserPermitResponseResponseInterface;
   [PDD_CLOUDPRINT_CMDPRINT_RENDER]: PddCloudprintCmdprintRenderCloudprintCmdprintRenderResponseResponseInterface;
   [PDD_CLOUDPRINT_CUSTOMARES_GET]: PddCloudprintCustomaresGetPddCloudprintCustomaresGetResponseResponseInterface;
+  [PDD_CLOUDPRINT_PORTABLEPRINTER_GET]: PddCloudprintPortableprinterGetPddCloudprintPortableprinterGetResponseResponseInterface;
   [PDD_CLOUDPRINT_STDTEMPLATES_GET]: PddCloudprintStdtemplatesGetPddCloudprintStdtemplatesGetResponseResponseInterface;
   [PDD_WAYBILL_CANCEL]: PddWaybillCancelPddWaybillCancelResponseResponseInterface;
   [PDD_WAYBILL_GET]: PddWaybillGetPddWaybillGetResponseResponseInterface;
@@ -4323,12 +4365,6 @@ export interface PddCollectShortResponseInterface {
   [PDD_VAS_ORDER_SEARCH]: PddVasOrderSearchVasOrderSearchResponseResponseInterface;
   [PDD_SMS_DETAILBILL_PUSH]: PddSmsDetailbillPushResponseInterface;
   [PDD_SMS_VENDOR_COMPLAINT_CREATE]: PddSmsVendorComplaintCreateResponseInterface;
-  [PDD_FDS_ORDER_GET]: PddFdsOrderGetPddFdsOrderGetResponseResponseInterface;
-  [PDD_FDS_ORDER_LIST_GET]: PddFdsOrderListGetPddFdsOrderListGetResponseResponseInterface;
-  [PDD_FDS_ROLE_GET]: PddFdsRoleGetPddFdsRoleGetResponseResponseInterface;
-  [PDD_FDS_WAYBILL_CANCEL]: PddFdsWaybillCancelPddFdsWaybillCancelResponseResponseInterface;
-  [PDD_FDS_WAYBILL_GET]: PddFdsWaybillGetPddFdsWaybillGetResponseResponseInterface;
-  [PDD_FDS_WAYBILL_RETURN]: PddFdsWaybillReturnPddFdsWaybillReturnResponseResponseInterface;
   [PDD_AD_API_ADVERTISER_OPEN_ACCOUNT]: PddAdApiAdvertiserOpenAccountResponseInterface;
   [PDD_AD_API_ADVERTISER_QUERY_ACCOUNT_BALANCE]: PddAdApiAdvertiserQueryAccountBalanceResponseInterface;
   [PDD_AD_API_ADVERTISER_QUERY_ACCOUNT_INFO]: PddAdApiAdvertiserQueryAccountInfoResponseInterface;
@@ -4377,6 +4413,12 @@ export interface PddCollectShortResponseInterface {
   [PDD_AD_API_UNIT_UPDATE_OPTIMIZATION_MESSAGE]: PddAdApiUnitUpdateOptimizationMessageResponseInterface;
   [PDD_AD_API_UNIT_UPDATE_UNIT_BID]: PddAdApiUnitUpdateUnitBidResponseInterface;
   [PDD_AD_API_UNIT_UPDATE_UNIT_NAME]: PddAdApiUnitUpdateUnitNameResponseInterface;
+  [PDD_FDS_ORDER_GET]: PddFdsOrderGetPddFdsOrderGetResponseResponseInterface;
+  [PDD_FDS_ORDER_LIST_GET]: PddFdsOrderListGetPddFdsOrderListGetResponseResponseInterface;
+  [PDD_FDS_ROLE_GET]: PddFdsRoleGetPddFdsRoleGetResponseResponseInterface;
+  [PDD_FDS_WAYBILL_CANCEL]: PddFdsWaybillCancelPddFdsWaybillCancelResponseResponseInterface;
+  [PDD_FDS_WAYBILL_GET]: PddFdsWaybillGetPddFdsWaybillGetResponseResponseInterface;
+  [PDD_FDS_WAYBILL_RETURN]: PddFdsWaybillReturnPddFdsWaybillReturnResponseResponseInterface;
   [PDD_MALL_INFO_GROUP_ADD_STORE_POST]: PddMallInfoGroupAddStorePostMallInfoGroupAddStorePostResponseResponseInterface;
   [PDD_MALL_INFO_GROUP_LIST_STORE_GET]: PddMallInfoGroupListStoreGetMallInfoGroupListStoreGetResponseResponseInterface;
   [PDD_MALL_INFO_GROUP_REMOVE_STORE_GET]: PddMallInfoGroupRemoveStoreGetMallInfoGroupRemoveStoreGetResponseResponseInterface;

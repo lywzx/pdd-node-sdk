@@ -8,8 +8,8 @@ export const PDD_GOODS_INFORMATION_UPDATE_LIMITERS = [
   },
   {
     limiterLevel: 3,
-    timeRange: 5,
-    times: 3600,
+    timeRange: 1,
+    times: 900,
   },
 ];
 

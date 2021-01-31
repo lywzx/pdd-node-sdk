@@ -108,6 +108,13 @@ export interface PddDdkOrderListRangeGetOrderListGetResponseOrderListResponseInt
   batch_no: string;
 
   /**
+   * @description: 订单关联礼金活动Id
+   * @type: string | number
+   * @default:
+   **/
+  cash_gift_id: string | number;
+
+  /**
    * @description: 商品一~四级类目ID列表
    * @type: Array<string | number>
    * @default:

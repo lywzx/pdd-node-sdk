@@ -34,6 +34,13 @@ export interface PddVoucherOtaCardVerificationRequestInterface {
    * @default:
    **/
   store_name: string;
+
+  /**
+   * @description: 拼多多订单编号
+   * @type: string
+   * @default:
+   **/
+  order_sn?: string;
 }
 
 /**

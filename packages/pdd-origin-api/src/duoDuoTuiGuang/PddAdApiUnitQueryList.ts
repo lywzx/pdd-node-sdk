@@ -394,4 +394,33 @@ export interface PddAdApiUnitQueryListResponseResultOptimizationOutputMessageRes
    * @default:
    **/
   optimizationStartTime: string;
+
+  /**
+   * @description: 可选优化目标信息列表
+   * @type: PddAdApiUnitQueryListResponseResultOptimizationOutputMessageOptionalOptimizationBidOutputMessageListResponseInterface[]
+   * @default:
+   *
+   **/
+  optionalOptimizationBidOutputMessageList: PddAdApiUnitQueryListResponseResultOptimizationOutputMessageOptionalOptimizationBidOutputMessageListResponseInterface[];
+}
+
+/**
+ * @description 可选优化目标信息列表
+ * @default
+ * @example
+ **/
+export interface PddAdApiUnitQueryListResponseResultOptimizationOutputMessageOptionalOptimizationBidOutputMessageListResponseInterface {
+  /**
+   * @description: 可选优化目标出价
+   * @type: string | number
+   * @default:
+   **/
+  optimizationBid: string | number;
+
+  /**
+   * @description: 可选优化目标
+   * @type: number
+   * @default:
+   **/
+  optimizationGoal: number;
 }

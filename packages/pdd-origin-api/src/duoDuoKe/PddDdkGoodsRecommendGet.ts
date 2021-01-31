@@ -255,6 +255,13 @@ export interface PddDdkGoodsRecommendGetGoodsBasicDetailResponseListResponseInte
   goods_image_url: string;
 
   /**
+   * @description: 商品特殊标签列表。例: [1]，1-APP专享
+   * @type: number[]
+   * @default:
+   **/
+  goods_labels: number[];
+
+  /**
    * @description: 商品名称
    * @type: string
    * @default:
