@@ -55,7 +55,9 @@
     "async": "^3.2.0",
     "axios": "^0.19.2",
     "debug": "^4.2.0",
-    "lodash": "^4.17.20"
+    "lodash": "^4.17.20",
+    "ws": "^7.4.0",
+    "@types/ws": "^7.4.0"
   },
   "gitHead": "34dfab33c7abd58bd551ea88358ab0e586902e6f"
 }
