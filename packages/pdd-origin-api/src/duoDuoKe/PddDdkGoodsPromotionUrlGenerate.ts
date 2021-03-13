@@ -15,6 +15,13 @@ export const PDD_DDK_GOODS_PROMOTION_URL_GENERATE_LIMITERS = [
  **/
 export interface PddDdkGoodsPromotionUrlGenerateRequestInterface {
   /**
+   * @description: 自定义礼金标题，用于向用户展示渠道专属福利，不超过12个字
+   * @type: string
+   * @default:
+   **/
+  cash_gift_name?: string;
+
+  /**
    * @description: 多多礼金ID
    * @type: string | number
    * @default:
@@ -64,20 +71,6 @@ export interface PddDdkGoodsPromotionUrlGenerateRequestInterface {
   generate_short_url?: boolean;
 
   /**
-   * @description: 已经废弃，不再支持该功能。是否生成唤起微信客户端链接，true-是，false-否，默认false。
-   * @type: boolean
-   * @default:
-   **/
-  generate_weapp_webview?: boolean;
-
-  /**
-   * @description: 是否生成微博推广链接
-   * @type: boolean
-   * @default: false
-   **/
-  generate_weiboapp_webview?: boolean;
-
-  /**
    * @description: 是否生成小程序推广
    * @type: boolean
    * @default:
@@ -85,21 +78,7 @@ export interface PddDdkGoodsPromotionUrlGenerateRequestInterface {
   generate_we_app?: boolean;
 
   /**
-   * @description: 商品ID，建议使用goods_sign_list代替，后续会下线
-   * @type: Array<string | number>
-   * @default:
-   **/
-  goods_id_list?: Array<string | number>;
-
-  /**
-   * @description: 商品goodsSign，仅支持单个生链。goodsId和goodsSign必须传入其中一个，建议使用goods_sign_list传入goodsSign
-   * @type: string
-   * @default:
-   **/
-  goods_sign?: string;
-
-  /**
-   * @description: 商品goodsSign列表，支持批量生链
+   * @description: 商品goodsSign列表，支持批量生链。goodsSign是加密后的goodsId, goodsId已下线，请使用goodsSign来替代。使用说明：https://jinbao.pinduoduo.com/qa-system?questionId=252
    * @type: string[]
    * @default:
    **/
@@ -120,25 +99,11 @@ export interface PddDdkGoodsPromotionUrlGenerateRequestInterface {
   p_id: string;
 
   /**
-   * @description: 直播间id列表，如果生成直播间推广链接该参数必填，goods_id_list填[1]
-   * @type: string[]
-   * @default:
-   **/
-  room_id_list?: string[];
-
-  /**
    * @description: 搜索id，建议填写，提高收益。来自pdd.ddk.goods.recommend.get、pdd.ddk.goods.search、pdd.ddk.top.goods.list.query等接口
    * @type: string
    * @default:
    **/
   search_id?: string;
-
-  /**
-   * @description: 直播预约id列表，如果生成直播间预约推广链接该参数必填，goods_id_list填[1]，room_id_list不填
-   * @type: string[]
-   * @default:
-   **/
-  target_id_list?: string[];
 
   /**
    * @description: 招商多多客ID
@@ -228,40 +193,12 @@ export interface PddDdkGoodsPromotionUrlGenerateGoodsPromotionUrlGenerateRespons
   url: string;
 
   /**
-   * @description: 微博推广短链接
-   * @type: string
-   * @default:
-   **/
-  weibo_app_web_view_short_url: string;
-
-  /**
-   * @description: 微博推广链接
-   * @type: string
-   * @default:
-   **/
-  weibo_app_web_view_url: string;
-
-  /**
    * @description: 小程序信息
    * @type: PddDdkGoodsPromotionUrlGenerateGoodsPromotionUrlGenerateResponseGoodsPromotionUrlListWeAppInfoResponseInterface
    * @default:
    *
    **/
   we_app_info: PddDdkGoodsPromotionUrlGenerateGoodsPromotionUrlGenerateResponseGoodsPromotionUrlListWeAppInfoResponseInterface;
-
-  /**
-   * @description: 唤起微信app推广短链接，已弃用
-   * @type: string
-   * @default:
-   **/
-  we_app_web_view_short_url: string;
-
-  /**
-   * @description: 唤起微信app推广链接，已弃用
-   * @type: string
-   * @default:
-   **/
-  we_app_web_view_url: string;
 }
 
 /**

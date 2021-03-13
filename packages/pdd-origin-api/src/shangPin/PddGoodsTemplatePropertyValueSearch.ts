@@ -36,11 +36,11 @@ export interface PddGoodsTemplatePropertyValueSearchRequestInterface {
   parent_vid?: string | number;
 
   /**
-   * @description: 模板属性id
+   * @description: 模板属性id，废弃中，请入参属性id
    * @type: string | number
    * @default:
    **/
-  template_pid: string | number;
+  template_pid?: string | number;
 
   /**
    * @description: 需要模糊搜索的属性值
@@ -50,7 +50,7 @@ export interface PddGoodsTemplatePropertyValueSearchRequestInterface {
   value: string;
 
   /**
-   * @description: 引用属性id
+   * @description: 属性id
    * @type: string | number
    * @default:
    **/

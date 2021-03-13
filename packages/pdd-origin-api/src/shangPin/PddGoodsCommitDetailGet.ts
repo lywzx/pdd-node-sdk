@@ -434,6 +434,13 @@ export interface PddGoodsCommitDetailGetGoodsCommitDetailResponseResponseInterfa
    * @default:
    **/
   delivery_type: number;
+
+  /**
+   * @description: 是否成团预售。0：不是；1:是。
+   * @type: number
+   * @default:
+   **/
+  is_group_pre_sale: number;
 }
 
 /**

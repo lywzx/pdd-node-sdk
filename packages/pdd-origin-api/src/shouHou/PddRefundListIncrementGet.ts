@@ -258,4 +258,25 @@ export interface PddRefundListIncrementGetRefundIncrementGetResponseRefundListRe
    * @default:
    **/
   speed_refund_flag: number;
+
+  /**
+   * @description: 退货物流公司名称
+   * @type: string
+   * @default:
+   **/
+  shipping_name: string;
+
+  /**
+   * @description: 0-未勾选 1-消费者选择的收货状态为未收到货 2-消费者选择的收货状态为已收到货
+   * @type: string
+   * @default:
+   **/
+  user_shipping_status: string;
+
+  /**
+   * @description: 1纠纷退款 0非纠纷退款
+   * @type: number
+   * @default:
+   **/
+  dispute_refund_status: number;
 }

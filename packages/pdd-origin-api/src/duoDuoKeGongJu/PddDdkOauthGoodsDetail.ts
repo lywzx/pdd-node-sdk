@@ -15,7 +15,7 @@ export interface PddDdkOauthGoodsDetailRequestInterface {
   custom_parameters?: string;
 
   /**
-   * @description: 商品goodsSign，支持通过goods_sign查询商品。优先使用此字段进行查询
+   * @description: 商品goodsSign，支持通过goodsSign查询商品。goodsSign是加密后的goodsId, goodsId已下线，请使用goodsSign来替代。使用说明：https://jinbao.pinduoduo.com/qa-system?questionId=252
    * @type: string
    * @default:
    **/
@@ -27,13 +27,6 @@ export interface PddDdkOauthGoodsDetailRequestInterface {
    * @default:
    **/
   pid?: string;
-
-  /**
-   * @description: 佣金优惠券对应推广类型，3：专属 4：招商
-   * @type: number
-   * @default:
-   **/
-  plan_type?: number;
 
   /**
    * @description: 搜索id，建议填写，提高收益。来自pdd.ddk.goods.recommend.get、pdd.ddk.goods.search、pdd.ddk.top.goods.list.query等接口
@@ -86,20 +79,6 @@ export interface PddDdkOauthGoodsDetailGoodsDetailResponseResponseInterface {
  * @example
  **/
 export interface PddDdkOauthGoodsDetailGoodsDetailResponseGoodsDetailsResponseInterface {
-  /**
-   * @description: 已废弃,使用opt_id
-   * @type: string | number
-   * @default:
-   **/
-  category_id: string | number;
-
-  /**
-   * @description: 已废弃,使用opt_name
-   * @type: string
-   * @default:
-   **/
-  category_name: string;
-
   /**
    * @description: 商品类目ID，使用pdd.goods.cats.get接口获取
    * @type: string | number
@@ -234,13 +213,6 @@ export interface PddDdkOauthGoodsDetailGoodsDetailResponseGoodsDetailsResponseIn
   goods_gallery_urls: string[];
 
   /**
-   * @description: 参与多多进宝的商品ID
-   * @type: string | number
-   * @default:
-   **/
-  goods_id: string | number;
-
-  /**
    * @description: 多多进宝商品主图
    * @type: string
    * @default:
@@ -255,7 +227,7 @@ export interface PddDdkOauthGoodsDetailGoodsDetailResponseGoodsDetailsResponseIn
   goods_name: string;
 
   /**
-   * @description: 商品goodsSign
+   * @description: 商品goodsSign，支持通过goodsSign查询商品。goodsSign是加密后的goodsId, goodsId已下线，请使用goodsSign来替代。使用说明：https://jinbao.pinduoduo.com/qa-system?questionId=252
    * @type: string
    * @default:
    **/
@@ -351,6 +323,13 @@ export interface PddDdkOauthGoodsDetailGoodsDetailResponseGoodsDetailsResponseIn
    * @default:
    **/
   mall_id: string | number;
+
+  /**
+   * @description: 店铺logo图
+   * @type: string
+   * @default:
+   **/
+  mall_img_url: string;
 
   /**
    * @description: 店铺名称

@@ -19,7 +19,7 @@ export interface PddRefundInformationGetRequestInterface {
    * @type: string | number
    * @default:
    **/
-  after_sales_id: string | number;
+  after_sales_id?: string | number;
 
   /**
    * @description: 订单号
@@ -146,4 +146,18 @@ export interface PddRefundInformationGetResponseInterface {
    * @default:
    **/
   expire_time: string | number;
+
+  /**
+   * @description: 退货物流名称
+   * @type: string
+   * @default:
+   **/
+  shipping_name: string;
+
+  /**
+   * @description: 1纠纷退款 0非纠纷退款
+   * @type: number
+   * @default:
+   **/
+  dispute_refund_status: number;
 }

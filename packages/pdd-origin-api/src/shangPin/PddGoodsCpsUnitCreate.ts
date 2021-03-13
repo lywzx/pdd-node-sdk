@@ -16,7 +16,7 @@ export const PDD_GOODS_CPS_UNIT_CREATE_LIMITERS = [
 /**
  * 接口名称：设置单品推广API
  * 接口标识：pdd.goods.cps.unit.create
- * 接口使用场景：批量设置商品推广API
+ * 接口使用场景：批量设置商品推广API，其中创建或修改优惠券均应用于该商品所有生效的推广计划
  **/
 export interface PddGoodsCpsUnitCreateRequestInterface {
   /**
@@ -56,35 +56,35 @@ export interface PddGoodsCpsUnitCreateUnitsRequestInterface {
   coupon_id?: string | number;
 
   /**
-   * @description: 优惠券开始时间
+   * @description: 优惠券开始时间，商品售价>=10元必传
    * @type: string
    * @default:
    **/
   coupon_start_time?: string;
 
   /**
-   * @description: 优惠券结束时间
+   * @description: 优惠券结束时间，商品售价>=10元必传
    * @type: string
    * @default:
    **/
   coupon_end_time?: string;
 
   /**
-   * @description: 优惠券面额（单位为分）
+   * @description: 优惠券面额（单位为分），商品售价>=10元必传
    * @type: string | number
    * @default:
    **/
   discount?: string | number;
 
   /**
-   * @description: 设置的优惠券张数
+   * @description: 设置的优惠券张数，商品售价>=10元必传
    * @type: string | number
    * @default:
    **/
   init_quantity?: string | number;
 
   /**
-   * @description: 剩余的优惠券张数
+   * @description: 剩余的优惠券张数，商品售价>=10元必传
    * @type: string | number
    * @default:
    **/
@@ -94,7 +94,7 @@ export interface PddGoodsCpsUnitCreateUnitsRequestInterface {
 /**
  * 接口名称：设置单品推广API
  * 接口标识：pdd.goods.cps.unit.create
- * 接口使用场景：批量设置商品推广API
+ * 接口使用场景：批量设置商品推广API，其中创建或修改优惠券均应用于该商品所有生效的推广计划
  **/
 export interface PddGoodsCpsUnitCreateResponseInterface {
   /**

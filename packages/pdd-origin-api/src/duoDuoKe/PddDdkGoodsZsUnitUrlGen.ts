@@ -8,6 +8,13 @@ export const PDD_DDK_GOODS_ZS_UNIT_URL_GEN_RESPONSE_KEY = 'goods_zs_unit_generat
  **/
 export interface PddDdkGoodsZsUnitUrlGenRequestInterface {
   /**
+   * @description: 自定义参数，为链接打上自定义标签；自定义参数最长限制64个字节；格式为： {"uid":"11111","sid":"22222"} ，其中 uid 用户唯一标识，可自行加密后传入，每个用户仅且对应一个标识，必填； sid 上下文信息标识，例如sessionId等，非必填。该json字符串中也可以加入其他自定义的key
+   * @type: string
+   * @default:
+   **/
+  custom_parameters?: string;
+
+  /**
    * @description: 渠道id
    * @type: string
    * @default:
@@ -15,18 +22,11 @@ export interface PddDdkGoodsZsUnitUrlGenRequestInterface {
   pid: string;
 
   /**
-   * @description: 需转链的链接，仅支持短链链接
+   * @description: 需转链的链接，支持进宝长链/短链（即为pdd.ddk.goods.promotion.url.generate接口生成的长短链）
    * @type: string
    * @default:
    **/
   source_url: string;
-
-  /**
-   * @description: 自定义参数，为链接打上自定义标签；自定义参数最长限制64个字节；格式为： {"uid":"11111","sid":"22222"} ，其中 uid 用户唯一标识，可自行加密后传入，每个用户仅且对应一个标识，必填； sid 上下文信息标识，例如sessionId等，非必填。该json字符串中也可以加入其他自定义的key
-   * @type: string
-   * @default:
-   **/
-  custom_parameters?: string;
 }
 
 /**
@@ -58,14 +58,14 @@ export interface PddDdkGoodsZsUnitUrlGenGoodsZsUnitGenerateResponseResponseInter
   mobile_short_url: string;
 
   /**
-   * @description: 推广长链接（可唤起拼多多app）
+   * @description: 推广长链接（唤起拼多多app）
    * @type: string
    * @default:
    **/
   mobile_url: string;
 
   /**
-   * @description: 推广短链接（可唤起拼多多app）
+   * @description: 推广短链接（唤起拼多多app）
    * @type: string
    * @default:
    **/
@@ -79,28 +79,28 @@ export interface PddDdkGoodsZsUnitUrlGenGoodsZsUnitGenerateResponseResponseInter
   multi_group_mobile_url: string;
 
   /**
-   * @description: 双人团推广短链接，唤起H5页面
+   * @description: 双人团推广短链接
    * @type: string
    * @default:
    **/
   multi_group_short_url: string;
 
   /**
-   * @description: 双人团推广长链接，唤起H5页面
+   * @description: 双人团推广长链接
    * @type: string
    * @default:
    **/
   multi_group_url: string;
 
   /**
-   * @description: 单人团推广短链接，唤起H5页面
+   * @description: 对应出参url的短链接，与url功能一致。
    * @type: string
    * @default:
    **/
   short_url: string;
 
   /**
-   * @description: 单人团推广长链接，唤起H5页面
+   * @description: 普通推广长链接，唤起H5页面
    * @type: string
    * @default:
    **/
