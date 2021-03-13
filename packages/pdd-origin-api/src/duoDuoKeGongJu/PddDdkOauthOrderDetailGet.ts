@@ -128,7 +128,7 @@ export interface PddDdkOauthOrderDetailGetOrderDetailResponseResponseInterface {
   goods_quantity: string | number;
 
   /**
-   * @description: 商品goodsSign
+   * @description: goodsSign是加密后的goodsId, goodsId已下线，请使用goodsSign来替代。需要注意的是：推广链接带有goodsSign信息的情况下，产生的订单中才会有相应的goodsSign信息。其他情况下产生的订单，该字段不返回。
    * @type: string
    * @default:
    **/

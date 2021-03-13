@@ -172,20 +172,6 @@ export interface PddDdkOauthCmsPromUrlGenerateCmsPromotionUrlGenerateResponseUrl
   multi_url_list: PddDdkOauthCmsPromUrlGenerateCmsPromotionUrlGenerateResponseUrlListMultiUrlListResponseInterface;
 
   /**
-   * @description: 多人团唤醒微信推广短链接，已弃用
-   * @type: string
-   * @default:
-   **/
-  multi_we_app_web_view_short_url: string;
-
-  /**
-   * @description: 多人团唤醒微信推广长链接，已弃用
-   * @type: string
-   * @default:
-   **/
-  multi_we_app_web_view_url: string;
-
-  /**
    * @description: h5短链接
    * @type: string
    * @default:
@@ -277,20 +263,6 @@ export interface PddDdkOauthCmsPromUrlGenerateCmsPromotionUrlGenerateResponseUrl
    * @default:
    **/
   url: string;
-
-  /**
-   * @description: 双人团唤醒微信短链接，已弃用
-   * @type: string
-   * @default:
-   **/
-  we_app_web_view_short_url: string;
-
-  /**
-   * @description: 双人团唤醒微信链接，已弃用
-   * @type: string
-   * @default:
-   **/
-  we_app_web_view_url: string;
 }
 
 /**
@@ -333,20 +305,6 @@ export interface PddDdkOauthCmsPromUrlGenerateCmsPromotionUrlGenerateResponseUrl
    * @default:
    **/
   url: string;
-
-  /**
-   * @description: 唤醒微信短链接，已弃用
-   * @type: string
-   * @default:
-   **/
-  we_app_web_view_short_url: string;
-
-  /**
-   * @description: 唤醒微信链接，已弃用
-   * @type: string
-   * @default:
-   **/
-  we_app_web_view_url: string;
 }
 
 /**

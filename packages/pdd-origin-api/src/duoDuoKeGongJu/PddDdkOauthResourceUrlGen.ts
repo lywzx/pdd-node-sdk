@@ -15,20 +15,6 @@ export interface PddDdkOauthResourceUrlGenRequestInterface {
   custom_parameters?: string;
 
   /**
-   * @description: 是否生成qq小程序
-   * @type: boolean
-   * @default: false
-   **/
-  generate_qq_app?: boolean;
-
-  /**
-   * @description: 是否返回 schema URL
-   * @type: boolean
-   * @default: false
-   **/
-  generate_schema_url?: boolean;
-
-  /**
    * @description: 是否生成小程序
    * @type: boolean
    * @default: false
@@ -87,14 +73,6 @@ export interface PddDdkOauthResourceUrlGenResourceUrlResponseResponseInterface {
   multi_url_list: PddDdkOauthResourceUrlGenResourceUrlResponseMultiUrlListResponseInterface;
 
   /**
-   * @description: qq小程序信息
-   * @type: PddDdkOauthResourceUrlGenResourceUrlResponseQqAppInfoResponseInterface
-   * @default:
-   *
-   **/
-  qq_app_info: PddDdkOauthResourceUrlGenResourceUrlResponseQqAppInfoResponseInterface;
-
-  /**
    * @description: sign
    * @type: string
    * @default:
@@ -125,27 +103,6 @@ export interface PddDdkOauthResourceUrlGenResourceUrlResponseResponseInterface {
  **/
 export interface PddDdkOauthResourceUrlGenResourceUrlResponseMultiUrlListResponseInterface {
   /**
-   * @description: 推广移动短链接，对应出参mobile_url的短链接，与mobile_url功能一致。
-   * @type: string
-   * @default:
-   **/
-  mobile_short_url: string;
-
-  /**
-   * @description: 推广移动链接，用户安装拼多多APP的情况下会唤起APP，否则唤起H5页面
-   * @type: string
-   * @default:
-   **/
-  mobile_url: string;
-
-  /**
-   * @description: schema链接，用户安装拼多多APP的情况下会唤起APP（需客户端支持schema跳转协议）
-   * @type: string
-   * @default:
-   **/
-  schema_url: string;
-
-  /**
    * @description: 频道推广短链接，对应出参url的短链接，与url功能一致。
    * @type: string
    * @default:
@@ -158,90 +115,6 @@ export interface PddDdkOauthResourceUrlGenResourceUrlResponseMultiUrlListRespons
    * @default:
    **/
   url: string;
-
-  /**
-   * @description: 小程序信息
-   * @type: string
-   * @default:
-   **/
-  we_app_page_path: string;
-
-  /**
-   * @description: 频道推广唤醒微信短链接，已弃用
-   * @type: string
-   * @default:
-   **/
-  we_app_web_view_short_url: string;
-
-  /**
-   * @description: 频道推广唤醒微信长链接，已弃用
-   * @type: string
-   * @default:
-   **/
-  we_app_web_view_url: string;
-}
-
-/**
- * @description qq小程序信息
- * @default
- * @example
- **/
-export interface PddDdkOauthResourceUrlGenResourceUrlResponseQqAppInfoResponseInterface {
-  /**
-   * @description: 拼多多小程序id
-   * @type: string
-   * @default:
-   **/
-  app_id: string;
-
-  /**
-   * @description: Banner图
-   * @type: string
-   * @default:
-   **/
-  banner_url: string;
-
-  /**
-   * @description: 描述
-   * @type: string
-   * @default:
-   **/
-  desc: string;
-
-  /**
-   * @description: 小程序path值
-   * @type: string
-   * @default:
-   **/
-  page_path: string;
-
-  /**
-   * @description: 小程序icon
-   * @type: string
-   * @default:
-   **/
-  qq_app_icon_url: string;
-
-  /**
-   * @description: 来源名
-   * @type: string
-   * @default:
-   **/
-  source_display_name: string;
-
-  /**
-   * @description: 小程序标题
-   * @type: string
-   * @default:
-   **/
-  title: string;
-
-  /**
-   * @description: 用户名
-   * @type: string
-   * @default:
-   **/
-  user_name: string;
 }
 
 /**
@@ -251,27 +124,6 @@ export interface PddDdkOauthResourceUrlGenResourceUrlResponseQqAppInfoResponseIn
  **/
 export interface PddDdkOauthResourceUrlGenResourceUrlResponseSingleUrlListResponseInterface {
   /**
-   * @description: 推广移动短链接，对应出参mobile_url的短链接，与mobile_url功能一致。
-   * @type: string
-   * @default:
-   **/
-  mobile_short_url: string;
-
-  /**
-   * @description: 推广移动链接，用户安装拼多多APP的情况下会唤起APP，否则唤起H5页面
-   * @type: string
-   * @default:
-   **/
-  mobile_url: string;
-
-  /**
-   * @description: schema链接，用户安装拼多多APP的情况下会唤起APP（需客户端支持schema跳转协议）
-   * @type: string
-   * @default:
-   **/
-  schema_url: string;
-
-  /**
    * @description: 频道推广短链接，对应出参url的短链接，与url功能一致。
    * @type: string
    * @default:
@@ -284,27 +136,6 @@ export interface PddDdkOauthResourceUrlGenResourceUrlResponseSingleUrlListRespon
    * @default:
    **/
   url: string;
-
-  /**
-   * @description: 小程序信息
-   * @type: string
-   * @default:
-   **/
-  we_app_page_path: string;
-
-  /**
-   * @description: 频道推广唤醒微信短链接，已弃用
-   * @type: string
-   * @default:
-   **/
-  we_app_web_view_short_url: string;
-
-  /**
-   * @description: 频道推广唤醒微信长链接，已弃用
-   * @type: string
-   * @default:
-   **/
-  we_app_web_view_url: string;
 }
 
 /**

@@ -666,7 +666,7 @@ export interface PddOrderNumberListIncrementGetOrderSnIncrementGetResponseOrderS
   mkt_biz_type: number;
 
   /**
-   * @description: 订单标签列表，no_trace_delivery=无痕发货，only_support_replace=只换不修，duoduo_wholesale=多多批发，return_freight_payer=退货包运费，free_sf=顺丰包邮，support_nationwide_warranty=全国联保，self_contained=门店自提，delivery_one_day=当日发货
+   * @description: 订单标签列表，no_trace_delivery=无痕发货，only_support_replace=只换不修，duoduo_wholesale=多多批发，return_freight_payer=退货包运费，free_sf=顺丰包邮，support_nationwide_warranty=全国联保，self_contained=门店自提，delivery_one_day=当日发货，oversea_tracing=全球购溯源
    * @type: PddOrderNumberListIncrementGetOrderSnIncrementGetResponseOrderSnListOrderTagListResponseInterface[]
    * @default:
    *
@@ -907,7 +907,7 @@ export interface PddOrderNumberListIncrementGetOrderSnIncrementGetResponseOrderS
 }
 
 /**
- * @description 订单标签列表，no_trace_delivery=无痕发货，only_support_replace=只换不修，duoduo_wholesale=多多批发，return_freight_payer=退货包运费，free_sf=顺丰包邮，support_nationwide_warranty=全国联保，self_contained=门店自提，delivery_one_day=当日发货
+ * @description 订单标签列表，no_trace_delivery=无痕发货，only_support_replace=只换不修，duoduo_wholesale=多多批发，return_freight_payer=退货包运费，free_sf=顺丰包邮，support_nationwide_warranty=全国联保，self_contained=门店自提，delivery_one_day=当日发货，oversea_tracing=全球购溯源
  * @default
  * @example
  **/

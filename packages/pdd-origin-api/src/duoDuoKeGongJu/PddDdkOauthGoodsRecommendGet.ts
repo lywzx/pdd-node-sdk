@@ -8,6 +8,13 @@ export const PDD_DDK_OAUTH_GOODS_RECOMMEND_GET_RESPONSE_KEY = 'goods_basic_detai
  **/
 export interface PddDdkOauthGoodsRecommendGetRequestInterface {
   /**
+   * @description: 活动商品标记数组，例：[4,7]，4-秒杀，7-百亿补贴，31-品牌黑标，10564-精选爆品-官方直推爆款，10584-精选爆品-团长推荐，24-品牌高佣，20-行业精选，21-金牌商家，10044-潜力爆品，10475-爆品上新，其他的值请忽略
+   * @type: number[]
+   * @default:
+   **/
+  activity_tags?: number[];
+
+  /**
    * @description: 猜你喜欢场景的商品类目，20100-百货，20200-母婴，20300-食品，20400-女装，20500-电器，20600-鞋包，20700-内衣，20800-美妆，20900-男装，21000-水果，21100-家纺，21200-文具,21300-运动,21400-虚拟,21500-汽车,21600-家装,21700-家具,21800-医药;
    * @type: string | number
    * @default:
@@ -15,7 +22,7 @@ export interface PddDdkOauthGoodsRecommendGetRequestInterface {
   cat_id?: string | number;
 
   /**
-   * @description: 进宝频道推广商品，0-1.9包邮, 1-今日爆款, 2-品牌好货,3-相似商品推荐,4-猜你喜欢,5-实时热销榜,6-实时收益榜,7-今日热销榜,8-高佣榜单，默认值5
+   * @description: 进宝频道推广商品，0-1.9包邮, 1-今日爆款, 2-品牌好货,3-相似商品推荐,4-猜你喜欢,5-实时热销榜,6-实时收益榜,7-今日热销榜，默认值5
    * @type: number
    * @default:
    **/
@@ -29,7 +36,7 @@ export interface PddDdkOauthGoodsRecommendGetRequestInterface {
   custom_parameters?: string;
 
   /**
-   * @description: 相似商品推荐场景时必传。goodsSign，请求相似商品时，仅取数组的第一位
+   * @description: 商品goodsSign列表，支持通过goodsSign查询商品。goodsSign是加密后的goodsId, goodsId已下线，请使用goodsSign来替代。使用说明：https://jinbao.pinduoduo.com/qa-system?questionId=252。相似商品推荐场景时必传，仅取数组的第一位
    * @type: string[]
    * @default:
    **/
@@ -122,18 +129,11 @@ export interface PddDdkOauthGoodsRecommendGetGoodsBasicDetailResponseResponseInt
  **/
 export interface PddDdkOauthGoodsRecommendGetGoodsBasicDetailResponseListResponseInterface {
   /**
-   * @description: 已废弃,使用opt_id
-   * @type: string
+   * @description: 商品活动标记数组，例：[4,7]，4-秒杀 7-百亿补贴等
+   * @type: number[]
    * @default:
    **/
-  category_id: string;
-
-  /**
-   * @description: 已废弃,使用opt_name
-   * @type: string
-   * @default:
-   **/
-  category_name: string;
+  activity_tags: number[];
 
   /**
    * @description: 商品类目id
@@ -227,13 +227,6 @@ export interface PddDdkOauthGoodsRecommendGetGoodsBasicDetailResponseListRespons
   goods_gallery_urls: string;
 
   /**
-   * @description: 商品id
-   * @type: string | number
-   * @default:
-   **/
-  goods_id: string | number;
-
-  /**
    * @description: 商品主图
    * @type: string
    * @default:
@@ -262,7 +255,7 @@ export interface PddDdkOauthGoodsRecommendGetGoodsBasicDetailResponseListRespons
   goods_rate: string | number;
 
   /**
-   * @description: 商品goodsSign
+   * @description: 商品goodsSign，支持通过goodsSign查询商品。goodsSign是加密后的goodsId, goodsId已下线，请使用goodsSign来替代。使用说明：https://jinbao.pinduoduo.com/qa-system?questionId=252
    * @type: string
    * @default:
    **/

@@ -22,6 +22,13 @@ export interface PddDdkOauthGoodsPromUrlGenerateRequestInterface {
   cash_gift_id?: string | number;
 
   /**
+   * @description: 自定义礼金标题，用于向用户展示渠道专属福利，不超过12个字
+   * @type: string
+   * @default:
+   **/
+  cash_gift_name?: string;
+
+  /**
    * @description: 自定义参数，为链接打上自定义标签；自定义参数最长限制64个字节；格式为：  {"uid":"11111","sid":"22222"} ，其中 uid 用户唯一标识，可自行加密后传入，每个用户仅且对应一个标识，必填； sid 上下文信息标识，例如sessionId等，非必填。该json字符串中也可以加入其他自定义的key
    * @type: string
    * @default:
@@ -71,20 +78,6 @@ export interface PddDdkOauthGoodsPromUrlGenerateRequestInterface {
   generate_short_url?: boolean;
 
   /**
-   * @description: 已经废弃，不再支持该功能。是否生成唤起微信客户端链接，true-是，false-否，默认false。
-   * @type: boolean
-   * @default:
-   **/
-  generate_weapp_webview?: boolean;
-
-  /**
-   * @description: 是否生成微博推广链接
-   * @type: boolean
-   * @default: false
-   **/
-  generate_weiboapp_webview?: boolean;
-
-  /**
    * @description: 是否生成小程序推广
    * @type: boolean
    * @default:
@@ -92,21 +85,7 @@ export interface PddDdkOauthGoodsPromUrlGenerateRequestInterface {
   generate_we_app?: boolean;
 
   /**
-   * @description: 商品ID，建议使用goods_sign_list代替，后续会下线。
-   * @type: Array<string | number>
-   * @default:
-   **/
-  goods_id_list?: Array<string | number>;
-
-  /**
-   * @description: 商品goodsSign，仅支持单个生链。goodsId和goodsSign必须传入其中一个，建议使用goods_sign_list传入goodsSign
-   * @type: string
-   * @default:
-   **/
-  goods_sign?: string;
-
-  /**
-   * @description: 商品goodsSign列表，支持批量生链
+   * @description: 商品goodsSign列表，支持批量生链。goodsSign是加密后的goodsId, goodsId已下线，请使用goodsSign来替代。使用说明：https://jinbao.pinduoduo.com/qa-system?questionId=252
    * @type: string[]
    * @default:
    **/
@@ -221,40 +200,12 @@ export interface PddDdkOauthGoodsPromUrlGenerateGoodsPromotionUrlGenerateRespons
   url: string;
 
   /**
-   * @description: 微博推广短链接
-   * @type: string
-   * @default:
-   **/
-  weibo_app_web_view_short_url: string;
-
-  /**
-   * @description: 微博推广链接
-   * @type: string
-   * @default:
-   **/
-  weibo_app_web_view_url: string;
-
-  /**
    * @description: 小程序信息
    * @type: PddDdkOauthGoodsPromUrlGenerateGoodsPromotionUrlGenerateResponseGoodsPromotionUrlListWeAppInfoResponseInterface
    * @default:
    *
    **/
   we_app_info: PddDdkOauthGoodsPromUrlGenerateGoodsPromotionUrlGenerateResponseGoodsPromotionUrlListWeAppInfoResponseInterface;
-
-  /**
-   * @description: 唤起微信app推广短链接，已弃用
-   * @type: string
-   * @default:
-   **/
-  we_app_web_view_short_url: string;
-
-  /**
-   * @description: 唤起微信app推广链接，已弃用
-   * @type: string
-   * @default:
-   **/
-  we_app_web_view_url: string;
 }
 
 /**

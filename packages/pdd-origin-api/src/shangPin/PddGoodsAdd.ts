@@ -68,7 +68,7 @@ export interface PddGoodsAddRequestInterface {
   cat_id: string | number;
 
   /**
-   * @description: 物流运费模板ID，可使用pdd.logistics.template.get获取
+   * @description: 物流运费模板ID，可使用pdd.goods.logistics.template.get获取
    * @type: string | number
    * @default:
    **/
@@ -411,6 +411,13 @@ export interface PddGoodsAddRequestInterface {
    * @default:
    **/
   delivery_type?: number;
+
+  /**
+   * @description: 是否成团预售。0：不是；1:是。
+   * @type: number
+   * @default:
+   **/
+  is_group_pre_sale?: number;
 }
 
 /**

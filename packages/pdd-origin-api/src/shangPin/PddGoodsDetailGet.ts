@@ -396,6 +396,13 @@ export interface PddGoodsDetailGetGoodsDetailGetResponseResponseInterface {
    * @default:
    **/
   delivery_type: number;
+
+  /**
+   * @description: 是否成团预售。0：不是；1:是。
+   * @type: number
+   * @default:
+   **/
+  is_group_pre_sale: number;
 }
 
 /**
@@ -724,10 +731,10 @@ export interface PddGoodsDetailGetGoodsDetailGetResponseSkuListSpecResponseInter
 export interface PddGoodsDetailGetGoodsDetailGetResponseVideoGalleryResponseInterface {
   /**
    * @description: 商品视频id
-   * @type: number
+   * @type: string | number
    * @default:
    **/
-  file_id: number;
+  file_id: string | number;
 
   /**
    * @description: 商品视频url

@@ -3,8 +3,8 @@ export const PDD_GOODS_QUANTITY_UPDATE_RESPONSE_KEY = 'goods_quantity_update_res
 export const PDD_GOODS_QUANTITY_UPDATE_LIMITERS = [
   {
     limiterLevel: 3,
-    timeRange: 10,
-    times: 36000,
+    timeRange: 1,
+    times: 4000,
   },
 ];
 

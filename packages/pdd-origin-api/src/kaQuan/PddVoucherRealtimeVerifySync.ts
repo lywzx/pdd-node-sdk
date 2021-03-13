@@ -68,7 +68,7 @@ export interface PddVoucherRealtimeVerifySyncRequestRequestInterface {
    * @type: string
    * @default:
    **/
-  voucher_id: string;
+  out_voucher_id: string;
 }
 
 /**

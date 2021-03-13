@@ -43,7 +43,7 @@ export interface PddDdkOauthGoodsSearchRequestInterface {
   custom_parameters?: string;
 
   /**
-   * @description: goodsSign列表，支持通过goodsSign查询商品
+   * @description: 商品goodsSign列表，支持通过goodsSign查询商品。goodsSign是加密后的goodsId, goodsId已下线，请使用goodsSign来替代。使用说明：https://jinbao.pinduoduo.com/qa-system?questionId=252
    * @type: string[]
    * @default:
    **/
@@ -57,7 +57,7 @@ export interface PddDdkOauthGoodsSearchRequestInterface {
   is_brand_goods?: boolean;
 
   /**
-   * @description: 商品关键词，与opt_id字段选填一个或全部填写，不支持纯数字(goods_id)搜索
+   * @description: 商品关键词，与opt_id字段选填一个或全部填写。可支持goods_id、拼多多链接（即拼多多app商详的链接）、进宝长链/短链（即为pdd.ddk.goods.promotion.url.generate接口生成的长短链）
    * @type: string
    * @default:
    **/
@@ -235,20 +235,6 @@ export interface PddDdkOauthGoodsSearchGoodsSearchResponseGoodsListResponseInter
   activity_type: number;
 
   /**
-   * @description: 已废弃,使用opt_id
-   * @type: string | number
-   * @default:
-   **/
-  category_id: string | number;
-
-  /**
-   * @description: 已废弃,使用opt_name
-   * @type: string
-   * @default:
-   **/
-  category_name: string;
-
-  /**
    * @description: 商品类目id
    * @type: Array<string | number>
    * @default:
@@ -368,13 +354,6 @@ export interface PddDdkOauthGoodsSearchGoodsSearchResponseGoodsListResponseInter
   goods_desc: string;
 
   /**
-   * @description: 商品id
-   * @type: string | number
-   * @default:
-   **/
-  goods_id: string | number;
-
-  /**
    * @description: 商品主图
    * @type: string
    * @default:
@@ -396,7 +375,7 @@ export interface PddDdkOauthGoodsSearchGoodsSearchResponseGoodsListResponseInter
   goods_name: string;
 
   /**
-   * @description: 商品goodsSign
+   * @description: 商品goodsSign，支持通过goodsSign查询商品。goodsSign是加密后的goodsId, goodsId已下线，请使用goodsSign来替代。使用说明：https://jinbao.pinduoduo.com/qa-system?questionId=252
    * @type: string
    * @default:
    **/

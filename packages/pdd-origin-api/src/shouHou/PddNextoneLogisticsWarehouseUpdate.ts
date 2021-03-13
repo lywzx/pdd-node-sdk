@@ -47,7 +47,7 @@ export interface PddNextoneLogisticsWarehouseUpdateRequestRequestInterface {
    * @type: number
    * @default:
    **/
-  reverse_logistics_id: number;
+  reverse_logistics_id?: number;
 
   /**
    * @description: 物流单号
