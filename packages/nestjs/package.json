@@ -1,6 +1,6 @@
 {
   "name": "@pin-duo-duo/nestjs",
-  "version": "0.0.2-alpha.6",
+  "version": "0.0.2-alpha.7",
   "description": "> TODO: description",
   "author": "lywzx <liuyang@lyblog.net>",
   "homepage": "https://github.com/lywzx/pdd-node-sdk/tree/master/packages/nestjs#readme",
@@ -29,7 +29,7 @@
     "url": "https://github.com/lywzx/pdd-node-sdk/issues"
   },
   "dependencies": {
-    "@pin-duo-duo/core": "^0.0.2-alpha.6"
+    "@pin-duo-duo/core": "0.0.2-alpha.7"
   },
   "devDependencies": {
     "@types/lodash": "^4.14.159",
