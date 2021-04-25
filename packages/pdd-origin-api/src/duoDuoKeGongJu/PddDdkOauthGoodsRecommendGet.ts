@@ -8,7 +8,7 @@ export const PDD_DDK_OAUTH_GOODS_RECOMMEND_GET_RESPONSE_KEY = 'goods_basic_detai
  **/
 export interface PddDdkOauthGoodsRecommendGetRequestInterface {
   /**
-   * @description: 活动商品标记数组，例：[4,7]，4-秒杀，7-百亿补贴，31-品牌黑标，10564-精选爆品-官方直推爆款，10584-精选爆品-团长推荐，24-品牌高佣，20-行业精选，21-金牌商家，10044-潜力爆品，10475-爆品上新，其他的值请忽略
+   * @description: 活动商品标记数组，例：[4,7]，4-秒杀，7-百亿补贴，10851-千万补贴，31-品牌黑标，10564-精选爆品-官方直推爆款，10584-精选爆品-团长推荐，24-品牌高佣，其他的值请忽略
    * @type: number[]
    * @default:
    **/
@@ -22,7 +22,7 @@ export interface PddDdkOauthGoodsRecommendGetRequestInterface {
   cat_id?: string | number;
 
   /**
-   * @description: 进宝频道推广商品，0-1.9包邮, 1-今日爆款, 2-品牌好货,3-相似商品推荐,4-猜你喜欢,5-实时热销榜,6-实时收益榜,7-今日热销榜，默认值5
+   * @description: 进宝频道推广商品: 1-今日销量榜,3-相似商品推荐,4-猜你喜欢(和进宝网站精选一致),5-实时热销榜,6-实时收益榜。默认值5
    * @type: number
    * @default:
    **/
@@ -36,7 +36,14 @@ export interface PddDdkOauthGoodsRecommendGetRequestInterface {
   custom_parameters?: string;
 
   /**
-   * @description: 商品goodsSign列表，支持通过goodsSign查询商品。goodsSign是加密后的goodsId, goodsId已下线，请使用goodsSign来替代。使用说明：https://jinbao.pinduoduo.com/qa-system?questionId=252。相似商品推荐场景时必传，仅取数组的第一位
+   * @description: 是否使用工具商专属推广计划，默认为false
+   * @type: boolean
+   * @default:
+   **/
+  force_auth_duo_id?: boolean;
+
+  /**
+   * @description: 商品goodsSign列表，相似商品推荐场景时必传，仅取数组的第一位，例如：["c9r2omogKFFAc7WBwvbZU1ikIb16_J3CTa8HNN"]。goodsSign是加密后的goodsId, goodsId已下线，请使用goodsSign来替代。使用说明：https://jinbao.pinduoduo.com/qa-system?questionId=252
    * @type: string[]
    * @default:
    **/
@@ -213,18 +220,18 @@ export interface PddDdkOauthGoodsRecommendGetGoodsBasicDetailResponseListRespons
   desc_txt: string;
 
   /**
+   * @description: 额外优惠券
+   * @type: string | number
+   * @default:
+   **/
+  extra_coupon_amount: string | number;
+
+  /**
    * @description: 商品描述
    * @type: string
    * @default:
    **/
   goods_desc: string;
-
-  /**
-   * @description: 商品详情图列表
-   * @type: string
-   * @default:
-   **/
-  goods_gallery_urls: string;
 
   /**
    * @description: 商品主图
@@ -374,6 +381,13 @@ export interface PddDdkOauthGoodsRecommendGetGoodsBasicDetailResponseListRespons
   qr_code_image_url: string;
 
   /**
+   * @description: 商品近1小时在多多进宝的实时销量（仅实时热销榜提供）
+   * @type: string
+   * @default:
+   **/
+  realtime_sales_tip: string;
+
+  /**
    * @description: 销售量
    * @type: string
    * @default:
@@ -407,4 +421,18 @@ export interface PddDdkOauthGoodsRecommendGetGoodsBasicDetailResponseListRespons
    * @default:
    **/
   share_rate: number;
+
+  /**
+   * @description: 优势渠道专属商品补贴金额。针对优质渠道的补贴活动，指定优势渠道可通过推广该商品获取相应补贴。补贴活动入口：[进宝网站-官方活动-千万补贴]，报名入口：https://jinbao.pinduoduo.com/ten-million-subsidy/entry
+   * @type: number
+   * @default:
+   **/
+  subsidy_amount: number;
+
+  /**
+   * @description: 优惠标签列表，包括："X元券","比全网低X元","服务费","精选素材","近30天低价","同款低价","同款好评","同款热销","旗舰店","一降到底","招商优选","商家优选","好价再降X元","全站销量XX","实时热销榜第X名","实时好评榜第X名","额外补X元"等
+   * @type: string[]
+   * @default:
+   **/
+  unified_tags: string[];
 }

@@ -29,7 +29,7 @@ export interface PddDdkOauthGoodsZsUnitUrlGenRequestInterface {
   pid: string;
 
   /**
-   * @description: 需转链的链接，支持进宝长链/短链（即为pdd.ddk.goods.promotion.url.generate接口生成的长短链）
+   * @description: 需转链的链接，支持拼多多商品链接、进宝长链/短链（即为pdd.ddk.goods.promotion.url.generate接口生成的长短链）
    * @type: string
    * @default:
    **/

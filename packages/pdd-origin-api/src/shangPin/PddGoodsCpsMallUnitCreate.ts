@@ -15,18 +15,18 @@ export const PDD_GOODS_CPS_MALL_UNIT_CREATE_LIMITERS = [
  **/
 export interface PddGoodsCpsMallUnitCreateRequestInterface {
   /**
-   * @description: 佣金比（千分比）
-   * @type: string | number
-   * @default:
-   **/
-  rate: string | number;
-
-  /**
    * @description: 合作方code
    * @type: string
    * @default:
    **/
   erp_code?: string;
+
+  /**
+   * @description: 佣金比（千分比）
+   * @type: string | number
+   * @default:
+   **/
+  rate: string | number;
 }
 
 /**
@@ -36,7 +36,7 @@ export interface PddGoodsCpsMallUnitCreateRequestInterface {
  **/
 export interface PddGoodsCpsMallUnitCreateResponseInterface {
   /**
-   * @description: 是否设置成功
+   * @description: 是否创建成功
    * @type: boolean
    * @default:
    **/

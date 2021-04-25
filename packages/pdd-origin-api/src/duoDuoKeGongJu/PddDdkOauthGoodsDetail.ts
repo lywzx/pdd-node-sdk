@@ -199,6 +199,13 @@ export interface PddDdkOauthGoodsDetailGoodsDetailResponseGoodsDetailsResponseIn
   desc_txt: string;
 
   /**
+   * @description: 额外优惠券
+   * @type: string | number
+   * @default:
+   **/
+  extra_coupon_amount: string | number;
+
+  /**
    * @description: 参与多多进宝的商品描述
    * @type: string
    * @default:
@@ -388,7 +395,7 @@ export interface PddDdkOauthGoodsDetailGoodsDetailResponseGoodsDetailsResponseIn
   opt_name: string;
 
   /**
-   * @description: 推广计划类型
+   * @description: 推广计划类型: 1-全店推广 2-单品推广 3-定向推广 4-招商推广 5-分销推广
    * @type: number
    * @default:
    **/
@@ -437,7 +444,14 @@ export interface PddDdkOauthGoodsDetailGoodsDetailResponseGoodsDetailsResponseIn
   share_rate: number;
 
   /**
-   * @description: 优惠标签列表
+   * @description: 优势渠道专属商品补贴金额。针对优质渠道的补贴活动，指定优势渠道可通过推广该商品获取相应补贴。补贴活动入口：[进宝网站-官方活动-千万补贴]，报名入口：https://jinbao.pinduoduo.com/ten-million-subsidy/entry
+   * @type: number
+   * @default:
+   **/
+  subsidy_amount: number;
+
+  /**
+   * @description: 优惠标签列表，包括："X元券","比全网低X元","服务费","精选素材","近30天低价","同款低价","同款好评","同款热销","旗舰店","一降到底","招商优选","商家优选","好价再降X元","全站销量XX","实时热销榜第X名","实时好评榜第X名","额外补X元"等
    * @type: string[]
    * @default:
    **/

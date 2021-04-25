@@ -11,22 +11,15 @@ export const PDD_GOODS_CPS_UNIT_CHANGE_LIMITERS = [
 /**
  * 接口名称：修改商品推广API
  * 接口标识：pdd.goods.cps.unit.change
- * 接口使用场景：修改推广商品API，其中创建或修改优惠券均应用于该商品所有生效的推广计划
+ * 接口使用场景：修改推广商品API
  **/
 export interface PddGoodsCpsUnitChangeRequestInterface {
   /**
-   * @description: 商品id
-   * @type: string | number
+   * @description: 优惠券结束时间
+   * @type: string
    * @default:
    **/
-  goods_id: string | number;
-
-  /**
-   * @description: 佣金比例（千分比）
-   * @type: string | number
-   * @default:
-   **/
-  rate: string | number;
+  coupon_end_time?: string;
 
   /**
    * @description: 优惠券id
@@ -36,35 +29,49 @@ export interface PddGoodsCpsUnitChangeRequestInterface {
   coupon_id?: string | number;
 
   /**
-   * @description: 优惠券开始时间，商品售价>=10元必传
+   * @description: 优惠券号
+   * @type: string
+   * @default:
+   **/
+  coupon_sn?: string;
+
+  /**
+   * @description: 优惠券开始时间
    * @type: string
    * @default:
    **/
   coupon_start_time?: string;
 
   /**
-   * @description: 优惠券结束时间，商品售价>=10元必传
-   * @type: string
+   * @description: 优惠券面额（单位为分）
+   * @type: number
    * @default:
    **/
-  coupon_end_time?: string;
+  discount?: number;
 
   /**
-   * @description: 优惠券面额（单位为分），商品售价>=10元必传
+   * @description: 商品id
    * @type: string | number
    * @default:
    **/
-  discount?: string | number;
+  goods_id: string | number;
 
   /**
-   * @description: 设置的优惠券张数，商品售价>=10元必传
+   * @description: 设置的优惠券张数
    * @type: string | number
    * @default:
    **/
   init_quantity?: string | number;
 
   /**
-   * @description: 优惠券剩余数量，商品售价>=10元必传
+   * @description: 佣金比例（千分比）
+   * @type: number
+   * @default:
+   **/
+  rate: number;
+
+  /**
+   * @description: 优惠券剩余数量
    * @type: string | number
    * @default:
    **/
@@ -74,7 +81,7 @@ export interface PddGoodsCpsUnitChangeRequestInterface {
 /**
  * 接口名称：修改商品推广API
  * 接口标识：pdd.goods.cps.unit.change
- * 接口使用场景：修改推广商品API，其中创建或修改优惠券均应用于该商品所有生效的推广计划
+ * 接口使用场景：修改推广商品API
  **/
 export interface PddGoodsCpsUnitChangeResponseInterface {
   /**

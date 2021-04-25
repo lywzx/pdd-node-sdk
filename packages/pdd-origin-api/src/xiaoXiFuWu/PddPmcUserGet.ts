@@ -52,13 +52,6 @@ export interface PddPmcUserGetPmcUserGetResponseResponseInterface {
  **/
 export interface PddPmcUserGetPmcUserGetResponsePmcUserResponseInterface {
   /**
-   * @description: 用户最后开通时间
-   * @type: string
-   * @default:
-   **/
-  modified: string;
-
-  /**
    * @description: 用户首次开通时间
    * @type: string
    * @default:
@@ -71,6 +64,13 @@ export interface PddPmcUserGetPmcUserGetResponsePmcUserResponseInterface {
    * @default:
    **/
   is_expire: number;
+
+  /**
+   * @description: 用户最后开通时间
+   * @type: string
+   * @default:
+   **/
+  modified: string;
 
   /**
    * @description: 用户ID

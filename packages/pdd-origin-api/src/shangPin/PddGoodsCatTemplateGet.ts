@@ -70,6 +70,13 @@ export interface PddGoodsCatTemplateGetOpenApiResponseResponseInterface {
   input_max_spec_num: string | number;
 
   /**
+   * @description: is_single_item
+   * @type: boolean
+   * @default:
+   **/
+  is_single_item: boolean;
+
+  /**
    * @description: 最大sku数目上限
    * @type: string | number
    * @default:
@@ -148,6 +155,13 @@ export interface PddGoodsCatTemplateGetOpenApiResponsePropertiesResponseInterfac
   is_condition_show: boolean;
 
   /**
+   * @description: is_key
+   * @type: boolean
+   * @default:
+   **/
+  is_key: boolean;
+
+  /**
    * @description: 是否父属性
    * @type: boolean
    * @default:
@@ -223,6 +237,13 @@ export interface PddGoodsCatTemplateGetOpenApiResponsePropertiesResponseInterfac
    * @default:
    **/
   required_rule_type: number;
+
+  /**
+   * @description: show_only_standard
+   * @type: boolean
+   * @default:
+   **/
+  show_only_standard: boolean;
 
   /**
    * @description: 若属性按条件展示,则只有show_vids中的值被选择时属性才可使用

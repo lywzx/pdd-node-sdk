@@ -19,7 +19,7 @@ export interface PddCloudprintStdtemplatesGetRequestInterface {
    * @type: string
    * @default:
    **/
-  wp_code?: string;
+  wp_code: string;
 }
 
 /**
@@ -29,7 +29,7 @@ export interface PddCloudprintStdtemplatesGetRequestInterface {
  **/
 export interface PddCloudprintStdtemplatesGetResponseInterface {
   /**
-   * @description: Response
+   * @description: response
    * @type: PddCloudprintStdtemplatesGetPddCloudprintStdtemplatesGetResponseResponseInterface
    * @default:
    *
@@ -38,7 +38,7 @@ export interface PddCloudprintStdtemplatesGetResponseInterface {
 }
 
 /**
- * @description Response
+ * @description response
  * @default
  * @example
  **/
@@ -96,6 +96,13 @@ export interface PddCloudprintStdtemplatesGetPddCloudprintStdtemplatesGetRespons
  **/
 export interface PddCloudprintStdtemplatesGetPddCloudprintStdtemplatesGetResponseResultDatasStandardTemplatesResponseInterface {
   /**
+   * @description: 模板id
+   * @type: string | number
+   * @default:
+   **/
+  standard_template_id: string | number;
+
+  /**
    * @description: 模板名称
    * @type: string
    * @default:
@@ -115,11 +122,4 @@ export interface PddCloudprintStdtemplatesGetPddCloudprintStdtemplatesGetRespons
    * @default:
    **/
   standard_waybill_type: number;
-
-  /**
-   * @description: 标准模板id
-   * @type: string | number
-   * @default:
-   **/
-  standard_template_id: string | number;
 }

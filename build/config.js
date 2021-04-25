@@ -106,7 +106,7 @@ const packages = [
       only: ['cjs'],
       browser: false
     },
-    external: ['@pin-duo-duo/core', 'lodash'],
+    external: ['@pin-duo-duo/core', 'lodash', 'redis'],
     globals: {
       '@pin-duo-duo/core': 'PddNodeSdk',
     }

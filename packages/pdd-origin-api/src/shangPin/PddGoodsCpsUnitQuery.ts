@@ -29,6 +29,14 @@ export interface PddGoodsCpsUnitQueryRequestInterface {
  **/
 export interface PddGoodsCpsUnitQueryResponseInterface {
   /**
+   * @description: 计划使用的优惠券信息。商品没有优惠券将返回null，有优惠券将返回优惠券信息，包括优惠券起始结束时间，优惠券数量，剩余数量，金额等
+   * @type: PddGoodsCpsUnitQueryCouponVoResponseInterface
+   * @default:
+   *
+   **/
+  coupon_vo: PddGoodsCpsUnitQueryCouponVoResponseInterface;
+
+  /**
    * @description: 商品id
    * @type: string | number
    * @default:
@@ -50,6 +58,13 @@ export interface PddGoodsCpsUnitQueryResponseInterface {
   rate_to_be: number;
 
   /**
+   * @description: 通用推广计划佣金生效时间
+   * @type: string
+   * @default:
+   **/
+  rate_to_be_day: string;
+
+  /**
    * @description: 商品状态，1-推广中，2-暂停，3-删除
    * @type: number
    * @default:
@@ -64,26 +79,18 @@ export interface PddGoodsCpsUnitQueryResponseInterface {
   status_to_be: number;
 
   /**
-   * @description: 计划使用的优惠券信息。商品没有优惠券将返回null，有优惠券将返回优惠券信息，包括优惠券起始结束时间，优惠券数量，剩余数量，金额等
-   * @type: PddGoodsCpsUnitQueryCouponVoResponseInterface
-   * @default:
-   *
-   **/
-  coupon_vo: PddGoodsCpsUnitQueryCouponVoResponseInterface;
-
-  /**
-   * @description: 通用推广计划佣金生效时间
-   * @type: string
-   * @default:
-   **/
-  rate_to_be_day: string;
-
-  /**
    * @description: 通用推广计划状态生效时间
    * @type: string
    * @default:
    **/
   status_to_be_day: string;
+
+  /**
+   * @description: 单品推广计划单元id
+   * @type: string | number
+   * @default:
+   **/
+  unit_id: string | number;
 }
 
 /**
@@ -93,18 +100,25 @@ export interface PddGoodsCpsUnitQueryResponseInterface {
  **/
 export interface PddGoodsCpsUnitQueryCouponVoResponseInterface {
   /**
-   * @description: coupon_start_time
-   * @type: string
-   * @default:
-   **/
-  coupon_start_time: string;
-
-  /**
    * @description: coupon_end_time
    * @type: string
    * @default:
    **/
   coupon_end_time: string;
+
+  /**
+   * @description: coupon_id
+   * @type: string | number
+   * @default:
+   **/
+  coupon_id: string | number;
+
+  /**
+   * @description: coupon_start_time
+   * @type: string
+   * @default:
+   **/
+  coupon_start_time: string;
 
   /**
    * @description: discount

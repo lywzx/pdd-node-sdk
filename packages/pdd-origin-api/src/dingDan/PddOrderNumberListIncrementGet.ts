@@ -672,6 +672,14 @@ export interface PddOrderNumberListIncrementGetOrderSnIncrementGetResponseOrderS
    *
    **/
   order_tag_list: PddOrderNumberListIncrementGetOrderSnIncrementGetResponseOrderSnListOrderTagListResponseInterface[];
+
+  /**
+   * @description: 赠品列表
+   * @type: PddOrderNumberListIncrementGetOrderSnIncrementGetResponseOrderSnListGiftListResponseInterface[]
+   * @default:
+   *
+   **/
+  gift_list: PddOrderNumberListIncrementGetOrderSnIncrementGetResponseOrderSnListGiftListResponseInterface[];
 }
 
 /**
@@ -925,4 +933,74 @@ export interface PddOrderNumberListIncrementGetOrderSnIncrementGetResponseOrderS
    * @default:
    **/
   value: number;
+}
+
+/**
+ * @description 赠品列表
+ * @default
+ * @example
+ **/
+export interface PddOrderNumberListIncrementGetOrderSnIncrementGetResponseOrderSnListGiftListResponseInterface {
+  /**
+   * @description: 赠品数量
+   * @type: number
+   * @default:
+   **/
+  goods_count: number;
+
+  /**
+   * @description: 赠品id
+   * @type: string | number
+   * @default:
+   **/
+  goods_id: string | number;
+
+  /**
+   * @description: 赠品图片
+   * @type: string
+   * @default:
+   **/
+  goods_img: string;
+
+  /**
+   * @description: 赠品名称
+   * @type: string
+   * @default:
+   **/
+  goods_name: string;
+
+  /**
+   * @description: 赠品销售价格
+   * @type: string
+   * @default:
+   **/
+  goods_price: string;
+
+  /**
+   * @description: 赠品规格
+   * @type: string
+   * @default:
+   **/
+  goods_spec: string;
+
+  /**
+   * @description: 商家外部商品编码
+   * @type: string
+   * @default:
+   **/
+  outer_goods_id: string;
+
+  /**
+   * @description: 商家外部sku编码
+   * @type: string
+   * @default:
+   **/
+  outer_id: string;
+
+  /**
+   * @description: 赠品规格编码
+   * @type: string | number
+   * @default:
+   **/
+  sku_id: string | number;
 }

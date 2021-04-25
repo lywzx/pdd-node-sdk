@@ -15,7 +15,7 @@ export interface PddDdkOauthResourceUrlGenRequestInterface {
   custom_parameters?: string;
 
   /**
-   * @description: 是否生成小程序
+   * @description: 是否生成拼多多福利券微信小程序推广信息
    * @type: boolean
    * @default: false
    **/
@@ -29,7 +29,7 @@ export interface PddDdkOauthResourceUrlGenRequestInterface {
   pid: string;
 
   /**
-   * @description: 频道来源：4-限时秒杀,39997-充值中心, 39998-转链type，39999-电器城，39996-百亿补贴
+   * @description: 频道来源：4-限时秒杀,39997-充值中心, 39998-活动转链，39996-百亿补贴，39999-电器城，40000-领券中心，50005-火车票
    * @type: number
    * @default:
    **/
@@ -88,7 +88,7 @@ export interface PddDdkOauthResourceUrlGenResourceUrlResponseResponseInterface {
   single_url_list: PddDdkOauthResourceUrlGenResourceUrlResponseSingleUrlListResponseInterface;
 
   /**
-   * @description: 小程序信息
+   * @description: 拼多多福利券微信小程序信息
    * @type: PddDdkOauthResourceUrlGenResourceUrlResponseWeAppInfoResponseInterface
    * @default:
    *
@@ -139,13 +139,13 @@ export interface PddDdkOauthResourceUrlGenResourceUrlResponseSingleUrlListRespon
 }
 
 /**
- * @description 小程序信息
+ * @description 拼多多福利券微信小程序信息
  * @default
  * @example
  **/
 export interface PddDdkOauthResourceUrlGenResourceUrlResponseWeAppInfoResponseInterface {
   /**
-   * @description: 拼多多小程序id
+   * @description: 小程序id
    * @type: string
    * @default:
    **/

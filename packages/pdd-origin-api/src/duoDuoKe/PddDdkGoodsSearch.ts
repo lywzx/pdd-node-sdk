@@ -15,7 +15,7 @@ export const PDD_DDK_GOODS_SEARCH_LIMITERS = [
  **/
 export interface PddDdkGoodsSearchRequestInterface {
   /**
-   * @description: 活动商品标记数组，例：[4,7]，4-秒杀，7-百亿补贴，31-品牌黑标，10564-精选爆品-官方直推爆款，10584-精选爆品-团长推荐，24-品牌高佣，20-行业精选，21-金牌商家，10044-潜力爆品，10475-爆品上新，其他的值请忽略
+   * @description: 活动商品标记数组，例：[4,7]，4-秒杀，7-百亿补贴，10851-千万补贴，31-品牌黑标，10564-精选爆品-官方直推爆款，10584-精选爆品-团长推荐，24-品牌高佣，其他的值请忽略
    * @type: number[]
    * @default:
    **/
@@ -50,7 +50,7 @@ export interface PddDdkGoodsSearchRequestInterface {
   custom_parameters?: string;
 
   /**
-   * @description: 商品goodsSign列表，支持通过goodsSign查询商品。goodsSign是加密后的goodsId, goodsId已下线，请使用goodsSign来替代。使用说明：https://jinbao.pinduoduo.com/qa-system?questionId=252
+   * @description: 商品goodsSign列表，例如：["c9r2omogKFFAc7WBwvbZU1ikIb16_J3CTa8HNN"]，支持通过goodsSign查询商品。goodsSign是加密后的goodsId, goodsId已下线，请使用goodsSign来替代。使用说明：https://jinbao.pinduoduo.com/qa-system?questionId=252
    * @type: string[]
    * @default:
    **/
@@ -85,7 +85,7 @@ export interface PddDdkGoodsSearchRequestInterface {
   merchant_type?: number;
 
   /**
-   * @description: 店铺类型数组
+   * @description: 店铺类型数组，例如：[1,2]
    * @type: number[]
    * @default:
    **/
@@ -354,6 +354,13 @@ export interface PddDdkGoodsSearchGoodsSearchResponseGoodsListResponseInterface 
   desc_txt: string;
 
   /**
+   * @description: 额外优惠券
+   * @type: string | number
+   * @default:
+   **/
+  extra_coupon_amount: string | number;
+
+  /**
    * @description: 商品描述
    * @type: string
    * @default:
@@ -543,7 +550,7 @@ export interface PddDdkGoodsSearchGoodsSearchResponseGoodsListResponseInterface 
   opt_name: string;
 
   /**
-   * @description: 推广计划类型 3:定向 4:招商
+   * @description: 推广计划类型: 1-全店推广 2-单品推广 3-定向推广 4-招商推广 5-分销推广
    * @type: number
    * @default:
    **/
@@ -599,7 +606,14 @@ export interface PddDdkGoodsSearchGoodsSearchResponseGoodsListResponseInterface 
   share_rate: number;
 
   /**
-   * @description: 优惠标签列表
+   * @description: 优势渠道专属商品补贴金额。针对优质渠道的补贴活动，指定优势渠道可通过推广该商品获取相应补贴。补贴活动入口：[进宝网站-官方活动-千万补贴]，报名入口：https://jinbao.pinduoduo.com/ten-million-subsidy/entry
+   * @type: number
+   * @default:
+   **/
+  subsidy_amount: number;
+
+  /**
+   * @description: 优惠标签列表，包括："X元券","比全网低X元","服务费","精选素材","近30天低价","同款低价","同款好评","同款热销","旗舰店","一降到底","招商优选","商家优选","好价再降X元","全站销量XX","实时热销榜第X名","实时好评榜第X名","额外补X元"等
    * @type: string[]
    * @default:
    **/

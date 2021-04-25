@@ -185,7 +185,7 @@ export interface PddDdkOrderListIncrementGetOrderListGetResponseOrderListRespons
   goods_quantity: string | number;
 
   /**
-   * @description: goodsSign是加密后的goodsId, goodsId已下线，请使用goodsSign来替代。需要注意的是：推广链接带有goodsSign信息的情况下，产生的订单中才会有相应的goodsSign信息。其他情况下产生的订单，该字段不返回。
+   * @description: goodsSign是加密后的goodsId，goodsId已下线，请使用goodsSign来替代。需要注意的是：推广链接带有goodsSign信息时，订单会返回原goodsSign；反之，会生成新的goodsSign返回。
    * @type: string
    * @default:
    **/
@@ -276,7 +276,7 @@ export interface PddDdkOrderListIncrementGetOrderListGetResponseOrderListRespons
   order_sn: string;
 
   /**
-   * @description: 订单状态： -1 未支付; 0-已支付；1-已成团；2-确认收货；3-审核成功；4-审核失败（不可提现）；5-已经结算；8-非多多进宝商品（无佣金订单）
+   * @description: 订单状态：0-已支付；1-已成团；2-确认收货；3-审核成功；4-审核失败（不可提现）；5-已经结算 ;10-已处罚
    * @type: number
    * @default:
    **/
@@ -372,6 +372,13 @@ export interface PddDdkOrderListIncrementGetOrderListGetResponseOrderListRespons
    * @default:
    **/
   share_rate: number;
+
+  /**
+   * @description: 优势渠道专属商品补贴金额。针对优质渠道的补贴活动，指定优势渠道可通过推广该商品获取相应补贴。补贴活动入口：[进宝网站-官方活动-千万补贴]，报名入口：https://jinbao.pinduoduo.com/ten-million-subsidy/entry
+   * @type: number
+   * @default:
+   **/
+  subsidy_amount: number;
 
   /**
    * @description: 订单推广类型

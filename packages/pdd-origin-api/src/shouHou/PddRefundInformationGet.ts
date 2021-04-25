@@ -160,4 +160,138 @@ export interface PddRefundInformationGetResponseInterface {
    * @default:
    **/
   dispute_refund_status: number;
+
+  /**
+   * @description: 0-未勾选 1-消费者选择的收货状态为未收到货 2-消费者选择的收货状态为已收到货
+   * @type: string
+   * @default:
+   **/
+  user_shipping_status: string;
+
+  /**
+   * @description: 更新时间
+   * @type: string
+   * @default:
+   **/
+  updated_time: string;
+
+  /**
+   * @description: 换货详情,售后类型是换货才有值
+   * @type: PddRefundInformationGetExchangeShippingDetailResponseInterface
+   * @default:
+   *
+   **/
+  exchange_shipping_detail: PddRefundInformationGetExchangeShippingDetailResponseInterface;
+
+  /**
+   * @description: 商品规格ID
+   * @type: string
+   * @default:
+   **/
+  sku_id: string;
+
+  /**
+   * @description: 是否介入 1介入 0未介入
+   * @type: string
+   * @default:
+   **/
+  join_or_not: string;
+
+  /**
+   * @description: 用户申请售后上传的图片列表
+   * @type: string[]
+   * @default:
+   **/
+  images: string[];
+
+  /**
+   * @description: 用户申请输入的描述信息
+   * @type: string
+   * @default:
+   **/
+  remark: string;
+}
+
+/**
+ * @description 换货详情,售后类型是换货才有值
+ * @default
+ * @example
+ **/
+export interface PddRefundInformationGetExchangeShippingDetailResponseInterface {
+  /**
+   * @description: 消费者回寄的物流id
+   * @type: number
+   * @default:
+   **/
+  customer_send_back_ship_id: number;
+
+  /**
+   * @description: 消费者回寄的物流单号
+   * @type: string
+   * @default:
+   **/
+  customer_send_back_trunk_number: string;
+
+  /**
+   * @description: 换货发货的物品名称
+   * @type: string
+   * @default:
+   **/
+  exchange_goods_name: string;
+
+  /**
+   * @description: 换货发货的物品数量
+   * @type: number
+   * @default:
+   **/
+  exchange_goods_number: number;
+
+  /**
+   * @description: 换货的物品价格(单位分)
+   * @type: string | number
+   * @default:
+   **/
+  exchange_goods_price: string | number;
+
+  /**
+   * @description: 商家换货发货的详细地址
+   * @type: string
+   * @default:
+   **/
+  merchant_exchange_detail_address: string;
+
+  /**
+   * @description: 商家换货发货的收货人手机号
+   * @type: string
+   * @default:
+   **/
+  merchant_exchange_detail_phone: string;
+
+  /**
+   * @description: 商家换货发货的收货人名字
+   * @type: string
+   * @default:
+   **/
+  merchant_exchange_detail_receiver: string;
+
+  /**
+   * @description: 商家换货发货的物流id
+   * @type: number
+   * @default:
+   **/
+  merchant_exchange_ship_id: number;
+
+  /**
+   * @description: 商家换货发货的物流单号
+   * @type: string
+   * @default:
+   **/
+  merchant_exchange_trunk_number: string;
+
+  /**
+   * @description: 换货商品规格ID
+   * @type: string
+   * @default:
+   **/
+  sku_id_exchange: string;
 }
