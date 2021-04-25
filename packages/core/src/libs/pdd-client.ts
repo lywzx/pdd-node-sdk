@@ -87,6 +87,11 @@ export class PddClient<T extends Record<string, any> = any> {
    * @protected
    */
   protected event: EventEmitter;
+  /**
+   * 中间数据
+   * @private
+   */
+  private _wrapRequestWithRetry?: any;
 
   constructor(
     public options: PddClientOptionsInterface,
@@ -237,6 +242,9 @@ export class PddClient<T extends Record<string, any> = any> {
       PddClient.retryOptions
     );
 
+    const _wrapRequestWithRetry = this._wrapRequestWithRetry;
+    this._wrapRequestWithRetry = undefined;
+
     const pddLogClient = getPddLogClient();
     const enabled = pddLogClient && pddLogClient.enabled;
     let retryCount: number;
@@ -292,6 +300,10 @@ export class PddClient<T extends Record<string, any> = any> {
             throw err;
           }
         );
+      }
+
+      if (_wrapRequestWithRetry) {
+        result = result.catch(_wrapRequestWithRetry);
       }
 
       return promiseToCallback<R>(result, clbk as any);
@@ -444,7 +456,66 @@ export class PddClient<T extends Record<string, any> = any> {
           result = Promise.reject(new PddAccessTokenMissingException('can"t find pdd access token from params'));
         }
       }
-      let retResult = result.then((params: Req & PddCommonRequestExcludeSomeAttr) => {
+      return result.then((params: Req & PddCommonRequestExcludeSomeAttr) => {
+        // 自动维护access token信息
+        const pddClientAuth = this.pddClientAuth as
+          | undefined
+          | (PddClientAccessAuth<T> & Partial<PddApiClientAccessAuthLock>);
+
+        // hack for requestWithRetry
+        if (
+          pddClientAuth &&
+          isFunction(pddClientAuth.lock) &&
+          isFunction(pddClientAuth.unLock) &&
+          apiAccessOptions &&
+          accessTokenInfo
+        ) {
+          this._wrapRequestWithRetry = async (err?: Error) => {
+            if (accessTokenInfo && err && err instanceof PddResponseException) {
+              if (err.accessTokenNeedRefresh()) {
+                // 如果access token还有2分钟过期
+                if (
+                  parseInt(accessTokenInfo.expires_at.toString(), 10) * 1000 <=
+                    Date.now() + PDD_CLIENT_ACCESS_TOKEN_CLEAR_TIMEOUT &&
+                  parseInt(accessTokenInfo.refresh_token_expires_at.toString(), 10) * 1000 <=
+                    Date.now() + PDD_CLIENT_ACCESS_TOKEN_CLEAR_TIMEOUT
+                ) {
+                  // 清理access token
+                  await pddClientAuth.clearAccessTokenFromCache(apiAccessOptions);
+                } else {
+                  const lockKey = `${pddClientAuth.generateAccessTokenKey(apiAccessOptions)}:access:${
+                    accessTokenInfo.owner_id
+                  }:lock`;
+                  if (pddClientAuth.lock && pddClientAuth.unLock && (await pddClientAuth.lock(lockKey, 10000))) {
+                    err.ignoreTokenRefresh(false);
+                    try {
+                      // 刷新access token
+                      const result = await this.request<
+                        PddPopAuthTokenRefreshRequestInterface,
+                        PddPopAuthTokenRefreshResponseInterface
+                      >({
+                        type: PDD_POP_AUTH_TOKEN_REFRESH,
+                        refresh_token: accessTokenInfo.refresh_token,
+                      });
+                      const freshTokenInfo = getShortResponse(result, PDD_POP_AUTH_TOKEN_REFRESH);
+                      await pddClientAuth.setAccessTokenToCache(apiAccessOptions, freshTokenInfo);
+                    } catch (e) {}
+                    // 释放锁
+                    await pddClientAuth.unLock(lockKey);
+                    accessTokenInfo = null;
+                    // todo 后续有必要加入重试逻辑
+                  } else {
+                    err.ignoreTokenRefresh(true);
+                    // hack sleep 3s, 假定刷新token信息，能够在3s内完成
+                    await sleep(3000);
+                  }
+                }
+              }
+            }
+            return Promise.reject(err);
+          };
+        }
+
         return this.requestWithRetry<Req & Omit<PddCommonRequestInterface, 'sign' | 'timestamp' | 'client_id'>, any>(
           params as Req & Omit<PddCommonRequestInterface, 'sign' | 'timestamp' | 'client_id'>,
           apiRetryOptions
@@ -452,64 +523,6 @@ export class PddClient<T extends Record<string, any> = any> {
           return getShortResponse(response, type);
         });
       }) as Promise<Res>;
-
-      // 自动维护access token信息
-      const pddClientAuth = this.pddClientAuth as
-        | undefined
-        | (PddClientAccessAuth<T> & Partial<PddApiClientAccessAuthLock>);
-      if (
-        pddClientAuth &&
-        isFunction(pddClientAuth.lock) &&
-        isFunction(pddClientAuth.unLock) &&
-        apiAccessOptions &&
-        accessTokenInfo
-      ) {
-        retResult = retResult.catch(async (err) => {
-          if (accessTokenInfo && err && err instanceof PddResponseException) {
-            if (err.accessTokenNeedRefresh()) {
-              // 如果access token还有2分钟过期
-              if (
-                parseInt(accessTokenInfo.expires_at.toString(), 10) * 1000 <=
-                  Date.now() + PDD_CLIENT_ACCESS_TOKEN_CLEAR_TIMEOUT &&
-                parseInt(accessTokenInfo.refresh_token_expires_at.toString(), 10) * 1000 <=
-                  Date.now() + PDD_CLIENT_ACCESS_TOKEN_CLEAR_TIMEOUT
-              ) {
-                // 清理access token
-                await pddClientAuth.clearAccessTokenFromCache(apiAccessOptions);
-              } else {
-                const lockKey = `${pddClientAuth.generateAccessTokenKey(apiAccessOptions)}:access:${
-                  accessTokenInfo.owner_id
-                }:lock`;
-                if (pddClientAuth.lock && pddClientAuth.unLock && (await pddClientAuth.lock(lockKey, 10000))) {
-                  err.ignoreTokenRefresh(false);
-                  try {
-                    // 刷新access token
-                    const result = await this.request<
-                      PddPopAuthTokenRefreshRequestInterface,
-                      PddPopAuthTokenRefreshResponseInterface
-                    >({
-                      type: PDD_POP_AUTH_TOKEN_REFRESH,
-                      refresh_token: accessTokenInfo.refresh_token,
-                    });
-                    const freshTokenInfo = getShortResponse(result, PDD_POP_AUTH_TOKEN_REFRESH);
-                    await pddClientAuth.setAccessTokenToCache(apiAccessOptions, freshTokenInfo);
-                  } catch (e) {}
-                  // 释放锁
-                  await pddClientAuth.unLock(lockKey);
-                  accessTokenInfo = null;
-                  // todo 后续有必要加入重试逻辑
-                } else {
-                  err.ignoreTokenRefresh(true);
-                  // hack sleep 3s, 假定刷新token信息，能够在3s内完成
-                  await sleep(3000);
-                }
-              }
-            }
-          }
-          return Promise.reject(err);
-        });
-      }
-      return retResult;
     };
 
     // api 接口缓存逻辑
