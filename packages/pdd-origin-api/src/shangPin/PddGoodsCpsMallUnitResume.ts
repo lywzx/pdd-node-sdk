@@ -38,7 +38,7 @@ export interface PddGoodsCpsMallUnitResumeResponseInterface {
  **/
 export interface PddGoodsCpsMallUnitResumeGoodsCpsMallUnitResumeResponseResponseInterface {
   /**
-   * @description: 是否成功
+   * @description: 结果
    * @type: boolean
    * @default:
    **/

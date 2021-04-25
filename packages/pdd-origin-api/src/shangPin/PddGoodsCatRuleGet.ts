@@ -140,6 +140,13 @@ export interface PddGoodsCatRuleGetCatRuleGetResponseGoodsPropertiesRuleProperti
   is_sale: boolean;
 
   /**
+   * @description: 是否sku属性，sku维度的属性在商品发布时入参在sku对象下
+   * @type: boolean
+   * @default:
+   **/
+  is_sku: boolean;
+
+  /**
    * @description: 最大值。在不同的属性值类型下有不同的含义。  文本类型时，代表文本最大长度；  数值类型时，代表数字最大值；  时间类型且最大值为时间时，代表时间最大值；  时间类型且最大值为数字时，代表距离今天或者本月往后的天数或月数。
    * @type: string
    * @default:

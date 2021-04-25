@@ -8,41 +8,6 @@ export const PDD_LOGISTICS_ONLINE_CREATE_RESPONSE_KEY = 'logistics_online_create
  **/
 export interface PddLogisticsOnlineCreateRequestInterface {
   /**
-   * @description: 快递单号
-   * @type: string
-   * @default:
-   **/
-  tracking_number?: string;
-
-  /**
-   * @description: 物流公司id
-   * @type: number
-   * @default:
-   **/
-  shipping_id: number;
-
-  /**
-   * @description: refund_address_id 通过pdd.refund.address.list.get 这个接口获取
-   * @type: string
-   * @default:
-   **/
-  return_id: string;
-
-  /**
-   * @description: 发货人电话
-   * @type: string
-   * @default:
-   **/
-  delivery_phone: string;
-
-  /**
-   * @description: 发货人姓名
-   * @type: string
-   * @default:
-   **/
-  delivery_name: string;
-
-  /**
    * @description: 发货人地址
    * @type: string
    * @default:
@@ -57,11 +22,46 @@ export interface PddLogisticsOnlineCreateRequestInterface {
   delivery_id: string;
 
   /**
+   * @description: 发货人姓名
+   * @type: string
+   * @default:
+   **/
+  delivery_name: string;
+
+  /**
+   * @description: 发货人电话
+   * @type: string
+   * @default:
+   **/
+  delivery_phone: string;
+
+  /**
    * @description: 订单编号
    * @type: string
    * @default:
    **/
   order_sn: string;
+
+  /**
+   * @description: refund_address_id 通过pdd.refund.address.list.get 这个接口获取
+   * @type: string
+   * @default:
+   **/
+  return_id: string;
+
+  /**
+   * @description: 物流公司id
+   * @type: number
+   * @default:
+   **/
+  shipping_id: number;
+
+  /**
+   * @description: 快递单号
+   * @type: string
+   * @default:
+   **/
+  tracking_number?: string;
 }
 
 /**

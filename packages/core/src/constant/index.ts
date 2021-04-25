@@ -13,7 +13,7 @@ export enum OAuthType {
 // 拼多多默认认证地址
 export const PDD_OAUTH_TEMPLATE = {
   [OAuthType.mms]: template(
-    'https://mms.pinduoduo.com/open.html?response_type=code&client_id=<%= clientId %>&redirect_uri=<%= redirectUri %>&state=<%= state %>'
+    'https://fuwu.pinduoduo.com/service-market/auth?response_type=code&client_id=<%= clientId %>&redirect_uri=<%= redirectUri %>&state=<%= state %>&view=web'
   ),
   [OAuthType.mai]: template(
     'https://mai.pinduoduo.com/h5-login.html?response_type=code&client_id=<%= clientId %>&redirect_uri=<%= redirectUri %>&state=<%= state %>&view=h5'

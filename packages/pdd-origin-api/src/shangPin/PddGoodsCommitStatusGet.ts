@@ -4,7 +4,7 @@ export const PDD_GOODS_COMMIT_STATUS_GET_RESPONSE_KEY = 'goods_commit_status_get
 /**
  * 接口名称：草稿状态查询接口
  * 接口标识：pdd.goods.commit.status.get
- * 接口使用场景：查询店铺的商品草稿状态
+ * 接口使用场景：查询店铺的商品草稿列表状态
  **/
 export interface PddGoodsCommitStatusGetRequestInterface {
   /**
@@ -18,7 +18,7 @@ export interface PddGoodsCommitStatusGetRequestInterface {
 /**
  * 接口名称：草稿状态查询接口
  * 接口标识：pdd.goods.commit.status.get
- * 接口使用场景：查询店铺的商品草稿状态
+ * 接口使用场景：查询店铺的商品草稿列表状态
  **/
 export interface PddGoodsCommitStatusGetResponseInterface {
   /**

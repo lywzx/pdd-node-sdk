@@ -14,14 +14,14 @@ export interface PddOrderNoteUpdateRequestInterface {
   note: string;
 
   /**
-   * @description: 备注标记：1-红色，2-黄色，3-绿色，4-蓝色，5-紫色
+   * @description: 备注标记：1-红色，2-黄色，3-绿色，4-蓝色，5-紫色，tag与tag_name关联，都入参或都不入参
    * @type: number
    * @default:
    **/
   tag?: number;
 
   /**
-   * @description: 标记名称；长度最大为3个字符
+   * @description: 标记名称；长度最大为3个字符，tag与tag_name关联，都入参或都不入参
    * @type: string
    * @default:
    **/

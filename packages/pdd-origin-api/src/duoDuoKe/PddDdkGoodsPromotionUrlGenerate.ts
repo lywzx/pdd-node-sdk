@@ -15,18 +15,18 @@ export const PDD_DDK_GOODS_PROMOTION_URL_GENERATE_LIMITERS = [
  **/
 export interface PddDdkGoodsPromotionUrlGenerateRequestInterface {
   /**
+   * @description: 多多礼金ID
+   * @type: string | number
+   * @default:
+   **/
+  cash_gift_id?: string | number;
+
+  /**
    * @description: 自定义礼金标题，用于向用户展示渠道专属福利，不超过12个字
    * @type: string
    * @default:
    **/
   cash_gift_name?: string;
-
-  /**
-   * @description: 多多礼金ID
-   * @type: string | number
-   * @default:
-   **/
-  crash_gift_id?: string | number;
 
   /**
    * @description: 自定义参数，为链接打上自定义标签；自定义参数最长限制64个字节；格式为：  {"uid":"11111","sid":"22222"} ，其中 uid 用户唯一标识，可自行加密后传入，每个用户仅且对应一个标识，必填； sid 上下文信息标识，例如sessionId等，非必填。该json字符串中也可以加入其他自定义的key
@@ -71,14 +71,14 @@ export interface PddDdkGoodsPromotionUrlGenerateRequestInterface {
   generate_short_url?: boolean;
 
   /**
-   * @description: 是否生成小程序推广
+   * @description: 是否生成拼多多福利券微信小程序推广信息
    * @type: boolean
    * @default:
    **/
   generate_we_app?: boolean;
 
   /**
-   * @description: 商品goodsSign列表，支持批量生链。goodsSign是加密后的goodsId, goodsId已下线，请使用goodsSign来替代。使用说明：https://jinbao.pinduoduo.com/qa-system?questionId=252
+   * @description: 商品goodsSign列表，例如：["c9r2omogKFFAc7WBwvbZU1ikIb16_J3CTa8HNN"]，支持批量生链。goodsSign是加密后的goodsId, goodsId已下线，请使用goodsSign来替代。使用说明：https://jinbao.pinduoduo.com/qa-system?questionId=252
    * @type: string[]
    * @default:
    **/
@@ -193,7 +193,7 @@ export interface PddDdkGoodsPromotionUrlGenerateGoodsPromotionUrlGenerateRespons
   url: string;
 
   /**
-   * @description: 小程序信息
+   * @description: 拼多多福利券微信小程序信息
    * @type: PddDdkGoodsPromotionUrlGenerateGoodsPromotionUrlGenerateResponseGoodsPromotionUrlListWeAppInfoResponseInterface
    * @default:
    *
@@ -265,13 +265,13 @@ export interface PddDdkGoodsPromotionUrlGenerateGoodsPromotionUrlGenerateRespons
 }
 
 /**
- * @description 小程序信息
+ * @description 拼多多福利券微信小程序信息
  * @default
  * @example
  **/
 export interface PddDdkGoodsPromotionUrlGenerateGoodsPromotionUrlGenerateResponseGoodsPromotionUrlListWeAppInfoResponseInterface {
   /**
-   * @description: 拼多多小程序id
+   * @description: 小程序id
    * @type: string
    * @default:
    **/

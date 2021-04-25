@@ -45,16 +45,16 @@ export interface PddExpressMallDepotSimpleGetOpenApiResponseResponseInterface {
   depot_str: string;
 
   /**
-   * @description: 仓库名称
-   * @type: string
-   * @default:
-   **/
-  name: string;
-
-  /**
    * @description: 仓库类型(暂时1表示自建仓)
    * @type: number
    * @default:
    **/
   depot_type: number;
+
+  /**
+   * @description: 仓库名称
+   * @type: string
+   * @default:
+   **/
+  name: string;
 }

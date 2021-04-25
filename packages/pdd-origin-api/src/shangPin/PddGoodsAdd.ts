@@ -770,6 +770,14 @@ export interface PddGoodsAddSkuListRequestInterface {
    * @default:
    **/
   weight: string | number;
+
+  /**
+   * @description: sku属性
+   * @type: PddGoodsAddSkuListSkuPropertiesRequestInterface[]
+   * @default:
+   *
+   **/
+  sku_properties: PddGoodsAddSkuListSkuPropertiesRequestInterface[];
 }
 
 /**
@@ -798,6 +806,41 @@ export interface PddGoodsAddSkuListOverseaSkuRequestInterface {
    * @default:
    **/
   taxation: number;
+}
+
+/**
+ * @description sku属性
+ * @default
+ * @example
+ **/
+export interface PddGoodsAddSkuListSkuPropertiesRequestInterface {
+  /**
+   * @description: 属性单位
+   * @type: string
+   * @default:
+   **/
+  punit: string;
+
+  /**
+   * @description: 属性id
+   * @type: string | number
+   * @default:
+   **/
+  ref_pid: string | number;
+
+  /**
+   * @description: 属性值
+   * @type: string
+   * @default:
+   **/
+  value: string;
+
+  /**
+   * @description: 属性值id
+   * @type: string | number
+   * @default:
+   **/
+  vid: string | number;
 }
 
 /**

@@ -8,11 +8,11 @@ export const PDD_CLOUDPRINT_CUSTOMARES_GET_RESPONSE_KEY = 'pdd_cloudprint_custom
  **/
 export interface PddCloudprintCustomaresGetRequestInterface {
   /**
-   * @description: 用户使用的模板id，即pdd.cloudprint.stdtemplates.get接口中的standard_template_id
-   * @type: string
+   * @description: 1
+   * @type: number
    * @default:
    **/
-  template_id: string;
+  template_id: number;
 }
 
 /**
@@ -33,7 +33,7 @@ export interface PddCloudprintCustomaresGetResponseInterface {
 /**
  * @description response
  * @default
- * @example
+ * @example 1
  **/
 export interface PddCloudprintCustomaresGetPddCloudprintCustomaresGetResponseResponseInterface {
   /**
@@ -52,7 +52,7 @@ export interface PddCloudprintCustomaresGetPddCloudprintCustomaresGetResponseRes
  **/
 export interface PddCloudprintCustomaresGetPddCloudprintCustomaresGetResponseResultResponseInterface {
   /**
-   * @description:
+   * @description: datas
    * @type: PddCloudprintCustomaresGetPddCloudprintCustomaresGetResponseResultDatasResponseInterface[]
    * @default:
    *
@@ -61,51 +61,36 @@ export interface PddCloudprintCustomaresGetPddCloudprintCustomaresGetResponseRes
 }
 
 /**
- * @description
+ * @description datas
  * @default
  * @example
  **/
 export interface PddCloudprintCustomaresGetPddCloudprintCustomaresGetResponseResultDatasResponseInterface {
   /**
-   * @description:
-   * @type: number
+   * @description: custom_area_id
+   * @type: string | number
    * @default:
    **/
-  custom_area_id: number;
+  custom_area_id: string | number;
 
   /**
-   * @description:
+   * @description: custom_area_name
    * @type: string
    * @default:
    **/
   custom_area_name: string;
 
   /**
-   * @description:
+   * @description: custom_area_url
    * @type: string
    * @default:
    **/
   custom_area_url: string;
 
   /**
-   * @description:
-   * @type: PddCloudprintCustomaresGetPddCloudprintCustomaresGetResponseResultDatasKeysResponseInterface[]
-   * @default:
-   *
-   **/
-  keys: PddCloudprintCustomaresGetPddCloudprintCustomaresGetResponseResultDatasKeysResponseInterface[];
-}
-
-/**
- * @description
- * @default
- * @example
- **/
-export interface PddCloudprintCustomaresGetPddCloudprintCustomaresGetResponseResultDatasKeysResponseInterface {
-  /**
-   * @description:
-   * @type: string
+   * @description: keys
+   * @type: object[]
    * @default:
    **/
-  key_name: string;
+  keys: object[];
 }

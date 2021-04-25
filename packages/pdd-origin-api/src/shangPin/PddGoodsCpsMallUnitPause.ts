@@ -1,5 +1,5 @@
 export const PDD_GOODS_CPS_MALL_UNIT_PAUSE = 'pdd.goods.cps.mall.unit.pause';
-export const PDD_GOODS_CPS_MALL_UNIT_PAUSE_RESPONSE_KEY = 'goods_cps_mall_unit_query_response';
+export const PDD_GOODS_CPS_MALL_UNIT_PAUSE_RESPONSE_KEY = 'goods_cps_mall_unit_pause_response';
 
 /**
  * 接口名称：暂停全店推广API
@@ -17,11 +17,11 @@ export interface PddGoodsCpsMallUnitPauseRequestInterface {}
 export interface PddGoodsCpsMallUnitPauseResponseInterface {
   /**
    * @description: response
-   * @type: PddGoodsCpsMallUnitPauseGoodsCpsMallUnitQueryResponseResponseInterface
+   * @type: PddGoodsCpsMallUnitPauseGoodsCpsMallUnitPauseResponseResponseInterface
    * @default:
    *
    **/
-  goods_cps_mall_unit_query_response: PddGoodsCpsMallUnitPauseGoodsCpsMallUnitQueryResponseResponseInterface;
+  goods_cps_mall_unit_pause_response: PddGoodsCpsMallUnitPauseGoodsCpsMallUnitPauseResponseResponseInterface;
 }
 
 /**
@@ -29,7 +29,7 @@ export interface PddGoodsCpsMallUnitPauseResponseInterface {
  * @default
  * @example
  **/
-export interface PddGoodsCpsMallUnitPauseGoodsCpsMallUnitQueryResponseResponseInterface {
+export interface PddGoodsCpsMallUnitPauseGoodsCpsMallUnitPauseResponseResponseInterface {
   /**
    * @description: 是否成功
    * @type: boolean

@@ -1,5 +1,5 @@
 export const PDD_PMC_USER_CANCEL = 'pdd.pmc.user.cancel';
-export const PDD_PMC_USER_CANCEL_RESPONSE_KEY = 'pmc_user_cancel_response';
+export const PDD_PMC_USER_CANCEL_RESPONSE_KEY = 'tmc_user_cancel_response';
 
 /**
  * 接口名称：取消用户的消息服务
@@ -23,11 +23,11 @@ export interface PddPmcUserCancelRequestInterface {
 export interface PddPmcUserCancelResponseInterface {
   /**
    * @description: response
-   * @type: PddPmcUserCancelPmcUserCancelResponseResponseInterface
+   * @type: PddPmcUserCancelTmcUserCancelResponseResponseInterface
    * @default:
    *
    **/
-  pmc_user_cancel_response: PddPmcUserCancelPmcUserCancelResponseResponseInterface;
+  tmc_user_cancel_response: PddPmcUserCancelTmcUserCancelResponseResponseInterface;
 }
 
 /**
@@ -35,7 +35,7 @@ export interface PddPmcUserCancelResponseInterface {
  * @default
  * @example
  **/
-export interface PddPmcUserCancelPmcUserCancelResponseResponseInterface {
+export interface PddPmcUserCancelTmcUserCancelResponseResponseInterface {
   /**
    * @description: 是否成功
    * @type: boolean

@@ -15,7 +15,7 @@ export interface PddDdkOauthPidMediaidBindRequestInterface {
   media_id: string | number;
 
   /**
-   * @description: pid列表，最多支持同时传入1000个
+   * @description: 推广位列表，例如：["60005_612"]，最多支持同时传入1000个
    * @type: string[]
    * @default:
    **/

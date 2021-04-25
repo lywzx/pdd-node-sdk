@@ -98,7 +98,7 @@ export interface PddOpenDecryptBatchOpenDecryptBatchResponseDataDecryptListRespo
   data_tag: string;
 
   /**
-   * @description: 1、虚拟卡密;2、虚拟卡号;3、支付商品编码;4、支付单号;5、收件人;6、收件人手机号;7、收件人完整地址;8、收件人详细地址;9、快递单号;10、身份证号;11、身份证姓名
+   * @description: 1、虚拟卡密;2、虚拟卡号;3、支付申报订单号;4、支付单号;5、收件人;6、收件人手机号;7、收件人完整地址;8、收件人详细地址;9、快递单号;10、身份证号;11、身份证姓名
    * @type: number
    * @default:
    **/

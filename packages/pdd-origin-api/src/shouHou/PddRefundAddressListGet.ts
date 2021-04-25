@@ -58,83 +58,6 @@ export interface PddRefundAddressListGetRefundAddressListGetResponseResponseInte
  **/
 export interface PddRefundAddressListGetRefundAddressListGetResponseRefundAddressListResponseInterface {
   /**
-   * @description: refund_address_id
-   * @type: string
-   * @default:
-   **/
-  refund_address_id: string;
-
-  /**
-   * @description: refund_id
-   * @type: string
-   * @default:
-   **/
-  refund_id: string;
-
-  /**
-   * @description: 退货地址ID
-   * @type: string | number
-   * @default:
-   **/
-  id: string | number;
-
-  /**
-   * @description: 退货地址
-   * @type: string
-   * @default:
-   **/
-  refund_address: string;
-
-  /**
-   * @description: 退货收件人名字
-   * @type: string
-   * @default:
-   **/
-  refund_name: string;
-
-  /**
-   * @description: 退货收件人手机号
-   * @type: string
-   * @default:
-   **/
-  refund_phone: string;
-
-  /**
-   * @description: 店铺ID
-   * @type: string | number
-   * @default:
-   **/
-  mall_id: string | number;
-
-  /**
-   * @description: 是否为默认退货地址
-   * @type: string
-   * @default:
-   **/
-  is_default: string;
-
-  /**
-   * @description: 退货收件人固定电话
-   * @type: string
-   * @default:
-   **/
-  refund_tel: string;
-
-  /**
-   * @description: 退货地址所在省份ID
-   * @type: number
-   * @default:
-   **/
-  province_id: number;
-
-  /**
-   * @description: 退货地址所在省份名字
-   * @type: string
-   * @default:
-   **/
-  province_name: string;
-
-  /**
    * @description: 退货地址所在城市ID
    * @type: number
    * @default:
@@ -163,6 +86,20 @@ export interface PddRefundAddressListGetRefundAddressListGetResponseRefundAddres
   district_name: string;
 
   /**
+   * @description: 退货地址ID
+   * @type: string | number
+   * @default:
+   **/
+  id: string | number;
+
+  /**
+   * @description: 是否为默认退货地址
+   * @type: string
+   * @default:
+   **/
+  is_default: string;
+
+  /**
    * @description: 退货地址是否合法
    * @type: boolean
    * @default:
@@ -175,4 +112,60 @@ export interface PddRefundAddressListGetRefundAddressListGetResponseRefundAddres
    * @default:
    **/
   is_validated: boolean;
+
+  /**
+   * @description: 店铺ID
+   * @type: string | number
+   * @default:
+   **/
+  mall_id: string | number;
+
+  /**
+   * @description: 退货地址所在省份ID
+   * @type: number
+   * @default:
+   **/
+  province_id: number;
+
+  /**
+   * @description: 退货地址所在省份名字
+   * @type: string
+   * @default:
+   **/
+  province_name: string;
+
+  /**
+   * @description: 退货地址
+   * @type: string
+   * @default:
+   **/
+  refund_address: string;
+
+  /**
+   * @description: refund_id
+   * @type: string
+   * @default:
+   **/
+  refund_address_id: string;
+
+  /**
+   * @description: 退货收件人名字
+   * @type: string
+   * @default:
+   **/
+  refund_name: string;
+
+  /**
+   * @description: 退货收件人手机号
+   * @type: string
+   * @default:
+   **/
+  refund_phone: string;
+
+  /**
+   * @description: 退货收件人固定电话
+   * @type: string
+   * @default:
+   **/
+  refund_tel: string;
 }

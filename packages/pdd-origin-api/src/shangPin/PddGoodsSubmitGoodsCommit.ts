@@ -93,6 +93,13 @@ export interface PddGoodsSubmitGoodsCommitRequestInterface {
   delivery_one_day?: number;
 
   /**
+   * @description: 发货方式。0：无物流发货；1：有物流发货。
+   * @type: number
+   * @default:
+   **/
+  delivery_type?: number;
+
+  /**
    * @description: 商品详情图：
    * a. 尺寸要求宽度处于480~1200px之间，高度0-1500px之间
    * b. 大小1M以内
@@ -203,6 +210,13 @@ export interface PddGoodsSubmitGoodsCommitRequestInterface {
    * @default:
    **/
   is_folt: boolean;
+
+  /**
+   * @description: 是否成团预售
+   * @type: number
+   * @default:
+   **/
+  is_group_pre_sale?: number;
 
   /**
    * @description: 是否预售,true-预售商品，false-非预售商品
@@ -417,20 +431,6 @@ export interface PddGoodsSubmitGoodsCommitRequestInterface {
    * @default:
    **/
   zhi_huan_bu_xiu?: number;
-
-  /**
-   * @description: 发货方式。0：无物流发货；1：有物流发货。
-   * @type: number
-   * @default:
-   **/
-  delivery_type?: number;
-
-  /**
-   * @description: 是否成团预售。0：不是；1:是。
-   * @type: number
-   * @default:
-   **/
-  is_group_pre_sale?: number;
 }
 
 /**
@@ -766,6 +766,14 @@ export interface PddGoodsSubmitGoodsCommitSkuListRequestInterface {
   quantity: string | number;
 
   /**
+   * @description: sku属性
+   * @type: PddGoodsSubmitGoodsCommitSkuListSkuPropertiesRequestInterface[]
+   * @default:
+   *
+   **/
+  sku_properties?: PddGoodsSubmitGoodsCommitSkuListSkuPropertiesRequestInterface[];
+
+  /**
    * @description: 商品规格列表，根据pdd.goods.spec.id.get生成的规格属性id，例如：颜色规格下商家新增白色和黑色，大小规格下商家新增L和XL，则由4种spec组合，入参一种组合即可，在skulist中需要有4个spec组合的sku
    * @type: Array<string | number>
    * @default:
@@ -813,6 +821,41 @@ export interface PddGoodsSubmitGoodsCommitSkuListOverseaSkuRequestInterface {
    * @default:
    **/
   taxation: number;
+}
+
+/**
+ * @description sku属性
+ * @default
+ * @example
+ **/
+export interface PddGoodsSubmitGoodsCommitSkuListSkuPropertiesRequestInterface {
+  /**
+   * @description: 属性单位
+   * @type: string
+   * @default:
+   **/
+  punit?: string;
+
+  /**
+   * @description: 属性id
+   * @type: string | number
+   * @default:
+   **/
+  ref_pid: string | number;
+
+  /**
+   * @description: 属性值
+   * @type: string
+   * @default:
+   **/
+  value?: string;
+
+  /**
+   * @description: 属性值id
+   * @type: string | number
+   * @default:
+   **/
+  vid?: string | number;
 }
 
 /**

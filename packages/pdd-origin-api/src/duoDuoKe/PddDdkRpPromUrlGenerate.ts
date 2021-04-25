@@ -22,7 +22,7 @@ export interface PddDdkRpPromUrlGenerateRequestInterface {
   amount?: string | number;
 
   /**
-   * @description: -1-活动列表，0-默认红包，2–新人红包，3-刮刮卡，5-员工内购，6-购物车，7-大促会场，8-直播间列表集合页，10-生成绑定备案链接，11-生成超级红包（仅支持微信小程序），12-砸金蛋
+   * @description: 营销工具类型，必填：-1-活动列表，0-红包(需申请推广权限)，2–新人红包，3-刮刮卡，5-员工内购，6-购物车，10-生成绑定备案链接，12-砸金蛋；红包推广权限申请流程链接：https://jinbao.pinduoduo.com/qa-system?questionId=289
    * @type: number
    * @default:
    **/
@@ -73,7 +73,7 @@ export interface PddDdkRpPromUrlGenerateRequestInterface {
   generate_short_url?: boolean;
 
   /**
-   * @description: 是否生成小程序推广
+   * @description: 是否生成拼多多福利券微信小程序推广信息
    * @type: boolean
    * @default:
    **/
@@ -352,7 +352,7 @@ export interface PddDdkRpPromUrlGenerateRpPromotionUrlGenerateResponseUrlListRes
   url: string;
 
   /**
-   * @description: 小程序信息
+   * @description: 拼多多福利券微信小程序信息
    * @type: PddDdkRpPromUrlGenerateRpPromotionUrlGenerateResponseUrlListWeAppInfoResponseInterface
    * @default:
    *
@@ -424,13 +424,13 @@ export interface PddDdkRpPromUrlGenerateRpPromotionUrlGenerateResponseUrlListQqA
 }
 
 /**
- * @description 小程序信息
+ * @description 拼多多福利券微信小程序信息
  * @default
  * @example
  **/
 export interface PddDdkRpPromUrlGenerateRpPromotionUrlGenerateResponseUrlListWeAppInfoResponseInterface {
   /**
-   * @description: 拼多多小程序id
+   * @description: 小程序id
    * @type: string
    * @default:
    **/

@@ -50,14 +50,7 @@ export interface PddDdkCmsPromUrlGenerateRequestInterface {
   generate_short_url?: boolean;
 
   /**
-   * @description: 已经废弃，不再支持该功能。是否唤起微信客户端， 默认false 否，true 是。
-   * @type: boolean
-   * @default:
-   **/
-  generate_weapp_webview?: boolean;
-
-  /**
-   * @description: 是否生成小程序推广
+   * @description: 是否生成拼多多福利券微信小程序推广信息
    * @type: boolean
    * @default:
    **/
@@ -208,26 +201,12 @@ export interface PddDdkCmsPromUrlGenerateCmsPromotionUrlGenerateResponseUrlListR
   url: string;
 
   /**
-   * @description: 小程序信息
+   * @description: 拼多多福利券微信小程序信息
    * @type: PddDdkCmsPromUrlGenerateCmsPromotionUrlGenerateResponseUrlListWeAppInfoResponseInterface
    * @default:
    *
    **/
   we_app_info: PddDdkCmsPromUrlGenerateCmsPromotionUrlGenerateResponseUrlListWeAppInfoResponseInterface;
-
-  /**
-   * @description: 唤醒微信短链接，已废弃
-   * @type: string
-   * @default:
-   **/
-  we_app_web_view_short_url: string;
-
-  /**
-   * @description: 唤醒微信长链接，已废弃
-   * @type: string
-   * @default:
-   **/
-  we_app_web_view_url: string;
 }
 
 /**
@@ -315,13 +294,13 @@ export interface PddDdkCmsPromUrlGenerateCmsPromotionUrlGenerateResponseUrlListS
 }
 
 /**
- * @description 小程序信息
+ * @description 拼多多福利券微信小程序信息
  * @default
  * @example
  **/
 export interface PddDdkCmsPromUrlGenerateCmsPromotionUrlGenerateResponseUrlListWeAppInfoResponseInterface {
   /**
-   * @description: 拼多多小程序id
+   * @description: 小程序id
    * @type: string
    * @default:
    **/

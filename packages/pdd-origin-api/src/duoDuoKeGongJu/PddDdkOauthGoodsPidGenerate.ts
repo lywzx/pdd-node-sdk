@@ -8,6 +8,13 @@ export const PDD_DDK_OAUTH_GOODS_PID_GENERATE_RESPONSE_KEY = 'p_id_generate_resp
  **/
 export interface PddDdkOauthGoodsPidGenerateRequestInterface {
   /**
+   * @description: 媒体id
+   * @type: string | number
+   * @default:
+   **/
+  media_id?: string | number;
+
+  /**
    * @description: 要生成的推广位数量，默认为10，范围为：1~100
    * @type: string | number
    * @default:
@@ -20,13 +27,6 @@ export interface PddDdkOauthGoodsPidGenerateRequestInterface {
    * @default:
    **/
   p_id_name_list?: string[];
-
-  /**
-   * @description: 媒体id
-   * @type: string | number
-   * @default:
-   **/
-  media_id?: string | number;
 }
 
 /**
@@ -80,6 +80,13 @@ export interface PddDdkOauthGoodsPidGeneratePIdGenerateResponsePIdListResponseIn
   create_time: string | number;
 
   /**
+   * @description: 媒体id
+   * @type: string | number
+   * @default:
+   **/
+  media_id: string | number;
+
+  /**
    * @description: 推广位名称
    * @type: string
    * @default:
@@ -92,11 +99,4 @@ export interface PddDdkOauthGoodsPidGeneratePIdGenerateResponsePIdListResponseIn
    * @default:
    **/
   p_id: string;
-
-  /**
-   * @description: 媒体id
-   * @type: string | number
-   * @default:
-   **/
-  media_id: string | number;
 }

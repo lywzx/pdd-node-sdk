@@ -20,6 +20,13 @@ export const PDD_INVOICE_APPLICATION_QUERY_LIMITERS = [
  **/
 export interface PddInvoiceApplicationQueryRequestInterface {
   /**
+   * @description: 申请流水号
+   * @type: string | number
+   * @default:
+   **/
+  application_id?: string | number;
+
+  /**
    * @description: 订单号；订单号和申请时间必填其一
    * @type: string
    * @default:
@@ -41,6 +48,13 @@ export interface PddInvoiceApplicationQueryRequestInterface {
   page_size?: number;
 
   /**
+   * @description: 是否正品发票 0=非正品发票 1=是正品发票
+   * @type: number
+   * @default:
+   **/
+  quality_goods_invoice?: number;
+
+  /**
    * @description: 申请状态：0-已拒绝，1-申请中，2-已同意
    * @type: number
    * @default:
@@ -60,13 +74,6 @@ export interface PddInvoiceApplicationQueryRequestInterface {
    * @default:
    **/
   update_start_time?: string | number;
-
-  /**
-   * @description: 是否正品发票 0=非正品发票 1=是正品发票
-   * @type: number
-   * @default:
-   **/
-  quality_goods_invoice?: number;
 }
 
 /**
@@ -111,6 +118,13 @@ export interface PddInvoiceApplicationQueryInvoiceApplicationQueryResponseInvoic
    * @default:
    **/
   application_status: number;
+
+  /**
+   * @description: 申请时间
+   * @type: number
+   * @default:
+   **/
+  apply_time: number;
 
   /**
    * @description: 抬头类型：0-个人，1-企业
@@ -204,6 +218,13 @@ export interface PddInvoiceApplicationQueryInvoiceApplicationQueryResponseInvoic
   payer_register_no: string;
 
   /**
+   * @description: 是否正品发票：0=非正品发票，1=非正品发票
+   * @type: number
+   * @default:
+   **/
+  quality_goods_invoice: number;
+
+  /**
    * @description: 驳回原因
    * @type: string
    * @default:
@@ -237,18 +258,4 @@ export interface PddInvoiceApplicationQueryInvoiceApplicationQueryResponseInvoic
    * @default:
    **/
   trigger_status: number;
-
-  /**
-   * @description: 申请时间秒级时间戳
-   * @type: number
-   * @default:
-   **/
-  apply_time: number;
-
-  /**
-   * @description: 是否正品发票 0=非正品发票 1=是正品发票
-   * @type: number
-   * @default:
-   **/
-  quality_goods_invoice: number;
 }

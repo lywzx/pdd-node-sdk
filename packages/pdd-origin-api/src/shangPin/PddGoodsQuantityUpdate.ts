@@ -29,14 +29,14 @@ export interface PddGoodsQuantityUpdateRequestInterface {
   quantity: string | number;
 
   /**
-   * @description: sku_id和outer_id必填一个
+   * @description: sku_id和outer_id必填一个，优先使用sku_id
    * @type: string | number
    * @default:
    **/
   sku_id?: string | number;
 
   /**
-   * @description: sku商家编码
+   * @description: sku商家编码，如果sku_id未填，则使用outer_id
    * @type: string
    * @default:
    **/
