@@ -5,15 +5,6 @@
   "author": "lywzx <liuyang@lyblog.net>",
   "homepage": "https://github.com/lywzx/pdd-node-sdk/tree/master/packages/nestjs#readme",
   "license": "MIT",
-  "main": "lib/index.common.js",
-  "types": "lib/index.d.ts",
-  "directories": {
-    "lib": "lib",
-    "test": "test"
-  },
-  "files": [
-    "lib"
-  ],
   "publishConfig": {
     "registry": "http://registry.npmjs.org",
     "access": "public"
