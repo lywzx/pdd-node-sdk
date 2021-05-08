@@ -95,7 +95,7 @@ export class PddClient<T extends Record<string, any> = any> {
 
   constructor(
     public options: PddClientOptionsInterface,
-    public pddClientAuth?: PddClientAccessAuth<T>,
+    public pddClientAuth?: Omit<PddClientAccessAuth<T>, 'functionAlOptions'>,
     protected pddApiCache?: PddApiCacheAbstract,
     protected apiThrottle: PddApiThrottle = new PddApiThrottle(new PddApiMemoryThrottleAdapter()),
     protected networkAdapter: NetworkAdapterInterface = NetworkAdapter

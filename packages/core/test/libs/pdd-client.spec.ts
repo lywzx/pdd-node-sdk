@@ -5,14 +5,17 @@ import {
   PDD_TICKET_VERIFICATION_NOTIFYCATION,
 } from '@pin-duo-duo/pdd-origin-api';
 import { expect } from 'chai';
-import { OAuthType } from '../../src/constant';
 import {
+  OAuthType,
   PddAccessTokenMissingException,
   PddBaseException,
   PddRequestParamsMissingException,
   PddResponseException,
-} from '../../src/exceptions';
-import { defaultRetryOptions, NetworkAdapter, PddApiCacheAbstract, PddClient } from '../../src/libs';
+  defaultRetryOptions,
+  NetworkAdapter,
+  PddApiCacheAbstract,
+  PddClient,
+} from '../../src';
 import * as guess from '../../src/util/guess-params.util';
 import * as util from '../../src/util';
 import { replace, fake, restore, stub } from 'sinon';
