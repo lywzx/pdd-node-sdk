@@ -7,7 +7,7 @@
   ],
   "private": true,
   "scripts": {
-    "dev": "cross-env node_options=--max_old_space_size=4096 rollup -w -c build/rollup.config.js",
+    "dev": "cross-env node_options=--max_old_space_size=4096 rollup -w -c node_modules/@lywzx/rollup-build-scripts/rollup.config.js",
     "build": "cross-env node_options=--max_old_space_size=4096 node build/build-pkg.js",
     "lint": "eslint packages --ext .ts --fix",
     "format": "prettier --write \"+(packages)/**/*.ts\"",
@@ -41,6 +41,9 @@
   },
   "homepage": "https://github.com/lywzx/pdd-node-sdk#readme",
   "devDependencies": {
+    "@lywzx/rollup-build-scripts": "^0.0.1",
+    "import-lazy": "4.0.0",
+    "rollup-plugin-copy": "^3.4.0",
     "@commitlint/cli": "^11.0.0",
     "@commitlint/config-conventional": "^11.0.0",
     "@istanbuljs/nyc-config-typescript": "^1.0.1",
