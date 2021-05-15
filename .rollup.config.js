@@ -3,6 +3,7 @@
  */
 module.exports = {
   ts: true,
+  dts: true,
   tsconfigOverride: {
     include: ["src"],
     exclude: ["test"],
