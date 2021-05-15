@@ -9,6 +9,13 @@
   dependencies:
     "@babel/highlight" "^7.10.4"
 
+"@babel/code-frame@^7.12.13":
+  version "7.12.13"
+  resolved "https://registry.nlark.com/@babel/code-frame/download/@babel/code-frame-7.12.13.tgz#dcfc826beef65e75c50e21d3837d7d95798dd658"
+  integrity sha1-3PyCa+72XnXFDiHTg319lXmN1lg=
+  dependencies:
+    "@babel/highlight" "^7.12.13"
+
 "@babel/core@^7.7.5":
   version "7.11.6"
   resolved "https://registry.npm.taobao.org/@babel/core/download/@babel/core-7.11.6.tgz?cache=0&sync_timestamp=1599146860446&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40babel%2Fcore%2Fdownload%2F%40babel%2Fcore-7.11.6.tgz#3a9455dc7387ff1bac45770650bc13ba04a15651"
@@ -120,6 +127,11 @@
   resolved "https://registry.npm.taobao.org/@babel/helper-validator-identifier/download/@babel/helper-validator-identifier-7.10.4.tgz#a78c7a7251e01f616512d31b10adcf52ada5e0d2"
   integrity sha1-p4x6clHgH2FlEtMbEK3PUq2l4NI=
 
+"@babel/helper-validator-identifier@^7.14.0":
+  version "7.14.0"
+  resolved "https://registry.nlark.com/@babel/helper-validator-identifier/download/@babel/helper-validator-identifier-7.14.0.tgz?cache=0&sync_timestamp=1619727412592&other_urls=https%3A%2F%2Fregistry.nlark.com%2F%40babel%2Fhelper-validator-identifier%2Fdownload%2F%40babel%2Fhelper-validator-identifier-7.14.0.tgz#d26cad8a47c65286b15df1547319a5d0bcf27288"
+  integrity sha1-0mytikfGUoaxXfFUcxml0Lzycog=
+
 "@babel/helpers@^7.10.4":
   version "7.10.4"
   resolved "https://registry.npm.taobao.org/@babel/helpers/download/@babel/helpers-7.10.4.tgz#2abeb0d721aff7c0a97376b9e1f6f65d7a475044"
@@ -135,6 +147,15 @@
   integrity sha1-fRvf1ldTU4+r5sOFls23bZrGAUM=
   dependencies:
     "@babel/helper-validator-identifier" "^7.10.4"
+    chalk "^2.0.0"
+    js-tokens "^4.0.0"
+
+"@babel/highlight@^7.12.13":
+  version "7.14.0"
+  resolved "https://registry.nlark.com/@babel/highlight/download/@babel/highlight-7.14.0.tgz?cache=0&sync_timestamp=1619727182056&other_urls=https%3A%2F%2Fregistry.nlark.com%2F%40babel%2Fhighlight%2Fdownload%2F%40babel%2Fhighlight-7.14.0.tgz#3197e375711ef6bf834e67d0daec88e4f46113cf"
+  integrity sha1-MZfjdXEe9r+DTmfQ2uyI5PRhE88=
+  dependencies:
+    "@babel/helper-validator-identifier" "^7.14.0"
     chalk "^2.0.0"
     js-tokens "^4.0.0"
 
@@ -1117,6 +1138,20 @@
     npmlog "^4.1.2"
     write-file-atomic "^2.3.0"
 
+"@lywzx/rollup-build-scripts@0.0.3":
+  version "0.0.3"
+  resolved "https://registry.nlark.com/@lywzx/rollup-build-scripts/download/@lywzx/rollup-build-scripts-0.0.3.tgz#9e54feaaff873ff4bcd28d38d5bd3ba835053c9c"
+  integrity sha1-nlT+qv+HP/S80o041b07qDUFPJw=
+  dependencies:
+    brotli "^1.3.2"
+    chalk "^4.1.0"
+    del "~6.0.0"
+    execa "^4.0.3"
+    import-lazy "4.0.0"
+    lodash "~4.17.20"
+    minimist "^1.2.5"
+    zlib "^1.0.5"
+
 "@mrmlnc/readdir-enhanced@^2.2.1":
   version "2.2.1"
   resolved "https://registry.npm.taobao.org/@mrmlnc/readdir-enhanced/download/@mrmlnc/readdir-enhanced-2.2.1.tgz#524af240d1a360527b730475ecfa1344aa540dde"
@@ -1435,6 +1470,13 @@
   version "0.0.39"
   resolved "https://registry.npm.taobao.org/@types/estree/download/@types/estree-0.0.39.tgz#e177e699ee1b8c22d23174caaa7422644389509f"
   integrity sha1-4Xfmme4bjCLSMXTKqnQiZEOJUJ8=
+
+"@types/fs-extra@^8.0.1":
+  version "8.1.1"
+  resolved "https://registry.npm.taobao.org/@types/fs-extra/download/@types/fs-extra-8.1.1.tgz#1e49f22d09aa46e19b51c0b013cb63d0d923a068"
+  integrity sha1-HknyLQmqRuGbUcCwE8tj0NkjoGg=
+  dependencies:
+    "@types/node" "*"
 
 "@types/glob@^7.1.1":
   version "7.1.3"
@@ -2346,6 +2388,11 @@ color-name@~1.1.4:
   resolved "https://registry.npm.taobao.org/color-name/download/color-name-1.1.4.tgz#c2a09a87acbde69543de6f63fa3995c826c536a2"
   integrity sha1-wqCah6y95pVD3m9j+jmVyCbFNqI=
 
+colorette@^1.1.0:
+  version "1.2.2"
+  resolved "https://registry.nlark.com/colorette/download/colorette-1.2.2.tgz#cbcc79d5e99caea2dbf10eb3a26fd8b3e6acfa94"
+  integrity sha1-y8x51emcrqLb8Q6zom/Ys+as+pQ=
+
 columnify@^1.5.4:
   version "1.5.4"
   resolved "https://registry.npm.taobao.org/columnify/download/columnify-1.5.4.tgz#4737ddf1c7b69a8a7c340570782e947eec8e78bb"
@@ -2774,6 +2821,20 @@ define-property@^2.0.2:
   dependencies:
     is-descriptor "^1.0.2"
     isobject "^3.0.1"
+
+del@~6.0.0:
+  version "6.0.0"
+  resolved "https://registry.npm.taobao.org/del/download/del-6.0.0.tgz#0b40d0332cea743f1614f818be4feb717714c952"
+  integrity sha1-C0DQMyzqdD8WFPgYvk/rcXcUyVI=
+  dependencies:
+    globby "^11.0.1"
+    graceful-fs "^4.2.4"
+    is-glob "^4.0.1"
+    is-path-cwd "^2.2.0"
+    is-path-inside "^3.0.2"
+    p-map "^4.0.0"
+    rimraf "^3.0.2"
+    slash "^3.0.0"
 
 delayed-stream@~1.0.0:
   version "1.0.0"
@@ -3269,6 +3330,18 @@ fast-glob@^2.2.6:
     merge2 "^1.2.3"
     micromatch "^3.1.10"
 
+fast-glob@^3.0.3:
+  version "3.2.5"
+  resolved "https://registry.nlark.com/fast-glob/download/fast-glob-3.2.5.tgz#7939af2a656de79a4f1901903ee8adcaa7cb9661"
+  integrity sha1-eTmvKmVt55pPGQGQPuityqfLlmE=
+  dependencies:
+    "@nodelib/fs.stat" "^2.0.2"
+    "@nodelib/fs.walk" "^1.2.3"
+    glob-parent "^5.1.0"
+    merge2 "^1.3.0"
+    micromatch "^4.0.2"
+    picomatch "^2.2.1"
+
 fast-glob@^3.1.1:
   version "3.2.4"
   resolved "https://registry.npm.taobao.org/fast-glob/download/fast-glob-3.2.4.tgz#d20aefbf99579383e7f3cc66529158c9b98554d3"
@@ -3754,6 +3827,20 @@ globals@^12.1.0:
   dependencies:
     type-fest "^0.8.1"
 
+globby@10.0.1:
+  version "10.0.1"
+  resolved "https://registry.nlark.com/globby/download/globby-10.0.1.tgz?cache=0&sync_timestamp=1618847179425&other_urls=https%3A%2F%2Fregistry.nlark.com%2Fglobby%2Fdownload%2Fglobby-10.0.1.tgz#4782c34cb75dd683351335c5829cc3420e606b22"
+  integrity sha1-R4LDTLdd1oM1EzXFgpzDQg5gayI=
+  dependencies:
+    "@types/glob" "^7.1.1"
+    array-union "^2.1.0"
+    dir-glob "^3.0.1"
+    fast-glob "^3.0.3"
+    glob "^7.1.3"
+    ignore "^5.1.1"
+    merge2 "^1.2.3"
+    slash "^3.0.0"
+
 globby@^11.0.1:
   version "11.0.1"
   resolved "https://registry.npm.taobao.org/globby/download/globby-11.0.1.tgz#9a2bf107a068f3ffeabc49ad702c79ede8cfd357"
@@ -3784,6 +3871,11 @@ graceful-fs@^4.1.11, graceful-fs@^4.1.15, graceful-fs@^4.1.2, graceful-fs@^4.1.6
   version "4.2.4"
   resolved "https://registry.npm.taobao.org/graceful-fs/download/graceful-fs-4.2.4.tgz#2256bde14d3632958c465ebc96dc467ca07a29fb"
   integrity sha1-Ila94U02MpWMRl68ltxGfKB6Kfs=
+
+graceful-fs@^4.2.4:
+  version "4.2.6"
+  resolved "https://registry.nlark.com/graceful-fs/download/graceful-fs-4.2.6.tgz?cache=0&sync_timestamp=1618846820463&other_urls=https%3A%2F%2Fregistry.nlark.com%2Fgraceful-fs%2Fdownload%2Fgraceful-fs-4.2.6.tgz#ff040b2b0853b23c3d31027523706f1885d76bee"
+  integrity sha1-/wQLKwhTsjw9MQJ1I3BvGIXXa+4=
 
 growl@1.10.5:
   version "1.10.5"
@@ -3990,9 +4082,9 @@ ignore@^4.0.3, ignore@^4.0.6:
   resolved "https://registry.npm.taobao.org/ignore/download/ignore-4.0.6.tgz#750e3db5862087b4737ebac8207ffd1ef27b25fc"
   integrity sha1-dQ49tYYgh7RzfrrIIH/9HvJ7Jfw=
 
-ignore@^5.1.4:
+ignore@^5.1.1, ignore@^5.1.4:
   version "5.1.8"
-  resolved "https://registry.npm.taobao.org/ignore/download/ignore-5.1.8.tgz#f150a8b50a34289b33e22f5889abd4d8016f0e57"
+  resolved "https://registry.nlark.com/ignore/download/ignore-5.1.8.tgz#f150a8b50a34289b33e22f5889abd4d8016f0e57"
   integrity sha1-8VCotQo0KJsz4i9YiavU2AFvDlc=
 
 import-fresh@^2.0.0:
@@ -4010,6 +4102,11 @@ import-fresh@^3.0.0, import-fresh@^3.2.1:
   dependencies:
     parent-module "^1.0.0"
     resolve-from "^4.0.0"
+
+import-lazy@4.0.0:
+  version "4.0.0"
+  resolved "https://registry.npm.taobao.org/import-lazy/download/import-lazy-4.0.0.tgz#e8eb627483a0a43da3c03f3e35548be5cb0cc153"
+  integrity sha1-6OtidIOgpD2jwD8+NVSL5csMwVM=
 
 import-local@^2.0.0:
   version "2.0.0"
@@ -4287,6 +4384,16 @@ is-obj@^2.0.0:
   resolved "https://registry.npm.taobao.org/is-obj/download/is-obj-2.0.0.tgz#473fb05d973705e3fd9620545018ca8e22ef4982"
   integrity sha1-Rz+wXZc3BeP9liBUUBjKjiLvSYI=
 
+is-path-cwd@^2.2.0:
+  version "2.2.0"
+  resolved "https://registry.nlark.com/is-path-cwd/download/is-path-cwd-2.2.0.tgz#67d43b82664a7b5191fd9119127eb300048a9fdb"
+  integrity sha1-Z9Q7gmZKe1GR/ZEZEn6zAASKn9s=
+
+is-path-inside@^3.0.2:
+  version "3.0.3"
+  resolved "https://registry.nlark.com/is-path-inside/download/is-path-inside-3.0.3.tgz?cache=0&sync_timestamp=1620046792301&other_urls=https%3A%2F%2Fregistry.nlark.com%2Fis-path-inside%2Fdownload%2Fis-path-inside-3.0.3.tgz#d231362e53a07ff2b0e0ea7fed049161ffd16283"
+  integrity sha1-0jE2LlOgf/Kw4Op/7QSRYf/RYoM=
+
 is-plain-obj@^1.0.0, is-plain-obj@^1.1.0:
   version "1.1.0"
   resolved "https://registry.npm.taobao.org/is-plain-obj/download/is-plain-obj-1.1.0.tgz#71a50c8429dfca773c92a390a4a03b39fcd51d3e"
@@ -4298,6 +4405,11 @@ is-plain-object@^2.0.3, is-plain-object@^2.0.4:
   integrity sha1-LBY7P6+xtgbZ0Xko8FwqHDjgdnc=
   dependencies:
     isobject "^3.0.1"
+
+is-plain-object@^3.0.0:
+  version "3.0.1"
+  resolved "https://registry.nlark.com/is-plain-object/download/is-plain-object-3.0.1.tgz#662d92d24c0aa4302407b0d45d21f2251c85f85b"
+  integrity sha1-Zi2S0kwKpDAkB7DUXSHyJRyF+Fs=
 
 is-plain-object@^5.0.0:
   version "5.0.0"
@@ -4829,6 +4941,11 @@ lodash@^4.17.12, lodash@^4.17.14, lodash@^4.17.15, lodash@^4.17.19, lodash@^4.17
   version "4.17.20"
   resolved "https://registry.npm.taobao.org/lodash/download/lodash-4.17.20.tgz?cache=0&sync_timestamp=1597336125847&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Flodash%2Fdownload%2Flodash-4.17.20.tgz#b44a9b6297bcb698f1c51a3545a2b3b368d59c52"
   integrity sha1-tEqbYpe8tpjxxRo1RaKzs2jVnFI=
+
+lodash@~4.17.20:
+  version "4.17.21"
+  resolved "https://registry.nlark.com/lodash/download/lodash-4.17.21.tgz#679591c564c3bffaae8454cf0b3df370c3d6911c"
+  integrity sha1-Z5WRxWTDv/quhFTPCz3zcMPWkRw=
 
 log-symbols@4.0.0, log-symbols@^4.0.0:
   version "4.0.0"
@@ -6473,6 +6590,26 @@ rimraf@^3.0.0, rimraf@^3.0.2:
   integrity sha1-8aVAK6YiCtUswSgrrBrjqkn9Bho=
   dependencies:
     glob "^7.1.3"
+
+rollup-plugin-copy@^3.4.0:
+  version "3.4.0"
+  resolved "https://registry.npm.taobao.org/rollup-plugin-copy/download/rollup-plugin-copy-3.4.0.tgz#f1228a3ffb66ffad8606e2f3fb7ff23141ed3286"
+  integrity sha1-8SKKP/tm/62GBuLz+3/yMUHtMoY=
+  dependencies:
+    "@types/fs-extra" "^8.0.1"
+    colorette "^1.1.0"
+    fs-extra "^8.1.0"
+    globby "10.0.1"
+    is-plain-object "^3.0.0"
+
+rollup-plugin-dts@~3.0.1:
+  version "3.0.1"
+  resolved "https://registry.npm.taobao.org/rollup-plugin-dts/download/rollup-plugin-dts-3.0.1.tgz#4419efb51d935cc0cff6f577f8aad97a980ee524"
+  integrity sha1-RBnvtR2TXMDP9vV3+KrZepgO5SQ=
+  dependencies:
+    magic-string "^0.25.7"
+  optionalDependencies:
+    "@babel/code-frame" "^7.12.13"
 
 rollup-plugin-terser@^7.0.2:
   version "7.0.2"
