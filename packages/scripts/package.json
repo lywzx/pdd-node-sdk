@@ -15,8 +15,7 @@
     "url": "git+https://github.com/lywzx/pdd-node-sdk.git"
   },
   "scripts": {
-    "start": "",
-    "test": "echo \"Error: run tests from root\" && exit 1"
+    "prepublishOnly": "cd ../.. && yarn build --only-package=@pin-duo-duo/scripts"
   },
   "bugs": {
     "url": "https://github.com/lywzx/pdd-node-sdk/issues"

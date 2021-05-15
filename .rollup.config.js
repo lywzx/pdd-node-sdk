@@ -11,10 +11,22 @@ module.exports = {
     }
   },
   externalEachOther: true,
-  external: ['debug', 'axios', 'lodash', 'async', 'crypto-js', '@nestjs/common', 'zlib', '@nestjs/core'],
+  external: [
+    'debug',
+    'axios',
+    'lodash',
+    'async',
+    'crypto-js',
+    '@nestjs/common',
+    '@nestjs/core',
+    'zlib',
+    'redis'
+  ],
   inputPrefix: 'src',
   workspace: ['packages'],
-  handleConfig(config) {
-    return config;
+  outputGlobals: {
+    'lodash': '_',
+    '@pin-duo-duo/pdd-origin-api': 'PddOriginUtil',
+    '@pin-duo-duo/core': 'PddNodeSdk',
   }
 }
