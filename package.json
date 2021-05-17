@@ -41,7 +41,7 @@
   },
   "homepage": "https://github.com/lywzx/pdd-node-sdk#readme",
   "devDependencies": {
-    "@lywzx/rollup-build-scripts": "0.0.6",
+    "@lywzx/rollup-build-scripts": "0.0.7",
     "@commitlint/cli": "^11.0.0",
     "@commitlint/config-conventional": "^11.0.0",
     "@istanbuljs/nyc-config-typescript": "^1.0.1",
