@@ -1138,10 +1138,10 @@
     npmlog "^4.1.2"
     write-file-atomic "^2.3.0"
 
-"@lywzx/rollup-build-scripts@0.0.3":
-  version "0.0.3"
-  resolved "https://registry.nlark.com/@lywzx/rollup-build-scripts/download/@lywzx/rollup-build-scripts-0.0.3.tgz#9e54feaaff873ff4bcd28d38d5bd3ba835053c9c"
-  integrity sha1-nlT+qv+HP/S80o041b07qDUFPJw=
+"@lywzx/rollup-build-scripts@0.0.6":
+  version "0.0.6"
+  resolved "https://registry.nlark.com/@lywzx/rollup-build-scripts/download/@lywzx/rollup-build-scripts-0.0.6.tgz?cache=0&sync_timestamp=1621257659851&other_urls=https%3A%2F%2Fregistry.nlark.com%2F%40lywzx%2Frollup-build-scripts%2Fdownload%2F%40lywzx%2Frollup-build-scripts-0.0.6.tgz#5318972163a2461071603bccaf9aacacea3c204a"
+  integrity sha1-UxiXIWOiRhBxYDvMr5qsrOo8IEo=
   dependencies:
     brotli "^1.3.2"
     chalk "^4.1.0"
