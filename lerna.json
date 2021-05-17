@@ -4,6 +4,7 @@
   ],
   "command": {
     "publish": {
+      "contents": "dist",
       "ignoreChanges": [
         "**/test/**",
         "**/tsconfig.json"
