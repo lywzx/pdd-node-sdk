@@ -29,11 +29,18 @@ instance.interceptors.response.use((value: any) => {
   }
 });
 
+const other = [
+  {
+    id: 28,
+    name: '方舟多多云API',
+  },
+];
+
 // 获取API的所有分类
 export function getAllApiCategory(): Promise<CategoryListItemInterface[]> {
   return retry(5, (callback) => {
     const prs = instance.post('/pop/doc/category/list').then((value: any) => {
-      return (value as any[]).map((item) => {
+      return [...(value as any[]), ...other].map((item) => {
         return Object.assign({}, item, {
           directory: nameToDirectoryName(item.name),
         });
