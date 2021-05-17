@@ -19,7 +19,7 @@ export interface PddCloudprintStdtemplatesGetRequestInterface {
    * @type: string
    * @default:
    **/
-  wp_code: string;
+  wp_code?: string;
 }
 
 /**

@@ -324,11 +324,18 @@ export interface PddDdkOrderDetailGetOrderDetailResponseResponseInterface {
   share_rate: number;
 
   /**
-   * @description: 优势渠道专属商品补贴金额。针对优质渠道的补贴活动，指定优势渠道可通过推广该商品获取相应补贴。补贴活动入口：[进宝网站-官方活动-千万补贴]，报名入口：https://jinbao.pinduoduo.com/ten-million-subsidy/entry
+   * @description: 优势渠道专属商品补贴金额，单位为分。针对优质渠道的补贴活动，指定优势渠道可通过推广该商品获取相应补贴。补贴活动入口：[进宝网站-官方活动-千万补贴]，报名入口：https://jinbao.pinduoduo.com/ten-million-subsidy/entry
    * @type: number
    * @default:
    **/
   subsidy_amount: number;
+
+  /**
+   * @description: 订单补贴类型：0-非补贴订单，1-千万补贴，2-社群补贴
+   * @type: number
+   * @default:
+   **/
+  subsidy_type: number;
 
   /**
    * @description: 订单类型：0：领券页面， 1： 红包页， 2：领券页， 3： 题页

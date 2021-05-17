@@ -448,7 +448,7 @@ export interface PddOrderNumberListIncrementGetOrderSnIncrementGetResponseOrderS
   pay_amount: string;
 
   /**
-   * @description: 商品金额（元），商品金额=商品销售价格*商品数量-改价金额（接口暂无该字段）
+   * @description: 商品金额（元），商品金额=商品销售价格*商品数量-订单改价折扣金额
    * @type: string
    * @default:
    **/
@@ -680,6 +680,14 @@ export interface PddOrderNumberListIncrementGetOrderSnIncrementGetResponseOrderS
    *
    **/
   gift_list: PddOrderNumberListIncrementGetOrderSnIncrementGetResponseOrderSnListGiftListResponseInterface[];
+
+  /**
+   * @description: 订单多包裹发货时使用的其他发货快递信息
+   * @type: PddOrderNumberListIncrementGetOrderSnIncrementGetResponseOrderSnListExtraDeliveryListResponseInterface[]
+   * @default:
+   *
+   **/
+  extra_delivery_list: PddOrderNumberListIncrementGetOrderSnIncrementGetResponseOrderSnListExtraDeliveryListResponseInterface[];
 }
 
 /**
@@ -1003,4 +1011,25 @@ export interface PddOrderNumberListIncrementGetOrderSnIncrementGetResponseOrderS
    * @default:
    **/
   sku_id: string | number;
+}
+
+/**
+ * @description 订单多包裹发货时使用的其他发货快递信息
+ * @default
+ * @example
+ **/
+export interface PddOrderNumberListIncrementGetOrderSnIncrementGetResponseOrderSnListExtraDeliveryListResponseInterface {
+  /**
+   * @description: 快递运单号
+   * @type: string
+   * @default:
+   **/
+  tracking_number: string;
+
+  /**
+   * @description: 快递公司编号
+   * @type: number
+   * @default:
+   **/
+  logistics_id: number;
 }

@@ -76,6 +76,13 @@ export interface PddGoodsCpsUnitChangeRequestInterface {
    * @default:
    **/
   remain_quantity?: string | number;
+
+  /**
+   * @description: 优惠券领取后的有效使用时间天数
+   * @type: number
+   * @default:
+   **/
+  duration?: number;
 }
 
 /**
