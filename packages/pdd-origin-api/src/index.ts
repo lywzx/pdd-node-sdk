@@ -42,57 +42,6 @@ import {
   PddRefundStatusCheckRefundStatusCheckResponseResponseInterface,
   PDD_REFUND_STATUS_CHECK_LIMITERS,
 } from './shouHou/PddRefundStatusCheck';
-// 物流API
-import {
-  PDD_LOGISTICS_ADDRESS_GET,
-  PDD_LOGISTICS_ADDRESS_GET_RESPONSE_KEY,
-  PddLogisticsAddressGetRequestInterface,
-  PddLogisticsAddressGetResponseInterface,
-  PddLogisticsAddressGetLogisticsAddressGetResponseResponseInterface,
-  PDD_LOGISTICS_ADDRESS_GET_LIMITERS,
-} from './wuLiu/PddLogisticsAddressGet';
-import {
-  PDD_LOGISTICS_COMPANIES_GET,
-  PDD_LOGISTICS_COMPANIES_GET_RESPONSE_KEY,
-  PddLogisticsCompaniesGetRequestInterface,
-  PddLogisticsCompaniesGetResponseInterface,
-  PddLogisticsCompaniesGetLogisticsCompaniesGetResponseResponseInterface,
-  PDD_LOGISTICS_COMPANIES_GET_LIMITERS,
-} from './wuLiu/PddLogisticsCompaniesGet';
-import {
-  PDD_LOGISTICS_ISV_TRACE_NOTIFY_SUB,
-  PddLogisticsIsvTraceNotifySubRequestInterface,
-  PddLogisticsIsvTraceNotifySubResponseInterface,
-  PDD_LOGISTICS_ISV_TRACE_NOTIFY_SUB_LIMITERS,
-} from './wuLiu/PddLogisticsIsvTraceNotifySub';
-import {
-  PDD_LOGISTICS_ONLINE_CREATE,
-  PDD_LOGISTICS_ONLINE_CREATE_RESPONSE_KEY,
-  PddLogisticsOnlineCreateRequestInterface,
-  PddLogisticsOnlineCreateResponseInterface,
-  PddLogisticsOnlineCreateLogisticsOnlineCreateResponseResponseInterface,
-} from './wuLiu/PddLogisticsOnlineCreate';
-import {
-  PDD_LOGISTICS_ONLINE_SEND,
-  PDD_LOGISTICS_ONLINE_SEND_RESPONSE_KEY,
-  PddLogisticsOnlineSendRequestInterface,
-  PddLogisticsOnlineSendResponseInterface,
-  PddLogisticsOnlineSendLogisticsOnlineSendResponseResponseInterface,
-  PDD_LOGISTICS_ONLINE_SEND_LIMITERS,
-} from './wuLiu/PddLogisticsOnlineSend';
-import {
-  PDD_LOGISTICS_ONLINE_STATUS_QUERY,
-  PDD_LOGISTICS_ONLINE_STATUS_QUERY_RESPONSE_KEY,
-  PddLogisticsOnlineStatusQueryRequestInterface,
-  PddLogisticsOnlineStatusQueryResponseInterface,
-  PddLogisticsOnlineStatusQueryLogisticsOnlineStatusQueryResponseResponseInterface,
-} from './wuLiu/PddLogisticsOnlineStatusQuery';
-import {
-  PDD_LOGISTICS_ORDERTRACE_GET,
-  PddLogisticsOrdertraceGetRequestInterface,
-  PddLogisticsOrdertraceGetResponseInterface,
-  PDD_LOGISTICS_ORDERTRACE_GET_LIMITERS,
-} from './wuLiu/PddLogisticsOrdertraceGet';
 // 订单API
 import {
   PDD_ERP_ORDER_SYNC,
@@ -163,6 +112,57 @@ import {
   PddOrderUploadExtraLogisticsResponseInterface,
   PddOrderUploadExtraLogisticsUploadExtraLogisticsResponseResponseInterface,
 } from './dingDan/PddOrderUploadExtraLogistics';
+// 物流API
+import {
+  PDD_LOGISTICS_ADDRESS_GET,
+  PDD_LOGISTICS_ADDRESS_GET_RESPONSE_KEY,
+  PddLogisticsAddressGetRequestInterface,
+  PddLogisticsAddressGetResponseInterface,
+  PddLogisticsAddressGetLogisticsAddressGetResponseResponseInterface,
+  PDD_LOGISTICS_ADDRESS_GET_LIMITERS,
+} from './wuLiu/PddLogisticsAddressGet';
+import {
+  PDD_LOGISTICS_COMPANIES_GET,
+  PDD_LOGISTICS_COMPANIES_GET_RESPONSE_KEY,
+  PddLogisticsCompaniesGetRequestInterface,
+  PddLogisticsCompaniesGetResponseInterface,
+  PddLogisticsCompaniesGetLogisticsCompaniesGetResponseResponseInterface,
+  PDD_LOGISTICS_COMPANIES_GET_LIMITERS,
+} from './wuLiu/PddLogisticsCompaniesGet';
+import {
+  PDD_LOGISTICS_ISV_TRACE_NOTIFY_SUB,
+  PddLogisticsIsvTraceNotifySubRequestInterface,
+  PddLogisticsIsvTraceNotifySubResponseInterface,
+  PDD_LOGISTICS_ISV_TRACE_NOTIFY_SUB_LIMITERS,
+} from './wuLiu/PddLogisticsIsvTraceNotifySub';
+import {
+  PDD_LOGISTICS_ONLINE_CREATE,
+  PDD_LOGISTICS_ONLINE_CREATE_RESPONSE_KEY,
+  PddLogisticsOnlineCreateRequestInterface,
+  PddLogisticsOnlineCreateResponseInterface,
+  PddLogisticsOnlineCreateLogisticsOnlineCreateResponseResponseInterface,
+} from './wuLiu/PddLogisticsOnlineCreate';
+import {
+  PDD_LOGISTICS_ONLINE_SEND,
+  PDD_LOGISTICS_ONLINE_SEND_RESPONSE_KEY,
+  PddLogisticsOnlineSendRequestInterface,
+  PddLogisticsOnlineSendResponseInterface,
+  PddLogisticsOnlineSendLogisticsOnlineSendResponseResponseInterface,
+  PDD_LOGISTICS_ONLINE_SEND_LIMITERS,
+} from './wuLiu/PddLogisticsOnlineSend';
+import {
+  PDD_LOGISTICS_ONLINE_STATUS_QUERY,
+  PDD_LOGISTICS_ONLINE_STATUS_QUERY_RESPONSE_KEY,
+  PddLogisticsOnlineStatusQueryRequestInterface,
+  PddLogisticsOnlineStatusQueryResponseInterface,
+  PddLogisticsOnlineStatusQueryLogisticsOnlineStatusQueryResponseResponseInterface,
+} from './wuLiu/PddLogisticsOnlineStatusQuery';
+import {
+  PDD_LOGISTICS_ORDERTRACE_GET,
+  PddLogisticsOrdertraceGetRequestInterface,
+  PddLogisticsOrdertraceGetResponseInterface,
+  PDD_LOGISTICS_ORDERTRACE_GET_LIMITERS,
+} from './wuLiu/PddLogisticsOrdertraceGet';
 // 虚拟类目API
 import {
   PDD_VIRTUAL_GAME_SERVER_QUERY,
@@ -938,8 +938,8 @@ import {
 } from './fangZhouWuLiuFuWuShang/PddServiceMailServiceTimeQuery';
 // 营销API
 import {
-  PDD_PROMOTION_COUPON_CLOSE,
   PDD_PROMOTION_COUPON_CLOSE_RESPONSE_KEY,
+  PDD_PROMOTION_COUPON_CLOSE,
   PddPromotionCouponCloseRequestInterface,
   PddPromotionCouponCloseResponseInterface,
   PddPromotionCouponClosePromotionCouponBatchCloseResponseResponseInterface,
