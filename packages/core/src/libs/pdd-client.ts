@@ -325,11 +325,31 @@ export class PddClient<T extends Record<string, any> = any> {
     K extends keyof PddCollectRequestInterface,
     Req = PddCollectRequestInterface[K],
     Res = PddCollectShortResponseInterface[K]
+  >(type: K, params: Req & PddCommonRequestExcludeSomeAttr): Promise<Res>;
+  public execute<
+    K extends keyof PddCollectRequestInterface,
+    Req = PddCollectRequestInterface[K],
+    Res = PddCollectShortResponseInterface[K]
   >(
     type: K,
     params: Req & PddCommonRequestExcludeSomeAttr,
-    accessOptions?: T | RetryOptionsType | PddCacheOptions
+    retryOptions: RetryOptionsType | PddCacheOptions
   ): Promise<Res>;
+  public execute<
+    K extends keyof PddCollectRequestInterface,
+    Req = PddCollectRequestInterface[K],
+    Res = PddCollectShortResponseInterface[K]
+  >(
+    type: K,
+    params: Req & PddCommonRequestExcludeSomeAttr,
+    retryOptions: RetryOptionsType,
+    cacheOptions: PddCacheOptions
+  ): Promise<Res>;
+  public execute<
+    K extends keyof PddCollectRequestInterface,
+    Req = PddCollectRequestInterface[K] & PddCommonRequestExcludeSomeAttr,
+    Res = PddCollectShortResponseInterface[K]
+  >(type: K, params: Req & PddCommonRequestExcludeSomeAttr, accessOptions: T): Promise<Res>;
   public execute<
     K extends keyof PddCollectRequestInterface,
     Req = PddCollectRequestInterface[K] & PddCommonRequestExcludeSomeAttr,
@@ -338,8 +358,13 @@ export class PddClient<T extends Record<string, any> = any> {
     type: K,
     params: Req & PddCommonRequestExcludeSomeAttr,
     accessOptions: T,
-    retryOptions?: RetryOptionsType | PddCacheOptions
+    retryOptions: RetryOptionsType | PddCacheOptions
   ): Promise<Res>;
+  public execute<
+    K extends keyof PddCollectRequestInterface,
+    Req = PddCollectRequestInterface[K] & PddCommonRequestExcludeSomeAttr,
+    Res = PddCollectShortResponseInterface[K]
+  >(type: K, params: Req & PddCommonRequestExcludeSomeAttr, accessOptions: T): Promise<Res>;
   public execute<
     K extends keyof PddCollectRequestInterface,
     Req = PddCollectRequestInterface[K] & PddCommonRequestExcludeSomeAttr,
@@ -349,7 +374,7 @@ export class PddClient<T extends Record<string, any> = any> {
     params: Req & PddCommonRequestExcludeSomeAttr,
     accessOptions: T,
     retryOptions: RetryOptionsType,
-    cacheOptions?: PddCacheOptions
+    cacheOptions: PddCacheOptions
   ): Promise<Res>;
   public execute<
     K extends keyof PddCollectRequestInterface,

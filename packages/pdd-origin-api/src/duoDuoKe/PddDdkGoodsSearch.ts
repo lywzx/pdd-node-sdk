@@ -228,6 +228,13 @@ export interface PddDdkGoodsSearchGoodsSearchResponseResponseInterface {
  **/
 export interface PddDdkGoodsSearchGoodsSearchResponseGoodsListResponseInterface {
   /**
+   * @description: 活动佣金比例，千分比（特定活动期间的佣金比例）
+   * @type: string | number
+   * @default:
+   **/
+  activity_promotion_rate: string | number;
+
+  /**
    * @description: 商品活动标记数组，例：[4,7]，4-秒杀 7-百亿补贴等
    * @type: number[]
    * @default:
@@ -240,6 +247,13 @@ export interface PddDdkGoodsSearchGoodsSearchResponseGoodsListResponseInterface 
    * @default:
    **/
   activity_type: number;
+
+  /**
+   * @description: 商品品牌词信息，如“苹果”、“阿迪达斯”、“李宁”等
+   * @type: string
+   * @default:
+   **/
+  brand_name: string;
 
   /**
    * @description: 商品类目id
@@ -606,7 +620,7 @@ export interface PddDdkGoodsSearchGoodsSearchResponseGoodsListResponseInterface 
   share_rate: number;
 
   /**
-   * @description: 优势渠道专属商品补贴金额。针对优质渠道的补贴活动，指定优势渠道可通过推广该商品获取相应补贴。补贴活动入口：[进宝网站-官方活动-千万补贴]，报名入口：https://jinbao.pinduoduo.com/ten-million-subsidy/entry
+   * @description: 优势渠道专属商品补贴金额，单位为分。针对优质渠道的补贴活动，指定优势渠道可通过推广该商品获取相应补贴。补贴活动入口：[进宝网站-官方活动-千万补贴]，报名入口：https://jinbao.pinduoduo.com/ten-million-subsidy/entry
    * @type: number
    * @default:
    **/

@@ -34,7 +34,7 @@ import { use } from 'chai';
 use(chaiAsPromised);
 
 describe('pdd-client test util', function () {
-  let pddClient: PddClient;
+  let pddClient: PddClient<{ userId: number; shopId: number }>;
   let restored: (...args: any) => any;
   const pddOptions = {
     clientId: 'aaa',

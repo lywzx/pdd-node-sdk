@@ -1,22 +1,10 @@
 {
   "name": "@pin-duo-duo/pdd-origin-api",
-  "version": "0.0.2-alpha.8",
+  "version": "1.0.0-alpha.2",
   "description": "> TODO: description",
   "author": "lywzx <liuyang@lyblog.net>",
   "homepage": "https://github.com/lywzx/pdd-node-sdk/tree/master/packages/pdd-origin-api#readme",
   "license": "MIT",
-  "main": "lib/index.common.js",
-  "module": "lib/index.esm.js",
-  "unpkg": "lib/index.js",
-  "jsdelivr": "lib/index.js",
-  "types": "lib/index.d.ts",
-  "directories": {
-    "lib": "lib",
-    "test": "test"
-  },
-  "files": [
-    "lib"
-  ],
   "publishConfig": {
     "registry": "http://registry.npmjs.org",
     "access": "public"
@@ -26,7 +14,7 @@
     "url": "git+https://github.com/lywzx/pdd-node-sdk.git"
   },
   "scripts": {
-    "test": "echo \"Error: run tests from root\" && exit 1"
+    "prepublishOnly": "cd ../.. && yarn build --only-package=@pin-duo-duo/pdd-origin-api --dts=false"
   },
   "bugs": {
     "url": "https://github.com/lywzx/pdd-node-sdk/issues"

@@ -1,51 +1,39 @@
-export const PDD_ORDER_NUMBER_LIST_INCREMENT_GET = 'pdd.order.number.list.increment.get';
-export const PDD_ORDER_NUMBER_LIST_INCREMENT_GET_RESPONSE_KEY = 'order_sn_increment_get_response';
-export const PDD_ORDER_NUMBER_LIST_INCREMENT_GET_LIMITERS = [
-  {
-    limiterLevel: 1,
-    timeRange: 60,
-    times: 3000,
-  },
-];
+export const PDD_CLOUD_DTS_ORDER_LIST_INCREMENT_GET = 'pdd.cloud.dts.order.list.increment.get';
+export const PDD_CLOUD_DTS_ORDER_LIST_INCREMENT_GET_RESPONSE_KEY = 'order_sn_increment_get_response';
 
 /**
- * 接口名称：订单增量接口
- * 接口标识：pdd.order.number.list.increment.get
- * 接口使用场景：查询订单增量，注：虚拟订单充值手机号信息无法通过此接口获取，请联系虚拟类目运营人员。
- * 拉取卖家已卖出的增量交易数据（只能获取到成交时间三个月以内的交易信息）
- * ①. 一次请求只能查询时间跨度为30分钟的增量交易记录，即end_updated_at - start_updated_at<= 30min。
- * ②. 通过从后往前翻页的方式以及结束时间不小于拼多多系统时间前3min可以避免漏单问题。
+ * 接口名称：订单推送库增量查询接口
+ * 接口标识：pdd.cloud.dts.order.list.increment.get
+ * 接口使用场景：订单DTS推送库查询接口
  **/
-export interface PddOrderNumberListIncrementGetRequestInterface {
+export interface PddCloudDtsOrderListIncrementGetRequestInterface {
   /**
    * @description: 订单类型（是否抽奖订单），0-全部，1-非抽奖订单，2-抽奖订单
    * @type: number
    * @default:
    **/
-  is_lucky_flag: number;
+  is_lucky_flag?: number;
 
   /**
    * @description: 发货状态，1-待发货，2-已发货待签收，3-已签收，5-全部
    * @type: number
    * @default:
    **/
-  order_status: number;
+  order_status?: number;
 
   /**
    * @description: 必填，最后更新时间开始时间的时间戳，指格林威治时间 1970 年01 月 01 日 00 时 00 分 00 秒(北京时间 1970 年 01 月 01 日 08 时 00 分 00 秒)起至现在的总秒数
    * @type: string | number
    * @default:
    **/
-  start_updated_at: string | number;
+  start_updated_at?: string | number;
 
   /**
-   * @description: 必填，最后更新时间结束时间的时间戳，指格林威治时间 1970 年 01 月 01 日 00 时 00 分 00 秒(北京时间 1970 年 01 月 01 日 08 时
-   * 00 分 00 秒)起至现在的总秒数
-   * PS：开始时间结束时间间距不超过 30 分钟
+   * @description: 必填，最后更新时间结束时间的时间戳，指格林威治时间 1970 年 01 月 01 日 00 时 00 分 00 秒(北京时间 1970 年 01 月 01 日 08 时00 分 00 秒)起至现在的总秒数PS：开始时间结束时间间距不超过 30 分钟
    * @type: string | number
    * @default:
    **/
-  end_updated_at: string | number;
+  end_updated_at?: string | number;
 
   /**
    * @description: 返回数量，默认 100。最大 100
@@ -59,14 +47,14 @@ export interface PddOrderNumberListIncrementGetRequestInterface {
    * @type: number
    * @default:
    **/
-  page: number;
+  page?: number;
 
   /**
    * @description: 售后状态，1-无售后或售后关闭，2-售后处理中，3-退款中，4-退款成功 5-全部
    * @type: number
    * @default:
    **/
-  refund_status: number;
+  refund_status?: number;
 
   /**
    * @description: 订单类型： 0-普通订单、1-定金订单 不传为全部
@@ -81,24 +69,56 @@ export interface PddOrderNumberListIncrementGetRequestInterface {
    * @default:
    **/
   use_has_next?: boolean;
+
+  /**
+   * @description: 店铺ID
+   * @type: string | number
+   * @default:
+   **/
+  mall_id?: string | number;
+
+  /**
+   * @description: 扩展字段
+   * @type: string | number
+   * @default:
+   **/
+  ext_id?: string | number;
+
+  /**
+   * @description: token
+   * @type: string
+   * @default:
+   **/
+  token?: string;
+
+  /**
+   * @description: 订单号列表
+   * @type: string[]
+   * @default:
+   **/
+  order_sn_list?: string[];
+
+  /**
+   * @description: 扩展字段
+   * @type: string
+   * @default:
+   **/
+  extendProps?: string;
 }
 
 /**
- * 接口名称：订单增量接口
- * 接口标识：pdd.order.number.list.increment.get
- * 接口使用场景：查询订单增量，注：虚拟订单充值手机号信息无法通过此接口获取，请联系虚拟类目运营人员。
- * 拉取卖家已卖出的增量交易数据（只能获取到成交时间三个月以内的交易信息）
- * ①. 一次请求只能查询时间跨度为30分钟的增量交易记录，即end_updated_at - start_updated_at<= 30min。
- * ②. 通过从后往前翻页的方式以及结束时间不小于拼多多系统时间前3min可以避免漏单问题。
+ * 接口名称：订单推送库增量查询接口
+ * 接口标识：pdd.cloud.dts.order.list.increment.get
+ * 接口使用场景：订单DTS推送库查询接口
  **/
-export interface PddOrderNumberListIncrementGetResponseInterface {
+export interface PddCloudDtsOrderListIncrementGetResponseInterface {
   /**
    * @description: response
-   * @type: PddOrderNumberListIncrementGetOrderSnIncrementGetResponseResponseInterface
+   * @type: PddCloudDtsOrderListIncrementGetOrderSnIncrementGetResponseResponseInterface
    * @default:
    *
    **/
-  order_sn_increment_get_response: PddOrderNumberListIncrementGetOrderSnIncrementGetResponseResponseInterface;
+  order_sn_increment_get_response: PddCloudDtsOrderListIncrementGetOrderSnIncrementGetResponseResponseInterface;
 }
 
 /**
@@ -106,7 +126,7 @@ export interface PddOrderNumberListIncrementGetResponseInterface {
  * @default
  * @example
  **/
-export interface PddOrderNumberListIncrementGetOrderSnIncrementGetResponseResponseInterface {
+export interface PddCloudDtsOrderListIncrementGetOrderSnIncrementGetResponseResponseInterface {
   /**
    * @description: 返回订单的总数
    * @type: number
@@ -116,11 +136,11 @@ export interface PddOrderNumberListIncrementGetOrderSnIncrementGetResponseRespon
 
   /**
    * @description: 订单列表对象
-   * @type: PddOrderNumberListIncrementGetOrderSnIncrementGetResponseOrderSnListResponseInterface[]
+   * @type: PddCloudDtsOrderListIncrementGetOrderSnIncrementGetResponseOrderSnListResponseInterface[]
    * @default:
    *
    **/
-  order_sn_list: PddOrderNumberListIncrementGetOrderSnIncrementGetResponseOrderSnListResponseInterface[];
+  order_sn_list: PddCloudDtsOrderListIncrementGetOrderSnIncrementGetResponseOrderSnListResponseInterface[];
 
   /**
    * @description: 是否有下一页
@@ -128,6 +148,41 @@ export interface PddOrderNumberListIncrementGetOrderSnIncrementGetResponseRespon
    * @default:
    **/
   has_next: boolean;
+
+  /**
+   * @description: 是否成功，false-失败，true-成功
+   * @type: boolean
+   * @default:
+   **/
+  is_success: boolean;
+
+  /**
+   * @description: 错误信息
+   * @type: string
+   * @default:
+   **/
+  error_msg: string;
+
+  /**
+   * @description: 子错误信息
+   * @type: string
+   * @default:
+   **/
+  sub_msg: string;
+
+  /**
+   * @description: 错误码
+   * @type: number
+   * @default:
+   **/
+  sub_code: number;
+
+  /**
+   * @description: 子错误码
+   * @type: number
+   * @default:
+   **/
+  error_code: number;
 }
 
 /**
@@ -135,7 +190,7 @@ export interface PddOrderNumberListIncrementGetOrderSnIncrementGetResponseRespon
  * @default
  * @example
  **/
-export interface PddOrderNumberListIncrementGetOrderSnIncrementGetResponseOrderSnListResponseInterface {
+export interface PddCloudDtsOrderListIncrementGetOrderSnIncrementGetResponseOrderSnListResponseInterface {
   /**
    * @description: 送货入户并安装费用 单位：元
    * @type: string
@@ -159,11 +214,11 @@ export interface PddOrderNumberListIncrementGetOrderSnIncrementGetResponseOrderS
 
   /**
    * @description: 卡号信息列表
-   * @type: PddOrderNumberListIncrementGetOrderSnIncrementGetResponseOrderSnListCardInfoListResponseInterface[]
+   * @type: PddCloudDtsOrderListIncrementGetOrderSnIncrementGetResponseOrderSnListCardInfoListResponseInterface[]
    * @default:
    *
    **/
-  card_info_list: PddOrderNumberListIncrementGetOrderSnIncrementGetResponseOrderSnListCardInfoListResponseInterface[];
+  card_info_list: PddCloudDtsOrderListIncrementGetOrderSnIncrementGetResponseOrderSnListCardInfoListResponseInterface[];
 
   /**
    * @description: 送货入户并安装服务 0-不支持送货，1-送货入户不安装，2-送货入户并安装
@@ -195,11 +250,11 @@ export interface PddOrderNumberListIncrementGetOrderSnIncrementGetResponseOrderS
 
   /**
    * @description: 定金订单信息，非定金订单为null
-   * @type: PddOrderNumberListIncrementGetOrderSnIncrementGetResponseOrderSnListStepOrderInfoResponseInterface
+   * @type: PddCloudDtsOrderListIncrementGetOrderSnIncrementGetResponseOrderSnListStepOrderInfoResponseInterface
    * @default:
    *
    **/
-  step_order_info: PddOrderNumberListIncrementGetOrderSnIncrementGetResponseOrderSnListStepOrderInfoResponseInterface;
+  step_order_info: PddCloudDtsOrderListIncrementGetOrderSnIncrementGetResponseOrderSnListStepOrderInfoResponseInterface;
 
   /**
    * @description: 订单类型：0-普通订单、1-定金订单
@@ -210,11 +265,11 @@ export interface PddOrderNumberListIncrementGetOrderSnIncrementGetResponseOrderS
 
   /**
    * @description: 仓库信息
-   * @type: PddOrderNumberListIncrementGetOrderSnIncrementGetResponseOrderSnListOrderDepotInfoResponseInterface
+   * @type: PddCloudDtsOrderListIncrementGetOrderSnIncrementGetResponseOrderSnListOrderDepotInfoResponseInterface
    * @default:
    *
    **/
-  order_depot_info: PddOrderNumberListIncrementGetOrderSnIncrementGetResponseOrderSnListOrderDepotInfoResponseInterface;
+  order_depot_info: PddCloudDtsOrderListIncrementGetOrderSnIncrementGetResponseOrderSnListOrderDepotInfoResponseInterface;
 
   /**
    * @description: 支付时间
@@ -245,7 +300,7 @@ export interface PddOrderNumberListIncrementGetOrderSnIncrementGetResponseOrderS
   only_support_replace: number;
 
   /**
-   * @description: 售后状态 0：无售后 2：买家申请退款，待商家处理 3：退货退款，待商家处理 4：商家同意退款，退款中 5：平台同意退款，退款中 6：驳回退款，待买家处理 7：已同意退货退款,待用户发货 8：平台处理中 9：平台拒绝退款，退款关闭 10：退款成功 11：买家撤销 12：买家逾期未处理，退款失败 13：买家逾期，超过有效期 14：换货补寄待商家处理 15：换货补寄待用户处理 16：换货补寄成功 17：换货补寄失败 18：换货补寄待用户确认完成 21：待商家同意维修 22：待用户确认发货 24：维修关闭 25：维修成功 27：待用户确认收货 31：已同意拒收退款，待用户拒收 32：补寄待商家发货
+   * @description: 售后状态 0：无售后 2：买家申请退款，待商家处理 3：退货退款，待商家处理 4：商家同意退款，退款中 5：平台同意退款，退款中 6：驳回退款， 待买家处理 7：已同意退货退款,待用户发货 8：平台处理中 9：平台拒 绝退款，退款关闭 10：退款成功 11：买家撤销 12：买家逾期未处 理，退款失败 13：买家逾期，超过有效期 14 : 换货补寄待商家处理 15:换货补寄待用户处理 16:换货补寄成功 17:换货补寄失败 18:换货补寄待用户确认完成
    * @type: number
    * @default:
    **/
@@ -385,7 +440,7 @@ export interface PddOrderNumberListIncrementGetOrderSnIncrementGetResponseOrderS
   confirm_time: string;
 
   /**
-   * @description: 收件人姓名。订单状态为待发货状态，且订单未被风控打标的情况下返回密文数据；其余情况返回空字符串。
+   * @description: 收件人姓名
    * @type: string
    * @default:
    **/
@@ -434,7 +489,7 @@ export interface PddOrderNumberListIncrementGetOrderSnIncrementGetResponseOrderS
   address: string;
 
   /**
-   * @description: 收件人电话。订单状态为待发货状态，且订单未被风控打标的情况下返回密文数据；其余情况返回空字符串。
+   * @description: 收件人电话，仅订单状态为待发货状态下返回明文，其他状态下返回脱敏手机号，例如“1387677****”
    * @type: string
    * @default:
    **/
@@ -448,7 +503,7 @@ export interface PddOrderNumberListIncrementGetOrderSnIncrementGetResponseOrderS
   pay_amount: string;
 
   /**
-   * @description: 商品金额（元），商品金额=商品销售价格*商品数量-订单改价折扣金额
+   * @description: 商品金额（元），商品金额=商品销售价格*商品数量-改价金额（接口暂无该字段）
    * @type: string
    * @default:
    **/
@@ -547,11 +602,11 @@ export interface PddOrderNumberListIncrementGetOrderSnIncrementGetResponseOrderS
 
   /**
    * @description: 商品规格对象
-   * @type: PddOrderNumberListIncrementGetOrderSnIncrementGetResponseOrderSnListItemListResponseInterface[]
+   * @type: PddCloudDtsOrderListIncrementGetOrderSnIncrementGetResponseOrderSnListItemListResponseInterface[]
    * @default:
    *
    **/
-  item_list: PddOrderNumberListIncrementGetOrderSnIncrementGetResponseOrderSnListItemListResponseInterface[];
+  item_list: PddCloudDtsOrderListIncrementGetOrderSnIncrementGetResponseOrderSnListItemListResponseInterface[];
 
   /**
    * @description: 平台优惠金额
@@ -568,7 +623,7 @@ export interface PddOrderNumberListIncrementGetOrderSnIncrementGetResponseOrderS
   seller_discount: string;
 
   /**
-   * @description: 收件人地址，不拼接省市区。订单状态为待发货状态，且订单未被风控打标的情况下返回密文数据；其余情况返回空字符串。
+   * @description: 收件人地址,不拼接省市区
    * @type: string
    * @default:
    **/
@@ -582,67 +637,32 @@ export interface PddOrderNumberListIncrementGetOrderSnIncrementGetResponseOrderS
   self_contained: number;
 
   /**
-   * @description: 订单审核状态（0-正常订单， 1-审核中订单）
+   * @description: 风控订单状态(0-正常订单， 1-风控中订单)
    * @type: number
    * @default:
    **/
   risk_control_status: number;
 
   /**
-   * @description: 创建交易时的物流方式(1-预约配送)
-   * @type: number
-   * @default:
-   **/
-  shipping_type: number;
-
-  /**
-   * @description: 预约配送日期
+   * @description: 拉取时间
    * @type: string
    * @default:
    **/
-  yyps_date: string;
+  pdp_modified: string;
 
   /**
-   * @description: 预约配送时段
+   * @description: 扩展字段
    * @type: string
    * @default:
    **/
-  yyps_time: string;
-
-  /**
-   * @description: 催发货时间
-   * @type: string
-   * @default:
-   **/
-  urge_shipping_time: string;
-
-  /**
-   * @description: 是否当日发货，1-是，0-否
-   * @type: number
-   * @default:
-   **/
-  delivery_one_day: number;
-
-  /**
-   * @description: 保税仓名称
-   * @type: string
-   * @default:
-   **/
-  bonded_warehouse: string;
-
-  /**
-   * @description: 订单改价折扣金额，单位元
-   * @type: string
-   * @default:
-   **/
-  order_change_amount: string;
+  ext_fields: string;
 
   /**
    * @description: 订单备注标记，1-红色，2-黄色，3-绿色，4-蓝色，5-紫色
-   * @type: number
+   * @type: string
    * @default:
    **/
-  remark_tag: number;
+  remark_tag: string;
 
   /**
    * @description: 订单备注标记名称
@@ -652,42 +672,12 @@ export interface PddOrderNumberListIncrementGetOrderSnIncrementGetResponseOrderS
   remark_tag_name: string;
 
   /**
-   * @description: 是否多多批发，1-是，0-否
-   * @type: number
-   * @default:
-   **/
-  duoduo_wholesale: number;
-
-  /**
-   * @description: 市场业务类型，0-普通订单，1-拼内购订单
-   * @type: number
-   * @default:
-   **/
-  mkt_biz_type: number;
-
-  /**
-   * @description: 订单标签列表，no_trace_delivery=无痕发货，only_support_replace=只换不修，duoduo_wholesale=多多批发，return_freight_payer=退货包运费，free_sf=顺丰包邮，support_nationwide_warranty=全国联保，self_contained=门店自提，delivery_one_day=当日发货，oversea_tracing=全球购溯源
-   * @type: PddOrderNumberListIncrementGetOrderSnIncrementGetResponseOrderSnListOrderTagListResponseInterface[]
-   * @default:
-   *
-   **/
-  order_tag_list: PddOrderNumberListIncrementGetOrderSnIncrementGetResponseOrderSnListOrderTagListResponseInterface[];
-
-  /**
    * @description: 赠品列表
-   * @type: PddOrderNumberListIncrementGetOrderSnIncrementGetResponseOrderSnListGiftListResponseInterface[]
+   * @type: PddCloudDtsOrderListIncrementGetOrderSnIncrementGetResponseOrderSnListGiftListResponseInterface[]
    * @default:
    *
    **/
-  gift_list: PddOrderNumberListIncrementGetOrderSnIncrementGetResponseOrderSnListGiftListResponseInterface[];
-
-  /**
-   * @description: 订单多包裹发货时使用的其他发货快递信息
-   * @type: PddOrderNumberListIncrementGetOrderSnIncrementGetResponseOrderSnListExtraDeliveryListResponseInterface[]
-   * @default:
-   *
-   **/
-  extra_delivery_list: PddOrderNumberListIncrementGetOrderSnIncrementGetResponseOrderSnListExtraDeliveryListResponseInterface[];
+  gift_list: PddCloudDtsOrderListIncrementGetOrderSnIncrementGetResponseOrderSnListGiftListResponseInterface[];
 }
 
 /**
@@ -695,7 +685,7 @@ export interface PddOrderNumberListIncrementGetOrderSnIncrementGetResponseOrderS
  * @default
  * @example
  **/
-export interface PddOrderNumberListIncrementGetOrderSnIncrementGetResponseOrderSnListCardInfoListResponseInterface {
+export interface PddCloudDtsOrderListIncrementGetOrderSnIncrementGetResponseOrderSnListCardInfoListResponseInterface {
   /**
    * @description: 卡号
    * @type: string
@@ -716,7 +706,7 @@ export interface PddOrderNumberListIncrementGetOrderSnIncrementGetResponseOrderS
  * @default
  * @example
  **/
-export interface PddOrderNumberListIncrementGetOrderSnIncrementGetResponseOrderSnListStepOrderInfoResponseInterface {
+export interface PddCloudDtsOrderListIncrementGetOrderSnIncrementGetResponseOrderSnListStepOrderInfoResponseInterface {
   /**
    * @description: 分阶段已付定金 单位：元
    * @type: string
@@ -751,14 +741,14 @@ export interface PddOrderNumberListIncrementGetOrderSnIncrementGetResponseOrderS
  * @default
  * @example
  **/
-export interface PddOrderNumberListIncrementGetOrderSnIncrementGetResponseOrderSnListOrderDepotInfoResponseInterface {
+export interface PddCloudDtsOrderListIncrementGetOrderSnIncrementGetResponseOrderSnListOrderDepotInfoResponseInterface {
   /**
    * @description: 子货品列表（组合货品才会有子货品信息）
-   * @type: PddOrderNumberListIncrementGetOrderSnIncrementGetResponseOrderSnListOrderDepotInfoWareSubInfoListResponseInterface[]
+   * @type: PddCloudDtsOrderListIncrementGetOrderSnIncrementGetResponseOrderSnListOrderDepotInfoWareSubInfoListResponseInterface[]
    * @default:
    *
    **/
-  ware_sub_info_list: PddOrderNumberListIncrementGetOrderSnIncrementGetResponseOrderSnListOrderDepotInfoWareSubInfoListResponseInterface[];
+  ware_sub_info_list: PddCloudDtsOrderListIncrementGetOrderSnIncrementGetResponseOrderSnListOrderDepotInfoWareSubInfoListResponseInterface[];
 
   /**
    * @description: 货品编码
@@ -782,7 +772,7 @@ export interface PddOrderNumberListIncrementGetOrderSnIncrementGetResponseOrderS
   ware_name: string;
 
   /**
-   * @description: 货品id
+   * @description: 货品ID
    * @type: string
    * @default:
    **/
@@ -811,10 +801,10 @@ export interface PddOrderNumberListIncrementGetOrderSnIncrementGetResponseOrderS
 
   /**
    * @description: 仓库类型，1：自有仓 2：订阅仓 两者都不是则传空
-   * @type: number
+   * @type: string
    * @default:
    **/
-  depot_type: number;
+  depot_type: string;
 }
 
 /**
@@ -822,7 +812,7 @@ export interface PddOrderNumberListIncrementGetOrderSnIncrementGetResponseOrderS
  * @default
  * @example
  **/
-export interface PddOrderNumberListIncrementGetOrderSnIncrementGetResponseOrderSnListOrderDepotInfoWareSubInfoListResponseInterface {
+export interface PddCloudDtsOrderListIncrementGetOrderSnIncrementGetResponseOrderSnListOrderDepotInfoWareSubInfoListResponseInterface {
   /**
    * @description: 子货品编码
    * @type: string
@@ -857,7 +847,7 @@ export interface PddOrderNumberListIncrementGetOrderSnIncrementGetResponseOrderS
  * @default
  * @example
  **/
-export interface PddOrderNumberListIncrementGetOrderSnIncrementGetResponseOrderSnListItemListResponseInterface {
+export interface PddCloudDtsOrderListIncrementGetOrderSnIncrementGetResponseOrderSnListItemListResponseInterface {
   /**
    * @description: 商品编号
    * @type: string | number
@@ -923,32 +913,11 @@ export interface PddOrderNumberListIncrementGetOrderSnIncrementGetResponseOrderS
 }
 
 /**
- * @description 订单标签列表，no_trace_delivery=无痕发货，only_support_replace=只换不修，duoduo_wholesale=多多批发，return_freight_payer=退货包运费，free_sf=顺丰包邮，support_nationwide_warranty=全国联保，self_contained=门店自提，delivery_one_day=当日发货，oversea_tracing=全球购溯源
- * @default
- * @example
- **/
-export interface PddOrderNumberListIncrementGetOrderSnIncrementGetResponseOrderSnListOrderTagListResponseInterface {
-  /**
-   * @description: 标签名称
-   * @type: string
-   * @default:
-   **/
-  name: string;
-
-  /**
-   * @description: 是否有标签：0=无标签，1=有标签
-   * @type: number
-   * @default:
-   **/
-  value: number;
-}
-
-/**
  * @description 赠品列表
  * @default
  * @example
  **/
-export interface PddOrderNumberListIncrementGetOrderSnIncrementGetResponseOrderSnListGiftListResponseInterface {
+export interface PddCloudDtsOrderListIncrementGetOrderSnIncrementGetResponseOrderSnListGiftListResponseInterface {
   /**
    * @description: 赠品数量
    * @type: number
@@ -1011,25 +980,4 @@ export interface PddOrderNumberListIncrementGetOrderSnIncrementGetResponseOrderS
    * @default:
    **/
   sku_id: string | number;
-}
-
-/**
- * @description 订单多包裹发货时使用的其他发货快递信息
- * @default
- * @example
- **/
-export interface PddOrderNumberListIncrementGetOrderSnIncrementGetResponseOrderSnListExtraDeliveryListResponseInterface {
-  /**
-   * @description: 快递运单号
-   * @type: string
-   * @default:
-   **/
-  tracking_number: string;
-
-  /**
-   * @description: 快递公司编号
-   * @type: number
-   * @default:
-   **/
-  logistics_id: number;
 }

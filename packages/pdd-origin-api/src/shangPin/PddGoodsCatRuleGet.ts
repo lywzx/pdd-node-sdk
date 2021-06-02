@@ -415,7 +415,7 @@ export interface PddGoodsCatRuleGetCatRuleGetResponseGoodsServiceRuleGoodsServic
    * @type: number
    * @default:
    **/
-  lack_of_weight_claimRule: number;
+  lack_of_weight_claim_rule: number;
 
   /**
    * @description: 全国联保规则：0不可选、1可选
