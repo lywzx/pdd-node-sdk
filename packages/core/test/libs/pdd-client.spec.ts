@@ -28,6 +28,10 @@ import {
   replacePddLog,
   replaceRequestWithRetry,
 } from './pdd-client-helper';
+import chaiAsPromised from 'chai-as-promised';
+import { use } from 'chai';
+
+use(chaiAsPromised);
 
 describe('pdd-client test util', function () {
   let pddClient: PddClient;
@@ -148,15 +152,9 @@ describe('pdd-client test util', function () {
           .onCall(1)
           .rejects(new Error(errMsg))
       );
-      try {
-        await pddClient.requestWithRetry({ type: PDD_GOODS_CATS_GET, a: 1 }, 2);
-        restored();
-        throw new Error('unknown error');
-      } catch (e) {
-        restored();
-        expect(e.message).to.be.eq(errMsg);
-      }
+      await expect(pddClient.requestWithRetry({ type: PDD_GOODS_CATS_GET, a: 1 }, 2)).to.be.rejectedWith(Error, errMsg);
       expect(mkRequest.callCount).to.be.eq(2);
+      restored();
     });
 
     it('test retry with log enabled', async function () {
