@@ -74,11 +74,7 @@ describe('pdd-client test util', function () {
 
   describe('#request methods', function () {
     it('without type should throw exception ', async function () {
-      try {
-        await pddClient.request({ a: 1, b: 2 });
-      } catch (e) {
-        expect(e).to.be.instanceOf(PddRequestParamsMissingException);
-      }
+      await expect(pddClient.request({ a: 1, b: 2 })).to.be.rejectedWith(PddRequestParamsMissingException);
     });
 
     it('with callback, without type should throw exception ', function (done) {
@@ -116,14 +112,10 @@ describe('pdd-client test util', function () {
       replace(NetworkAdapter, 'post', fkResult);
       replaceGetPddLogClient();
       replacePddLog();
-      try {
-        await pddClient.request({ type: PDD_GOODS_CATS_GET, parent_cat_id: 1, c: { a: 1 } });
-        restored();
-        throw new Error('app');
-      } catch (e) {
-        restored();
-        expect(e.message).to.be.eq('unknown');
-      }
+      await expect(pddClient.request({ type: PDD_GOODS_CATS_GET, parent_cat_id: 1, c: { a: 1 } })).to.be.rejectedWith(
+        'unknown'
+      );
+      restored();
     });
   });
 
@@ -191,13 +183,8 @@ describe('pdd-client test util', function () {
     it('should throw exception when access token required, but clientAuth not exists', async function () {
       replaceDevMode(true);
       PddClient.setPddDefaultCacheOptions({ alwaysWork: true, ttl: 2 });
-      try {
-        await pddClient.execute(PDD_GOODS_DETAIL_GET, {}, {});
-        throw new Error('unknown exception');
-      } catch (e) {
-        restored();
-        expect(e).to.be.instanceOf(PddAccessTokenMissingException);
-      }
+      await expect(pddClient.execute(PDD_GOODS_DETAIL_GET, {}, {})).to.be.rejectedWith(PddAccessTokenMissingException);
+      restored();
     });
 
     it('should throw exception when access token required, clientAuth exists but clientOptions not exists', async function () {
@@ -206,15 +193,12 @@ describe('pdd-client test util', function () {
       replace(pddClient, 'pddClientAuth', {
         getAccessTokenFromCache: pddClientAuth,
       } as any);
-      try {
-        await pddClient.execute(PDD_GOODS_DETAIL_GET, {});
-        throw new Error('unknown exception');
-      } catch (e) {
-        restored();
-        pddClient.pddClientAuth = undefined;
-        expect(e).to.be.instanceOf(PddAccessTokenMissingException);
-        expect(e.message).to.be.eq('params access options is required!');
-      }
+
+      await expect(pddClient.execute(PDD_GOODS_DETAIL_GET, {})).to.be.rejectedWith(
+        PddAccessTokenMissingException,
+        'params access options is required!'
+      );
+      restored();
       expect(pddClientAuth.callCount).to.be.eq(0);
     });
 
