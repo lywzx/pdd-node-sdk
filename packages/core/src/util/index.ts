@@ -1,6 +1,7 @@
 export * from './date';
 export * from './promise-util';
 export * from './validate';
+export * from './exception.util';
 import {
   PddCollectRootResponseInterface,
   PddCollectShortResponseInterface,

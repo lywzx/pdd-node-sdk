@@ -1,5 +1,5 @@
 import { fake, replace, SinonStub, stub } from 'sinon';
-import { PddClient } from '../../src/libs';
+import { PddClient } from '../../src';
 import * as devUtil from '../../src/util/dev';
 import * as checkTools from '../../src/libs/pdd-api-check.tools';
 import * as debug from '../../src/util/debug';

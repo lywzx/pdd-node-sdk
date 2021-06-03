@@ -1,17 +1,19 @@
 import {
   PddApiLimiterLevel,
   PddApiThrottleAdapter,
-  PddBaseException,
   PddRequestWaitingTimeoutException,
-} from '../../src/index';
+  PddApiThrottle,
+} from '../../src';
 import { expect } from 'chai';
-import { PddApiThrottle } from '../../src/libs';
 import * as util from '../../src/libs/pdd-api-check.tools';
 import { replace, fake, restore } from 'sinon';
 import { times, once } from 'lodash';
 import { PddApiMemoryThrottleAdapter } from '../../src/libs/pdd-api-memory-throttle-adapter';
 import { uniqueId } from 'lodash';
+import chaiAsPromised from 'chai-as-promised';
+import { use } from 'chai';
 
+use(chaiAsPromised);
 /**
  * 生成api的key，保证不重复
  */
@@ -185,17 +187,11 @@ export function testThrottleUtil(adapter: PddApiThrottleAdapter, groupName: stri
           })
         );
         const total = fk.callCount;
-        try {
-          await instance.checkApiThrottle(apiKey, apiAccessToken);
-          restored();
-          throw new Error('unknown error');
-        } catch (e) {
-          const callTotal = fk.callCount;
-          restored();
-          expect(callTotal).to.be.eq(3);
-          expect(e).to.be.instanceOf(PddRequestWaitingTimeoutException);
-          expect(e).to.be.instanceOf(PddBaseException);
-        }
+        await expect(instance.checkApiThrottle(apiKey, apiAccessToken)).to.be.rejectedWith(
+          PddRequestWaitingTimeoutException
+        );
+        restored();
+        expect(fk.callCount).to.be.eq(3);
         expect(total).to.be.eq(2);
       });
     });

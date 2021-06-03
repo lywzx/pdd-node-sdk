@@ -10,7 +10,9 @@
     "lib": ["es6"],
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
-    "downlevelIteration": true
+    "downlevelIteration": true,
+    "incremental": true,
+    "tsBuildInfoFile": ".tsbuildinfo"
   },
   "include": ["packages", "examples", "scripts"],
   "exclude": [

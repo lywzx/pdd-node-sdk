@@ -1,5 +1,5 @@
 import { expect } from 'chai';
-import { PddAccessTokenMissingException, PddBaseException } from '../../src/exceptions';
+import { PddAccessTokenMissingException, PddBaseException } from '../../src';
 
 describe('pdd-access-token-missing-exception test util', function () {
   it('should true when instanceof Error', function () {

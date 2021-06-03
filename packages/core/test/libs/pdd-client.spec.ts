@@ -208,15 +208,12 @@ describe('pdd-client test util', function () {
       replace(pddClient, 'pddClientAuth', {
         getAccessTokenFromCache: pddClientAuth,
       } as any);
-      try {
-        await pddClient.execute(PDD_GOODS_DETAIL_GET, {}, {});
-        throw new Error('unknown exception');
-      } catch (e) {
-        restored();
-        pddClient.pddClientAuth = undefined;
-        expect(e).to.be.instanceOf(PddAccessTokenMissingException);
-        expect(e.message).to.be.eq('cat"t find pdd access token from cache!');
-      }
+      await expect(pddClient.execute(PDD_GOODS_DETAIL_GET, {}, {})).to.be.rejectedWith(
+        PddAccessTokenMissingException,
+        'cat"t find pdd access token from cache!'
+      );
+      restored();
+      pddClient.pddClientAuth = undefined;
       expect(pddClientAuth.callCount).to.be.eq(1);
     });
 
@@ -304,14 +301,10 @@ describe('pdd-client test util', function () {
     });
 
     it('should get error when access is empty', async function () {
-      let err;
-      try {
-        await pddClient.generate({ userId: 1, shopId: 1 });
-      } catch (e) {
-        err = e;
-      }
-      expect(err).to.be.instanceOf(PddBaseException);
-      expect(err.message).to.be.include('pdd client auth is undefined!');
+      await expect(pddClient.generate({ userId: 1, shopId: 1 })).to.be.rejectedWith(
+        PddBaseException,
+        'refresh access token failed, because pdd client auth is undefined!'
+      );
     });
   });
 
@@ -333,9 +326,7 @@ describe('pdd-client test util', function () {
       PddClient.setDefaultRequestParam(param as any);
       const signStub = stub().throws(new Error('unknonw error'));
       replace(pddClient, 'sign', signStub);
-      try {
-        await pddClient.request({ type: PDD_GOODS_CATS_GET });
-      } catch (e) {}
+      expect(() => pddClient.request({ type: PDD_GOODS_CATS_GET })).to.be.throw(Error, 'unknonw error');
       restored();
       expect(signStub.callCount).to.be.eq(1);
       expect(pick(signStub.lastCall.args[0], keys(param))).to.be.eqls(param);

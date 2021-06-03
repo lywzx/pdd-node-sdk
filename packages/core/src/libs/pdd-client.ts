@@ -91,7 +91,7 @@ export class PddClient<T extends Record<string, any> = any> {
    * 中间数据
    * @private
    */
-  private _wrapRequestWithRetry?: any;
+  private _wrapRequestWithRetry?: (err?: any) => any;
 
   constructor(
     public options: PddClientOptionsInterface,
@@ -673,7 +673,10 @@ export class PddClient<T extends Record<string, any> = any> {
         throw new PddBaseException('if you want refresh access token, you should pass access token or params');
       }*/
       if (!this.pddClientAuth) {
-        throw new PddBaseException('refresh access token failed, because pdd client auth is undefined!');
+        return promiseToCallback(
+          Promise.reject(new PddBaseException('refresh access token failed, because pdd client auth is undefined!')),
+          cbk as AsyncResultCallbackInterface<PddAccessTokenResponseInterface, never>
+        );
       }
       paramsPromise = this.pddClientAuth.getAccessTokenFromCache(access as T).then((result) => {
         if (result) {
