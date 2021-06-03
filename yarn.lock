@@ -1441,6 +1441,18 @@
   dependencies:
     magic-string "^0.25.0"
 
+"@types/chai-as-promised@^7.1.3":
+  version "7.1.4"
+  resolved "https://registry.nlark.com/@types/chai-as-promised/download/@types/chai-as-promised-7.1.4.tgz?cache=0&sync_timestamp=1621240967585&other_urls=https%3A%2F%2Fregistry.nlark.com%2F%40types%2Fchai-as-promised%2Fdownload%2F%40types%2Fchai-as-promised-7.1.4.tgz#caf64e76fb056b8c8ced4b761ed499272b737601"
+  integrity sha1-yvZOdvsFa4yM7Ut2HtSZJytzdgE=
+  dependencies:
+    "@types/chai" "*"
+
+"@types/chai@*":
+  version "4.2.18"
+  resolved "https://registry.nlark.com/@types/chai/download/@types/chai-4.2.18.tgz?cache=0&sync_timestamp=1621240659562&other_urls=https%3A%2F%2Fregistry.nlark.com%2F%40types%2Fchai%2Fdownload%2F%40types%2Fchai-4.2.18.tgz#0c8e298dbff8205e2266606c1ea5fbdba29b46e4"
+  integrity sha1-DI4pjb/4IF4iZmBsHqX726KbRuQ=
+
 "@types/chai@^4.2.11":
   version "4.2.12"
   resolved "https://registry.npm.taobao.org/@types/chai/download/@types/chai-4.2.12.tgz#6160ae454cd89dae05adc3bb97997f488b608201"
@@ -2212,6 +2224,13 @@ caseless@~0.12.0:
   version "0.12.0"
   resolved "https://registry.npm.taobao.org/caseless/download/caseless-0.12.0.tgz#1b681c21ff84033c826543090689420d187151dc"
   integrity sha1-G2gcIf+EAzyCZUMJBolCDRhxUdw=
+
+chai-as-promised@^7.1.1:
+  version "7.1.1"
+  resolved "https://registry.npm.taobao.org/chai-as-promised/download/chai-as-promised-7.1.1.tgz#08645d825deb8696ee61725dbf590c012eb00ca0"
+  integrity sha1-CGRdgl3rhpbuYXJdv1kMAS6wDKA=
+  dependencies:
+    check-error "^1.0.2"
 
 chai@^4.2.0:
   version "4.2.0"

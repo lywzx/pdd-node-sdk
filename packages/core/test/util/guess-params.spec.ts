@@ -1,4 +1,4 @@
-import { defaultRetryOptions } from '../../src/libs';
+import { defaultRetryOptions } from '../../src';
 import {
   guessPddClientCachedParams,
   guessPddClientExecuteParams,

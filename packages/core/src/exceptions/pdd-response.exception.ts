@@ -1,5 +1,7 @@
 import get from 'lodash/get';
 import { PddBaseException } from './pdd-base.exception';
+import { bindErrorConstructor } from '../util';
+import inRange from 'lodash/inRange';
 
 /**
  * 拼多多后台响应错误
@@ -16,11 +18,7 @@ export class PddResponseException extends PddBaseException {
 
   constructor(public errObj: PddErrorResponse) {
     super(JSON.stringify(errObj));
-    Object.setPrototypeOf(this, PddResponseException.prototype);
-    if (Error.captureStackTrace) {
-      Error.captureStackTrace(this, this.constructor);
-    }
-    this.name = PddResponseException.name;
+    bindErrorConstructor(this, PddResponseException);
   }
 
   /**
@@ -33,7 +31,11 @@ export class PddResponseException extends PddBaseException {
      * 52103 服务暂时不可用，请稍后重试
      * 70031 调用过于频繁，请调整调用频率
      */
-    return [52101, 52102, 52103, 70031].includes(this.getErrorCode());
+    const errorCode = this.getErrorCode();
+    if (inRange(errorCode, 10000, 40000) || inRange(errorCode, 50000, 52004)) {
+      return false;
+    }
+    return true;
   }
 
   /**
