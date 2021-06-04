@@ -1,3 +1,4 @@
+import { MemoizedFunction } from 'lodash';
 import memoize from 'lodash/memoize';
 
 /**
@@ -12,5 +13,9 @@ export const isDevModel: () => boolean = memoize(function isDevModel(): boolean 
  */
 let enableDev = false;
 export function toggleDev(enable = false) {
+  const dev = (isDevModel as any) as MemoizedFunction;
+  if (dev.cache.clear) {
+    dev.cache.clear();
+  }
   enableDev = enable;
 }

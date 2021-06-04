@@ -1,4 +1,4 @@
-import { Injectable, Logger, OnModuleInit } from '@nestjs/common';
+import { Injectable, OnModuleInit } from '@nestjs/common';
 import { DiscoveryService, MetadataScanner, ModuleRef, Reflector } from '@nestjs/core';
 import { InstanceWrapper } from '@nestjs/core/injector/instance-wrapper';
 import { PddClient } from '@pin-duo-duo/core';
@@ -6,8 +6,6 @@ import { PDD_CLIENT_BIND_EVENTS_TOKEN } from '../../constant/constant-decorator'
 
 @Injectable()
 export class PddExplorerService implements OnModuleInit {
-  private readonly logger = new Logger('PddNodeSdk');
-
   /**
    *
    * @protected

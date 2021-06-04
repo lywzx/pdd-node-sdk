@@ -123,7 +123,7 @@ describe('guess params test util', function () {
 
   describe('#guessPddClientGenerateParams', function () {
     it('when code is string, will be transformer to object', function () {
-      expect(guessPddClientGenerateParams('code')).to.be.eql([{ code: 'code' }, undefined, undefined]);
+      expect(guessPddClientGenerateParams('code')).to.be.eql([{ code: 'code' }, undefined, undefined, undefined]);
     });
 
     it('will guess param is correct', function () {
@@ -137,18 +137,18 @@ describe('guess params test util', function () {
       ];
 
       for (const param of params) {
-        expect(guessPddClientGenerateParams(param)).to.be.eql([param, undefined, undefined]);
+        expect(guessPddClientGenerateParams(param)).to.be.eql([param, undefined, undefined, undefined]);
       }
 
       for (const param of params) {
-        expect(guessPddClientGenerateParams(param, callback)).to.be.eql([param, undefined, callback]);
+        expect(guessPddClientGenerateParams(param, callback)).to.be.eql([param, undefined, undefined, callback]);
       }
     });
 
     it('will guess param as user access', function () {
       const access = { a: 1, b: 2 };
-      expect(guessPddClientGenerateParams(access)).to.be.eql([undefined, access, undefined]);
-      expect(guessPddClientGenerateParams(access, callback)).to.be.eql([undefined, access, callback]);
+      expect(guessPddClientGenerateParams(access)).to.be.eql([undefined, access, undefined, undefined]);
+      expect(guessPddClientGenerateParams(access, callback)).to.be.eql([undefined, access, undefined, callback]);
     });
 
     it('will guess all param ok', function () {
@@ -161,17 +161,39 @@ describe('guess params test util', function () {
         },
       ];
       const access = { a: 1, b: 2 };
-      for (const param of params) {
-        expect(guessPddClientGenerateParams<{ a: number; b: number }>(param, access)).to.be.eql([
-          param,
-          access,
-          undefined,
-        ]);
-        expect(guessPddClientGenerateParams<{ a: number; b: number }>(param, access, callback)).to.be.eql([
-          param,
-          access,
-          callback,
-        ]);
+      const retry = 2;
+
+      const validate = [
+        [
+          [params[0], access],
+          [params[0], access, undefined, undefined],
+        ],
+        [
+          [params[1], access],
+          [params[1], access, undefined, undefined],
+        ],
+        [
+          [params[0], retry],
+          [params[0], undefined, retry, undefined],
+        ],
+        [
+          [params[0], access, retry],
+          [params[0], access, retry, undefined],
+        ],
+        [
+          [params[0], retry, callback],
+          [params[0], undefined, retry, callback],
+        ],
+        [
+          [params[0], access, retry, callback],
+          [params[0], access, retry, callback],
+        ],
+      ];
+
+      for (const [val, target] of validate) {
+        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+        // @ts-ignore
+        expect(guessPddClientGenerateParams<{ a: number; b: number }>(...val)).to.be.eql(target);
       }
     });
   });

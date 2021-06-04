@@ -1,5 +1,11 @@
 import { ModuleMetadata, Provider, Type } from '@nestjs/common';
-import { PddClientOptionsInterface, PddApiCacheAbstract, PddClientAccessAuth, PddApiThrottle } from '@pin-duo-duo/core';
+import {
+  PddClientOptionsInterface,
+  PddApiCacheAbstract,
+  PddClientAccessAuth,
+  PddApiThrottle,
+  RetryOptionsInterface,
+} from '@pin-duo-duo/core';
 
 /**
  * 拼多多后台客户端配置
@@ -17,6 +23,15 @@ export interface NestJsPddClientOptions<T extends Record<string, any> = any> ext
    * 拼多多模块缓存功能
    */
   apiCached?: PddApiCacheAbstract;
+  /**
+   * api重试配置
+   */
+  retryOptions?: RetryOptionsInterface;
+  /**
+   * 启用开发模式
+   * 将会打印pdd-client中内部的信息
+   */
+  enableDev?: boolean;
 }
 
 /**

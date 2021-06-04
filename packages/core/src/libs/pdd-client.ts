@@ -647,9 +647,23 @@ export class PddClient<T extends Record<string, any> = any> {
    * @param callback
    */
   public generate(code: T | PddClientGenerateType | string): Promise<PddAccessTokenResponseInterface>;
-  public generate(code: PddClientGenerateType | string, accessOptions: T): Promise<PddAccessTokenResponseInterface>;
   public generate(
     code: T | PddClientGenerateType | string,
+    retryOptions: RetryOptionsType
+  ): Promise<PddAccessTokenResponseInterface>;
+  public generate(code: PddClientGenerateType | string, accessOptions: T): Promise<PddAccessTokenResponseInterface>;
+  public generate(
+    code: PddClientGenerateType | string,
+    accessOptions: T,
+    retryOptions: RetryOptionsType
+  ): Promise<PddAccessTokenResponseInterface>;
+  public generate(
+    code: T | PddClientGenerateType | string,
+    callback: AsyncResultCallbackInterface<PddAccessTokenResponseInterface, never>
+  ): void;
+  public generate(
+    code: T | PddClientGenerateType | string,
+    retryOptions: RetryOptionsType,
     callback: AsyncResultCallbackInterface<PddAccessTokenResponseInterface, never>
   ): void;
   public generate(
@@ -658,11 +672,18 @@ export class PddClient<T extends Record<string, any> = any> {
     callback: AsyncResultCallbackInterface<PddAccessTokenResponseInterface, never>
   ): void;
   public generate(
+    code: PddClientGenerateType | string,
+    accessOptions: T,
+    retryOptions: RetryOptionsType,
+    callback: AsyncResultCallbackInterface<PddAccessTokenResponseInterface, never>
+  ): void;
+  public generate(
     code: T | PddClientGenerateType | string,
-    accessOptions?: T | AsyncResultCallbackInterface<PddAccessTokenResponseInterface, never>,
+    accessOptions?: T | RetryOptionsType | AsyncResultCallbackInterface<PddAccessTokenResponseInterface, never>,
+    retryOptions?: RetryOptionsType | AsyncResultCallbackInterface<PddAccessTokenResponseInterface, never>,
     callback?: AsyncResultCallbackInterface<PddAccessTokenResponseInterface, never>
   ): Promise<PddAccessTokenResponseInterface> | void {
-    const [params, access, cbk] = guessPddClientGenerateParams<T>(code, accessOptions, callback);
+    const [params, access, retry, cbk] = guessPddClientGenerateParams<T>(code, accessOptions, retryOptions, callback);
 
     let paramsPromise: Promise<PddPopAuthTokenRefreshRequestInterface | PddPopAuthTokenCreateRequestInterface>;
 
@@ -691,13 +712,17 @@ export class PddClient<T extends Record<string, any> = any> {
     const result = paramsPromise
       .then<PddAccessTokenResponseInterface>((param) => {
         const type = 'code' in param ? PDD_POP_AUTH_TOKEN_CREATE : PDD_POP_AUTH_TOKEN_REFRESH;
-        return this.request<
+
+        return this.requestWithRetry<
           PddClientGenerateType,
           PddPopAuthTokenCreateResponseInterface | PddPopAuthTokenRefreshResponseInterface
-        >({
-          type,
-          ...param,
-        }).then<PddAccessTokenResponseInterface>((result) => {
+        >(
+          {
+            type,
+            ...param,
+          },
+          retry
+        ).then<PddAccessTokenResponseInterface>((result) => {
           return getShortResponse(result, type);
         });
       })
