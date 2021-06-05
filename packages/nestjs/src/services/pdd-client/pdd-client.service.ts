@@ -13,11 +13,7 @@ import fromPairs from 'lodash/fromPairs';
 import isObject from 'lodash/isObject';
 import includes from 'lodash/includes';
 import { PddExplorerService } from '../pdd-explorer/pdd-explorer.service';
-import omit from 'lodash/omit';
-import some from 'lodash/some';
 import debug from 'debug';
-import each from 'lodash/each';
-import isString from 'lodash/isString';
 
 @Injectable()
 export class PddClientService implements OnModuleInit {
@@ -44,13 +40,7 @@ export class PddClientService implements OnModuleInit {
    * @private
    */
   private toggleClientDev() {
-    const allOptions = omit(this.options, ['defaultChannel']);
-
-    if (
-      some(allOptions, (value) => {
-        return !!(value as NestJsPddClientOptions).enableDev;
-      })
-    ) {
+    if (this.options.enableDev) {
       toggleDev(true);
       // 打印所有拼多多内部请求日志信息
       debug.enable('pdd:*');
@@ -62,11 +52,10 @@ export class PddClientService implements OnModuleInit {
    * @private
    */
   private initRetryOptions() {
-    each(this.options, function (value) {
-      if (!isString(value) && value.retryOptions) {
-        PddClient.setRetryOptions(value.retryOptions);
-      }
-    });
+    const retryOptions = this.options.retryOptions;
+    if (retryOptions) {
+      PddClient.setRetryOptions(retryOptions);
+    }
   }
 
   /**

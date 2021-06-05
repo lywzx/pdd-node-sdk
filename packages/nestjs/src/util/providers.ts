@@ -5,6 +5,7 @@ import { NestJsPddClientOptions, NestJsPddModuleAsyncOptionsInterface, NestJsPdd
 import omit from 'lodash/omit';
 import map from 'lodash/map';
 import flatten from 'lodash/flatten';
+import pick from 'lodash/pick';
 
 /**
  * 是否单模块配置
@@ -27,6 +28,7 @@ export function transformOptionsToMultiple(options: NestJsPddModuleOptions): Nes
   if (isSingleModel(options)) {
     return {
       defaultChannel: NEST_PDD_MODULE_PDD_CLIENTS_DEFAULT,
+      ...pick(options, ['retryOptions', 'enableDev']),
       [NEST_PDD_MODULE_PDD_CLIENTS_DEFAULT]: options,
     };
   }
