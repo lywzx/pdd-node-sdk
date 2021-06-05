@@ -2,6 +2,7 @@ import {
   PDD_POP_AUTH_TOKEN_CREATE,
   PDD_POP_AUTH_TOKEN_REFRESH,
   PddCollectRequestInterface,
+  PddCollectRootResponseInterface,
   PddCollectShortResponseInterface,
   PddCommonRequestInterface,
   PddPopAuthTokenCreateRequestInterface,
@@ -321,106 +322,73 @@ export class PddClient<T extends Record<string, any> = any> {
    * @param [cacheOptions]
    * @param [callback]
    */
-  public execute<
-    K extends keyof PddCollectRequestInterface,
-    Req = PddCollectRequestInterface[K],
-    Res = PddCollectShortResponseInterface[K]
-  >(type: K, params: Req & PddCommonRequestExcludeSomeAttr): Promise<Res>;
-  public execute<
-    K extends keyof PddCollectRequestInterface,
-    Req = PddCollectRequestInterface[K],
-    Res = PddCollectShortResponseInterface[K]
-  >(
+  public execute<K extends keyof PddCollectRequestInterface, Res = PddCollectShortResponseInterface[K]>(
     type: K,
-    params: Req & PddCommonRequestExcludeSomeAttr,
+    params: PddCollectRequestInterface[K] & PddCommonRequestExcludeSomeAttr
+  ): Promise<Res>;
+  public execute<K extends keyof PddCollectRequestInterface, Res = PddCollectShortResponseInterface[K]>(
+    type: K,
+    params: PddCollectRequestInterface[K] & PddCommonRequestExcludeSomeAttr,
     retryOptions: RetryOptionsType | PddCacheOptions
   ): Promise<Res>;
-  public execute<
-    K extends keyof PddCollectRequestInterface,
-    Req = PddCollectRequestInterface[K],
-    Res = PddCollectShortResponseInterface[K]
-  >(
+  public execute<K extends keyof PddCollectRequestInterface, Res = PddCollectShortResponseInterface[K]>(
     type: K,
-    params: Req & PddCommonRequestExcludeSomeAttr,
+    params: PddCollectRequestInterface[K] & PddCommonRequestExcludeSomeAttr,
     retryOptions: RetryOptionsType,
     cacheOptions: PddCacheOptions
   ): Promise<Res>;
-  public execute<
-    K extends keyof PddCollectRequestInterface,
-    Req = PddCollectRequestInterface[K] & PddCommonRequestExcludeSomeAttr,
-    Res = PddCollectShortResponseInterface[K]
-  >(type: K, params: Req & PddCommonRequestExcludeSomeAttr, accessOptions: T): Promise<Res>;
-  public execute<
-    K extends keyof PddCollectRequestInterface,
-    Req = PddCollectRequestInterface[K] & PddCommonRequestExcludeSomeAttr,
-    Res = PddCollectShortResponseInterface[K]
-  >(
+  public execute<K extends keyof PddCollectRequestInterface, Res = PddCollectShortResponseInterface[K]>(
     type: K,
-    params: Req & PddCommonRequestExcludeSomeAttr,
+    params: PddCollectRequestInterface[K] & PddCommonRequestExcludeSomeAttr,
+    accessOptions: T
+  ): Promise<Res>;
+  public execute<K extends keyof PddCollectRequestInterface, Res = PddCollectShortResponseInterface[K]>(
+    type: K,
+    params: PddCollectRequestInterface[K] & PddCommonRequestExcludeSomeAttr,
     accessOptions: T,
     retryOptions: RetryOptionsType | PddCacheOptions
   ): Promise<Res>;
-  public execute<
-    K extends keyof PddCollectRequestInterface,
-    Req = PddCollectRequestInterface[K] & PddCommonRequestExcludeSomeAttr,
-    Res = PddCollectShortResponseInterface[K]
-  >(type: K, params: Req & PddCommonRequestExcludeSomeAttr, accessOptions: T): Promise<Res>;
-  public execute<
-    K extends keyof PddCollectRequestInterface,
-    Req = PddCollectRequestInterface[K] & PddCommonRequestExcludeSomeAttr,
-    Res = PddCollectShortResponseInterface[K]
-  >(
+  public execute<K extends keyof PddCollectRequestInterface, Res = PddCollectShortResponseInterface[K]>(
     type: K,
-    params: Req & PddCommonRequestExcludeSomeAttr,
+    params: PddCollectRequestInterface[K] & PddCommonRequestExcludeSomeAttr,
+    accessOptions: T
+  ): Promise<Res>;
+  public execute<K extends keyof PddCollectRequestInterface, Res = PddCollectShortResponseInterface[K]>(
+    type: K,
+    params: PddCollectRequestInterface[K] & PddCommonRequestExcludeSomeAttr,
     accessOptions: T,
     retryOptions: RetryOptionsType,
     cacheOptions: PddCacheOptions
   ): Promise<Res>;
-  public execute<
-    K extends keyof PddCollectRequestInterface,
-    Req = PddCollectRequestInterface[K],
-    Res = PddCollectShortResponseInterface[K]
-  >(type: K, params: Req & PddCommonRequestExcludeSomeAttr, callback: AsyncResultCallbackInterface<Res, never>): void;
-  public execute<
-    K extends keyof PddCollectRequestInterface,
-    Req = PddCollectRequestInterface[K],
-    Res = PddCollectShortResponseInterface[K]
-  >(
+  public execute<K extends keyof PddCollectRequestInterface, Res = PddCollectShortResponseInterface[K]>(
     type: K,
-    params: Req & PddCommonRequestExcludeSomeAttr,
+    params: PddCollectRequestInterface[K] & PddCommonRequestExcludeSomeAttr,
+    callback: AsyncResultCallbackInterface<Res, never>
+  ): void;
+  public execute<K extends keyof PddCollectRequestInterface, Res = PddCollectShortResponseInterface[K]>(
+    type: K,
+    params: PddCollectRequestInterface[K] & PddCommonRequestExcludeSomeAttr,
     accessOptions: T | RetryOptionsType | PddCacheOptions,
     callback: AsyncResultCallbackInterface<Res, never>
   ): void;
-  public execute<
-    K extends keyof PddCollectRequestInterface,
-    Req = PddCollectRequestInterface[K],
-    Res = PddCollectShortResponseInterface[K]
-  >(
+  public execute<K extends keyof PddCollectRequestInterface, Res = PddCollectShortResponseInterface[K]>(
     type: K,
-    params: Req & PddCommonRequestExcludeSomeAttr,
+    params: PddCollectRequestInterface[K] & PddCommonRequestExcludeSomeAttr,
     accessOptions: T,
     retryOptions: RetryOptionsType | PddCacheOptions,
     callback: AsyncResultCallbackInterface<Res, never>
   ): void;
-  public execute<
-    K extends keyof PddCollectRequestInterface,
-    Req = PddCollectRequestInterface[K],
-    Res = PddCollectShortResponseInterface[K]
-  >(
+  public execute<K extends keyof PddCollectRequestInterface, Res = PddCollectShortResponseInterface[K]>(
     type: K,
-    params: Req & PddCommonRequestExcludeSomeAttr,
+    params: PddCollectRequestInterface[K] & PddCommonRequestExcludeSomeAttr,
     accessOptions: T,
     retryOptions: RetryOptionsType,
     cacheOptions: PddCacheOptions,
     callback: AsyncResultCallbackInterface<Res, never>
   ): void;
-  public execute<
-    K extends keyof PddCollectRequestInterface,
-    Req = PddCollectRequestInterface[K],
-    Res = PddCollectShortResponseInterface[K]
-  >(
+  public execute<K extends keyof PddCollectRequestInterface, Res = PddCollectShortResponseInterface[K]>(
     type: K,
-    params: Req & PddCommonRequestExcludeSomeAttr,
+    params: PddCollectRequestInterface[K] & PddCommonRequestExcludeSomeAttr,
     accessOptions?: T | RetryOptionsType | PddCacheOptions | AsyncResultCallbackInterface<Res, never>,
     retryOptions?: RetryOptionsType | PddCacheOptions | AsyncResultCallbackInterface<Res, never>,
     cacheOptions?: PddCacheOptions | AsyncResultCallbackInterface<Res, never>,
@@ -446,7 +414,7 @@ export class PddClient<T extends Record<string, any> = any> {
 
     const runningFn = () => {
       // 这里需要从access token 中获取数据
-      const nParams: Req & RequestParamsTypeMix = extend({}, params, { type });
+      const nParams = extend({}, params, { type }) as PddCollectRequestInterface[K] & RequestParamsTypeMix;
       let accessTokenInfo: PddAccessTokenResponseInterface | null | undefined;
       let result = Promise.resolve(nParams);
       if (needAccessToken) {
@@ -481,7 +449,7 @@ export class PddClient<T extends Record<string, any> = any> {
           result = Promise.reject(new PddAccessTokenMissingException('can"t find pdd access token from params'));
         }
       }
-      return result.then((params: Req & PddCommonRequestExcludeSomeAttr) => {
+      return result.then((params) => {
         // 自动维护access token信息
         const pddClientAuth = this.pddClientAuth as
           | undefined
@@ -541,12 +509,11 @@ export class PddClient<T extends Record<string, any> = any> {
           };
         }
 
-        return this.requestWithRetry<Req & Omit<PddCommonRequestInterface, 'sign' | 'timestamp' | 'client_id'>, any>(
-          params as Req & Omit<PddCommonRequestInterface, 'sign' | 'timestamp' | 'client_id'>,
-          apiRetryOptions
-        ).then((response) => {
-          return getShortResponse(response, type);
-        });
+        return this.requestWithRetry<any, PddCollectRootResponseInterface[K]>(params, apiRetryOptions).then(
+          (response) => {
+            return getShortResponse(response, type);
+          }
+        );
       }) as Promise<Res>;
     };
 

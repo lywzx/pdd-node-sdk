@@ -183,7 +183,9 @@ describe('pdd-client test util', function () {
     it('should throw exception when access token required, but clientAuth not exists', async function () {
       replaceDevMode(true);
       PddClient.setPddDefaultCacheOptions({ alwaysWork: true, ttl: 2 });
-      await expect(pddClient.execute(PDD_GOODS_DETAIL_GET, {}, {})).to.be.rejectedWith(PddAccessTokenMissingException);
+      await expect(pddClient.execute(PDD_GOODS_DETAIL_GET, {} as any, {})).to.be.rejectedWith(
+        PddAccessTokenMissingException
+      );
       restored();
     });
 
@@ -194,7 +196,7 @@ describe('pdd-client test util', function () {
         getAccessTokenFromCache: pddClientAuth,
       } as any);
 
-      await expect(pddClient.execute(PDD_GOODS_DETAIL_GET, {})).to.be.rejectedWith(
+      await expect(pddClient.execute(PDD_GOODS_DETAIL_GET, { goods_id: '1' })).to.be.rejectedWith(
         PddAccessTokenMissingException,
         'params access options is required!'
       );
@@ -208,7 +210,7 @@ describe('pdd-client test util', function () {
       replace(pddClient, 'pddClientAuth', {
         getAccessTokenFromCache: pddClientAuth,
       } as any);
-      await expect(pddClient.execute(PDD_GOODS_DETAIL_GET, {}, {})).to.be.rejectedWith(
+      await expect(pddClient.execute(PDD_GOODS_DETAIL_GET, {} as any, {})).to.be.rejectedWith(
         PddAccessTokenMissingException,
         'cat"t find pdd access token from cache!'
       );
@@ -240,7 +242,7 @@ describe('pdd-client test util', function () {
       replaceCheckTypeIsNeedAccessToken(false);
       replaceRequestWithRetry(pddClient, resultValue);
       const firstResult = await pddClient.execute(PDD_LOGISTICS_ADDRESS_GET, {});
-      const secondResult = await pddClient.execute(PDD_TICKET_VERIFICATION_NOTIFYCATION, {});
+      const secondResult = await pddClient.execute(PDD_TICKET_VERIFICATION_NOTIFYCATION, {} as any);
       restored();
       expect(firstResult).to.be.equals(resultValue.logistics_address_get_response);
       expect(secondResult).to.be.equals(resultValue);
@@ -256,7 +258,7 @@ describe('pdd-client test util', function () {
       pddClient = new PddClient<any>(pddOptions, undefined, new Cache());
       replaceCheckTypeIsNeedAccessToken(false);
       replaceRequestWithRetry(pddClient, { a: 1 });
-      await pddClient.execute(PDD_TICKET_VERIFICATION_NOTIFYCATION, {}, 0, 0);
+      await pddClient.execute(PDD_TICKET_VERIFICATION_NOTIFYCATION, {} as any, 0, 0);
       restored();
       expect(cachedStub.callCount).to.be.eq(0);
     });
@@ -271,7 +273,7 @@ describe('pdd-client test util', function () {
       pddClient = new PddClient<any>(pddOptions, undefined, new Cache());
       replaceCheckTypeIsNeedAccessToken(false);
       replaceRequestWithRetry(pddClient, { a: 1 });
-      await pddClient.execute(PDD_TICKET_VERIFICATION_NOTIFYCATION, {}, 0, 2);
+      await pddClient.execute(PDD_TICKET_VERIFICATION_NOTIFYCATION, {} as any, 0, 2);
       restored();
       expect(cachedStub.callCount).to.be.eq(1);
     });

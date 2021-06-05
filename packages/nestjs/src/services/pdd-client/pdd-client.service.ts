@@ -72,8 +72,8 @@ export class PddClientService implements OnModuleInit {
           innerKey,
           fromPairs(
             toPairs<any>(this.options)
-              .filter(([k, option]) => {
-                return isObject(option);
+              .filter(([k]) => {
+                return ['retryOptions', 'enableDev', 'defaultChannel'].indexOf(k) === -1;
               })
               .concat([[NEST_PDD_MODULE_PDD_CLIENTS_DEFAULT, undefined]])
               .map(([k]) => {

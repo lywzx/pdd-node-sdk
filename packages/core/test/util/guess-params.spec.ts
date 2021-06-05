@@ -40,8 +40,31 @@ describe('guess params test util', function () {
     });
 
     it('retry and cache options guess', function () {
-      expect(guessPddClientExecuteParams([3, 2, undefined, undefined])).to.be.eqls([undefined, 3, 2, undefined]);
-      expect(guessPddClientExecuteParams([{}, 2, 3, undefined])).to.be.eqls([{}, 2, 3, undefined]);
+      const checkList = [
+        [
+          [{}, null, 3, undefined],
+          [{}, null, 3, undefined],
+        ],
+        [
+          [3, 2, undefined, undefined],
+          [undefined, 3, 2, undefined],
+        ],
+        [
+          [{}, 2, 3, undefined],
+          [{}, 2, 3, undefined],
+        ],
+        [
+          [{}, { ttl: 2 }, null, undefined],
+          [{}, undefined, { ttl: 2 }, undefined],
+        ],
+      ];
+
+      for (const [key, result] of checkList) {
+        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+        // @ts-ignore
+        const res = guessPddClientExecuteParams(key);
+        expect(res).to.be.eqls(result);
+      }
     });
   });
 
