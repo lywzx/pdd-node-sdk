@@ -29,14 +29,9 @@ export function getPddLogClient() {
  * @param args
  */
 /* istanbul ignore next */
-export function pddLog(formatter: any, color?: string, ...args: any[]) {
+export function pddLog(formatter: any, ...args: any[]) {
   const logClient = getPddLogClient();
   if (logClient) {
-    const lastColor = logClient.color;
-    if (color) {
-      logClient.color = color.toString();
-    }
     logClient(formatter, ...args);
-    logClient.color = lastColor;
   }
 }

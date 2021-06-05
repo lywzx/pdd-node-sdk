@@ -1,6 +1,6 @@
-import { Inject, Injectable } from '@nestjs/common';
+import { Inject, Injectable, OnModuleInit } from '@nestjs/common';
 import { ModuleRef } from '@nestjs/core';
-import { PddClient } from '@pin-duo-duo/core';
+import { PddClient, toggleDev } from '@pin-duo-duo/core';
 import {
   NEST_PDD_MODULE_OPTIONS,
   NEST_PDD_MODULE_PDD_CLIENTS_ALL,
@@ -13,9 +13,10 @@ import fromPairs from 'lodash/fromPairs';
 import isObject from 'lodash/isObject';
 import includes from 'lodash/includes';
 import { PddExplorerService } from '../pdd-explorer/pdd-explorer.service';
+import debug from 'debug';
 
 @Injectable()
-export class PddClientService {
+export class PddClientService implements OnModuleInit {
   /**
    * 获取所有的客户端
    * @protected
@@ -23,10 +24,39 @@ export class PddClientService {
   protected clients = new Map<string | symbol, PddClient | PddClientCollect>();
 
   constructor(
-    @Inject(NEST_PDD_MODULE_OPTIONS) protected options: NestJsPddModuleAsyncOptionsInterface,
-    private moduleRef: ModuleRef,
-    private pddExplorerService: PddExplorerService
+    @Inject(NEST_PDD_MODULE_OPTIONS) protected readonly options: NestJsPddModuleAsyncOptionsInterface,
+    private readonly moduleRef: ModuleRef,
+    private readonly pddExplorerService: PddExplorerService
   ) {}
+
+  onModuleInit() {
+    // 开启调试
+    this.toggleClientDev();
+    this.initRetryOptions();
+  }
+
+  /**
+   * toggle client dev
+   * @private
+   */
+  private toggleClientDev() {
+    if (this.options.enableDev) {
+      toggleDev(true);
+      // 打印所有拼多多内部请求日志信息
+      debug.enable('pdd:*');
+    }
+  }
+
+  /**
+   * init client default retry options
+   * @private
+   */
+  private initRetryOptions() {
+    const retryOptions = this.options.retryOptions;
+    if (retryOptions) {
+      PddClient.setRetryOptions(retryOptions);
+    }
+  }
 
   /**
    * 获取当前客户端
@@ -42,8 +72,8 @@ export class PddClientService {
           innerKey,
           fromPairs(
             toPairs<any>(this.options)
-              .filter(([k, option]) => {
-                return isObject(option);
+              .filter(([k]) => {
+                return ['retryOptions', 'enableDev', 'defaultChannel'].indexOf(k) === -1;
               })
               .concat([[NEST_PDD_MODULE_PDD_CLIENTS_DEFAULT, undefined]])
               .map(([k]) => {

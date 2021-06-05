@@ -44,7 +44,7 @@ export interface PddFinanceBalanceDailyBillUrlGetResponseInterface {
  **/
 export interface PddFinanceBalanceDailyBillUrlGetFinanceBalanceDailyBillUrlGetResponseResponseInterface {
   /**
-   * @description: 下载url
+   * @description: 货款账单下载 URL
    * @type: string
    * @default:
    **/

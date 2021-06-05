@@ -20,13 +20,6 @@ export const PDD_INVOICE_APPLICATION_QUERY_LIMITERS = [
  **/
 export interface PddInvoiceApplicationQueryRequestInterface {
   /**
-   * @description: 申请流水号
-   * @type: string | number
-   * @default:
-   **/
-  application_id?: string | number;
-
-  /**
    * @description: 订单号；订单号和申请时间必填其一
    * @type: string
    * @default:

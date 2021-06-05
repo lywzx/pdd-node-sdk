@@ -15,7 +15,7 @@ export const PDD_DDK_GOODS_SEARCH_LIMITERS = [
  **/
 export interface PddDdkGoodsSearchRequestInterface {
   /**
-   * @description: 活动商品标记数组，例：[4,7]，4-秒杀，7-百亿补贴，10851-千万补贴，31-品牌黑标，10564-精选爆品-官方直推爆款，10584-精选爆品-团长推荐，24-品牌高佣，其他的值请忽略
+   * @description: 活动商品标记数组，例：[4,7]，4-秒杀，7-百亿补贴，10851-千万补贴，10911-一元购商品，10913-招商礼金商品，31-品牌黑标，10564-精选爆品-官方直推爆款，10584-精选爆品-团长推荐，24-品牌高佣，其他的值请忽略
    * @type: number[]
    * @default:
    **/
@@ -133,6 +133,13 @@ export interface PddDdkGoodsSearchRequestInterface {
    * @default:
    **/
   sort_type?: number;
+
+  /**
+   * @description: 是否使用个性化推荐，true表示使用，false表示不使用，默认true。
+   * @type: boolean
+   * @default:
+   **/
+  use_customized?: boolean;
 
   /**
    * @description: 是否只返回优惠券的商品，false返回所有商品，true只返回有优惠券的商品
@@ -625,6 +632,13 @@ export interface PddDdkGoodsSearchGoodsSearchResponseGoodsListResponseInterface 
    * @default:
    **/
   subsidy_amount: number;
+
+  /**
+   * @description: 千万补贴给渠道的收入补贴，不允许直接给下级代理展示，单位为分
+   * @type: number
+   * @default:
+   **/
+  subsidy_duo_amount_ten_million: number;
 
   /**
    * @description: 优惠标签列表，包括："X元券","比全网低X元","服务费","精选素材","近30天低价","同款低价","同款好评","同款热销","旗舰店","一降到底","招商优选","商家优选","好价再降X元","全站销量XX","实时热销榜第X名","实时好评榜第X名","额外补X元"等

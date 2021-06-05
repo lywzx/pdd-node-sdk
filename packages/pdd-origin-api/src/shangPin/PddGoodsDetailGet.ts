@@ -403,6 +403,13 @@ export interface PddGoodsDetailGetGoodsDetailGetResponseResponseInterface {
    * @default:
    **/
   is_group_pre_sale: number;
+
+  /**
+   * @description: 是否sku预售，0：否，1：是
+   * @type: number
+   * @default:
+   **/
+  is_sku_pre_sale: number;
 }
 
 /**
@@ -666,6 +673,13 @@ export interface PddGoodsDetailGetGoodsDetailGetResponseSkuListResponseInterface
    *
    **/
   sku_property_list: PddGoodsDetailGetGoodsDetailGetResponseSkuListSkuPropertyListResponseInterface[];
+
+  /**
+   * @description: sku预售时间，单位秒
+   * @type: number
+   * @default:
+   **/
+  sku_pre_sale_time: number;
 }
 
 /**
