@@ -418,6 +418,20 @@ export interface PddGoodsAddRequestInterface {
    * @default:
    **/
   is_group_pre_sale?: number;
+
+  /**
+   * @description: 是否sku预售，1：是，0：否
+   * @type: number
+   * @default:
+   **/
+  is_sku_pre_sale?: number;
+
+  /**
+   * @description: 是否获取商品发布警告信息，默认为忽略
+   * @type: boolean
+   * @default:
+   **/
+  ignore_edit_warn?: boolean;
 }
 
 /**
@@ -778,6 +792,13 @@ export interface PddGoodsAddSkuListRequestInterface {
    *
    **/
   sku_properties: PddGoodsAddSkuListSkuPropertiesRequestInterface[];
+
+  /**
+   * @description: sku预售时间戳，单位秒
+   * @type: number
+   * @default:
+   **/
+  sku_pre_sale_time?: number;
 }
 
 /**

@@ -465,6 +465,13 @@ export interface PddDdkOauthGoodsDetailGoodsDetailResponseGoodsDetailsResponseIn
   subsidy_amount: number;
 
   /**
+   * @description: 千万补贴给渠道的收入补贴，不允许直接给下级代理展示，单位为分
+   * @type: number
+   * @default:
+   **/
+  subsidy_duo_amount_ten_million: number;
+
+  /**
    * @description: 优惠标签列表，包括："X元券","比全网低X元","服务费","精选素材","近30天低价","同款低价","同款好评","同款热销","旗舰店","一降到底","招商优选","商家优选","好价再降X元","全站销量XX","实时热销榜第X名","实时好评榜第X名","额外补X元"等
    * @type: string[]
    * @default:

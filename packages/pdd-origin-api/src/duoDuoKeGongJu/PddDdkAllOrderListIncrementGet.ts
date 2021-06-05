@@ -360,6 +360,20 @@ export interface PddDdkAllOrderListIncrementGetOrderListGetResponseOrderListResp
   subsidy_amount: number;
 
   /**
+   * @description: 等级补贴给渠道的收入补贴，不允许直接给下级代理展示，单位为分
+   * @type: number
+   * @default:
+   **/
+  subsidy_duo_amount_level: number;
+
+  /**
+   * @description: 千万补贴给渠道的收入补贴，不允许直接给下级代理展示，单位为分
+   * @type: number
+   * @default:
+   **/
+  subsidy_duo_amount_ten_million: number;
+
+  /**
    * @description: 订单补贴类型：0-非补贴订单，1-千万补贴，2-社群补贴
    * @type: number
    * @default:

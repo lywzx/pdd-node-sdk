@@ -6,6 +6,11 @@ export const PDD_LOGISTICS_ADDRESS_GET_LIMITERS = [
     timeRange: 10,
     times: 1200,
   },
+  {
+    limiterLevel: 4,
+    timeRange: 1,
+    times: 1,
+  },
 ];
 
 /**

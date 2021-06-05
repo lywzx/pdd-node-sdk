@@ -131,4 +131,18 @@ export interface PddOpenDecryptBatchOpenDecryptBatchResponseDataDecryptListRespo
    * @default:
    **/
   error_msg: string;
+
+  /**
+   * @description: 虚拟号类型：0-非虚拟号 1-虚拟号
+   * @type: number
+   * @default:
+   **/
+  virtual_number_type: number;
+
+  /**
+   * @description: 虚拟号分机号
+   * @type: string
+   * @default:
+   **/
+  virtual_identify_number: string;
 }

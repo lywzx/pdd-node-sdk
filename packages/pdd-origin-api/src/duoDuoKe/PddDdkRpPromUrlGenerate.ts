@@ -22,7 +22,7 @@ export interface PddDdkRpPromUrlGenerateRequestInterface {
   amount?: string | number;
 
   /**
-   * @description: 营销工具类型，必填：-1-活动列表，0-红包(需申请推广权限)，2–新人红包，3-刮刮卡，5-员工内购，6-购物车，10-生成绑定备案链接，12-砸金蛋；红包推广权限申请流程链接：https://jinbao.pinduoduo.com/qa-system?questionId=289
+   * @description: 营销工具类型，必填：-1-活动列表，0-红包(需申请推广权限)，2–新人红包，3-刮刮卡，5-员工内购，6-购物车，10-生成绑定备案链接，12-砸金蛋，13-一元购；红包推广权限申请流程链接：https://jinbao.pinduoduo.com/qa-system?questionId=289
    * @type: number
    * @default:
    **/
@@ -36,15 +36,15 @@ export interface PddDdkRpPromUrlGenerateRequestInterface {
   custom_parameters?: string;
 
   /**
-   * @description: 转盘自定义参数
-   * @type: PddDdkRpPromUrlGenerateDiyLotteryParamRequestInterface
+   * @description: 一元购自定义参数，json格式，例如:{"goods_sign":"Y9b2_0uSWMFPGSaVwvfZAlm_y2ADLWZl_JQ7UYaS80K"}
+   * @type: PddDdkRpPromUrlGenerateDiyOneYuanParamRequestInterface
    * @default:
    *
    **/
-  diy_lottery_param?: PddDdkRpPromUrlGenerateDiyLotteryParamRequestInterface;
+  diy_one_yuan_param?: PddDdkRpPromUrlGenerateDiyOneYuanParamRequestInterface;
 
   /**
-   * @description: 红包自定义参数
+   * @description: 红包自定义参数，json格式
    * @type: PddDdkRpPromUrlGenerateDiyRedPacketParamRequestInterface
    * @default:
    *
@@ -95,57 +95,21 @@ export interface PddDdkRpPromUrlGenerateRequestInterface {
 }
 
 /**
- * @description 转盘自定义参数
+ * @description 一元购自定义参数，json格式，例如:{"goods_sign":"Y9b2_0uSWMFPGSaVwvfZAlm_y2ADLWZl_JQ7UYaS80K"}
  * @default
  * @example
  **/
-export interface PddDdkRpPromUrlGenerateDiyLotteryParamRequestInterface {
+export interface PddDdkRpPromUrlGenerateDiyOneYuanParamRequestInterface {
   /**
-   * @description: 优先展示类目
-   * @type: number
+   * @description: 商品goodsSign，支持通过goodsSign查询商品。goodsSign是加密后的goodsId, goodsId已下线，请使用goodsSign来替代。使用说明：https://jinbao.pinduoduo.com/qa-system?questionId=252
+   * @type: string
    * @default:
    **/
-  opt_id?: number;
-
-  /**
-   * @description: 自定义价格和商品佣金区间
-   * @type: PddDdkRpPromUrlGenerateDiyLotteryParamRangeItemsRequestInterface[]
-   * @default:
-   *
-   **/
-  range_items?: PddDdkRpPromUrlGenerateDiyLotteryParamRangeItemsRequestInterface[];
+  goods_sign?: string;
 }
 
 /**
- * @description 自定义价格和商品佣金区间
- * @default
- * @example
- **/
-export interface PddDdkRpPromUrlGenerateDiyLotteryParamRangeItemsRequestInterface {
-  /**
-   * @description: 区间的开始值
-   * @type: string | number
-   * @default:
-   **/
-  range_from?: string | number;
-
-  /**
-   * @description: range_id为1表示价格（单位分）， range_id为2表示商品佣金（单位千分之几)
-   * @type: number
-   * @default:
-   **/
-  range_id?: number;
-
-  /**
-   * @description: 区间的结束值
-   * @type: string | number
-   * @default:
-   **/
-  range_to?: string | number;
-}
-
-/**
- * @description 红包自定义参数
+ * @description 红包自定义参数，json格式
  * @default
  * @example
  **/

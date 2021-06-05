@@ -178,7 +178,7 @@ export class PddClient<T extends Record<string, any> = any> {
     let requestPromise = this.apiThrottle
       .checkApiThrottle(params.type as string, clientId, ownerId || params.access_token)
       .then(() => {
-        pddLog('start run pdd client request, type: %s, params: %o', undefined, params.type, params);
+        pddLog('start run pdd client request, type: %s, params: %o', params.type, params);
         return this.networkAdapter.post(this.options.endpoint, defaultArgs, axiosOptions || {});
       });
 
@@ -187,7 +187,7 @@ export class PddClient<T extends Record<string, any> = any> {
     if (pddLoggerClient && pddLoggerClient.enabled) {
       requestPromise = requestPromise.then(
         (response) => {
-          pddLog('end run pdd client request, type: %s, result: %o', undefined, params.type, response);
+          pddLog('end run pdd client request, type: %s, result: %o', params.type, response);
           return response;
         },
         (err) => {
@@ -198,7 +198,6 @@ export class PddClient<T extends Record<string, any> = any> {
             err;
           pddLog(
             'end run pdd client request with error, type: %s,  params: %o, error msg: %o',
-            undefined,
             params.type,
             params,
             errObj
@@ -258,7 +257,6 @@ export class PddClient<T extends Record<string, any> = any> {
       if (retryCount) {
         pddLog(
           'start retry pdd client request, retry %d th, max retry count: %d, type: %s, params: %o',
-          undefined,
           tryOptions?.times,
           retryCount,
           params.type,
@@ -274,7 +272,6 @@ export class PddClient<T extends Record<string, any> = any> {
             if (retryCount) {
               pddLog(
                 'success retry pdd client request, retry %d th, type: %s, result: %o',
-                undefined,
                 retryCount + 1,
                 params.type,
                 response
@@ -291,7 +288,6 @@ export class PddClient<T extends Record<string, any> = any> {
                 err;
               pddLog(
                 'error retry pdd client request, retry %d th, type: %s, error msg: %o',
-                undefined,
                 retryCount,
                 params.type,
                 errObj
@@ -405,10 +401,10 @@ export class PddClient<T extends Record<string, any> = any> {
     const needAccessToken = checkTypeIsNeedAccessToken(type);
     if (isDevModel()) {
       if (PddClient.pddDefaultCacheOptions.alwaysWork && cacheOptions !== false && !this.pddApiCache) {
-        pddLog('cache options not work! please assign variable: pddApiCache.', '#ff0000');
+        pddLog('cache options not work! please assign variable: pddApiCache.');
       }
       if (typeof apiAccessOptions !== 'undefined' && needAccessToken && !this.pddClientAuth) {
-        pddLog('access_token will not auto fill. assign variable: pddClientAuth.', '#ffff00');
+        pddLog('access_token will not auto fill. assign variable: pddClientAuth.');
       }
     }
 
@@ -433,7 +429,7 @@ export class PddClient<T extends Record<string, any> = any> {
                   if (scope && scope.length) {
                     // 有些场景，拼多多官方会合并两个应用接口，这里所以不会存在
                     if ((scope as string[]).indexOf(type) === -1) {
-                      pddLog(`shop id:${access.owner_id || 'unknown mall id'} visit ${type} permission deny!`);
+                      pddLog('shop id:%s visit %s permission deny!', access.owner_id || 'unknown mall id', type);
                     }
                   }
 
@@ -545,7 +541,7 @@ export class PddClient<T extends Record<string, any> = any> {
           ret = this.pddApiCache.cached(cachedKey, runningFn, ttl);
         }
       } else {
-        isDevModel() && pddLog('cache won"t work, because you don"t assign `pddApiCache`', 'red');
+        isDevModel() && pddLog('cache won"t work, because you don"t assign `pddApiCache`');
       }
     }
 

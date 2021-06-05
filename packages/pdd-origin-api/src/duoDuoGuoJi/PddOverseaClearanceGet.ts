@@ -65,7 +65,7 @@ export interface PddOverseaClearanceGetClearanceResponseResponseInterface {
   pay_no: string;
 
   /**
-   * @description: 支付方式，枚举值：WEIXIN,ALIPAY
+   * @description: 支付方式，枚举值：WEIXIN,ALIPAY,DUODUOPAY
    * @type: string
    * @default:
    **/

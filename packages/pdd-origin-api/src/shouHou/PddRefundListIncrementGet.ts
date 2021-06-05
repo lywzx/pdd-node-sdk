@@ -60,6 +60,13 @@ export interface PddRefundListIncrementGetRequestInterface {
    * @default:
    **/
   start_updated_at: string | number;
+
+  /**
+   * @description: 订单号。若入参含订单号，则可查询订单下的全部售后单。且入参中除订单号，page，page_size外的其他查询条件不起作用（标记必填的仍旧需要输入）。
+   * @type: string
+   * @default:
+   **/
+  order_sn?: string;
 }
 
 /**
