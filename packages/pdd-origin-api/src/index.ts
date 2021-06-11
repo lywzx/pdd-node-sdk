@@ -1,54 +1,3 @@
-// 物流API
-import {
-  PDD_LOGISTICS_ADDRESS_GET,
-  PDD_LOGISTICS_ADDRESS_GET_RESPONSE_KEY,
-  PddLogisticsAddressGetRequestInterface,
-  PddLogisticsAddressGetResponseInterface,
-  PddLogisticsAddressGetLogisticsAddressGetResponseResponseInterface,
-  PDD_LOGISTICS_ADDRESS_GET_LIMITERS,
-} from './wuLiu/PddLogisticsAddressGet';
-import {
-  PDD_LOGISTICS_COMPANIES_GET,
-  PDD_LOGISTICS_COMPANIES_GET_RESPONSE_KEY,
-  PddLogisticsCompaniesGetRequestInterface,
-  PddLogisticsCompaniesGetResponseInterface,
-  PddLogisticsCompaniesGetLogisticsCompaniesGetResponseResponseInterface,
-  PDD_LOGISTICS_COMPANIES_GET_LIMITERS,
-} from './wuLiu/PddLogisticsCompaniesGet';
-import {
-  PDD_LOGISTICS_ISV_TRACE_NOTIFY_SUB,
-  PddLogisticsIsvTraceNotifySubRequestInterface,
-  PddLogisticsIsvTraceNotifySubResponseInterface,
-  PDD_LOGISTICS_ISV_TRACE_NOTIFY_SUB_LIMITERS,
-} from './wuLiu/PddLogisticsIsvTraceNotifySub';
-import {
-  PDD_LOGISTICS_ONLINE_CREATE,
-  PDD_LOGISTICS_ONLINE_CREATE_RESPONSE_KEY,
-  PddLogisticsOnlineCreateRequestInterface,
-  PddLogisticsOnlineCreateResponseInterface,
-  PddLogisticsOnlineCreateLogisticsOnlineCreateResponseResponseInterface,
-} from './wuLiu/PddLogisticsOnlineCreate';
-import {
-  PDD_LOGISTICS_ONLINE_SEND,
-  PDD_LOGISTICS_ONLINE_SEND_RESPONSE_KEY,
-  PddLogisticsOnlineSendRequestInterface,
-  PddLogisticsOnlineSendResponseInterface,
-  PddLogisticsOnlineSendLogisticsOnlineSendResponseResponseInterface,
-  PDD_LOGISTICS_ONLINE_SEND_LIMITERS,
-} from './wuLiu/PddLogisticsOnlineSend';
-import {
-  PDD_LOGISTICS_ONLINE_STATUS_QUERY,
-  PDD_LOGISTICS_ONLINE_STATUS_QUERY_RESPONSE_KEY,
-  PddLogisticsOnlineStatusQueryRequestInterface,
-  PddLogisticsOnlineStatusQueryResponseInterface,
-  PddLogisticsOnlineStatusQueryLogisticsOnlineStatusQueryResponseResponseInterface,
-} from './wuLiu/PddLogisticsOnlineStatusQuery';
-import {
-  PDD_LOGISTICS_ORDERTRACE_GET,
-  PddLogisticsOrdertraceGetRequestInterface,
-  PddLogisticsOrdertraceGetResponseInterface,
-  PDD_LOGISTICS_ORDERTRACE_GET_LIMITERS,
-} from './wuLiu/PddLogisticsOrdertraceGet';
 // 订单API
 import {
   PDD_ERP_ORDER_SYNC,
@@ -119,6 +68,57 @@ import {
   PddOrderUploadExtraLogisticsResponseInterface,
   PddOrderUploadExtraLogisticsUploadExtraLogisticsResponseResponseInterface,
 } from './dingDan/PddOrderUploadExtraLogistics';
+// 物流API
+import {
+  PDD_LOGISTICS_ADDRESS_GET,
+  PDD_LOGISTICS_ADDRESS_GET_RESPONSE_KEY,
+  PddLogisticsAddressGetRequestInterface,
+  PddLogisticsAddressGetResponseInterface,
+  PddLogisticsAddressGetLogisticsAddressGetResponseResponseInterface,
+  PDD_LOGISTICS_ADDRESS_GET_LIMITERS,
+} from './wuLiu/PddLogisticsAddressGet';
+import {
+  PDD_LOGISTICS_COMPANIES_GET,
+  PDD_LOGISTICS_COMPANIES_GET_RESPONSE_KEY,
+  PddLogisticsCompaniesGetRequestInterface,
+  PddLogisticsCompaniesGetResponseInterface,
+  PddLogisticsCompaniesGetLogisticsCompaniesGetResponseResponseInterface,
+  PDD_LOGISTICS_COMPANIES_GET_LIMITERS,
+} from './wuLiu/PddLogisticsCompaniesGet';
+import {
+  PDD_LOGISTICS_ISV_TRACE_NOTIFY_SUB,
+  PddLogisticsIsvTraceNotifySubRequestInterface,
+  PddLogisticsIsvTraceNotifySubResponseInterface,
+  PDD_LOGISTICS_ISV_TRACE_NOTIFY_SUB_LIMITERS,
+} from './wuLiu/PddLogisticsIsvTraceNotifySub';
+import {
+  PDD_LOGISTICS_ONLINE_CREATE,
+  PDD_LOGISTICS_ONLINE_CREATE_RESPONSE_KEY,
+  PddLogisticsOnlineCreateRequestInterface,
+  PddLogisticsOnlineCreateResponseInterface,
+  PddLogisticsOnlineCreateLogisticsOnlineCreateResponseResponseInterface,
+} from './wuLiu/PddLogisticsOnlineCreate';
+import {
+  PDD_LOGISTICS_ONLINE_SEND,
+  PDD_LOGISTICS_ONLINE_SEND_RESPONSE_KEY,
+  PddLogisticsOnlineSendRequestInterface,
+  PddLogisticsOnlineSendResponseInterface,
+  PddLogisticsOnlineSendLogisticsOnlineSendResponseResponseInterface,
+  PDD_LOGISTICS_ONLINE_SEND_LIMITERS,
+} from './wuLiu/PddLogisticsOnlineSend';
+import {
+  PDD_LOGISTICS_ONLINE_STATUS_QUERY,
+  PDD_LOGISTICS_ONLINE_STATUS_QUERY_RESPONSE_KEY,
+  PddLogisticsOnlineStatusQueryRequestInterface,
+  PddLogisticsOnlineStatusQueryResponseInterface,
+  PddLogisticsOnlineStatusQueryLogisticsOnlineStatusQueryResponseResponseInterface,
+} from './wuLiu/PddLogisticsOnlineStatusQuery';
+import {
+  PDD_LOGISTICS_ORDERTRACE_GET,
+  PddLogisticsOrdertraceGetRequestInterface,
+  PddLogisticsOrdertraceGetResponseInterface,
+  PDD_LOGISTICS_ORDERTRACE_GET_LIMITERS,
+} from './wuLiu/PddLogisticsOrdertraceGet';
 // 售后API
 import {
   PDD_NEXTONE_LOGISTICS_WAREHOUSE_UPDATE,
@@ -367,6 +367,13 @@ import {
   PddGoodsEditGoodsCommitGoodsUpdateResponseResponseInterface,
   PDD_GOODS_EDIT_GOODS_COMMIT_LIMITERS,
 } from './shangPin/PddGoodsEditGoodsCommit';
+import {
+  PDD_GOODS_FILE_INFO_GET,
+  PDD_GOODS_FILE_INFO_GET_RESPONSE_KEY,
+  PddGoodsFileInfoGetRequestInterface,
+  PddGoodsFileInfoGetResponseInterface,
+  PddGoodsFileInfoGetGoodsFileInfoResponseResponseInterface,
+} from './shangPin/PddGoodsFileInfoGet';
 import {
   PDD_GOODS_FILESPACE_IMAGE_UPLOAD,
   PDD_GOODS_FILESPACE_IMAGE_UPLOAD_RESPONSE_KEY,
@@ -2067,11 +2074,6 @@ import {
   PddCloudWmsOrderSendSendResponseResponseInterface,
 } from './fangZhouDuoDuoYun/PddCloudWmsOrderSend';
 const PddResponseTypeAndRequestTypeMapping = {
-  [PDD_LOGISTICS_ADDRESS_GET]: PDD_LOGISTICS_ADDRESS_GET_RESPONSE_KEY,
-  [PDD_LOGISTICS_COMPANIES_GET]: PDD_LOGISTICS_COMPANIES_GET_RESPONSE_KEY,
-  [PDD_LOGISTICS_ONLINE_CREATE]: PDD_LOGISTICS_ONLINE_CREATE_RESPONSE_KEY,
-  [PDD_LOGISTICS_ONLINE_SEND]: PDD_LOGISTICS_ONLINE_SEND_RESPONSE_KEY,
-  [PDD_LOGISTICS_ONLINE_STATUS_QUERY]: PDD_LOGISTICS_ONLINE_STATUS_QUERY_RESPONSE_KEY,
   [PDD_ORDER_BASIC_LIST_GET]: PDD_ORDER_BASIC_LIST_GET_RESPONSE_KEY,
   [PDD_ORDER_INFORMATION_GET]: PDD_ORDER_INFORMATION_GET_RESPONSE_KEY,
   [PDD_ORDER_LIST_GET]: PDD_ORDER_LIST_GET_RESPONSE_KEY,
@@ -2079,6 +2081,11 @@ const PddResponseTypeAndRequestTypeMapping = {
   [PDD_ORDER_PROMISE_INFO_GET]: PDD_ORDER_PROMISE_INFO_GET_RESPONSE_KEY,
   [PDD_ORDER_STATUS_GET]: PDD_ORDER_STATUS_GET_RESPONSE_KEY,
   [PDD_ORDER_UPLOAD_EXTRA_LOGISTICS]: PDD_ORDER_UPLOAD_EXTRA_LOGISTICS_RESPONSE_KEY,
+  [PDD_LOGISTICS_ADDRESS_GET]: PDD_LOGISTICS_ADDRESS_GET_RESPONSE_KEY,
+  [PDD_LOGISTICS_COMPANIES_GET]: PDD_LOGISTICS_COMPANIES_GET_RESPONSE_KEY,
+  [PDD_LOGISTICS_ONLINE_CREATE]: PDD_LOGISTICS_ONLINE_CREATE_RESPONSE_KEY,
+  [PDD_LOGISTICS_ONLINE_SEND]: PDD_LOGISTICS_ONLINE_SEND_RESPONSE_KEY,
+  [PDD_LOGISTICS_ONLINE_STATUS_QUERY]: PDD_LOGISTICS_ONLINE_STATUS_QUERY_RESPONSE_KEY,
   [PDD_RDC_PDDGENIUS_SENDGOODS_CANCEL]: PDD_RDC_PDDGENIUS_SENDGOODS_CANCEL_RESPONSE_KEY,
   [PDD_REFUND_ADDRESS_LIST_GET]: PDD_REFUND_ADDRESS_LIST_GET_RESPONSE_KEY,
   [PDD_REFUND_LIST_INCREMENT_GET]: PDD_REFUND_LIST_INCREMENT_GET_RESPONSE_KEY,
@@ -2103,6 +2110,7 @@ const PddResponseTypeAndRequestTypeMapping = {
   [PDD_GOODS_CPS_UNIT_DELETE]: PDD_GOODS_CPS_UNIT_DELETE_RESPONSE_KEY,
   [PDD_GOODS_DETAIL_GET]: PDD_GOODS_DETAIL_GET_RESPONSE_KEY,
   [PDD_GOODS_EDIT_GOODS_COMMIT]: PDD_GOODS_EDIT_GOODS_COMMIT_RESPONSE_KEY,
+  [PDD_GOODS_FILE_INFO_GET]: PDD_GOODS_FILE_INFO_GET_RESPONSE_KEY,
   [PDD_GOODS_FILESPACE_IMAGE_UPLOAD]: PDD_GOODS_FILESPACE_IMAGE_UPLOAD_RESPONSE_KEY,
   [PDD_GOODS_IMAGE_UPLOAD]: PDD_GOODS_IMAGE_UPLOAD_RESPONSE_KEY,
   [PDD_GOODS_INFORMATION_GET]: PDD_GOODS_INFORMATION_GET_RESPONSE_KEY,
@@ -2255,9 +2263,6 @@ const PddResponseTypeAndRequestTypeMapping = {
   [PDD_CLOUD_WMS_ORDER_SEND]: PDD_CLOUD_WMS_ORDER_SEND_RESPONSE_KEY,
 };
 const PddNeedAccessTokenTypeCollections = [
-  PDD_LOGISTICS_ONLINE_CREATE,
-  PDD_LOGISTICS_ONLINE_SEND,
-  PDD_LOGISTICS_ONLINE_STATUS_QUERY,
   PDD_ERP_ORDER_SYNC,
   PDD_ORDER_BASIC_LIST_GET,
   PDD_ORDER_INFORMATION_GET,
@@ -2268,6 +2273,9 @@ const PddNeedAccessTokenTypeCollections = [
   PDD_ORDER_STATUS_GET,
   PDD_ORDER_UPDATE_ADDRESS,
   PDD_ORDER_UPLOAD_EXTRA_LOGISTICS,
+  PDD_LOGISTICS_ONLINE_CREATE,
+  PDD_LOGISTICS_ONLINE_SEND,
+  PDD_LOGISTICS_ONLINE_STATUS_QUERY,
   PDD_NEXTONE_LOGISTICS_WAREHOUSE_UPDATE,
   PDD_RDC_PDDGENIUS_SENDGOODS_CANCEL,
   PDD_REFUND_ADDRESS_LIST_GET,
@@ -2301,6 +2309,7 @@ const PddNeedAccessTokenTypeCollections = [
   PDD_GOODS_CPS_UNIT_QUERY,
   PDD_GOODS_DETAIL_GET,
   PDD_GOODS_EDIT_GOODS_COMMIT,
+  PDD_GOODS_FILE_INFO_GET,
   PDD_GOODS_FILESPACE_IMAGE_UPLOAD,
   PDD_GOODS_IMAGE_UPLOAD,
   PDD_GOODS_INFORMATION_GET,
@@ -2492,16 +2501,16 @@ const PddNeedAccessTokenTypeCollections = [
   PDD_DDY_PDP_USER_ADD,
 ];
 const PddApiLimiterMapping = {
-  [PDD_LOGISTICS_ADDRESS_GET]: PDD_LOGISTICS_ADDRESS_GET_LIMITERS,
-  [PDD_LOGISTICS_COMPANIES_GET]: PDD_LOGISTICS_COMPANIES_GET_LIMITERS,
-  [PDD_LOGISTICS_ISV_TRACE_NOTIFY_SUB]: PDD_LOGISTICS_ISV_TRACE_NOTIFY_SUB_LIMITERS,
-  [PDD_LOGISTICS_ONLINE_SEND]: PDD_LOGISTICS_ONLINE_SEND_LIMITERS,
-  [PDD_LOGISTICS_ORDERTRACE_GET]: PDD_LOGISTICS_ORDERTRACE_GET_LIMITERS,
   [PDD_ERP_ORDER_SYNC]: PDD_ERP_ORDER_SYNC_LIMITERS,
   [PDD_ORDER_INFORMATION_GET]: PDD_ORDER_INFORMATION_GET_LIMITERS,
   [PDD_ORDER_LIST_GET]: PDD_ORDER_LIST_GET_LIMITERS,
   [PDD_ORDER_NUMBER_LIST_INCREMENT_GET]: PDD_ORDER_NUMBER_LIST_INCREMENT_GET_LIMITERS,
   [PDD_ORDER_STATUS_GET]: PDD_ORDER_STATUS_GET_LIMITERS,
+  [PDD_LOGISTICS_ADDRESS_GET]: PDD_LOGISTICS_ADDRESS_GET_LIMITERS,
+  [PDD_LOGISTICS_COMPANIES_GET]: PDD_LOGISTICS_COMPANIES_GET_LIMITERS,
+  [PDD_LOGISTICS_ISV_TRACE_NOTIFY_SUB]: PDD_LOGISTICS_ISV_TRACE_NOTIFY_SUB_LIMITERS,
+  [PDD_LOGISTICS_ONLINE_SEND]: PDD_LOGISTICS_ONLINE_SEND_LIMITERS,
+  [PDD_LOGISTICS_ORDERTRACE_GET]: PDD_LOGISTICS_ORDERTRACE_GET_LIMITERS,
   [PDD_RDC_PDDGENIUS_SENDGOODS_CANCEL]: PDD_RDC_PDDGENIUS_SENDGOODS_CANCEL_LIMITERS,
   [PDD_REFUND_ADDRESS_LIST_GET]: PDD_REFUND_ADDRESS_LIST_GET_LIMITERS,
   [PDD_REFUND_INFORMATION_GET]: PDD_REFUND_INFORMATION_GET_LIMITERS,
@@ -2639,37 +2648,6 @@ const PddApiLimiterMapping = {
   [PDD_DDY_PDP_USER_ADD]: PDD_DDY_PDP_USER_ADD_LIMITERS,
 };
 export {
-  PDD_LOGISTICS_ADDRESS_GET,
-  PDD_LOGISTICS_ADDRESS_GET_RESPONSE_KEY,
-  PddLogisticsAddressGetRequestInterface,
-  PddLogisticsAddressGetResponseInterface,
-  PddLogisticsAddressGetLogisticsAddressGetResponseResponseInterface,
-  PDD_LOGISTICS_COMPANIES_GET,
-  PDD_LOGISTICS_COMPANIES_GET_RESPONSE_KEY,
-  PddLogisticsCompaniesGetRequestInterface,
-  PddLogisticsCompaniesGetResponseInterface,
-  PddLogisticsCompaniesGetLogisticsCompaniesGetResponseResponseInterface,
-  PDD_LOGISTICS_ISV_TRACE_NOTIFY_SUB,
-  PddLogisticsIsvTraceNotifySubRequestInterface,
-  PddLogisticsIsvTraceNotifySubResponseInterface,
-  PDD_LOGISTICS_ONLINE_CREATE,
-  PDD_LOGISTICS_ONLINE_CREATE_RESPONSE_KEY,
-  PddLogisticsOnlineCreateRequestInterface,
-  PddLogisticsOnlineCreateResponseInterface,
-  PddLogisticsOnlineCreateLogisticsOnlineCreateResponseResponseInterface,
-  PDD_LOGISTICS_ONLINE_SEND,
-  PDD_LOGISTICS_ONLINE_SEND_RESPONSE_KEY,
-  PddLogisticsOnlineSendRequestInterface,
-  PddLogisticsOnlineSendResponseInterface,
-  PddLogisticsOnlineSendLogisticsOnlineSendResponseResponseInterface,
-  PDD_LOGISTICS_ONLINE_STATUS_QUERY,
-  PDD_LOGISTICS_ONLINE_STATUS_QUERY_RESPONSE_KEY,
-  PddLogisticsOnlineStatusQueryRequestInterface,
-  PddLogisticsOnlineStatusQueryResponseInterface,
-  PddLogisticsOnlineStatusQueryLogisticsOnlineStatusQueryResponseResponseInterface,
-  PDD_LOGISTICS_ORDERTRACE_GET,
-  PddLogisticsOrdertraceGetRequestInterface,
-  PddLogisticsOrdertraceGetResponseInterface,
   PDD_ERP_ORDER_SYNC,
   PddErpOrderSyncRequestInterface,
   PddErpOrderSyncResponseInterface,
@@ -2714,6 +2692,37 @@ export {
   PddOrderUploadExtraLogisticsRequestInterface,
   PddOrderUploadExtraLogisticsResponseInterface,
   PddOrderUploadExtraLogisticsUploadExtraLogisticsResponseResponseInterface,
+  PDD_LOGISTICS_ADDRESS_GET,
+  PDD_LOGISTICS_ADDRESS_GET_RESPONSE_KEY,
+  PddLogisticsAddressGetRequestInterface,
+  PddLogisticsAddressGetResponseInterface,
+  PddLogisticsAddressGetLogisticsAddressGetResponseResponseInterface,
+  PDD_LOGISTICS_COMPANIES_GET,
+  PDD_LOGISTICS_COMPANIES_GET_RESPONSE_KEY,
+  PddLogisticsCompaniesGetRequestInterface,
+  PddLogisticsCompaniesGetResponseInterface,
+  PddLogisticsCompaniesGetLogisticsCompaniesGetResponseResponseInterface,
+  PDD_LOGISTICS_ISV_TRACE_NOTIFY_SUB,
+  PddLogisticsIsvTraceNotifySubRequestInterface,
+  PddLogisticsIsvTraceNotifySubResponseInterface,
+  PDD_LOGISTICS_ONLINE_CREATE,
+  PDD_LOGISTICS_ONLINE_CREATE_RESPONSE_KEY,
+  PddLogisticsOnlineCreateRequestInterface,
+  PddLogisticsOnlineCreateResponseInterface,
+  PddLogisticsOnlineCreateLogisticsOnlineCreateResponseResponseInterface,
+  PDD_LOGISTICS_ONLINE_SEND,
+  PDD_LOGISTICS_ONLINE_SEND_RESPONSE_KEY,
+  PddLogisticsOnlineSendRequestInterface,
+  PddLogisticsOnlineSendResponseInterface,
+  PddLogisticsOnlineSendLogisticsOnlineSendResponseResponseInterface,
+  PDD_LOGISTICS_ONLINE_STATUS_QUERY,
+  PDD_LOGISTICS_ONLINE_STATUS_QUERY_RESPONSE_KEY,
+  PddLogisticsOnlineStatusQueryRequestInterface,
+  PddLogisticsOnlineStatusQueryResponseInterface,
+  PddLogisticsOnlineStatusQueryLogisticsOnlineStatusQueryResponseResponseInterface,
+  PDD_LOGISTICS_ORDERTRACE_GET,
+  PddLogisticsOrdertraceGetRequestInterface,
+  PddLogisticsOrdertraceGetResponseInterface,
   PDD_NEXTONE_LOGISTICS_WAREHOUSE_UPDATE,
   PddNextoneLogisticsWarehouseUpdateRequestInterface,
   PddNextoneLogisticsWarehouseUpdateResponseInterface,
@@ -2867,6 +2876,11 @@ export {
   PddGoodsEditGoodsCommitRequestInterface,
   PddGoodsEditGoodsCommitResponseInterface,
   PddGoodsEditGoodsCommitGoodsUpdateResponseResponseInterface,
+  PDD_GOODS_FILE_INFO_GET,
+  PDD_GOODS_FILE_INFO_GET_RESPONSE_KEY,
+  PddGoodsFileInfoGetRequestInterface,
+  PddGoodsFileInfoGetResponseInterface,
+  PddGoodsFileInfoGetGoodsFileInfoResponseResponseInterface,
   PDD_GOODS_FILESPACE_IMAGE_UPLOAD,
   PDD_GOODS_FILESPACE_IMAGE_UPLOAD_RESPONSE_KEY,
   PddGoodsFilespaceImageUploadRequestInterface,
@@ -3931,13 +3945,6 @@ export {
   PddApiLimiterMapping,
 };
 export interface PddCollectRequestInterface {
-  [PDD_LOGISTICS_ADDRESS_GET]: PddLogisticsAddressGetRequestInterface;
-  [PDD_LOGISTICS_COMPANIES_GET]: PddLogisticsCompaniesGetRequestInterface;
-  [PDD_LOGISTICS_ISV_TRACE_NOTIFY_SUB]: PddLogisticsIsvTraceNotifySubRequestInterface;
-  [PDD_LOGISTICS_ONLINE_CREATE]: PddLogisticsOnlineCreateRequestInterface;
-  [PDD_LOGISTICS_ONLINE_SEND]: PddLogisticsOnlineSendRequestInterface;
-  [PDD_LOGISTICS_ONLINE_STATUS_QUERY]: PddLogisticsOnlineStatusQueryRequestInterface;
-  [PDD_LOGISTICS_ORDERTRACE_GET]: PddLogisticsOrdertraceGetRequestInterface;
   [PDD_ERP_ORDER_SYNC]: PddErpOrderSyncRequestInterface;
   [PDD_ORDER_BASIC_LIST_GET]: PddOrderBasicListGetRequestInterface;
   [PDD_ORDER_INFORMATION_GET]: PddOrderInformationGetRequestInterface;
@@ -3948,6 +3955,13 @@ export interface PddCollectRequestInterface {
   [PDD_ORDER_STATUS_GET]: PddOrderStatusGetRequestInterface;
   [PDD_ORDER_UPDATE_ADDRESS]: PddOrderUpdateAddressRequestInterface;
   [PDD_ORDER_UPLOAD_EXTRA_LOGISTICS]: PddOrderUploadExtraLogisticsRequestInterface;
+  [PDD_LOGISTICS_ADDRESS_GET]: PddLogisticsAddressGetRequestInterface;
+  [PDD_LOGISTICS_COMPANIES_GET]: PddLogisticsCompaniesGetRequestInterface;
+  [PDD_LOGISTICS_ISV_TRACE_NOTIFY_SUB]: PddLogisticsIsvTraceNotifySubRequestInterface;
+  [PDD_LOGISTICS_ONLINE_CREATE]: PddLogisticsOnlineCreateRequestInterface;
+  [PDD_LOGISTICS_ONLINE_SEND]: PddLogisticsOnlineSendRequestInterface;
+  [PDD_LOGISTICS_ONLINE_STATUS_QUERY]: PddLogisticsOnlineStatusQueryRequestInterface;
+  [PDD_LOGISTICS_ORDERTRACE_GET]: PddLogisticsOrdertraceGetRequestInterface;
   [PDD_NEXTONE_LOGISTICS_WAREHOUSE_UPDATE]: PddNextoneLogisticsWarehouseUpdateRequestInterface;
   [PDD_RDC_PDDGENIUS_SENDGOODS_CANCEL]: PddRdcPddgeniusSendgoodsCancelRequestInterface;
   [PDD_REFUND_ADDRESS_LIST_GET]: PddRefundAddressListGetRequestInterface;
@@ -3983,6 +3997,7 @@ export interface PddCollectRequestInterface {
   [PDD_GOODS_CPS_UNIT_QUERY]: PddGoodsCpsUnitQueryRequestInterface;
   [PDD_GOODS_DETAIL_GET]: PddGoodsDetailGetRequestInterface;
   [PDD_GOODS_EDIT_GOODS_COMMIT]: PddGoodsEditGoodsCommitRequestInterface;
+  [PDD_GOODS_FILE_INFO_GET]: PddGoodsFileInfoGetRequestInterface;
   [PDD_GOODS_FILESPACE_IMAGE_UPLOAD]: PddGoodsFilespaceImageUploadRequestInterface;
   [PDD_GOODS_IMAGE_UPLOAD]: PddGoodsImageUploadRequestInterface;
   [PDD_GOODS_INFORMATION_GET]: PddGoodsInformationGetRequestInterface;
@@ -4238,13 +4253,6 @@ export interface PddCollectRequestInterface {
   [PDD_CLOUD_WMS_ORDER_SEND]: PddCloudWmsOrderSendRequestInterface;
 }
 export interface PddCollectRootResponseInterface {
-  [PDD_LOGISTICS_ADDRESS_GET]: PddLogisticsAddressGetResponseInterface;
-  [PDD_LOGISTICS_COMPANIES_GET]: PddLogisticsCompaniesGetResponseInterface;
-  [PDD_LOGISTICS_ISV_TRACE_NOTIFY_SUB]: PddLogisticsIsvTraceNotifySubResponseInterface;
-  [PDD_LOGISTICS_ONLINE_CREATE]: PddLogisticsOnlineCreateResponseInterface;
-  [PDD_LOGISTICS_ONLINE_SEND]: PddLogisticsOnlineSendResponseInterface;
-  [PDD_LOGISTICS_ONLINE_STATUS_QUERY]: PddLogisticsOnlineStatusQueryResponseInterface;
-  [PDD_LOGISTICS_ORDERTRACE_GET]: PddLogisticsOrdertraceGetResponseInterface;
   [PDD_ERP_ORDER_SYNC]: PddErpOrderSyncResponseInterface;
   [PDD_ORDER_BASIC_LIST_GET]: PddOrderBasicListGetResponseInterface;
   [PDD_ORDER_INFORMATION_GET]: PddOrderInformationGetResponseInterface;
@@ -4255,6 +4263,13 @@ export interface PddCollectRootResponseInterface {
   [PDD_ORDER_STATUS_GET]: PddOrderStatusGetResponseInterface;
   [PDD_ORDER_UPDATE_ADDRESS]: PddOrderUpdateAddressResponseInterface;
   [PDD_ORDER_UPLOAD_EXTRA_LOGISTICS]: PddOrderUploadExtraLogisticsResponseInterface;
+  [PDD_LOGISTICS_ADDRESS_GET]: PddLogisticsAddressGetResponseInterface;
+  [PDD_LOGISTICS_COMPANIES_GET]: PddLogisticsCompaniesGetResponseInterface;
+  [PDD_LOGISTICS_ISV_TRACE_NOTIFY_SUB]: PddLogisticsIsvTraceNotifySubResponseInterface;
+  [PDD_LOGISTICS_ONLINE_CREATE]: PddLogisticsOnlineCreateResponseInterface;
+  [PDD_LOGISTICS_ONLINE_SEND]: PddLogisticsOnlineSendResponseInterface;
+  [PDD_LOGISTICS_ONLINE_STATUS_QUERY]: PddLogisticsOnlineStatusQueryResponseInterface;
+  [PDD_LOGISTICS_ORDERTRACE_GET]: PddLogisticsOrdertraceGetResponseInterface;
   [PDD_NEXTONE_LOGISTICS_WAREHOUSE_UPDATE]: PddNextoneLogisticsWarehouseUpdateResponseInterface;
   [PDD_RDC_PDDGENIUS_SENDGOODS_CANCEL]: PddRdcPddgeniusSendgoodsCancelResponseInterface;
   [PDD_REFUND_ADDRESS_LIST_GET]: PddRefundAddressListGetResponseInterface;
@@ -4290,6 +4305,7 @@ export interface PddCollectRootResponseInterface {
   [PDD_GOODS_CPS_UNIT_QUERY]: PddGoodsCpsUnitQueryResponseInterface;
   [PDD_GOODS_DETAIL_GET]: PddGoodsDetailGetResponseInterface;
   [PDD_GOODS_EDIT_GOODS_COMMIT]: PddGoodsEditGoodsCommitResponseInterface;
+  [PDD_GOODS_FILE_INFO_GET]: PddGoodsFileInfoGetResponseInterface;
   [PDD_GOODS_FILESPACE_IMAGE_UPLOAD]: PddGoodsFilespaceImageUploadResponseInterface;
   [PDD_GOODS_IMAGE_UPLOAD]: PddGoodsImageUploadResponseInterface;
   [PDD_GOODS_INFORMATION_GET]: PddGoodsInformationGetResponseInterface;
@@ -4545,13 +4561,6 @@ export interface PddCollectRootResponseInterface {
   [PDD_CLOUD_WMS_ORDER_SEND]: PddCloudWmsOrderSendResponseInterface;
 }
 export interface PddCollectShortResponseInterface {
-  [PDD_LOGISTICS_ADDRESS_GET]: PddLogisticsAddressGetLogisticsAddressGetResponseResponseInterface;
-  [PDD_LOGISTICS_COMPANIES_GET]: PddLogisticsCompaniesGetLogisticsCompaniesGetResponseResponseInterface;
-  [PDD_LOGISTICS_ISV_TRACE_NOTIFY_SUB]: PddLogisticsIsvTraceNotifySubResponseInterface;
-  [PDD_LOGISTICS_ONLINE_CREATE]: PddLogisticsOnlineCreateLogisticsOnlineCreateResponseResponseInterface;
-  [PDD_LOGISTICS_ONLINE_SEND]: PddLogisticsOnlineSendLogisticsOnlineSendResponseResponseInterface;
-  [PDD_LOGISTICS_ONLINE_STATUS_QUERY]: PddLogisticsOnlineStatusQueryLogisticsOnlineStatusQueryResponseResponseInterface;
-  [PDD_LOGISTICS_ORDERTRACE_GET]: PddLogisticsOrdertraceGetResponseInterface;
   [PDD_ERP_ORDER_SYNC]: PddErpOrderSyncResponseInterface;
   [PDD_ORDER_BASIC_LIST_GET]: PddOrderBasicListGetOrderBasicListGetResponseResponseInterface;
   [PDD_ORDER_INFORMATION_GET]: PddOrderInformationGetOrderInfoGetResponseResponseInterface;
@@ -4562,6 +4571,13 @@ export interface PddCollectShortResponseInterface {
   [PDD_ORDER_STATUS_GET]: PddOrderStatusGetOrderStatusGetResponseResponseInterface;
   [PDD_ORDER_UPDATE_ADDRESS]: PddOrderUpdateAddressResponseInterface;
   [PDD_ORDER_UPLOAD_EXTRA_LOGISTICS]: PddOrderUploadExtraLogisticsUploadExtraLogisticsResponseResponseInterface;
+  [PDD_LOGISTICS_ADDRESS_GET]: PddLogisticsAddressGetLogisticsAddressGetResponseResponseInterface;
+  [PDD_LOGISTICS_COMPANIES_GET]: PddLogisticsCompaniesGetLogisticsCompaniesGetResponseResponseInterface;
+  [PDD_LOGISTICS_ISV_TRACE_NOTIFY_SUB]: PddLogisticsIsvTraceNotifySubResponseInterface;
+  [PDD_LOGISTICS_ONLINE_CREATE]: PddLogisticsOnlineCreateLogisticsOnlineCreateResponseResponseInterface;
+  [PDD_LOGISTICS_ONLINE_SEND]: PddLogisticsOnlineSendLogisticsOnlineSendResponseResponseInterface;
+  [PDD_LOGISTICS_ONLINE_STATUS_QUERY]: PddLogisticsOnlineStatusQueryLogisticsOnlineStatusQueryResponseResponseInterface;
+  [PDD_LOGISTICS_ORDERTRACE_GET]: PddLogisticsOrdertraceGetResponseInterface;
   [PDD_NEXTONE_LOGISTICS_WAREHOUSE_UPDATE]: PddNextoneLogisticsWarehouseUpdateResponseInterface;
   [PDD_RDC_PDDGENIUS_SENDGOODS_CANCEL]: PddRdcPddgeniusSendgoodsCancelRdcPddgeniusSendgoodsCancelResponseResponseInterface;
   [PDD_REFUND_ADDRESS_LIST_GET]: PddRefundAddressListGetRefundAddressListGetResponseResponseInterface;
@@ -4597,6 +4613,7 @@ export interface PddCollectShortResponseInterface {
   [PDD_GOODS_CPS_UNIT_QUERY]: PddGoodsCpsUnitQueryResponseInterface;
   [PDD_GOODS_DETAIL_GET]: PddGoodsDetailGetGoodsDetailGetResponseResponseInterface;
   [PDD_GOODS_EDIT_GOODS_COMMIT]: PddGoodsEditGoodsCommitGoodsUpdateResponseResponseInterface;
+  [PDD_GOODS_FILE_INFO_GET]: PddGoodsFileInfoGetGoodsFileInfoResponseResponseInterface;
   [PDD_GOODS_FILESPACE_IMAGE_UPLOAD]: PddGoodsFilespaceImageUploadGoodsFilespaceImageUploadResponseResponseInterface;
   [PDD_GOODS_IMAGE_UPLOAD]: PddGoodsImageUploadGoodsImageUploadResponseResponseInterface;
   [PDD_GOODS_INFORMATION_GET]: PddGoodsInformationGetGoodsInfoGetResponseResponseInterface;

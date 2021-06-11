@@ -108,7 +108,7 @@ export interface PddGoodsCommitDetailGetGoodsCommitDetailResponseResponseInterfa
   cost_template_id: string | number;
 
   /**
-   * @description: 国家id
+   * @description: 地区/国家id
    * @type: string | number
    * @default:
    **/
@@ -280,7 +280,7 @@ export interface PddGoodsCommitDetailGetGoodsCommitDetailResponseResponseInterfa
   mai_jia_zi_ti: string;
 
   /**
-   * @description: 市场价格，单位为分
+   * @description: 参考价格，单位为分
    * @type: string | number
    * @default:
    **/

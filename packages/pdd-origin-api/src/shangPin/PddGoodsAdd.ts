@@ -75,7 +75,7 @@ export interface PddGoodsAddRequestInterface {
   cost_template_id: string | number;
 
   /**
-   * @description: 国家ID，country_id可以通过pdd.goods.country.get获取，仅在goods_type为2、3时（海淘商品）入参生效，其余goods_type传0
+   * @description: 地区/国家ID，country_id可以通过pdd.goods.country.get获取，仅在goods_type为2、3时（海淘商品）入参生效，其余goods_type传0
    * @type: number
    * @default:
    **/
@@ -229,7 +229,7 @@ export interface PddGoodsAddRequestInterface {
   mai_jia_zi_ti?: string;
 
   /**
-   * @description: 市场价格，单位为分
+   * @description: 参考价格，单位为分
    * @type: string | number
    * @default:
    **/

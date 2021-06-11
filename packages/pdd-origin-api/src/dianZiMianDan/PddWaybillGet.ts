@@ -381,7 +381,7 @@ export interface PddWaybillGetParamWaybillCloudPrintApplyNewRequestTradeOrderInf
   town?: string;
 
   /**
-   * @description: 国家
+   * @description: 国家/地区
    * @type: string
    * @default:
    **/
