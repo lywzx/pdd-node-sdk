@@ -14,17 +14,17 @@ export const PDD_LOGISTICS_ADDRESS_GET_LIMITERS = [
 ];
 
 /**
- * 接口名称：获取拼多多标准国家地址库
+ * 接口名称：获取拼多多标准地址库
  * 接口标识：pdd.logistics.address.get
- * 接口使用场景：获取拼多多标准国家地址库
+ * 接口使用场景：获取拼多多标准地址库
  **/
 // eslint-disable-next-line @typescript-eslint/no-empty-interface
 export interface PddLogisticsAddressGetRequestInterface {}
 
 /**
- * 接口名称：获取拼多多标准国家地址库
+ * 接口名称：获取拼多多标准地址库
  * 接口标识：pdd.logistics.address.get
- * 接口使用场景：获取拼多多标准国家地址库
+ * 接口使用场景：获取拼多多标准地址库
  **/
 export interface PddLogisticsAddressGetResponseInterface {
   /**

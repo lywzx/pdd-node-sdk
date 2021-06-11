@@ -9,7 +9,7 @@ export const PDD_GOODS_COUNTRY_GET_LIMITERS = [
 ];
 
 /**
- * 接口名称：商品国家接口
+ * 接口名称：商品地区/国家接口
  * 接口标识：pdd.goods.country.get
  * 接口使用场景：获取指定国家或地区信息
  **/
@@ -17,7 +17,7 @@ export const PDD_GOODS_COUNTRY_GET_LIMITERS = [
 export interface PddGoodsCountryGetRequestInterface {}
 
 /**
- * 接口名称：商品国家接口
+ * 接口名称：商品地区/国家接口
  * 接口标识：pdd.goods.country.get
  * 接口使用场景：获取指定国家或地区信息
  **/

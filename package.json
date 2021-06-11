@@ -45,7 +45,7 @@
     "@commitlint/cli": "^11.0.0",
     "@commitlint/config-conventional": "^11.0.0",
     "@istanbuljs/nyc-config-typescript": "^1.0.1",
-    "@lywzx/rollup-build-scripts": "0.0.7",
+    "@lywzx/rollup-build-scripts": "~0.0.8",
     "@nestjs/common": "^7.4.2",
     "@nestjs/core": "^7.4.2",
     "@nestjs/testing": "^7.4.2",

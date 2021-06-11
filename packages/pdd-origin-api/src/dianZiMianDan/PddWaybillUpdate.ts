@@ -175,7 +175,7 @@ export interface PddWaybillUpdateParamWaybillCloudPrintUpdateRequestRecipientAdd
   city?: string;
 
   /**
-   * @description: 国家
+   * @description: 地区/国家
    * @type: string
    * @default:
    **/

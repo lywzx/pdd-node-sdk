@@ -27,14 +27,14 @@ export interface PddGoodsSkuPriceUpdateRequestInterface {
   goods_id: string | number;
 
   /**
-   * @description: 市场价 （单位分）
+   * @description: 参考价 （单位分）
    * @type: string | number
    * @default:
    **/
   market_price?: string | number;
 
   /**
-   * @description: 市场价 （单位元）
+   * @description: 参考价 （单位元）
    * @type: string
    * @default:
    **/

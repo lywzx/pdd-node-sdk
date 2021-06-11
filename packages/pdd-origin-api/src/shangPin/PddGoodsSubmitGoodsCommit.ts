@@ -65,7 +65,7 @@ export interface PddGoodsSubmitGoodsCommitRequestInterface {
   cost_template_id: string | number;
 
   /**
-   * @description: 国家ID，0-中国，暂时只传0（普通商品）
+   * @description: 地区/国家ID，0-中国，暂时只传0（普通商品）
    * @type: number
    * @default:
    **/
@@ -247,7 +247,7 @@ export interface PddGoodsSubmitGoodsCommitRequestInterface {
   mai_jia_zi_ti?: string;
 
   /**
-   * @description: 市场价格，单位为分
+   * @description: 参考价格，单位为分
    * @type: string | number
    * @default:
    **/

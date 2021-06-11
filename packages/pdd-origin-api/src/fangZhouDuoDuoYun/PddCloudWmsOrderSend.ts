@@ -392,7 +392,7 @@ export interface PddCloudWmsOrderSendWmsOrderSendRequestSenderInfoAddressRequest
   town?: string;
 
   /**
-   * @description: 国家
+   * @description: 地区/国家
    * @type: string
    * @default:
    **/
@@ -484,7 +484,7 @@ export interface PddCloudWmsOrderSendWmsOrderSendRequestReceiverInfoAddressReque
   town?: string;
 
   /**
-   * @description: 国家
+   * @description: 地区/国家
    * @type: string
    * @default:
    **/
