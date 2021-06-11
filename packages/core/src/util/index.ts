@@ -43,5 +43,6 @@ export function isNumeric(num: number | string = ''): boolean {
   if (isNumber(num)) {
     return true;
   }
-  return !isNaN(parseFloat(num.toString())) && isFinite(num);
+  const parsedValue = parseFloat(num.toString());
+  return !isNaN(parsedValue) && isFinite(parsedValue);
 }
