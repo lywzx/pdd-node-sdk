@@ -9,7 +9,7 @@ const sepId = '#';
  * @param data
  */
 export function isEncryptData(data?: string): boolean {
-  const base64Regexp = /^(?:[A-Za-z0-9+/]{4})*(?:[A-Za-z0-9+/]{2}==|[A-Za-z09+/]{3}=)?$/;
+  const base64Regexp = /^(?:[A-Za-z0-9+/]{4})*(?:[A-Za-z0-9+/]{2}==|[A-Za-z0-9+/]{3}=)?$/;
 
   if (!data || data.length <= 4) {
     return false;
