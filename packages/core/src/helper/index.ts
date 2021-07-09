@@ -1,5 +1,6 @@
 import { isNumeric } from '../util';
 import isString from 'lodash/isString';
+export * from './virtual-number';
 
 const sepPhone = '$';
 const sepId = '#';
