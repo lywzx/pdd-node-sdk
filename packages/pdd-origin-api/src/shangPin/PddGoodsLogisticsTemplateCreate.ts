@@ -49,21 +49,21 @@ export interface PddGoodsLogisticsTemplateCreateRequestInterface {
    * @type: number
    * @default:
    **/
-  province_id?: number;
+  province_id: number;
 
   /**
    * @description: 发货地城市id
    * @type: number
    * @default:
    **/
-  city_id?: number;
+  city_id: number;
 
   /**
    * @description: 发货地区id
    * @type: number
    * @default:
    **/
-  district_id?: number;
+  district_id: number;
 }
 
 /**

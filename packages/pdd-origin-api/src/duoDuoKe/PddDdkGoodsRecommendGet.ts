@@ -15,7 +15,7 @@ export const PDD_DDK_GOODS_RECOMMEND_GET_LIMITERS = [
  **/
 export interface PddDdkGoodsRecommendGetRequestInterface {
   /**
-   * @description: 活动商品标记数组，例：[4,7]，4-秒杀，7-百亿补贴，10851-千万补贴，10911-一元购商品，10913-招商礼金商品，31-品牌黑标，10564-精选爆品-官方直推爆款，10584-精选爆品-团长推荐，24-品牌高佣，其他的值请忽略
+   * @description: 活动商品标记数组，例：[4,7]，4-秒杀，7-百亿补贴，10851-千万补贴，10913-招商礼金商品，31-品牌黑标，10564-精选爆品-官方直推爆款，10584-精选爆品-团长推荐，24-品牌高佣，其他的值请忽略
    * @type: number[]
    * @default:
    **/
@@ -41,6 +41,13 @@ export interface PddDdkGoodsRecommendGetRequestInterface {
    * @default:
    **/
   custom_parameters?: string;
+
+  /**
+   * @description: 商品主图类型：1-场景图，2-白底图，默认为0
+   * @type: number
+   * @default:
+   **/
+  goods_img_type?: number;
 
   /**
    * @description: 商品goodsSign列表，相似商品推荐场景时必传，仅取数组的第一位，例如：["c9r2omogKFFAc7WBwvbZU1ikIb16_J3CTa8HNN"]。goodsSign是加密后的goodsId, goodsId已下线，请使用goodsSign来替代。使用说明：https://jinbao.pinduoduo.com/qa-system?questionId=252
@@ -234,7 +241,7 @@ export interface PddDdkGoodsRecommendGetGoodsBasicDetailResponseListResponseInte
   desc_txt: string;
 
   /**
-   * @description: 额外优惠券
+   * @description: 额外优惠券，单位为分
    * @type: string | number
    * @default:
    **/

@@ -504,14 +504,14 @@ export interface PddGoodsDetailGetGoodsDetailGetResponseGoodsTradeAttrBookingNot
  **/
 export interface PddGoodsDetailGetGoodsDetailGetResponseGoodsTravelAttrResponseInterface {
   /**
-   * @description: 日历商品类型1:旅行类,2:住宿类,3:票务类
+   * @description: 出行人是否必填（默认是）
    * @type: boolean
    * @default:
    **/
   need_tourist: boolean;
 
   /**
-   * @description: 出行人是否必填（默认是）
+   * @description: 日历商品类型1:旅行类,2:住宿类,3:票务类
    * @type: number
    * @default:
    **/

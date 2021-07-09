@@ -320,7 +320,7 @@ export interface PddGoodsAddRequestInterface {
   shang_men_an_zhuang?: string;
 
   /**
-   * @description: 承诺发货时间（ 秒），普通、进口商品可选48小时或24小时；直邮、直供商品只能入参120小时；is_pre_sale为true时不必传
+   * @description: 承诺发货时间（秒），普通、进口商品可选48小时或24小时；直邮商品（goods_type=4）只可入参120小时，直供商品（goods_type=3）只可入参96小时；is_pre_sale为true时不必传
    * @type: string | number
    * @default:
    **/

@@ -54,6 +54,13 @@ export interface PddGoodsSkuPriceUpdateRequestInterface {
    * @default:
    **/
   sync_goods_operate?: number;
+
+  /**
+   * @description: 是否获取商品发布警告信息，默认为忽略
+   * @type: boolean
+   * @default:
+   **/
+  ignore_edit_warn?: boolean;
 }
 
 /**

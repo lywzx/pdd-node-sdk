@@ -115,13 +115,6 @@ export interface PddServicemarketTradelistGetMallBalanceFlowSearchResponseDataRe
   created_at: number;
 
   /**
-   * @description: 交易流水号
-   * @type: string | number
-   * @default:
-   **/
-  flow_id: string | number;
-
-  /**
    * @description: 资金流向，1-收入，2-支出
    * @type: number
    * @default:

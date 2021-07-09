@@ -11,7 +11,7 @@ export const PDD_ORDER_STATUS_GET_LIMITERS = [
 /**
  * 接口名称：订单状态
  * 接口标识：pdd.order.status.get
- * 接口使用场景：获取订单的状态（单次最多查50个订单）
+ * 接口使用场景：获取订单的状态
  **/
 export interface PddOrderStatusGetRequestInterface {
   /**
@@ -25,7 +25,7 @@ export interface PddOrderStatusGetRequestInterface {
 /**
  * 接口名称：订单状态
  * 接口标识：pdd.order.status.get
- * 接口使用场景：获取订单的状态（单次最多查50个订单）
+ * 接口使用场景：获取订单的状态
  **/
 export interface PddOrderStatusGetResponseInterface {
   /**

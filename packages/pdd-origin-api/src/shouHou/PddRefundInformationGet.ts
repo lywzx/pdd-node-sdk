@@ -294,4 +294,46 @@ export interface PddRefundInformationGetExchangeShippingDetailResponseInterface 
    * @default:
    **/
   sku_id_exchange: string;
+
+  /**
+   * @description: 商家换货发货的省份编码（消费者地址）
+   * @type: string | number
+   * @default:
+   **/
+  exchange_receiver_province_id: string | number;
+
+  /**
+   * @description: 商家换货发货的省份（消费者地址）
+   * @type: string
+   * @default:
+   **/
+  exchange_receiver_province: string;
+
+  /**
+   * @description: 商家换货发货的城市编码（消费者地址）
+   * @type: string | number
+   * @default:
+   **/
+  exchange_receiver_city_id: string | number;
+
+  /**
+   * @description: 商家换货发货的城市（消费者地址）
+   * @type: string
+   * @default:
+   **/
+  exchange_receiver_city: string;
+
+  /**
+   * @description: 商家换货发货的区县编码（消费者地址）
+   * @type: string | number
+   * @default:
+   **/
+  exchange_receiver_town_id: string | number;
+
+  /**
+   * @description: 商家换货发货的区县（消费者地址）
+   * @type: string
+   * @default:
+   **/
+  exchange_receiver_town: string;
 }

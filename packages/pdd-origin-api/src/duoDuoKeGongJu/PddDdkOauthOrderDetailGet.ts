@@ -51,6 +51,13 @@ export interface PddDdkOauthOrderDetailGetResponseInterface {
  **/
 export interface PddDdkOauthOrderDetailGetOrderDetailResponseResponseInterface {
   /**
+   * @description: 商品活动标记数组，例：[4,7]，4-秒杀 7-百亿补贴等
+   * @type: number[]
+   * @default:
+   **/
+  activity_tags: number[];
+
+  /**
    * @description: 多多客工具id
    * @type: string | number
    * @default:
@@ -154,6 +161,13 @@ export interface PddDdkOauthOrderDetailGetOrderDetailResponseResponseInterface {
    * @default:
    **/
   is_direct: number;
+
+  /**
+   * @description: 店铺id
+   * @type: string | number
+   * @default:
+   **/
+  mall_id: string | number;
 
   /**
    * @description: 订单价格（分）
