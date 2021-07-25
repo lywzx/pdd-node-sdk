@@ -9,7 +9,7 @@ import inRange from 'lodash/inRange';
 export class PddResponseException extends PddBaseException {
   /**
    * 是否忽略自动刷新token
-   * null 初始状态
+   * null 未更新或更新出错
    * true: 表示被忽略
    * false： 表示更新了token信息
    * @protected
@@ -58,8 +58,8 @@ export class PddResponseException extends PddBaseException {
    * @param ignored
    */
   public ignoreTokenRefresh(): null | boolean;
-  public ignoreTokenRefresh(ignored: boolean): void;
-  public ignoreTokenRefresh(ignored?: boolean): void | null | boolean {
+  public ignoreTokenRefresh(ignored: boolean | null): void;
+  public ignoreTokenRefresh(ignored?: boolean | null): void | null | boolean {
     if (typeof ignored === 'undefined') {
       return this.$ignoreTokenRefresh;
     }
