@@ -488,7 +488,9 @@ export class PddClient<T extends Record<string, any> = any> {
                       });
                       const freshTokenInfo = getShortResponse(result, PDD_POP_AUTH_TOKEN_REFRESH);
                       await pddClientAuth.setAccessTokenToCache(apiAccessOptions, freshTokenInfo);
-                    } catch (e) {}
+                    } catch (e) {
+                      err.ignoreTokenRefresh(null);
+                    }
                     // 释放锁
                     await pddClientAuth.unLock(lockKey);
                     accessTokenInfo = null;
