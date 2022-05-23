@@ -5,6 +5,7 @@ export const PDD_RDC_PDDGENIUS_SENDGOODS_CANCEL_LIMITERS = [
     limiterLevel: 3,
     timeRange: 1,
     times: 1200,
+    callSourceType: 0,
   },
 ];
 

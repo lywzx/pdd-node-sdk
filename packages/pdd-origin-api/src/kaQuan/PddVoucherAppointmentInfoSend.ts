@@ -5,6 +5,7 @@ export const PDD_VOUCHER_APPOINTMENT_INFO_SEND_LIMITERS = [
     limiterLevel: 1,
     timeRange: 60,
     times: 3000,
+    callSourceType: 0,
   },
 ];
 

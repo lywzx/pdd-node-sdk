@@ -5,6 +5,7 @@ export const PDD_MALL_INFO_GET_LIMITERS = [
     limiterLevel: 1,
     timeRange: 1,
     times: 450,
+    callSourceType: 0,
   },
 ];
 

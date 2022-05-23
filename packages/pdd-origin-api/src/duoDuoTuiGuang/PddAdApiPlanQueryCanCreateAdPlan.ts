@@ -5,6 +5,7 @@ export const PDD_AD_API_PLAN_QUERY_CAN_CREATE_AD_PLAN_LIMITERS = [
     limiterLevel: 1,
     timeRange: 10,
     times: 20,
+    callSourceType: 0,
   },
 ];
 

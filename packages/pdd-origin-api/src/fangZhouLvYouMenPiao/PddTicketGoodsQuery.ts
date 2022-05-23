@@ -19,7 +19,7 @@ export interface PddTicketGoodsQueryRequestInterface {
    * @type: string | number
    * @default:
    **/
-  goods_id?: string | number;
+  goods_id: string | number;
 }
 
 /**

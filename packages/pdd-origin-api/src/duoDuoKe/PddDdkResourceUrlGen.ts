@@ -5,6 +5,7 @@ export const PDD_DDK_RESOURCE_URL_GEN_LIMITERS = [
     limiterLevel: 3,
     timeRange: 50,
     times: 33450,
+    callSourceType: 0,
   },
 ];
 
@@ -20,6 +21,13 @@ export interface PddDdkResourceUrlGenRequestInterface {
    * @default:
    **/
   custom_parameters?: string;
+
+  /**
+   * @description: 是否返回 schema URL
+   * @type: boolean
+   * @default: false
+   **/
+  generate_schema_url?: boolean;
 
   /**
    * @description: 是否生成拼多多福利券微信小程序推广信息

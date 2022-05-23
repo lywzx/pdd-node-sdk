@@ -46,16 +46,16 @@ export interface PddGooodsSkuMeasurementListGooodsSkuMeasurementListResponseResp
  **/
 export interface PddGooodsSkuMeasurementListGooodsSkuMeasurementListResponseMeasurementListResponseInterface {
   /**
-   * @description: 描述
-   * @type: string
-   * @default:
-   **/
-  desc: string;
-
-  /**
    * @description: 编码
    * @type: string
    * @default:
    **/
   code: string;
+
+  /**
+   * @description: 说明
+   * @type: string
+   * @default:
+   **/
+  desc: string;
 }

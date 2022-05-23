@@ -5,6 +5,7 @@ export const PDD_GOODS_SUBMIT_GOODS_COMMIT_LIMITERS = [
     limiterLevel: 3,
     timeRange: 10,
     times: 6000,
+    callSourceType: 0,
   },
 ];
 
@@ -14,6 +15,13 @@ export const PDD_GOODS_SUBMIT_GOODS_COMMIT_LIMITERS = [
  * 接口使用场景：被驳回的商品从草稿提交
  **/
 export interface PddGoodsSubmitGoodsCommitRequestInterface {
+  /**
+   * @description: 是否自动补充标品属性
+   * @type: boolean
+   * @default:
+   **/
+  auto_fill_spu_property?: boolean;
+
   /**
    * @description: 坏果包赔
    * @type: number
@@ -33,7 +41,7 @@ export interface PddGoodsSubmitGoodsCommitRequestInterface {
    * @type: string[]
    * @default:
    **/
-  carousel_gallery: string[];
+  carousel_gallery?: string[];
 
   /**
    * @description: 商品视频
@@ -55,21 +63,21 @@ export interface PddGoodsSubmitGoodsCommitRequestInterface {
    * @type: string | number
    * @default:
    **/
-  cat_id: string | number;
+  cat_id?: string | number;
 
   /**
    * @description: 物流运费模板ID，可使用pdd.logistics.template.get获取
    * @type: string | number
    * @default:
    **/
-  cost_template_id: string | number;
+  cost_template_id?: string | number;
 
   /**
    * @description: 地区/国家ID，0-中国，暂时只传0（普通商品）
    * @type: number
    * @default:
    **/
-  country_id: number;
+  country_id?: number;
 
   /**
    * @description: 团购人数
@@ -109,7 +117,7 @@ export interface PddGoodsSubmitGoodsCommitRequestInterface {
    * @type: string[]
    * @default:
    **/
-  detail_gallery: string[];
+  detail_gallery?: string[];
 
   /**
    * @description: 卡券类商品属性
@@ -131,7 +139,7 @@ export interface PddGoodsSubmitGoodsCommitRequestInterface {
    * @type: string
    * @default:
    **/
-  goods_desc: string;
+  goods_desc?: string;
 
   /**
    * @description: 1213414
@@ -145,7 +153,7 @@ export interface PddGoodsSubmitGoodsCommitRequestInterface {
    * @type: string
    * @default:
    **/
-  goods_name: string;
+  goods_name?: string;
 
   /**
    * @description: 商品属性列表
@@ -172,11 +180,18 @@ export interface PddGoodsSubmitGoodsCommitRequestInterface {
   goods_travel_attr?: PddGoodsSubmitGoodsCommitGoodsTravelAttrRequestInterface;
 
   /**
-   * @description: 1-国内普通商品，2-进口，3-国外海淘，4-直邮 ,5-流量,6-话费,7,优惠券;8-QQ充值,9-加油卡，15-商家卡券，19-平台卡券，暂时支持1-普通商品的上架 19-平台卡券
+   * @description: 1-国内普通商品，2-一般贸易，3-保税仓BBC直供，4-海外BC直邮 ,5-流量 ,6-话费 ,7-优惠券 ,8-QQ充值 ,9-加油卡，15-商家卡券，18-海外CC行邮 19-平台卡券
    * @type: number
    * @default:
    **/
-  goods_type: number;
+  goods_type?: number;
+
+  /**
+   * @description: 是否获取商品发布警告信息，默认为否
+   * @type: boolean
+   * @default:
+   **/
+  ignore_edit_warn?: boolean;
 
   /**
    * @description: 商品主图，请参考拼多多首页大图，如果商品参加部分活动则必填，否则无法参加活动
@@ -195,7 +210,7 @@ export interface PddGoodsSubmitGoodsCommitRequestInterface {
    * @type: number
    * @default:
    **/
-  invoice_status: number;
+  invoice_status?: number;
 
   /**
    * @description: 是否需要上报海关，现阶段入参默认false，入参true会失败
@@ -209,7 +224,7 @@ export interface PddGoodsSubmitGoodsCommitRequestInterface {
    * @type: boolean
    * @default:
    **/
-  is_folt: boolean;
+  is_folt?: boolean;
 
   /**
    * @description: 是否成团预售
@@ -223,14 +238,21 @@ export interface PddGoodsSubmitGoodsCommitRequestInterface {
    * @type: boolean
    * @default:
    **/
-  is_pre_sale: boolean;
+  is_pre_sale?: boolean;
 
   /**
    * @description: 是否7天无理由退换货，true-支持，false-不支持
    * @type: boolean
    * @default:
    **/
-  is_refundable: boolean;
+  is_refundable?: boolean;
+
+  /**
+   * @description: 是否sku预售，1：是，0：否
+   * @type: number
+   * @default:
+   **/
+  is_sku_pre_sale?: number;
 
   /**
    * @description: 缺重包退
@@ -251,7 +273,7 @@ export interface PddGoodsSubmitGoodsCommitRequestInterface {
    * @type: string | number
    * @default:
    **/
-  market_price: string | number;
+  market_price?: string | number;
 
   /**
    * @description: 0:提交， 1：保存（默认提交）
@@ -337,7 +359,7 @@ export interface PddGoodsSubmitGoodsCommitRequestInterface {
    * @type: boolean
    * @default:
    **/
-  second_hand: boolean;
+  second_hand?: boolean;
 
   /**
    * @description: 上门安装模版id
@@ -351,7 +373,7 @@ export interface PddGoodsSubmitGoodsCommitRequestInterface {
    * @type: string | number
    * @default:
    **/
-  shipment_limit_second: string | number;
+  shipment_limit_second?: string | number;
 
   /**
    * @description: sku对象列表,实例：[{
@@ -374,7 +396,7 @@ export interface PddGoodsSubmitGoodsCommitRequestInterface {
    * @default:
    *
    **/
-  sku_list: PddGoodsSubmitGoodsCommitSkuListRequestInterface[];
+  sku_list?: PddGoodsSubmitGoodsCommitSkuListRequestInterface[];
 
   /**
    * @description: 库存方式（0：普通型，1：日历型）
@@ -412,6 +434,13 @@ export interface PddGoodsSubmitGoodsCommitRequestInterface {
   tiny_name?: string;
 
   /**
+   * @description: 满2件折扣，可选范围0-100, 0表示取消，95表示95折，设置需先查询规则接口获取实际可填范围
+   * @type: number
+   * @default:
+   **/
+  two_pieces_discount?: number;
+
+  /**
    * @description: 保税仓，只在goods_type为直供商品时有效（现阶段暂不支持）
    * @type: string
    * @default:
@@ -431,20 +460,6 @@ export interface PddGoodsSubmitGoodsCommitRequestInterface {
    * @default:
    **/
   zhi_huan_bu_xiu?: number;
-
-  /**
-   * @description: 是否sku预售，1：是，0：否
-   * @type: number
-   * @default:
-   **/
-  is_sku_pre_sale?: number;
-
-  /**
-   * @description: 是否获取商品发布警告信息，默认为忽略
-   * @type: boolean
-   * @default:
-   **/
-  ignore_edit_warn?: boolean;
 }
 
 /**
@@ -663,7 +678,7 @@ export interface PddGoodsSubmitGoodsCommitOverseaGoodsRequestInterface {
    * @type: string
    * @default:
    **/
-  bonded_warehouse_key: string;
+  bonded_warehouse_key?: string;
 
   /**
    * @description: 消费税率
@@ -720,7 +735,7 @@ export interface PddGoodsSubmitGoodsCommitSkuListRequestInterface {
    * @type: number
    * @default:
    **/
-  is_onsale: number;
+  is_onsale?: number;
 
   /**
    * @description: sku送装参数：长度
@@ -734,14 +749,14 @@ export interface PddGoodsSubmitGoodsCommitSkuListRequestInterface {
    * @type: string | number
    * @default:
    **/
-  limit_quantity: string | number;
+  limit_quantity?: string | number;
 
   /**
    * @description: 商品团购价格
    * @type: string | number
    * @default:
    **/
-  multi_price: string | number;
+  multi_price?: string | number;
 
   /**
    * @description: 商品sku外部编码
@@ -770,14 +785,21 @@ export interface PddGoodsSubmitGoodsCommitSkuListRequestInterface {
    * @type: string | number
    * @default:
    **/
-  price: string | number;
+  price?: string | number;
 
   /**
    * @description: 商品sku库存初始数量，后续库存update只使用stocks.update接口进行调用
    * @type: string | number
    * @default:
    **/
-  quantity: string | number;
+  quantity?: string | number;
+
+  /**
+   * @description: sku预售时间戳，单位秒；不更新传null，取消传0，更新传实际值
+   * @type: number
+   * @default:
+   **/
+  sku_pre_sale_time?: number;
 
   /**
    * @description: sku属性
@@ -792,28 +814,21 @@ export interface PddGoodsSubmitGoodsCommitSkuListRequestInterface {
    * @type: Array<string | number>
    * @default:
    **/
-  spec_id_list: Array<string | number>;
+  spec_id_list?: Array<string | number>;
 
   /**
    * @description: sku预览图，预览图尺寸：等宽高，且高度不低于480px，现已支持1M大小，越清晰越好卖，SKU预览图格式：仅支持JPG,PNG格式
    * @type: string
    * @default:
    **/
-  thumb_url: string;
+  thumb_url?: string;
 
   /**
    * @description: 重量，单位为g
    * @type: string | number
    * @default:
    **/
-  weight: string | number;
-
-  /**
-   * @description: sku预售时间戳，单位秒
-   * @type: number
-   * @default:
-   **/
-  sku_pre_sale_time?: number;
+  weight?: string | number;
 }
 
 /**
@@ -827,21 +842,21 @@ export interface PddGoodsSubmitGoodsCommitSkuListOverseaSkuRequestInterface {
    * @type: string
    * @default:
    **/
-  measurement_code: string;
+  measurement_code?: string;
 
   /**
    * @description: 规格
    * @type: string
    * @default:
    **/
-  specifications: string;
+  specifications?: string;
 
   /**
    * @description: 税费
    * @type: number
    * @default:
    **/
-  taxation: number;
+  taxation?: number;
 }
 
 /**
@@ -862,7 +877,7 @@ export interface PddGoodsSubmitGoodsCommitSkuListSkuPropertiesRequestInterface {
    * @type: string | number
    * @default:
    **/
-  ref_pid: string | number;
+  ref_pid?: string | number;
 
   /**
    * @description: 属性值
@@ -913,4 +928,11 @@ export interface PddGoodsSubmitGoodsCommitGoodsUpdateResponseResponseInterface {
    * @default:
    **/
   goods_id: string | number;
+
+  /**
+   * @description: 商品匹配到的标品ID
+   * @type: string | number
+   * @default:
+   **/
+  matched_spu_id: string | number;
 }

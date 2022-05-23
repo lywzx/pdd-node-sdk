@@ -89,8 +89,8 @@ export interface PddCloudprintCustomaresGetPddCloudprintCustomaresGetResponseRes
 
   /**
    * @description: keys
-   * @type: object[]
+   * @type: string[]
    * @default:
    **/
-  keys: object[];
+  keys: string[];
 }

@@ -5,18 +5,20 @@ export const PDD_GOODS_CAT_TEMPLATE_GET_LIMITERS = [
     limiterLevel: 1,
     timeRange: 10,
     times: 1200,
+    callSourceType: 0,
   },
   {
     limiterLevel: 3,
     timeRange: 10,
     times: 12000,
+    callSourceType: 0,
   },
 ];
 
 /**
- * 接口名称：获取商品类目属性
+ * 接口名称：获取商品类目属性(已废弃)
  * 接口标识：pdd.goods.cat.template.get
- * 接口使用场景：商品发布前，需要查询该类目的商品发布需要的属性，获取商品发布需要的模板-属性-属性值
+ * 接口使用场景：商品发布前，需要查询该类目的商品发布需要的属性，获取商品发布需要的模板-属性-属性值。已废弃，建议使用pdd.goods.cat.rule.get代替
  **/
 export interface PddGoodsCatTemplateGetRequestInterface {
   /**
@@ -28,9 +30,9 @@ export interface PddGoodsCatTemplateGetRequestInterface {
 }
 
 /**
- * 接口名称：获取商品类目属性
+ * 接口名称：获取商品类目属性(已废弃)
  * 接口标识：pdd.goods.cat.template.get
- * 接口使用场景：商品发布前，需要查询该类目的商品发布需要的属性，获取商品发布需要的模板-属性-属性值
+ * 接口使用场景：商品发布前，需要查询该类目的商品发布需要的属性，获取商品发布需要的模板-属性-属性值。已废弃，建议使用pdd.goods.cat.rule.get代替
  **/
 export interface PddGoodsCatTemplateGetResponseInterface {
   /**

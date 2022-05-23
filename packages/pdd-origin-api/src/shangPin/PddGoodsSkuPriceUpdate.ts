@@ -5,11 +5,13 @@ export const PDD_GOODS_SKU_PRICE_UPDATE_LIMITERS = [
     limiterLevel: 4,
     timeRange: 10,
     times: 1200,
+    callSourceType: 0,
   },
   {
     limiterLevel: 3,
     timeRange: 10,
     times: 4000,
+    callSourceType: 0,
   },
 ];
 
@@ -25,6 +27,13 @@ export interface PddGoodsSkuPriceUpdateRequestInterface {
    * @default:
    **/
   goods_id: string | number;
+
+  /**
+   * @description: 是否获取商品发布警告信息，默认为忽略
+   * @type: boolean
+   * @default:
+   **/
+  ignore_edit_warn?: boolean;
 
   /**
    * @description: 参考价 （单位分）
@@ -56,11 +65,11 @@ export interface PddGoodsSkuPriceUpdateRequestInterface {
   sync_goods_operate?: number;
 
   /**
-   * @description: 是否获取商品发布警告信息，默认为忽略
-   * @type: boolean
+   * @description: 满2件折扣，可选范围0-100, 0表示取消，95表示95折，设置需先查询规则接口获取实际可填范围
+   * @type: number
    * @default:
    **/
-  ignore_edit_warn?: boolean;
+  two_pieces_discount?: number;
 }
 
 /**
@@ -74,7 +83,7 @@ export interface PddGoodsSkuPriceUpdateSkuPriceListRequestInterface {
    * @type: string | number
    * @default:
    **/
-  group_price: string | number;
+  group_price?: string | number;
 
   /**
    * @description: sku上架状态，0-已下架，1-上架中
@@ -88,7 +97,7 @@ export interface PddGoodsSkuPriceUpdateSkuPriceListRequestInterface {
    * @type: string | number
    * @default:
    **/
-  single_price: string | number;
+  single_price?: string | number;
 
   /**
    * @description: sku标识

@@ -237,6 +237,13 @@ export interface PddDdkOauthCmsPromUrlGenerateCmsPromotionUrlGenerateResponseUrl
   short_url: string;
 
   /**
+   * @description: 使用此推广链接，用户安装多多团长APP的情况下会唤起APP（需客户端支持schema跳转协议）
+   * @type: string
+   * @default:
+   **/
+  tz_schema_url: string;
+
+  /**
    * @description: 双人团长链接，唤起H5页面
    * @type: string
    * @default:
@@ -277,6 +284,13 @@ export interface PddDdkOauthCmsPromUrlGenerateCmsPromotionUrlGenerateResponseUrl
    * @default:
    **/
   short_url: string;
+
+  /**
+   * @description: 使用此推广链接，用户安装多多团长APP的情况下会唤起APP（需客户端支持schema跳转协议）
+   * @type: string
+   * @default:
+   **/
+  tz_schema_url: string;
 
   /**
    * @description: 普通推广长链接，唤起H5页面

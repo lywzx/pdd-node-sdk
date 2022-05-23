@@ -5,6 +5,7 @@ export const PDD_FDS_WAYBILL_RETURN_LIMITERS = [
     limiterLevel: 3,
     timeRange: 1,
     times: 2400,
+    callSourceType: 0,
   },
 ];
 

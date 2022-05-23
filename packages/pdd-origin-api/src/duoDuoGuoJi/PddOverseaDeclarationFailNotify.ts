@@ -8,7 +8,7 @@ export const PDD_OVERSEA_DECLARATION_FAIL_NOTIFY_RESPONSE_KEY = 'notify_exceeded
  **/
 export interface PddOverseaDeclarationFailNotifyRequestInterface {
   /**
-   * @description: 1=超过购买额度
+   * @description: 1-超过购买额度，2-清关异常（如重量超标、退运、扣留等）
    * @type: number
    * @default:
    **/

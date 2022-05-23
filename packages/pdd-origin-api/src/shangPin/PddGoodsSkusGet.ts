@@ -5,6 +5,7 @@ export const PDD_GOODS_SKUS_GET_LIMITERS = [
     limiterLevel: 3,
     timeRange: 1,
     times: 1000,
+    callSourceType: 0,
   },
 ];
 

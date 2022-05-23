@@ -44,6 +44,13 @@ export interface PddGoodsSpuSearchKeyPropRequestInterface {
   ref_pid?: string | number;
 
   /**
+   * @description: 关键属性值，需要从pdd.goods.cat.rule.get中获取。当要根据关键属性匹配时，和vid必须入参其一。
+   * @type: string
+   * @default:
+   **/
+  value?: string;
+
+  /**
    * @description: 属性值单位
    * @type: string
    * @default:
@@ -51,14 +58,7 @@ export interface PddGoodsSpuSearchKeyPropRequestInterface {
   value_unit?: string;
 
   /**
-   * @description: 关键属性值，需要从pdd.goods.cat.template.get中获取。当要根据关键属性匹配时，和vid必须入参其一。
-   * @type: string
-   * @default:
-   **/
-  value?: string;
-
-  /**
-   * @description: 关键属性值ID，需要从pdd.goods.cat.template.get中获取规则。当要根据关键属性匹配时，和value必须入参其一。
+   * @description: 关键属性值ID，需要从pdd.goods.cat.rule.get中获取规则。当要根据关键属性匹配时，和value必须入参其一。
    * @type: string | number
    * @default:
    **/
@@ -138,18 +138,18 @@ export interface PddGoodsSpuSearchSpuSearchResponseSpuListKeyPropResponseInterfa
   ref_pid: string | number;
 
   /**
-   * @description: 属性值单位
-   * @type: string
-   * @default:
-   **/
-  value_unit: string;
-
-  /**
    * @description: 属性值
    * @type: string
    * @default:
    **/
   value: string;
+
+  /**
+   * @description: 属性值单位
+   * @type: string
+   * @default:
+   **/
+  value_unit: string;
 
   /**
    * @description: 属性值ID

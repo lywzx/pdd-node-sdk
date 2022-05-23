@@ -5,6 +5,7 @@ export const PDD_VIRTUAL_MOBILE_CHARGE_NOTIFY_LIMITERS = [
     limiterLevel: 1,
     timeRange: 1,
     times: 4950,
+    callSourceType: 0,
   },
 ];
 
@@ -21,6 +22,13 @@ export interface PddVirtualMobileChargeNotifyRequestInterface {
    *
    **/
   charge_certi?: PddVirtualMobileChargeNotifyChargeCertiRequestInterface[];
+
+  /**
+   * @description: 电子发票信息 0-不支持开具  1-支持开具
+   * @type: number
+   * @default:
+   **/
+  ele_invoice?: number;
 
   /**
    * @description: 拼多多订单编码

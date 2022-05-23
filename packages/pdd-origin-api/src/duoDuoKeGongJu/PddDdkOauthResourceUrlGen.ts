@@ -15,6 +15,13 @@ export interface PddDdkOauthResourceUrlGenRequestInterface {
   custom_parameters?: string;
 
   /**
+   * @description: 是否返回 schema URL
+   * @type: boolean
+   * @default: false
+   **/
+  generate_schema_url?: boolean;
+
+  /**
    * @description: 是否生成拼多多福利券微信小程序推广信息
    * @type: boolean
    * @default: false

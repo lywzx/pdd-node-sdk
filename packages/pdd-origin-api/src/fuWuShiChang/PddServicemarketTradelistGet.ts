@@ -1,5 +1,13 @@
 export const PDD_SERVICEMARKET_TRADELIST_GET = 'pdd.servicemarket.tradelist.get';
 export const PDD_SERVICEMARKET_TRADELIST_GET_RESPONSE_KEY = 'mall_balance_flow_search_response';
+export const PDD_SERVICEMARKET_TRADELIST_GET_LIMITERS = [
+  {
+    limiterLevel: 3,
+    timeRange: 1,
+    times: 10,
+    callSourceType: 0,
+  },
+];
 
 /**
  * 接口名称：交易明细单导出
@@ -36,7 +44,7 @@ export interface PddServicemarketTradelistGetRequestInterface {
   page: number;
 
   /**
-   * @description: 分页大小，最大1000
+   * @description: 分页大小，最大100
    * @type: number
    * @default:
    **/

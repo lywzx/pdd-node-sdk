@@ -5,6 +5,7 @@ export const PDD_REFUND_STATUS_CHECK_LIMITERS = [
     limiterLevel: 1,
     timeRange: 60,
     times: 3000,
+    callSourceType: 0,
   },
 ];
 

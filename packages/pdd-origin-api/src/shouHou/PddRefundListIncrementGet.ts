@@ -3,13 +3,21 @@ export const PDD_REFUND_LIST_INCREMENT_GET_RESPONSE_KEY = 'refund_increment_get_
 export const PDD_REFUND_LIST_INCREMENT_GET_LIMITERS = [
   {
     limiterLevel: 1,
-    timeRange: 60,
-    times: 600,
+    timeRange: 10,
+    times: 100,
+    callSourceType: 0,
   },
   {
     limiterLevel: 3,
     timeRange: 1,
-    times: 12000,
+    times: 5500,
+    callSourceType: 0,
+  },
+  {
+    limiterLevel: 4,
+    timeRange: 1,
+    times: 500,
+    callSourceType: 0,
   },
 ];
 

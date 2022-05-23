@@ -5,11 +5,13 @@ export const PDD_GOODS_SPEC_ID_GET_LIMITERS = [
     limiterLevel: 1,
     timeRange: 60,
     times: 3600,
+    callSourceType: 0,
   },
   {
     limiterLevel: 3,
     timeRange: 1,
     times: 12000,
+    callSourceType: 0,
   },
 ];
 

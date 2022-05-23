@@ -5,11 +5,13 @@ export const PDD_GOODS_CPS_UNIT_CREATE_LIMITERS = [
     limiterLevel: 1,
     timeRange: 60,
     times: 60,
+    callSourceType: 0,
   },
   {
     limiterLevel: 3,
     timeRange: 1,
     times: 30,
+    callSourceType: 0,
   },
 ];
 

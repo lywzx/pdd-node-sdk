@@ -5,6 +5,7 @@ export const PDD_AD_API_UNIT_BID_QUERY_LIST_LIMITERS = [
     limiterLevel: 1,
     timeRange: 10,
     times: 20,
+    callSourceType: 0,
   },
 ];
 

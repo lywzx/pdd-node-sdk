@@ -5,6 +5,7 @@ export const PDD_DDK_GOODS_DETAIL_LIMITERS = [
     limiterLevel: 3,
     timeRange: 10,
     times: 66900,
+    callSourceType: 0,
   },
 ];
 
@@ -34,6 +35,13 @@ export interface PddDdkGoodsDetailRequestInterface {
    * @default:
    **/
   goods_sign?: string;
+
+  /**
+   * @description: 是否获取sku信息，默认false不返回。（特殊渠道权限，需额外申请）
+   * @type: boolean
+   * @default:
+   **/
+  need_sku_info?: boolean;
 
   /**
    * @description: 推广位id
@@ -113,6 +121,13 @@ export interface PddDdkGoodsDetailGoodsDetailResponseGoodsDetailsResponseInterfa
    * @default:
    **/
   brand_name: string;
+
+  /**
+   * @description: 全局礼金金额，单位分
+   * @type: string | number
+   * @default:
+   **/
+  cash_gift_amount: string | number;
 
   /**
    * @description: 商品类目ID，使用pdd.goods.cats.get接口获取
@@ -381,6 +396,14 @@ export interface PddDdkGoodsDetailGoodsDetailResponseGoodsDetailsResponseInterfa
   mall_name: string;
 
   /**
+   * @description: 商品素材列表
+   * @type: PddDdkGoodsDetailGoodsDetailResponseGoodsDetailsMaterialListResponseInterface[]
+   * @default:
+   *
+   **/
+  material_list: PddDdkGoodsDetailGoodsDetailResponseGoodsDetailsMaterialListResponseInterface[];
+
+  /**
    * @description: 店铺类型，1-个人，2-企业，3-旗舰店，4-专卖店，5-专营店，6-普通店（未传为全部）
    * @type: number
    * @default:
@@ -458,18 +481,18 @@ export interface PddDdkGoodsDetailGoodsDetailResponseGoodsDetailsResponseInterfa
   sales_tip: string;
 
   /**
-   * @description: 服务标签: 4-送货入户并安装,5-送货入户,6-电子发票,9-坏果包赔,11-闪电退款,12-24小时发货,13-48小时发货,17-顺丰包邮,18-只换不修,1可定制化,29-预约配送,1000001-正品发票,1000002-送货入户并安装
-   * @type: number[]
-   * @default:
-   **/
-  service_tags: number[];
-
-  /**
    * @description: 服务分
    * @type: string
    * @default:
    **/
   serv_txt: string;
+
+  /**
+   * @description: 服务标签: 1-全场包邮,2-七天退换,3-退货包运费,4-送货入户并安装,5-送货入户,6-电子发票,7-诚信发货,8-缺重包赔,9-坏果包赔,10-果重保证,11-闪电退款,12-24小时发货,13-48小时发货,14-免税费,15-假一罚十,16-贴心服务,17-顺丰包邮,18-只换不修,19-全国联保,20-分期付款,21-纸质发票,22-上门安装,23-爱心助农,24-极速退款,25-品质保障,26-缺重包退,27-当日发货,28-可定制化,29-预约配送,30-商品进口,31-电器城,1000001-正品发票,1000002-送货入户并安装,2000001-价格保护
+   * @type: number[]
+   * @default:
+   **/
+  service_tags: number[];
 
   /**
    * @description: 招商分成服务费比例，千分比
@@ -479,14 +502,22 @@ export interface PddDdkGoodsDetailGoodsDetailResponseGoodsDetailsResponseInterfa
   share_rate: number;
 
   /**
-   * @description: 优势渠道专属商品补贴金额，单位为分。针对优质渠道的补贴活动，指定优势渠道可通过推广该商品获取相应补贴。补贴活动入口：[进宝网站-官方活动-千万补贴]，报名入口：https://jinbao.pinduoduo.com/ten-million-subsidy/entry
+   * @description: sku列表
+   * @type: PddDdkGoodsDetailGoodsDetailResponseGoodsDetailsSkuListResponseInterface[]
+   * @default:
+   *
+   **/
+  sku_list: PddDdkGoodsDetailGoodsDetailResponseGoodsDetailsSkuListResponseInterface[];
+
+  /**
+   * @description: 优势渠道专属商品补贴金额，单位为分。针对优质渠道的补贴活动，指定优势渠道可通过推广该商品获取相应补贴。补贴活动入口：[进宝网站-官方活动]
    * @type: number
    * @default:
    **/
   subsidy_amount: number;
 
   /**
-   * @description: 千万补贴给渠道的收入补贴，不允许直接给下级代理展示，单位为分
+   * @description: 官方活动给渠道的收入补贴金额，不允许直接给下级代理展示，单位为分
    * @type: number
    * @default:
    **/
@@ -512,4 +543,131 @@ export interface PddDdkGoodsDetailGoodsDetailResponseGoodsDetailsResponseInterfa
    * @default:
    **/
   zs_duo_id: string | number;
+}
+
+/**
+ * @description 商品素材列表
+ * @default
+ * @example
+ **/
+export interface PddDdkGoodsDetailGoodsDetailResponseGoodsDetailsMaterialListResponseInterface {
+  /**
+   * @description: 素材ID
+   * @type: string
+   * @default:
+   **/
+  id: string;
+
+  /**
+   * @description: 图片列表
+   * @type: string[]
+   * @default:
+   **/
+  image_list: string[];
+
+  /**
+   * @description: 文字列表
+   * @type: string[]
+   * @default:
+   **/
+  text_list: string[];
+
+  /**
+   * @description: 视频缩略图
+   * @type: string
+   * @default:
+   **/
+  thumbnail_url: string;
+
+  /**
+   * @description: 素材类型，1-图文，2-视频
+   * @type: number
+   * @default:
+   **/
+  type: number;
+
+  /**
+   * @description: 视频url
+   * @type: string
+   * @default:
+   **/
+  video_url: string;
+}
+
+/**
+ * @description sku列表
+ * @default
+ * @example
+ **/
+export interface PddDdkGoodsDetailGoodsDetailResponseGoodsDetailsSkuListResponseInterface {
+  /**
+   * @description: 上下架状态: 1-上架, 0-下架
+   * @type: number
+   * @default:
+   **/
+  is_onsale: number;
+
+  /**
+   * @description: 最小成团价，单位分
+   * @type: string | number
+   * @default:
+   **/
+  min_group_price: string | number;
+
+  /**
+   * @description: sku预览图
+   * @type: string
+   * @default:
+   **/
+  sku_thumb_url: string;
+
+  /**
+   * @description: 商品规格列表
+   * @type: PddDdkGoodsDetailGoodsDetailResponseGoodsDetailsSkuListSpecListResponseInterface[]
+   * @default:
+   *
+   **/
+  spec_list: PddDdkGoodsDetailGoodsDetailResponseGoodsDetailsSkuListSpecListResponseInterface[];
+}
+
+/**
+ * @description 商品规格列表
+ * @default
+ * @example
+ **/
+export interface PddDdkGoodsDetailGoodsDetailResponseGoodsDetailsSkuListSpecListResponseInterface {
+  /**
+   * @description: 规格备注
+   * @type: string
+   * @default:
+   **/
+  note: string;
+
+  /**
+   * @description: 父规格id
+   * @type: string | number
+   * @default:
+   **/
+  parent_spec_id: string | number;
+
+  /**
+   * @description: 父规格名称。例如："型号"为父规格名称，"xx款"为该父规格下的子规格名称。
+   * @type: string
+   * @default:
+   **/
+  parent_spec_value: string;
+
+  /**
+   * @description: 规格id
+   * @type: string | number
+   * @default:
+   **/
+  spec_id: string | number;
+
+  /**
+   * @description: 规格名称。例如："xx款"为规格名称, "型号"为该规格的父规格名称。
+   * @type: string
+   * @default:
+   **/
+  spec_value: string;
 }

@@ -5,6 +5,7 @@ export const PDD_GOODS_COUNTRY_GET_LIMITERS = [
     limiterLevel: 3,
     timeRange: 10,
     times: 1200,
+    callSourceType: 0,
   },
 ];
 

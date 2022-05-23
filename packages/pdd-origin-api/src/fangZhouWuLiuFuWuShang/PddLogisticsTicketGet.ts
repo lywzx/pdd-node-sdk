@@ -5,6 +5,7 @@ export const PDD_LOGISTICS_TICKET_GET_LIMITERS = [
     limiterLevel: 1,
     timeRange: 60,
     times: 4800,
+    callSourceType: 0,
   },
 ];
 

@@ -5,6 +5,7 @@ export const PDD_DDY_PDP_USER_ADD_LIMITERS = [
     limiterLevel: 4,
     timeRange: 1,
     times: 50,
+    callSourceType: 0,
   },
 ];
 

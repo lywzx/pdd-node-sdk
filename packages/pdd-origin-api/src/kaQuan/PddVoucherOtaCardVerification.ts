@@ -5,6 +5,7 @@ export const PDD_VOUCHER_OTA_CARD_VERIFICATION_LIMITERS = [
     limiterLevel: 3,
     timeRange: 3600,
     times: 10000,
+    callSourceType: 0,
   },
 ];
 

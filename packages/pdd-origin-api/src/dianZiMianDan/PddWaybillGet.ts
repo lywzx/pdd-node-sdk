@@ -5,6 +5,7 @@ export const PDD_WAYBILL_GET_LIMITERS = [
     limiterLevel: 3,
     timeRange: 1,
     times: 12000,
+    callSourceType: 0,
   },
 ];
 
@@ -110,6 +111,13 @@ export interface PddWaybillGetParamWaybillCloudPrintApplyNewRequestSenderAddress
   city: string;
 
   /**
+   * @description: 国家/地区
+   * @type: string
+   * @default:
+   **/
+  country?: string;
+
+  /**
    * @description: 详细地址，仅支持非空值
    * @type: string
    * @default:
@@ -136,13 +144,6 @@ export interface PddWaybillGetParamWaybillCloudPrintApplyNewRequestSenderAddress
    * @default:
    **/
   town?: string;
-
-  /**
-   * @description: 国家/地区
-   * @type: string
-   * @default:
-   **/
-  country?: string;
 }
 
 /**
@@ -211,7 +212,7 @@ export interface PddWaybillGetParamWaybillCloudPrintApplyNewRequestTradeOrderInf
  **/
 export interface PddWaybillGetParamWaybillCloudPrintApplyNewRequestTradeOrderInfoDtosOrderInfoRequestInterface {
   /**
-   * @description: 订单渠道平台编码 当当网-DD，小米有品-XMYP，寺库-SK，聚美优品-JM，蜜芽-MY，小红书-XHS，萌推-MT，唯品会-WPH，拍拍-PP，ebay-EBAY，亚马逊-AMAZON，苏宁-SN，国美-GM，1号店-YHD，凡客-VANCL，邮乐-YL，优购-YG，乐蜂-LF，聚尚-JS，拍鞋-PX，银泰-YT，抖音-DY
+   * @description: 订单渠道平台编码 拼多多-PDD，淘宝-TB，天猫-TM，京东-JD，阿里巴巴-ALBB，有赞-YZ，微店-WD，蘑菇街-MGJ，云集-YJ，贝贝网-BB，转转-ZZ，快手小店-KS，当当网-DD，小米有品-XMYP，寺库-SK，聚美优品-JM，蜜芽-MY，小红书-XHS，萌推-MT，唯品会-WPH，拍拍-PP，ebay-EBAY，亚马逊-AMAZON，苏宁-SN，国美-GM，1号店-YHD，凡客-VANCL，邮乐-YL，优购-YG，乐蜂-LF，聚尚-JS，拍鞋-PX，银泰-YT，抖音-DY，其他-OTHERS
    * @type: string
    * @default:
    **/
@@ -353,6 +354,13 @@ export interface PddWaybillGetParamWaybillCloudPrintApplyNewRequestTradeOrderInf
   city: string;
 
   /**
+   * @description: 国家/地区
+   * @type: string
+   * @default:
+   **/
+  country?: string;
+
+  /**
    * @description: 详细地址，仅支持非空值
    * @type: string
    * @default:
@@ -379,13 +387,6 @@ export interface PddWaybillGetParamWaybillCloudPrintApplyNewRequestTradeOrderInf
    * @default:
    **/
   town?: string;
-
-  /**
-   * @description: 国家/地区
-   * @type: string
-   * @default:
-   **/
-  country?: string;
 }
 
 /**
