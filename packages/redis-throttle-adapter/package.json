@@ -6,7 +6,7 @@
   "homepage": "https://github.com/lywzx/pdd-node-sdk/tree/master/packages/redis-throttle-adapter#readme",
   "license": "MIT",
   "publishConfig": {
-    "registry": "http://registry.npmjs.org",
+    "registry": "https://registry.npmjs.org",
     "access": "public"
   },
   "repository": {
