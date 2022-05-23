@@ -13,7 +13,7 @@
         "master",
         "v2"
       ],
-      "registry": "http://registry.npmjs.org"
+      "registry": "https://registry.npmjs.org"
     }
   },
   "version": "1.0.1-alpha.2",
