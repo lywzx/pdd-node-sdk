@@ -13,6 +13,13 @@ export interface PddGoodsCatRuleGetRequestInterface {
    * @default:
    **/
   cat_id: string | number;
+
+  /**
+   * @description: 商品id，编辑的时候需要传被编辑的商品id，发布商品时如果已有商品id也需要传
+   * @type: string | number
+   * @default:
+   **/
+  goods_id?: string | number;
 }
 
 /**
@@ -67,6 +74,14 @@ export interface PddGoodsCatRuleGetCatRuleGetResponseResponseInterface {
    *
    **/
   spu_rule: PddGoodsCatRuleGetCatRuleGetResponseSpuRuleResponseInterface;
+
+  /**
+   * @description: 满2件折扣相关规则
+   * @type: PddGoodsCatRuleGetCatRuleGetResponseTwoPiecesDiscountRuleResponseInterface
+   * @default:
+   *
+   **/
+  two_pieces_discount_rule: PddGoodsCatRuleGetCatRuleGetResponseTwoPiecesDiscountRuleResponseInterface;
 }
 
 /**
@@ -218,14 +233,6 @@ export interface PddGoodsCatRuleGetCatRuleGetResponseGoodsPropertiesRuleProperti
   show_condition: PddGoodsCatRuleGetCatRuleGetResponseGoodsPropertiesRulePropertiesShowConditionResponseInterface[];
 
   /**
-   * @description: 属性值列表
-   * @type: PddGoodsCatRuleGetCatRuleGetResponseGoodsPropertiesRulePropertiesValuesResponseInterface[]
-   * @default:
-   *
-   **/
-  values: PddGoodsCatRuleGetCatRuleGetResponseGoodsPropertiesRulePropertiesValuesResponseInterface[];
-
-  /**
    * @description: 小数点允许最大精度，为0时代表不允许输入小数。对数值类属性值限制。
    * @type: number
    * @default:
@@ -238,6 +245,14 @@ export interface PddGoodsCatRuleGetCatRuleGetResponseGoodsPropertiesRuleProperti
    * @default:
    **/
   value_unit: string[];
+
+  /**
+   * @description: 属性值列表
+   * @type: PddGoodsCatRuleGetCatRuleGetResponseGoodsPropertiesRulePropertiesValuesResponseInterface[]
+   * @default:
+   *
+   **/
+  values: PddGoodsCatRuleGetCatRuleGetResponseGoodsPropertiesRulePropertiesValuesResponseInterface[];
 }
 
 /**
@@ -508,4 +523,39 @@ export interface PddGoodsCatRuleGetCatRuleGetResponseSpuRuleKeyPropResponseInter
    * @default:
    **/
   ref_pid: string | number;
+}
+
+/**
+ * @description 满2件折扣相关规则
+ * @default
+ * @example
+ **/
+export interface PddGoodsCatRuleGetCatRuleGetResponseTwoPiecesDiscountRuleResponseInterface {
+  /**
+   * @description: 是否必须设置
+   * @type: boolean
+   * @default:
+   **/
+  if_must_two_pieces_discount: boolean;
+
+  /**
+   * @description: 允许的最大折扣
+   * @type: number
+   * @default:
+   **/
+  max_two_pieces_discount: number;
+
+  /**
+   * @description: 允许的最小折扣
+   * @type: number
+   * @default:
+   **/
+  min_two_pieces_discount: number;
+
+  /**
+   * @description: 推荐的折扣
+   * @type: number
+   * @default:
+   **/
+  recommend_two_pieces_discount: number;
 }

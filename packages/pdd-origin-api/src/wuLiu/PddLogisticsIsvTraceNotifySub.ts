@@ -5,6 +5,7 @@ export const PDD_LOGISTICS_ISV_TRACE_NOTIFY_SUB_LIMITERS = [
     limiterLevel: 4,
     timeRange: 86400,
     times: 2400000,
+    callSourceType: 0,
   },
 ];
 

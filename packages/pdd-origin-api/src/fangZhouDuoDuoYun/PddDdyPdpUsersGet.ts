@@ -1,5 +1,13 @@
 export const PDD_DDY_PDP_USERS_GET = 'pdd.ddy.pdp.users.get';
 export const PDD_DDY_PDP_USERS_GET_RESPONSE_KEY = 'ddy_pdp_users_get_response';
+export const PDD_DDY_PDP_USERS_GET_LIMITERS = [
+  {
+    limiterLevel: 4,
+    timeRange: 1,
+    times: 100,
+    callSourceType: 0,
+  },
+];
 
 /**
  * 接口名称：获取开通订单同步服务的用户

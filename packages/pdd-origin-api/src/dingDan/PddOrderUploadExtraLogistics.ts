@@ -4,7 +4,7 @@ export const PDD_ORDER_UPLOAD_EXTRA_LOGISTICS_RESPONSE_KEY = 'upload_extra_logis
 /**
  * 接口名称：订单额外运单信息上传
  * 接口标识：pdd.order.upload.extra.logistics
- * 接口使用场景：针对一笔订单分多笔物流发货的场景，将支持商家额外上传运单号，额外运单作为补充信息仅用作消费者查看。
+ * 接口使用场景：针对一笔订单分多笔物流发货的场景（分包发货、补寄、发放赠品），将支持商家额外上传运单号，额外运单作为补充信息仅用作消费者查看。
  **/
 export interface PddOrderUploadExtraLogisticsRequestInterface {
   /**
@@ -21,6 +21,13 @@ export interface PddOrderUploadExtraLogisticsRequestInterface {
    * @default:
    **/
   order_sn: string;
+
+  /**
+   * @description: 额外运单类型，1=分包发货，2=补发商品，3=发放赠品
+   * @type: number
+   * @default:
+   **/
+  extra_track_type?: number;
 }
 
 /**
@@ -47,7 +54,7 @@ export interface PddOrderUploadExtraLogisticsExtraTrackListRequestInterface {
 /**
  * 接口名称：订单额外运单信息上传
  * 接口标识：pdd.order.upload.extra.logistics
- * 接口使用场景：针对一笔订单分多笔物流发货的场景，将支持商家额外上传运单号，额外运单作为补充信息仅用作消费者查看。
+ * 接口使用场景：针对一笔订单分多笔物流发货的场景（分包发货、补寄、发放赠品），将支持商家额外上传运单号，额外运单作为补充信息仅用作消费者查看。
  **/
 export interface PddOrderUploadExtraLogisticsResponseInterface {
   /**

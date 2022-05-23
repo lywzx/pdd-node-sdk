@@ -5,6 +5,7 @@ export const PDD_GOODS_CPS_UNIT_CHANGE_LIMITERS = [
     limiterLevel: 1,
     timeRange: 60,
     times: 60,
+    callSourceType: 0,
   },
 ];
 

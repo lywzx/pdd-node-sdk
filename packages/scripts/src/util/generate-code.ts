@@ -99,6 +99,10 @@ export function buildInterfaceColumn(
     if (current.childrenNum == 0) {
       // 没有了细点
       type = pddTypeToTypescriptType(current.paramType);
+      // 没有字节点，并且又为object，通常会是string[]
+      if (type === 'object[]') {
+        type = 'string[]';
+      }
       comment = `@description: ${current.paramDesc}
 @type: ${type}
 @default: ${'defaultValue' in current ? current.defaultValue : ''}`;
@@ -190,7 +194,7 @@ const typeMap = {
   LONG: 'string | number',
   'LONG[]': 'Array<string | number>',
   INTEGER: 'number',
-  MAP: 'object',
+  MAP: 'Record<string, any>',
   DOUBLE: 'string',
   FILE: 'Buffer',
 };

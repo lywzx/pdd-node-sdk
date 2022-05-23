@@ -5,6 +5,7 @@ export const PDD_VOUCHER_VOUCHER_COMPLAIN_LIMITERS = [
     limiterLevel: 1,
     timeRange: 60,
     times: 3000,
+    callSourceType: 0,
   },
 ];
 

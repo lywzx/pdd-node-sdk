@@ -5,11 +5,13 @@ export const PDD_REFUND_ADDRESS_LIST_GET_LIMITERS = [
     limiterLevel: 1,
     timeRange: 60,
     times: 3000,
+    callSourceType: 0,
   },
   {
     limiterLevel: 3,
     timeRange: 1,
     times: 1040,
+    callSourceType: 0,
   },
 ];
 

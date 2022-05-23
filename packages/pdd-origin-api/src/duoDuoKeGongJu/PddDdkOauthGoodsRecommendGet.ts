@@ -8,7 +8,7 @@ export const PDD_DDK_OAUTH_GOODS_RECOMMEND_GET_RESPONSE_KEY = 'goods_basic_detai
  **/
 export interface PddDdkOauthGoodsRecommendGetRequestInterface {
   /**
-   * @description: 活动商品标记数组，例：[4,7]，4-秒杀，7-百亿补贴，10851-千万补贴，10913-招商礼金商品，31-品牌黑标，10564-精选爆品-官方直推爆款，10584-精选爆品-团长推荐，24-品牌高佣，其他的值请忽略
+   * @description: 活动商品标记数组，例：[4,7]，4-秒杀，7-百亿补贴，10851-千万补贴，11879-千万神券，10913-招商礼金商品，31-品牌黑标，10564-精选爆品-官方直推爆款，10584-精选爆品-团长推荐，24-品牌高佣，其他的值请忽略
    * @type: number[]
    * @default:
    **/
@@ -164,6 +164,13 @@ export interface PddDdkOauthGoodsRecommendGetGoodsBasicDetailResponseListRespons
   brand_name: string;
 
   /**
+   * @description: 全局礼金金额，单位分
+   * @type: string | number
+   * @default:
+   **/
+  cash_gift_amount: string | number;
+
+  /**
    * @description: 商品类目id
    * @type: string
    * @default:
@@ -311,6 +318,13 @@ export interface PddDdkOauthGoodsRecommendGetGoodsBasicDetailResponseListRespons
   has_coupon: boolean;
 
   /**
+   * @description: 商品是否有素材(图文、视频)
+   * @type: boolean
+   * @default:
+   **/
+  has_material: boolean;
+
+  /**
    * @description: 物流分
    * @type: string
    * @default:
@@ -444,14 +458,14 @@ export interface PddDdkOauthGoodsRecommendGetGoodsBasicDetailResponseListRespons
   share_rate: number;
 
   /**
-   * @description: 优势渠道专属商品补贴金额，单位为分。针对优质渠道的补贴活动，指定优势渠道可通过推广该商品获取相应补贴。补贴活动入口：[进宝网站-官方活动-千万补贴]，报名入口：https://jinbao.pinduoduo.com/ten-million-subsidy/entry
+   * @description: 优势渠道专属商品补贴金额，单位为分。针对优质渠道的补贴活动，指定优势渠道可通过推广该商品获取相应补贴。补贴活动入口：[进宝网站-官方活动]
    * @type: number
    * @default:
    **/
   subsidy_amount: number;
 
   /**
-   * @description: 千万补贴给渠道的收入补贴，不允许直接给下级代理展示，单位为分
+   * @description: 官方活动给渠道的收入补贴金额，不允许直接给下级代理展示，单位为分
    * @type: number
    * @default:
    **/

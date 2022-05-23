@@ -5,6 +5,7 @@ export const PDD_DDK_CMS_PROM_URL_GENERATE_LIMITERS = [
     limiterLevel: 3,
     timeRange: 10,
     times: 10050,
+    callSourceType: 0,
   },
 ];
 
@@ -244,6 +245,13 @@ export interface PddDdkCmsPromUrlGenerateCmsPromotionUrlGenerateResponseUrlListM
   short_url: string;
 
   /**
+   * @description: 使用此推广链接，用户安装多多团长APP的情况下会唤起APP（需客户端支持schema跳转协议）
+   * @type: string
+   * @default:
+   **/
+  tz_schema_url: string;
+
+  /**
    * @description: 双人团长链接，唤起H5页面
    * @type: string
    * @default:
@@ -284,6 +292,13 @@ export interface PddDdkCmsPromUrlGenerateCmsPromotionUrlGenerateResponseUrlListS
    * @default:
    **/
   short_url: string;
+
+  /**
+   * @description: 使用此推广链接，用户安装多多团长APP的情况下会唤起APP（需客户端支持schema跳转协议）
+   * @type: string
+   * @default:
+   **/
+  tz_schema_url: string;
 
   /**
    * @description: 推广长链接，唤起H5页面

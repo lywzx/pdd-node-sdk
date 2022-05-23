@@ -150,6 +150,13 @@ export interface PddDdkOrderListRangeGetOrderListGetResponseOrderListResponseInt
   fail_reason: string;
 
   /**
+   * @description: 商品一级类目名称
+   * @type: string
+   * @default:
+   **/
+  goods_category_name: string;
+
+  /**
    * @description: 商品ID
    * @type: string | number
    * @default:
@@ -211,6 +218,20 @@ export interface PddDdkOrderListRangeGetOrderListGetResponseOrderListResponseInt
    * @default:
    **/
   mall_id: string | number;
+
+  /**
+   * @description: 店铺名称
+   * @type: string
+   * @default:
+   **/
+  mall_name: string;
+
+  /**
+   * @description: 非补贴订单原因，例如："商品补贴达上限"，"达到单个用户下单上限"，"非指定落地页直推订单"，"订单超过2个月未审核成功"等
+   * @type: string
+   * @default:
+   **/
+  no_subsidy_reason: string;
 
   /**
    * @description: 实际支付金额，单位为分
@@ -290,6 +311,20 @@ export interface PddDdkOrderListRangeGetOrderListGetResponseOrderListResponseInt
   order_verify_time: string | number;
 
   /**
+   * @description: 推广位ID
+   * @type: string
+   * @default:
+   **/
+  p_id: string;
+
+  /**
+   * @description: 平台券金额，表示该订单使用的平台券金额，单位分
+   * @type: string | number
+   * @default:
+   **/
+  platform_discount: string | number;
+
+  /**
    * @description: 比价状态：0：正常，1：比价
    * @type: number
    * @default:
@@ -311,11 +346,11 @@ export interface PddDdkOrderListRangeGetOrderListGetResponseOrderListResponseInt
   promotion_rate: string | number;
 
   /**
-   * @description: 推广位ID
-   * @type: string
+   * @description: 超级红包补贴类型：0-非红包补贴订单，1-季度新用户补贴
+   * @type: number
    * @default:
    **/
-  p_id: string;
+  red_packet_type: number;
 
   /**
    * @description: 直播间订单推广duoId
@@ -367,7 +402,7 @@ export interface PddDdkOrderListRangeGetOrderListGetResponseOrderListResponseInt
   share_rate: number;
 
   /**
-   * @description: 优势渠道专属商品补贴金额，单位为分。针对优质渠道的补贴活动，指定优势渠道可通过推广该商品获取相应补贴。补贴活动入口：[进宝网站-官方活动-千万补贴]，报名入口：https://jinbao.pinduoduo.com/ten-million-subsidy/entry
+   * @description: 优势渠道专属商品补贴金额，单位为分。针对优质渠道的补贴活动，指定优势渠道可通过推广该商品获取相应补贴。补贴活动入口：[进宝网站-官方活动]
    * @type: number
    * @default:
    **/
@@ -381,21 +416,21 @@ export interface PddDdkOrderListRangeGetOrderListGetResponseOrderListResponseInt
   subsidy_duo_amount_level: number;
 
   /**
-   * @description: 千万补贴给渠道的收入补贴，不允许直接给下级代理展示，单位为分
+   * @description: 官方活动给渠道的收入补贴金额，不允许直接给下级代理展示，单位为分
    * @type: number
    * @default:
    **/
   subsidy_duo_amount_ten_million: number;
 
   /**
-   * @description: 订单补贴类型：0-非补贴订单，1-千万补贴，2-社群补贴
+   * @description: 订单补贴类型：0-非补贴订单，1-千万补贴，2-社群补贴，3-多多星选，4-品牌优选，5-千万神券
    * @type: number
    * @default:
    **/
   subsidy_type: number;
 
   /**
-   * @description: 订单类型：0：领券页面， 1： 红包页， 2：领券页， 3： 题页
+   * @description: 下单场景类型：0-单品推广，1-红包活动推广，4-多多进宝商城推广，7-今日爆款，8-品牌清仓，9-1.9包邮，77-刮刮卡活动推广，94-充值中心，101-品牌黑卡，103-百亿补贴频道，104-内购清单频道，105-超级红包
    * @type: number
    * @default:
    **/

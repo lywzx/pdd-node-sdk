@@ -5,11 +5,13 @@ export const PDD_INVOICE_DETAIL_INVALID_LIMITERS = [
     limiterLevel: 3,
     timeRange: 5,
     times: 10000,
+    callSourceType: 0,
   },
   {
     limiterLevel: 1,
     timeRange: 5,
     times: 1000,
+    callSourceType: 0,
   },
 ];
 

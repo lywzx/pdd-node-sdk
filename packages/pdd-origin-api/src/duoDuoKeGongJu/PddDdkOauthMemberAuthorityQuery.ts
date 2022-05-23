@@ -5,6 +5,7 @@ export const PDD_DDK_OAUTH_MEMBER_AUTHORITY_QUERY_LIMITERS = [
     limiterLevel: 3,
     timeRange: 50,
     times: 33450,
+    callSourceType: 0,
   },
 ];
 

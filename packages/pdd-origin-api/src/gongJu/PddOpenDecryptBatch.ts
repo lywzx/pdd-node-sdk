@@ -5,16 +5,19 @@ export const PDD_OPEN_DECRYPT_BATCH_LIMITERS = [
     limiterLevel: 4,
     timeRange: 10,
     times: 1,
+    callSourceType: 2,
   },
   {
     limiterLevel: 4,
     timeRange: 10,
     times: 10050,
+    callSourceType: 0,
   },
   {
     limiterLevel: 3,
     timeRange: 10,
     times: 19500,
+    callSourceType: 0,
   },
 ];
 

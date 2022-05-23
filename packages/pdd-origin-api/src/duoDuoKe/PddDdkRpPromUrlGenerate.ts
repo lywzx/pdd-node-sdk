@@ -5,6 +5,7 @@ export const PDD_DDK_RP_PROM_URL_GENERATE_LIMITERS = [
     limiterLevel: 3,
     timeRange: 50,
     times: 33450,
+    callSourceType: 0,
   },
 ];
 
@@ -22,7 +23,7 @@ export interface PddDdkRpPromUrlGenerateRequestInterface {
   amount?: string | number;
 
   /**
-   * @description: 营销工具类型，必填：-1-活动列表，0-红包(需申请推广权限)，2–新人红包，3-刮刮卡，5-员工内购，6-购物车，10-生成绑定备案链接，12-砸金蛋，13-一元购，14-千万补贴B端页面，15-充值中心B端页面；红包推广权限申请流程链接：https://jinbao.pinduoduo.com/qa-system?questionId=289
+   * @description: 营销工具类型，必填：-1-活动列表，0-红包(需申请推广权限)，2–新人红包，3-刮刮卡，5-员工内购，10-生成绑定备案链接，12-砸金蛋，14-千万补贴B端页面，15-充值中心B端页面，16-千万补贴C端页面，17-千万补贴投票页面，23-超级红包，24-礼金全场N折活动B端页面，27-带货赢千万，28-满减券活动B端页面，29-满减券活动C端页面，30-免单B端页面，31-免单C端页面，32-转盘得现金B端页面，33-转盘得现金C端页面，34-千万神券C端页面，35-千万神券B端页面；红包推广权限申请流程链接：https://jinbao.pinduoduo.com/qa-system?questionId=289
    * @type: number
    * @default:
    **/
@@ -50,6 +51,14 @@ export interface PddDdkRpPromUrlGenerateRequestInterface {
    *
    **/
   diy_red_packet_param?: PddDdkRpPromUrlGenerateDiyRedPacketParamRequestInterface;
+
+  /**
+   * @description: 超级红包自定义参数，json格式
+   * @type: PddDdkRpPromUrlGenerateDiySpRedPacketParamRequestInterface
+   * @default:
+   *
+   **/
+  diy_sp_red_packet_param?: PddDdkRpPromUrlGenerateDiySpRedPacketParamRequestInterface;
 
   /**
    * @description: 是否生成qq小程序
@@ -80,7 +89,7 @@ export interface PddDdkRpPromUrlGenerateRequestInterface {
   generate_we_app?: boolean;
 
   /**
-   * @description: 推广位列表，例如：["60005_612"]
+   * @description: 推广位列表，长度最大为1，例如：["60005_612"]。活动页生链要求传入授权备案信息，不支持批量生链。
    * @type: string[]
    * @default:
    **/
@@ -92,6 +101,13 @@ export interface PddDdkRpPromUrlGenerateRequestInterface {
    * @default:
    **/
   scratch_card_amount?: string | number;
+
+  /**
+   * @description: 招商DuoID
+   * @type: string | number
+   * @default:
+   **/
+  zs_duo_id?: string | number;
 }
 
 /**
@@ -177,6 +193,20 @@ export interface PddDdkRpPromUrlGenerateDiyRedPacketParamRangeItemsRequestInterf
    * @default:
    **/
   range_to?: string | number;
+}
+
+/**
+ * @description 超级红包自定义参数，json格式
+ * @default
+ * @example
+ **/
+export interface PddDdkRpPromUrlGenerateDiySpRedPacketParamRequestInterface {
+  /**
+   * @description: 商品goodsSign，支持通过goodsSign置顶落地页商品。使用说明：https://jinbao.pinduoduo.com/qa-system?questionId=252
+   * @type: string
+   * @default:
+   **/
+  goods_sign?: string;
 }
 
 /**
@@ -307,6 +337,13 @@ export interface PddDdkRpPromUrlGenerateRpPromotionUrlGenerateResponseUrlListRes
    * @default:
    **/
   short_url: string;
+
+  /**
+   * @description: 使用此推广链接，用户安装多多团长APP的情况下会唤起APP（需客户端支持schema跳转协议）
+   * @type: string
+   * @default:
+   **/
+  tz_schema_url: string;
 
   /**
    * @description: 普通推广长链接，唤起H5页面

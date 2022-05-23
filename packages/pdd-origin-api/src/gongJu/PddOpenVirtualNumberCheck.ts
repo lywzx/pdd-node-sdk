@@ -87,13 +87,6 @@ export interface PddOpenVirtualNumberCheckOpenVirtualNumberCheckResponseResultRe
   error_msg: string;
 
   /**
-   * @description: 虚拟号过期的时间戳
-   * @type: string | number
-   * @default:
-   **/
-  expired_timestamp: string | number;
-
-  /**
    * @description: 是否订单所绑定的虚拟号，true是，false否
    * @type: boolean
    * @default:

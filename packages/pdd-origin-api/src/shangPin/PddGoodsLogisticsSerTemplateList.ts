@@ -8,20 +8,6 @@ export const PDD_GOODS_LOGISTICS_SER_TEMPLATE_LIST_RESPONSE_KEY = 'goods_logisti
  **/
 export interface PddGoodsLogisticsSerTemplateListRequestInterface {
   /**
-   * @description: 模板类型
-   * @type: number
-   * @default:
-   **/
-  template_type: number;
-
-  /**
-   * @description: 查询偏移量
-   * @type: number
-   * @default:
-   **/
-  start: number;
-
-  /**
    * @description: 查询大小
    * @type: number
    * @default:
@@ -34,6 +20,20 @@ export interface PddGoodsLogisticsSerTemplateListRequestInterface {
    * @default:
    **/
   query_type: number;
+
+  /**
+   * @description: 查询偏移量
+   * @type: number
+   * @default:
+   **/
+  start: number;
+
+  /**
+   * @description: 模板类型
+   * @type: number
+   * @default:
+   **/
+  template_type: number;
 }
 
 /**
@@ -58,19 +58,19 @@ export interface PddGoodsLogisticsSerTemplateListResponseInterface {
  **/
 export interface PddGoodsLogisticsSerTemplateListGoodsLogisticsSerTemplateListResponseResponseInterface {
   /**
-   * @description: 总数
-   * @type: number
-   * @default:
-   **/
-  total: number;
-
-  /**
    * @description: 列表
    * @type: PddGoodsLogisticsSerTemplateListGoodsLogisticsSerTemplateListResponseListResponseInterface[]
    * @default:
    *
    **/
   list: PddGoodsLogisticsSerTemplateListGoodsLogisticsSerTemplateListResponseListResponseInterface[];
+
+  /**
+   * @description: 总数
+   * @type: number
+   * @default:
+   **/
+  total: number;
 }
 
 /**
@@ -80,18 +80,11 @@ export interface PddGoodsLogisticsSerTemplateListGoodsLogisticsSerTemplateListRe
  **/
 export interface PddGoodsLogisticsSerTemplateListGoodsLogisticsSerTemplateListResponseListResponseInterface {
   /**
-   * @description: 使用情况
-   * @type: number
+   * @description: 模版id
+   * @type: string
    * @default:
    **/
-  using: number;
-
-  /**
-   * @description: 更新时间
-   * @type: number
-   * @default:
-   **/
-  update_time: number;
+  template_id: string;
 
   /**
    * @description: 模版名称
@@ -101,9 +94,16 @@ export interface PddGoodsLogisticsSerTemplateListGoodsLogisticsSerTemplateListRe
   template_name: string;
 
   /**
-   * @description: 模版id
-   * @type: string
+   * @description: 更新时间
+   * @type: number
    * @default:
    **/
-  template_id: string;
+  update_time: number;
+
+  /**
+   * @description: 使用情况
+   * @type: number
+   * @default:
+   **/
+  using: number;
 }

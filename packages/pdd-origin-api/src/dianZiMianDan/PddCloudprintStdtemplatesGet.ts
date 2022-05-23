@@ -5,6 +5,7 @@ export const PDD_CLOUDPRINT_STDTEMPLATES_GET_LIMITERS = [
     limiterLevel: 3,
     timeRange: 1,
     times: 6000,
+    callSourceType: 0,
   },
 ];
 

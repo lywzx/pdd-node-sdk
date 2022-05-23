@@ -36,7 +36,7 @@ export interface PddInvoiceDetailUploadRequestInterface {
   invoice_code?: string;
 
   /**
-   * @description: 发票内容，pdf文件，转码base64编码
+   * @description: 发票内容，pdf文件(电票回传)，图片文件(专票回传)，转码base64编码
    * @type: string
    * @default:
    **/
@@ -105,6 +105,20 @@ export interface PddInvoiceDetailUploadRequestInterface {
    * @default:
    **/
   original_invoice_no?: string;
+
+  /**
+   * @description: 专票回传必填，专票邮寄快递公司编码，见https://open.pinduoduo.com/application/document/api?id=pdd.logistics.companies.get返回的快递公司编码
+   * @type: number
+   * @default:
+   **/
+  paper_shipping_id?: number;
+
+  /**
+   * @description: 专票回传必填，专票邮寄运单号
+   * @type: string
+   * @default:
+   **/
+  paper_tracking_number?: string;
 
   /**
    * @description: 开票人
@@ -198,7 +212,7 @@ export interface PddInvoiceDetailUploadInvoiceItemListRequestInterface {
   invoice_code: string;
 
   /**
-   * @description: 发票内容，pdf文件，转码base64编码
+   * @description: 发票内容，pdf文件(电票回传)，图片文件(专票回传)，转码base64编码
    * @type: string
    * @default:
    **/

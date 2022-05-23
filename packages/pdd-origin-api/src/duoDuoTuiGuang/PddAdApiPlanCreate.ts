@@ -4,7 +4,8 @@ export const PDD_AD_API_PLAN_CREATE_LIMITERS = [
   {
     limiterLevel: 1,
     timeRange: 10,
-    times: 5,
+    times: 3,
+    callSourceType: 0,
   },
 ];
 

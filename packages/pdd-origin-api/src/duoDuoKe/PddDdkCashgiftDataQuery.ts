@@ -65,6 +65,13 @@ export interface PddDdkCashgiftDataQueryResponseInterface {
  **/
 export interface PddDdkCashgiftDataQueryCashgiftDataResponseResponseInterface {
   /**
+   * @description: 礼金账户余额，单位为分
+   * @type: string | number
+   * @default:
+   **/
+  available_balance: string | number;
+
+  /**
    * @description: 多多礼金数据列表
    * @type: PddDdkCashgiftDataQueryCashgiftDataResponseListResponseInterface[]
    * @default:
@@ -129,12 +136,12 @@ export interface PddDdkCashgiftDataQueryCashgiftDataResponseListResponseInterfac
   fetch_quantity: number;
 
   /**
-   * @description: 商品信息
-   * @type: PddDdkCashgiftDataQueryCashgiftDataResponseListGoodsInfoResponseInterface
+   * @description: 商品列表信息
+   * @type: PddDdkCashgiftDataQueryCashgiftDataResponseListGoodsInfoListResponseInterface[]
    * @default:
    *
    **/
-  goods_info: PddDdkCashgiftDataQueryCashgiftDataResponseListGoodsInfoResponseInterface;
+  goods_info_list: PddDdkCashgiftDataQueryCashgiftDataResponseListGoodsInfoListResponseInterface[];
 
   /**
    * @description: 礼金订单使用的券总金额，单位为分（实时数据）
@@ -194,11 +201,11 @@ export interface PddDdkCashgiftDataQueryCashgiftDataResponseListResponseInterfac
 }
 
 /**
- * @description 商品信息
+ * @description 商品列表信息
  * @default
  * @example
  **/
-export interface PddDdkCashgiftDataQueryCashgiftDataResponseListGoodsInfoResponseInterface {
+export interface PddDdkCashgiftDataQueryCashgiftDataResponseListGoodsInfoListResponseInterface {
   /**
    * @description: 商品优惠券面额，单位为分
    * @type: string | number
@@ -221,16 +228,16 @@ export interface PddDdkCashgiftDataQueryCashgiftDataResponseListGoodsInfoRespons
   goods_price: string | number;
 
   /**
+   * @description: 商品goodsSign，支持通过goodsSign查询商品。goodsSign是加密后的goodsId, goodsId已下线，请使用goodsSign来替代。使用说明：https://jinbao.pinduoduo.com/qa-system?questionId=252
+   * @type: string
+   * @default:
+   **/
+  goods_sign: string;
+
+  /**
    * @description: 商品佣金比例，千分比
    * @type: number
    * @default:
    **/
   rate: number;
-
-  /**
-   * @description: 招商团长duoid
-   * @type: string | number
-   * @default:
-   **/
-  zs_duo_id: string | number;
 }

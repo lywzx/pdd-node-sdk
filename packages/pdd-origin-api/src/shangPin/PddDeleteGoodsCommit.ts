@@ -5,11 +5,13 @@ export const PDD_DELETE_GOODS_COMMIT_LIMITERS = [
     limiterLevel: 4,
     timeRange: 20,
     times: 1200,
+    callSourceType: 0,
   },
   {
     limiterLevel: 3,
     timeRange: 10,
     times: 3000,
+    callSourceType: 0,
   },
 ];
 

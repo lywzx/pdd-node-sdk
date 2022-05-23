@@ -5,11 +5,13 @@ export const PDD_GOODS_CATS_GET_LIMITERS = [
     limiterLevel: 4,
     timeRange: 60,
     times: 3000,
+    callSourceType: 0,
   },
   {
     limiterLevel: 3,
     timeRange: 2,
     times: 2400,
+    callSourceType: 0,
   },
 ];
 

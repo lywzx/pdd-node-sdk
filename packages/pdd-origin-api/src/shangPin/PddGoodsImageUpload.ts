@@ -5,16 +5,19 @@ export const PDD_GOODS_IMAGE_UPLOAD_LIMITERS = [
     limiterLevel: 1,
     timeRange: 60,
     times: 3000,
+    callSourceType: 0,
   },
   {
     limiterLevel: 3,
     timeRange: 10,
     times: 127500,
+    callSourceType: 0,
   },
   {
     limiterLevel: 4,
     timeRange: 10,
     times: 5100,
+    callSourceType: 0,
   },
 ];
 

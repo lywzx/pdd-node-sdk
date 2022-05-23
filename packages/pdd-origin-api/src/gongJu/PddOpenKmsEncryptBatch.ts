@@ -5,11 +5,13 @@ export const PDD_OPEN_KMS_ENCRYPT_BATCH_LIMITERS = [
     limiterLevel: 4,
     timeRange: 10,
     times: 10050,
+    callSourceType: 0,
   },
   {
     limiterLevel: 3,
     timeRange: 10,
     times: 19500,
+    callSourceType: 0,
   },
 ];
 

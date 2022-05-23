@@ -5,6 +5,7 @@ export const PDD_ERP_ORDER_SYNC_LIMITERS = [
     limiterLevel: 3,
     timeRange: 10,
     times: 39000,
+    callSourceType: 0,
   },
 ];
 

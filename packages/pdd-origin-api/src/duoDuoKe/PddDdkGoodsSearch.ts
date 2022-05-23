@@ -5,6 +5,7 @@ export const PDD_DDK_GOODS_SEARCH_LIMITERS = [
     limiterLevel: 3,
     timeRange: 10,
     times: 66900,
+    callSourceType: 0,
   },
 ];
 
@@ -15,18 +16,11 @@ export const PDD_DDK_GOODS_SEARCH_LIMITERS = [
  **/
 export interface PddDdkGoodsSearchRequestInterface {
   /**
-   * @description: 活动商品标记数组，例：[4,7]，4-秒杀，7-百亿补贴，10851-千万补贴，10913-招商礼金商品，31-品牌黑标，10564-精选爆品-官方直推爆款，10584-精选爆品-团长推荐，24-品牌高佣，其他的值请忽略
+   * @description: 活动商品标记数组，例：[4,7]，4-秒杀，7-百亿补贴，10851-千万补贴，11879-千万神券，10913-招商礼金商品，31-品牌黑标，10564-精选爆品-官方直推爆款，10584-精选爆品-团长推荐，24-品牌高佣，其他的值请忽略
    * @type: number[]
    * @default:
    **/
   activity_tags?: number[];
-
-  /**
-   * @description: 自定义屏蔽一级/二级/三级类目ID，自定义数量不超过20个;使用pdd.goods.cats.get接口获取cat_id
-   * @type: number[]
-   * @default:
-   **/
-  block_cats?: number[];
 
   /**
    * @description: 屏蔽商品类目包：1-拼多多小程序屏蔽的类目&关键词;2-虚拟类目;3-医疗器械;4-处方药;5-非处方药
@@ -34,6 +28,13 @@ export interface PddDdkGoodsSearchRequestInterface {
    * @default:
    **/
   block_cat_packages?: number[];
+
+  /**
+   * @description: 自定义屏蔽一级/二级/三级类目ID，自定义数量不超过20个;使用pdd.goods.cats.get接口获取cat_id
+   * @type: number[]
+   * @default:
+   **/
+  block_cats?: number[];
 
   /**
    * @description: 商品类目ID，使用pdd.goods.cats.get接口获取
@@ -270,6 +271,13 @@ export interface PddDdkGoodsSearchGoodsSearchResponseGoodsListResponseInterface 
   brand_name: string;
 
   /**
+   * @description: 全局礼金金额，单位分
+   * @type: string | number
+   * @default:
+   **/
+  cash_gift_amount: string | number;
+
+  /**
    * @description: 商品类目id
    * @type: Array<string | number>
    * @default:
@@ -445,6 +453,13 @@ export interface PddDdkGoodsSearchGoodsSearchResponseGoodsListResponseInterface 
   has_mall_coupon: boolean;
 
   /**
+   * @description: 商品是否有素材(图文、视频)
+   * @type: boolean
+   * @default:
+   **/
+  has_material: boolean;
+
+  /**
    * @description: 物流分
    * @type: string
    * @default:
@@ -613,18 +628,18 @@ export interface PddDdkGoodsSearchGoodsSearchResponseGoodsListResponseInterface 
   search_id: string;
 
   /**
-   * @description: 服务标签: 4-送货入户并安装,5-送货入户,6-电子发票,9-坏果包赔,11-闪电退款,12-24小时发货,13-48小时发货,17-顺丰包邮,18-只换不修,19-全国联保,20-分期付款,24-极速退款,25-品质保障,26-缺重包退,27-当日发货,28-可定制化,29-预约配送,1000001-正品发票,1000002-送货入户并安装
-   * @type: Array<string | number>
-   * @default:
-   **/
-  service_tags: Array<string | number>;
-
-  /**
    * @description: 服务分
    * @type: string
    * @default:
    **/
   serv_txt: string;
+
+  /**
+   * @description: 服务标签: 1-全场包邮,2-七天退换,3-退货包运费,4-送货入户并安装,5-送货入户,6-电子发票,7-诚信发货,8-缺重包赔,9-坏果包赔,10-果重保证,11-闪电退款,12-24小时发货,13-48小时发货,14-免税费,15-假一罚十,16-贴心服务,17-顺丰包邮,18-只换不修,19-全国联保,20-分期付款,21-纸质发票,22-上门安装,23-爱心助农,24-极速退款,25-品质保障,26-缺重包退,27-当日发货,28-可定制化,29-预约配送,30-商品进口,31-电器城,1000001-正品发票,1000002-送货入户并安装,2000001-价格保护
+   * @type: Array<string | number>
+   * @default:
+   **/
+  service_tags: Array<string | number>;
 
   /**
    * @description: 招商分成服务费比例，千分比
@@ -634,14 +649,14 @@ export interface PddDdkGoodsSearchGoodsSearchResponseGoodsListResponseInterface 
   share_rate: number;
 
   /**
-   * @description: 优势渠道专属商品补贴金额，单位为分。针对优质渠道的补贴活动，指定优势渠道可通过推广该商品获取相应补贴。补贴活动入口：[进宝网站-官方活动-千万补贴]，报名入口：https://jinbao.pinduoduo.com/ten-million-subsidy/entry
+   * @description: 优势渠道专属商品补贴金额，单位为分。针对优质渠道的补贴活动，指定优势渠道可通过推广该商品获取相应补贴。补贴活动入口：[进宝网站-官方活动]
    * @type: number
    * @default:
    **/
   subsidy_amount: number;
 
   /**
-   * @description: 千万补贴给渠道的收入补贴，不允许直接给下级代理展示，单位为分
+   * @description: 官方活动给渠道的收入补贴金额，不允许直接给下级代理展示，单位为分
    * @type: number
    * @default:
    **/

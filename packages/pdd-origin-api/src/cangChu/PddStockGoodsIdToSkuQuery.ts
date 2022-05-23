@@ -15,6 +15,13 @@ export interface PddStockGoodsIdToSkuQueryRequestInterface {
   goods_id: string | number;
 
   /**
+   * @description: 是否需要查询下架商品和sku，默认不需要
+   * @type: boolean
+   * @default:
+   **/
+  need_offsale?: boolean;
+
+  /**
    * @description: 货品id
    * @type: string | number
    * @default:

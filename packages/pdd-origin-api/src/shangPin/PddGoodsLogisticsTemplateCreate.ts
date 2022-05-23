@@ -5,6 +5,7 @@ export const PDD_GOODS_LOGISTICS_TEMPLATE_CREATE_LIMITERS = [
     limiterLevel: 1,
     timeRange: 60,
     times: 3000,
+    callSourceType: 0,
   },
 ];
 
@@ -87,7 +88,7 @@ export interface PddGoodsLogisticsTemplateCreateCostTemplateListRequestInterface
   first_cost: string | number;
 
   /**
-   * @description: 续重或续件
+   * @description: 续重或续件，续重时单位为克且数值须为1000的整数倍
    * @type: string | number
    * @default:
    **/

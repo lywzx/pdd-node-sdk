@@ -5,6 +5,7 @@ export const PDD_DDK_GOODS_PROMOTION_URL_GENERATE_LIMITERS = [
     limiterLevel: 3,
     timeRange: 10,
     times: 66900,
+    callSourceType: 0,
   },
 ];
 
@@ -83,6 +84,13 @@ export interface PddDdkGoodsPromotionUrlGenerateRequestInterface {
    * @default:
    **/
   goods_sign_list?: string[];
+
+  /**
+   * @description: 素材ID，可以通过商品详情接口获取商品素材信息
+   * @type: string
+   * @default:
+   **/
+  material_id?: string;
 
   /**
    * @description: true--生成多人团推广链接 false--生成单人团推广链接（默认false）1、单人团推广链接：用户访问单人团推广链接，可直接购买商品无需拼团。2、多人团推广链接：用户访问双人团推广链接开团，若用户分享给他人参团，则开团者和参团者的佣金均结算给推手
@@ -184,6 +192,13 @@ export interface PddDdkGoodsPromotionUrlGenerateGoodsPromotionUrlGenerateRespons
    * @default:
    **/
   short_url: string;
+
+  /**
+   * @description: 使用此推广链接，用户安装多多团长APP的情况下会唤起APP（需客户端支持schema跳转协议）
+   * @type: string
+   * @default:
+   **/
+  tz_schema_url: string;
 
   /**
    * @description: 普通推广长链接，唤起H5页面

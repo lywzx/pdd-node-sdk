@@ -5,11 +5,13 @@ export const PDD_INVOICE_APPLICATION_QUERY_LIMITERS = [
     limiterLevel: 3,
     timeRange: 5,
     times: 12000,
+    callSourceType: 0,
   },
   {
     limiterLevel: 1,
     timeRange: 60,
     times: 3600,
+    callSourceType: 0,
   },
 ];
 
@@ -55,14 +57,14 @@ export interface PddInvoiceApplicationQueryRequestInterface {
   status?: number;
 
   /**
-   * @description: 申请结束时间, 时间戳（毫秒）
+   * @description: 申请结束时间, 时间戳（单位毫秒，查询时间间隔不可超过15天）
    * @type: string | number
    * @default:
    **/
   update_end_time?: string | number;
 
   /**
-   * @description: 申请开始时间, 时间戳（毫秒）
+   * @description: 申请开始时间, 时间戳（单位毫秒，查询时间间隔不可超过15天）
    * @type: string | number
    * @default:
    **/
@@ -127,25 +129,32 @@ export interface PddInvoiceApplicationQueryInvoiceApplicationQueryResponseInvoic
   business_type: number;
 
   /**
-   * @description: 开票金额，暂为null，取买家实付
+   * @description: 开票金额，单位：分
    * @type: string
    * @default:
    **/
   invoice_amount: string;
 
   /**
-   * @description: 发票种类：0-电子，1-纸质，2-专票；目前只支持0
+   * @description: 发票种类：0-电子，1-纸质，2-专票；目前只支持0和2
    * @type: number
    * @default:
    **/
   invoice_kind: number;
 
   /**
-   * @description: 发票类型：0-蓝票，1-红票；目前只支持0
+   * @description: 发票类型：0-蓝票，1-红票
    * @type: number
    * @default:
    **/
   invoice_type: number;
+
+  /**
+   * @description: 开票方式 0=手动开票,1=自动开票
+   * @type: number
+   * @default:
+   **/
+  invoice_way: number;
 
   /**
    * @description: 店铺id
