@@ -15,7 +15,7 @@ export interface PddDdkCashgiftDataQueryRequestInterface {
   cash_gift_id?: string | number;
 
   /**
-   * @description: 礼金创建结束时间。note：此时间为时间戳，指格林威治时间 1970 年01 月 01 日 00 时 00 分 00 秒(北京时间 1970 年 01 月 01 日 08 时 00 分 00 秒)起至现在的总秒数
+   * @description: 礼金创建结束时间，查询该时间段内创建的所有礼金效果数据（礼金维度）。note：此时间为时间戳，指格林威治时间 1970 年01 月 01 日 00 时 00 分 00 秒(北京时间 1970 年 01 月 01 日 08 时 00 分 00 秒)起至现在的总秒数
    * @type: string | number
    * @default:
    **/
@@ -36,7 +36,7 @@ export interface PddDdkCashgiftDataQueryRequestInterface {
   page_size?: number;
 
   /**
-   * @description: 礼金创建起始时间。note：此时间为时间戳，指格林威治时间 1970 年01 月 01 日 00 时 00 分 00 秒(北京时间 1970 年 01 月 01 日 08 时 00 分 00 秒)起至现在的总秒数
+   * @description: 礼金创建起始时间，查询该时间段内创建的所有礼金效果数据（礼金维度）。note：此时间为时间戳，指格林威治时间 1970 年01 月 01 日 00 时 00 分 00 秒(北京时间 1970 年 01 月 01 日 08 时 00 分 00 秒)起至现在的总秒数
    * @type: string | number
    * @default:
    **/
@@ -64,6 +64,13 @@ export interface PddDdkCashgiftDataQueryResponseInterface {
  * @example
  **/
 export interface PddDdkCashgiftDataQueryCashgiftDataResponseResponseInterface {
+  /**
+   * @description: 礼金账户余额，单位为分
+   * @type: string | number
+   * @default:
+   **/
+  available_balance: string | number;
+
   /**
    * @description: 多多礼金数据列表
    * @type: PddDdkCashgiftDataQueryCashgiftDataResponseListResponseInterface[]
@@ -115,50 +122,50 @@ export interface PddDdkCashgiftDataQueryCashgiftDataResponseListResponseInterfac
   couponAmount: number;
 
   /**
-   * @description: 已领取礼金券总金额，单位为分
+   * @description: 已领取礼金券总金额，单位为分（实时数据）
    * @type: string | number
    * @default:
    **/
   fetch_amount: string | number;
 
   /**
-   * @description: 已领取礼金券数量
+   * @description: 已领取礼金券数量（实时数据）
    * @type: number
    * @default:
    **/
   fetch_quantity: number;
 
   /**
-   * @description: 商品信息
-   * @type: PddDdkCashgiftDataQueryCashgiftDataResponseListGoodsInfoResponseInterface
+   * @description: 商品列表信息
+   * @type: PddDdkCashgiftDataQueryCashgiftDataResponseListGoodsInfoListResponseInterface[]
    * @default:
    *
    **/
-  goods_info: PddDdkCashgiftDataQueryCashgiftDataResponseListGoodsInfoResponseInterface;
+  goods_info_list: PddDdkCashgiftDataQueryCashgiftDataResponseListGoodsInfoListResponseInterface[];
 
   /**
-   * @description: 礼金订单使用的券总金额，单位为分
+   * @description: 礼金订单使用的券总金额，单位为分（实时数据）
    * @type: string | number
    * @default:
    **/
   order_coupon_amount: string | number;
 
   /**
-   * @description: 礼金订单产生的总GMV，单位为分
+   * @description: 礼金订单产生的总GMV，单位为分（实时数据）
    * @type: string | number
    * @default:
    **/
   order_gmv: string | number;
 
   /**
-   * @description: 礼金订单数量
+   * @description: 礼金订单数量（实时数据）
    * @type: number
    * @default:
    **/
   order_quantity: number;
 
   /**
-   * @description: 礼金订单预估佣金，单位为分
+   * @description: 礼金订单预估佣金，单位为分（实时数据）
    * @type: string | number
    * @default:
    **/
@@ -194,11 +201,11 @@ export interface PddDdkCashgiftDataQueryCashgiftDataResponseListResponseInterfac
 }
 
 /**
- * @description 商品信息
+ * @description 商品列表信息
  * @default
  * @example
  **/
-export interface PddDdkCashgiftDataQueryCashgiftDataResponseListGoodsInfoResponseInterface {
+export interface PddDdkCashgiftDataQueryCashgiftDataResponseListGoodsInfoListResponseInterface {
   /**
    * @description: 商品优惠券面额，单位为分
    * @type: string | number
@@ -221,16 +228,16 @@ export interface PddDdkCashgiftDataQueryCashgiftDataResponseListGoodsInfoRespons
   goods_price: string | number;
 
   /**
+   * @description: 商品goodsSign，支持通过goodsSign查询商品。goodsSign是加密后的goodsId, goodsId已下线，请使用goodsSign来替代。使用说明：https://jinbao.pinduoduo.com/qa-system?questionId=252
+   * @type: string
+   * @default:
+   **/
+  goods_sign: string;
+
+  /**
    * @description: 商品佣金比例，千分比
    * @type: number
    * @default:
    **/
   rate: number;
-
-  /**
-   * @description: 招商团长duoid
-   * @type: string | number
-   * @default:
-   **/
-  zs_duo_id: string | number;
 }

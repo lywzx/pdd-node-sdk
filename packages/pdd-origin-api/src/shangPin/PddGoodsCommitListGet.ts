@@ -80,6 +80,20 @@ export interface PddGoodsCommitListGetGoodsCommitListGetResponseResponseInterfac
  **/
 export interface PddGoodsCommitListGetGoodsCommitListGetResponseListResponseInterface {
   /**
+   * @description: 审核时间
+   * @type: number
+   * @default:
+   **/
+  checked_time: number;
+
+  /**
+   * @description: 草稿状态 0:编辑中,1:审核中,2:审核通过,3:审核驳回
+   * @type: number
+   * @default:
+   **/
+  check_status: number;
+
+  /**
    * @description: 草稿id
    * @type: string | number
    * @default:
@@ -94,25 +108,11 @@ export interface PddGoodsCommitListGetGoodsCommitListGetResponseListResponseInte
   goods_id: string | number;
 
   /**
-   * @description: 商家编码
-   * @type: string
-   * @default:
-   **/
-  outer_goods_id: string;
-
-  /**
    * @description: 商品标题
    * @type: string
    * @default:
    **/
   goods_name: string;
-
-  /**
-   * @description: 草稿状态 0:编辑中,1:审核中,2:审核通过,3:审核驳回
-   * @type: number
-   * @default:
-   **/
-  check_status: number;
 
   /**
    * @description: 是否新增 0:新增，1：修改
@@ -122,18 +122,11 @@ export interface PddGoodsCommitListGetGoodsCommitListGetResponseListResponseInte
   is_shop: number;
 
   /**
-   * @description: 提交时间
-   * @type: number
+   * @description: 商家编码
+   * @type: string
    * @default:
    **/
-  submit_time: number;
-
-  /**
-   * @description: 审核时间
-   * @type: number
-   * @default:
-   **/
-  checked_time: number;
+  outer_goods_id: string;
 
   /**
    * @description: 驳回原因
@@ -141,4 +134,11 @@ export interface PddGoodsCommitListGetGoodsCommitListGetResponseListResponseInte
    * @default:
    **/
   reject_comment: string;
+
+  /**
+   * @description: 提交时间
+   * @type: number
+   * @default:
+   **/
+  submit_time: number;
 }

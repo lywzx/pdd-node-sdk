@@ -5,6 +5,7 @@ export const PDD_GOODS_SALE_STATUS_SET_LIMITERS = [
     limiterLevel: 3,
     timeRange: 10,
     times: 13200,
+    callSourceType: 0,
   },
 ];
 

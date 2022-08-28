@@ -5,6 +5,7 @@ export const PDD_LOGISTICS_COMPANIES_GET_LIMITERS = [
     limiterLevel: 3,
     timeRange: 10,
     times: 1200,
+    callSourceType: 0,
   },
 ];
 

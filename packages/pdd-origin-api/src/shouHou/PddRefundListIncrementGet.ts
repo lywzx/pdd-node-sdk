@@ -3,13 +3,21 @@ export const PDD_REFUND_LIST_INCREMENT_GET_RESPONSE_KEY = 'refund_increment_get_
 export const PDD_REFUND_LIST_INCREMENT_GET_LIMITERS = [
   {
     limiterLevel: 1,
-    timeRange: 60,
-    times: 600,
+    timeRange: 10,
+    times: 100,
+    callSourceType: 0,
   },
   {
     limiterLevel: 3,
     timeRange: 1,
-    times: 12000,
+    times: 5500,
+    callSourceType: 0,
+  },
+  {
+    limiterLevel: 4,
+    timeRange: 1,
+    times: 500,
+    callSourceType: 0,
   },
 ];
 
@@ -60,6 +68,13 @@ export interface PddRefundListIncrementGetRequestInterface {
    * @default:
    **/
   start_updated_at: string | number;
+
+  /**
+   * @description: 订单号。若入参含订单号，则可查询订单下的全部售后单。且入参中除订单号，page，page_size外的其他查询条件不起作用（标记必填的仍旧需要输入）。
+   * @type: string
+   * @default:
+   **/
+  order_sn?: string;
 }
 
 /**
@@ -258,4 +273,25 @@ export interface PddRefundListIncrementGetRefundIncrementGetResponseRefundListRe
    * @default:
    **/
   speed_refund_flag: number;
+
+  /**
+   * @description: 退货物流公司名称
+   * @type: string
+   * @default:
+   **/
+  shipping_name: string;
+
+  /**
+   * @description: 0-未勾选 1-消费者选择的收货状态为未收到货 2-消费者选择的收货状态为已收到货
+   * @type: string
+   * @default:
+   **/
+  user_shipping_status: string;
+
+  /**
+   * @description: 1纠纷退款 0非纠纷退款
+   * @type: number
+   * @default:
+   **/
+  dispute_refund_status: number;
 }

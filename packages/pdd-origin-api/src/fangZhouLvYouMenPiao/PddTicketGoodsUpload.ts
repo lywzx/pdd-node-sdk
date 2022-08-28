@@ -80,6 +80,13 @@ export interface PddTicketGoodsUploadRequestInterface {
   goods_properties?: PddTicketGoodsUploadGoodsPropertiesRequestInterface[];
 
   /**
+   * @description: 是否获取商品发布警告信息，默认为忽略
+   * @type: boolean
+   * @default:
+   **/
+  ignore_edit_warn?: boolean;
+
+  /**
    * @description: 是否提交本次编辑，0=不提交，表示仅保存草稿，不进行提交，不会进行校验；1=提交，表示提交本次编辑内容，会进行校验；不传时默认为提交
    * @type: number
    * @default:
@@ -87,7 +94,7 @@ export interface PddTicketGoodsUploadRequestInterface {
   is_submit?: number;
 
   /**
-   * @description: 商品市场价，单位为分，必须高于最高的sku单买价。新增商品时必填。
+   * @description: 商品参考价，单位为分，必须高于最高的sku单买价。新增商品时必填。
    * @type: string | number
    * @default:
    **/
@@ -141,14 +148,14 @@ export interface PddTicketGoodsUploadCarouselVideoRequestInterface {
    * @type: string | number
    * @default:
    **/
-  file_id: string | number;
+  file_id?: string | number;
 
   /**
    * @description: 轮播视频url
    * @type: string
    * @default:
    **/
-  video_url: string;
+  video_url?: string;
 }
 
 /**
@@ -169,7 +176,7 @@ export interface PddTicketGoodsUploadGoodsPropertiesRequestInterface {
    * @type: string | number
    * @default:
    **/
-  ref_pid: string | number;
+  ref_pid?: string | number;
 
   /**
    * @description: 规格id，仅对于销售属性入参，和sku中的spec对应
@@ -183,7 +190,7 @@ export interface PddTicketGoodsUploadGoodsPropertiesRequestInterface {
    * @type: string
    * @default:
    **/
-  value: string;
+  value?: string;
 
   /**
    * @description: 属性值单位
@@ -226,7 +233,7 @@ export interface PddTicketGoodsUploadSkuListRequestInterface {
    * @type: number
    * @default:
    **/
-  is_onsale: number;
+  is_onsale?: number;
 
   /**
    * @description: sku外部编码，同其他接口中的outer_id 、out_id、out_sku_sn、outer_sku_sn、out_sku_id、outer_sku_id 都为商家编码（sku维度）。
@@ -247,7 +254,7 @@ export interface PddTicketGoodsUploadSkuListRequestInterface {
    * @type: string
    * @default:
    **/
-  rule_id: string;
+  rule_id?: string;
 
   /**
    * @description: 单买价，单位为分。仅当sku_type为普通库存时入参。
@@ -268,14 +275,14 @@ export interface PddTicketGoodsUploadSkuListRequestInterface {
    * @type: Array<string | number>
    * @default:
    **/
-  spec_id_list: Array<string | number>;
+  spec_id_list?: Array<string | number>;
 
   /**
    * @description: SKU预览图。图片格式支持JPEG/JPG/PNG， 图片尺寸长宽比1：1且尺寸不低于480px，图片大小最高1MB。先通过pdd.goods.image.upload上传图片
    * @type: string
    * @default:
    **/
-  thumb_url: string;
+  thumb_url?: string;
 }
 
 /**
@@ -289,28 +296,28 @@ export interface PddTicketGoodsUploadSkuListChildSkusRequestInterface {
    * @type: string
    * @default:
    **/
-  date: string;
+  date?: string;
 
   /**
    * @description: 拼团价，单位为分。
    * @type: string | number
    * @default:
    **/
-  group_price: string | number;
+  group_price?: string | number;
 
   /**
    * @description: 库存增减。比如传-10表示将对应的sku库存减10。
    * @type: string | number
    * @default:
    **/
-  quantity_delta: string | number;
+  quantity_delta?: string | number;
 
   /**
    * @description: 单买价，单位为分。
    * @type: string | number
    * @default:
    **/
-  single_price: string | number;
+  single_price?: string | number;
 }
 
 /**

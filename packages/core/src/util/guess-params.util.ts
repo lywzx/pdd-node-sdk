@@ -151,19 +151,23 @@ export function guessPddClientCachedParams(
  * 根据传入参数，自动组装拼多多认证服务接口
  * @param code
  * @param accessOptions
+ * @param retryOptions
  * @param callback
  */
 export function guessPddClientGenerateParams<T extends Record<string, any>>(
   code: T | string | PddPopAuthTokenRefreshRequestInterface | PddPopAuthTokenCreateRequestInterface,
-  accessOptions?: T | AsyncResultCallbackInterface<PddAccessTokenResponseInterface, never>,
+  accessOptions?: T | RetryOptionsType | AsyncResultCallbackInterface<PddAccessTokenResponseInterface, never>,
+  retryOptions?: RetryOptionsType | AsyncResultCallbackInterface<PddAccessTokenResponseInterface, never>,
   callback?: AsyncResultCallbackInterface<PddAccessTokenResponseInterface, never>
 ): [
   undefined | PddPopAuthTokenRefreshRequestInterface | PddPopAuthTokenCreateRequestInterface,
   T | undefined,
+  RetryOptionsType | undefined,
   AsyncResultCallbackInterface<PddAccessTokenResponseInterface, never> | undefined
 ] {
   let param: PddPopAuthTokenRefreshRequestInterface | PddPopAuthTokenCreateRequestInterface | undefined;
   let access: T | undefined;
+  let retry: RetryOptionsType | undefined;
   let cbk: AsyncResultCallbackInterface<PddAccessTokenResponseInterface, never> | undefined;
   if (isString(code)) {
     param = {
@@ -176,14 +180,23 @@ export function guessPddClientGenerateParams<T extends Record<string, any>>(
       access = code as T;
     }
   }
-  if (isFunction(accessOptions)) {
+  if (isRetryOptionConfig(accessOptions)) {
+    retry = accessOptions;
+  } else if (isFunction(accessOptions)) {
     cbk = accessOptions;
   } else if (!access && isObject(accessOptions)) {
     access = accessOptions as T;
   }
+
+  if (isRetryOptionConfig(retryOptions)) {
+    retry = retryOptions;
+  } else if (isFunction(retryOptions)) {
+    cbk = retryOptions;
+  }
+
   if (!cbk && isFunction(callback)) {
     cbk = callback;
   }
 
-  return [param, access, cbk];
+  return [param, access, retry, cbk];
 }

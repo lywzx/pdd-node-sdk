@@ -5,6 +5,7 @@ export const PDD_REFUND_INFORMATION_GET_LIMITERS = [
     limiterLevel: 3,
     timeRange: 1,
     times: 1400,
+    callSourceType: 0,
   },
 ];
 
@@ -19,7 +20,7 @@ export interface PddRefundInformationGetRequestInterface {
    * @type: string | number
    * @default:
    **/
-  after_sales_id: string | number;
+  after_sales_id?: string | number;
 
   /**
    * @description: 订单号
@@ -71,6 +72,28 @@ export interface PddRefundInformationGetResponseInterface {
   discount_amount: number;
 
   /**
+   * @description: 1纠纷退款 0非纠纷退款
+   * @type: number
+   * @default:
+   **/
+  dispute_refund_status: number;
+
+  /**
+   * @description: 换货详情,售后类型是换货才有值
+   * @type: PddRefundInformationGetExchangeShippingDetailResponseInterface
+   * @default:
+   *
+   **/
+  exchange_shipping_detail: PddRefundInformationGetExchangeShippingDetailResponseInterface;
+
+  /**
+   * @description: 售后逾期时间（只提供待商家处理状态下的，其余的状态为null）
+   * @type: string | number
+   * @default:
+   **/
+  expire_time: string | number;
+
+  /**
    * @description: 退货物流单号
    * @type: string
    * @default:
@@ -97,6 +120,20 @@ export interface PddRefundInformationGetResponseInterface {
    * @default:
    **/
   id: string | number;
+
+  /**
+   * @description: 用户申请售后上传的图片列表
+   * @type: string[]
+   * @default:
+   **/
+  images: string[];
+
+  /**
+   * @description: 是否介入 1介入 0未介入
+   * @type: string
+   * @default:
+   **/
+  join_or_not: string;
 
   /**
    * @description: 交易金额
@@ -127,11 +164,32 @@ export interface PddRefundInformationGetResponseInterface {
   refund_amount: number;
 
   /**
+   * @description: 用户申请输入的描述信息
+   * @type: string
+   * @default:
+   **/
+  remark: string;
+
+  /**
+   * @description: 退货物流名称
+   * @type: string
+   * @default:
+   **/
+  shipping_name: string;
+
+  /**
    * @description: 订单发货状态 0:未发货， 1:已发货（包含：已发货，已揽收）
    * @type: number
    * @default:
    **/
   shipping_status: number;
+
+  /**
+   * @description: 商品规格ID
+   * @type: string
+   * @default:
+   **/
+  sku_id: string;
 
   /**
    * @description: 极速退款标志位 1：极速退款，0：非极速退款
@@ -141,9 +199,163 @@ export interface PddRefundInformationGetResponseInterface {
   speed_refund_flag: number;
 
   /**
-   * @description: 售后逾期时间（只提供待商家处理状态下的，其余的状态为null）
+   * @description: 更新时间
+   * @type: string
+   * @default:
+   **/
+  updated_time: string;
+
+  /**
+   * @description: 0-未勾选 1-消费者选择的收货状态为未收到货 2-消费者选择的收货状态为已收到货
+   * @type: string
+   * @default:
+   **/
+  user_shipping_status: string;
+}
+
+/**
+ * @description 换货详情,售后类型是换货才有值
+ * @default
+ * @example
+ **/
+export interface PddRefundInformationGetExchangeShippingDetailResponseInterface {
+  /**
+   * @description: 消费者回寄的物流id
+   * @type: number
+   * @default:
+   **/
+  customer_send_back_ship_id: number;
+
+  /**
+   * @description: 消费者回寄的物流单号
+   * @type: string
+   * @default:
+   **/
+  customer_send_back_trunk_number: string;
+
+  /**
+   * @description: 换货发货的物品名称
+   * @type: string
+   * @default:
+   **/
+  exchange_goods_name: string;
+
+  /**
+   * @description: 换货发货的物品数量
+   * @type: number
+   * @default:
+   **/
+  exchange_goods_number: number;
+
+  /**
+   * @description: 换货的物品价格(单位分)
    * @type: string | number
    * @default:
    **/
-  expire_time: string | number;
+  exchange_goods_price: string | number;
+
+  /**
+   * @description: 商家换货发货的城市（消费者地址）
+   * @type: string
+   * @default:
+   **/
+  exchange_receiver_city: string;
+
+  /**
+   * @description: 商家换货发货的城市编码（消费者地址）
+   * @type: string | number
+   * @default:
+   **/
+  exchange_receiver_city_id: string | number;
+
+  /**
+   * @description: 商家换货发货的省份（消费者地址）
+   * @type: string
+   * @default:
+   **/
+  exchange_receiver_province: string;
+
+  /**
+   * @description: 商家换货发货的省份编码（消费者地址）
+   * @type: string | number
+   * @default:
+   **/
+  exchange_receiver_province_id: string | number;
+
+  /**
+   * @description: 商家换货发货的区县（消费者地址）
+   * @type: string
+   * @default:
+   **/
+  exchange_receiver_town: string;
+
+  /**
+   * @description: 商家换货发货的区县编码（消费者地址）
+   * @type: string | number
+   * @default:
+   **/
+  exchange_receiver_town_id: string | number;
+
+  /**
+   * @description: 商家换货发货的详细地址
+   * @type: string
+   * @default:
+   **/
+  merchant_exchange_detail_address: string;
+
+  /**
+   * @description: 商家换货发货的收货人手机号
+   * @type: string
+   * @default:
+   **/
+  merchant_exchange_detail_phone: string;
+
+  /**
+   * @description: 商家换货发货的收货人名字
+   * @type: string
+   * @default:
+   **/
+  merchant_exchange_detail_receiver: string;
+
+  /**
+   * @description: 商家换货发货的物流id
+   * @type: number
+   * @default:
+   **/
+  merchant_exchange_ship_id: number;
+
+  /**
+   * @description: 商家换货发货的物流单号
+   * @type: string
+   * @default:
+   **/
+  merchant_exchange_trunk_number: string;
+
+  /**
+   * @description: 换货商品规格ID
+   * @type: string
+   * @default:
+   **/
+  sku_id_exchange: string;
+
+  /**
+   * @description: 商家换货发货的详细地址（打码）
+   * @type: string
+   * @default:
+   **/
+  merchant_exchange_detail_address_mask: string;
+
+  /**
+   * @description: 商家换货发货的收货人手机号（打码）
+   * @type: string
+   * @default:
+   **/
+  merchant_exchange_detail_phone_mask: string;
+
+  /**
+   * @description: 商家换货发货的收货人名字（打码）
+   * @type: string
+   * @default:
+   **/
+  merchant_exchange_detail_receiver_mask: string;
 }

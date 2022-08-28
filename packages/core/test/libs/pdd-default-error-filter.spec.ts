@@ -1,5 +1,4 @@
-import { PddResponseException } from '../../src/exceptions';
-import { defaultRetryOptions } from '../../src/libs';
+import { PddResponseException, defaultRetryOptions } from '../../src';
 import { noop } from 'lodash';
 import { expect } from 'chai';
 

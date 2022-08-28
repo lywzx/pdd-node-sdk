@@ -1,7 +1,7 @@
 export * from './date';
 export * from './promise-util';
 export * from './validate';
-export * from './md5-base64';
+export * from './exception.util';
 import {
   PddCollectRootResponseInterface,
   PddCollectShortResponseInterface,
@@ -34,5 +34,6 @@ export function isNumeric(num: number | string = ''): boolean {
   if (isNumber(num)) {
     return true;
   }
-  return !isNaN(parseFloat(num.toString())) && isFinite(num);
+  const parsedValue = parseFloat(num.toString());
+  return !isNaN(parsedValue) && isFinite(parsedValue);
 }

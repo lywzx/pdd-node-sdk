@@ -5,6 +5,7 @@ export const PDD_GOODS_LOGISTICS_TEMPLATE_CREATE_LIMITERS = [
     limiterLevel: 1,
     timeRange: 60,
     times: 3000,
+    callSourceType: 0,
   },
 ];
 
@@ -49,21 +50,21 @@ export interface PddGoodsLogisticsTemplateCreateRequestInterface {
    * @type: number
    * @default:
    **/
-  province_id?: number;
+  province_id: number;
 
   /**
    * @description: 发货地城市id
    * @type: number
    * @default:
    **/
-  city_id?: number;
+  city_id: number;
 
   /**
    * @description: 发货地区id
    * @type: number
    * @default:
    **/
-  district_id?: number;
+  district_id: number;
 }
 
 /**
@@ -87,7 +88,7 @@ export interface PddGoodsLogisticsTemplateCreateCostTemplateListRequestInterface
   first_cost: string | number;
 
   /**
-   * @description: 续重或续件
+   * @description: 续重或续件，续重时单位为克且数值须为1000的整数倍
    * @type: string | number
    * @default:
    **/

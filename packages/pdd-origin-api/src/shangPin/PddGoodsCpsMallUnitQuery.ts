@@ -16,7 +16,7 @@ export interface PddGoodsCpsMallUnitQueryRequestInterface {}
  **/
 export interface PddGoodsCpsMallUnitQueryResponseInterface {
   /**
-   * @description: response
+   * @description: respone
    * @type: PddGoodsCpsMallUnitQueryGoodsCpsMallUnitQueryResponseResponseInterface
    * @default:
    *
@@ -25,7 +25,7 @@ export interface PddGoodsCpsMallUnitQueryResponseInterface {
 }
 
 /**
- * @description response
+ * @description respone
  * @default
  * @example
  **/
@@ -45,6 +45,13 @@ export interface PddGoodsCpsMallUnitQueryGoodsCpsMallUnitQueryResponseResponseIn
   rate_to_be: number;
 
   /**
+   * @description: 全店推广计划佣金生效时间
+   * @type: string
+   * @default:
+   **/
+  rate_to_be_day: string;
+
+  /**
    * @description: 全店推广计划状态：1-推广中，2-暂停推广
    * @type: number
    * @default:
@@ -53,17 +60,10 @@ export interface PddGoodsCpsMallUnitQueryGoodsCpsMallUnitQueryResponseResponseIn
 
   /**
    * @description: 修改后生效的状态，1-推广中，2-暂停，3-删除
-   * @type: string
+   * @type: number
    * @default:
    **/
-  status_to_be: string;
-
-  /**
-   * @description: 全店推广计划佣金生效时间
-   * @type: string
-   * @default:
-   **/
-  rate_to_be_day: string;
+  status_to_be: number;
 
   /**
    * @description: 全店推广计划状态生效时间

@@ -4,7 +4,8 @@ export const PDD_AD_API_UNIT_CREATIVE_DELETE_LIMITERS = [
   {
     limiterLevel: 1,
     timeRange: 10,
-    times: 20,
+    times: 3,
+    callSourceType: 0,
   },
 ];
 

@@ -55,6 +55,48 @@ export interface PddServiceMailServiceTimeQueryRequestRequestInterface {
    * @default:
    **/
   postType?: string;
+
+  /**
+   * @description: 收件省名称
+   * @type: string
+   * @default:
+   **/
+  receiveProvName?: string;
+
+  /**
+   * @description: 收件市名称
+   * @type: string
+   * @default:
+   **/
+  receiveCityName?: string;
+
+  /**
+   * @description: 收件区名称
+   * @type: string
+   * @default:
+   **/
+  receiveDistrictName?: string;
+
+  /**
+   * @description: 收件街道名称
+   * @type: string
+   * @default:
+   **/
+  receiveStreetName?: string;
+
+  /**
+   * @description: 收件详细地址
+   * @type: string
+   * @default:
+   **/
+  receiveAddrDetail?: string;
+
+  /**
+   * @description: 扩展信息； options如果不存在，说明不需要对发货地收货地校验
+   * @type: string
+   * @default:
+   **/
+  attributes?: string;
 }
 
 /**
@@ -106,6 +148,14 @@ export interface PddServiceMailServiceTimeQueryResponseResponseInterface {
    *
    **/
   serviceTimes: PddServiceMailServiceTimeQueryResponseServiceTimesResponseInterface[];
+
+  /**
+   * @description:
+   * @type: PddServiceMailServiceTimeQueryResponseServiceOptionsResponseInterface
+   * @default:
+   *
+   **/
+  serviceOptions: PddServiceMailServiceTimeQueryResponseServiceOptionsResponseInterface;
 }
 
 /**
@@ -134,4 +184,25 @@ export interface PddServiceMailServiceTimeQueryResponseServiceTimesResponseInter
    * @default:
    **/
   serviceDate: string;
+}
+
+/**
+ * @description
+ * @default
+ * @example
+ **/
+export interface PddServiceMailServiceTimeQueryResponseServiceOptionsResponseInterface {
+  /**
+   * @description:
+   * @type: boolean
+   * @default:
+   **/
+  canSend: boolean;
+
+  /**
+   * @description:
+   * @type: boolean
+   * @default:
+   **/
+  canReceivce: boolean;
 }

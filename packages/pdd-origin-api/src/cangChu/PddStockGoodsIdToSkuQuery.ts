@@ -15,6 +15,13 @@ export interface PddStockGoodsIdToSkuQueryRequestInterface {
   goods_id: string | number;
 
   /**
+   * @description: 是否需要查询下架商品和sku，默认不需要
+   * @type: boolean
+   * @default:
+   **/
+  need_offsale?: boolean;
+
+  /**
    * @description: 货品id
    * @type: string | number
    * @default:
@@ -44,19 +51,19 @@ export interface PddStockGoodsIdToSkuQueryResponseInterface {
  **/
 export interface PddStockGoodsIdToSkuQueryOpenApiResponseResponseInterface {
   /**
-   * @description: 总数
-   * @type: number
-   * @default:
-   **/
-  total: number;
-
-  /**
    * @description: sku信息
    * @type: PddStockGoodsIdToSkuQueryOpenApiResponseSkusResponseInterface[]
    * @default:
    *
    **/
   skus: PddStockGoodsIdToSkuQueryOpenApiResponseSkusResponseInterface[];
+
+  /**
+   * @description: 总数
+   * @type: number
+   * @default:
+   **/
+  total: number;
 }
 
 /**
@@ -66,32 +73,18 @@ export interface PddStockGoodsIdToSkuQueryOpenApiResponseResponseInterface {
  **/
 export interface PddStockGoodsIdToSkuQueryOpenApiResponseSkusResponseInterface {
   /**
-   * @description: 商品id
-   * @type: string | number
-   * @default:
-   **/
-  goods_id: string | number;
-
-  /**
-   * @description: sku_id
-   * @type: string | number
-   * @default:
-   **/
-  sku_id: string | number;
-
-  /**
-   * @description: 货品id
-   * @type: string | number
-   * @default:
-   **/
-  ware_id: string | number;
-
-  /**
    * @description: 是否已经绑定货品false/true
    * @type: boolean
    * @default:
    **/
   exist_ware: boolean;
+
+  /**
+   * @description: 商品id
+   * @type: string | number
+   * @default:
+   **/
+  goods_id: string | number;
 
   /**
    * @description: 上下架状态，true表示上架，false表示下架
@@ -101,12 +94,26 @@ export interface PddStockGoodsIdToSkuQueryOpenApiResponseSkusResponseInterface {
   is_onsale: boolean;
 
   /**
+   * @description: sku_id
+   * @type: string | number
+   * @default:
+   **/
+  sku_id: string | number;
+
+  /**
    * @description: 规格信息
    * @type: PddStockGoodsIdToSkuQueryOpenApiResponseSkusSpecsResponseInterface[]
    * @default:
    *
    **/
   specs: PddStockGoodsIdToSkuQueryOpenApiResponseSkusSpecsResponseInterface[];
+
+  /**
+   * @description: 货品id
+   * @type: string | number
+   * @default:
+   **/
+  ware_id: string | number;
 }
 
 /**

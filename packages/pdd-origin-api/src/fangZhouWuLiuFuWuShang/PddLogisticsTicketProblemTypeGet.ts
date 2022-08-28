@@ -5,6 +5,7 @@ export const PDD_LOGISTICS_TICKET_PROBLEM_TYPE_GET_LIMITERS = [
     limiterLevel: 3,
     timeRange: 60,
     times: 12000,
+    callSourceType: 0,
   },
 ];
 
@@ -53,16 +54,16 @@ export interface PddLogisticsTicketProblemTypeGetLogisticsProblemTypeGetResponse
  **/
 export interface PddLogisticsTicketProblemTypeGetLogisticsProblemTypeGetResponseLogisticsProblemTypeListResponseInterface {
   /**
-   * @description: 问题类型描述
-   * @type: string
-   * @default:
-   **/
-  type_desc: string;
-
-  /**
    * @description: 问题类型id
    * @type: string | number
    * @default:
    **/
   id: string | number;
+
+  /**
+   * @description: 问题类型描述
+   * @type: string
+   * @default:
+   **/
+  type_desc: string;
 }

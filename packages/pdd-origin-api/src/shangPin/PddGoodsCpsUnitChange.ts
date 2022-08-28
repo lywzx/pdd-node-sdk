@@ -5,6 +5,7 @@ export const PDD_GOODS_CPS_UNIT_CHANGE_LIMITERS = [
     limiterLevel: 1,
     timeRange: 60,
     times: 60,
+    callSourceType: 0,
   },
 ];
 
@@ -15,18 +16,11 @@ export const PDD_GOODS_CPS_UNIT_CHANGE_LIMITERS = [
  **/
 export interface PddGoodsCpsUnitChangeRequestInterface {
   /**
-   * @description: 商品id
-   * @type: string | number
+   * @description: 优惠券结束时间
+   * @type: string
    * @default:
    **/
-  goods_id: string | number;
-
-  /**
-   * @description: 佣金比例（千分比）
-   * @type: string | number
-   * @default:
-   **/
-  rate: string | number;
+  coupon_end_time?: string;
 
   /**
    * @description: 优惠券id
@@ -36,6 +30,13 @@ export interface PddGoodsCpsUnitChangeRequestInterface {
   coupon_id?: string | number;
 
   /**
+   * @description: 优惠券号
+   * @type: string
+   * @default:
+   **/
+  coupon_sn?: string;
+
+  /**
    * @description: 优惠券开始时间
    * @type: string
    * @default:
@@ -43,18 +44,18 @@ export interface PddGoodsCpsUnitChangeRequestInterface {
   coupon_start_time?: string;
 
   /**
-   * @description: 优惠券结束时间
-   * @type: string
+   * @description: 优惠券面额（单位为分）
+   * @type: number
    * @default:
    **/
-  coupon_end_time?: string;
+  discount?: number;
 
   /**
-   * @description: 优惠券面额（单位为分）
+   * @description: 商品id
    * @type: string | number
    * @default:
    **/
-  discount?: string | number;
+  goods_id: string | number;
 
   /**
    * @description: 设置的优惠券张数
@@ -64,11 +65,25 @@ export interface PddGoodsCpsUnitChangeRequestInterface {
   init_quantity?: string | number;
 
   /**
+   * @description: 佣金比例（千分比）
+   * @type: number
+   * @default:
+   **/
+  rate: number;
+
+  /**
    * @description: 优惠券剩余数量
    * @type: string | number
    * @default:
    **/
   remain_quantity?: string | number;
+
+  /**
+   * @description: 优惠券领取后的有效使用时间天数
+   * @type: number
+   * @default:
+   **/
+  duration?: number;
 }
 
 /**

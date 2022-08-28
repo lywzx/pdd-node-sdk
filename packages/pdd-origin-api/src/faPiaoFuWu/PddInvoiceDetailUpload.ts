@@ -8,6 +8,13 @@ export const PDD_INVOICE_DETAIL_UPLOAD_RESPONSE_KEY = 'invoice_detail_upload_res
  **/
 export interface PddInvoiceDetailUploadRequestInterface {
   /**
+   * @description: 申请流水号
+   * @type: string | number
+   * @default:
+   **/
+  application_id?: string | number;
+
+  /**
    * @description: 抬头类型：0-个人，1-企业
    * @type: number
    * @default:
@@ -19,21 +26,29 @@ export interface PddInvoiceDetailUploadRequestInterface {
    * @type: string | number
    * @default:
    **/
-  invoice_amount: string | number;
+  invoice_amount?: string | number;
 
   /**
    * @description: 发票代码
    * @type: string
    * @default:
    **/
-  invoice_code: string;
+  invoice_code?: string;
 
   /**
-   * @description: 发票内容，pdf文件，转码base64编码
+   * @description: 发票内容，pdf文件(电票回传)，图片文件(专票回传)，转码base64编码
    * @type: string
    * @default:
    **/
-  invoice_file_content: string;
+  invoice_file_content?: string;
+
+  /**
+   * @description: 多张发票列表（如果本字段为空，invoice_code、invoice_no、invoice_amount、invoice_file_content这四个字段必须填写）
+   * @type: PddInvoiceDetailUploadInvoiceItemListRequestInterface[]
+   * @default:
+   *
+   **/
+  invoice_item_list?: PddInvoiceDetailUploadInvoiceItemListRequestInterface[];
 
   /**
    * @description: 发票种类：0-电子发票，1-纸质发票，2-专票；目前只支持0
@@ -47,7 +62,7 @@ export interface PddInvoiceDetailUploadRequestInterface {
    * @type: string
    * @default:
    **/
-  invoice_no: string;
+  invoice_no?: string;
 
   /**
    * @description: 开票日期,时间戳（毫秒）
@@ -90,6 +105,20 @@ export interface PddInvoiceDetailUploadRequestInterface {
    * @default:
    **/
   original_invoice_no?: string;
+
+  /**
+   * @description: 专票回传必填，专票邮寄快递公司编码，见https://open.pinduoduo.com/application/document/api?id=pdd.logistics.companies.get返回的快递公司编码
+   * @type: number
+   * @default:
+   **/
+  paper_shipping_id?: number;
+
+  /**
+   * @description: 专票回传必填，专票邮寄运单号
+   * @type: string
+   * @default:
+   **/
+  paper_tracking_number?: string;
 
   /**
    * @description: 开票人
@@ -138,7 +167,7 @@ export interface PddInvoiceDetailUploadRequestInterface {
    * @type: string
    * @default:
    **/
-  payer_register_no: string;
+  payer_register_no?: string;
 
   /**
    * @description: 不含税金额，整数，单位：分
@@ -160,6 +189,55 @@ export interface PddInvoiceDetailUploadRequestInterface {
    * @default:
    **/
   tax_rate: number;
+}
+
+/**
+ * @description 多张发票列表（如果本字段为空，invoice_code、invoice_no、invoice_amount、invoice_file_content这四个字段必须填写）
+ * @default
+ * @example
+ **/
+export interface PddInvoiceDetailUploadInvoiceItemListRequestInterface {
+  /**
+   * @description: 开票金额 单位:分
+   * @type: string | number
+   * @default:
+   **/
+  invoice_amount: string | number;
+
+  /**
+   * @description: 发票代码
+   * @type: string
+   * @default:
+   **/
+  invoice_code: string;
+
+  /**
+   * @description: 发票内容，pdf文件(电票回传)，图片文件(专票回传)，转码base64编码
+   * @type: string
+   * @default:
+   **/
+  invoice_file_content: string;
+
+  /**
+   * @description: 发票号码
+   * @type: string
+   * @default:
+   **/
+  invoice_no: string;
+
+  /**
+   * @description: 原蓝票代码（红票必填）
+   * @type: string
+   * @default:
+   **/
+  original_invoice_code?: string;
+
+  /**
+   * @description: 原蓝票号码（红票必填）
+   * @type: string
+   * @default:
+   **/
+  original_invoice_no?: string;
 }
 
 /**

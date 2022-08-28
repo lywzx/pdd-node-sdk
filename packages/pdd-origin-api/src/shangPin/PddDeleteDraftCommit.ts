@@ -5,6 +5,7 @@ export const PDD_DELETE_DRAFT_COMMIT_LIMITERS = [
     limiterLevel: 3,
     timeRange: 1,
     times: 100,
+    callSourceType: 0,
   },
 ];
 
@@ -20,6 +21,13 @@ export interface PddDeleteDraftCommitRequestInterface {
    * @default:
    **/
   goods_commit_id: string | number;
+
+  /**
+   * @description: 商品id
+   * @type: string | number
+   * @default:
+   **/
+  goods_id: string | number;
 }
 
 /**

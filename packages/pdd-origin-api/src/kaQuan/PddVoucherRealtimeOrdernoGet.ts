@@ -5,6 +5,7 @@ export const PDD_VOUCHER_REALTIME_ORDERNO_GET_LIMITERS = [
     limiterLevel: 1,
     timeRange: 86400,
     times: 1000,
+    callSourceType: 0,
   },
 ];
 

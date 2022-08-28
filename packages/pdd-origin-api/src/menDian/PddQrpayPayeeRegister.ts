@@ -5,6 +5,7 @@ export const PDD_QRPAY_PAYEE_REGISTER_LIMITERS = [
     limiterLevel: 3,
     timeRange: 1,
     times: 0,
+    callSourceType: 0,
   },
 ];
 

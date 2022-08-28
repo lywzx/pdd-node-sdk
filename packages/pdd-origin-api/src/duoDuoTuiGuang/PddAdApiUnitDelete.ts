@@ -5,6 +5,7 @@ export const PDD_AD_API_UNIT_DELETE_LIMITERS = [
     limiterLevel: 1,
     timeRange: 20,
     times: 5,
+    callSourceType: 0,
   },
 ];
 

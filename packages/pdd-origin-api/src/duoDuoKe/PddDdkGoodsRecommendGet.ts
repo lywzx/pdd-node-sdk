@@ -5,6 +5,7 @@ export const PDD_DDK_GOODS_RECOMMEND_GET_LIMITERS = [
     limiterLevel: 3,
     timeRange: 50,
     times: 33450,
+    callSourceType: 0,
   },
 ];
 
@@ -15,14 +16,21 @@ export const PDD_DDK_GOODS_RECOMMEND_GET_LIMITERS = [
  **/
 export interface PddDdkGoodsRecommendGetRequestInterface {
   /**
-   * @description: 猜你喜欢场景的商品类目，20100-百货，20200-母婴，20300-食品，20400-女装，20500-电器，20600-鞋包，20700-内衣，20800-美妆，20900-男装，21000-水果，21100-家纺，21200-文具,21300-运动,21400-虚拟,21500-汽车,21600-家装,21700-家具,21800-医药;
+   * @description: 活动商品标记数组，例：[4,7]，4-秒杀，7-百亿补贴，10851-千万补贴，11879-千万神券，10913-招商礼金商品，31-品牌黑标，10564-精选爆品-官方直推爆款，10584-精选爆品-团长推荐，24-品牌高佣，其他的值请忽略
+   * @type: number[]
+   * @default:
+   **/
+  activity_tags?: number[];
+
+  /**
+   * @description: 猜你喜欢场景的商品类目，商品类目ID，使用pdd.goods.cats.get接口获取
    * @type: string | number
    * @default:
    **/
   cat_id?: string | number;
 
   /**
-   * @description: 进宝频道推广商品，0-1.9包邮, 1-今日爆款, 2-品牌好货,3-相似商品推荐,4-猜你喜欢,5-实时热销榜,6-实时收益榜,7-今日热销榜,8-高佣榜单，默认值5
+   * @description: 进宝频道推广商品: 1-今日销量榜,3-相似商品推荐,4-猜你喜欢(和进宝网站精选一致),5-实时热销榜,6-实时收益榜。默认值5
    * @type: number
    * @default:
    **/
@@ -36,14 +44,14 @@ export interface PddDdkGoodsRecommendGetRequestInterface {
   custom_parameters?: string;
 
   /**
-   * @description: 相似商品推荐场景时必传。商品Id，请求相似商品时，仅取数组的第一位
-   * @type: Array<string | number>
+   * @description: 商品主图类型：1-场景图，2-白底图，默认为0
+   * @type: number
    * @default:
    **/
-  goods_ids?: Array<string | number>;
+  goods_img_type?: number;
 
   /**
-   * @description: 相似商品推荐场景时必传。goodsSign，请求相似商品时，仅取数组的第一位
+   * @description: 商品goodsSign列表，相似商品推荐场景时必传，仅取数组的第一位，例如：["c9r2omogKFFAc7WBwvbZU1ikIb16_J3CTa8HNN"]。goodsSign是加密后的goodsId, goodsId已下线，请使用goodsSign来替代。使用说明：https://jinbao.pinduoduo.com/qa-system?questionId=252
    * @type: string[]
    * @default:
    **/
@@ -136,18 +144,32 @@ export interface PddDdkGoodsRecommendGetGoodsBasicDetailResponseResponseInterfac
  **/
 export interface PddDdkGoodsRecommendGetGoodsBasicDetailResponseListResponseInterface {
   /**
-   * @description: 已废弃,使用opt_id
-   * @type: string
+   * @description: 活动佣金比例，千分比（特定活动期间的佣金比例）
+   * @type: string | number
    * @default:
    **/
-  category_id: string;
+  activity_promotion_rate: string | number;
 
   /**
-   * @description: 已废弃,使用opt_name
+   * @description: 商品活动标记数组，例：[4,7]，4-秒杀 7-百亿补贴等
+   * @type: number[]
+   * @default:
+   **/
+  activity_tags: number[];
+
+  /**
+   * @description: 商品品牌词信息，如“苹果”、“阿迪达斯”、“李宁”等
    * @type: string
    * @default:
    **/
-  category_name: string;
+  brand_name: string;
+
+  /**
+   * @description: 全局礼金金额，单位分
+   * @type: string | number
+   * @default:
+   **/
+  cash_gift_amount: string | number;
 
   /**
    * @description: 商品类目id
@@ -227,25 +249,18 @@ export interface PddDdkGoodsRecommendGetGoodsBasicDetailResponseListResponseInte
   desc_txt: string;
 
   /**
+   * @description: 额外优惠券，单位为分
+   * @type: string | number
+   * @default:
+   **/
+  extra_coupon_amount: string | number;
+
+  /**
    * @description: 商品描述
    * @type: string
    * @default:
    **/
   goods_desc: string;
-
-  /**
-   * @description: 商品详情图列表
-   * @type: string
-   * @default:
-   **/
-  goods_gallery_urls: string;
-
-  /**
-   * @description: 商品id
-   * @type: string | number
-   * @default:
-   **/
-  goods_id: string | number;
 
   /**
    * @description: 商品主图
@@ -276,7 +291,7 @@ export interface PddDdkGoodsRecommendGetGoodsBasicDetailResponseListResponseInte
   goods_rate: string | number;
 
   /**
-   * @description: 商品goodsSign
+   * @description: 商品goodsSign，支持通过goodsSign查询商品。goodsSign是加密后的goodsId, goodsId已下线，请使用goodsSign来替代。使用说明：https://jinbao.pinduoduo.com/qa-system?questionId=252
    * @type: string
    * @default:
    **/
@@ -302,6 +317,13 @@ export interface PddDdkGoodsRecommendGetGoodsBasicDetailResponseListResponseInte
    * @default:
    **/
   has_coupon: boolean;
+
+  /**
+   * @description: 商品是否有素材(图文、视频)
+   * @type: boolean
+   * @default:
+   **/
+  has_material: boolean;
 
   /**
    * @description: 物流分
@@ -395,6 +417,13 @@ export interface PddDdkGoodsRecommendGetGoodsBasicDetailResponseListResponseInte
   qr_code_image_url: string;
 
   /**
+   * @description: 商品近1小时在多多进宝的实时销量（仅实时热销榜提供）
+   * @type: string
+   * @default:
+   **/
+  realtime_sales_tip: string;
+
+  /**
    * @description: 销售量
    * @type: string
    * @default:
@@ -428,4 +457,25 @@ export interface PddDdkGoodsRecommendGetGoodsBasicDetailResponseListResponseInte
    * @default:
    **/
   share_rate: number;
+
+  /**
+   * @description: 优势渠道专属商品补贴金额，单位为分。针对优质渠道的补贴活动，指定优势渠道可通过推广该商品获取相应补贴。补贴活动入口：[进宝网站-官方活动]
+   * @type: number
+   * @default:
+   **/
+  subsidy_amount: number;
+
+  /**
+   * @description: 官方活动给渠道的收入补贴金额，不允许直接给下级代理展示，单位为分
+   * @type: number
+   * @default:
+   **/
+  subsidy_duo_amount_ten_million: number;
+
+  /**
+   * @description: 优惠标签列表，包括："X元券","比全网低X元","服务费","精选素材","近30天低价","同款低价","同款好评","同款热销","旗舰店","一降到底","招商优选","商家优选","好价再降X元","全站销量XX","实时热销榜第X名","实时好评榜第X名","额外补X元"等
+   * @type: string[]
+   * @default:
+   **/
+  unified_tags: string[];
 }

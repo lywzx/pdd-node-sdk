@@ -19,7 +19,7 @@ export interface PddTicketGoodsQueryRequestInterface {
    * @type: string | number
    * @default:
    **/
-  goods_id?: string | number;
+  goods_id: string | number;
 }
 
 /**
@@ -116,7 +116,7 @@ export interface PddTicketGoodsQueryGoodsDetailGetResponseResponseInterface {
   goods_status: number;
 
   /**
-   * @description: 商品市场价，单位为分。
+   * @description: 商品参考价，单位为分。
    * @type: string | number
    * @default:
    **/

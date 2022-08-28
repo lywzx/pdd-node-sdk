@@ -1,5 +1,13 @@
 export const PDD_PMC_ACCRUE_QUERY = 'pdd.pmc.accrue.query';
 export const PDD_PMC_ACCRUE_QUERY_RESPONSE_KEY = 'pmc_user_get_response';
+export const PDD_PMC_ACCRUE_QUERY_LIMITERS = [
+  {
+    limiterLevel: 4,
+    timeRange: 1,
+    times: 1,
+    callSourceType: 0,
+  },
+];
 
 /**
  * 接口名称：消息队列积压数量查询

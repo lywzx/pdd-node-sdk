@@ -5,11 +5,13 @@ export const PDD_AD_API_REPORT_DAILY_REPORT_QUERY_LIMITERS = [
     limiterLevel: 1,
     timeRange: 10,
     times: 20,
+    callSourceType: 0,
   },
   {
     limiterLevel: 4,
     timeRange: 1,
     times: 50,
+    callSourceType: 0,
   },
 ];
 
@@ -49,7 +51,7 @@ export interface PddAdApiReportDailyReportQueryRequestInterface {
   queryDimensionType: number;
 
   /**
-   * @description: 场景类型,0-搜索，2-场景展示
+   * @description: 场景类型。0表示搜索，1明星店铺，2表示展示。
    * @type: number
    * @default:
    **/
@@ -235,7 +237,7 @@ export interface PddAdApiReportDailyReportQueryResponseResultDailyReportListResp
   impression: string | number;
 
   /**
-   * @description: 店铺收藏数
+   * @description: 店铺关注数
    * @type: string | number
    * @default:
    **/
@@ -340,7 +342,7 @@ export interface PddAdApiReportDailyReportQueryResponseResultSumReportResponseIn
   impression: string | number;
 
   /**
-   * @description: 店铺收藏数
+   * @description: 店铺关注数
    * @type: string | number
    * @default:
    **/

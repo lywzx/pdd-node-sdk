@@ -4,6 +4,7 @@
   ],
   "command": {
     "publish": {
+      "contents": "dist",
       "ignoreChanges": [
         "**/test/**",
         "**/tsconfig.json"
@@ -12,10 +13,10 @@
         "master",
         "v2"
       ],
-      "registry": "http://registry.npmjs.org"
+      "registry": "https://registry.npmjs.org"
     }
   },
-  "version": "0.0.2-alpha.6",
+  "version": "1.0.1-alpha.2",
   "useWorkspaces": true,
   "npmClient": "yarn"
 }

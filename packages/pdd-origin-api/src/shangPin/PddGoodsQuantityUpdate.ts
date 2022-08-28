@@ -3,8 +3,9 @@ export const PDD_GOODS_QUANTITY_UPDATE_RESPONSE_KEY = 'goods_quantity_update_res
 export const PDD_GOODS_QUANTITY_UPDATE_LIMITERS = [
   {
     limiterLevel: 3,
-    timeRange: 10,
-    times: 36000,
+    timeRange: 1,
+    times: 4200,
+    callSourceType: 0,
   },
 ];
 
@@ -29,14 +30,14 @@ export interface PddGoodsQuantityUpdateRequestInterface {
   quantity: string | number;
 
   /**
-   * @description: sku_id和outer_id必填一个
+   * @description: sku_id和outer_id必填一个，优先使用sku_id
    * @type: string | number
    * @default:
    **/
   sku_id?: string | number;
 
   /**
-   * @description: sku商家编码
+   * @description: sku商家编码，如果sku_id未填，则使用outer_id
    * @type: string
    * @default:
    **/

@@ -5,6 +5,7 @@ export const PDD_MALL_INFO_GET_LIMITERS = [
     limiterLevel: 1,
     timeRange: 1,
     times: 450,
+    callSourceType: 0,
   },
 ];
 
@@ -71,4 +72,11 @@ export interface PddMallInfoGetMallInfoGetResponseResponseInterface {
    * @default:
    **/
   merchant_type: number;
+
+  /**
+   * @description: 店铺身份,0:厂商 1:分销商 2:都不是 3:都是
+   * @type: number
+   * @default:
+   **/
+  mall_character: number;
 }

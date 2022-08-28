@@ -37,19 +37,18 @@ export interface PddVirtualGameServerQueryResponseInterface {
  **/
 export interface PddVirtualGameServerQueryGameServerQueryResponseResponseInterface {
   /**
-   * @description: 区服信息
-   * @type: PddVirtualGameServerQueryGameServerQueryResponseItemListResponseInterface[]
-   * @default:
-   *
-   **/
-  item_list: PddVirtualGameServerQueryGameServerQueryResponseItemListResponseInterface[];
-
-  /**
    * @description: 游戏CODE
    * @type: string
    * @default:
    **/
   goods_config_code: string;
+
+  /**
+   * @description: 游戏ID
+   * @type: string | number
+   * @default:
+   **/
+  goods_config_id: string | number;
 
   /**
    * @description: 游戏配置名称
@@ -59,11 +58,12 @@ export interface PddVirtualGameServerQueryGameServerQueryResponseResponseInterfa
   goods_config_name: string;
 
   /**
-   * @description: 游戏ID
-   * @type: string | number
+   * @description: 区服信息
+   * @type: PddVirtualGameServerQueryGameServerQueryResponseItemListResponseInterface[]
    * @default:
+   *
    **/
-  goods_config_id: string | number;
+  item_list: PddVirtualGameServerQueryGameServerQueryResponseItemListResponseInterface[];
 }
 
 /**

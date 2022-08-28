@@ -3,8 +3,9 @@ export const PDD_LOGISTICS_ONLINE_SEND_RESPONSE_KEY = 'logistics_online_send_res
 export const PDD_LOGISTICS_ONLINE_SEND_LIMITERS = [
   {
     limiterLevel: 3,
-    timeRange: 10,
-    times: 30000,
+    timeRange: 1,
+    times: 5000,
+    callSourceType: 0,
   },
 ];
 
@@ -15,7 +16,7 @@ export const PDD_LOGISTICS_ONLINE_SEND_LIMITERS = [
  **/
 export interface PddLogisticsOnlineSendRequestInterface {
   /**
-   * @description: 发货个性内容，支持imei（手机串号），deviceSn（设备序列号）内容。形如：imei=11,22,3333; 以 “imei=” 开头，以英文分号“;”结尾，中间为手机IMEI串号信息，多个串号以英文逗号 “,”拼接释义：该订单包含三个手机IMEI串号，分别为11、22和3333；其他内容的格式同理。
+   * @description: 发货个性内容，支持imei（手机串号），deviceSn（设备序列号），overseaTracing（海淘溯源码id）内容。形如：“imei=识别码1,识别码2;”、“ deviceSn=序列号1,序列号2;”、“overseaTracing=溯源码1,溯源码2;”。以英文逗号“,”分割串号，以英文分号“;”分割不同参数内容。上传时请严格区分imei，deviceSn和overseaTracing，其中overseaTracing（海淘溯源码id）要求海淘商品在支持溯源的情况下必传。错传/漏传将会导致发货失败。
    * @type: string
    * @default:
    **/
@@ -48,6 +49,13 @@ export interface PddLogisticsOnlineSendRequestInterface {
    * @default:
    **/
   tracking_number: string;
+
+  /**
+   * @description: 修改发货模式：不传则默认为首次发货 1=首次发货：用于订单首次发货，仅待发货订单可传入； 2=修改发货：用于订单修改发货，调用成功后将会覆盖原发货信息，仅已发货订单可传入
+   * @type: number
+   * @default:
+   **/
+  redelivery_type?: number;
 }
 
 /**

@@ -1,24 +1,13 @@
 {
   "name": "@pin-duo-duo/scripts",
-  "version": "0.0.2-alpha.4",
+  "version": "1.0.1-alpha.2",
   "description": "> TODO: description",
   "author": "lywzx <liuyang@lyblog.net>",
   "homepage": "https://github.com/lywzx/pdd-node-sdk/tree/master/packages/scripts#readme",
   "license": "MIT",
-  "main": "lib/index.common.js",
-  "module": "lib/index.esm.js",
-  "unpkg": "lib/index.js",
-  "jsdelivr": "lib/index.js",
-  "types": "lib/index.d.ts",
-  "directories": {
-    "lib": "lib",
-    "test": "test"
-  },
-  "files": [
-    "lib"
-  ],
+  "private": true,
   "publishConfig": {
-    "registry": "http://registry.npmjs.org",
+    "registry": "https://registry.npmjs.org",
     "access": "public"
   },
   "repository": {
@@ -26,8 +15,7 @@
     "url": "git+https://github.com/lywzx/pdd-node-sdk.git"
   },
   "scripts": {
-    "start": "",
-    "test": "echo \"Error: run tests from root\" && exit 1"
+    "prepublishOnly": "cd ../.. && yarn build --only-package=@pin-duo-duo/scripts"
   },
   "bugs": {
     "url": "https://github.com/lywzx/pdd-node-sdk/issues"

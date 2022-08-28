@@ -5,6 +5,7 @@ export const PDD_GOODS_OPT_GET_LIMITERS = [
     limiterLevel: 4,
     timeRange: 10,
     times: 1200,
+    callSourceType: 0,
   },
 ];
 
@@ -66,11 +67,11 @@ export interface PddGoodsOptGetGoodsOptGetResponseGoodsOptListResponseInterface 
   level: number;
 
   /**
-   * @description: id所属父ID，其中，parent_id=0时为顶级节点
+   * @description: 商品标签ID
    * @type: string | number
    * @default:
    **/
-  parent_opt_id: string | number;
+  opt_id: string | number;
 
   /**
    * @description: 商品标签名
@@ -80,9 +81,9 @@ export interface PddGoodsOptGetGoodsOptGetResponseGoodsOptListResponseInterface 
   opt_name: string;
 
   /**
-   * @description: 商品标签ID
+   * @description: id所属父ID，其中，parent_id=0时为顶级节点
    * @type: string | number
    * @default:
    **/
-  opt_id: string | number;
+  parent_opt_id: string | number;
 }

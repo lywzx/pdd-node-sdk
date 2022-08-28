@@ -1,4 +1,4 @@
-import { PddBaseException } from '../../src/exceptions';
+import { PddBaseException } from '../../src';
 import { expect } from 'chai';
 
 describe('pdd-base-exception test util', function () {

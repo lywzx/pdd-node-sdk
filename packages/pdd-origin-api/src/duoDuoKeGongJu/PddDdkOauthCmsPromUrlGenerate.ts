@@ -43,14 +43,7 @@ export interface PddDdkOauthCmsPromUrlGenerateRequestInterface {
   generate_short_url?: boolean;
 
   /**
-   * @description: 已经废弃，不再支持该功能。是否唤起微信客户端， 默认false 否，true 是。
-   * @type: boolean
-   * @default:
-   **/
-  generate_weapp_webview?: boolean;
-
-  /**
-   * @description: 是否生成小程序推广
+   * @description: 是否生成拼多多福利券微信小程序推广信息
    * @type: boolean
    * @default:
    **/
@@ -172,20 +165,6 @@ export interface PddDdkOauthCmsPromUrlGenerateCmsPromotionUrlGenerateResponseUrl
   multi_url_list: PddDdkOauthCmsPromUrlGenerateCmsPromotionUrlGenerateResponseUrlListMultiUrlListResponseInterface;
 
   /**
-   * @description: 多人团唤醒微信推广短链接，已弃用
-   * @type: string
-   * @default:
-   **/
-  multi_we_app_web_view_short_url: string;
-
-  /**
-   * @description: 多人团唤醒微信推广长链接，已弃用
-   * @type: string
-   * @default:
-   **/
-  multi_we_app_web_view_url: string;
-
-  /**
    * @description: h5短链接
    * @type: string
    * @default:
@@ -215,26 +194,12 @@ export interface PddDdkOauthCmsPromUrlGenerateCmsPromotionUrlGenerateResponseUrl
   url: string;
 
   /**
-   * @description: 小程序信息
+   * @description: 拼多多福利券微信小程序信息
    * @type: PddDdkOauthCmsPromUrlGenerateCmsPromotionUrlGenerateResponseUrlListWeAppInfoResponseInterface
    * @default:
    *
    **/
   we_app_info: PddDdkOauthCmsPromUrlGenerateCmsPromotionUrlGenerateResponseUrlListWeAppInfoResponseInterface;
-
-  /**
-   * @description: 唤醒微信短链，已废弃
-   * @type: string
-   * @default:
-   **/
-  we_app_web_view_short_url: string;
-
-  /**
-   * @description: 唤醒微信长链，已废弃
-   * @type: string
-   * @default:
-   **/
-  we_app_web_view_url: string;
 }
 
 /**
@@ -272,25 +237,18 @@ export interface PddDdkOauthCmsPromUrlGenerateCmsPromotionUrlGenerateResponseUrl
   short_url: string;
 
   /**
+   * @description: 使用此推广链接，用户安装多多团长APP的情况下会唤起APP（需客户端支持schema跳转协议）
+   * @type: string
+   * @default:
+   **/
+  tz_schema_url: string;
+
+  /**
    * @description: 双人团长链接，唤起H5页面
    * @type: string
    * @default:
    **/
   url: string;
-
-  /**
-   * @description: 双人团唤醒微信短链接，已弃用
-   * @type: string
-   * @default:
-   **/
-  we_app_web_view_short_url: string;
-
-  /**
-   * @description: 双人团唤醒微信链接，已弃用
-   * @type: string
-   * @default:
-   **/
-  we_app_web_view_url: string;
 }
 
 /**
@@ -328,35 +286,28 @@ export interface PddDdkOauthCmsPromUrlGenerateCmsPromotionUrlGenerateResponseUrl
   short_url: string;
 
   /**
+   * @description: 使用此推广链接，用户安装多多团长APP的情况下会唤起APP（需客户端支持schema跳转协议）
+   * @type: string
+   * @default:
+   **/
+  tz_schema_url: string;
+
+  /**
    * @description: 普通推广长链接，唤起H5页面
    * @type: string
    * @default:
    **/
   url: string;
-
-  /**
-   * @description: 唤醒微信短链接，已弃用
-   * @type: string
-   * @default:
-   **/
-  we_app_web_view_short_url: string;
-
-  /**
-   * @description: 唤醒微信链接，已弃用
-   * @type: string
-   * @default:
-   **/
-  we_app_web_view_url: string;
 }
 
 /**
- * @description 小程序信息
+ * @description 拼多多福利券微信小程序信息
  * @default
  * @example
  **/
 export interface PddDdkOauthCmsPromUrlGenerateCmsPromotionUrlGenerateResponseUrlListWeAppInfoResponseInterface {
   /**
-   * @description: 拼多多小程序id
+   * @description: 小程序id
    * @type: string
    * @default:
    **/

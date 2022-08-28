@@ -5,6 +5,7 @@ export const PDD_GOODS_COMMIT_DETAIL_GET_LIMITERS = [
     limiterLevel: 1,
     timeRange: 60,
     times: 3000,
+    callSourceType: 0,
   },
 ];
 
@@ -108,7 +109,7 @@ export interface PddGoodsCommitDetailGetGoodsCommitDetailResponseResponseInterfa
   cost_template_id: string | number;
 
   /**
-   * @description: 国家id
+   * @description: 地区/国家id
    * @type: string | number
    * @default:
    **/
@@ -141,6 +142,13 @@ export interface PddGoodsCommitDetailGetGoodsCommitDetailResponseResponseInterfa
    * @default:
    **/
   delivery_one_day: number;
+
+  /**
+   * @description: 发货方式。0：无物流发货；1：有物流发货。
+   * @type: number
+   * @default:
+   **/
+  delivery_type: number;
 
   /**
    * @description: 商品详情图
@@ -217,7 +225,7 @@ export interface PddGoodsCommitDetailGetGoodsCommitDetailResponseResponseInterfa
   goods_travel_attr: PddGoodsCommitDetailGetGoodsCommitDetailResponseGoodsTravelAttrResponseInterface;
 
   /**
-   * @description: 商品类型：1-国内普通商品，2-进口，3-国外海淘，4-直邮 ,5-流量,6-话费,7,优惠券;8-QQ充值,9-加油卡 暂时支持1-普通商品的上架
+   * @description: 商品类型：1-国内普通商品，2-一般贸易，3-保税仓BBC直供，4-海外BC直邮 ,5-流量 ,6-话费 ,7-优惠券 ,8-QQ充值 ,9-加油卡，15-商家卡券，18-海外CC行邮 19-平台卡券
    * @type: number
    * @default:
    **/
@@ -252,6 +260,13 @@ export interface PddGoodsCommitDetailGetGoodsCommitDetailResponseResponseInterfa
   is_folt: number;
 
   /**
+   * @description: 是否成团预售。0：不是；1:是。
+   * @type: number
+   * @default:
+   **/
+  is_group_pre_sale: number;
+
+  /**
    * @description: 是否预售,true-预售商品，false-非预售商品
    * @type: number
    * @default:
@@ -264,6 +279,13 @@ export interface PddGoodsCommitDetailGetGoodsCommitDetailResponseResponseInterfa
    * @default:
    **/
   is_refundable: number;
+
+  /**
+   * @description: 是否sku预售，0：否，1：是
+   * @type: number
+   * @default:
+   **/
+  is_sku_pre_sale: number;
 
   /**
    * @description: 缺重包退
@@ -280,7 +302,7 @@ export interface PddGoodsCommitDetailGetGoodsCommitDetailResponseResponseInterfa
   mai_jia_zi_ti: string;
 
   /**
-   * @description: 市场价格，单位为分
+   * @description: 参考价格，单位为分
    * @type: string | number
    * @default:
    **/
@@ -301,13 +323,6 @@ export interface PddGoodsCommitDetailGetGoodsCommitDetailResponseResponseInterfa
   origin_country_id: number;
 
   /**
-   * @description: 商家编码（商品维度），同其他接口中的outer_goods_id 、out_goods_id、out_goods_sn、outer_goods_sn 都为商家编码（goods维度）
-   * @type: string
-   * @default:
-   **/
-  outer_goods_id: string;
-
-  /**
    * @description: 第三方商品Id
    * @type: string
    * @default:
@@ -320,6 +335,13 @@ export interface PddGoodsCommitDetailGetGoodsCommitDetailResponseResponseInterfa
    * @default:
    **/
   out_source_type: number;
+
+  /**
+   * @description: 商家编码（商品维度），同其他接口中的outer_goods_id 、out_goods_id、out_goods_sn、outer_goods_sn 都为商家编码（goods维度）
+   * @type: string
+   * @default:
+   **/
+  outer_goods_id: string;
 
   /**
    * @description: oversea_goods
@@ -408,6 +430,13 @@ export interface PddGoodsCommitDetailGetGoodsCommitDetailResponseResponseInterfa
   tiny_name: string;
 
   /**
+   * @description: 满2件折扣，可选范围0-100, 0表示取消，95表示95折，设置需先查询规则接口获取实际可填范围
+   * @type: number
+   * @default:
+   **/
+  two_pieces_discount: number;
+
+  /**
    * @description: 保税仓
    * @type: string
    * @default:
@@ -427,13 +456,6 @@ export interface PddGoodsCommitDetailGetGoodsCommitDetailResponseResponseInterfa
    * @default:
    **/
   zhi_huan_bu_xiu: number;
-
-  /**
-   * @description: 发货方式。0：无物流发货；1：有物流发货。
-   * @type: number
-   * @default:
-   **/
-  delivery_type: number;
 }
 
 /**
@@ -696,6 +718,21 @@ export interface PddGoodsCommitDetailGetGoodsCommitDetailResponseSkuListResponse
   sku_id: string | number;
 
   /**
+   * @description: sku预售时间，单位秒
+   * @type: number
+   * @default:
+   **/
+  sku_pre_sale_time: number;
+
+  /**
+   * @description: sku属性
+   * @type: PddGoodsCommitDetailGetGoodsCommitDetailResponseSkuListSkuPropertyListResponseInterface[]
+   * @default:
+   *
+   **/
+  sku_property_list: PddGoodsCommitDetailGetGoodsCommitDetailResponseSkuListSkuPropertyListResponseInterface[];
+
+  /**
    * @description: 商品规格列表
    * @type: PddGoodsCommitDetailGetGoodsCommitDetailResponseSkuListSpecResponseInterface[]
    * @default:
@@ -744,6 +781,41 @@ export interface PddGoodsCommitDetailGetGoodsCommitDetailResponseSkuListOverseaS
    * @default:
    **/
   taxation: number;
+}
+
+/**
+ * @description sku属性
+ * @default
+ * @example
+ **/
+export interface PddGoodsCommitDetailGetGoodsCommitDetailResponseSkuListSkuPropertyListResponseInterface {
+  /**
+   * @description: 属性单位
+   * @type: string
+   * @default:
+   **/
+  punit: string;
+
+  /**
+   * @description: 属性id
+   * @type: string | number
+   * @default:
+   **/
+  ref_pid: string | number;
+
+  /**
+   * @description: 属性值
+   * @type: string
+   * @default:
+   **/
+  value: string;
+
+  /**
+   * @description: 属性值id
+   * @type: string | number
+   * @default:
+   **/
+  vid: string | number;
 }
 
 /**

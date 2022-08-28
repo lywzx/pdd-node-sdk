@@ -5,6 +5,7 @@ export const PDD_AD_API_KEYWORD_RELEVANCE_GET_LIMITERS = [
     limiterLevel: 1,
     timeRange: 10,
     times: 20,
+    callSourceType: 0,
   },
 ];
 

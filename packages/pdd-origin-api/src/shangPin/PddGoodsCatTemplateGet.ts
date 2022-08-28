@@ -5,18 +5,20 @@ export const PDD_GOODS_CAT_TEMPLATE_GET_LIMITERS = [
     limiterLevel: 1,
     timeRange: 10,
     times: 1200,
+    callSourceType: 0,
   },
   {
     limiterLevel: 3,
     timeRange: 10,
     times: 12000,
+    callSourceType: 0,
   },
 ];
 
 /**
- * 接口名称：获取商品类目属性
+ * 接口名称：获取商品类目属性(已废弃)
  * 接口标识：pdd.goods.cat.template.get
- * 接口使用场景：商品发布前，需要查询该类目的商品发布需要的属性，获取商品发布需要的模板-属性-属性值
+ * 接口使用场景：商品发布前，需要查询该类目的商品发布需要的属性，获取商品发布需要的模板-属性-属性值。已废弃，建议使用pdd.goods.cat.rule.get代替
  **/
 export interface PddGoodsCatTemplateGetRequestInterface {
   /**
@@ -28,9 +30,9 @@ export interface PddGoodsCatTemplateGetRequestInterface {
 }
 
 /**
- * 接口名称：获取商品类目属性
+ * 接口名称：获取商品类目属性(已废弃)
  * 接口标识：pdd.goods.cat.template.get
- * 接口使用场景：商品发布前，需要查询该类目的商品发布需要的属性，获取商品发布需要的模板-属性-属性值
+ * 接口使用场景：商品发布前，需要查询该类目的商品发布需要的属性，获取商品发布需要的模板-属性-属性值。已废弃，建议使用pdd.goods.cat.rule.get代替
  **/
 export interface PddGoodsCatTemplateGetResponseInterface {
   /**
@@ -68,6 +70,13 @@ export interface PddGoodsCatTemplateGetOpenApiResponseResponseInterface {
    * @default:
    **/
   input_max_spec_num: string | number;
+
+  /**
+   * @description: is_single_item
+   * @type: boolean
+   * @default:
+   **/
+  is_single_item: boolean;
 
   /**
    * @description: 最大sku数目上限
@@ -148,6 +157,13 @@ export interface PddGoodsCatTemplateGetOpenApiResponsePropertiesResponseInterfac
   is_condition_show: boolean;
 
   /**
+   * @description: is_key
+   * @type: boolean
+   * @default:
+   **/
+  is_key: boolean;
+
+  /**
    * @description: 是否父属性
    * @type: boolean
    * @default:
@@ -223,6 +239,13 @@ export interface PddGoodsCatTemplateGetOpenApiResponsePropertiesResponseInterfac
    * @default:
    **/
   required_rule_type: number;
+
+  /**
+   * @description: show_only_standard
+   * @type: boolean
+   * @default:
+   **/
+  show_only_standard: boolean;
 
   /**
    * @description: 若属性按条件展示,则只有show_vids中的值被选择时属性才可使用

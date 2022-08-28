@@ -5,6 +5,7 @@ export const PDD_GOODS_OUTER_CAT_MAPPING_GET_LIMITERS = [
     limiterLevel: 3,
     timeRange: 1,
     times: 2400,
+    callSourceType: 0,
   },
 ];
 

@@ -5,6 +5,7 @@ export const PDD_FINANCE_BALANCE_DAILY_BILL_URL_GET_LIMITERS = [
     limiterLevel: 3,
     timeRange: 1,
     times: 100,
+    callSourceType: 0,
   },
 ];
 
@@ -44,7 +45,7 @@ export interface PddFinanceBalanceDailyBillUrlGetResponseInterface {
  **/
 export interface PddFinanceBalanceDailyBillUrlGetFinanceBalanceDailyBillUrlGetResponseResponseInterface {
   /**
-   * @description: 下载url
+   * @description: 货款账单下载 URL
    * @type: string
    * @default:
    **/

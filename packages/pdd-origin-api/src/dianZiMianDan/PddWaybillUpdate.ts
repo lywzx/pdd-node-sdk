@@ -91,17 +91,17 @@ export interface PddWaybillUpdateParamWaybillCloudPrintUpdateRequestPackageInfoR
 
   /**
    * @description: 体积
-   * @type: string | number
+   * @type: number
    * @default:
    **/
-  volume?: string | number;
+  volume?: number;
 
   /**
    * @description: 重量
-   * @type: string | number
+   * @type: number
    * @default:
    **/
-  weight?: string | number;
+  weight?: number;
 }
 
 /**
@@ -175,6 +175,13 @@ export interface PddWaybillUpdateParamWaybillCloudPrintUpdateRequestRecipientAdd
   city?: string;
 
   /**
+   * @description: 地区/国家
+   * @type: string
+   * @default:
+   **/
+  country?: string;
+
+  /**
    * @description: 详细地址
    * @type: string
    * @default:
@@ -201,13 +208,6 @@ export interface PddWaybillUpdateParamWaybillCloudPrintUpdateRequestRecipientAdd
    * @default:
    **/
   town?: string;
-
-  /**
-   * @description: 国家/地区
-   * @type: string
-   * @default:
-   **/
-  country?: string;
 }
 
 /**

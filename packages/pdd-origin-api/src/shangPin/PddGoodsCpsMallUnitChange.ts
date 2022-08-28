@@ -12,7 +12,7 @@ export interface PddGoodsCpsMallUnitChangeRequestInterface {
    * @type: number
    * @default:
    **/
-  rate?: number;
+  rate: number;
 }
 
 /**

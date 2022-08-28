@@ -5,11 +5,13 @@ export const PDD_GOODS_INFORMATION_UPDATE_LIMITERS = [
     limiterLevel: 1,
     timeRange: 60,
     times: 3000,
+    callSourceType: 0,
   },
   {
     limiterLevel: 3,
     timeRange: 1,
-    times: 900,
+    times: 600,
+    callSourceType: 0,
   },
 ];
 
@@ -70,7 +72,7 @@ export interface PddGoodsInformationUpdateRequestInterface {
   cost_template_id: string | number;
 
   /**
-   * @description: 国家ID，0-中国，暂时只传0（普通商品）
+   * @description: 地区/国家ID，0-中国，暂时只传0（普通商品）
    * @type: number
    * @default:
    **/
@@ -96,6 +98,13 @@ export interface PddGoodsInformationUpdateRequestInterface {
    * @default:
    **/
   delivery_one_day?: number;
+
+  /**
+   * @description: 发货方式。0：无物流发货；1：有物流发货。
+   * @type: number
+   * @default:
+   **/
+  delivery_type?: number;
 
   /**
    * @description: 商品详情图：
@@ -163,11 +172,18 @@ export interface PddGoodsInformationUpdateRequestInterface {
   goods_travel_attr?: PddGoodsInformationUpdateGoodsTravelAttrRequestInterface;
 
   /**
-   * @description: 1-国内普通商品，2-进口，3-国外海淘，4-直邮 ,5-流量,6-话费,7,优惠券;8-QQ充值,9-加油卡，15-商家卡券，19-平台卡券，暂时支持1-普通商品的上架 19-平台卡券
+   * @description: 1-国内普通商品，2-一般贸易，3-保税仓BBC直供，4-海外BC直邮 ,5-流量 ,6-话费 ,7-优惠券 ,8-QQ充值 ,9-加油卡，15-商家卡券，18-海外CC行邮 19-平台卡券
    * @type: number
    * @default:
    **/
   goods_type: number;
+
+  /**
+   * @description: 是否获取商品发布警告信息，默认为忽略
+   * @type: boolean
+   * @default:
+   **/
+  ignore_edit_warn?: boolean;
 
   /**
    * @description: 商品主图，请参考拼多多首页大图，如果商品参加部分活动则必填，否则无法参加活动
@@ -203,6 +219,13 @@ export interface PddGoodsInformationUpdateRequestInterface {
   is_folt: boolean;
 
   /**
+   * @description: 是否成团预售。0：不是；1:是。
+   * @type: number
+   * @default:
+   **/
+  is_group_pre_sale?: number;
+
+  /**
    * @description: 是否预售,true-预售商品，false-非预售商品
    * @type: boolean
    * @default:
@@ -215,6 +238,13 @@ export interface PddGoodsInformationUpdateRequestInterface {
    * @default:
    **/
   is_refundable: boolean;
+
+  /**
+   * @description: 是否sku预售，1：是，0：否
+   * @type: number
+   * @default:
+   **/
+  is_sku_pre_sale?: number;
 
   /**
    * @description: 缺重包退
@@ -231,7 +261,7 @@ export interface PddGoodsInformationUpdateRequestInterface {
   mai_jia_zi_ti?: string;
 
   /**
-   * @description: 市场价格，单位为分
+   * @description: 参考价格，单位为分
    * @type: string | number
    * @default:
    **/
@@ -403,6 +433,13 @@ export interface PddGoodsInformationUpdateRequestInterface {
   tiny_name?: string;
 
   /**
+   * @description: 满2件折扣，可选范围0-100, 0表示取消，95表示95折，设置需先查询规则接口获取实际可填范围
+   * @type: number
+   * @default:
+   **/
+  two_pieces_discount?: number;
+
+  /**
    * @description: 保税仓，只在goods_type为直供商品时有效（现阶段暂不支持）
    * @type: string
    * @default:
@@ -424,11 +461,11 @@ export interface PddGoodsInformationUpdateRequestInterface {
   zhi_huan_bu_xiu?: number;
 
   /**
-   * @description: 发货方式。0：无物流发货；1：有物流发货。
-   * @type: number
+   * @description: 是否自动补充标品属性
+   * @type: boolean
    * @default:
    **/
-  delivery_type?: number;
+  auto_fill_spu_property?: boolean;
 }
 
 /**
@@ -771,6 +808,21 @@ export interface PddGoodsInformationUpdateSkuListRequestInterface {
   sku_id: string | number;
 
   /**
+   * @description: sku预售时间戳，单位秒；不更新传null，取消传0，更新传实际值
+   * @type: number
+   * @default:
+   **/
+  sku_pre_sale_time?: number;
+
+  /**
+   * @description: sku属性
+   * @type: PddGoodsInformationUpdateSkuListSkuPropertiesRequestInterface[]
+   * @default:
+   *
+   **/
+  sku_properties: PddGoodsInformationUpdateSkuListSkuPropertiesRequestInterface[];
+
+  /**
    * @description: 商品规格列表，根据pdd.goods.spec.id.get生成的规格属性id，例如：颜色规格下商家新增白色和黑色，大小规格下商家新增L和XL，则由4种spec组合，入参一种组合即可，在skulist中需要有4个spec组合的sku
    * @type: string
    * @default:
@@ -821,6 +873,41 @@ export interface PddGoodsInformationUpdateSkuListOverseaSkuRequestInterface {
 }
 
 /**
+ * @description sku属性
+ * @default
+ * @example
+ **/
+export interface PddGoodsInformationUpdateSkuListSkuPropertiesRequestInterface {
+  /**
+   * @description: 属性单位
+   * @type: string
+   * @default:
+   **/
+  punit: string;
+
+  /**
+   * @description: 属性id
+   * @type: string | number
+   * @default:
+   **/
+  ref_pid: string | number;
+
+  /**
+   * @description: 属性值
+   * @type: string
+   * @default:
+   **/
+  value: string;
+
+  /**
+   * @description: 属性值id
+   * @type: string | number
+   * @default:
+   **/
+  vid: string | number;
+}
+
+/**
  * 接口名称：商品编辑
  * 接口标识：pdd.goods.information.update
  * 接口使用场景：单个商品编辑
@@ -854,4 +941,11 @@ export interface PddGoodsInformationUpdateGoodsUpdateResponseResponseInterface {
    * @default:
    **/
   is_success: boolean;
+
+  /**
+   * @description: 商品匹配到的标品ID
+   * @type: string | number
+   * @default:
+   **/
+  matched_spu_id: string | number;
 }

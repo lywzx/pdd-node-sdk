@@ -5,6 +5,7 @@ export const PDD_AD_API_PLAN_QUERY_LIST_LIMITERS = [
     limiterLevel: 1,
     timeRange: 10,
     times: 20,
+    callSourceType: 0,
   },
 ];
 
@@ -36,7 +37,7 @@ export interface PddAdApiPlanQueryListRequestInterface {
   orderBy?: number;
 
   /**
-   * @description: 场景类型。0表示搜索，2表示展示。
+   * @description: 场景类型。0表示搜索，1明星店铺，2表示展示。
    * @type: number
    * @default:
    **/
@@ -192,7 +193,7 @@ export interface PddAdApiPlanQueryListResponseResultResponseInterface {
   impression: string | number;
 
   /**
-   * @description: 店铺收藏数
+   * @description: 店铺关注数
    * @type: string | number
    * @default:
    **/

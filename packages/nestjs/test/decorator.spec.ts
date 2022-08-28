@@ -35,8 +35,8 @@ describe('test pdd nest module decorator', () => {
           useFactory() {
             return {
               defaultChannel: 'mms',
-              mms: clientOptions,
-              open: clientOptions,
+              mms: clientOptions as any,
+              open: clientOptions as any,
             };
           },
         }),

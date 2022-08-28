@@ -5,6 +5,7 @@ export const PDD_DDK_RP_PROM_URL_GENERATE_LIMITERS = [
     limiterLevel: 3,
     timeRange: 50,
     times: 33450,
+    callSourceType: 0,
   },
 ];
 
@@ -22,34 +23,42 @@ export interface PddDdkRpPromUrlGenerateRequestInterface {
   amount?: string | number;
 
   /**
-   * @description: -1-活动列表，0-默认红包，2–新人红包，3-刮刮卡，5-员工内购，6-购物车，7-大促会场，8-直播间列表集合页，10-生成绑定备案链接，11-生成超级红包（仅支持微信小程序），12-砸金蛋
+   * @description: 营销工具类型，必填：-1-活动列表，0-红包(需申请推广权限)，2–新人红包，3-刮刮卡，5-员工内购，10-生成绑定备案链接，12-砸金蛋，14-千万补贴B端页面，15-充值中心B端页面，16-千万补贴C端页面，17-千万补贴投票页面，23-超级红包，24-礼金全场N折活动B端页面，27-带货赢千万，28-满减券活动B端页面，29-满减券活动C端页面，30-免单B端页面，31-免单C端页面，32-转盘得现金B端页面，33-转盘得现金C端页面，34-千万神券C端页面，35-千万神券B端页面；红包推广权限申请流程链接：https://jinbao.pinduoduo.com/qa-system?questionId=289
    * @type: number
    * @default:
    **/
   channel_type?: number;
 
   /**
-   * @description: 自定义参数，为链接打上自定义标签；自定义参数最长限制64个字节；格式为：  {"uid":"11111","sid":"22222"} ，其中 uid 用户唯一标识，可自行加密后传入，每个用户仅且对应一个标识，必填； sid 上下文信息标识，例如sessionId等，非必填。该json字符串中也可以加入其他自定义的key
+   * @description: 自定义参数，为链接打上自定义标签；自定义参数最长限制64个字节；格式为：  {"uid":"11111","sid":"22222"} ，其中 uid 用户唯一标识，可自行加密后传入，每个用户仅且对应一个标识，必填； sid 上下文信息标识，例如sessionId等，非必填。该json字符串中也可以加入其他自定义的key。（如果使用GET请求，请使用URLEncode处理参数）
    * @type: string
    * @default:
    **/
   custom_parameters?: string;
 
   /**
-   * @description: 转盘自定义参数
-   * @type: PddDdkRpPromUrlGenerateDiyLotteryParamRequestInterface
+   * @description: 一元购自定义参数，json格式，例如:{"goods_sign":"Y9b2_0uSWMFPGSaVwvfZAlm_y2ADLWZl_JQ7UYaS80K"}
+   * @type: PddDdkRpPromUrlGenerateDiyOneYuanParamRequestInterface
    * @default:
    *
    **/
-  diy_lottery_param?: PddDdkRpPromUrlGenerateDiyLotteryParamRequestInterface;
+  diy_one_yuan_param?: PddDdkRpPromUrlGenerateDiyOneYuanParamRequestInterface;
 
   /**
-   * @description: 红包自定义参数
+   * @description: 红包自定义参数，json格式
    * @type: PddDdkRpPromUrlGenerateDiyRedPacketParamRequestInterface
    * @default:
    *
    **/
   diy_red_packet_param?: PddDdkRpPromUrlGenerateDiyRedPacketParamRequestInterface;
+
+  /**
+   * @description: 超级红包自定义参数，json格式
+   * @type: PddDdkRpPromUrlGenerateDiySpRedPacketParamRequestInterface
+   * @default:
+   *
+   **/
+  diy_sp_red_packet_param?: PddDdkRpPromUrlGenerateDiySpRedPacketParamRequestInterface;
 
   /**
    * @description: 是否生成qq小程序
@@ -73,14 +82,14 @@ export interface PddDdkRpPromUrlGenerateRequestInterface {
   generate_short_url?: boolean;
 
   /**
-   * @description: 是否生成小程序推广
+   * @description: 是否生成拼多多福利券微信小程序推广信息
    * @type: boolean
    * @default:
    **/
   generate_we_app?: boolean;
 
   /**
-   * @description: 推广位列表，例如：["60005_612"]
+   * @description: 推广位列表，长度最大为1，例如：["60005_612"]。活动页生链要求传入授权备案信息，不支持批量生链。
    * @type: string[]
    * @default:
    **/
@@ -92,60 +101,31 @@ export interface PddDdkRpPromUrlGenerateRequestInterface {
    * @default:
    **/
   scratch_card_amount?: string | number;
-}
-
-/**
- * @description 转盘自定义参数
- * @default
- * @example
- **/
-export interface PddDdkRpPromUrlGenerateDiyLotteryParamRequestInterface {
-  /**
-   * @description: 优先展示类目
-   * @type: number
-   * @default:
-   **/
-  opt_id?: number;
 
   /**
-   * @description: 自定义价格和商品佣金区间
-   * @type: PddDdkRpPromUrlGenerateDiyLotteryParamRangeItemsRequestInterface[]
-   * @default:
-   *
-   **/
-  range_items?: PddDdkRpPromUrlGenerateDiyLotteryParamRangeItemsRequestInterface[];
-}
-
-/**
- * @description 自定义价格和商品佣金区间
- * @default
- * @example
- **/
-export interface PddDdkRpPromUrlGenerateDiyLotteryParamRangeItemsRequestInterface {
-  /**
-   * @description: 区间的开始值
+   * @description: 招商DuoID
    * @type: string | number
    * @default:
    **/
-  range_from?: string | number;
-
-  /**
-   * @description: range_id为1表示价格（单位分）， range_id为2表示商品佣金（单位千分之几)
-   * @type: number
-   * @default:
-   **/
-  range_id?: number;
-
-  /**
-   * @description: 区间的结束值
-   * @type: string | number
-   * @default:
-   **/
-  range_to?: string | number;
+  zs_duo_id?: string | number;
 }
 
 /**
- * @description 红包自定义参数
+ * @description 一元购自定义参数，json格式，例如:{"goods_sign":"Y9b2_0uSWMFPGSaVwvfZAlm_y2ADLWZl_JQ7UYaS80K"}
+ * @default
+ * @example
+ **/
+export interface PddDdkRpPromUrlGenerateDiyOneYuanParamRequestInterface {
+  /**
+   * @description: 商品goodsSign，支持通过goodsSign查询商品。goodsSign是加密后的goodsId, goodsId已下线，请使用goodsSign来替代。使用说明：https://jinbao.pinduoduo.com/qa-system?questionId=252
+   * @type: string
+   * @default:
+   **/
+  goods_sign?: string;
+}
+
+/**
+ * @description 红包自定义参数，json格式
  * @default
  * @example
  **/
@@ -213,6 +193,20 @@ export interface PddDdkRpPromUrlGenerateDiyRedPacketParamRangeItemsRequestInterf
    * @default:
    **/
   range_to?: string | number;
+}
+
+/**
+ * @description 超级红包自定义参数，json格式
+ * @default
+ * @example
+ **/
+export interface PddDdkRpPromUrlGenerateDiySpRedPacketParamRequestInterface {
+  /**
+   * @description: 商品goodsSign，支持通过goodsSign置顶落地页商品。使用说明：https://jinbao.pinduoduo.com/qa-system?questionId=252
+   * @type: string
+   * @default:
+   **/
+  goods_sign?: string;
 }
 
 /**
@@ -345,6 +339,13 @@ export interface PddDdkRpPromUrlGenerateRpPromotionUrlGenerateResponseUrlListRes
   short_url: string;
 
   /**
+   * @description: 使用此推广链接，用户安装多多团长APP的情况下会唤起APP（需客户端支持schema跳转协议）
+   * @type: string
+   * @default:
+   **/
+  tz_schema_url: string;
+
+  /**
    * @description: 普通推广长链接，唤起H5页面
    * @type: string
    * @default:
@@ -352,7 +353,7 @@ export interface PddDdkRpPromUrlGenerateRpPromotionUrlGenerateResponseUrlListRes
   url: string;
 
   /**
-   * @description: 小程序信息
+   * @description: 拼多多福利券微信小程序信息
    * @type: PddDdkRpPromUrlGenerateRpPromotionUrlGenerateResponseUrlListWeAppInfoResponseInterface
    * @default:
    *
@@ -424,13 +425,13 @@ export interface PddDdkRpPromUrlGenerateRpPromotionUrlGenerateResponseUrlListQqA
 }
 
 /**
- * @description 小程序信息
+ * @description 拼多多福利券微信小程序信息
  * @default
  * @example
  **/
 export interface PddDdkRpPromUrlGenerateRpPromotionUrlGenerateResponseUrlListWeAppInfoResponseInterface {
   /**
-   * @description: 拼多多小程序id
+   * @description: 小程序id
    * @type: string
    * @default:
    **/

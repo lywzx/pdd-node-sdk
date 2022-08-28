@@ -2,6 +2,7 @@ import {
   PDD_POP_AUTH_TOKEN_CREATE,
   PDD_POP_AUTH_TOKEN_REFRESH,
   PddCollectRequestInterface,
+  PddCollectRootResponseInterface,
   PddCollectShortResponseInterface,
   PddCommonRequestInterface,
   PddPopAuthTokenCreateRequestInterface,
@@ -40,7 +41,7 @@ import {
   RetryOptionsInterface,
   RetryOptionsType,
 } from '../interfaces';
-import { checkRequired, defer, getShortResponse, md5, promiseToCallback, sleep, timestamp } from '../util';
+import { checkRequired, defer, getShortResponse, promiseToCallback, sleep, timestamp } from '../util';
 import { getPddLogClient, pddLog } from '../util/debug';
 import { isDevModel } from '../util/dev';
 import {
@@ -49,6 +50,7 @@ import {
   guessPddClientGenerateParams,
   guessPddClientRequestWithRetryParams,
 } from '../util/guess-params.util';
+import { md5 } from '../util/md5-base64';
 import { NetworkAdapter } from './network-adapter';
 import { PddApiCacheAbstract } from './pdd-api-cache.abstract';
 import { checkTypeIsNeedAccessToken } from './pdd-api-check.tools';
@@ -87,10 +89,15 @@ export class PddClient<T extends Record<string, any> = any> {
    * @protected
    */
   protected event: EventEmitter;
+  /**
+   * 中间数据
+   * @private
+   */
+  private _wrapRequestWithRetry?: (err?: any) => any;
 
   constructor(
     public options: PddClientOptionsInterface,
-    public pddClientAuth?: PddClientAccessAuth<T>,
+    public pddClientAuth?: Omit<PddClientAccessAuth<T>, 'functionAlOptions'>,
     protected pddApiCache?: PddApiCacheAbstract,
     protected apiThrottle: PddApiThrottle = new PddApiThrottle(new PddApiMemoryThrottleAdapter()),
     protected networkAdapter: NetworkAdapterInterface = NetworkAdapter
@@ -172,7 +179,7 @@ export class PddClient<T extends Record<string, any> = any> {
     let requestPromise = this.apiThrottle
       .checkApiThrottle(params.type as string, clientId, ownerId || params.access_token)
       .then(() => {
-        pddLog('start run pdd client request, type: %s, params: %o', undefined, params.type, params);
+        pddLog('start run pdd client request, type: %s, params: %o', params.type, params);
         return this.networkAdapter.post(this.options.endpoint, defaultArgs, axiosOptions || {});
       });
 
@@ -181,7 +188,7 @@ export class PddClient<T extends Record<string, any> = any> {
     if (pddLoggerClient && pddLoggerClient.enabled) {
       requestPromise = requestPromise.then(
         (response) => {
-          pddLog('end run pdd client request, type: %s, result: %o', undefined, params.type, response);
+          pddLog('end run pdd client request, type: %s, result: %o', params.type, response);
           return response;
         },
         (err) => {
@@ -192,7 +199,6 @@ export class PddClient<T extends Record<string, any> = any> {
             err;
           pddLog(
             'end run pdd client request with error, type: %s,  params: %o, error msg: %o',
-            undefined,
             params.type,
             params,
             errObj
@@ -237,6 +243,9 @@ export class PddClient<T extends Record<string, any> = any> {
       PddClient.retryOptions
     );
 
+    const _wrapRequestWithRetry = this._wrapRequestWithRetry;
+    this._wrapRequestWithRetry = undefined;
+
     const pddLogClient = getPddLogClient();
     const enabled = pddLogClient && pddLogClient.enabled;
     let retryCount: number;
@@ -249,7 +258,6 @@ export class PddClient<T extends Record<string, any> = any> {
       if (retryCount) {
         pddLog(
           'start retry pdd client request, retry %d th, max retry count: %d, type: %s, params: %o',
-          undefined,
           tryOptions?.times,
           retryCount,
           params.type,
@@ -265,7 +273,6 @@ export class PddClient<T extends Record<string, any> = any> {
             if (retryCount) {
               pddLog(
                 'success retry pdd client request, retry %d th, type: %s, result: %o',
-                undefined,
                 retryCount + 1,
                 params.type,
                 response
@@ -282,7 +289,6 @@ export class PddClient<T extends Record<string, any> = any> {
                 err;
               pddLog(
                 'error retry pdd client request, retry %d th, type: %s, error msg: %o',
-                undefined,
                 retryCount,
                 params.type,
                 errObj
@@ -292,6 +298,10 @@ export class PddClient<T extends Record<string, any> = any> {
             throw err;
           }
         );
+      }
+
+      if (_wrapRequestWithRetry) {
+        result = result.catch(_wrapRequestWithRetry);
       }
 
       return promiseToCallback<R>(result, clbk as any);
@@ -309,81 +319,73 @@ export class PddClient<T extends Record<string, any> = any> {
    * @param [cacheOptions]
    * @param [callback]
    */
-  public execute<
-    K extends keyof PddCollectRequestInterface,
-    Req = PddCollectRequestInterface[K],
-    Res = PddCollectShortResponseInterface[K]
-  >(
+  public execute<K extends keyof PddCollectRequestInterface, Res = PddCollectShortResponseInterface[K]>(
     type: K,
-    params: Req & PddCommonRequestExcludeSomeAttr,
-    accessOptions?: T | RetryOptionsType | PddCacheOptions
+    params: PddCollectRequestInterface[K] & PddCommonRequestExcludeSomeAttr
   ): Promise<Res>;
-  public execute<
-    K extends keyof PddCollectRequestInterface,
-    Req = PddCollectRequestInterface[K] & PddCommonRequestExcludeSomeAttr,
-    Res = PddCollectShortResponseInterface[K]
-  >(
+  public execute<K extends keyof PddCollectRequestInterface, Res = PddCollectShortResponseInterface[K]>(
     type: K,
-    params: Req & PddCommonRequestExcludeSomeAttr,
+    params: PddCollectRequestInterface[K] & PddCommonRequestExcludeSomeAttr,
+    retryOptions: RetryOptionsType | PddCacheOptions
+  ): Promise<Res>;
+  public execute<K extends keyof PddCollectRequestInterface, Res = PddCollectShortResponseInterface[K]>(
+    type: K,
+    params: PddCollectRequestInterface[K] & PddCommonRequestExcludeSomeAttr,
+    retryOptions: RetryOptionsType,
+    cacheOptions: PddCacheOptions
+  ): Promise<Res>;
+  public execute<K extends keyof PddCollectRequestInterface, Res = PddCollectShortResponseInterface[K]>(
+    type: K,
+    params: PddCollectRequestInterface[K] & PddCommonRequestExcludeSomeAttr,
+    accessOptions: T
+  ): Promise<Res>;
+  public execute<K extends keyof PddCollectRequestInterface, Res = PddCollectShortResponseInterface[K]>(
+    type: K,
+    params: PddCollectRequestInterface[K] & PddCommonRequestExcludeSomeAttr,
     accessOptions: T,
-    retryOptions?: RetryOptionsType | PddCacheOptions
+    retryOptions: RetryOptionsType | PddCacheOptions
   ): Promise<Res>;
-  public execute<
-    K extends keyof PddCollectRequestInterface,
-    Req = PddCollectRequestInterface[K] & PddCommonRequestExcludeSomeAttr,
-    Res = PddCollectShortResponseInterface[K]
-  >(
+  public execute<K extends keyof PddCollectRequestInterface, Res = PddCollectShortResponseInterface[K]>(
     type: K,
-    params: Req & PddCommonRequestExcludeSomeAttr,
+    params: PddCollectRequestInterface[K] & PddCommonRequestExcludeSomeAttr,
+    accessOptions: T
+  ): Promise<Res>;
+  public execute<K extends keyof PddCollectRequestInterface, Res = PddCollectShortResponseInterface[K]>(
+    type: K,
+    params: PddCollectRequestInterface[K] & PddCommonRequestExcludeSomeAttr,
     accessOptions: T,
     retryOptions: RetryOptionsType,
-    cacheOptions?: PddCacheOptions
+    cacheOptions: PddCacheOptions
   ): Promise<Res>;
-  public execute<
-    K extends keyof PddCollectRequestInterface,
-    Req = PddCollectRequestInterface[K],
-    Res = PddCollectShortResponseInterface[K]
-  >(type: K, params: Req & PddCommonRequestExcludeSomeAttr, callback: AsyncResultCallbackInterface<Res, never>): void;
-  public execute<
-    K extends keyof PddCollectRequestInterface,
-    Req = PddCollectRequestInterface[K],
-    Res = PddCollectShortResponseInterface[K]
-  >(
+  public execute<K extends keyof PddCollectRequestInterface, Res = PddCollectShortResponseInterface[K]>(
     type: K,
-    params: Req & PddCommonRequestExcludeSomeAttr,
+    params: PddCollectRequestInterface[K] & PddCommonRequestExcludeSomeAttr,
+    callback: AsyncResultCallbackInterface<Res, never>
+  ): void;
+  public execute<K extends keyof PddCollectRequestInterface, Res = PddCollectShortResponseInterface[K]>(
+    type: K,
+    params: PddCollectRequestInterface[K] & PddCommonRequestExcludeSomeAttr,
     accessOptions: T | RetryOptionsType | PddCacheOptions,
     callback: AsyncResultCallbackInterface<Res, never>
   ): void;
-  public execute<
-    K extends keyof PddCollectRequestInterface,
-    Req = PddCollectRequestInterface[K],
-    Res = PddCollectShortResponseInterface[K]
-  >(
+  public execute<K extends keyof PddCollectRequestInterface, Res = PddCollectShortResponseInterface[K]>(
     type: K,
-    params: Req & PddCommonRequestExcludeSomeAttr,
+    params: PddCollectRequestInterface[K] & PddCommonRequestExcludeSomeAttr,
     accessOptions: T,
     retryOptions: RetryOptionsType | PddCacheOptions,
     callback: AsyncResultCallbackInterface<Res, never>
   ): void;
-  public execute<
-    K extends keyof PddCollectRequestInterface,
-    Req = PddCollectRequestInterface[K],
-    Res = PddCollectShortResponseInterface[K]
-  >(
+  public execute<K extends keyof PddCollectRequestInterface, Res = PddCollectShortResponseInterface[K]>(
     type: K,
-    params: Req & PddCommonRequestExcludeSomeAttr,
+    params: PddCollectRequestInterface[K] & PddCommonRequestExcludeSomeAttr,
     accessOptions: T,
     retryOptions: RetryOptionsType,
     cacheOptions: PddCacheOptions,
     callback: AsyncResultCallbackInterface<Res, never>
   ): void;
-  public execute<
-    K extends keyof PddCollectRequestInterface,
-    Req = PddCollectRequestInterface[K],
-    Res = PddCollectShortResponseInterface[K]
-  >(
+  public execute<K extends keyof PddCollectRequestInterface, Res = PddCollectShortResponseInterface[K]>(
     type: K,
-    params: Req & PddCommonRequestExcludeSomeAttr,
+    params: PddCollectRequestInterface[K] & PddCommonRequestExcludeSomeAttr,
     accessOptions?: T | RetryOptionsType | PddCacheOptions | AsyncResultCallbackInterface<Res, never>,
     retryOptions?: RetryOptionsType | PddCacheOptions | AsyncResultCallbackInterface<Res, never>,
     cacheOptions?: PddCacheOptions | AsyncResultCallbackInterface<Res, never>,
@@ -400,16 +402,16 @@ export class PddClient<T extends Record<string, any> = any> {
     const needAccessToken = checkTypeIsNeedAccessToken(type);
     if (isDevModel()) {
       if (PddClient.pddDefaultCacheOptions.alwaysWork && cacheOptions !== false && !this.pddApiCache) {
-        pddLog('cache options not work! please assign variable: pddApiCache.', '#ff0000');
+        pddLog('cache options not work! please assign variable: pddApiCache.');
       }
       if (typeof apiAccessOptions !== 'undefined' && needAccessToken && !this.pddClientAuth) {
-        pddLog('access_token will not auto fill. assign variable: pddClientAuth.', '#ffff00');
+        pddLog('access_token will not auto fill. assign variable: pddClientAuth.');
       }
     }
 
     const runningFn = () => {
       // 这里需要从access token 中获取数据
-      const nParams: Req & RequestParamsTypeMix = extend({}, params, { type });
+      const nParams = extend({}, params, { type }) as PddCollectRequestInterface[K] & RequestParamsTypeMix;
       let accessTokenInfo: PddAccessTokenResponseInterface | null | undefined;
       let result = Promise.resolve(nParams);
       if (needAccessToken) {
@@ -428,7 +430,7 @@ export class PddClient<T extends Record<string, any> = any> {
                   if (scope && scope.length) {
                     // 有些场景，拼多多官方会合并两个应用接口，这里所以不会存在
                     if ((scope as string[]).indexOf(type) === -1) {
-                      pddLog(`shop id:${access.owner_id || 'unknown mall id'} visit ${type} permission deny!`);
+                      pddLog('shop id:%s visit %s permission deny!', access.owner_id || 'unknown mall id', type);
                     }
                   }
 
@@ -444,72 +446,74 @@ export class PddClient<T extends Record<string, any> = any> {
           result = Promise.reject(new PddAccessTokenMissingException('can"t find pdd access token from params'));
         }
       }
-      let retResult = result.then((params: Req & PddCommonRequestExcludeSomeAttr) => {
-        return this.requestWithRetry<Req & Omit<PddCommonRequestInterface, 'sign' | 'timestamp' | 'client_id'>, any>(
-          params as Req & Omit<PddCommonRequestInterface, 'sign' | 'timestamp' | 'client_id'>,
-          apiRetryOptions
-        ).then((response) => {
-          return getShortResponse(response, type);
-        });
-      }) as Promise<Res>;
+      return result.then((params) => {
+        // 自动维护access token信息
+        const pddClientAuth = this.pddClientAuth as
+          | undefined
+          | (PddClientAccessAuth<T> & Partial<PddApiClientAccessAuthLock>);
 
-      // 自动维护access token信息
-      const pddClientAuth = this.pddClientAuth as
-        | undefined
-        | (PddClientAccessAuth<T> & Partial<PddApiClientAccessAuthLock>);
-      if (
-        pddClientAuth &&
-        isFunction(pddClientAuth.lock) &&
-        isFunction(pddClientAuth.unLock) &&
-        apiAccessOptions &&
-        accessTokenInfo
-      ) {
-        retResult = retResult.catch(async (err) => {
-          if (accessTokenInfo && err && err instanceof PddResponseException) {
-            if (err.accessTokenNeedRefresh()) {
-              // 如果access token还有2分钟过期
-              if (
-                parseInt(accessTokenInfo.expires_at.toString(), 10) * 1000 <=
-                  Date.now() + PDD_CLIENT_ACCESS_TOKEN_CLEAR_TIMEOUT &&
-                parseInt(accessTokenInfo.refresh_token_expires_at.toString(), 10) * 1000 <=
-                  Date.now() + PDD_CLIENT_ACCESS_TOKEN_CLEAR_TIMEOUT
-              ) {
-                // 清理access token
-                await pddClientAuth.clearAccessTokenFromCache(apiAccessOptions);
-              } else {
-                const lockKey = `${pddClientAuth.generateAccessTokenKey(apiAccessOptions)}:access:${
-                  accessTokenInfo.owner_id
-                }:lock`;
-                if (pddClientAuth.lock && pddClientAuth.unLock && (await pddClientAuth.lock(lockKey, 10000))) {
-                  err.ignoreTokenRefresh(false);
-                  try {
-                    // 刷新access token
-                    const result = await this.request<
-                      PddPopAuthTokenRefreshRequestInterface,
-                      PddPopAuthTokenRefreshResponseInterface
-                    >({
-                      type: PDD_POP_AUTH_TOKEN_REFRESH,
-                      refresh_token: accessTokenInfo.refresh_token,
-                    });
-                    const freshTokenInfo = getShortResponse(result, PDD_POP_AUTH_TOKEN_REFRESH);
-                    await pddClientAuth.setAccessTokenToCache(apiAccessOptions, freshTokenInfo);
-                  } catch (e) {}
-                  // 释放锁
-                  await pddClientAuth.unLock(lockKey);
-                  accessTokenInfo = null;
-                  // todo 后续有必要加入重试逻辑
+        // hack for requestWithRetry
+        if (
+          pddClientAuth &&
+          isFunction(pddClientAuth.lock) &&
+          isFunction(pddClientAuth.unLock) &&
+          apiAccessOptions &&
+          accessTokenInfo
+        ) {
+          this._wrapRequestWithRetry = async (err?: Error) => {
+            if (accessTokenInfo && err && err instanceof PddResponseException) {
+              if (err.accessTokenNeedRefresh()) {
+                // 如果access token还有2分钟过期
+                if (
+                  parseInt(accessTokenInfo.expires_at.toString(), 10) * 1000 <=
+                    Date.now() + PDD_CLIENT_ACCESS_TOKEN_CLEAR_TIMEOUT &&
+                  parseInt(accessTokenInfo.refresh_token_expires_at.toString(), 10) * 1000 <=
+                    Date.now() + PDD_CLIENT_ACCESS_TOKEN_CLEAR_TIMEOUT
+                ) {
+                  // 清理access token
+                  await pddClientAuth.clearAccessTokenFromCache(apiAccessOptions);
                 } else {
-                  err.ignoreTokenRefresh(true);
-                  // hack sleep 3s, 假定刷新token信息，能够在3s内完成
-                  await sleep(3000);
+                  const lockKey = `${pddClientAuth.generateAccessTokenKey(apiAccessOptions)}:access:${
+                    accessTokenInfo.owner_id
+                  }:lock`;
+                  if (pddClientAuth.lock && pddClientAuth.unLock && (await pddClientAuth.lock(lockKey, 10000))) {
+                    err.ignoreTokenRefresh(false);
+                    try {
+                      // 刷新access token
+                      const result = await this.request<
+                        PddPopAuthTokenRefreshRequestInterface,
+                        PddPopAuthTokenRefreshResponseInterface
+                      >({
+                        type: PDD_POP_AUTH_TOKEN_REFRESH,
+                        refresh_token: accessTokenInfo.refresh_token,
+                      });
+                      const freshTokenInfo = getShortResponse(result, PDD_POP_AUTH_TOKEN_REFRESH);
+                      await pddClientAuth.setAccessTokenToCache(apiAccessOptions, freshTokenInfo);
+                    } catch (e) {
+                      err.ignoreTokenRefresh(null);
+                    }
+                    // 释放锁
+                    await pddClientAuth.unLock(lockKey);
+                    accessTokenInfo = null;
+                    // todo 后续有必要加入重试逻辑
+                  } else {
+                    err.ignoreTokenRefresh(true);
+                    // hack sleep 3s, 假定刷新token信息，能够在3s内完成
+                    await sleep(3000);
+                  }
                 }
               }
             }
+            return Promise.reject(err);
+          };
+        }
+
+        return this.requestWithRetry<any, PddCollectRootResponseInterface[K]>(params, apiRetryOptions).then(
+          (response) => {
+            return getShortResponse(response, type);
           }
-          return Promise.reject(err);
-        });
-      }
-      return retResult;
+        );
+      }) as Promise<Res>;
     };
 
     // api 接口缓存逻辑
@@ -540,7 +544,7 @@ export class PddClient<T extends Record<string, any> = any> {
           ret = this.pddApiCache.cached(cachedKey, runningFn, ttl);
         }
       } else {
-        isDevModel() && pddLog('cache won"t work, because you don"t assign `pddApiCache`', 'red');
+        isDevModel() && pddLog('cache won"t work, because you don"t assign `pddApiCache`');
       }
     }
 
@@ -609,9 +613,23 @@ export class PddClient<T extends Record<string, any> = any> {
    * @param callback
    */
   public generate(code: T | PddClientGenerateType | string): Promise<PddAccessTokenResponseInterface>;
-  public generate(code: PddClientGenerateType | string, accessOptions: T): Promise<PddAccessTokenResponseInterface>;
   public generate(
     code: T | PddClientGenerateType | string,
+    retryOptions: RetryOptionsType
+  ): Promise<PddAccessTokenResponseInterface>;
+  public generate(code: PddClientGenerateType | string, accessOptions: T): Promise<PddAccessTokenResponseInterface>;
+  public generate(
+    code: PddClientGenerateType | string,
+    accessOptions: T,
+    retryOptions: RetryOptionsType
+  ): Promise<PddAccessTokenResponseInterface>;
+  public generate(
+    code: T | PddClientGenerateType | string,
+    callback: AsyncResultCallbackInterface<PddAccessTokenResponseInterface, never>
+  ): void;
+  public generate(
+    code: T | PddClientGenerateType | string,
+    retryOptions: RetryOptionsType,
     callback: AsyncResultCallbackInterface<PddAccessTokenResponseInterface, never>
   ): void;
   public generate(
@@ -620,11 +638,18 @@ export class PddClient<T extends Record<string, any> = any> {
     callback: AsyncResultCallbackInterface<PddAccessTokenResponseInterface, never>
   ): void;
   public generate(
+    code: PddClientGenerateType | string,
+    accessOptions: T,
+    retryOptions: RetryOptionsType,
+    callback: AsyncResultCallbackInterface<PddAccessTokenResponseInterface, never>
+  ): void;
+  public generate(
     code: T | PddClientGenerateType | string,
-    accessOptions?: T | AsyncResultCallbackInterface<PddAccessTokenResponseInterface, never>,
+    accessOptions?: T | RetryOptionsType | AsyncResultCallbackInterface<PddAccessTokenResponseInterface, never>,
+    retryOptions?: RetryOptionsType | AsyncResultCallbackInterface<PddAccessTokenResponseInterface, never>,
     callback?: AsyncResultCallbackInterface<PddAccessTokenResponseInterface, never>
   ): Promise<PddAccessTokenResponseInterface> | void {
-    const [params, access, cbk] = guessPddClientGenerateParams<T>(code, accessOptions, callback);
+    const [params, access, retry, cbk] = guessPddClientGenerateParams<T>(code, accessOptions, retryOptions, callback);
 
     let paramsPromise: Promise<PddPopAuthTokenRefreshRequestInterface | PddPopAuthTokenCreateRequestInterface>;
 
@@ -635,7 +660,10 @@ export class PddClient<T extends Record<string, any> = any> {
         throw new PddBaseException('if you want refresh access token, you should pass access token or params');
       }*/
       if (!this.pddClientAuth) {
-        throw new PddBaseException('refresh access token failed, because pdd client auth is undefined!');
+        return promiseToCallback(
+          Promise.reject(new PddBaseException('refresh access token failed, because pdd client auth is undefined!')),
+          cbk as AsyncResultCallbackInterface<PddAccessTokenResponseInterface, never>
+        );
       }
       paramsPromise = this.pddClientAuth.getAccessTokenFromCache(access as T).then((result) => {
         if (result) {
@@ -650,13 +678,17 @@ export class PddClient<T extends Record<string, any> = any> {
     const result = paramsPromise
       .then<PddAccessTokenResponseInterface>((param) => {
         const type = 'code' in param ? PDD_POP_AUTH_TOKEN_CREATE : PDD_POP_AUTH_TOKEN_REFRESH;
-        return this.request<
+
+        return this.requestWithRetry<
           PddClientGenerateType,
           PddPopAuthTokenCreateResponseInterface | PddPopAuthTokenRefreshResponseInterface
-        >({
-          type,
-          ...param,
-        }).then<PddAccessTokenResponseInterface>((result) => {
+        >(
+          {
+            type,
+            ...param,
+          },
+          retry
+        ).then<PddAccessTokenResponseInterface>((result) => {
           return getShortResponse(result, type);
         });
       })

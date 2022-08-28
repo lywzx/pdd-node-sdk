@@ -5,14 +5,17 @@ import {
   PDD_TICKET_VERIFICATION_NOTIFYCATION,
 } from '@pin-duo-duo/pdd-origin-api';
 import { expect } from 'chai';
-import { OAuthType } from '../../src/constant';
 import {
+  OAuthType,
   PddAccessTokenMissingException,
   PddBaseException,
   PddRequestParamsMissingException,
   PddResponseException,
-} from '../../src/exceptions';
-import { defaultRetryOptions, NetworkAdapter, PddApiCacheAbstract, PddClient } from '../../src/libs';
+  defaultRetryOptions,
+  NetworkAdapter,
+  PddApiCacheAbstract,
+  PddClient,
+} from '../../src';
 import * as guess from '../../src/util/guess-params.util';
 import * as util from '../../src/util';
 import { replace, fake, restore, stub } from 'sinon';
@@ -25,9 +28,13 @@ import {
   replacePddLog,
   replaceRequestWithRetry,
 } from './pdd-client-helper';
+import chaiAsPromised from 'chai-as-promised';
+import { use } from 'chai';
+
+use(chaiAsPromised);
 
 describe('pdd-client test util', function () {
-  let pddClient: PddClient;
+  let pddClient: PddClient<{ userId: number; shopId: number }>;
   let restored: (...args: any) => any;
   const pddOptions = {
     clientId: 'aaa',
@@ -67,11 +74,7 @@ describe('pdd-client test util', function () {
 
   describe('#request methods', function () {
     it('without type should throw exception ', async function () {
-      try {
-        await pddClient.request({ a: 1, b: 2 });
-      } catch (e) {
-        expect(e).to.be.instanceOf(PddRequestParamsMissingException);
-      }
+      await expect(pddClient.request({ a: 1, b: 2 })).to.be.rejectedWith(PddRequestParamsMissingException);
     });
 
     it('with callback, without type should throw exception ', function (done) {
@@ -109,14 +112,10 @@ describe('pdd-client test util', function () {
       replace(NetworkAdapter, 'post', fkResult);
       replaceGetPddLogClient();
       replacePddLog();
-      try {
-        await pddClient.request({ type: PDD_GOODS_CATS_GET, parent_cat_id: 1, c: { a: 1 } });
-        restored();
-        throw new Error('app');
-      } catch (e) {
-        restored();
-        expect(e.message).to.be.eq('unknown');
-      }
+      await expect(pddClient.request({ type: PDD_GOODS_CATS_GET, parent_cat_id: 1, c: { a: 1 } })).to.be.rejectedWith(
+        'unknown'
+      );
+      restored();
     });
   });
 
@@ -145,15 +144,9 @@ describe('pdd-client test util', function () {
           .onCall(1)
           .rejects(new Error(errMsg))
       );
-      try {
-        await pddClient.requestWithRetry({ type: PDD_GOODS_CATS_GET, a: 1 }, 2);
-        restored();
-        throw new Error('unknown error');
-      } catch (e) {
-        restored();
-        expect(e.message).to.be.eq(errMsg);
-      }
+      await expect(pddClient.requestWithRetry({ type: PDD_GOODS_CATS_GET, a: 1 }, 2)).to.be.rejectedWith(Error, errMsg);
       expect(mkRequest.callCount).to.be.eq(2);
+      restored();
     });
 
     it('test retry with log enabled', async function () {
@@ -190,13 +183,10 @@ describe('pdd-client test util', function () {
     it('should throw exception when access token required, but clientAuth not exists', async function () {
       replaceDevMode(true);
       PddClient.setPddDefaultCacheOptions({ alwaysWork: true, ttl: 2 });
-      try {
-        await pddClient.execute(PDD_GOODS_DETAIL_GET, {}, {});
-        throw new Error('unknown exception');
-      } catch (e) {
-        restored();
-        expect(e).to.be.instanceOf(PddAccessTokenMissingException);
-      }
+      await expect(pddClient.execute(PDD_GOODS_DETAIL_GET, {} as any, {})).to.be.rejectedWith(
+        PddAccessTokenMissingException
+      );
+      restored();
     });
 
     it('should throw exception when access token required, clientAuth exists but clientOptions not exists', async function () {
@@ -205,15 +195,12 @@ describe('pdd-client test util', function () {
       replace(pddClient, 'pddClientAuth', {
         getAccessTokenFromCache: pddClientAuth,
       } as any);
-      try {
-        await pddClient.execute(PDD_GOODS_DETAIL_GET, {});
-        throw new Error('unknown exception');
-      } catch (e) {
-        restored();
-        pddClient.pddClientAuth = undefined;
-        expect(e).to.be.instanceOf(PddAccessTokenMissingException);
-        expect(e.message).to.be.eq('params access options is required!');
-      }
+
+      await expect(pddClient.execute(PDD_GOODS_DETAIL_GET, { goods_id: '1' })).to.be.rejectedWith(
+        PddAccessTokenMissingException,
+        'params access options is required!'
+      );
+      restored();
       expect(pddClientAuth.callCount).to.be.eq(0);
     });
 
@@ -223,15 +210,12 @@ describe('pdd-client test util', function () {
       replace(pddClient, 'pddClientAuth', {
         getAccessTokenFromCache: pddClientAuth,
       } as any);
-      try {
-        await pddClient.execute(PDD_GOODS_DETAIL_GET, {}, {});
-        throw new Error('unknown exception');
-      } catch (e) {
-        restored();
-        pddClient.pddClientAuth = undefined;
-        expect(e).to.be.instanceOf(PddAccessTokenMissingException);
-        expect(e.message).to.be.eq('cat"t find pdd access token from cache!');
-      }
+      await expect(pddClient.execute(PDD_GOODS_DETAIL_GET, {} as any, {})).to.be.rejectedWith(
+        PddAccessTokenMissingException,
+        'cat"t find pdd access token from cache!'
+      );
+      restored();
+      pddClient.pddClientAuth = undefined;
       expect(pddClientAuth.callCount).to.be.eq(1);
     });
 
@@ -258,7 +242,7 @@ describe('pdd-client test util', function () {
       replaceCheckTypeIsNeedAccessToken(false);
       replaceRequestWithRetry(pddClient, resultValue);
       const firstResult = await pddClient.execute(PDD_LOGISTICS_ADDRESS_GET, {});
-      const secondResult = await pddClient.execute(PDD_TICKET_VERIFICATION_NOTIFYCATION, {});
+      const secondResult = await pddClient.execute(PDD_TICKET_VERIFICATION_NOTIFYCATION, {} as any);
       restored();
       expect(firstResult).to.be.equals(resultValue.logistics_address_get_response);
       expect(secondResult).to.be.equals(resultValue);
@@ -274,7 +258,7 @@ describe('pdd-client test util', function () {
       pddClient = new PddClient<any>(pddOptions, undefined, new Cache());
       replaceCheckTypeIsNeedAccessToken(false);
       replaceRequestWithRetry(pddClient, { a: 1 });
-      await pddClient.execute(PDD_TICKET_VERIFICATION_NOTIFYCATION, {}, 0, 0);
+      await pddClient.execute(PDD_TICKET_VERIFICATION_NOTIFYCATION, {} as any, 0, 0);
       restored();
       expect(cachedStub.callCount).to.be.eq(0);
     });
@@ -289,7 +273,7 @@ describe('pdd-client test util', function () {
       pddClient = new PddClient<any>(pddOptions, undefined, new Cache());
       replaceCheckTypeIsNeedAccessToken(false);
       replaceRequestWithRetry(pddClient, { a: 1 });
-      await pddClient.execute(PDD_TICKET_VERIFICATION_NOTIFYCATION, {}, 0, 2);
+      await pddClient.execute(PDD_TICKET_VERIFICATION_NOTIFYCATION, {} as any, 0, 2);
       restored();
       expect(cachedStub.callCount).to.be.eq(1);
     });
@@ -319,14 +303,10 @@ describe('pdd-client test util', function () {
     });
 
     it('should get error when access is empty', async function () {
-      let err;
-      try {
-        await pddClient.generate({ userId: 1, shopId: 1 });
-      } catch (e) {
-        err = e;
-      }
-      expect(err).to.be.instanceOf(PddBaseException);
-      expect(err.message).to.be.include('pdd client auth is undefined!');
+      await expect(pddClient.generate({ userId: 1, shopId: 1 })).to.be.rejectedWith(
+        PddBaseException,
+        'refresh access token failed, because pdd client auth is undefined!'
+      );
     });
   });
 
@@ -348,9 +328,7 @@ describe('pdd-client test util', function () {
       PddClient.setDefaultRequestParam(param as any);
       const signStub = stub().throws(new Error('unknonw error'));
       replace(pddClient, 'sign', signStub);
-      try {
-        await pddClient.request({ type: PDD_GOODS_CATS_GET });
-      } catch (e) {}
+      expect(() => pddClient.request({ type: PDD_GOODS_CATS_GET })).to.be.throw(Error, 'unknonw error');
       restored();
       expect(signStub.callCount).to.be.eq(1);
       expect(pick(signStub.lastCall.args[0], keys(param))).to.be.eqls(param);

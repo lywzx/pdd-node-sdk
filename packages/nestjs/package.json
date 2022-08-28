@@ -1,21 +1,12 @@
 {
   "name": "@pin-duo-duo/nestjs",
-  "version": "0.0.2-alpha.6",
+  "version": "1.0.1-alpha.2",
   "description": "> TODO: description",
   "author": "lywzx <liuyang@lyblog.net>",
   "homepage": "https://github.com/lywzx/pdd-node-sdk/tree/master/packages/nestjs#readme",
   "license": "MIT",
-  "main": "lib/index.common.js",
-  "types": "lib/index.d.ts",
-  "directories": {
-    "lib": "lib",
-    "test": "test"
-  },
-  "files": [
-    "lib"
-  ],
   "publishConfig": {
-    "registry": "http://registry.npmjs.org",
+    "registry": "https://registry.npmjs.org",
     "access": "public"
   },
   "repository": {
@@ -23,22 +14,22 @@
     "url": "git+https://github.com/lywzx/pdd-node-sdk.git"
   },
   "scripts": {
-    "test": "echo \"Error: run tests from root\" && exit 1"
+    "prepublishOnly": "cd ../.. && yarn build --only-package=@pin-duo-duo/nestjs"
   },
   "bugs": {
     "url": "https://github.com/lywzx/pdd-node-sdk/issues"
   },
   "dependencies": {
-    "@pin-duo-duo/core": "^0.0.2-alpha.6"
-  },
-  "devDependencies": {
-    "@types/lodash": "^4.14.159",
-    "lodash": "^4.17.20"
+    "@pin-duo-duo/core": "^1.0.1-alpha.2"
   },
   "peerDependencies": {
     "@nestjs/common": "^7.4.2",
     "@nestjs/core": "^7.4.2",
-    "@nestjs/testing": "^7.4.2"
+    "@nestjs/testing": "^7.4.2",
+    "@types/debug": "^4.1.5",
+    "@types/lodash": "^4.14.159",
+    "debug": "^4.2.0",
+    "lodash": "^4.17.20"
   },
   "gitHead": "34dfab33c7abd58bd551ea88358ab0e586902e6f"
 }

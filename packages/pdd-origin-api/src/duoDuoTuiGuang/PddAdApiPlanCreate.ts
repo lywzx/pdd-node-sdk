@@ -4,7 +4,8 @@ export const PDD_AD_API_PLAN_CREATE_LIMITERS = [
   {
     limiterLevel: 1,
     timeRange: 10,
-    times: 5,
+    times: 3,
+    callSourceType: 0,
   },
 ];
 
@@ -345,14 +346,14 @@ export interface PddAdApiPlanCreateAdUnitCreateComplexMessageListAdUnitCreateMes
   optimizationBid?: string | number;
 
   /**
-   * @description: 优化目标。0表示不优化。1表示优化ROI，2表示优化转化成本.自定义单元时，该值必传0；当单元使用展示自动调价功能(ECPC)时，该值必须传1；当单元使用展示OCPC功能（plan_strategy=3）时，该值必须传2。目前ECPC及OCPC仅支持展示广告。
+   * @description: 优化目标。0表示不优化。1表示优化ROI，2表示优化转化成本.自定义单元时，该值必传0；当单元使用展示自动调价功能(ECPC)时，该值必须传1；当单元使用展示OCPC功能（plan_strategy=3）时，该值必须传2。
    * @type: number
    * @default:
    **/
   optimizationGoal: number;
 
   /**
-   * @description: 优化方式。0表示不优化，1表示ECPC，2表示OCPC。当单元使用ECPC时，该值必须传1；当使用OCPC时，该值必须传2。目前ECPC及OCPC仅支持展示广告。
+   * @description: 优化方式。0表示不优化，1表示ECPC，2表示OCPC。当单元使用ECPC时，该值必须传1；当使用OCPC时，该值必须传2。
    * @type: number
    * @default:
    **/

@@ -5,6 +5,7 @@ export const PDD_ERP_ORDER_SYNC_LIMITERS = [
     limiterLevel: 3,
     timeRange: 10,
     times: 39000,
+    callSourceType: 0,
   },
 ];
 
@@ -14,6 +15,13 @@ export const PDD_ERP_ORDER_SYNC_LIMITERS = [
  * 接口使用场景：erp打单信息同步
  **/
 export interface PddErpOrderSyncRequestInterface {
+  /**
+   * @description: 物流公司编码
+   * @type: string | number
+   * @default:
+   **/
+  logistics_id: string | number;
+
   /**
    * @description: 订单号
    * @type: string
@@ -34,13 +42,6 @@ export interface PddErpOrderSyncRequestInterface {
    * @default:
    **/
   waybill_no: string;
-
-  /**
-   * @description: 物流公司编码
-   * @type: string | number
-   * @default:
-   **/
-  logistics_id: string | number;
 }
 
 /**
@@ -49,13 +50,6 @@ export interface PddErpOrderSyncRequestInterface {
  * 接口使用场景：erp打单信息同步
  **/
 export interface PddErpOrderSyncResponseInterface {
-  /**
-   * @description: 是否成功
-   * @type: boolean
-   * @default:
-   **/
-  success: boolean;
-
   /**
    * @description: 错误代码
    * @type: string | number
@@ -76,4 +70,11 @@ export interface PddErpOrderSyncResponseInterface {
    * @default:
    **/
   result: boolean;
+
+  /**
+   * @description: 是否成功
+   * @type: boolean
+   * @default:
+   **/
+  success: boolean;
 }

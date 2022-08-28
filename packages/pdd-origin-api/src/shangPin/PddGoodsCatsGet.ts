@@ -5,11 +5,13 @@ export const PDD_GOODS_CATS_GET_LIMITERS = [
     limiterLevel: 4,
     timeRange: 60,
     times: 3000,
+    callSourceType: 0,
   },
   {
     limiterLevel: 3,
     timeRange: 2,
     times: 2400,
+    callSourceType: 0,
   },
 ];
 
@@ -64,11 +66,11 @@ export interface PddGoodsCatsGetGoodsCatsGetResponseResponseInterface {
  **/
 export interface PddGoodsCatsGetGoodsCatsGetResponseGoodsCatsListResponseInterface {
   /**
-   * @description: 类目层级，1-一级类目，2-二级类目，3-三级类目，4-四级类目
-   * @type: number
+   * @description: 商品类目ID
+   * @type: string | number
    * @default:
    **/
-  level: number;
+  cat_id: string | number;
 
   /**
    * @description: 商品类目名称
@@ -78,16 +80,16 @@ export interface PddGoodsCatsGetGoodsCatsGetResponseGoodsCatsListResponseInterfa
   cat_name: string;
 
   /**
+   * @description: 类目层级，1-一级类目，2-二级类目，3-三级类目，4-四级类目
+   * @type: number
+   * @default:
+   **/
+  level: number;
+
+  /**
    * @description: id所属父类目ID，其中，parent_id=0时为顶级节点
    * @type: string | number
    * @default:
    **/
   parent_cat_id: string | number;
-
-  /**
-   * @description: 商品类目ID
-   * @type: string | number
-   * @default:
-   **/
-  cat_id: string | number;
 }

@@ -5,6 +5,7 @@ export const PDD_DDK_GOODS_PROMOTION_URL_GENERATE_LIMITERS = [
     limiterLevel: 3,
     timeRange: 10,
     times: 66900,
+    callSourceType: 0,
   },
 ];
 
@@ -19,10 +20,17 @@ export interface PddDdkGoodsPromotionUrlGenerateRequestInterface {
    * @type: string | number
    * @default:
    **/
-  crash_gift_id?: string | number;
+  cash_gift_id?: string | number;
 
   /**
-   * @description: 自定义参数，为链接打上自定义标签；自定义参数最长限制64个字节；格式为：  {"uid":"11111","sid":"22222"} ，其中 uid 用户唯一标识，可自行加密后传入，每个用户仅且对应一个标识，必填； sid 上下文信息标识，例如sessionId等，非必填。该json字符串中也可以加入其他自定义的key
+   * @description: 自定义礼金标题，用于向用户展示渠道专属福利，不超过12个字
+   * @type: string
+   * @default:
+   **/
+  cash_gift_name?: string;
+
+  /**
+   * @description: 自定义参数，为链接打上自定义标签；自定义参数最长限制64个字节；格式为：  {"uid":"11111","sid":"22222"} ，其中 uid 用户唯一标识，可自行加密后传入，每个用户仅且对应一个标识，必填； sid 上下文信息标识，例如sessionId等，非必填。该json字符串中也可以加入其他自定义的key。（如果使用GET请求，请使用URLEncode处理参数）
    * @type: string
    * @default:
    **/
@@ -64,46 +72,25 @@ export interface PddDdkGoodsPromotionUrlGenerateRequestInterface {
   generate_short_url?: boolean;
 
   /**
-   * @description: 已经废弃，不再支持该功能。是否生成唤起微信客户端链接，true-是，false-否，默认false。
-   * @type: boolean
-   * @default:
-   **/
-  generate_weapp_webview?: boolean;
-
-  /**
-   * @description: 是否生成微博推广链接
-   * @type: boolean
-   * @default: false
-   **/
-  generate_weiboapp_webview?: boolean;
-
-  /**
-   * @description: 是否生成小程序推广
+   * @description: 是否生成拼多多福利券微信小程序推广信息
    * @type: boolean
    * @default:
    **/
   generate_we_app?: boolean;
 
   /**
-   * @description: 商品ID，建议使用goods_sign_list代替，后续会下线
-   * @type: Array<string | number>
-   * @default:
-   **/
-  goods_id_list?: Array<string | number>;
-
-  /**
-   * @description: 商品goodsSign，仅支持单个生链。goodsId和goodsSign必须传入其中一个，建议使用goods_sign_list传入goodsSign
-   * @type: string
-   * @default:
-   **/
-  goods_sign?: string;
-
-  /**
-   * @description: 商品goodsSign列表，支持批量生链
+   * @description: 商品goodsSign列表，例如：["c9r2omogKFFAc7WBwvbZU1ikIb16_J3CTa8HNN"]，支持批量生链。goodsSign是加密后的goodsId, goodsId已下线，请使用goodsSign来替代。使用说明：https://jinbao.pinduoduo.com/qa-system?questionId=252
    * @type: string[]
    * @default:
    **/
   goods_sign_list?: string[];
+
+  /**
+   * @description: 素材ID，可以通过商品详情接口获取商品素材信息
+   * @type: string
+   * @default:
+   **/
+  material_id?: string;
 
   /**
    * @description: true--生成多人团推广链接 false--生成单人团推广链接（默认false）1、单人团推广链接：用户访问单人团推广链接，可直接购买商品无需拼团。2、多人团推广链接：用户访问双人团推广链接开团，若用户分享给他人参团，则开团者和参团者的佣金均结算给推手
@@ -120,25 +107,11 @@ export interface PddDdkGoodsPromotionUrlGenerateRequestInterface {
   p_id: string;
 
   /**
-   * @description: 直播间id列表，如果生成直播间推广链接该参数必填，goods_id_list填[1]
-   * @type: string[]
-   * @default:
-   **/
-  room_id_list?: string[];
-
-  /**
    * @description: 搜索id，建议填写，提高收益。来自pdd.ddk.goods.recommend.get、pdd.ddk.goods.search、pdd.ddk.top.goods.list.query等接口
    * @type: string
    * @default:
    **/
   search_id?: string;
-
-  /**
-   * @description: 直播预约id列表，如果生成直播间预约推广链接该参数必填，goods_id_list填[1]，room_id_list不填
-   * @type: string[]
-   * @default:
-   **/
-  target_id_list?: string[];
 
   /**
    * @description: 招商多多客ID
@@ -192,7 +165,7 @@ export interface PddDdkGoodsPromotionUrlGenerateGoodsPromotionUrlGenerateRespons
   mobile_short_url: string;
 
   /**
-   * @description: 使用此推广链接，用户安装拼多多APP的情况下会唤起APP，否则唤起H5页面
+   * @description: 使用此推广链接，用户安装微信的情况下，默认拉起拼多多福利券微信小程序，否则唤起H5页面
    * @type: string
    * @default:
    **/
@@ -221,6 +194,13 @@ export interface PddDdkGoodsPromotionUrlGenerateGoodsPromotionUrlGenerateRespons
   short_url: string;
 
   /**
+   * @description: 使用此推广链接，用户安装多多团长APP的情况下会唤起APP（需客户端支持schema跳转协议）
+   * @type: string
+   * @default:
+   **/
+  tz_schema_url: string;
+
+  /**
    * @description: 普通推广长链接，唤起H5页面
    * @type: string
    * @default:
@@ -228,40 +208,12 @@ export interface PddDdkGoodsPromotionUrlGenerateGoodsPromotionUrlGenerateRespons
   url: string;
 
   /**
-   * @description: 微博推广短链接
-   * @type: string
-   * @default:
-   **/
-  weibo_app_web_view_short_url: string;
-
-  /**
-   * @description: 微博推广链接
-   * @type: string
-   * @default:
-   **/
-  weibo_app_web_view_url: string;
-
-  /**
-   * @description: 小程序信息
+   * @description: 拼多多福利券微信小程序信息
    * @type: PddDdkGoodsPromotionUrlGenerateGoodsPromotionUrlGenerateResponseGoodsPromotionUrlListWeAppInfoResponseInterface
    * @default:
    *
    **/
   we_app_info: PddDdkGoodsPromotionUrlGenerateGoodsPromotionUrlGenerateResponseGoodsPromotionUrlListWeAppInfoResponseInterface;
-
-  /**
-   * @description: 唤起微信app推广短链接，已弃用
-   * @type: string
-   * @default:
-   **/
-  we_app_web_view_short_url: string;
-
-  /**
-   * @description: 唤起微信app推广链接，已弃用
-   * @type: string
-   * @default:
-   **/
-  we_app_web_view_url: string;
 }
 
 /**
@@ -328,13 +280,13 @@ export interface PddDdkGoodsPromotionUrlGenerateGoodsPromotionUrlGenerateRespons
 }
 
 /**
- * @description 小程序信息
+ * @description 拼多多福利券微信小程序信息
  * @default
  * @example
  **/
 export interface PddDdkGoodsPromotionUrlGenerateGoodsPromotionUrlGenerateResponseGoodsPromotionUrlListWeAppInfoResponseInterface {
   /**
-   * @description: 拼多多小程序id
+   * @description: 小程序id
    * @type: string
    * @default:
    **/

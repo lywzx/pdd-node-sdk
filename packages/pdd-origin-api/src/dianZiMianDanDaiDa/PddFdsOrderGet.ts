@@ -5,11 +5,13 @@ export const PDD_FDS_ORDER_GET_LIMITERS = [
     limiterLevel: 1,
     timeRange: 1,
     times: 200,
+    callSourceType: 0,
   },
   {
     limiterLevel: 3,
     timeRange: 1,
     times: 2000,
+    callSourceType: 0,
   },
 ];
 

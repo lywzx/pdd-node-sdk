@@ -5,16 +5,19 @@ export const PDD_OPEN_DECRYPT_BATCH_LIMITERS = [
     limiterLevel: 4,
     timeRange: 10,
     times: 1,
+    callSourceType: 2,
   },
   {
     limiterLevel: 4,
     timeRange: 10,
     times: 10050,
+    callSourceType: 0,
   },
   {
     limiterLevel: 3,
     timeRange: 10,
     times: 19500,
+    callSourceType: 0,
   },
 ];
 
@@ -98,7 +101,7 @@ export interface PddOpenDecryptBatchOpenDecryptBatchResponseDataDecryptListRespo
   data_tag: string;
 
   /**
-   * @description: 1、虚拟卡密;2、虚拟卡号;3、支付商品编码;4、支付单号;5、收件人;6、收件人手机号;7、收件人完整地址;8、收件人详细地址;9、快递单号;10、身份证号;11、身份证姓名
+   * @description: 1、虚拟卡密;2、虚拟卡号;3、支付申报订单号;4、支付单号;5、收件人;6、收件人手机号;7、收件人完整地址;8、收件人详细地址;9、快递单号;10、身份证号;11、身份证姓名
    * @type: number
    * @default:
    **/
@@ -131,4 +134,18 @@ export interface PddOpenDecryptBatchOpenDecryptBatchResponseDataDecryptListRespo
    * @default:
    **/
   error_msg: string;
+
+  /**
+   * @description: 虚拟号类型：0-非虚拟号 1-虚拟号
+   * @type: number
+   * @default:
+   **/
+  virtual_number_type: number;
+
+  /**
+   * @description: 虚拟号分机号
+   * @type: string
+   * @default:
+   **/
+  virtual_identify_number: string;
 }

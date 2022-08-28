@@ -37,6 +37,13 @@ export interface PddCloudprintCmdprintRenderRequestRequestInterface {
   client_type: string;
 
   /**
+   * @description: 返回值编码方式，枚举值：gzip(默认值)、gzip_byte(推荐值)
+   * @type: string
+   * @default:
+   **/
+  cmd_encoding?: string;
+
+  /**
    * @description: 打印配置
    * @type: PddCloudprintCmdprintRenderRequestConfigRequestInterface
    * @default:
@@ -53,13 +60,6 @@ export interface PddCloudprintCmdprintRenderRequestRequestInterface {
   document: PddCloudprintCmdprintRenderRequestDocumentRequestInterface;
 
   /**
-   * @description: 打印机名称
-   * @type: string
-   * @default:
-   **/
-  printer_name: string;
-
-  /**
    * @description: 枚举值：CPCL、TSPL
    * @type: string
    * @default:
@@ -67,11 +67,11 @@ export interface PddCloudprintCmdprintRenderRequestRequestInterface {
   print_command_type: string;
 
   /**
-   * @description: 返回值编码方式，枚举值：gzip(默认值)、gzip_byte(推荐值)
+   * @description: 打印机名称
    * @type: string
    * @default:
    **/
-  cmd_encoding?: string;
+  printer_name: string;
 }
 
 /**

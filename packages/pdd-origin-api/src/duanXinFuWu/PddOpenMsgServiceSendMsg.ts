@@ -7,7 +7,14 @@ export const PDD_OPEN_MSG_SERVICE_SEND_MSG = 'pdd.open.msg.service.send.msg';
  **/
 export interface PddOpenMsgServiceSendMsgRequestInterface {
   /**
-   * @description: 接收短信的手机号码列表,["15900000000", "17600000000"]
+   * @description: 业务请求唯一标识
+   * @type: string
+   * @default:
+   **/
+  out_id?: string;
+
+  /**
+   * @description: 接收短信的手机号码列表（仅允许密文）,["密文1", "密文2"]
    * @type: string[]
    * @default:
    **/
@@ -19,6 +26,13 @@ export interface PddOpenMsgServiceSendMsgRequestInterface {
    * @default:
    **/
   sign_name: string;
+
+  /**
+   * @description: 上行短信扩展码
+   * @type: string
+   * @default:
+   **/
+  sms_up_extend_code?: string;
 
   /**
    * @description: 短信模板ID
@@ -34,20 +48,6 @@ export interface PddOpenMsgServiceSendMsgRequestInterface {
    *
    **/
   template_param?: PddOpenMsgServiceSendMsgTemplateParamRequestInterface;
-
-  /**
-   * @description: 业务请求唯一标识
-   * @type: string
-   * @default:
-   **/
-  out_id?: string;
-
-  /**
-   * @description: 上行短信扩展码
-   * @type: string
-   * @default:
-   **/
-  sms_up_extend_code?: string;
 }
 
 /**

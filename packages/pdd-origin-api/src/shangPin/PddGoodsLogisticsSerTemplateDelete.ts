@@ -37,7 +37,7 @@ export interface PddGoodsLogisticsSerTemplateDeleteResponseInterface {
  **/
 export interface PddGoodsLogisticsSerTemplateDeleteGoodsLogisticsSerTemplateDeleteResponseResponseInterface {
   /**
-   * @description: 是否成功
+   * @description: is_success
    * @type: boolean
    * @default:
    **/

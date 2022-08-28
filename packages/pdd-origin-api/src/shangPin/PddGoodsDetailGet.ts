@@ -5,11 +5,13 @@ export const PDD_GOODS_DETAIL_GET_LIMITERS = [
     limiterLevel: 1,
     timeRange: 60,
     times: 3000,
+    callSourceType: 0,
   },
   {
     limiterLevel: 3,
     timeRange: 1,
     times: 3000,
+    callSourceType: 0,
   },
 ];
 
@@ -84,7 +86,7 @@ export interface PddGoodsDetailGetGoodsDetailGetResponseResponseInterface {
   cost_template_id: string | number;
 
   /**
-   * @description: 国家id
+   * @description: 地区/国家id
    * @type: number
    * @default:
    **/
@@ -112,11 +114,26 @@ export interface PddGoodsDetailGetGoodsDetailGetResponseResponseInterface {
   delivery_one_day: number;
 
   /**
+   * @description: 发货方式。0：无物流发货；1：有物流发货。
+   * @type: number
+   * @default:
+   **/
+  delivery_type: number;
+
+  /**
    * @description: 商品详情图
    * @type: string[]
    * @default:
    **/
   detail_gallery_list: string[];
+
+  /**
+   * @description: 卡券类商品属性
+   * @type: PddGoodsDetailGetGoodsDetailGetResponseElecGoodsAttributesResponseInterface
+   * @default:
+   *
+   **/
+  elec_goods_attributes: PddGoodsDetailGetGoodsDetailGetResponseElecGoodsAttributesResponseInterface;
 
   /**
    * @description: 商品描述
@@ -164,7 +181,7 @@ export interface PddGoodsDetailGetGoodsDetailGetResponseResponseInterface {
   goods_travel_attr: PddGoodsDetailGetGoodsDetailGetResponseGoodsTravelAttrResponseInterface;
 
   /**
-   * @description: 商品类型：1-国内普通商品，2-进口，3-国外海淘，4-直邮 ,5-流量,6-话费,7,优惠券;8-QQ充值,9-加油卡 暂时支持1-普通商品的上架
+   * @description: 商品类型：1-国内普通商品，2-一般贸易，3-保税仓BBC直供，4-海外BC直邮 ,5-流量 ,6-话费 ,7-优惠券 ,8-QQ充值 ,9-加油卡，15-商家卡券，18-海外CC行邮 19-平台卡券
    * @type: number
    * @default:
    **/
@@ -199,6 +216,13 @@ export interface PddGoodsDetailGetGoodsDetailGetResponseResponseInterface {
   is_folt: number;
 
   /**
+   * @description: 是否成团预售。0：不是；1:是。
+   * @type: number
+   * @default:
+   **/
+  is_group_pre_sale: number;
+
+  /**
    * @description: 是否预售,1-预售商品，0-非预售商品
    * @type: number
    * @default:
@@ -211,6 +235,13 @@ export interface PddGoodsDetailGetGoodsDetailGetResponseResponseInterface {
    * @default:
    **/
   is_refundable: number;
+
+  /**
+   * @description: 是否sku预售，0：否，1：是
+   * @type: number
+   * @default:
+   **/
+  is_sku_pre_sale: number;
 
   /**
    * @description: 缺重包退
@@ -227,7 +258,7 @@ export interface PddGoodsDetailGetGoodsDetailGetResponseResponseInterface {
   mai_jia_zi_ti: string;
 
   /**
-   * @description: 市场价格，单位为分
+   * @description: 参考价格，单位为分
    * @type: string | number
    * @default:
    **/
@@ -239,13 +270,6 @@ export interface PddGoodsDetailGetGoodsDetailGetResponseResponseInterface {
    * @default:
    **/
   order_limit: string | number;
-
-  /**
-   * @description: 商家编码（商品维度），同其他接口中的outer_goods_id 、out_goods_id、out_goods_sn、outer_goods_sn 都为商家编码（goods维度）。
-   * @type: string
-   * @default:
-   **/
-  outer_goods_id: string;
 
   /**
    * @description: 第三方商品Id
@@ -260,6 +284,13 @@ export interface PddGoodsDetailGetGoodsDetailGetResponseResponseInterface {
    * @default:
    **/
   out_source_type: number;
+
+  /**
+   * @description: 商家编码（商品维度），同其他接口中的outer_goods_id 、out_goods_id、out_goods_sn、outer_goods_sn 都为商家编码（goods维度）。
+   * @type: string
+   * @default:
+   **/
+  outer_goods_id: string;
 
   /**
    * @description: oversea_goods
@@ -362,6 +393,13 @@ export interface PddGoodsDetailGetGoodsDetailGetResponseResponseInterface {
   tiny_name: string;
 
   /**
+   * @description: 满2件折扣，可选范围0-100, 0表示取消，95表示95折，设置需先查询规则接口获取实际可填范围
+   * @type: number
+   * @default:
+   **/
+  two_pieces_discount: number;
+
+  /**
    * @description: 商品视频
    * @type: PddGoodsDetailGetGoodsDetailGetResponseVideoGalleryResponseInterface[]
    * @default:
@@ -389,13 +427,41 @@ export interface PddGoodsDetailGetGoodsDetailGetResponseResponseInterface {
    * @default:
    **/
   zhi_huan_bu_xiu: number;
+}
+
+/**
+ * @description 卡券类商品属性
+ * @default
+ * @example
+ **/
+export interface PddGoodsDetailGetGoodsDetailGetResponseElecGoodsAttributesResponseInterface {
+  /**
+   * @description: 开始时间（timeType=1时必填表示核销的开始时间）（精确到毫秒）
+   * @type: string | number
+   * @default:
+   **/
+  begin_time: string | number;
 
   /**
-   * @description: 发货方式。0：无物流发货；1：有物流发货。
+   * @description: 天数内有效（timeType=3必填，表示发货后几天内核销）
    * @type: number
    * @default:
    **/
-  delivery_type: number;
+  days_time: number;
+
+  /**
+   * @description: 截止时间（timeType=1,2时必填，表示发货后核销的截止时间）（精确到毫秒）
+   * @type: string | number
+   * @default:
+   **/
+  end_time: string | number;
+
+  /**
+   * @description: 卡券核销类型（1：起始时间内有效，2：发货后后至截止时间内有效，3：发货后多少天内有效）
+   * @type: number
+   * @default:
+   **/
+  time_type: number;
 }
 
 /**
@@ -490,14 +556,14 @@ export interface PddGoodsDetailGetGoodsDetailGetResponseGoodsTradeAttrBookingNot
  **/
 export interface PddGoodsDetailGetGoodsDetailGetResponseGoodsTravelAttrResponseInterface {
   /**
-   * @description: 日历商品类型1:旅行类,2:住宿类,3:票务类
+   * @description: 出行人是否必填（默认是）
    * @type: boolean
    * @default:
    **/
   need_tourist: boolean;
 
   /**
-   * @description: 出行人是否必填（默认是）
+   * @description: 日历商品类型1:旅行类,2:住宿类,3:票务类
    * @type: number
    * @default:
    **/
@@ -631,6 +697,21 @@ export interface PddGoodsDetailGetGoodsDetailGetResponseSkuListResponseInterface
   sku_id: string | number;
 
   /**
+   * @description: sku预售时间，单位秒
+   * @type: number
+   * @default:
+   **/
+  sku_pre_sale_time: number;
+
+  /**
+   * @description: sku属性
+   * @type: PddGoodsDetailGetGoodsDetailGetResponseSkuListSkuPropertyListResponseInterface[]
+   * @default:
+   *
+   **/
+  sku_property_list: PddGoodsDetailGetGoodsDetailGetResponseSkuListSkuPropertyListResponseInterface[];
+
+  /**
    * @description: 商品规格列表
    * @type: PddGoodsDetailGetGoodsDetailGetResponseSkuListSpecResponseInterface[]
    * @default:
@@ -682,6 +763,41 @@ export interface PddGoodsDetailGetGoodsDetailGetResponseSkuListOverseaSkuRespons
 }
 
 /**
+ * @description sku属性
+ * @default
+ * @example
+ **/
+export interface PddGoodsDetailGetGoodsDetailGetResponseSkuListSkuPropertyListResponseInterface {
+  /**
+   * @description: 属性单位
+   * @type: string
+   * @default:
+   **/
+  punit: string;
+
+  /**
+   * @description: 属性id
+   * @type: string | number
+   * @default:
+   **/
+  ref_pid: string | number;
+
+  /**
+   * @description: 属性值
+   * @type: string
+   * @default:
+   **/
+  value: string;
+
+  /**
+   * @description: 属性值id
+   * @type: string | number
+   * @default:
+   **/
+  vid: string | number;
+}
+
+/**
  * @description 商品规格列表
  * @default
  * @example
@@ -724,10 +840,10 @@ export interface PddGoodsDetailGetGoodsDetailGetResponseSkuListSpecResponseInter
 export interface PddGoodsDetailGetGoodsDetailGetResponseVideoGalleryResponseInterface {
   /**
    * @description: 商品视频id
-   * @type: number
+   * @type: string | number
    * @default:
    **/
-  file_id: number;
+  file_id: string | number;
 
   /**
    * @description: 商品视频url

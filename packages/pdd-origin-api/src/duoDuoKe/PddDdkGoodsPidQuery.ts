@@ -22,7 +22,7 @@ export interface PddDdkGoodsPidQueryRequestInterface {
   page_size?: number;
 
   /**
-   * @description: 推广位id列表
+   * @description: 推广位列表，例如：["60005_612"]
    * @type: string[]
    * @default:
    **/
@@ -87,6 +87,13 @@ export interface PddDdkGoodsPidQueryPIdQueryResponsePIdListResponseInterface {
   create_time: string | number;
 
   /**
+   * @description: 媒体id
+   * @type: string | number
+   * @default:
+   **/
+  media_id: string | number;
+
+  /**
    * @description: 推广位名称
    * @type: string
    * @default:
@@ -106,11 +113,4 @@ export interface PddDdkGoodsPidQueryPIdQueryResponsePIdListResponseInterface {
    * @default:
    **/
   status: number;
-
-  /**
-   * @description: 媒体id
-   * @type: string | number
-   * @default:
-   **/
-  media_id: string | number;
 }
