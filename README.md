@@ -4,7 +4,7 @@
 
 `@pin-duo-duo/core`职在辅助快速开发，除了方便使用，sdk 还提供了的拼多多开放平台的类型声名，独立包`@pin-duo-duo/pdd-origin-api`。如果你在使用中发布类型声明文件与官方文档不一致，可以安装`@pin-duo-duo/scripts`包，重新生成声明文件。
 
-[![Build Status](https://img.shields.io/travis/lywzx/pdd-node-sdk/master.svg)](https://travis-ci.org/lywzx/pdd-node-sdk)
+[![Build Status](https://github.com/lywzx/pdd-node-sdk/actions/workflows/npm-test.yml/badge.svg?branch=master)](https://github.com/lywzx/pdd-node-sdk/actions/workflows/npm-test.yml)
 [![codecov](https://codecov.io/gh/lywzx/pdd-node-sdk/branch/master/graph/badge.svg)](https://codecov.io/gh/lywzx/pdd-node-sdk)
 [![NPM version](https://img.shields.io/npm/v/pdd-node-sdk.svg?style=flat-square)](https://www.npmjs.com/package/pdd-node-sdk)
 [![NPM downloads](https://img.shields.io/npm/dm/@pin-duo-duo/core.svg?style=flat-square)](https://www.npmjs.com/package/@pin-duo-duo/core)
