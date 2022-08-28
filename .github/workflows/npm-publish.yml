@@ -15,8 +15,10 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: 16
-      - run: npm ci
-      - run: npm test
+          redis-version: 6
+      - run: npm install -g yarn
+      - run: yarn
+      - run: yarn test
 
   publish-npm:
     needs: build
