@@ -47,7 +47,7 @@
     "@istanbuljs/nyc-config-typescript": "^1.0.1",
     "@lywzx/rollup-build-scripts": "~0.0.10",
     "@nestjs/common": "^7.4.2",
-    "@nestjs/core": "^7.4.2",
+    "@nestjs/core": "^9.0.5",
     "@nestjs/testing": "^7.4.2",
     "@rollup/plugin-buble": "^0.21.3",
     "@rollup/plugin-commonjs": "^15.0.0",
