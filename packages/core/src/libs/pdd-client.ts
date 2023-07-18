@@ -41,7 +41,7 @@ import {
   RetryOptionsInterface,
   RetryOptionsType,
 } from '../interfaces';
-import { checkRequired, defer, getShortResponse, md5, promiseToCallback, sleep, timestamp } from '../util';
+import { checkRequired, defer, getShortResponse, promiseToCallback, sleep, timestamp } from '../util';
 import { getPddLogClient, pddLog } from '../util/debug';
 import { isDevModel } from '../util/dev';
 import {
@@ -50,6 +50,7 @@ import {
   guessPddClientGenerateParams,
   guessPddClientRequestWithRetryParams,
 } from '../util/guess-params.util';
+import { md5 } from '../util/md5-base64';
 import { NetworkAdapter } from './network-adapter';
 import { PddApiCacheAbstract } from './pdd-api-cache.abstract';
 import { checkTypeIsNeedAccessToken } from './pdd-api-check.tools';

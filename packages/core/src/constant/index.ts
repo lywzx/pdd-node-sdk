@@ -31,3 +31,4 @@ export const PDD_OAUTH_TOKEN_URL = 'https://open-api.pinduoduo.com/oauth/token';
 
 // 相关类型
 export * from './enum';
+export * from './ws';

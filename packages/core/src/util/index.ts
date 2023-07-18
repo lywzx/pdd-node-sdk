@@ -7,17 +7,8 @@ import {
   PddCollectShortResponseInterface,
   PddResponseTypeAndRequestTypeMapping,
 } from '@pin-duo-duo/pdd-origin-api';
-import CryptoJS from 'crypto-js';
 import isNumber from 'lodash/isNumber';
 import isFinite from 'lodash/isFinite';
-
-/**
- * MD5加密字符
- * @param str
- */
-export function md5(str: string) {
-  return CryptoJS.MD5(str).toString(CryptoJS.enc.Hex);
-}
 
 /**
  * 根据响应的内容，获取响应最终数据
